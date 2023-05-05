@@ -108,13 +108,14 @@ section {
   outline: none;
   font-family: "Montserrat";
   font-size: 18px;
-  background-color: rgba(220, 20, 60, 0.568);
+  /* background-color: rgba(220, 20, 60, 0.568); */
   cursor: pointer;
   color: #f6f5f7;
 }
 .container .overlay-container {
   position: absolute;
-  background-color: crimson;
+  /* background-color: crimson; */
+  background-color: #9C9A89;
   left: 0;
   top: 0;
   width: 50%;
@@ -146,7 +147,8 @@ section {
   width: 100%;
   left: 0;
   top: 0;
-  background-color: crimson;
+  /* background-color: crimson; */
+  background-color: #9C9A89;
   z-index: -1;
   opacity: 0.9;
 }
@@ -171,7 +173,8 @@ section {
 }
 .overlay-container .overlay button {
   background-color: white;
-  color: crimson;
+  /* color: crimson; */
+  color: #b8b58d;
   margin-top: 20px;
 }
 
