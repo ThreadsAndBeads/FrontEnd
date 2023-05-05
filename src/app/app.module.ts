@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HorizontallScrollComponent } from './components/horizontall-scroll/horizontall-scroll.component';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
