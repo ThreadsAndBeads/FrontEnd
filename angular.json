@@ -91,7 +91,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../FrontEnd/src/assets/js/signup.js"
+            ]
           }
         }
       }
