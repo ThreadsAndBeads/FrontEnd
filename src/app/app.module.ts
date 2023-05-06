@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HorizontallScrollComponent } from './components/horizontall-scroll/horizontall-scroll.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
@@ -17,6 +20,7 @@ import { AnimatedSectionComponent } from './components/animated-section/animated
   declarations: [
     AppComponent,
     HorizontallScrollComponent,
+    AboutUsComponent,
     SignupComponent,
     FooterComponent,
     BubbleComponent,
@@ -26,6 +30,7 @@ import { AnimatedSectionComponent } from './components/animated-section/animated
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbCarouselModule,
     FormsModule,
     HttpClientModule
   ],
