@@ -8,6 +8,7 @@ import { HorizontallScrollComponent } from './components/horizontall-scroll/hori
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SignupComponent } from './components/signup/signup.component';
     HorizontallScrollComponent,
     SignupComponent,
     FooterComponent,
-    BubbleComponent
+    BubbleComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
