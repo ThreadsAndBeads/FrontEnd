@@ -20,7 +20,7 @@ import { AnimatedSectionComponent } from './components/animated-section/animated
   declarations: [
     AppComponent,
     HorizontallScrollComponent,
-    AboutUsComponent
+    AboutUsComponent,
     SignupComponent,
     FooterComponent,
     BubbleComponent,
@@ -30,7 +30,7 @@ import { AnimatedSectionComponent } from './components/animated-section/animated
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbCarouselModule
+    NgbCarouselModule,
     FormsModule,
     HttpClientModule
   ],
