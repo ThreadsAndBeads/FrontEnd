@@ -1,0 +1,35 @@
+
+  .footer {
+    z-index: 1;
+    --footer-background: #4a5966;
+    display: grid;
+    position: relative;
+    grid-area: footer;
+    min-height: 10rem;
+  }
+  .footer .content {
+    z-index: 2;
+    display: grid;
+    padding: 2rem 0rem 2rem 2rem;
+    background: var(--footer-background);
+  }
+  .footer .content h6{
+    color: #d9bfb1;
+  }
+  .footer .content a, .footer .content p {
+    color: #f5f7fa;
+    text-decoration: none;
+  }
+
+  .footer .content b {
+    color: white;
+  }
+
+  .footer .content p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .container{
+    margin-left: 0px;
+  }

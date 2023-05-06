@@ -1,0 +1,49 @@
+<section>
+  <div class="container">
+    <div class="form sign-in-form">
+      <div class="wrapper">
+        <form action="#">
+          <h1>Sign In</h1>
+          <p>use your email and password to sign in</p>
+          <input type="email" placeholder="Email">
+          <input type="password" placeholder="password">
+          <button>Sign In</button>
+        </form>
+      </div>
+    </div>
+    <div class="form sign-up-form active">
+      <div class="wrapper">
+        <form action="#">
+          <h1>Sign up</h1>
+          <p>Please, provide all the correct info to create an account</p>
+          <input type="text" placeholder="Full Name" [(ngModel)]="name" name="name">
+          <input type="email" placeholder="Email" [(ngModel)]="email" name="email">
+          <div class="error">{{ error.email }}</div>
+          <input type="password" placeholder="password" [(ngModel)]="password" name="password">
+          <div class="error">{{ error.password }}</div>
+          <select name="type" id="type" [(ngModel)]="type">
+           <option value="" disabled selected>Select account type</option>
+          <option value="customer">Customer</option>
+          <option value="seller">Seller</option>
+          </select>
+          <button (click)="onSignUpSubmit()">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-left">
+          <h1>Create Account</h1>
+          <p>or</p>
+          <button id="signInButton">Log In</button>
+        </div>
+        <div class="overlay-right">
+          <h1>Please, Log In</h1>
+          <p>or</p>
+          <button id="signUpButton">Create Account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

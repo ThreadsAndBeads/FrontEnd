@@ -1,0 +1,99 @@
+svg {
+  margin: 0;
+  padding: 0;
+	transform: scale(1.2);
+	transition: transform 5s;
+	will-change: transform;
+}
+
+svg:hover {
+	transform: scale(1.1);
+}
+
+#Sfondo {
+  animation-duration: 25s;
+  animation-name: translateBg;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#Fronte {
+  animation-duration: 18s;
+  animation-name: translateFr;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#Mano_e_ago {
+  animation-duration: 10s;
+  animation-name: hand;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#Uomo_e_nodi {
+  animation-duration: 5s;
+  animation-name: man;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#filo1,
+#filo2 {
+  animation-duration: 10s;
+  animation-name: thread;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes thread {
+  from {
+    transform: scaleX(1);
+		transform-origin: center center;
+  }
+
+  to {
+    transform: scale(1.1, 1.02);
+  }
+}
+
+@keyframes man {
+  from {
+    transform: translateX(.5em);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hand {
+  from {
+    transform: rotate(-2deg);
+    transform-origin: right bottom;
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes translateBg {
+  from {
+    transform: translateX(-4%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes translateFr {
+  from {
+    transform: translateX(4%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
