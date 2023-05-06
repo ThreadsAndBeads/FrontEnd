@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HeaderComponent } from './components/header/header.component';
     SignupComponent,
     FooterComponent,
     BubbleComponent,
-    HeaderComponent
+    HeaderComponent,
+    AnimatedSectionComponent
   ],
   imports: [
     BrowserModule,
