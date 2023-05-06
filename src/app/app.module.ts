@@ -10,6 +10,7 @@ import { BubbleComponent } from './components/bubble/bubble.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     HorizontallScrollComponent,
     SignupComponent,
     FooterComponent,
-    BubbleComponent
+    BubbleComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
