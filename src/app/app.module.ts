@@ -11,6 +11,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HeaderComponent } from './components/header/header.component';
     SignupComponent,
     FooterComponent,
     BubbleComponent,
-    HeaderComponent
+    HeaderComponent,
+    AnimatedSectionComponent
   ],
   imports: [
     BrowserModule,
