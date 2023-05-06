@@ -16,10 +16,17 @@
         <form action="#">
           <h1>Sign up</h1>
           <p>Please, provide all the correct info to create an account</p>
-          <input type="text" placeholder="Full Name">
-          <input type="email" placeholder="Email">
-          <input type="password" placeholder="password">
-          <button>Sign Up</button>
+          <input type="text" placeholder="Full Name" [(ngModel)]="name" name="name">
+          <input type="email" placeholder="Email" [(ngModel)]="email" name="email">
+          <div class="error">{{ error.email }}</div>
+          <input type="password" placeholder="password" [(ngModel)]="password" name="password">
+          <div class="error">{{ error.password }}</div>
+          <select name="type" id="type" [(ngModel)]="type">
+           <option value="" disabled selected>Select account type</option>
+          <option value="customer">Customer</option>
+          <option value="seller">Seller</option>
+          </select>
+          <button (click)="onSignUpSubmit()">Sign Up</button>
         </form>
       </div>
     </div>
