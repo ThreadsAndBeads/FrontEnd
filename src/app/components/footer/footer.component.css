@@ -1,7 +1,7 @@
 
   .footer {
     z-index: 1;
-    --footer-background: #5e5946;
+    --footer-background: #4a5966;
     display: grid;
     position: relative;
     grid-area: footer;
@@ -20,16 +20,16 @@
     color: #f5f7fa;
     text-decoration: none;
   }
-  
+
   .footer .content b {
     color: white;
   }
-  
+
   .footer .content p {
     margin: 0;
     font-size: 1.2rem;
   }
-  
+
   .container{
     margin-left: 0px;
   }
