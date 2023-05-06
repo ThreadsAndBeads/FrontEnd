@@ -8,6 +8,8 @@ import { HorizontallScrollComponent } from './components/horizontall-scroll/hori
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
 
@@ -23,7 +25,9 @@ import { AnimatedSectionComponent } from './components/animated-section/animated
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
