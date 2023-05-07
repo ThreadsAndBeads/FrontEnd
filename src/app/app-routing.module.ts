@@ -4,13 +4,16 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { HorizontallScrollComponent } from './components/horizontall-scroll/horizontall-scroll.component';
 import { AppComponent } from './app.component';
+import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
 const routes: Routes = [
-  {'path': '', component: AppComponent},
-  {'path': 'register', component: RegistrationComponent},
-
+  { path: '', component: AnimatedSectionComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'auth', component: RegistrationComponent },
+  { path: 'about', component: AboutUsComponent },
 ];
 
 @NgModule({

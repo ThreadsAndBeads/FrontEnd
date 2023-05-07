@@ -1,103 +1,71 @@
-<!DOCTYPE html>
-<html>
+
 <head>
-	<title>About Us</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VWD295 Assignment1</title>
 
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
-<body style="background-color: #AE887B;">
-	<div class="container-fluid">
-		<nav class="navbar navbar-expand-lg navbar-light  justify-content-end">
-			<ul class="navbar-nav">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">About</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Shop</a>
-				</li>
-			</ul>
-		</nav>
-    <div class="col-md-6 ">
-      <h1>Our mission</h1>
-      <h2>Aspire handmade stuff and show off your creativity. </h2>
 
-		<div  class="row mt-4 d-flex g-5">
+<body>
 
-			<div class="col-md-6 order-md-2">
-				<img src="https://images.unsplash.com/photo-1527383214149-cb7be04ae387?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="img-fluid1">
-			</div>
+  <a id="button" class="fa-beat" style="z-index:99999999999;"></a>
 
-      <div class="col-md-6">
-				<img src="https://images.unsplash.com/photo-1609881583302-61548332039c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1788&q=80" class="img-fluid1">
-      </div>
+  <div class="bgimg-1">
+    <div class="caption">
+      <span class="border">About us</span><br><br>
+      <i class="fa fa-chevron-down fa-4x fa-beat"></i>
+    </div>
+  </div>
 
+  <div style="color:#777;background-color:white;text-align:center;padding:50px 80px;text-align:justify;">
+    <h3 style="text-align:center;">Threads and Beads</h3>
+    <p>"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit totam in, doloremque et dolores praesentium reiciendis necessitatibus dolor ab, officiis eligendi porro, recusandae minima. Harum possimus necessitatibus fugit cum enim?"</p>
+  </div>
 
+  <div class="bgimg-2">
+    <div class="caption">
+      <span class="border"
+        style="background-color:transparent;font-size:25px;color:#f7f7f7;text-transform:uppercase;">LESS Height</span>
+    </div>
+  </div>
 
+  <div class="bgimg-3">
+    <div class="caption">
+      <span class="border"
+        style="background-color:transparent;font-size:25px;color:#f7f7f7;text-transform:uppercase;">scroll up</span>
+    </div>
+  </div>
 
+  <div class="bgimg-4">
+    <div class="caption">
+      <span class="border"
+        style="background-color:transparent;font-size:25px;color:#f7f7f7;text-transform:uppercase;">LESS Height</span>
+    </div>
+  </div>
 
+  <div style="position:relative;">
+    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align:justify;">
+      <h3 style="color:#ddd;">Navigation</h3>
+      <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
 
-			</div>
-		</div>
+      <button class="btn btn-1" onclick="btn1()">My HTML & CSS Toolbox</button>
 
-		<div class="row mt-4">
-			<div class="col-md-6 order-md-2">
-				<img src="https://images.unsplash.com/photo-1536936812504-0e77dc3f0b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" class="img-fluid">
-			</div>
+      <button class="btn btn-2" onclick="btn2()">My JavaScript Toolbox</button>
 
-			<div class="col-md-6 order-md-1">
+      <p>See my killer animated back to top button providing a great user experience!</p>
 
+    </div>
+  </div>
 
-				<h2> create your own handmade stuff and we will help you <br>
-        sell it or if you'd like to buy something you like you could do that as well <br>
-        this is a community project that will help you boost your imagination . </h2>
-			</div>
-		</div>
+  <div class="bgimg-1">
+    <div class="caption">
+      <span class="border">THANKS FOR VISITING!</span>
+    </div>
+  </div>
 
-		<div class="row mt-4">
-			<div class="col-md-4">
-        <h3>collaborate and create</h3>
-				<p></p>
-				<img src="https://images.unsplash.com/photo-1496115965489-21be7e6e59a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" class="img-down">
+  <!--jQuery CDN link-->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'> </script>
 
-			</div>
-			<div class="col-md-4">
-        <h3>We inspire Creativity</h3>
-				<p></p>
-				<img src="https://images.unsplash.com/photo-1590605055494-3fe30e437490?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" class="img-down">
-							</div>
-			<div class="col-md-4">
-        <h3>We are customer Centric</h3>
-        <p></p>
-				<img src="https://images.unsplash.com/photo-1579047917338-a6a69144fe63?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" class="img-down">
-      </div>
-
-        <footer>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <h3>Follow Us</h3>
-                <ul>
-                  <li><a href="#">Facebook</a></li>
-                  <li><a href="#">Twitter</a></li>
-                  <li><a href="#">Instagram</a></li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <h3>Contact Us</h3>
-                <p>Email: info@mycompany.com</p>
-              </div>
-              <div class="col-md-4">
-                <h3>Our Location</h3>
-                <p>123 Main St<br>Anytown, USA 12345<br>Phone: (123) 456-7890<br></p>
-
-              </div>
-            </div>
-          </div>
-        </footer>
+  <script src="js/script.js"></script>
+</body>

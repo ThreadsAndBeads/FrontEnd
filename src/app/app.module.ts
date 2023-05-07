@@ -17,6 +17,7 @@ import { AnimatedSectionComponent } from './components/animated-section/animated
 import { HorizontallScrollComponent } from './components/horizontall-scroll/horizontall-scroll.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { SellercardComponent } from './components/sellercard/sellercard.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +30,7 @@ import { SellercardComponent } from './components/sellercard/sellercard.componen
     FooterComponent,
     BubbleComponent,
     HeaderComponent,
-    AnimatedSectionComponent,
-    SellercardComponent,
+    AnimatedSectionComponent
   ],
   imports: [
     BrowserModule,
