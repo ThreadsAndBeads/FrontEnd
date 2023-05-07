@@ -3,10 +3,12 @@
     <form action="#">
       <h1>Sign In</h1>
       <p>use your email and password to sign in</p>
-      <input type="email" placeholder="Email">
-      <input type="password" placeholder="password">
+      <input type="email" placeholder="Email" [(ngModel)]="email" name="email">
+      <div class="error">{{ error.email }}</div>
+      <input type="password" placeholder="password" [(ngModel)]="password" name="password">
+      <div class="error">{{ error.password }}</div>
       <a href="">Forget Password?</a>
-      <button>Sign In</button>
+      <button (click)="onSignInSubmit()">Sign In</button>
     </form>
   </div>
 </div>
