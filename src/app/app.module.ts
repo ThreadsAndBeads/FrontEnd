@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { AuthenticationComponent } from './components/authentication/authentication.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
 import { HorizontallScrollComponent } from './components/horizontall-scroll/horizontall-scroll.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
@@ -22,7 +22,7 @@ import { SellercardComponent } from './components/sellercard/sellercard.componen
   declarations: [
     AppComponent,
     HorizontallScrollComponent,
-    AuthenticationComponent,
+    RegistrationComponent,
     SignupComponent,
     SigninComponent,
     AboutUsComponent,
@@ -30,7 +30,7 @@ import { SellercardComponent } from './components/sellercard/sellercard.componen
     BubbleComponent,
     HeaderComponent,
     AnimatedSectionComponent,
-    SellercardComponent
+    SellercardComponent,
   ],
   imports: [
     BrowserModule,
