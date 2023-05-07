@@ -8,9 +8,9 @@ import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
-  {'path': '/', component: AppComponent},
-  {'path': 'auth', component: AuthenticationComponent},
-  {'path':'about', component: AboutUsComponent}
+  {'path': '', component: AppComponent},
+  {'path': 'register', component: AuthenticationComponent},
+
 
 ];
 
