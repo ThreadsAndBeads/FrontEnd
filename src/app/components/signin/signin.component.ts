@@ -36,6 +36,8 @@ export class SigninComponent {
           this.error.password = error.error.message;
         } else if (error.status === 404 && error.error && error.error.message === 'Login failed, User does not exist') {
           this.error.email = error.error.message;
+        }else if (error.status === 401 && error.error && error.error.message === 'Please verify your email to login') {
+          this.error.email = error.error.message;
         }
       }
     });
