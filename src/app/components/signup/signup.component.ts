@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-signup',
@@ -25,11 +25,14 @@ export class SignupComponent{
       password: this.password,
       type: this.type
     };
-    this.http.post('http://localhost:7000/api/v1/users/signup', userData)
-      .subscribe(response => {
-        console.log(response);
-      }, error => {
+    this.http.post<any>('http://localhost:7000/api/v1/users/signup', userData)
+    .subscribe({
+      next: (response) => {
+        console.log(response.data);
+      },
+      error: (error: HttpErrorResponse) => {
         this.error = error.error.errors;
-      });
+      }
+    });
   }
 }
