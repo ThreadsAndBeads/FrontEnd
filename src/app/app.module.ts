@@ -8,7 +8,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { SigninComponent } from './components/signin/signin.component';
@@ -18,24 +18,28 @@ import { HorizontallScrollComponent } from './components/horizontall-scroll/hori
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { SellercardComponent } from './components/sellercard/sellercard.component';
 import { HomeComponent } from './components/home/home.component';
+import { RequestResetComponent } from './components/request-reset/request-reset.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HorizontallScrollComponent,
     RegistrationComponent,
+    HomeComponent,
     SignupComponent,
     SigninComponent,
     AboutUsComponent,
     FooterComponent,
     BubbleComponent,
     HeaderComponent,
-    AnimatedSectionComponent
+    AnimatedSectionComponent,
+    RequestResetComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbCarouselModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule
   ],

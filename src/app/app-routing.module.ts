@@ -6,6 +6,7 @@ import { HorizontallScrollComponent } from './components/horizontall-scroll/hori
 import { AppComponent } from './app.component';
 import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
 import { HomeComponent } from './components/home/home.component';
+import { RequestResetComponent } from './components/request-reset/request-reset.component';
 
 
 
@@ -14,6 +15,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
+  {
+    path: 'requestResetPassword',
+    component: RequestResetComponent,
+  },
 ];
 
 @NgModule({
