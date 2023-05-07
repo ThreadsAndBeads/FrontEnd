@@ -12,7 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'auth', component: AuthenticationComponent },
+  { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
 ];
 
