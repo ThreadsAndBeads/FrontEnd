@@ -86,3 +86,28 @@ a{
   margin-bottom: 15px;
   display: block;
 }
+.error{
+  display: block;
+  width: fit-content;
+  margin-left: 5px;
+  font-family: "Montserrat";
+  font-size: 14px;
+  padding-left: 25px;
+  color: red;
+  position: relative;
+}
+
+#type{
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  height: 35px;
+  font-family: "Montserrat";
+  font-size: 14px;
+  padding-left: 15px;
+  border: none;
+  background-color: rgba(199, 197, 197, 0.425);
+  outline: none;
+  color: rgba(0, 0, 0, 0.658);
+}

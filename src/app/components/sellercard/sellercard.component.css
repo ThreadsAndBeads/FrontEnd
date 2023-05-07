@@ -1,0 +1,104 @@
+* {
+  font-size: 1.04em;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+::selection {
+  background-color: #95a5a6;
+}
+
+img {
+  height: auto;
+  width: 100%;
+  user-select: none;
+}
+
+.mline {
+  border: 2px solid #ecf0f1;
+  width: 14%;
+  margin: 0 auto;
+}
+
+#wrapper {
+  color: #212129;
+  background-color: #fff;
+  box-shadow: 0 0 7px 3px #535355;
+  max-width: 250px;
+  max-height: 360px;
+  margin: 20px auto;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.header {
+  background: url(https://image.ibb.co/diMmRG/chloe_moretz.jpg);
+  box-shadow: inset 0 0 60px 20px rgba(0,0,0,0.5);
+  min-height: 130px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.name h1 {
+  color: #ecf0f1;
+  font-size: 1.1em;
+}
+
+.info {
+  color: #212129;
+  font-size: 0.8em;
+  margin: 15px 0;
+}
+
+.contacts .bi {font-size: 20px;}
+.contacts .bi:hover {opacity:0.75;transition:225ms;}
+.bi-facebook {color: #1F3A93;transition:350ms;}
+.bi-google {color: #F22613;transition:350ms;}
+.bi-twitter {color: #22A7F0;transition:350ms;}
+.bi-instagram {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button {
+  margin: 20px 0;
+}
+
+.products {
+  color: #212129;
+  border: 2px #212129 solid;
+  border-radius: 30px;
+  padding: 6px 20px;
+  background: #fff;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.products:hover {
+  color: #fff;
+  border-radius: 30px;
+  padding: 8px 25px;
+  background: #212129;
+  transition: 0.5s;
+}
+
+.stats {
+  font-size: 0.75em;
+  padding: 10px 0;
+  background-color: #ECF0F1;
+}
+
+.stats span{
+  font-size: 1em;
+}
