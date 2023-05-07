@@ -17,6 +17,7 @@ import { AuthenticationComponent } from './components/authentication/authenticat
 import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
 import { HorizontallScrollComponent } from './components/horizontall-scroll/horizontall-scroll.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     FooterComponent,
     BubbleComponent,
     HeaderComponent,
-    AnimatedSectionComponent
+    AnimatedSectionComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
