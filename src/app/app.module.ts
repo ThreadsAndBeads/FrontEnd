@@ -30,16 +30,18 @@ import { HomeComponent } from './components/home/home.component';
     FooterComponent,
     BubbleComponent,
     HeaderComponent,
-    AnimatedSectionComponent
+    AnimatedSectionComponent,
+    SellercardComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbCarouselModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
