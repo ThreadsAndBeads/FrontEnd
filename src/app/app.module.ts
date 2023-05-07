@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -17,6 +16,7 @@ import { AuthenticationComponent } from './components/authentication/authenticat
 import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
 import { HorizontallScrollComponent } from './components/horizontall-scroll/horizontall-scroll.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { SellercardComponent } from './components/sellercard/sellercard.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     FooterComponent,
     BubbleComponent,
     HeaderComponent,
-    AnimatedSectionComponent
+    AnimatedSectionComponent,
+    SellercardComponent
   ],
   imports: [
     BrowserModule,
