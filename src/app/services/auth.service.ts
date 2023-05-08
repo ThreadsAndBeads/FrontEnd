@@ -14,6 +14,10 @@ export class AuthService {
     return this.http.post(`${BASEURL}/login`, userData)
   }
 
+  signup(userData: any): Observable<any> {
+    return this.http.post(`${BASEURL}/signup`, userData)
+  }
+
   requestReset(body: string): Observable<any> {
     return this.http.post(`${BASEURL}/forgotPassword`, body);
   }

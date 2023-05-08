@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
-import { TokenStorageService } from '../../services/token-storage.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-signin',
@@ -19,7 +17,6 @@ export class SigninComponent {
   };
 
   constructor(
-    private http: HttpClient,
     private router: Router,
     private authService: AuthService,
     private tokenService: TokenStorageService
