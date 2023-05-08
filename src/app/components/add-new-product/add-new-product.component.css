@@ -1,0 +1,25 @@
+.productDetails {
+  border-radius: 20px;
+  border: 2px solid black;
+}
+.productImages {
+  border-radius: 20px;
+  border: 2px solid black;
+}
+.image-container {
+  position: relative;
+  border: 1px solid #eee;
+  margin: 5px;
+}
+.btn-remove-img {
+  position: absolute;
+  cursor: pointer;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: auto;
+  text-align: center;
+}
