@@ -22,6 +22,7 @@ import { RequestResetComponent } from './components/request-reset/request-reset.
 // import { AuthInterceptor } from './helpers/auth.interceptor';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,8 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     BubbleComponent,
     HeaderComponent,
     AnimatedSectionComponent,
+    RequestResetComponent,
+    ErrorComponent,
     HomeComponent,
     RequestResetComponent,
     UserProfileComponent
