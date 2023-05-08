@@ -41,15 +41,6 @@
   font-size: 40px;
   font-weight: 300;
   text-transform: capitalize;
-  margin-bottom: 10px;
-}
-
-.form p {
-  font-family: "Roboto";
-  font-weight: 500;
-  font-size: 14px;
-  text-transform: capitalize;
-  line-height: 25px;
   margin-bottom: 30px;
 }
 
@@ -57,7 +48,7 @@
   display: block;
   width: 300px;
   margin: 0 auto;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   height: 35px;
   font-family: "Montserrat";
   font-size: 14px;
@@ -77,16 +68,17 @@
   outline: none;
   font-family: "Montserrat";
   font-size: 18px;
-  background-color: rgba(220, 20, 60, 0.568);
+  background-color: rgba(60, 72, 107, 0.8);
   cursor: pointer;
   color: #f6f5f7;
+  margin-top: 10px;
 }
 
 #type{
   display: block;
   width: 300px;
   margin: 0 auto;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   height: 35px;
   font-family: "Montserrat";
   font-size: 14px;
@@ -106,10 +98,10 @@ select{
 .error{
   display: block;
   width: fit-content;
-  margin-left: 5px;
+  height: 25px;
   font-family: "Montserrat";
-  font-size: 14px;
-  padding-left: 25px;
+  font-size: 12px;
+  padding-left: 15px;
   color: red;
   position: relative;
 }
