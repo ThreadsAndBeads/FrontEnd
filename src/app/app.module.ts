@@ -19,6 +19,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { SellercardComponent } from './components/sellercard/sellercard.component';
 import { HomeComponent } from './components/home/home.component';
 import { RequestResetComponent } from './components/request-reset/request-reset.component';
+// import { AuthInterceptor } from './helpers/auth.interceptor';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 
 @NgModule({
@@ -35,7 +37,8 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     HeaderComponent,
     AnimatedSectionComponent,
     HomeComponent,
-    RequestResetComponent
+    RequestResetComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
