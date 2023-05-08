@@ -1,3 +1,4 @@
+<app-header></app-header>
 <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)">
   <div class="container productImages mb-1 p-4">
     <div class="col-6">
@@ -14,7 +15,7 @@
         <div class="row">
           <div
             class="col-md-3 image-container"
-            *ngFor="let image of product.images; let i = index;"
+            *ngFor="let image of product.images; let i = index"
           >
             <div class="">
               <span class="btn-remove-img" (click)="removeImage(i)">X</span>
@@ -94,3 +95,4 @@
     </div>
   </div>
 </form>
+<app-footer></app-footer>
