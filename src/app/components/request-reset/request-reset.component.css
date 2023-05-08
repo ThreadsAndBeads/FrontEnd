@@ -1,10 +1,10 @@
-body, html {
-  height: 100%;
-}
 
-.logo-forget-pass{
-  margin-bottom: -20%;
-  z-index: 999;
+
+
+.threadsAndBeads{
+  text-decoration: none;
+  color: #040f0f;
+  font-family: 'Delicious Handrawn', cursive;
 }
 .forget-password-container-all{
   width: 100%;
@@ -19,15 +19,15 @@ body, html {
     /* position: absolute; */
     padding: 0 50px;
     display: flex;
-    min-height: 650px;
-    width: 100%;
+    min-height: 450px;
+    width: 70%;
     align-items: center;
     justify-content: center;
     background-color: #f6f5f7;
   }
   
 
-  .form h1 {
+  .form h2 {
     font-family: "Montserrat";
     font-size: 3rem;
     font-weight: 700;
@@ -63,7 +63,7 @@ body, html {
     outline: none;
     font-family: "Montserrat";
     font-size: 18px;
-    background-color: rgba(60, 72, 107, 0.8);
+    background-color:#456268;
     cursor: pointer;
     color: #f6f5f7;
     font-size: 1.3rem;
