@@ -14,7 +14,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'register', component: RegistrationComponent },
+  { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
   {
     path: 'forgetPassword',

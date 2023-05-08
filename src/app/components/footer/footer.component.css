@@ -1,7 +1,7 @@
 
   .footer {
     z-index: 1;
-    --footer-background: #040F0F;
+    --footer-background: #456268;
     display: grid;
     position: relative;
     grid-area: footer;
