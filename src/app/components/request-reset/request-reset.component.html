@@ -1,42 +1,53 @@
-<div
-  class="container d-flex justify-content-center align-items-center"
-  style="height: 100vh"
->
-  <div class="row g-0">
-    <div class="col-md-4 d-flex justify-content-center align-items-center">
-      <img
-        class="img-fluid rounded-start"
-        src="assets/svg/forget-password.svg"
-        alt=""
-      />
-    </div>
-    <div class="wrapper container-fluid form col-md-8 card-body pb-3">
-      <form
-        action=""
-        [formGroup]="RequestResetForm"
-        (ngSubmit)="RequestResetUser(RequestResetForm)"
-      >
-        <h1>Forgot Password</h1>
-        <input
-          type="email"
-          placeholder="Email"
-          name="email"
-          formControlName="email"
-        />
-        <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
-        <div class="error" *ngIf="successMessage">{{ successMessage }}</div>
-        <span
-          *ngIf="!RequestResetForm.get('email').valid && !IsvalidForm"
-          class="help-block text-center"
-          >Please enter a valid email!</span
-        >
-        <div class="d-flex justify-content-center align-items-center">
-          <button type="submit">
-            <img src="assets/svg/sendmail.svg" alt="" />
-            <span>Send Email</span>
-          </button>
+<div class="forget-password-container-all d-flex flex-column">
+  <div
+    class="container d-flex justify-content-center align-items-center forget-password-container"
+    style="height: 100vh; width: 100%"
+  >
+    <div class="row g-0" style="width: 100%">
+      <div class="d-flex flex-column justify-content-center">
+        <div class="logo-forget-pass d-flex justify-content-center">
+          <a class="navbar-brand" href="#"
+            ><img
+              class="logo"
+              src="assets/Images/threads_and_beads-removebg-preview.png"
+              alt=""
+          /></a>
         </div>
-      </form>
+        <div class="form-container">
+          <div class="test">
+            <div class="wrapper container-fluid form card-body pb-3">
+              <form
+                action=""
+                [formGroup]="RequestResetForm"
+                (ngSubmit)="RequestResetUser(RequestResetForm)"
+              >
+                <h1>Forgot Password</h1>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  formControlName="email"
+                />
+                <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+                <div class="error" *ngIf="successMessage">
+                  {{ successMessage }}
+                </div>
+                <span
+                  *ngIf="!RequestResetForm.get('email').valid && !IsvalidForm"
+                  class="help-block text-center"
+                  >Please enter a valid email!</span
+                >
+                <div class="d-flex justify-content-center align-items-center">
+                  <button type="submit">
+                    <img src="assets/svg/sendmail.svg" alt="" />
+                    <span>Send Email</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
