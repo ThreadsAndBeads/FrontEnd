@@ -20,6 +20,7 @@ import { SellercardComponent } from './components/sellercard/sellercard.componen
 import { HomeComponent } from './components/home/home.component';
 import { RequestResetComponent } from './components/request-reset/request-reset.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     HeaderComponent,
     AnimatedSectionComponent,
     HomeComponent,
-    RequestResetComponent
+    RequestResetComponent,
+    SellercardComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
