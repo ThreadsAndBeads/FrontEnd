@@ -30,7 +30,8 @@ import { HomeComponent } from './components/home/home.component';
     FooterComponent,
     BubbleComponent,
     HeaderComponent,
-    AnimatedSectionComponent
+    AnimatedSectionComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
