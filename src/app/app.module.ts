@@ -23,6 +23,8 @@ import { RequestResetComponent } from './components/request-reset/request-reset.
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { ErrorComponent } from './error/error.component';
+import { ResponseResetPasswordComponent } from './components/response-reset-password/response-reset-password.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 import { TopSellComponent } from './components/top-sell/top-sell.component';
 
 @NgModule({
@@ -43,6 +45,8 @@ import { TopSellComponent } from './components/top-sell/top-sell.component';
     HomeComponent,
     RequestResetComponent,
     UserProfileComponent,
+    ResponseResetPasswordComponent,
+    ProductCardComponent,
     TopSellComponent
   ],
   imports: [
