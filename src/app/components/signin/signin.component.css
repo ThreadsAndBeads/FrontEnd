@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f6f5f7;
+  background-color: #FFF2E5;
   transition: 0.7s ease-in-out transform;
   overflow: hidden;
 }
@@ -40,15 +40,6 @@
   font-weight: 300;
   text-transform: capitalize;
   margin-bottom: 10px;
-}
-
-.form p {
-  font-family: "Roboto";
-  font-weight: 500;
-  font-size: 14px;
-  text-transform: capitalize;
-  line-height: 25px;
-  margin-bottom: 30px;
 }
 
 .form input {

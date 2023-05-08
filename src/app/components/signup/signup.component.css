@@ -44,15 +44,6 @@
   margin-bottom: 10px;
 }
 
-.form p {
-  font-family: "Roboto";
-  font-weight: 500;
-  font-size: 14px;
-  text-transform: capitalize;
-  line-height: 25px;
-  margin-bottom: 30px;
-}
-
 .form input {
   display: block;
   width: 300px;
