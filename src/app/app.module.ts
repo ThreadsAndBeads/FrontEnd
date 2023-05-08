@@ -23,6 +23,7 @@ import { RequestResetComponent } from './components/request-reset/request-reset.
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { ErrorComponent } from './error/error.component';
+import { TopSellComponent } from './components/top-sell/top-sell.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ErrorComponent } from './error/error.component';
     ErrorComponent,
     HomeComponent,
     RequestResetComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    TopSellComponent
   ],
   imports: [
     BrowserModule,
