@@ -13,7 +13,7 @@ import { RequestResetComponent } from './components/request-reset/request-reset.
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'auth', component: RegistrationComponent },
+  { path: 'register', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
   {
     path: 'requestResetPassword',
