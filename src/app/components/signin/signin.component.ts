@@ -41,7 +41,7 @@ export class SigninComponent {
           this.error.password = error.error.message;
         } else if (
           error.error.message === 'Please verify your email to login' ||
-          error.error.message === 'Login failed, User does not exist'
+          error.error.message === "This email doesn't exist"
         ) {
           this.error.email = error.error.message;
         }
