@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
 import { HomeComponent } from './components/home/home.component';
 import { RequestResetComponent } from './components/request-reset/request-reset.component';
+import { AddNewProductComponent } from './components/add-new-product/add-new-product.component';
 import { ResponseResetPasswordComponent } from './components/response-reset-password/response-reset-password.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ErrorComponent } from './error/error.component';
@@ -22,6 +23,9 @@ const routes: Routes = [
     path: 'forgetPassword',
     component: RequestResetComponent,
   },
+  { path: 'addNewProduct', component: AddNewProductComponent },
+
+  {path: 'profile', component: UserProfileComponent},
   {
     path: 'response-reset-password/:token',
     component: ResponseResetPasswordComponent
