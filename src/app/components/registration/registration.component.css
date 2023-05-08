@@ -42,7 +42,7 @@ section {
 
 .container .overlay-container {
   position: absolute;
-  background-color: crimson;
+  background-color: #3C486B;
   left: 0;
   top: 0;
   width: 50%;
@@ -53,7 +53,7 @@ section {
 
 .container .overlay-container .overlay {
   /* background-image: url(https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80); */
-  background-image: url("../../../assets/Images/pexels-pew-nguyen-15108143.jpg");
+  background-image: url("../../../assets/Images/top-view-hands-holding-furoshiki-package.jpg");
   background-size: cover;
   background-position: center center;
   position: absolute;
@@ -75,9 +75,9 @@ section {
   width: 100%;
   left: 0;
   top: 0;
-  background-color: crimson;
+  background-color: rgb(60, 72, 107);
   z-index: -1;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
 .overlay-container .overlay .overlay-left,
@@ -99,7 +99,7 @@ section {
 }
 .overlay-container .overlay button {
   background-color: white;
-  color: crimson;
+  color: #3C486B;
   margin-top: 20px;
 }
 
