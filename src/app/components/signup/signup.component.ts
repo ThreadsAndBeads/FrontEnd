@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,24 +13,32 @@ export class SignupComponent{
   password: string = '';
   type: string = '';
   error = {
+    name: '',
     email: '',
-    password: ''
+    password: '',
+    type: ''
   };
-  constructor(private http: HttpClient) { }
+  constructor( private authService: AuthService,) { }
 
   onSignUpSubmit() {
+    this.error.email = '';
+    this.error.password = '';
+    this.error.name = '';
+    this.error.type = '';
+
     const userData = {
       name: this.name,
       email: this.email,
       password: this.password,
       type: this.type
     };
-    this.http.post<any>('http://localhost:7000/api/v1/users/signup', userData)
+    
+    this.authService.signup(userData)
     .subscribe({
       next: (response) => {
         console.log(response.data);
       },
-      error: (error: HttpErrorResponse) => {
+      error: (error) => {
         this.error = error.error.errors;
       }
     });
