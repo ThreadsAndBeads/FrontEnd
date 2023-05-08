@@ -29,7 +29,7 @@ export class ResponseResetPasswordComponent {
         next:(params:any) => {
           this.resetToken = params.token;
           console.log(this.resetToken);
-          this.VerifyToken();
+          // this.VerifyToken();
       },
       error:err=>{
 
@@ -44,68 +44,42 @@ export class ResponseResetPasswordComponent {
     this.Init();
   }
 
-  VerifyToken() {
-    console.log(this.resetToken);
-    
-    this.authService.ValidPasswordToken(this.resetToken ).subscribe(
-      {
-        next:data => {
-          this.CurrentState = 'Verified';
-        },
-        error:err => {
-          this.CurrentState = 'NotVerified';
-        }
-      }
-    );
-  }
-
   Init() {
     this.ResponseResetForm = this.fb.group(
       {
         resettoken: [this.resetToken],
-        newPassword: ['', [Validators.required, Validators.minLength(4)]],
-        confirmPassword: ['', [Validators.required, Validators.minLength(4)]]
+        password: ['', [Validators.required, Validators.minLength(4)]],
+        // confirmPassword: ['', [Validators.required, Validators.minLength(4)]]
       }
     );
   }
 
-  Validate(passwordFormGroup: any) {
-    const new_password = passwordFormGroup.controls.newPassword.value;
-    const confirm_password = passwordFormGroup.controls.confirmPassword.value;
-
-    if (confirm_password.length <= 0) {
-      return null;
-    }
-
-    if (confirm_password !== new_password) {
-      return {
-        doesNotMatch: true
-      };
-    }
-
-    return null;
-  }
-
-
   ResetPassword(form:any) {
-    // console.log(form.get('confirmPassword'));
     if (form.valid) {
       this.IsResetFormValid = true;
-      this.authService.newPassword(this.ResponseResetForm.value).subscribe(
-        data => {
+      const userData = {
+        password: this.ResponseResetForm.value.password,
+      };
+      console.log(userData);
+      this.authService.newPassword(userData,this.ResponseResetForm.value.resettoken).subscribe(
+        {
+        next:data => {
           this.ResponseResetForm.reset();
           this.successMessage = data.message;
           setTimeout(() => {
             this.successMessage = null;
-            this.router.navigate(['register']);
+            this.router.navigate(['auth']);
           }, 3000);
         },
-        err => {
+        error:err => {
+          console.log("ssa");
+          
           if (err.error.message) {
             this.errorMessage = err.error.message;
           }
         }
-      );
+    });
     } else { this.IsResetFormValid = false; }
   }
+
 }
