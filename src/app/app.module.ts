@@ -18,8 +18,11 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { SellercardComponent } from './components/sellercard/sellercard.component';
 import { HomeComponent } from './components/home/home.component';
 import { RequestResetComponent } from './components/request-reset/request-reset.component';
+// import { AuthInterceptor } from './helpers/auth.interceptor';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { AddNewProductComponent } from './components/add-new-product/add-new-product.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +37,12 @@ import { AddNewProductComponent } from './components/add-new-product/add-new-pro
     BubbleComponent,
     HeaderComponent,
     AnimatedSectionComponent,
+    RequestResetComponent,
+    ErrorComponent,
     HomeComponent,
     RequestResetComponent,
-    AddNewProductComponent
+    AddNewProductComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

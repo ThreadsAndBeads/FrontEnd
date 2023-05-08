@@ -8,13 +8,14 @@ import { AnimatedSectionComponent } from './components/animated-section/animated
 import { HomeComponent } from './components/home/home.component';
 import { RequestResetComponent } from './components/request-reset/request-reset.component';
 import { AddNewProductComponent } from './components/add-new-product/add-new-product.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 
 
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'register', component: RegistrationComponent },
+  { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
   {
     path: 'requestResetPassword',
@@ -22,6 +23,7 @@ const routes: Routes = [
   },
   { path: 'add-New-Product', component: AddNewProductComponent },
 
+  {path: 'profile', component: UserProfileComponent}
 ];
 
 @NgModule({

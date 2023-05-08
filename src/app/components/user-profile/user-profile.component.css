@@ -1,0 +1,16 @@
+.profile-head {
+  transform: translateY(5rem)
+}
+
+.cover {
+  background-image:  url(../../../assets/Images/pexels-giovana-spiller-6679220.jpg);
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+body {
+  background: #654ea3;
+  background: linear-gradient(to right, #e96443, #904e95);
+  height: 100vh;
+  overflow-x:hidden;
+}
