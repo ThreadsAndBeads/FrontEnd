@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RequestResetComponent } from './components/request-reset/request-reset.component';
 import { ResponseResetPasswordComponent } from './components/response-reset-password/response-reset-password.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -21,11 +22,12 @@ const routes: Routes = [
     path: 'forgetPassword',
     component: RequestResetComponent,
   },
-  {path: 'profile', component: UserProfileComponent},
   {
     path: 'response-reset-password/:token',
     component: ResponseResetPasswordComponent
   },
+  { path: 'profile', component: UserProfileComponent },
+  {path: '**', component: ErrorComponent}
 ];
 
 @NgModule({
