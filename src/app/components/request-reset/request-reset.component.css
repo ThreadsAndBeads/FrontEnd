@@ -3,14 +3,14 @@
     top: 0;
     text-align: center; */
     padding: 0 20px;
-    width: 50%;
+    /* width: 50%; */
     display: flex;
     min-height: 650px;
     align-items: center;
     justify-content: center;
     background-color: #f6f5f7;
-    transition: 0.7s ease-in-out transform;
-    overflow: hidden;
+    /* transition: 0.7s ease-in-out transform;
+    overflow: hidden; */
   }
   
   .form.sign-in-form {
@@ -20,7 +20,7 @@
 
   .form h1 {
     font-family: "Montserrat";
-    font-size: 10rem;
+    font-size: 5rem;
     font-weight: 700;
     text-transform: capitalize;
     margin-bottom: 10px;
@@ -34,7 +34,7 @@
     margin-bottom: 15px;
     height: 5rem;
     font-family: "Montserrat";
-    font-size: 14px;
+    font-size: 1.5rem;
     padding-left: 15px;
     border: none;
     background-color: rgba(199, 197, 197, 0.425);
@@ -58,13 +58,6 @@
     color: #f6f5f7;
     font-size: 1.3rem;
   }
-  
-  a{
-    color: black;
-    text-decoration: none;
-    margin-bottom: 15px;
-    display: block;
-  }
   .error{
     display: block;
     width: fit-content;
@@ -73,20 +66,41 @@
     font-size: 14px;
     padding-left: 25px;
     color: red;
+    text-align: center;
     position: relative;
   }
-  
-  #type{
-    display: block;
-    width: 300px;
-    margin: 0 auto;
-    margin-bottom: 15px;
-    height: 35px;
-    font-family: "Montserrat";
-    font-size: 14px;
-    padding-left: 15px;
+
+  button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.3em 0.8em 0.9em;
+    color: white;
+    /* background: #ad5389;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
     border: none;
-    background-color: rgba(199, 197, 197, 0.425);
-    outline: none;
-    color: rgba(0, 0, 0, 0.658);
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+  }
+  
+  button img {
+    margin-right: 3px;
+    width:24px;
+    height:24px;
+
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  button span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  button:hover img {
+    transform: translateX(5px) rotate(90deg);
+  }
+  
+  button:hover span {
+    transform: translateX(7px);
   }
