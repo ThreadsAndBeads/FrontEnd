@@ -72,4 +72,7 @@ export class AddNewProductComponent {
   removeImage(i :number) {
     this.product.images.splice(i,1);
   }
+  fileDropped(fileHandel : FileHandle){
+    this.product.images.push(fileHandel);
+  }
 }

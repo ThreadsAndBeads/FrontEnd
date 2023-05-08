@@ -23,6 +23,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { AddNewProductComponent } from './components/add-new-product/add-new-product.component';
 import { ErrorComponent } from './error/error.component';
+import { DragDirective } from './directives/drag.directive';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ErrorComponent } from './error/error.component';
     HomeComponent,
     RequestResetComponent,
     AddNewProductComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DragDirective
   ],
   imports: [
     BrowserModule,

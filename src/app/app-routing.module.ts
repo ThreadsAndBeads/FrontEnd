@@ -21,7 +21,7 @@ const routes: Routes = [
     path: 'requestResetPassword',
     component: RequestResetComponent,
   },
-  { path: 'add-New-Product', component: AddNewProductComponent },
+  { path: 'addNewProduct', component: AddNewProductComponent },
 
   {path: 'profile', component: UserProfileComponent}
 ];
