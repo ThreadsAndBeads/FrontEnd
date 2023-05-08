@@ -8,6 +8,7 @@ import { AnimatedSectionComponent } from './components/animated-section/animated
 import { HomeComponent } from './components/home/home.component';
 import { RequestResetComponent } from './components/request-reset/request-reset.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -20,7 +21,8 @@ const routes: Routes = [
     path: 'requestResetPassword',
     component: RequestResetComponent,
   },
-  {path: 'profile', component: UserProfileComponent}
+  { path: 'profile', component: UserProfileComponent },
+  {path: '**', component: ErrorComponent}
 ];
 
 @NgModule({
