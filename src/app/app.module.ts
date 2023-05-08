@@ -34,6 +34,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     BubbleComponent,
     HeaderComponent,
     AnimatedSectionComponent,
+    HomeComponent,
     RequestResetComponent
   ],
   imports: [
