@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
@@ -22,7 +21,9 @@ import { RequestResetComponent } from './components/request-reset/request-reset.
 // import { AuthInterceptor } from './helpers/auth.interceptor';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { AddNewProductComponent } from './components/add-new-product/add-new-product.component';
 import { ErrorComponent } from './error/error.component';
+import { DragDirective } from './directives/drag.directive';
 import { ResponseResetPasswordComponent } from './components/response-reset-password/response-reset-password.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { TopSellComponent } from './components/top-sell/top-sell.component';
@@ -44,7 +45,9 @@ import { TopSellComponent } from './components/top-sell/top-sell.component';
     ErrorComponent,
     HomeComponent,
     RequestResetComponent,
+    AddNewProductComponent,
     UserProfileComponent,
+    DragDirective,
     ResponseResetPasswordComponent,
     ProductCardComponent,
     TopSellComponent
