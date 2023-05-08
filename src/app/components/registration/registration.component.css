@@ -42,7 +42,7 @@ section {
 
 .container .overlay-container {
   position: absolute;
-  background-color: #B7472A;
+  background-color: #3C486B;
   left: 0;
   top: 0;
   width: 50%;
@@ -75,7 +75,7 @@ section {
   width: 100%;
   left: 0;
   top: 0;
-  background-color: #B7472A;
+  background-color: #3C486B;
   z-index: -1;
   opacity: 0.9;
 }
@@ -99,7 +99,7 @@ section {
 }
 .overlay-container .overlay button {
   background-color: white;
-  color: #B7472A;
+  color: #3C486B;
   margin-top: 20px;
 }
 
