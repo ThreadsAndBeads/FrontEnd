@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap');
+
+section{
+  width: 100%;
+  height: 100vh;
+}
+
+section .banner-slider{
+  overflow-x: hidden;
+}
+
+section .banner-content{
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+section .banner-slider .banner-content img{
+  width: 100%;
+  height: 100%;
+}
+
+section .banner-slider .banner-content .banner-info{
+  position: absolute;
+  width: 60% !important;
+  height: fit-content;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 170px;
+}
+
+section .banner-slider .banner-info .banner-title{
+  margin-bottom: 25px;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #456268;
+  text-transform: capitalize;
+}
+
+section .banner-slider .banner-info .banner-title .title-italic{
+  font-style: italic;
+  font-family: 'Libre Baskerville', serif;
+}
+
+section .banner-slider .banner-info .banner-description{
+  color: #313232;
+  padding-bottom: 30px;
+}
+
+section .banner-slider .banner-info .banner-button{
+  line-height: 45px;
+  padding: 25px 35px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #456268;
+  cursor: pointer;
+}
+
+section .banner-slider .banner-info .banner-button:hover{
+  background-color: #313232;
+}
+
+section .slide-dashes{
+  position: absolute;
+  width: 100%;
+  bottom: 30px;
+  padding: 20px;
+  z-index: 5;
+  margin: 0
+}
+
+section .slide-dashes li{
+  margin: 5px;
+  padding: 3px;
+  height: 18px;
+  border-radius: 50%;
+  list-style: none;
+  cursor: pointer;
+}
+
+section .slide-dashes li p{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #456268;
+}
+
+section .slide-dashes .active{
+  border: 1px solid #456268;
+}
