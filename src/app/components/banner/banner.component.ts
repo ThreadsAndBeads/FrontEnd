@@ -8,15 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class BannerComponent implements OnInit {
   slides!: NodeListOf<HTMLDivElement>;
   dashes!: NodeListOf<HTMLLIElement>;
+  bannerInfo!: NodeListOf<HTMLDivElement>;
   slideIndex: number = 0;
 
   ngOnInit() {
     this.slides = document.querySelectorAll('.banner-content');
     this.dashes = document.querySelectorAll('.slide-dashes li');
-
+    this.bannerInfo = document.querySelectorAll('.banner-info');
+    
+    this.bannerInfo[0].style.transform = 'translateY(-50%)';
+    
     setInterval(() => {
       this.MoveSlide(1);
-    }, 5000);
+    }, 8000);
 
     this.dashes.forEach((dash, i) => {
       dash.addEventListener('click', () => {
@@ -27,22 +31,20 @@ export class BannerComponent implements OnInit {
   }
 
   MoveSlide(n: any) {
-    const slides =
-      document.querySelectorAll<HTMLDivElement>('div.banner-content');
-    const dashes = document.querySelectorAll('.slide-dashes li');
-
     this.slideIndex += n;
-    if (this.slideIndex >= slides.length) this.slideIndex = 0;
-    if (this.slideIndex < 0) this.slideIndex = slides.length - 1;
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.transform = `translateX(${
+    if (this.slideIndex >= this.slides.length) this.slideIndex = 0;
+    if (this.slideIndex < 0) this.slideIndex = this.slides.length - 1;
+    for (let i = 0; i < this.slides.length; i++) {
+      this.slides[i].style.transform = `translateX(${
         -this.slideIndex * 100
       }%)`;
-      if (dashes[i].classList.contains('active')) {
-        dashes[i].classList.remove('active');
+      this.bannerInfo[i].style.transform = 'translateY(-95%)';
+      if (this.dashes[i].classList.contains('active')) {
+        this.dashes[i].classList.remove('active');
       }
     }
 
-    dashes[this.slideIndex].classList.add('active');
+    this.dashes[this.slideIndex].classList.add('active');
+    this.bannerInfo[this.slideIndex].style.transform = 'translateY(-50%)';
   }
 }
