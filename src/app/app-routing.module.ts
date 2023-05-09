@@ -7,18 +7,22 @@ import { AppComponent } from './app.component';
 import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
 import { HomeComponent } from './components/home/home.component';
 import { RequestResetComponent } from './components/request-reset/request-reset.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'register', component: RegistrationComponent },
+  { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
   {
     path: 'requestResetPassword',
     component: RequestResetComponent,
   },
+  { path: 'profile', component: UserProfileComponent },
+  {path: '**', component: ErrorComponent}
 ];
 
 @NgModule({
