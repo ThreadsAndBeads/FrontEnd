@@ -55,7 +55,9 @@
           <a class="nav-link" href="#"><i class="bi bi-basket2-fill"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-person-circle"></i></a>
+          <a class="nav-link" [routerLink]="isUserLogged() ? '/profile' : '/auth'">
+            <i class="bi bi-person-circle"></i>
+          </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="bi bi-heart-fill"></i></a>
