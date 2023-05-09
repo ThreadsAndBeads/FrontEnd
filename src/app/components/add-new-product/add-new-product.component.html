@@ -1,0 +1,132 @@
+<div
+  class="container d-flex justify-content-center align-items-center h-100"
+  style="height: 100vh; width: 100%"
+>
+  <div class="d-flex flex-column product-card">
+    <form
+      #productForm="ngForm"
+      (ngSubmit)="addProduct(productForm)"
+      class="d-flex flex-column"
+      style="height: 100vh"
+    >
+      <div class="productImages mb-1 p-4">
+        <div class="d-flex">
+          <div class="col-6">
+            <div class="row">
+              <div
+                class="col-5 image-container"
+                *ngFor="let image of product.images; let i = index"
+              >
+                <div class="img-c m-0">
+                  <span class="btn-remove-img" (click)="removeImage(i)">X</span>
+                  <img class="card-img-top w-100 h-100 m-0" [src]="image.url" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="dropzone col-3" appDrag (files)="fileDropped($event)">
+              <div class="text-wrapper">
+                <div class="centered">
+                  Drag and drop your file or
+                  <a (click)="selectFile.click()" class="browse-btn">browse</a>
+                  a file
+                </div>
+              </div>
+            </div>
+            <input
+              style="display: none"
+              multiple
+              type="file"
+              #selectFile
+              value="select"
+              (change)="onFileSelected($event)"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="container productDetails p-4">
+        <div class="row">
+          <div class="col-6">
+            <div>
+              <label for="inputProductName5" class="form-label"
+                >Product Name <span class="required-star">*</span></label
+              >
+              <input
+                type="text"
+                id="inputProductName5"
+                class="form-control col3"
+                aria-labelledby=""
+                name="name"
+                [(ngModel)]="product.name"
+              />
+            </div>
+            <div class="row d-flex mt-3">
+              <div class="col-6">
+                <label for="inputProductPrice5" class="form-label">
+                  Price <span class="required-star">*</span></label
+                >
+                <input
+                  type="number"
+                  id="inputProductPrice5"
+                  class="form-control"
+                  aria-labelledby=""
+                  width="100px"
+                  name="price"
+                  [(ngModel)]="product.price"
+                />
+              </div>
+              <div class="col-6">
+                <label for="inputDiscountPrice5" class="form-label">
+                  Discount Price</label
+                >
+                <input
+                  type="number"
+                  id="inputDiscountPrice5"
+                  class="form-control col3"
+                  aria-labelledby=""
+                  width="100px"
+                  name="discPrice"
+                  [(ngModel)]="product.priceDiscount"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="inputDiscountPrice5" class="form-label">
+              Description
+            </label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="4"
+              name="description"
+              [(ngModel)]="product.description"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="cssbuttons-io-button w-25 mt-2 align-self-end"
+      >
+        Add
+        <div class="icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+              fill="currentColor"
+              d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+            ></path>
+          </svg>
+        </div>
+      </button>
+      <!-- <button type="submit" class="w-25 mt-2 align-self-end">Add</button> -->
+    </form>
+  </div>
+</div>

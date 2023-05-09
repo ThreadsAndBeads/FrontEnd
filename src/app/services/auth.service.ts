@@ -22,7 +22,12 @@ export class AuthService {
     return this.http.post(`${BASEURL}/forgotPassword`, body);
   }
 
-  ValidPasswordToken(body: string): Observable<any> {
-    return this.http.post(`${BASEURL}/resetPassword`, body);
+  newPassword(body: any,token:string): Observable<any> {
+    console.log(body);
+    
+    return this.http.patch(`${BASEURL}/resetPassword/${token}`, body);
+  }
+  ValidPasswordToken(body:string): Observable<any> {
+    return this.http.post(`${BASEURL}/valid-password-token`, body);
   }
 }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
@@ -21,7 +20,11 @@ import { HomeComponent } from './components/home/home.component';
 import { RequestResetComponent } from './components/request-reset/request-reset.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { AddNewProductComponent } from './components/add-new-product/add-new-product.component';
 import { ErrorComponent } from './error/error.component';
+import { DragDirective } from './directives/drag.directive';
+import { ResponseResetPasswordComponent } from './components/response-reset-password/response-reset-password.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 import { TopSellComponent } from './components/top-sell/top-sell.component';
 import { BannerComponent } from './components/banner/banner.component';
 
@@ -42,10 +45,14 @@ import { BannerComponent } from './components/banner/banner.component';
     ErrorComponent,
     HomeComponent,
     RequestResetComponent,
+    AddNewProductComponent,
     UserProfileComponent,
-    TopSellComponent,
     SellercardComponent,
     BannerComponent,
+    DragDirective,
+    ResponseResetPasswordComponent,
+    ProductCardComponent,
+    TopSellComponent
   ],
   imports: [
     BrowserModule,

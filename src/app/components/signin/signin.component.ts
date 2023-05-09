@@ -33,6 +33,8 @@ export class SigninComponent {
 
     this.authService.login(userData).subscribe({
       next: (response) => {
+        console.log(response.data.user._id);
+        this.tokenService.setUserId(response.data.user._id)
         this.tokenService.setToken(response.token);
         this.router.navigate(['']);
       },

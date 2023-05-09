@@ -1,0 +1,114 @@
+.productDetails {
+  border-radius: 12px;
+  border: 1px solid #7b52b9;
+}
+.productImages {
+  border-radius: 12px;
+  border: 1px solid #7b52b9;
+}
+.image-container {
+  position: relative;
+  border: 1px solid #eee;
+  margin: 5px;
+}
+.btn-remove-img {
+  position: absolute;
+  cursor: pointer;
+  top: -10px;
+  right: -10px;
+  background-color: #456268;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: auto;
+  font-size: 12px;
+  text-align: center;
+}
+.cssbuttons-io-button {
+  background: #3c486b;
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #714da6;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+}
+
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #7b52b9;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+.required-star {
+  color: red;
+}
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.dropzone {
+  height: 150px;
+  min-width: 100px;
+  display: table;
+  background-color: #eee;
+  width: 300px;
+  border: dashed 1px #aaa;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+.centered {
+  text-align: center;
+}
+.browse-btn {
+  color: #456268;
+  cursor: pointer;
+}
+.img-c {
+  width: 100%;
+  height: 100px;
+}
+.product-card {
+  width: 800px;
+}
