@@ -17,6 +17,7 @@ section .banner-content{
 section .banner-slider .banner-content img{
   width: 100%;
   height: 100%;
+  opacity: 0.7;
 }
 
 section .banner-slider .banner-content .banner-info{
@@ -25,13 +26,14 @@ section .banner-slider .banner-content .banner-info{
   height: fit-content;
   z-index: 1;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-95%);
   padding: 0 170px;
+  transition: transform 1s ease-in-out;
 }
 
 section .banner-slider .banner-info .banner-title{
   margin-bottom: 25px;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 400;
   line-height: 1.2;
   color: #456268;
