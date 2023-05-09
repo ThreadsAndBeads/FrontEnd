@@ -5,6 +5,15 @@ section{
   height: 100vh;
 }
 
+section .banner-slider{
+  overflow-x: hidden;
+}
+
+section .banner-content{
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
 section .banner-slider .banner-content img{
   width: 100%;
   height: 100%;
