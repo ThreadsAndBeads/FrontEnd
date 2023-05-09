@@ -5,6 +5,7 @@ import { FileHandle } from 'src/app/model/file-handler.model';
 import { Product } from 'src/app/model/product.model';
 import { ProductService } from 'src/app/services/product.service';
 import { NgForm } from '@angular/forms';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 
 @Component({
@@ -13,22 +14,32 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./add-new-product.component.css']
 })
 export class AddNewProductComponent {
+   userId = this.tokenService.getUserId() ; 
   product : Product = {
-    user_id : "6457ecfe4bdf0afff589f7df",
+    user_id : this.userId  ,
     name :"",
     description : "",
     price : 0 , 
     priceDiscount : 0,
     images : [],
   }
-  constructor(private productService : ProductService , private sanitizer :DomSanitizer) { }
+  error = {
+    name: 'product name required',
+    price: 'product price required',
+    priceDiscount: 'discount price should be below regular price',
+    type: ''
+  };
+  constructor(private productService : ProductService , private sanitizer :DomSanitizer , private tokenService: TokenStorageService) { }
 
   addProduct(productForm : NgForm){
+    console.log(this.userId);
+
     const productFormData =  this.prepareFormData(this.product)
     this.productService.addProduct(productFormData).subscribe(
       (response : Product) =>{
         // console.log(response);
         productForm.reset();
+        this.product.images = [];
       },
       (error : HttpErrorResponse)=>{
         console.log(error);
