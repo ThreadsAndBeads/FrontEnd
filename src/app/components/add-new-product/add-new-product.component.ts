@@ -53,20 +53,9 @@ export class AddNewProductComponent {
     formData.append('description', product.description);
     formData.append('price', product.price.toString());
     formData.append('priceDiscount', product.priceDiscount.toString());
-    const imagesArray = [];
-    for(let i = 0; i < product.images.length; i++) {
-      imagesArray.push(product.images[i].file);
-    }
-    formData.append('images', product.images );
-
-    // append the array of image files to the sub form data objects
-    // for(let i = 0; i < imagesArray.length; i++) {
-    //   const imageFormData = new FormData();
-    //   imageFormData.append('image', imagesArray[i], product.images[i].file.name);
-    //   formData.append('images', imageFormData.get('image') as Blob);
-    // }
-    // for(let i = 0; i < product.images.length; i++) {
-    //   formData.append(`image_${i}`, product.images[i].file, product.images[i].file.name)    }
+    for(let img of product.images) {
+      formData.append(`images`, img.file, img.file!.name)  
+      }
     return formData;
   }
   onFileSelected(event :any){
@@ -78,6 +67,7 @@ export class AddNewProductComponent {
       url : this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(file))
      }
      this.product.images.push(fileHandle)
+     console.log(fileHandle)
     }
   }
   removeImage(i :number) {
