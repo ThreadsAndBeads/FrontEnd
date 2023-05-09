@@ -36,11 +36,11 @@ section .banner-slider .banner-info .banner-title{
   line-height: 1.2;
   color: #456268;
   text-transform: capitalize;
-  font-family: 'Libre Baskerville', serif;
 }
 
 section .banner-slider .banner-info .banner-title .title-italic{
   font-style: italic;
+  font-family: 'Libre Baskerville', serif;
 }
 
 section .banner-slider .banner-info .banner-description{
