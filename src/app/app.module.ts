@@ -18,7 +18,6 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { SellercardComponent } from './components/sellercard/sellercard.component';
 import { HomeComponent } from './components/home/home.component';
 import { RequestResetComponent } from './components/request-reset/request-reset.component';
-// import { AuthInterceptor } from './helpers/auth.interceptor';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { AddNewProductComponent } from './components/add-new-product/add-new-product.component';
@@ -27,6 +26,7 @@ import { DragDirective } from './directives/drag.directive';
 import { ResponseResetPasswordComponent } from './components/response-reset-password/response-reset-password.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { TopSellComponent } from './components/top-sell/top-sell.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +47,8 @@ import { TopSellComponent } from './components/top-sell/top-sell.component';
     RequestResetComponent,
     AddNewProductComponent,
     UserProfileComponent,
+    SellercardComponent,
+    BannerComponent,
     DragDirective,
     ResponseResetPasswordComponent,
     ProductCardComponent,
