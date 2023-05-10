@@ -1,13 +1,21 @@
 <div class="container" style="margin-top: 150px;">
-  <div class="slider" x-data="{start: true, end: false}">
-    <div class="slider__content d-flex flex-wrap" x-ref="slider"
-      x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
-      <div class="slider__item col-3" *ngFor="let product of productService.products">
-        <div class="container">
-          <div class="row" >
-            <app-product-card class="pdtCard" [data]="product"></app-product-card>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="row d-flex flex-wrap">
+    <app-product-card *ngFor="let product of productService.products" class="pdtCard col-12 col-md-4 col-lg-3" [data]="product"></app-product-card>
+  </div>
+  <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item ">
+                <button  (click)="previous()" class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </button>
+              </li>
+              <li class="page-item" *ngFor="let page of pages" (click)="navToPage(page)"><button class="page-link">{{page}}</button></li>
+              <li class="page-item">
+                <button  (click)="next()" class="page-link" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </button>
+              </li>
+            </ul>
+  </nav>
 </div>
+

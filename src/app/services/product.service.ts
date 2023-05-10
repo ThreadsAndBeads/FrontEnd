@@ -7,24 +7,21 @@ import { Product } from '../model/product.model';
 })
 export class ProductService {
   products: Product[] = [];
-  
-  private BASE_URL = 'http://localhost:7000/api/v1/products/';
+
+  private BASE_URL = 'http://localhost:7000/api/v1/products';
 
   constructor(private httpClient: HttpClient) {}
   public addProduct(product: FormData) {
-    return this.httpClient.post<Product>(
-      'http://localhost:7000/api/v1/products/',
-      product
-    );
+    return this.httpClient.post<Product>(`${this.BASE_URL}/`, product);
   }
 
   public getTopDiscountedProduct() {
-    const url = `${this.BASE_URL}discountedproducts`;
+    const url = `${this.BASE_URL}/discountedproducts`;
     return this.httpClient.get<Product[]>(url);
   }
 
-  public getAllProducts() {
-    const url = `${this.BASE_URL}`;
-    return this.httpClient.get<Product[]>(url);
+  public getAllProducts(page:number,limit:number) {
+    const url = `${this.BASE_URL}/?page=${page}&limit=${limit}`;
+    return this.httpClient.get<any>(url);
   }
 }
