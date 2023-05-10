@@ -22,12 +22,11 @@ section .banner-slider .banner-content img{
 
 section .banner-slider .banner-content .banner-info{
   position: absolute;
-  width: 60% !important;
   height: fit-content;
   z-index: 1;
   top: 50%;
   transform: translateY(-95%);
-  padding: 0 170px;
+  padding: 0 15%;
   transition: transform 1s ease-in-out;
 }
 
