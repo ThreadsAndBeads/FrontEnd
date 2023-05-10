@@ -8,7 +8,10 @@ li {
   margin: auto 8px;
 }
 
-.threadsAndBeads {
+.navbar{
+  background-color: rgba(255, 255,255, 0.5);
+}
+.threadsAndBeads{
   text-decoration: none;
   color: #040f0f;
 }
