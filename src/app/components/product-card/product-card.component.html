@@ -1,33 +1,34 @@
-<div class="col-md-3">
-  <div class="wsk-cp-product">
-    <div class="wsk-cp-img">
-      <img
-        src="https://1.bp.blogspot.com/-b-2SgNUrFHg/WVSvmewWqgI/AAAAAAAAAK0/1K4YCcbYjhokHwV_IgiVJN9mEnQoWunIwCPcBGAYYCw/s1600/fashion-portrait-nicole-6347.jpg"
-        alt="Product"
-        class="img-responsive"
-      />
-    </div>
-    <div class="wsk-cp-text">
-      <div class="category">
-        <span>Introvert</span>
-      </div>
-      <div class="title-product">
-        <h3>My face not my heart</h3>
-      </div>
-      <div class="description-prod">
-        <p>
-          Description Product tell me how to change playlist height size like
-          600px in html5 player. player good work now check this link
-        </p>
-      </div>
-      <div class="card-footer">
-        <div class="wcf-left"><span class="price">Rp500.000</span></div>
-        <div class="wcf-right">
-          <a href="#" class="buy-btn"
-            ><i class="zmdi zmdi-shopping-basket"></i
-          ></a>
+
+    <div class="col-md-12">
+      <div class="wsk-cp-product">
+        <div class="wsk-cp-img">
+          <img
+            [src]="data.images[0]"
+            alt="Product"
+            class="img-responsive"
+          />
+        </div>
+        <div class="wsk-cp-text">
+          <div class="category">
+            <span style="cursor: pointer;">Details</span>
+          </div>
+          <div class="title-product">
+            <h3>{{data.name}}</h3>
+          </div>
+          <div class="description-prod">
+            <p>
+              Description Product tell me how to change playlist height size like
+              600px in html5 player. player good work now check this link
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="wcf-left"><span class="price">{{data.price}}$</span></div>
+            <div class="wcf-right">
+              <a href="#" class="buy-btn"
+                ><i class="zmdi zmdi-shopping-basket"></i
+              ></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>

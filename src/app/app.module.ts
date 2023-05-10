@@ -28,8 +28,9 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { TopSellComponent } from './components/top-sell/top-sell.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { SellersSectionComponent } from './components/sellers-section/sellers-section.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ProductsPageComponent } from './components/products-page/products-page.component';
 
 @NgModule({
   declarations: [
@@ -57,8 +58,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ProductCardComponent,
     TopSellComponent,
     SellersSectionComponent,
-    ContactUsComponent,
     SidebarComponent,
+    ProductsPageComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,13 +68,15 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     NgbCarouselModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [{
+  providers: [
+    {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi: true
-    }],
-  bootstrap: [AppComponent]
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

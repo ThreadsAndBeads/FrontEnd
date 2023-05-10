@@ -12,13 +12,10 @@ import { ProductService } from 'src/app/services/product.service';
 export class TopSellComponent implements OnInit {
   products: Product[]= [];
 
-  constructor(private productService: ProductService) {
-    console.log(typeof this.products);
-
-  }
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.productService.getTopDiscountedProduct(10).subscribe(
+    this.productService.getTopDiscountedProduct().subscribe(
       (response: any) => {
         console.log(response);
         for(let i = 0; i < response.data.products.length; i++) {
