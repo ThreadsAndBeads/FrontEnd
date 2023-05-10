@@ -27,6 +27,7 @@ import { ResponseResetPasswordComponent } from './components/response-reset-pass
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { TopSellComponent } from './components/top-sell/top-sell.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { SellersSectionComponent } from './components/sellers-section/sellers-section.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { BannerComponent } from './components/banner/banner.component';
     DragDirective,
     ResponseResetPasswordComponent,
     ProductCardComponent,
-    TopSellComponent
+    TopSellComponent,
+    SellersSectionComponent
   ],
   imports: [
     BrowserModule,
