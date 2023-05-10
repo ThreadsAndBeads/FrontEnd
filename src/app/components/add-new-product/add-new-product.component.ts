@@ -14,7 +14,7 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
   styleUrls: ['./add-new-product.component.css']
 })
 export class AddNewProductComponent {
-   userId = this.tokenService.getUserId() ; 
+   userId = this.tokenService.getUser()._id ; 
   product : Product = {
     user_id : this.userId  ,
     name :"",

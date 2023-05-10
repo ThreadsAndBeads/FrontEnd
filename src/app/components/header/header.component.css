@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Great+Vibes&family=Oswald:wght@700&display=swap');
 
 .navbar{
-  background-color: rgba(0, 0, 0, 0.295);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .threadsAndBeads{
   text-decoration: none;
   color: #040f0f;
 }
 
-.navbar.scrolled .threadsAndBeads, .navbar.scrolled .search {
+.navbar.scrolled .threadsAndBeads,
+.navbar.scrolled .search {
   color: white;
 }
 
@@ -37,7 +38,7 @@
 }
 
 .nav-link {
-  padding: .2rem 1rem;
+  padding: 0.2rem 1rem;
 }
 
 
@@ -67,20 +68,4 @@ li{
 
 .navbar.scrolled .navbar-nav .nav-link {
   color: white;
-}
-
-.icon{
-  margin: 1px;
-}
-
-@media (min-width: 992px) {
-  .nav-logo {
-    display: none;
-  }
-}
-
-@media (max-width: 991px) {
-  .nav-item-logo {
-    display: none;
-  }
 }
