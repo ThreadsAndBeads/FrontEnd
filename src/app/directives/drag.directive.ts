@@ -7,7 +7,7 @@ import { FileHandle } from '../model/file-handler.model';
 })
 export class DragDirective {
   @Output() files :EventEmitter<FileHandle> = new EventEmitter();
-  @HostBinding("style.background") private background = "#eee"; 
+  @HostBinding("style.background") private background = "#fff";
   constructor(private sanitizer : DomSanitizer) { }
 
 
@@ -22,18 +22,18 @@ export class DragDirective {
   public ondragleave(evt : DragEvent){
     evt.preventDefault();
     evt.stopPropagation();
-    this.background = "#eee"
+    this.background = "#fff"
 
   }
   @HostListener("drop", ["$event"])
   public ondrop(evt : DragEvent){
     evt.preventDefault();
     evt.stopPropagation();
-    this.background = "#eee"
-    let fileHandle : FileHandle  ; 
+    this.background = "#fff"
+    let fileHandle : FileHandle  ;
     const file = evt.dataTransfer?.files[0] ;
     const url =  this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(file!));
-    fileHandle = {file , url} ; 
+    fileHandle = {file , url} ;
     this.files.emit(fileHandle);
   }
 }
