@@ -1,15 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Great+Vibes&family=Oswald:wght@700&display=swap');
 
-.logo {
-  font-family: 'Delicious Handrawn', cursive;
-}
-
-li{
-  margin: auto 8px;
-}
-
 .navbar{
-  background-color: rgba(255, 255,255, 0.5);
+  background-color: rgba(0, 0, 0, 0.295);
 }
 .threadsAndBeads{
   text-decoration: none;
@@ -21,43 +13,34 @@ li{
 }
 
 .user-icons, .search{
-  width: 40px;
-
+  width: 100px;
 }
 
 .navbar-light .navbar-brand {
-  /* color: #040f0f; */
   font-size: 25px;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 2px;
 }
 
-/* .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
-  color: #040f0f;
-} */
-
 .navbar-light .navbar-nav .nav-link {
   color: #040f0f;
-
 }
 
 .navbar-toggler {
   background: #040f0f;
-
 }
 
-.navbar-nav {
+.user-icons {
   text-align: center;
+  width: 100px
 }
 
 .nav-link {
   padding: .2rem 1rem;
 }
 
-/* .nav-link.active,.nav-link:focus{
-  color: #040f0f;
-} */
+
 
 .navbar-toggler {
   padding: 1px 5px;
@@ -68,18 +51,36 @@ li{
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
   color: #040f0f;
-
 }
 
+.logo {
+  font-family: 'Delicious Handrawn', cursive;
+}
 
+li{
+  margin: auto 8px;
+}
 
 .navbar.scrolled {
   background-color: #456268;
-  /* color: white; */
-  /* background-color: #B7472A; */
-
 }
 
 .navbar.scrolled .navbar-nav .nav-link {
   color: white;
+}
+
+.icon{
+  margin: 1px;
+}
+
+@media (min-width: 992px) {
+  .nav-logo {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .nav-item-logo {
+    display: none;
+  }
 }

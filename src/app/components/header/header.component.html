@@ -1,11 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top p-3"
 
 (scroll)="onWindowScroll();">
-  <div class="container d-flex justify-content-between">
-    <!-- <a class="navbar-brand" href="#"><img class="logo" src="../../../assets/Images/threads_and_beads-removebg-preview.png" alt=""></a> -->
+  <div class="container-fluid d-flex justify-content-between">
+    <a href="" class="nav-logo threadsAndBeads" ><h1 class="logo ">Threads & Beads</h1></a>
     <div class="search">
       <i class="bi bi-search"></i>
     </div>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -17,7 +18,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-
+    
     <div
       class="collapse navbar-collapse d-flex justify-content-center"
       id="navbarSupportedContent"
@@ -30,33 +31,34 @@
           <a class="nav-link" routerLink="/about">About</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item nav-item-logo">
+          <a href="" class="threadsAndBeads" ><h1 class="logo">Threads & Beads</h1></a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="#">Products</a>
         </li>
         <li class="nav-item">
-          <a href="" class="nav-item threadsAndBeads" ><h1 class="logo ">Threads & Beads</h1></a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#">Sellers</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Workshops</a>
         </li>
       </ul>
     </div>
+
     <div>
       <ul class="navbar-nav ml-auto user-icons">
-        <li class="nav-item">
+        <li class="nav-item icon">
           <a class="nav-link" href="#"><i class="bi bi-basket2-fill"></i></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item icon">
           <a class="nav-link" [routerLink]="isUserLogged() ? '/profile' : '/auth'">
             <i class="bi bi-person-circle"></i>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item icon">
           <a class="nav-link" href="#"><i class="bi bi-heart-fill"></i></a>
         </li>
       </ul>
