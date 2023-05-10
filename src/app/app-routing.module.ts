@@ -11,6 +11,7 @@ import { AddNewProductComponent } from './components/add-new-product/add-new-pro
 import { ResponseResetPasswordComponent } from './components/response-reset-password/response-reset-password.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ErrorComponent } from './error/error.component';
+import { ProductsPageComponent } from './components/products-page/products-page.component';
 
 
 
@@ -29,6 +30,7 @@ const routes: Routes = [
     component: ResponseResetPasswordComponent
   },
   { path: 'profile', component: UserProfileComponent },
+  { path: 'products', component: ProductsPageComponent},
   {path: '**', component: ErrorComponent}
 ];
 

@@ -1,0 +1,13 @@
+<div class="container" style="margin-top: 150px;">
+  <div class="slider" x-data="{start: true, end: false}">
+    <div class="slider__content d-flex flex-wrap" x-ref="slider"
+      x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+      <div class="slider__item col-3" *ngFor="let product of productService.products">
+        <div class="container">
+          <div class="row" >
+            <app-product-card class="pdtCard" [data]="product"></app-product-card>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
