@@ -11,7 +11,7 @@ import { AddNewProductComponent } from './components/add-new-product/add-new-pro
 import { ResponseResetPasswordComponent } from './components/response-reset-password/response-reset-password.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ErrorComponent } from './error/error.component';
-
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 const routes: Routes = [
@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
+  { path: 'contact', component: ContactUsComponent },
   {
     path: 'forgetPassword',
     component: RequestResetComponent,
@@ -29,7 +30,8 @@ const routes: Routes = [
     component: ResponseResetPasswordComponent
   },
   { path: 'profile', component: UserProfileComponent },
-  {path: '**', component: ErrorComponent}
+  {path: '**', component: ErrorComponent},
+
 ];
 
 @NgModule({
