@@ -56,7 +56,9 @@ import { ProductsPageComponent } from './components/products-page/products-page.
     ResponseResetPasswordComponent,
     ProductCardComponent,
     TopSellComponent,
-    SellersSectionComponent
+    SellersSectionComponent,
+    SidebarComponent,
+    ProductsPageComponent
   ],
   imports: [
     BrowserModule,

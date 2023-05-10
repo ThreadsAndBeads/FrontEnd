@@ -1,7 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, Output } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
-import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-products-page',
