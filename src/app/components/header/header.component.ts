@@ -1,8 +1,10 @@
 // import { Component, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+
 
 @Component({
   selector: 'app-header',
@@ -20,9 +22,25 @@ export class HeaderComponent {
   ) {
 
   }
-
+  handleClick() {
+    if (this.isUserLogged()) {
+    } else {
+      this.router.navigateByUrl('/auth');
+    }
+  }
+  // ngAfterViewInit() {
+  //   jQuery('body').on({
+  //     click: (e: MouseEvent) => {
+  //       const myOffcanvas = jQuery('#offcanvasRight')[0];
+  //       const bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas);
+  //       e.stopPropagation();
+  //       bsOffcanvas.toggle();
+  //       console.log('hit');
+  //     }
+  //   }, '.toggle_btn');
+  // }
   public isUserLogged() {
-    return this.isUserLoggedIn = this.tokenService.getUserId();
+    return this.isUserLoggedIn = this.tokenService.getUser()._id;
   }
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
