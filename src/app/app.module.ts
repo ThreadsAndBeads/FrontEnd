@@ -29,6 +29,7 @@ import { TopSellComponent } from './components/top-sell/top-sell.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { SellersSectionComponent } from './components/sellers-section/sellers-section.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     TopSellComponent,
     SellersSectionComponent,
     ContactUsComponent,
-
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

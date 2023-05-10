@@ -7,8 +7,9 @@ body{
 }
 .wrapper img{
   max-height: 450px;
-  width: auto;
-  margin-top: 70px;
+  /* width: auto; */
+  /* margin-top: 70px; */
+  /* max-width: auto; */
 }
 .section h2{
   font-family: 'Delicious Handrawn', cursive;
@@ -30,38 +31,38 @@ body{
 }
 
 .wrapper {
-  position: relative;
+  /* position: relative;
   top: 0;
-  left: 0;
+  left: 0; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .wrapper img {
-  max-width: 100%;
+  /* max-width: 100%; */
   height: auto;
-  margin: 6px;
-  margin-top: 150px;
+  /* margin: 6px; */
+  /* margin-top: 150px; */
   transition: transform 0.5s ease-in-out;
 }
 
-.wrapper img:hover {
+/* .wrapper img:hover {
   transform: scale(1.2);
   z-index: 1;
 }
 
 /* To position the enlarged image */
-.wrapper img:hover ~ .enlarge {
+/* .wrapper img:hover ~ .enlarge {
   position: absolute;
   z-index: 2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1.2);
-}
+} */
 
 /* To add a semi-transparent overlay on hover */
-.wrapper img:hover::before {
+/* .wrapper img:hover::before {
   content: "";
   position: absolute;
   top: 0;
@@ -70,7 +71,7 @@ body{
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
-}
+} */
 
 
 hr {
@@ -129,7 +130,7 @@ hr {
   position: relative;
   top: 6%;
 }
-  
+
 /* SVG */
 #arrow-icon-one {
   transition: 0.4s;
