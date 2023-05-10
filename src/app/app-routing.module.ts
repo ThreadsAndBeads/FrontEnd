@@ -13,6 +13,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { ErrorComponent } from './error/error.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
 
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
+  { path: 'contact', component: ContactUsComponent },
   {
     path: 'forgetPassword',
     component: RequestResetComponent,

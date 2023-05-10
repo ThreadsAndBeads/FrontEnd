@@ -15,21 +15,34 @@
   }
   .footer .content h6{
     color: #d9bfb1;
+    margin-right: 70%;
   }
   .footer .content a, .footer .content p {
     color: #f5f7fa;
     text-decoration: none;
+    margin-right: 70%;
   }
 
   .footer .content b {
     color: white;
+    margin-right: 70%;
   }
 
   .footer .content p {
     margin: 0;
     font-size: 1.2rem;
+
+
   }
 
   .container{
     margin-left: 0px;
   }
+
+
+  .logo {
+    font-family: 'Delicious Handrawn', cursive;
+    margin-left: 80%;
+
+  }
+
