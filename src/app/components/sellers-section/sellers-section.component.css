@@ -1,27 +1,15 @@
-* {
-  box-sizing: border-box;
-  /* height: 100vh; */
+.container{
+  padding: 100px 0;
 }
-body{
-  height: 100vh;
-}
-.wrapper img{
-  max-height: 450px;
-  /* width: auto; */
-  /* margin-top: 70px; */
-  /* max-width: auto; */
-}
+
 .section h2{
   font-family: 'Delicious Handrawn', cursive;
   font-weight: 500;
   font-size: 40px;
   margin-bottom: 25px;
   text-align: center;
+}
 
-}
-.section{
-  margin-top: 150px;
-}
 .section p {
   line-height: 1.6;
   text-align: justify;
@@ -30,24 +18,18 @@ body{
   font-size: 18px
 }
 
-.wrapper {
-  /* position: relative;
-  top: 0;
-  left: 0; */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.wrapper .section-Img{
+  width: 48%;
+  height: fit-content;
 }
 
 .wrapper img {
-  /* max-width: 100%; */
-  height: auto;
-  /* margin: 6px; */
-  /* margin-top: 150px; */
+  max-width: 100%;
+  max-height: 450px;
   transition: transform 0.5s ease-in-out;
 }
 
-/* .wrapper img:hover {
+.wrapper img:hover {
   transform: scale(1.2);
   z-index: 1;
 }
