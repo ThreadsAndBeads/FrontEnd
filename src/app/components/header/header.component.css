@@ -3,6 +3,7 @@
 .navbar{
   background-color: rgba(255, 255, 255, 0.5);
 }
+
 .threadsAndBeads{
   text-decoration: none;
   color: #040f0f;
@@ -68,4 +69,16 @@ li{
 
 .navbar.scrolled .navbar-nav .nav-link {
   color: white;
+}
+
+@media(min-width: 992px){
+  .nav-logo{
+    display: none;
+  }
+}
+
+@media(max-width: 991px){
+  .nav-item-logo{
+    display: none;
+  }
 }
