@@ -4,11 +4,10 @@
     x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
     <div class="slider__item" *ngFor="let product of products">
       <img class="slider__image"
-        [src]="product.images[0].file"
+        [src]="product.images[0]"
         alt="Image">
       <div class="slider__info">
         <h2 class="text-dark">{{product.name}}</h2>
-        <h2 class="text-dark">{{product.images}}</h2>
       </div>
     </div>
     <!-- <div class="slider__item">
