@@ -26,7 +26,7 @@ section .banner-slider .banner-content .banner-info{
   z-index: 1;
   top: 50%;
   transform: translateY(-95%);
-  padding: 0 15%;
+  padding: 0 13%;
   transition: transform 1s ease-in-out;
 }
 
