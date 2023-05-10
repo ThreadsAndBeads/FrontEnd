@@ -28,6 +28,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { TopSellComponent } from './components/top-sell/top-sell.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { SellersSectionComponent } from './components/sellers-section/sellers-section.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
 
 @NgModule({
@@ -55,8 +56,7 @@ import { ProductsPageComponent } from './components/products-page/products-page.
     ResponseResetPasswordComponent,
     ProductCardComponent,
     TopSellComponent,
-    SellersSectionComponent,
-    ProductsPageComponent
+    SellersSectionComponent
   ],
   imports: [
     BrowserModule,

@@ -33,7 +33,9 @@
           <a class="nav-link" href="/products">Products</a>
         </li>
         <li class="nav-item">
-          <a href="" class="nav-item threadsAndBeads" ><h1 class="logo ">Threads & Beads</h1></a>
+          <a href="" class="nav-item threadsAndBeads"
+            ><h1 class="logo">Threads & Beads</h1></a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Sellers</a>
@@ -52,7 +54,7 @@
           <a class="nav-link" href="#"><i class="bi bi-basket2-fill"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="isUserLogged() ? '/profile' : '/auth'">
+          <a class="toggle_btn" type="button" (click)="handleClick()">
             <i class="bi bi-person-circle"></i>
           </a>
         </li>
@@ -63,3 +65,4 @@
     </div>
   </div>
 </nav>
+<app-sidebar></app-sidebar>

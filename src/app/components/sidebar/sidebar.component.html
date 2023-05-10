@@ -1,0 +1,58 @@
+<aside
+  class="sidebar offcanvas offcanvas-end"
+  tabindex="1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="toggle">
+    <a
+      href="#"
+      class="burger js-menu-toggle"
+      data-toggle="collapse"
+      data-target="#main-navbar"
+    >
+      <span></span>
+    </a>
+  </div>
+  <div class="side-inner">
+    <div class="profile">
+      <img
+        src="assets/Images/pexels-amina-filkins-5409681.jpg"
+        alt="Image"
+        class="img-fluid"
+        style="box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5)"
+      />
+      <h3 class="name">{{ currentUser.name }}</h3>
+    </div>
+
+    <div class="nav-menu">
+      <ul>
+        <li class="">
+          <a class="text-decoration-none" href="/profile"
+            ><i class="bi bi-person" style="margin-right: 5px"></i>Profile
+          </a>
+        </li>
+        <li>
+          <a
+            *ngIf="currentUser.type == 'seller'"
+            class="text-decoration-none"
+            href="/addNewProduct"
+            ><i class="bi bi-plus-square-dotted" style="margin-right: 5px"></i>
+            New Product
+          </a>
+        </li>
+        <li>
+          <a class="text-decoration-none" href="#"
+            ><i class="bi bi-box" style="margin-right: 5px"></i>Orders</a
+          >
+        </li>
+        <li>
+          <a class="text-decoration-none" href="#"
+            ><i class="bi bi-door-closed" style="margin-right: 5px"></i>
+            Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>

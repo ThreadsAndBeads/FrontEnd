@@ -18,7 +18,7 @@ export class SignupComponent{
     password: '',
     type: ''
   };
-  constructor( private authService: AuthService,) { }
+  constructor( private authService: AuthService) { }
 
   onSignUpSubmit() {
     this.error.email = '';
@@ -42,5 +42,16 @@ export class SignupComponent{
         this.error = error.error.errors;
       }
     });
+  }
+
+  fbLogin() {
+    this.authService.fbLogin().subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    })
   }
 }
