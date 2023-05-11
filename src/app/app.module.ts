@@ -36,6 +36,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { CartProductsComponent } from './components/cart-products/cart-products.component';
 import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
+import { SellersComponent } from './pages/sellers/sellers.component';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { EmptyCartComponent } from './components/empty-cart/empty-cart.component
 
     CartProductsComponent,
     EmptyCartComponent,
+    SellersComponent,
   ],
   imports: [
     BrowserModule,
