@@ -1,10 +1,17 @@
 #container {
-  width: 100px;
+  /* width: 100px; */
   height: 125px;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
 }
 
 .loading-title {
@@ -22,7 +29,9 @@
   border-left: 5px solid;
   border-top-left-radius: 100%;
   border-top: 5px solid;
-  margin: 5px;
+  /* margin: 5px; */
+  text-align: center;
+  margin: 0 auto;
   animation-name: Loader_611;
   animation-duration: 1500ms;
   animation-timing-function: linear;
@@ -30,6 +39,7 @@
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-fill-mode: forwards;
+
 }
 
 .sp1 {

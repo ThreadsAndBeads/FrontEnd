@@ -34,6 +34,8 @@ import { ProductsPageComponent } from './components/products-page/products-page.
 import { WorkshopHomeSectionComponent } from './components/workshop-home-section/workshop-home-section.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoadingInterceptor } from './helpers/loading.interceptor';
+import { CartProductsComponent } from './components/cart-products/cart-products.component';
+import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
 
 
 @NgModule({
@@ -68,6 +70,8 @@ import { LoadingInterceptor } from './helpers/loading.interceptor';
     WorkshopHomeSectionComponent,
     SpinnerComponent,
 
+    CartProductsComponent,
+    EmptyCartComponent,
   ],
   imports: [
     BrowserModule,
