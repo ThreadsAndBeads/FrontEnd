@@ -67,9 +67,9 @@ import { EmptyCartComponent } from './components/empty-cart/empty-cart.component
     ProductsPageComponent,
     ContactUsComponent,
     WorkshopHomeSectionComponent,
+    SpinnerComponent,
     CartProductsComponent,
     EmptyCartComponent,
-    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
