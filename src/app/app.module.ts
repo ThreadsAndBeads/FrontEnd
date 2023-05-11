@@ -35,6 +35,7 @@ import { WorkshopHomeSectionComponent } from './components/workshop-home-section
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoadingInterceptor } from './helpers/loading.interceptor';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +67,7 @@ import { LoadingInterceptor } from './helpers/loading.interceptor';
     ContactUsComponent,
     WorkshopHomeSectionComponent,
     SpinnerComponent,
+
   ],
   imports: [
     BrowserModule,

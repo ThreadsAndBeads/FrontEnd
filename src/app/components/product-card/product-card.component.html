@@ -3,7 +3,7 @@
       <div class="wsk-cp-product">
         <div class="wsk-cp-img">
           <img
-            [src]="data.images[0]"
+            [src]="product.images[0]"
             alt="Product"
             class="img-responsive"
           />
@@ -13,7 +13,8 @@
             <span style="cursor: pointer;">Details</span>
           </div>
           <div class="title-product">
-            <h3>{{data.name}}</h3>
+            <h3>{{product.name}}</h3>
+
           </div>
           <div class="description-prod">
             <p>
@@ -22,9 +23,9 @@
             </p>
           </div>
           <div class="card-footer">
-            <div class="wcf-left"><span class="price">{{data.price}}$</span></div>
+            <div class="wcf-left"><span class="price">{{product.price}}$</span></div>
             <div class="wcf-right">
-              <a href="#" class="buy-btn"
+              <a href="#" class="buy-btn" (click)="addToCart(product._id)">
                 ><i class="zmdi zmdi-shopping-basket"></i
               ></a>
             </div>
