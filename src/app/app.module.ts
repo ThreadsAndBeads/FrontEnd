@@ -28,7 +28,14 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { TopSellComponent } from './components/top-sell/top-sell.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { SellersSectionComponent } from './components/sellers-section/sellers-section.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ProductsPageComponent } from './components/products-page/products-page.component';
+import { WorkshopHomeSectionComponent } from './components/workshop-home-section/workshop-home-section.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { LoadingInterceptor } from './helpers/loading.interceptor';
+import { CartProductsComponent } from './components/cart-products/cart-products.component';
+import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +63,13 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ProductCardComponent,
     TopSellComponent,
     SellersSectionComponent,
-    SidebarComponent
+    SidebarComponent,
+    ProductsPageComponent,
+    ContactUsComponent,
+    WorkshopHomeSectionComponent,
+    SpinnerComponent,
+    CartProductsComponent,
+    EmptyCartComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,13 +77,12 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     NgbCarouselModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [{
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
