@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../model/product.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -24,4 +25,26 @@ export class ProductService {
     const url = `${this.BASE_URL}/?page=${page}&limit=${limit}`;
     return this.httpClient.get<any>(url);
   }
+
+
+
+  public addToCart( data: any): Observable<Product[]> {
+    const url = `http://localhost:7000/api/v1/cart`;
+
+    // const body = { product_id: productId };
+    return this.httpClient.post<Product[]>(url, data);
+  }
+
+
+
 }
+
+
+
+
+
+
+
+
+
+

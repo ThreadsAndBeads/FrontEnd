@@ -35,6 +35,9 @@ import { WorkshopHomeSectionComponent } from './components/workshop-home-section
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { ModalComponent } from './components/modal/modal.component';
+import { CartProductsComponent } from './components/cart-products/cart-products.component';
+import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
+
 
 @NgModule({
   declarations: [
@@ -68,6 +71,9 @@ import { ModalComponent } from './components/modal/modal.component';
     WorkshopHomeSectionComponent,
     SpinnerComponent,
     ModalComponent,
+
+    CartProductsComponent,
+    EmptyCartComponent,
   ],
   imports: [
     BrowserModule,

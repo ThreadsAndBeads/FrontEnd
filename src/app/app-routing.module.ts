@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'contact', component: ContactUsComponent },
+
   {
     path: 'forgetPassword',
     component: RequestResetComponent,
