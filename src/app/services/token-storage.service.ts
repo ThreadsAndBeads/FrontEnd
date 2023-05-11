@@ -26,7 +26,9 @@ export class TokenStorageService {
     }
     return {};
   }
-
+  public removeUser(){
+    window.localStorage.removeItem(USER_ID_KEY);
+  }
   public removeToken(){
     window.localStorage.removeItem(TOKEN_KEY);
   }
