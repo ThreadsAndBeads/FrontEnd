@@ -34,6 +34,7 @@ import { ProductsPageComponent } from './components/products-page/products-page.
 import { WorkshopHomeSectionComponent } from './components/workshop-home-section/workshop-home-section.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoadingInterceptor } from './helpers/loading.interceptor';
+import { ModalComponent } from './components/modal/modal.component';
 import { CartProductsComponent } from './components/cart-products/cart-products.component';
 import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
 
@@ -69,6 +70,7 @@ import { EmptyCartComponent } from './components/empty-cart/empty-cart.component
     ContactUsComponent,
     WorkshopHomeSectionComponent,
     SpinnerComponent,
+    ModalComponent,
 
     CartProductsComponent,
     EmptyCartComponent,
