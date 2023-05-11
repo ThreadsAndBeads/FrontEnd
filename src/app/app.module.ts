@@ -32,6 +32,8 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
 import { WorkshopHomeSectionComponent } from './components/workshop-home-section/workshop-home-section.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { LoadingInterceptor } from './helpers/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,7 @@ import { WorkshopHomeSectionComponent } from './components/workshop-home-section
     ProductsPageComponent,
     ContactUsComponent,
     WorkshopHomeSectionComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,11 +76,8 @@ import { WorkshopHomeSectionComponent } from './components/workshop-home-section
     HttpClientModule,
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true,
-    },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
 })
