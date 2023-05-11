@@ -31,6 +31,7 @@ import { SellersSectionComponent } from './components/sellers-section/sellers-se
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
+import { WorkshopHomeSectionComponent } from './components/workshop-home-section/workshop-home-section.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { ProductsPageComponent } from './components/products-page/products-page.
     SidebarComponent,
     ProductsPageComponent,
     ContactUsComponent,
+    WorkshopHomeSectionComponent,
   ],
   imports: [
     BrowserModule,
