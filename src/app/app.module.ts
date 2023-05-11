@@ -37,6 +37,7 @@ import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { CartProductsComponent } from './components/cart-products/cart-products.component';
 import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import { EmptyCartComponent } from './components/empty-cart/empty-cart.component
     ContactUsComponent,
     WorkshopHomeSectionComponent,
     SpinnerComponent,
+
     CartProductsComponent,
     EmptyCartComponent,
   ],
