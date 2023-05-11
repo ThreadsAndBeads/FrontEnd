@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-request-reset',
@@ -16,7 +16,7 @@ export class RequestResetComponent implements OnInit{
   IsvalidForm = true;
 
   constructor(
-    private authService: AuthService,
+    private userService: UserService,
     private router: Router,
    ) {
 
@@ -34,7 +34,7 @@ export class RequestResetComponent implements OnInit{
     if (form.valid) {
 
       this.IsvalidForm = true;
-      this.authService.requestReset(this.RequestResetForm.value).subscribe(
+      this.userService.requestReset(this.RequestResetForm.value).subscribe(
         {
         next:data => {
           this.RequestResetForm.reset();

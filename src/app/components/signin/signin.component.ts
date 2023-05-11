@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class SigninComponent {
 
   constructor(
     private router: Router,
-    private authService: AuthService,
+    private userService: UserService,
     private tokenService: TokenStorageService
   ) {}
 
@@ -31,7 +31,7 @@ export class SigninComponent {
       password: this.password,
     };
 
-    this.authService.login(userData).subscribe({
+    this.userService.login(userData).subscribe({
       next: (response) => {
         console.log(response.data.user._id);
         this.tokenService.setUser(response.data.user)

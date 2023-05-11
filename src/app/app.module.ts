@@ -38,10 +38,18 @@ import { ModalComponent } from './components/modal/modal.component';
 import { CartProductsComponent } from './components/cart-products/cart-products.component';
 import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
 import { SellersComponent } from './pages/sellers/sellers.component';
+import { GoogleLoginProvider, SocialAuthServiceConfig ,GoogleSigninButtonModule, SocialLoginModule} from '@abacritt/angularx-social-login';
 
+
+// import {
+//   GoogleLoginProvider,
+//   GoogleSigninButtonModule,
+//   FacebookLoginProvider
+// } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
+
     AppComponent,
     HorizontallScrollComponent,
     RegistrationComponent,
@@ -72,10 +80,12 @@ import { SellersComponent } from './pages/sellers/sellers.component';
     WorkshopHomeSectionComponent,
     SpinnerComponent,
     ModalComponent,
-
     CartProductsComponent,
     EmptyCartComponent,
     SellersComponent,
+    
+    // SocialLoginModule,
+    // GoogleSigninButtonModule,
   ],
   imports: [
     BrowserModule,
@@ -84,10 +94,37 @@ import { SellersComponent } from './pages/sellers/sellers.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    GoogleSigninButtonModule,
+    SocialLoginModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '748389809881-itoacndij8kntn22ovrorg263d3nlujp.apps.googleusercontent.com'
+            ,
+            {
+              oneTapEnabled: false, // <===== default is true
+            }
+            )
+          },
+          // {
+          //   id: FacebookLoginProvider.PROVIDER_ID,
+          //   provider: new FacebookLoginProvider('clientId')
+          // }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
   ],
   bootstrap: [AppComponent],
 })

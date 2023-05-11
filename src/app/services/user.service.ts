@@ -8,7 +8,7 @@ declare const FB: any;
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class UserService {
 
   constructor(
     private http: HttpClient,
@@ -40,5 +40,8 @@ export class AuthService {
   }
   fbLogin() {
     return this.http.get(`${BASEURL}/facebook`);
+  }
+  googleLogin(socialData:any){
+    return this.http.post(`${BASEURL}/auth/google`,socialData);
   }
 }
