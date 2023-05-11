@@ -32,6 +32,8 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
 import { WorkshopHomeSectionComponent } from './components/workshop-home-section/workshop-home-section.component';
+import { CartProductsComponent } from './components/cart-products/cart-products.component';
+import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { WorkshopHomeSectionComponent } from './components/workshop-home-section
     ProductsPageComponent,
     ContactUsComponent,
     WorkshopHomeSectionComponent,
+    CartProductsComponent,
+    EmptyCartComponent,
   ],
   imports: [
     BrowserModule,
