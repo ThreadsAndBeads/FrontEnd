@@ -9,49 +9,46 @@ import { WorkshopService } from 'src/app/services/workshop.service';
 })
 export class WorkshopPageComponent implements OnInit {
   constructor(protected workshopService: WorkshopService) {}
-
+  page = 1;
+  limit = 2;
+  NumberOfPages!: number;
   workshops = []; 
   ngOnInit(): void {
     this.getWorkshops();
-
-    const colors = ['#456268','#F9D949','#d9bfb1'];
-    var blobs = document.querySelectorAll("#background path")  as NodeListOf<SVGPathElement>;;
-    
-    blobs.forEach(blob => {
-        blob.style.fill = colors[Math.floor(Math.random() * colors.length)];
-    });
     }
     getWorkshops() {
-      this.workshopService.getAllWorkshops().subscribe(
+      this.workshopService.getAllWorkshops(this.page, this.limit).subscribe(
         (response: any) => {
           this.workshops= response.data.workshops;
-         console.log(this.workshops)
+          this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
+
+         console.log(this.NumberOfPages)
         },
         ({ status, message }: HttpErrorResponse) => {
           console.log(`Error ${status}: ${message}`);
         }
       );
     }
-    // get pages(): number[] {
-    //   return Array.from({ length: this.NumberOfPages }, (_, i) => i + 1);
-    // }
-    // previous() {
-    //   if (this.page > 1) {
-    //     this.page--;
-    //     this.getProducts();
-    //   }
-    // }
+    get pages(): number[] {
+      return Array.from({ length: this.NumberOfPages }, (_, i) => i + 1);
+    }
+    previous() {
+      if (this.page > 1) {
+        this.page--;
+        this.getWorkshops();
+      }
+    }
   
-    // next() {
-    //   if (this.page < this.NumberOfPages) {
-    //     this.page++;
-    //     this.getProducts();
-    //   }
-    // }
+    next() {
+      if (this.page < this.NumberOfPages) {
+        this.page++;
+        this.getWorkshops();
+      }
+    }
   
-    // navToPage(page: number){
-    //   this.page = page;
-    //   this.getProducts();
-    // };
+    navToPage(page: number){
+      this.page = page;
+      this.getWorkshops();
+    };
 
 }

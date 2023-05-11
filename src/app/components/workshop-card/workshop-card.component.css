@@ -1,8 +1,3 @@
-/* Base */
-html {
-  font-size: 100%;
-  box-sizing: border-box;
-}
 /* Postcard */
 .postcard {
   --border-radius: 0.625rem;
@@ -16,19 +11,10 @@ html {
   border: 1px dotted #eee;
 }
 
-@media screen and (min-width: 48em) {
-  .postcard {
-    max-width: 58rem;
-    display: flex;
-    /* justify-content: space-between; */
-  }
-}
-
 /* Image */
 .postcard__image {
   position: relative;
   flex-shrink: 0;
-  flex-basis: clamp(10vw, 40vw, 30rem);
   height: min(70vw, 20rem);
   background-image: url("https://raw.githubusercontent.com/alawe45/Html-Css-postcard/master/images/card__image.jpg");
   background-repeat: no-repeat;
@@ -36,25 +22,15 @@ html {
   background-size: cover;
   border-radius: var(--border-radius);
 }
-
 @media screen and (min-width: 48em) {
   .postcard__image {
     height: auto;
   }
 }
-
 /* Body */
 .postcard__body {
   padding: clamp(1rem, 3vw, 2rem) 1.25rem;
   padding-left: clamp(1.25rem, 3vw, 2rem);
-}
-
-@media screen and (min-width: 48em) {
-  .postcard__body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
 }
 
 /* Text */

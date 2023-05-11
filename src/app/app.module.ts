@@ -38,6 +38,7 @@ import { CartProductsComponent } from './components/cart-products/cart-products.
 import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
 import { WorkshopCardComponent } from './components/workshop-card/workshop-card.component';
 import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
+import { WorkshopHeaderComponent } from './components/workshop-header/workshop-header.component';
 
 
 @NgModule({
@@ -76,6 +77,7 @@ import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.compo
     EmptyCartComponent,
     WorkshopCardComponent,
     WorkshopPageComponent,
+    WorkshopHeaderComponent,
   ],
   imports: [
     BrowserModule,
