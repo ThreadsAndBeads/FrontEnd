@@ -1,0 +1,52 @@
+<!-- Postcard -->
+<div class="postcard">
+  <!-- Image -->
+  <div
+    class="postcard__image"
+    role="img"
+    aria-label="postcard image man looking to left"
+    title="image"
+    [style.background-image]="'url(' + workshop.image + ')'"
+  ></div>
+  <!-- Body -->
+  <div class="postcard__body w-100">
+    <!-- Text -->
+    <div class="postcard__text">
+      <h2 class="postcard__title">
+        <a class="postcard__title--link" href="#" target="_blank">{{
+          workshop.title
+        }}</a>
+      </h2>
+      <p class="postcard__description">
+        {{ workshop.description }}
+      </p>
+    </div>
+    <!-- Footer -->
+    <div class="postcard__footer">
+      <!-- Author -->
+      <div class="postcard__author d-flex flex-column gap-3">
+        <div class="author__avatar-wrap d-flex gap-1 align-self-start">
+          <img
+            class="author__avatar"
+            src="https://raw.githubusercontent.com/alawe45/Html-Css-postcard/master/images/author__image.png"
+            alt="Profile image for Darlene Robertson"
+          />
+          <address>
+            <a class="author__name mx-2">{{ workshop.seller_name }}</a>
+          </address>
+        </div>
+        <div class="workshop__time d-flex flex-column w-100">
+          <time class="author__time"
+            ><span class="author__time">Start At:</span>
+            {{ workshop.startDate | date : "yyyy-MM-dd" }}</time
+          >
+          <time class="author__time"
+            ><span class="author__time">End At : </span>
+            {{ workshop.endDate | date : "yyyy-MM-dd" }}</time
+          >
+        </div>
+      </div>
+    </div>
+    <button class="custom-btn btn-5 mt-2"><span>Book Now</span></button>
+  </div>
+</div>
