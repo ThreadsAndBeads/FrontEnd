@@ -35,7 +35,7 @@ const routes: Routes = [
   },
   { path: 'profile', component: UserProfileComponent },
   { path: 'products', component: ProductsPageComponent },
-  {path : 'workshop' , component:WorkshopPageComponent},
+  {path : 'workshops' , component:WorkshopPageComponent},
   { path: 'sellers', component: SellersComponent },
   { path: '**', component: ErrorComponent },
 ];
