@@ -11,6 +11,7 @@ export class ProductsPageComponent implements OnInit {
   page = 1;
   limit = 2;
   NumberOfPages!: number;
+  
 
   constructor(protected productService: ProductService) {}
 
