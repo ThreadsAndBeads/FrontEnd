@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
+import { TokenStorageService } from './token-storage.service';
 
 const BASEURL = 'http://localhost:7000/api/v1/users';
 declare const FB: any;
@@ -9,7 +10,9 @@ declare const FB: any;
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private tokenStorage: TokenStorageService) { }
 
   login(userData: any): Observable<any> {
     return this.http.post(`${BASEURL}/login`, userData)
@@ -18,14 +21,18 @@ export class AuthService {
   signup(userData: any): Observable<any> {
     return this.http.post(`${BASEURL}/signup`, userData)
   }
-
+  logOut(): Observable<any> {
+    this.tokenStorage.removeUser();
+    this.tokenStorage.removeToken();
+    return this.http.get(`${BASEURL}/logout`)
+  }
   requestReset(body: string): Observable<any> {
     return this.http.post(`${BASEURL}/forgotPassword`, body);
   }
 
   newPassword(body: any,token:string): Observable<any> {
     console.log(body);
-    
+
     return this.http.patch(`${BASEURL}/resetPassword/${token}`, body);
   }
   ValidPasswordToken(body:string): Observable<any> {
