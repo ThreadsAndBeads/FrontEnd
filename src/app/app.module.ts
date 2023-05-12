@@ -41,6 +41,7 @@ import { WorkshopCardComponent } from './components/workshop-card/workshop-card.
 import { WorkshopHeaderComponent } from './components/workshop-header/workshop-header.component';
 import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
 import { SellersComponent } from './pages/sellers/sellers.component';
+
 @NgModule({
   declarations: [
     AppComponent,
