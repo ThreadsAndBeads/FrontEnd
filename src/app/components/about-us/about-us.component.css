@@ -1,17 +1,17 @@
-body,
+/* body,
 html {
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Lato", sans-serif;
   color: #777;
-}
+} */
 
 .bgimg-1,
 .bgimg-2,
 .bgimg-3,
 .bgimg-4 {
   position: relative;
-  opacity: 0.65;
+  opacity: 0.8;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -48,11 +48,13 @@ html {
 }
 
 .caption span.border {
+  font-family: "Delicious Handrawn", cursive;
   background-color: #456268;
+  border-radius: 10px;
   color: #fff;
   padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
+  font-size: 35px;
+  letter-spacing: 6px;
 }
 
 /* style WK2*/
