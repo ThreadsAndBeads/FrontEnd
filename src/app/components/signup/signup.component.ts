@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {  UserService } from 'src/app/services/user.service';
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import * as bootstrap from 'bootstrap';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 
 @Component({
@@ -27,13 +28,34 @@ export class SignupComponent implements OnInit {
     type: ''
   };
   user?: SocialUser;
-  constructor( private userService: UserService,private authService: SocialAuthService,private router:Router) { }
+  loggedIn: any;
+  constructor( private userService: UserService,private authService: SocialAuthService,private router:Router, private tokenService: TokenStorageService) { }
   hasErrors: boolean = false;
  
+
   ngOnInit() {
+    this.authService.authState.subscribe( {
+        next:(user)=>{
+          // this.user = user;
+          // this.loggedIn = (user != null);
+          this.userService.googleLogin({name:user.name,email:user.email,image:user.photoUrl,password:user.idToken,id:user.id}).subscribe({
+            next:(res)=>{    
+                this.tokenService.setUser(user)
+                this.tokenService.setToken(user.idToken);
+                this.router.navigate(['/home']);
+            },
+            error:(err)=>{
+              console.log(err);
+            }
+          })
+        },
+        error:(err)=>{
+          console.log(err);
+          
+        }
+    });
+
   }
-
-
   showModal() {
     const modal = new bootstrap.Modal(this.myModal.nativeElement);
     modal.show();
@@ -80,6 +102,14 @@ export class SignupComponent implements OnInit {
 
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this.userService.fbLogin().subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    })
   }
 
   // refreshToken(): void {
@@ -90,30 +120,4 @@ export class SignupComponent implements OnInit {
   //   this.authService.getAccessToken(GoogleLoginProvider.PROVIDER_ID).then(accessToken => this.accessToken = accessToken);
   // }
 
-  googleLogin(){
-    console.log('555555');
-    
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe({
-      next:(user)=>{
-        this.userService.googleLogin({name:user.name,email:user.email,image:user.photoUrl}).subscribe({
-          next:(res)=>{
-            if(res){
-              
-              this.router.navigate(['/'])
-            }
-          },
-          error:(err)=>{
-            console.log(err);
-            
-          }
-        })
-      },
-      error:(err)=>{
-        console.log(err);
-        
-      }
-    })
-
-  }
 }

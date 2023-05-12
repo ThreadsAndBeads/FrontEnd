@@ -1,19 +1,39 @@
-<div class="modal fade h-60" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" #myModal *ngIf="!hasErrors">
+<div
+  class="modal fade h-60"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  #myModal
+  *ngIf="!hasErrors"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-flex justify-content-center">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
-
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="container d-flex justify-content-center text-center">
-        <h5 class="modal-title" id="exampleModalLabel"><img alt="lastbit" width="200" src="https://i.imgur.com/LXjRs5h.gif"></h5>
+        <h5 class="modal-title" id="exampleModalLabel">
+          <img
+            alt="lastbit"
+            width="200"
+            src="https://i.imgur.com/LXjRs5h.gif"
+          />
+        </h5>
       </div>
       <div class="modal-body">
-        Almost there! We just need you to verify your email address to finish signing up.
+        Almost there! We just need you to verify your email address to finish
+        signing up.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Close
+        </button>
       </div>
     </div>
   </div>
@@ -50,17 +70,16 @@
       </select>
       <div class="error">{{ error.type }}</div>
       <button (click)="onSignUpSubmit()">Sign Up</button>
-      <!-- <button class="btn btn-primary fb-btn" (click)="fbLogin()">
+      <!-- <button class="btn btn-primary fb-btn" (click)="signInWithFB()">
         <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> Login
         With Facebook
       </button> -->
-      <!-- <button class="btn btn-primary fb-btn" (click)="googleLogin()"></button> -->
-      <asl-google-signin-button
-        type="icon"
-        GoogleSigninButtonDirective
-        size="medium"
-      ></asl-google-signin-button>
+      <asl-google-signin-button cookiePolicy="single-host-origin">
+        <!-- <button class="btn btn-primary fb-btn" (click)="googleLogin()">
+        <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> Login
+        With google
+      </button> -->
+      </asl-google-signin-button>
     </form>
   </div>
-
 </div>

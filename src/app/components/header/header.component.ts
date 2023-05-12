@@ -40,7 +40,7 @@ export class HeaderComponent {
   //   }, '.toggle_btn');
   // }
   public isUserLogged() {
-    return this.isUserLoggedIn = this.tokenService.getUser()._id;
+    return this.isUserLoggedIn = this.tokenService.getToken();
   }
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {

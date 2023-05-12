@@ -41,7 +41,7 @@ import { WorkshopCardComponent } from './components/workshop-card/workshop-card.
 import { WorkshopHeaderComponent } from './components/workshop-header/workshop-header.component';
 import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
 import { SellersComponent } from './pages/sellers/sellers.component';
-import { GoogleLoginProvider, SocialAuthServiceConfig ,GoogleSigninButtonModule, SocialLoginModule} from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider, SocialAuthServiceConfig ,GoogleSigninButtonModule, SocialLoginModule, FacebookLoginProvider} from '@abacritt/angularx-social-login';
 
 
 
@@ -109,16 +109,12 @@ import { GoogleLoginProvider, SocialAuthServiceConfig ,GoogleSigninButtonModule,
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
               '748389809881-itoacndij8kntn22ovrorg263d3nlujp.apps.googleusercontent.com'
-            ,
-            {
-              oneTapEnabled: false, // <===== default is true
-            }
             )
           },
-          // {
-          //   id: FacebookLoginProvider.PROVIDER_ID,
-          //   provider: new FacebookLoginProvider('clientId')
-          // }
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('5ecaf9db82de67083314ed77a4a64ef9')
+          }
         ],
         onError: (err) => {
           console.error(err);
