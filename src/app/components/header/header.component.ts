@@ -1,11 +1,15 @@
 // import { Component, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/model/product.model';
 
 import { AuthService } from 'src/app/services/auth.service';
+import { ProductService } from 'src/app/services/product.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
-
+interface Workshop {
+  title: string;
+}
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,11 +17,16 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 })
 export class HeaderComponent {
   isUserLoggedIn: string|null = '';
-
+  showSearch = false;
+  showDropdown = false;
+  query = '';
+  products: Product[] = [];
+  workshops: Workshop[] = [];
   constructor(
     private router: Router,
     private authService: AuthService,
     private tokenService: TokenStorageService,
+    private productService: ProductService, 
 
   ) {
 
@@ -28,17 +37,7 @@ export class HeaderComponent {
       this.router.navigateByUrl('/auth');
     }
   }
-  // ngAfterViewInit() {
-  //   jQuery('body').on({
-  //     click: (e: MouseEvent) => {
-  //       const myOffcanvas = jQuery('#offcanvasRight')[0];
-  //       const bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas);
-  //       e.stopPropagation();
-  //       bsOffcanvas.toggle();
-  //       console.log('hit');
-  //     }
-  //   }, '.toggle_btn');
-  // }
+
   public isUserLogged() {
     return this.isUserLoggedIn = this.tokenService.getUser()._id;
   }
@@ -50,6 +49,32 @@ export class HeaderComponent {
     } else {
       navbar.classList.remove('scrolled');
     }
+  }
+  toggleSearch() {
+    this.showSearch = !this.showSearch;
+    this.showDropdown = false;
+  }
+
+  search() {
+    if (!this.query) {
+      this.products = [];
+      this.workshops = [];
+      this.showDropdown = false;
+      return;
+    }
+
+    this.productService.search(this.query).subscribe(
+      (response : any) => {
+        this.products = response.products;
+        this.workshops = response.workshops;
+        console.log(response);
+        this.showDropdown = true;    
+        },
+      (error) => {
+        console.error('Error adding to cart:', error);
+      }
+    
+    );
   }
 
 }
