@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
@@ -28,9 +29,18 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { TopSellComponent } from './components/top-sell/top-sell.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { SellersSectionComponent } from './components/sellers-section/sellers-section.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-
+import { ProductsPageComponent } from './components/products-page/products-page.component';
+import { WorkshopHomeSectionComponent } from './components/workshop-home-section/workshop-home-section.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { LoadingInterceptor } from './helpers/loading.interceptor';
+import { CartProductsComponent } from './components/cart-products/cart-products.component';
+import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
+import { WorkshopCardComponent } from './components/workshop-card/workshop-card.component';
+import { WorkshopHeaderComponent } from './components/workshop-header/workshop-header.component';
+import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
+import { SellersComponent } from './pages/sellers/sellers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,8 +67,17 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ProductCardComponent,
     TopSellComponent,
     SellersSectionComponent,
-    ContactUsComponent,
     SidebarComponent,
+    ProductsPageComponent,
+    ContactUsComponent,
+    WorkshopHomeSectionComponent,
+    SpinnerComponent,
+    WorkshopCardComponent,
+    WorkshopHeaderComponent,
+    WorkshopPageComponent,
+    CartProductsComponent,
+    EmptyCartComponent,
+    SellersComponent
   ],
   imports: [
     BrowserModule,
@@ -66,13 +85,13 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     NgbCarouselModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
-  providers: [{
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Great+Vibes&family=Oswald:wght@700&display=swap");
+
 aside {
   width: 20% !important;
   min-width: 200px !important;
@@ -47,21 +49,57 @@ aside .side-inner .profile {
   border-bottom: 1px solid #456268;
   box-shadow: 0px 0px 10px rgb(255, 255, 255);
   transition: box-shadow 0.3s ease-in-out;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+}
+.right {
+  height: 50px;
+  background-color: #090909;
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  transition: box-shadow 0.3s ease-in-out;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+  transform: scaleX(-1);
 }
 aside .side-inner .profile img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   margin: 20px auto 20px auto;
   border-radius: 50%;
+  animation: blob-animation 2.5s linear infinite;
+  border: 2px solid var(--orange-color);
+  border-radius: 50% 32% 20% 70%/60% 40% 55% 40%;
+}
+/* BLOB CSS ANIMATION */
+@keyframes blob-animation {
+  0% {
+    border-radius: 50% 32% 20% 70%/60% 40% 55% 40%;
+  }
+
+  25% {
+    border-radius: 40% 57% 40% 81% / 84% 76% 45% 38%;
+  }
+
+  50% {
+    border-radius: 25% 68% 40% 46% / 59% 36% 45% 38%;
+  }
+
+  75% {
+    border-radius: 40% 27% 26% 58%/70% 36% 64% 32%;
+  }
+
+  100% {
+    border-radius: 50% 32% 20% 70%/60% 40% 55% 40%;
+  }
 }
 .side-inner .profile img:hover {
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
 }
 aside .side-inner .profile .name {
   font-size: 18px;
-  margin-bottom: 0;
+  margin-bottom: 25px;
   color: #efefef;
-  font-weight: bold;
+  /* font-family: "Delicious Handrawn", cursive; */
 }
 
 aside .side-inner .profile .country {
@@ -94,6 +132,7 @@ aside .side-inner .nav-menu ul li {
 }
 
 aside .side-inner .nav-menu ul li a {
+  text-align: center;
   display: block;
   padding-right: 30px;
   padding-left: 10px;
@@ -103,7 +142,9 @@ aside .side-inner .nav-menu ul li a {
   position: relative;
   transition: 0.3s padding-right ease;
 }
-
+aside .side-inner .nav-menu ul li a i {
+  align-self: flex-start;
+}
 aside .side-inner .nav-menu ul li a:before {
   content: "";
   position: absolute;
@@ -143,4 +184,10 @@ aside .side-inner .nav-menu ul li.active a:before {
   opacity: 1;
   visibility: visible;
   width: 4px;
+}
+.dropdown-menu-center {
+  left: 50% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
 }

@@ -11,8 +11,12 @@ import { AddNewProductComponent } from './components/add-new-product/add-new-pro
 import { ResponseResetPasswordComponent } from './components/response-reset-password/response-reset-password.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ErrorComponent } from './error/error.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ProductsPageComponent } from './components/products-page/products-page.component';
+import { SellersComponent } from './pages/sellers/sellers.component';
 
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { WorkshopCardComponent } from './components/workshop-card/workshop-card.component';
+import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
 
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
@@ -27,16 +31,17 @@ const routes: Routes = [
   { path: 'addNewProduct', component: AddNewProductComponent },
   {
     path: 'response-reset-password/:token',
-    component: ResponseResetPasswordComponent
+    component: ResponseResetPasswordComponent,
   },
   { path: 'profile', component: UserProfileComponent },
-  {path: '**', component: ErrorComponent},
-
+  { path: 'products', component: ProductsPageComponent },
+  {path : 'workshops' , component:WorkshopPageComponent},
+  { path: 'sellers', component: SellersComponent },
+  { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-
-export class AppRoutingModule { }
+export class AppRoutingModule {}

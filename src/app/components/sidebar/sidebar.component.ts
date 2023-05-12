@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import * as bootstrap from 'bootstrap';
 import * as jQuery from 'jquery';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,7 +11,9 @@ import * as jQuery from 'jquery';
 })
 export class SidebarComponent implements OnInit {
   currentUser: any;
-  constructor(    private tokenService: TokenStorageService){
+  constructor(
+    private tokenService: TokenStorageService,
+    private authService: AuthService) {
   }
   ngOnInit(): void {
     this.currentUser = this.tokenService.getUser();
@@ -26,5 +29,15 @@ export class SidebarComponent implements OnInit {
       }
     }, '.toggle_btn');
   }
+  onLogoutClick() {
+    this.authService.logOut().subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+      });
+    }
+  }
 
-}
