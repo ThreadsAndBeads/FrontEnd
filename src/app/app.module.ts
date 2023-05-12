@@ -77,7 +77,8 @@ import { SellersComponent } from './pages/sellers/sellers.component';
     WorkshopPageComponent,
     CartProductsComponent,
     EmptyCartComponent,
-    SellersComponent
+    SellersComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
