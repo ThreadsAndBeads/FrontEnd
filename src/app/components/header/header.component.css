@@ -5,58 +5,30 @@
 }
 
 .threadsAndBeads{
+  font-family: 'Delicious Handrawn', cursive;
   text-decoration: none;
   color: #040f0f;
 }
 
+.user-icons .user-link,
+.navbar-nav .nav-link{
+  color: #040f0f;
+}
+
+.navbar-toggler-icon{
+  border-color: #040f0f;
+}
+
+.navbar.scrolled .navbar-nav .nav-link,
 .navbar.scrolled .threadsAndBeads,
-.navbar.scrolled .search {
+.navbar.scrolled .user-link,
+.navbar.scrolled .search,
+.navbar.scrolled .navbar-toggler-icon{
   color: white;
 }
 
-.user-icons, .search{
-  width: 100px;
-}
-
-.navbar-light .navbar-brand {
-  font-size: 25px;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: #040f0f;
-}
-
-.navbar-toggler {
-  background: #040f0f;
-}
-
-.user-icons {
-  text-align: center;
-  width: 100px
-}
-
-.nav-link {
-  padding: 0.2rem 1rem;
-}
-
-
-
-.navbar-toggler {
-  padding: 1px 5px;
-  font-size: 18px;
-  line-height: 0.3;
-}
-
-.navbar-light .navbar-nav .nav-link:focus,
-.navbar-light .navbar-nav .nav-link:hover {
-  color: #040f0f;
-}
-
-.logo {
-  font-family: 'Delicious Handrawn', cursive;
+.user-icons, .search {
+  width: 80px
 }
 
 li{
@@ -67,18 +39,31 @@ li{
   background-color: #456268;
 }
 
-.navbar.scrolled .navbar-nav .nav-link {
-  color: white;
-}
-
 @media(min-width: 992px){
   .nav-logo{
     display: none;
+  }
+
+  .user-icons {
+    order: 3;
+  }
+
+  .navbar-collapse{
+    flex-grow: unset;
   }
 }
 
 @media(max-width: 991px){
   .nav-item-logo{
     display: none;
+  }
+
+  .user-icons{
+    margin: auto 30px;
+  }
+
+  .search{
+    margin-left: auto;
+    width: fit-content;
   }
 }
