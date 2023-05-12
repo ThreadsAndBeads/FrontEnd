@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Great+Vibes&family=Oswald:wght@700&display=swap");
 
 aside {
-  width: 20% !important;
-  min-width: 200px !important;
+  /* width: 50px !important; */
+  min-width: 150px !important;
   right: 0;
   position: fixed;
-  background-color: #f5f7fa;
+  background-color: #334a4e;
   transition: 1s transform cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -35,8 +35,8 @@ aside.show-sidebar .toggle .burger:after {
 aside .side-inner {
   /* padding: 30px 0; */
   height: 100vh;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  /* overflow-y: scroll; */
+  /* -webkit-overflow-scrolling: touch; */
 }
 
 aside .side-inner .profile {
@@ -99,29 +99,6 @@ aside .side-inner .profile .name {
   font-size: 18px;
   margin-bottom: 25px;
   color: #efefef;
-  /* font-family: "Delicious Handrawn", cursive; */
-}
-
-aside .side-inner .profile .country {
-  font-size: 14px;
-  color: #cfcfcf;
-}
-
-aside .side-inner .counter {
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #efefef;
-  text-align: center;
-}
-
-aside .side-inner .counter .number {
-  display: block;
-  font-size: 20px;
-  color: #000;
-}
-
-aside .side-inner .counter .number-label {
-  color: #cfcfcf;
 }
 
 aside .side-inner .nav-menu ul,
@@ -132,13 +109,13 @@ aside .side-inner .nav-menu ul li {
 }
 
 aside .side-inner .nav-menu ul li a {
-  text-align: center;
+  text-align: start;
   display: block;
   padding-right: 30px;
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #8b8b8b;
+  color: #fff;
   position: relative;
   transition: 0.3s padding-right ease;
 }

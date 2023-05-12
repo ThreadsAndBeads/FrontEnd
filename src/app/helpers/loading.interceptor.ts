@@ -3,10 +3,11 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpResponse
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { finalize, delay } from 'rxjs/operators';
+import { finalize, delay, tap } from 'rxjs/operators';
 import { LoaderService } from '../services/loader.service';
 
 
@@ -24,7 +25,6 @@ export class LoadingInterceptor implements HttpInterceptor {
     this.totalRequests++;
     this.loadingService.setLoading(true);
     return next.handle(request).pipe(
-
       finalize(() => {
         this.totalRequests--;
         if (this.totalRequests == 0) {
