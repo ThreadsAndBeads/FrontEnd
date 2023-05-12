@@ -28,17 +28,7 @@ export class HeaderComponent {
       this.router.navigateByUrl('/auth');
     }
   }
-  // ngAfterViewInit() {
-  //   jQuery('body').on({
-  //     click: (e: MouseEvent) => {
-  //       const myOffcanvas = jQuery('#offcanvasRight')[0];
-  //       const bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas);
-  //       e.stopPropagation();
-  //       bsOffcanvas.toggle();
-  //       console.log('hit');
-  //     }
-  //   }, '.toggle_btn');
-  // }
+
   public isUserLogged() {
     return this.isUserLoggedIn = this.tokenService.getUser()._id;
   }

@@ -41,6 +41,7 @@ import { WorkshopCardComponent } from './components/workshop-card/workshop-card.
 import { WorkshopHeaderComponent } from './components/workshop-header/workshop-header.component';
 import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
 import { SellersComponent } from './pages/sellers/sellers.component';
+import { CacheInterceptor } from './helpers/cache.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,7 +91,12 @@ import { SellersComponent } from './pages/sellers/sellers.component';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CacheInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })
