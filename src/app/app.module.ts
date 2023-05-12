@@ -37,9 +37,10 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { CartProductsComponent } from './components/cart-products/cart-products.component';
 import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
-
-
-
+import { WorkshopCardComponent } from './components/workshop-card/workshop-card.component';
+import { WorkshopHeaderComponent } from './components/workshop-header/workshop-header.component';
+import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
+import { SellersComponent } from './pages/sellers/sellers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,9 +72,12 @@ import { EmptyCartComponent } from './components/empty-cart/empty-cart.component
     ContactUsComponent,
     WorkshopHomeSectionComponent,
     SpinnerComponent,
-    // NgbdModalComponent,
+    WorkshopCardComponent,
+    WorkshopHeaderComponent,
+    WorkshopPageComponent,
     CartProductsComponent,
     EmptyCartComponent,
+    SellersComponent
   ],
   imports: [
     BrowserModule,

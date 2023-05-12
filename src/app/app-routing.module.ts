@@ -12,8 +12,11 @@ import { ResponseResetPasswordComponent } from './components/response-reset-pass
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ErrorComponent } from './error/error.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
+import { SellersComponent } from './pages/sellers/sellers.component';
 
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { WorkshopCardComponent } from './components/workshop-card/workshop-card.component';
+import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
 
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
@@ -21,7 +24,6 @@ const routes: Routes = [
   { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'contact', component: ContactUsComponent },
-
   {
     path: 'forgetPassword',
     component: RequestResetComponent,
@@ -33,6 +35,8 @@ const routes: Routes = [
   },
   { path: 'profile', component: UserProfileComponent },
   { path: 'products', component: ProductsPageComponent },
+  {path : 'workshops' , component:WorkshopPageComponent},
+  { path: 'sellers', component: SellersComponent },
   { path: '**', component: ErrorComponent },
 ];
 
