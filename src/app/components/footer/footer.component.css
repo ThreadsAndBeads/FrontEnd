@@ -1,5 +1,4 @@
-
-  .footer {
+.footer {
     z-index: 1;
     --footer-background: #456268;
     display: grid;
@@ -10,13 +9,12 @@
   .footer .content {
     z-index: 2;
     display: grid;
-    padding: 2rem 0rem 2rem 2rem;
     background: var(--footer-background);
   }
-  .footer .content h6{
+  /* .footer .content h6{
     color: #d9bfb1;
     margin-right: 70%;
-  }
+  } */
   .footer .content a, .footer .content p {
     color: #f5f7fa;
     text-decoration: none;
@@ -35,14 +33,73 @@
 
   }
 
-  .container{
-    margin-left: 0px;
-  }
-
-
-  .logo {
+.logo {
     font-family: 'Delicious Handrawn', cursive;
-    margin-left: 80%;
-
+    font-size: 40px;
   }
 
+h1{
+  color: white;
+  font-size: 20px;
+}
+
+
+.social-links,
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-btn {
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  font-family: 'Titillium Web', sans-serif;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  margin: 5px;
+  transition: 0.3s;
+  justify-content: center;
+}
+
+.social-btn svg {
+  height: 24px;
+  width: 24px;
+}
+
+.social-btn span {
+  width: 0px;
+  overflow: hidden;
+  transition: 0.3s;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.social-btn:hover {
+  width: 150px;
+  border-radius: 5px;
+}
+
+.social-btn:hover span {
+  padding: 2px;
+  width: 80px;
+}
+
+#twitter svg {
+  fill: #1da1f2;
+}
+
+#linkedin svg {
+  fill: #0e76a8;
+}
+
+#github {
+  fill: #333;
+}
+
+.cr-con{
+  background-color:#334a4e ;
+}
