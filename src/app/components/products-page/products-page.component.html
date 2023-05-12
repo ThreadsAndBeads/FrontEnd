@@ -2,17 +2,19 @@
   <div class="row d-flex flex-wrap">
     <app-product-card *ngFor="let product of productService.products" class="pdtCard col-12 col-md-4 col-lg-3" [product]="product"></app-product-card>
   </div>
-  <nav aria-label="Page navigation example">
-            <ul class="pagination">
+  <nav aria-label="Page navigation example ">
+            <ul class="pagination d-flex justify-content-center">
               <li class="page-item ">
                 <button  (click)="previous()" class="page-link" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
+                  <span aria-hidden="true"><i class="bi bi-caret-left-fill"></i></span>
                 </button>
               </li>
-              <li class="page-item" *ngFor="let page of pages" (click)="navToPage(page)"><button class="page-link">{{page}}</button></li>
+              <li class="page-item" *ngFor="let page of pages" (click)="navToPage(page)">
+                <button class="page-link">{{page}}</button>
+              </li>
               <li class="page-item">
                 <button  (click)="next()" class="page-link" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
+                  <span aria-hidden="true"><i class="bi bi-caret-right-fill"></i></span>
                 </button>
               </li>
             </ul>

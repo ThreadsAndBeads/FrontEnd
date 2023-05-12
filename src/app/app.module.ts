@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
@@ -33,8 +34,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
 import { WorkshopHomeSectionComponent } from './components/workshop-home-section/workshop-home-section.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { LoadingInterceptor } from './helpers/loading.interceptor';
-import { ModalComponent } from './components/modal/modal.component';
+// import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { CartProductsComponent } from './components/cart-products/cart-products.component';
 import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
 import { WorkshopCardComponent } from './components/workshop-card/workshop-card.component';
@@ -42,6 +42,8 @@ import { WorkshopHeaderComponent } from './components/workshop-header/workshop-h
 import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
 import { SellersComponent } from './pages/sellers/sellers.component';
 import { CacheInterceptor } from './helpers/cache.interceptor';
+import { LoadingInterceptor } from './helpers/loading.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,13 +75,13 @@ import { CacheInterceptor } from './helpers/cache.interceptor';
     ContactUsComponent,
     WorkshopHomeSectionComponent,
     SpinnerComponent,
-    ModalComponent,
     WorkshopCardComponent,
     WorkshopHeaderComponent,
     WorkshopPageComponent,
     CartProductsComponent,
     EmptyCartComponent,
-    SellersComponent
+    SellersComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
@@ -88,6 +90,7 @@ import { CacheInterceptor } from './helpers/cache.interceptor';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgbModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
