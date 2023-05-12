@@ -1,32 +1,33 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit, Output } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
+import { Component } from '@angular/core';
+import { SellerService } from 'src/app/services/seller.service';
 
 @Component({
-  selector: 'app-products-page',
-  templateUrl: './products-page.component.html',
-  styleUrls: ['./products-page.component.css'],
+  selector: 'app-sellers',
+  templateUrl: './sellers.component.html',
+  styleUrls: ['./sellers.component.css']
 })
-export class ProductsPageComponent implements OnInit {
+export class SellersComponent {
   page = 1;
   limit = 2;
   NumberOfPages!: number;
-  
 
-  constructor(protected productService: ProductService) {}
+  constructor(protected sellerService: SellerService) {}
 
   ngOnInit() {
     this.getProducts();
   }
 
   getProducts() {
-    this.productService.products = [];
-    this.productService.getAllProducts(this.page, this.limit).subscribe(
+    this.sellerService.sellers = [];
+    this.sellerService.getAllSellers(this.page, this.limit).subscribe(
       (response: any) => {
-        const { products } = response.data;
+        const { sellers } = response.data;
+        console.log(sellers);
+        
         this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
 
-        this.productService.products.push(...products);
+        this.sellerService.sellers.push(...sellers);
       },
       ({ status, message }: HttpErrorResponse) => {
         console.log(`Error ${status}: ${message}`);

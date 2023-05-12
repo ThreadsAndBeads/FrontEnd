@@ -146,3 +146,9 @@ hr {
     outline-offset: 0;
   }
 }
+
+@media(max-width: 991px){
+  .wrapper{
+    order: 2;
+  }
+}

@@ -1,28 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top p-3"
+<nav class="navbar navbar-expand-lg fixed-top p-lg-3 py-3" (scroll)="onWindowScroll()">
+  <div class="container-fluid w-100">
+    <a href="" class="nav-logo threadsAndBeads"><h1 class="logo">Threads & Beads</h1></a>
 
-(scroll)="onWindowScroll();">
-  <div class="container d-flex justify-content-between">
-    <!-- <a class="navbar-brand" href="#"><img class="logo" src="../../../assets/Images/threads_and_beads-removebg-preview.png" alt=""></a> -->
-    <div class="search">
+    <div class="search my-auto">
       <i class="bi bi-search"></i>
     </div>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div
-      class="collapse navbar-collapse d-flex justify-content-center"
-      id="navbarSupportedContent"
-    >
-      <ul class="navbar-nav ml-auto">
+    <div class="user-icons d-flex justify-content-between my-auto">
+        <a class="user-link" href="#"><i class="bi bi-basket2-fill"></i></a>
+        <a class="user-link toggle_btn" type="button" (click)="handleClick()">
+          <i class="bi bi-person-circle"></i>
+        </a>
+        <a class="user-link" href="#"><i class="bi bi-heart-fill"></i></a>
+    </div>
+    
+    <input class="navbar-toggler" type="checkbox" id="checkbox"  data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <label for="checkbox" class="toggle">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+    </label>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item active">
           <a class="nav-link" routerLink="/home">Home</a>
         </li>
@@ -30,36 +30,21 @@
           <a class="nav-link" routerLink="/about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/products">Products</a>
+          <a class="nav-link" routerLink="contact">Contact</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item nav-item-logo">
           <a href="" class="nav-item threadsAndBeads"
             ><h1 class="logo">Threads & Beads</h1></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sellers</a>
+          <a class="nav-link" routerLink="/products">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" routerLink="/sellers">Sellers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Workshops</a>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <ul class="navbar-nav ml-auto user-icons">
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-basket2-fill"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="toggle_btn" type="button" (click)="handleClick()">
-            <i class="bi bi-person-circle"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-heart-fill"></i></a>
+          <a class="nav-link" routerLink="/workshops">Workshops</a>
         </li>
       </ul>
     </div>

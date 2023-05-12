@@ -103,3 +103,10 @@ select{
   color: red;
   position: relative;
 }
+.modal-title h5{
+  text-align: center;
+  margin: 0 auto;
+}
+.modal-body{
+  text-align: center
+}

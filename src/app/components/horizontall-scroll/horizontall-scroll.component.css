@@ -3,7 +3,7 @@
 body {
   font-family: Hepta Slab, sans-serif;
   font-weight: 500;
-  background: #efecdb;
+  background: #fff;
   color: #5d3737;
 }
 * {
@@ -109,7 +109,7 @@ h1 {
   display: block;
   padding: 1vh ;
   background: #efecdb;
-  box-shadow: 0 10px 50px #5f2f1182;
+  box-shadow: 0 10px 50px #17698f1e;
 }
 img {
   max-width: 45vh;
