@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
@@ -34,9 +35,9 @@ import { ProductsPageComponent } from './components/products-page/products-page.
 import { WorkshopHomeSectionComponent } from './components/workshop-home-section/workshop-home-section.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoadingInterceptor } from './helpers/loading.interceptor';
-import { ModalComponent } from './components/modal/modal.component';
 import { CartProductsComponent } from './components/cart-products/cart-products.component';
 import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
+
 
 
 @NgModule({
@@ -70,8 +71,7 @@ import { EmptyCartComponent } from './components/empty-cart/empty-cart.component
     ContactUsComponent,
     WorkshopHomeSectionComponent,
     SpinnerComponent,
-    ModalComponent,
-
+    // NgbdModalComponent,
     CartProductsComponent,
     EmptyCartComponent,
   ],
@@ -82,6 +82,7 @@ import { EmptyCartComponent } from './components/empty-cart/empty-cart.component
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgbModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
