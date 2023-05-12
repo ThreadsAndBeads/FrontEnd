@@ -136,4 +136,8 @@ li{
     padding: 5px 10px;
     border-bottom: 1px solid #D0E8F2;
   }
+
+  .nav-item:last-of-type{
+    border: none;
+  }
 }
