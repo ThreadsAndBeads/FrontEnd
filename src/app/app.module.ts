@@ -45,7 +45,7 @@ import { GoogleLoginProvider, SocialAuthServiceConfig ,GoogleSigninButtonModule,
 import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import { CacheInterceptor } from './helpers/cache.interceptor';
 
 
 @NgModule({
@@ -134,6 +134,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
         }
       } as SocialAuthServiceConfig,
     }
+   
+    
   ],
   bootstrap: [AppComponent],
 })

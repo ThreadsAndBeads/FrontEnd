@@ -7,10 +7,47 @@
       ><h1 class="logo">Threads & Beads</h1></a
     >
 
-    <div class="search my-auto">
+    <!-- <div class="search my-auto">
       <i class="bi bi-search"></i>
+    </div> -->
+    <!-- <div class="search my-auto">
+      <div class="icon-container" (click)="toggleSearch()">
+        <i class="bi bi-search"></i>
+      </div>
+      <input type="text" [(ngModel)]="query" (input)="search()" [ngClass]="{ 'd-none': !showSearch }" />
+    </div> -->
+    <div class="search my-auto">
+      <div class="icon-container" (click)="toggleSearch()">
+        <i class="bi bi-search"></i>
+      </div>
+      <input
+        type="text"
+        [(ngModel)]="query"
+        (input)="search()"
+        [ngClass]="{ 'd-none': !showSearch }"
+      />
+      <div class="dropdown" [ngClass]="{ 'd-none': !showDropdown }">
+        <div class="product-results" *ngIf="products.length">
+          <div>
+            Products
+            <div class="result" *ngFor="let product of products">
+              {{ product.name }}
+            </div>
+          </div>
+        </div>
+        <div class="workshop-results" *ngIf="workshops.length">
+          <div>
+            Workshops
+            <div class="result" *ngFor="let workshop of workshops">
+              {{ workshop.title }}
+            </div>
+          </div>
+        </div>
+        <div class="no-results" *ngIf="!products.length && !workshops.length">
+          No results found.
+        </div>
+      </div>
     </div>
-
     <div class="user-icons d-flex justify-content-between my-auto">
       <a class="user-link" href="#"><i class="bi bi-basket2-fill"></i></a>
       <a class="user-link toggle_btn" type="button" (click)="handleClick()">

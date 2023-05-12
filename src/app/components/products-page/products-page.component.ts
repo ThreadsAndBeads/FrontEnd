@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductsPageComponent implements OnInit {
   page = 1;
-  limit = 2;
+  limit = 3;
   NumberOfPages!: number;
   
 

@@ -3,6 +3,7 @@
   tabindex="1"
   id="offcanvasRight"
   aria-labelledby="offcanvasRightLabel"
+  style="width: 50px"
 >
   <div class="toggle">
     <a
@@ -14,8 +15,8 @@
       <span></span>
     </a>
   </div>
-  <div class="side-inner">
-      <div class="profile">
+  <div class="side-inner mt-5">
+    <!-- <div class="profile">
         <img
           src="assets/Images/pexels-amina-filkins-5409681.jpg"
           alt="Image"
@@ -23,7 +24,68 @@
           style="box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5)"
         />
         <h3 class="name">{{ currentUser.name }}</h3>
-    </div>
+    </div> -->
+    <!-- <ul
+      class="d-flex flex-column justify-content-between gap-4 align-items-center"
+    >
+      <li>
+      <a class="text-decoration-none" href="/profile">
+        <img src="assets/Images/user.png" alt="" width="20px" height="20px" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-building-store"
+          width="30"
+          height="30"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="#ffffff"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 21l18 0" />
+          <path
+            d="M3 7v1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1h-18l2 -4h14l2 4"
+          />
+          <path d="M5 21l0 -10.15" />
+          <path d="M19 21l0 -10.15" />
+          <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" />
+        </svg>
+      </a>
+      </li>
+      <li *ngIf="currentUser.type == 'seller'">
+      <a class="text-decoration-none" href="/myProducts">
+        <img
+          src="assets/Images/my-products.png"
+          alt=""
+          width="30px"
+          height="30px"
+        />
+      </a>
+      </li>
+      <li *ngIf="currentUser.type == 'seller'">
+        <a class="text-decoration-none" href="/addNewProduct">
+          <i class="bi bi-plus-square-dotted" style="margin-right: 5px"></i>
+        </a>
+      </li>
+
+      <li>
+      <a class="text-decoration-none" href="#">
+        <i class="bi bi-box" style="margin-right: 5px"></i>
+      </a>
+      </li>
+      <li *ngIf="currentUser.type == 'seller'">
+      <a class="text-decoration-none" href="/myWorkshops">
+        <img
+          src="assets/Images/meeting.png"
+          alt=""
+          width="30px"
+          height="30px"
+        />
+      </a>
+      </li>
+    </ul> -->
     <div class="nav-menu">
       <ul>
         <li>
@@ -41,7 +103,10 @@
           >
             My Products
           </a>
-          <ul class="dropdown-menu dropdown-menu-center">
+          <ul
+            class="dropdown-menu dropdown-menu-center"
+            style="background-color: #456268; min-width: 150px"
+          >
             <li>
               <a class="text-decoration-none dropdown-item" href="/myProducts">
                 My Products
@@ -76,7 +141,10 @@
           >
             Workshops
           </a>
-          <ul class="dropdown-menu dropdown-menu-center">
+          <ul
+            class="dropdown-menu dropdown-menu-center"
+            style="background-color: #456268; min-width: 150px"
+          >
             <li>
               <a class="text-decoration-none dropdown-item" href="/myWorkshops">
                 My Workshop
@@ -97,8 +165,12 @@
           </ul>
         </li>
         <li>
-          <a class="text-decoration-none" href="/home" (click)="onLogoutClick()">
-            ><i class="bi bi-door-closed" style="margin-right: 5px"></i>
+          <a
+            class="text-decoration-none"
+            href="/home"
+            (click)="onLogoutClick()"
+          >
+            <i class="bi bi-door-closed" style="margin-right: 5px"></i>
             Logout</a
           >
         </li>
