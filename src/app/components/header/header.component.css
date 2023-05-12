@@ -1,21 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Great+Vibes&family=Oswald:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Great+Vibes&family=Oswald:wght@700&display=swap");
 
-.navbar{
+.navbar {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.threadsAndBeads{
-  font-family: 'Delicious Handrawn', cursive;
+.threadsAndBeads {
+  font-family: "Delicious Handrawn", cursive;
   text-decoration: none;
   color: #040f0f;
 }
 
 .user-icons .user-link,
-.navbar-nav .nav-link{
+.navbar-nav .nav-link {
   color: #040f0f;
 }
 
-.navbar-toggler-icon{
+.navbar-toggler-icon {
   border-color: #040f0f;
 }
 
@@ -23,15 +23,16 @@
 .navbar.scrolled .threadsAndBeads,
 .navbar.scrolled .user-link,
 .navbar.scrolled .search,
-.navbar.scrolled .navbar-toggler-icon{
+.navbar.scrolled .navbar-toggler-icon {
   color: white;
 }
 
-.user-icons, .search {
-  width: 80px
+.user-icons,
+.search {
+  width: 80px;
 }
 
-li{
+li {
   margin: auto 8px;
 }
 
@@ -53,7 +54,7 @@ li{
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 .bars {
@@ -63,49 +64,50 @@ li{
   border-radius: 4px;
 }
 
-.navbar.scrolled .bars{
+.navbar.scrolled .bars {
   background-color: white;
 }
 
 #bar2 {
-  transition-duration: .8s;
+  transition-duration: 0.8s;
 }
 
-#bar1,#bar3 {
+#bar1,
+#bar3 {
   width: 70%;
 }
 
 #checkbox:checked + .toggle .bars {
   position: absolute;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #checkbox:checked + .toggle #bar2 {
   transform: scaleX(0);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #checkbox:checked + .toggle #bar1 {
   width: 100%;
   transform: rotate(45deg);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #checkbox:checked + .toggle #bar3 {
   width: 100%;
   transform: rotate(-45deg);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #checkbox:checked + .toggle {
-  transition-duration: .5s;
+  transition-duration: 0.5s;
   transform: rotate(180deg);
 }
 
-@media(min-width: 992px){
+@media (min-width: 992px) {
   .navbar-toggler,
   .nav-logo,
-  .toggle{
+  .toggle {
     display: none;
   }
 
@@ -113,31 +115,55 @@ li{
     order: 3;
   }
 
-  .navbar-collapse{
+  .navbar-collapse {
     flex-grow: unset;
   }
 }
+.search {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
 
-@media(max-width: 991px){
-  .nav-item-logo{
+.search input[type="text"] {
+  margin-left: 8px;
+  height: 100%;
+  flex-grow: 1;
+  border: none;
+  outline: none;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1;
+}
+@media (max-width: 991px) {
+  .nav-item-logo {
     display: none;
   }
 
-  .user-icons{
+  .user-icons {
     margin: auto 30px;
   }
 
-  .search{
+  .search {
     margin-left: auto;
     width: fit-content;
   }
 
-  .nav-item{
+  .nav-item {
     padding: 5px 10px;
-    border-bottom: 1px solid #D0E8F2;
+    border-bottom: 1px solid #d0e8f2;
   }
 
-  .nav-item:last-of-type{
+  .nav-item:last-of-type {
     border: none;
   }
 }
