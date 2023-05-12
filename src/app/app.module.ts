@@ -34,7 +34,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
 import { WorkshopHomeSectionComponent } from './components/workshop-home-section/workshop-home-section.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { LoadingInterceptor } from './helpers/loading.interceptor';
+// import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { CartProductsComponent } from './components/cart-products/cart-products.component';
 import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
 import { WorkshopCardComponent } from './components/workshop-card/workshop-card.component';
@@ -42,6 +42,7 @@ import { WorkshopHeaderComponent } from './components/workshop-header/workshop-h
 import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
 import { SellersComponent } from './pages/sellers/sellers.component';
 import { GoogleLoginProvider, SocialAuthServiceConfig ,GoogleSigninButtonModule, SocialLoginModule, FacebookLoginProvider} from '@abacritt/angularx-social-login';
+import { LoadingInterceptor } from './helpers/loading.interceptor';
 
 
 
@@ -84,7 +85,10 @@ import { GoogleLoginProvider, SocialAuthServiceConfig ,GoogleSigninButtonModule,
     WorkshopCardComponent,
     WorkshopHeaderComponent,
     WorkshopPageComponent,
-    
+    CartProductsComponent,
+    EmptyCartComponent,
+    SellersComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
