@@ -9,7 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -43,6 +43,8 @@ import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.compo
 import { SellersComponent } from './pages/sellers/sellers.component';
 import { GoogleLoginProvider, SocialAuthServiceConfig ,GoogleSigninButtonModule, SocialLoginModule, FacebookLoginProvider} from '@abacritt/angularx-social-login';
 import { LoadingInterceptor } from './helpers/loading.interceptor';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 
@@ -99,7 +101,14 @@ import { LoadingInterceptor } from './helpers/loading.interceptor';
     HttpClientModule,
     GoogleSigninButtonModule,
     SocialLoginModule,
-    NgbModule
+    NgbModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory:HttpLoaderFactory,
+        deps:[HttpClient]
+      }
+    })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
@@ -117,7 +126,7 @@ import { LoadingInterceptor } from './helpers/loading.interceptor';
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('5ecaf9db82de67083314ed77a4a64ef9')
+            provider: new FacebookLoginProvider('1716037775480430')
           }
         ],
         onError: (err) => {
@@ -129,3 +138,6 @@ import { LoadingInterceptor } from './helpers/loading.interceptor';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+export function HttpLoaderFactory(http:HttpClient){
+  return new TranslateHttpLoader(http);
+}

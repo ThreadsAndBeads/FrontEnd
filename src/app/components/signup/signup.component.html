@@ -70,16 +70,19 @@
       </select>
       <div class="error">{{ error.type }}</div>
       <button (click)="onSignUpSubmit()">Sign Up</button>
-      <!-- <button class="btn btn-primary fb-btn" (click)="signInWithFB()">
-        <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> Login
-        With Facebook
-      </button> -->
-      <asl-google-signin-button cookiePolicy="single-host-origin">
-        <!-- <button class="btn btn-primary fb-btn" (click)="googleLogin()">
-        <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> Login
-        With google
-      </button> -->
-      </asl-google-signin-button>
+
+      <div class="d-flex justify-content-center mt-3">
+        <div class="g-signin2">
+          <asl-google-signin-button
+            cookiePolicy="single-host-origin "
+            size="large"
+            theme="outline"
+            shape="pill"
+            data-ux_mode="redirect"
+          >
+          </asl-google-signin-button>
+        </div>
+      </div>
     </form>
   </div>
 </div>

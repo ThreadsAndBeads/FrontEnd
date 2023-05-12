@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "extract-translations": "ngx-translate-extract --input ./src --output ./src/assets/i18n/*.json --clean --sort --format namespaced-json --marker _"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +20,7 @@
     "@angular/platform-browser": "^16.0.1",
     "@angular/platform-browser-dynamic": "^16.0.1",
     "@angular/router": "^16.0.1",
+    "@biesbjerg/ngx-translate-extract": "^7.0.4",
     "@ng-bootstrap/ng-bootstrap": "^14.1.1",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",

@@ -1,7 +1,7 @@
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService ,GoogleSigninButtonModule, SocialLoginModule, SocialUser} from '@abacritt/angularx-social-login';
 
 import { Router } from '@angular/router';
-import {  UserService } from 'src/app/services/user.service';
+import {  AuthService } from 'src/app/services/auth.service';
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import * as bootstrap from 'bootstrap';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
@@ -29,19 +29,24 @@ export class SignupComponent implements OnInit {
   };
   user?: SocialUser;
   loggedIn: any;
-  constructor( private userService: UserService,private authService: SocialAuthService,private router:Router, private tokenService: TokenStorageService) { }
+  constructor( private authService: AuthService,private socialAuthService: SocialAuthService,private router:Router, private tokenService: TokenStorageService) { }
   hasErrors: boolean = false;
  
 
   ngOnInit() {
-    this.authService.authState.subscribe( {
+    
+    this.socialAuthService.authState.subscribe( {
         next:(user)=>{
-          // this.user = user;
-          // this.loggedIn = (user != null);
-          this.userService.googleLogin({name:user.name,email:user.email,image:user.photoUrl,password:user.idToken,id:user.id}).subscribe({
-            next:(res)=>{    
-                this.tokenService.setUser(user)
-                this.tokenService.setToken(user.idToken);
+          this.user = user;
+          this.loggedIn = user != null;
+          this.authService.googleLogin({name:user.name,email:user.email,image:user.photoUrl,password:user.idToken,id:user.id}).subscribe({
+            next:(response:any)=>{    
+              console.log(response);
+              
+                let newUser=response.data.user
+                
+                this.tokenService.setUser(newUser)
+                this.tokenService.setToken(response.token);
                 this.router.navigate(['/home']);
             },
             error:(err)=>{
@@ -74,7 +79,7 @@ export class SignupComponent implements OnInit {
       type: this.type
     };
     
-    this.userService.signup(userData)
+    this.authService.signup(userData)
     .subscribe({
       next: (response) => {
         this.showModal();
@@ -88,36 +93,8 @@ export class SignupComponent implements OnInit {
       }
     });
   }
-
-  fbLogin() {
-    this.userService.fbLogin().subscribe({
-      next: (response) => {
-        console.log(response);
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    })
-  }
-
   signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    this.userService.fbLogin().subscribe({
-      next: (response) => {
-        console.log(response);
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    })
+   console.log(    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID));
   }
-
-  // refreshToken(): void {
-  //   this.authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
-  // }
-
-  // getAccessToken(): void {
-  //   this.authService.getAccessToken(GoogleLoginProvider.PROVIDER_ID).then(accessToken => this.accessToken = accessToken);
-  // }
 
 }

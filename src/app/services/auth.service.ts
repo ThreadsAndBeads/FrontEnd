@@ -8,7 +8,7 @@ declare const FB: any;
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class AuthService {
 
   constructor(
     private http: HttpClient,
