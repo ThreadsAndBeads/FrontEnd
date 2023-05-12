@@ -41,4 +41,7 @@ export class AuthService {
   fbLogin() {
     return this.http.get(`${BASEURL}/facebook`);
   }
+  googleLogin(socialData:any){
+    return this.http.post(`${BASEURL}/google`,socialData);
+  }
 }
