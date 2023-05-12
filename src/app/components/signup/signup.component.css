@@ -110,3 +110,27 @@ select{
 .modal-body{
   text-align: center
 }
+.modal{
+  border-radius: 4px;
+}
+.modal-header {
+  border: none;
+}
+
+.modal-body {
+  border: none;
+}
+.modal-footer{
+  border: none;
+}
+.modal-dialog{
+margin: 170px auto;
+width: fit-content;
+height: fit-content;
+}
+.modal-content{
+  width: 350px;
+  padding: 5px;
+  height: 350px;
+  margin: 0 auto;
+}
