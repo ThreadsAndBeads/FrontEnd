@@ -15,17 +15,11 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 })
 export class HeaderComponent  {
   isUserLoggedIn: string|null = '';
-  // showSearch = false;
-  // showDropdown = false;
-  // keepDropdownOpenFlag=false;
-  // query = '';
-  // products: Product[] = [];
-  // workshops: Workshop[] = [];
   constructor(
     private router: Router,
     private authService: AuthService,
     private tokenService: TokenStorageService,
-    private productService: ProductService, 
+    private productService: ProductService,
 
   ) {
 
@@ -50,37 +44,5 @@ export class HeaderComponent  {
       navbar.classList.remove('scrolled');
     }
   }
-  // toggleSearch() {
-  //   this.showSearch = !this.showSearch;
-  //   this.showDropdown = false;
-  // }
-
-  // search() {
-  //   if (!this.query) {
-  //     this.products = [];
-  //     this.workshops = [];
-  //     this.showDropdown = false;
-  //     return;
-  //   }
-
-  //   this.productService.search(this.query).subscribe(
-  //     (response : any) => {
-  //       this.products = response.products;
-  //       this.workshops = response.workshops;
-  //       this.showDropdown = true;    
-  //       },
-  //     (error) => {
-  //       console.error('Error', error);
-  //     }
-    
-  //   );
-  // }
-
-  // navigate(){
-  //   this.router.navigate(['/products']);
-  // }
-  // keepDropdownOpen() {
-  //   this.keepDropdownOpenFlag = true;
-  // }
-
+  
 }
