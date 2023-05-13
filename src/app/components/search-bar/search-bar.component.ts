@@ -1,10 +1,9 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/model/product.model';
+import { Workshop } from 'src/app/model/workshop.model';
 import { ProductService } from 'src/app/services/product.service';
-interface Workshop {
-  title: string;
-}
+
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
