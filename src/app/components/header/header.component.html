@@ -6,50 +6,86 @@
     <a href="" class="nav-logo threadsAndBeads"
       ><h1 class="logo">Threads & Beads</h1></a
     >
-
+    <app-search-bar></app-search-bar>
     <!-- <div class="search my-auto">
-      <i class="bi bi-search"></i>
-    </div> -->
-    <!-- <div class="search my-auto">
-      <div class="icon-container" (click)="toggleSearch()">
-        <i class="bi bi-search"></i>
-      </div>
-      <input type="text" [(ngModel)]="query" (input)="search()" [ngClass]="{ 'd-none': !showSearch }" />
-    </div> -->
-    <div class="search my-auto">
-      <div class="icon-container" (click)="toggleSearch()">
-        <i class="bi bi-search"></i>
-      </div>
       <input
+        id="search-box"
         type="text"
+        class="search-box"
+        name="q"
         [(ngModel)]="query"
         (input)="search()"
-        [ngClass]="{ 'd-none': !showSearch }"
+        #searchBox
       />
-      <div class="dropdown" [ngClass]="{ 'd-none': !showDropdown }">
+      <label for="search-box"
+        ><span class="glyphicon glyphicon-search search-icon">
+          <i class="bi bi-search"></i></span
+      ></label>
+      <input type="submit" id="search-submit" />
+
+      <div
+        class="dropdown"
+        [ngClass]="{ 'd-none': !showDropdown }"
+        [style.width.px]="searchBox.offsetWidth"
+        (mousedown)="keepDropdownOpen()"
+      >
         <div class="product-results" *ngIf="products.length">
-          <div>
-            Products
-            <div class="result" *ngFor="let product of products">
-              {{ product.name }}
-            </div>
+          <div class="result" *ngFor="let product of products">
+            <a href="" class="text-decoration-none">
+              <div class="d-flex gap-2">
+                <i class="bi bi-box-seam" style="color: #456268"></i>
+                <div class="d-flex flex-column">
+                  <P
+                    class="fw-bold"
+                    style="color: black; margin-bottom: -3px; font-size: 12px"
+                    >{{ product.name }}</P
+                  >
+                  <p class="mb-0" style="font-size: 10px; color: #456268">
+                    product
+                  </p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
-        <div class="workshop-results" *ngIf="workshops.length">
-          <div>
-            Workshops
-            <div class="result" *ngFor="let workshop of workshops">
-              {{ workshop.title }}
-            </div>
+        <hr class="center-ball" />
+
+        <div class="product-results" *ngIf="workshops.length">
+          <div class="result" *ngFor="let workshop of workshops">
+            <a
+              routerLink="/about"
+              class="text-decoration-none"
+              (click)="navigate()"
+            >
+              <div class="d-flex gap-3">
+                <i
+                  class="bi bi-person-workspace"
+                  style="color: #456268; width: 10px; height: 10px"
+                ></i>
+                <div class="d-flex flex-column">
+                  <P
+                    class="fw-bold"
+                    style="color: black; margin-bottom: -3px; font-size: 12px"
+                    >{{ workshop.title }}</P
+                  >
+                  <p class="mb-0" style="font-size: 10px; color: #456268">
+                    workshop
+                  </p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
-        <div class="no-results" *ngIf="!products.length && !workshops.length">
+        <div
+          class="no-results mx-2"
+          *ngIf="!products.length && !workshops.length"
+        >
           No results found.
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="user-icons d-flex justify-content-between my-auto">
-      <a class="user-link" href="#"><i class="bi bi-basket2-fill"></i></a>
+      <a class="user-link"><i class="bi bi-basket2-fill"></i></a>
       <a class="user-link toggle_btn" type="button" (click)="handleClick()">
         <i class="bi bi-person-circle"></i>
       </a>

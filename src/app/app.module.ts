@@ -50,6 +50,7 @@ import { SellerProductsComponent } from './components/seller-products/seller-pro
 import { SellerProductCardComponent } from './components/seller-product-card/seller-product-card.component';
 import { GoToLoginComponent } from './pages/go-to-login/go-to-login.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -93,7 +94,8 @@ import { LogoComponent } from './components/logo/logo.component';
     SellerProductsComponent,
     SellerProductCardComponent,
     GoToLoginComponent,
-    LogoComponent
+    LogoComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -137,8 +139,8 @@ import { LogoComponent } from './components/logo/logo.component';
         }
       } as SocialAuthServiceConfig,
     }
-   
-    
+
+
   ],
   bootstrap: [AppComponent],
 })
