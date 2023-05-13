@@ -12,6 +12,7 @@ export class ProductService {
   private BASE_URL = 'http://localhost:7000/api/v1/products';
 
   constructor(private httpClient: HttpClient) {}
+
   public addProduct(product: FormData) {
     return this.httpClient.post<Product>(`${this.BASE_URL}/`, product);
   }
@@ -34,10 +35,12 @@ export class ProductService {
     const url = `${this.BASE_URL}/${product_id}`;
     return this.httpClient.delete<any>(url);
   }
+  
   public addToCart( data: any): Observable<Product[]> {
     const url = `http://localhost:7000/api/v1/cart`;
     return this.httpClient.post<Product[]>(url, data);
   }
+
   search(query: string) {
     return this.httpClient.get<SearchResult>(`http://localhost:7000/api/v1/products/search/?q=${query}`);
   }
@@ -46,13 +49,4 @@ interface SearchResult {
   products: any[];
   workshops: any[];
 }
-
-
-
-
-
-
-
-
-
 
