@@ -134,8 +134,8 @@ import { CacheInterceptor } from './helpers/cache.interceptor';
         }
       } as SocialAuthServiceConfig,
     }
-   
-    
+
+
   ],
   bootstrap: [AppComponent],
 })

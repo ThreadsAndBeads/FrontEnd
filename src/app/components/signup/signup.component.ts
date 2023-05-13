@@ -31,20 +31,20 @@ export class SignupComponent implements OnInit {
   loggedIn: any;
   constructor( private authService: AuthService,private socialAuthService: SocialAuthService,private router:Router, private tokenService: TokenStorageService) { }
   hasErrors: boolean = false;
- 
+
 
   ngOnInit() {
-    
+
     this.socialAuthService.authState.subscribe( {
         next:(user)=>{
           this.user = user;
           this.loggedIn = user != null;
           this.authService.googleLogin({name:user.name,email:user.email,image:user.photoUrl,password:user.idToken,id:user.id}).subscribe({
-            next:(response:any)=>{    
+            next:(response:any)=>{
               console.log(response);
-              
+
                 let newUser=response.data.user
-                
+
                 this.tokenService.setUser(newUser)
                 this.tokenService.setToken(response.token);
                 this.router.navigate(['/home']);
@@ -56,7 +56,7 @@ export class SignupComponent implements OnInit {
         },
         error:(err)=>{
           console.log(err);
-          
+
         }
     });
 
@@ -78,7 +78,7 @@ export class SignupComponent implements OnInit {
       password: this.password,
       type: this.type
     };
-    
+
     this.authService.signup(userData)
     .subscribe({
       next: (response) => {
