@@ -1,6 +1,10 @@
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService ,GoogleSigninButtonModule, SocialLoginModule, SocialUser} from '@abacritt/angularx-social-login';
+
+import { Router } from '@angular/router';
+import {  AuthService } from 'src/app/services/auth.service';
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
 import * as bootstrap from 'bootstrap';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 
 @Component({
@@ -8,8 +12,11 @@ import * as bootstrap from 'bootstrap';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
+
+
 export class SignupComponent implements OnInit {
   @ViewChild('myModal') myModal!: ElementRef;
+  private accessToken = '';
   name: string = '';
   email: string = '';
   password: string = '';
@@ -20,12 +27,40 @@ export class SignupComponent implements OnInit {
     password: '',
     type: ''
   };
+  user?: SocialUser;
+  loggedIn: any;
+  constructor( private authService: AuthService,private socialAuthService: SocialAuthService,private router:Router, private tokenService: TokenStorageService) { }
   hasErrors: boolean = false;
-  constructor(private authService: AuthService) { }
+ 
+
   ngOnInit() {
+    
+    this.socialAuthService.authState.subscribe( {
+        next:(user)=>{
+          this.user = user;
+          this.loggedIn = user != null;
+          this.authService.googleLogin({name:user.name,email:user.email,image:user.photoUrl,password:user.idToken,id:user.id}).subscribe({
+            next:(response:any)=>{    
+              console.log(response);
+              
+                let newUser=response.data.user
+                
+                this.tokenService.setUser(newUser)
+                this.tokenService.setToken(response.token);
+                this.router.navigate(['/home']);
+            },
+            error:(err)=>{
+              console.log(err);
+            }
+          })
+        },
+        error:(err)=>{
+          console.log(err);
+          
+        }
+    });
+
   }
-
-
   showModal() {
     const modal = new bootstrap.Modal(this.myModal.nativeElement);
     modal.show();
@@ -43,7 +78,7 @@ export class SignupComponent implements OnInit {
       password: this.password,
       type: this.type
     };
-
+    
     this.authService.signup(userData)
     .subscribe({
       next: (response) => {
@@ -58,15 +93,8 @@ export class SignupComponent implements OnInit {
       }
     });
   }
-
-  fbLogin() {
-    this.authService.fbLogin().subscribe({
-      next: (response) => {
-        console.log(response);
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    })
+  signInWithFB(): void {
+   console.log(    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID));
   }
+
 }
