@@ -96,7 +96,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     ProductCardComponent,
     SellerProductsComponent,
     SellerProductCardComponent,
-    SearchBarComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
