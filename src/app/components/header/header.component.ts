@@ -26,7 +26,7 @@ export class HeaderComponent {
     private router: Router,
     private authService: AuthService,
     private tokenService: TokenStorageService,
-    private productService: ProductService, 
+    private productService: ProductService,
 
   ) {
 
@@ -68,12 +68,11 @@ export class HeaderComponent {
         this.products = response.products;
         this.workshops = response.workshops;
         console.log(response);
-        this.showDropdown = true;    
+        this.showDropdown = true;
         },
       (error) => {
         console.error('Error adding to cart:', error);
       }
-    
     );
   }
 
