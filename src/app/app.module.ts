@@ -46,7 +46,6 @@ import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CacheInterceptor } from './helpers/cache.interceptor';
-import { SuccessModalComponent } from './components/success-modal/success-modal.component';
 
 
 @NgModule({
@@ -91,8 +90,7 @@ import { SuccessModalComponent } from './components/success-modal/success-modal.
     CartProductsComponent,
     EmptyCartComponent,
     SellersComponent,
-    ProductCardComponent,
-    SuccessModalComponent
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

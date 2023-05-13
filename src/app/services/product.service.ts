@@ -25,9 +25,15 @@ export class ProductService {
     const url = `${this.BASE_URL}/?page=${page}&limit=${limit}`;
     return this.httpClient.get<any>(url);
   }
+  public getUserProducts(page:number,limit:number,user_id: any) {
+    const url = `${this.BASE_URL}/?page=${page}&limit=${limit}&user_id=${user_id}`;
+    return this.httpClient.get<any>(url);
+  }
 
-
-
+  public deleteProduct(product_id: any) {
+    const url = `${this.BASE_URL}/${product_id}`;
+    return this.httpClient.delete<any>(url);
+  }
   public addToCart( data: any): Observable<Product[]> {
     const url = `http://localhost:7000/api/v1/cart`;
     return this.httpClient.post<Product[]>(url, data);
