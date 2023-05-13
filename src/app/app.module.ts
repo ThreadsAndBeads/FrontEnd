@@ -46,8 +46,6 @@ import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CacheInterceptor } from './helpers/cache.interceptor';
-import { SellerProductsComponent } from './components/seller-products/seller-products.component';
-import { SellerProductCardComponent } from './components/seller-product-card/seller-product-card.component';
 
 
 @NgModule({
@@ -92,9 +90,7 @@ import { SellerProductCardComponent } from './components/seller-product-card/sel
     CartProductsComponent,
     EmptyCartComponent,
     SellersComponent,
-    ProductCardComponent,
-    SellerProductsComponent,
-    SellerProductCardComponent
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
@@ -138,8 +134,8 @@ import { SellerProductCardComponent } from './components/seller-product-card/sel
         }
       } as SocialAuthServiceConfig,
     }
-   
-    
+
+
   ],
   bootstrap: [AppComponent],
 })
