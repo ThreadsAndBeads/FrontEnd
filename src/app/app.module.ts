@@ -46,6 +46,8 @@ import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CacheInterceptor } from './helpers/cache.interceptor';
+import { SellerProductsComponent } from './components/seller-products/seller-products.component';
+import { SellerProductCardComponent } from './components/seller-product-card/seller-product-card.component';
 
 
 @NgModule({
@@ -90,7 +92,9 @@ import { CacheInterceptor } from './helpers/cache.interceptor';
     CartProductsComponent,
     EmptyCartComponent,
     SellersComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    SellerProductsComponent,
+    SellerProductCardComponent
   ],
   imports: [
     BrowserModule,
