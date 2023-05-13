@@ -48,6 +48,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CacheInterceptor } from './helpers/cache.interceptor';
 import { SellerProductsComponent } from './components/seller-products/seller-products.component';
 import { SellerProductCardComponent } from './components/seller-product-card/seller-product-card.component';
+import { GoToLoginComponent } from './pages/go-to-login/go-to-login.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 
 @NgModule({
@@ -82,19 +84,16 @@ import { SellerProductCardComponent } from './components/seller-product-card/sel
     ContactUsComponent,
     WorkshopHomeSectionComponent,
     SpinnerComponent,
-    // ModalComponent,
     CartProductsComponent,
     EmptyCartComponent,
     SellersComponent,
     WorkshopCardComponent,
     WorkshopHeaderComponent,
     WorkshopPageComponent,
-    CartProductsComponent,
-    EmptyCartComponent,
-    SellersComponent,
-    ProductCardComponent,
     SellerProductsComponent,
-    SellerProductCardComponent
+    SellerProductCardComponent,
+    GoToLoginComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,
