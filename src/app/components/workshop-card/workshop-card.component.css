@@ -29,7 +29,7 @@
 }
 /* Body */
 .postcard__body {
-  padding: clamp(1rem, 3vw, 2rem) 1.25rem;
+  /* padding: clamp(1rem, 3vw, 2rem) 1.25rem; */
   padding-left: clamp(1.25rem, 3vw, 2rem);
 }
 
@@ -78,6 +78,7 @@
   height: 3.125rem;
   transition: opacity 300ms ease-in-out;
   margin-right: 0.5rem;
+  align-items: end;
 }
 
 .author__avatar-wrap:hover {
@@ -114,6 +115,7 @@
 
 /*btn*/
 .btn-5 {
+  float: right;
   width: 130px;
   height: 40px;
   line-height: 42px;
