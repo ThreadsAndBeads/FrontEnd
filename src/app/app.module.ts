@@ -63,6 +63,9 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 import { GoToLoginComponent } from './pages/go-to-login/go-to-login.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { MyworkshopComponent } from './myworkshop/myworkshop.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
 
 
 @NgModule({
@@ -102,8 +105,6 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     WorkshopCardComponent,
     WorkshopHeaderComponent,
     WorkshopPageComponent,
-    CartProductsComponent,
-    EmptyCartComponent,
     ProductCardComponent,
     CartComponent,
     SellerProductsComponent,
@@ -111,7 +112,10 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     EditProfileComponent,
     GoToLoginComponent,
     LogoComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    MyworkshopComponent,
+    CheckoutComponent,
+    SellerworkshopsComponent,
   ],
   imports: [
     BrowserModule,

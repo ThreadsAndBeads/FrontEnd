@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Workshop } from 'src/app/model/workshop.model';
 
 @Component({
   selector: 'app-workshop-card',
@@ -6,6 +7,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./workshop-card.component.css']
 })
 export class WorkshopCardComponent  {
-  @Input() workshop: any
-  
+   @Input() workshop: any
 }
+
+
+
+
