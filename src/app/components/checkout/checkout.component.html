@@ -2,7 +2,14 @@
   <div class="checkout-container p-5">
     <form
       action=""
-      (ngSubmit)="createOrder(client_name.value, phone.value, address.value)"
+      (ngSubmit)="
+        createOrder(
+          client_name.value,
+          phone.value,
+          address.value,
+          payment_method.value
+        )
+      "
       [formGroup]="validationForm"
     >
       <div class="row justify-content-between">
@@ -143,7 +150,7 @@
                   type="radio"
                   class="input-radio valid"
                   name="payment_method"
-                  value="paypal"
+                  value="credit"
                   formControlName="payment_method"
                   #payment_method
                 />
