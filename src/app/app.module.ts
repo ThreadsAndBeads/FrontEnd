@@ -64,6 +64,7 @@ import { GoToLoginComponent } from './pages/go-to-login/go-to-login.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { MyworkshopComponent } from './myworkshop/myworkshop.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 @NgModule({
@@ -113,7 +114,8 @@ import { MyworkshopComponent } from './myworkshop/myworkshop.component';
     GoToLoginComponent,
     LogoComponent,
     SearchBarComponent,
-    MyworkshopComponent
+    MyworkshopComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

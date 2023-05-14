@@ -21,14 +21,17 @@ export class EditProfileComponent {
     name: this.userData.name,
     email: this.userData.email,
     type: this.userData.type,
-    image: [],
-    phone: 0,
+    image: "",
+    phone:  this.userData.phone || null,
     address: {
-      appartmentNo: 0,
-      city: "",
-      country: "",
+      appartmentNo: this.userData.address.appartmentNo || null,
+      city: this.userData.address.city || null,
+      country: this.userData.address.country || null,
     },
-    socialMediaLinks: [...Array(2)].map(() => ({ name: "", link: "" }))
+    socialMediaLinks: [
+      { name: "facebook", link: this.userData.socialMediaLinks[0].link },
+      { name: "instagram", link: this.userData.socialMediaLinks[1].link }
+    ]
   };
   constructor(private sanitizer: DomSanitizer, private tokenService: TokenStorageService, private authService: AuthService) {
   }
@@ -39,7 +42,7 @@ export class EditProfileComponent {
     formData.append('appartmentNo', user.address.appartmentNo);
     formData.append('city', user.address.city);
     formData.append('country', user.address.country);
-    formData.append('phone', user.phone.toString());
+   // formData.append('phone', user.phone.toString());
     user.socialMediaLinks.forEach((link, index) => {
       formData.append(`socialMediaLinks[${index}][name]`, link.name);
       formData.append(`socialMediaLinks[${index}][link]`, link.link);
@@ -58,23 +61,18 @@ export class EditProfileComponent {
       file : file ,
       url : this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(file))
      }
-     this.user.image.push(fileHandle)
+    //  this.user.image.push(fileHandle)
      console.log(fileHandle)
     }
   }
   removeImage(i :number) {
-    this.user.image.splice(i,1);
+    // this.user.image.splice(i,1);
   }
   fileDropped(fileHandel : FileHandle){
-    this.user.image.push(fileHandel);
+    // this.user.image.push(fileHandel);
   }
   editProfile() {
-    const userFormData = this.prepareFormData(this.user)
-    // console.log(userFormData);
-    userFormData.forEach((value, key) => {
-      console.log(key, value);
-    });
-    this.authService.updateProfile( userFormData,this.userId).subscribe(
+    this.authService.updateProfile( this.user,this.userId).subscribe(
       response => {
         // console.log(response);
         this.tokenService.setUser(this.user)

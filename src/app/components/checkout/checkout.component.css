@@ -1,0 +1,200 @@
+.checkout-container-all{
+   
+    /* background-color: rgb(239, 239, 239); */
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+.checkout-container h3 {
+    font-family: "Inter",-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+  .checkout-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+  }  
+  .method {
+    display: flex;
+    flex-direction: column;
+    width: 382px;
+    height: 122px;
+    padding-top: 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    
+    background-color: rgb(69, 98, 104,0.65);
+    justify-content: center;
+    align-items: center;
+  }
+   .bi{
+    cursor: pointer;
+    margin: auto 0;
+  }
+  
+  .bi-dash,
+  .bi-plus{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .bi-dash{
+    left: 25px;
+  }
+  
+  .bi-plus{
+    left: 95px;
+  }
+   
+  .radio-input {
+    margin-top: 20px;
+    color: #fff;
+  }
+   
+  input[type='radio'] {
+    display: inline-block;
+  }
+
+  .input-fields label {
+    display: block;
+    margin-bottom: 10px;
+    color: #838282;
+  }
+   
+  .info {
+    font-size: 12px;
+    font-weight: 300;
+    display: block;
+    margin-top: 50px;
+    opacity: .5;
+    color: #2e2e2e;
+  }
+   
+  div[class*='column'] {
+    width: 382px;
+  }
+   
+  input[type='text'] {
+    font-size: 16px;
+    width: 100%;
+    height: 50px;
+    padding-right: 40px;
+    padding-left: 16px;
+    color: rgba(46, 46, 46, .8);
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 4px;
+    outline: none;
+  }
+   
+  input[type='text']:focus{
+    border-color: none
+  }
+   
+
+   
+  .small-inputs {
+    display: flex;
+    margin-top: 20px;
+
+  }
+   
+  .small-inputs div {
+    width: 182px;
+   
+  }
+
+   
+  .blue-border {
+    border: 1px solid  rgb(69, 98, 104,0.65);
+  }
+.order-container{
+    background-color: rgb(239, 239, 239);
+}
+
+input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    width: 1px;
+    height: 1px;
+}
+.wc_payment_method label {
+    margin: 0 0 10px;
+    background: #fff;
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    font-weight: 600;
+    width: 100%;
+}
+
+.payment_method_paypal label:before ,.payment_method_cash label:before{
+    content: "";
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 0;
+    min-width: 18px;
+    height: 18px;
+    top: -1px;
+    left: 0;
+    margin-right: 4px;
+    background: linear-gradient(360deg, #fff 0%, rgba(255,255,255,0) 100%),#F2F2F2;
+    border: 1px solid rgba(0,0,0,0.11);
+    box-sizing: border-box;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.25s;
+}
+.payment_method_paypal input:checked+label:after ,.payment_method_cash input:checked+label:after{
+    content: "";
+    background: #2F80ED;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 20px;
+    top: 22px;
+    border-radius: 10px;
+    opacity: 1;
+    transition: 0.35s cubic-bezier(0.35, 1.35, 0.5, 1);
+}
+
+.pay-now button{
+    padding: 8px 15px;
+    text-transform: uppercase;
+    border: 2px solid #456268;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    color: white;
+    background-color: #456268;
+    width: 100%;
+  }
+  
+  .pay-now button:hover{
+    background-color: transparent;
+    color: black;
+  } 
+  .pay-now button:focus {
+    outline: none;
+  }
+
+.shop_table {
+    width: 100%;
+    margin-bottom: 30px;
+}
+  .product-name{
+    text-align: left;
+  }
+  .product-total{
+    text-align: right;
+  }
+  .cart-subtotal{
+    text-align: left;
+  }
+  .amount{
+    text-align: right;
+  }
