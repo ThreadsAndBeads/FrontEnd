@@ -83,39 +83,3 @@ export class MyworkshopComponent implements OnInit {
 
 
 
-
-
-  // selectedWorkshop: Workshop | null = null;
-  // workshops: Workshop[] = [];
-
-  // constructor(private workshopService: WorkshopService) {}
-
-  // ngOnInit(): void {
-  //   this.workshopService.getWorkshops().subscribe(
-  //     (workshops) => { console.log(workshops);
-  //       if (workshops) {
-  //         this.workshops = workshops.map(workshop => ({
-  //           seller_id: workshop.seller_id,
-  //           seller_name: workshop.seller_name,
-  //           title: workshop.title,
-  //           description: workshop.description,
-  //           price: workshop.price,
-  //           category: workshop.category,
-  //           startDate: new Date(workshop.startDate),
-  //           endDate: new Date(workshop.endDate),
-  //           image: workshop.image.map((image: any) => ({
-  //             url: image.url,
-  //             filename: image.filename
-  //           }))
-  //         }));
-  //       }
-  //     },
-  //     (error) => {
-  //       console.log('Error:', error);
-  //     }
-  //   );
-  // }
-
-  // onCloseCardClick(): void {
-  //   this.selectedWorkshop = null;
-  // }}

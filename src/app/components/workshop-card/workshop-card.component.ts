@@ -7,17 +7,9 @@ import { Workshop } from 'src/app/model/workshop.model';
   styleUrls: ['./workshop-card.component.css']
 })
 export class WorkshopCardComponent  {
-   @Input() workshopp: any
-
-  @Input() workshop: Workshop | null = null;
-  @Output() click: EventEmitter<Workshop> = new EventEmitter<Workshop>();
-
-  onClick(): void {
-    if (this.workshop) {
-      this.click.emit(this.workshop);
-    }
-  }
+   @Input() workshop: any
 }
+
 
 
 

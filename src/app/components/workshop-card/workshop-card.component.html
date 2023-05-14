@@ -5,7 +5,7 @@
     class="postcard__image col-sm-12 col-md-6 col-lg-6"
     role="img"
     title="image"
-    [style.background-image]="'url(' + workshopp.image + ')'"
+    [style.background-image]="'url(' + workshop.image + ')'"
   ></div>
   <!-- Body -->
   <div class="postcard__body col-sm-12 col-md-6 col-lg-6">
@@ -13,11 +13,11 @@
     <div class="postcard__text">
       <h2 class="postcard__title">
         <a class="postcard__title--link" href="#" target="_blank">{{
-          workshopp.title
+          workshop.title
         }}</a>
       </h2>
       <p class="postcard__description">
-        {{ workshopp.description }}
+        {{ workshop.description }}
       </p>
     </div>
     <!-- Footer -->
@@ -31,17 +31,17 @@
             alt="Profile image for Darlene Robertson"
           />
           <address>
-            <a class="author__name mx-2">{{ workshopp.seller_name }}</a>
+            <a class="author__name mx-2">{{ workshop.seller_name }}</a>
           </address>
         </div>
         <div class="workshop__time d-flex flex-column w-100">
           <time class="author__time"
             ><span class="author__time">Start At:</span>
-            {{ workshopp.startDate | date : "yyyy-MM-dd" }}</time
+            {{ workshop.startDate | date : "yyyy-MM-dd" }}</time
           >
           <time class="author__time"
             ><span class="author__time">End At : </span>
-            {{ workshopp.endDate | date : "yyyy-MM-dd" }}</time
+            {{ workshop.endDate | date : "yyyy-MM-dd" }}</time
           >
         </div>
       </div>
@@ -50,10 +50,3 @@
   </div>
 </div>
 
-<div class="card" (click)="onClick()">
-  <div class="card-body">
-    <h5 class="card-title">{{ workshop?.title }}</h5>
-    <p class="card-text">{{ workshop?.description }}</p>
-    <p class="card-text">Price: {{ workshop?.price }}</p>
-  </div>
-</div>
