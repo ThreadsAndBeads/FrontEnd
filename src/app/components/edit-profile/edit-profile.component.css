@@ -1,0 +1,26 @@
+input{
+  border: none;
+}
+
+.dropzone {
+  height: 150px;
+  min-width: 100px;
+  display: table;
+  background-color: #eee;
+  width: 300px;
+  border: dashed 1px #aaa;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+.centered {
+  text-align: center;
+}
+.browse-btn {
+  color: #456268;
+  cursor: pointer;
+}

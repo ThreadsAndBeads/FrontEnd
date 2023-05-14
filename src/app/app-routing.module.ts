@@ -18,6 +18,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { WorkshopCardComponent } from './components/workshop-card/workshop-card.component';
 import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
 import { SellerProductsComponent } from './components/seller-products/seller-products.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
@@ -38,7 +39,8 @@ const routes: Routes = [
   { path: 'products', component: ProductsPageComponent },
   {path : 'workshops' , component:WorkshopPageComponent},
   { path: 'sellers', component: SellersComponent },
-  {path: 'sellerProducts', component: SellerProductsComponent},
+  { path: 'sellerProducts', component: SellerProductsComponent },
+  {path: 'editProfile', component: EditProfileComponent},
   { path: '**', component: ErrorComponent },
 ];
 
