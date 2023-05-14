@@ -46,11 +46,11 @@
   <div class="mt-5 mx-3">
     <app-workshop-card
       *ngFor="let workshop of workshops"
-      class="pdtCard col-12"
+      class="pdtCard col-12 d-flex"
       [workshop]="workshop"
     ></app-workshop-card>
   </div>
-  <nav aria-label="Page navigation example " class="align-self-center">
+  <nav aria-label="Page navigation example" class="align-self-center">
     <ul class="pagination">
       <li class="page-item">
         <button (click)="previous()" class="page-link" aria-label="Previous">
