@@ -39,6 +39,7 @@
   font-weight: 700;
   margin-bottom: 0.5rem;
   transition: opacity 300ms ease-in-out;
+  font-family: "Delicious Handrawn", cursive;
 }
 
 .postcard__title:hover {

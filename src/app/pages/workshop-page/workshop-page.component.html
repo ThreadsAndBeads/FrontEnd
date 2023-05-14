@@ -1,4 +1,4 @@
-<app-workshop-header></app-workshop-header>
+<!-- <app-workshop-header></app-workshop-header>
 <div class="container">
   <div class="row d-flex flex-column flex-wrap">
     <app-workshop-card
@@ -8,6 +8,49 @@
     ></app-workshop-card>
   </div>
   <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <button (click)="previous()" class="page-link" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </button>
+      </li>
+      <li
+        class="page-item"
+        *ngFor="let page of pages"
+        (click)="navToPage(page)"
+      >
+        <button class="page-link">{{ page }}</button>
+      </li>
+
+      <li class="page-item">
+        <button (click)="next()" class="page-link" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div> -->
+<div class="w-100 d-flex flex-column" style="padding-top: 85px">
+  <div class="workshop-cover">
+    <div class="workshop-header">
+      <h1>Workshops</h1>
+      <p>
+        Our website offers a unique handmade workshop where you can learn how to
+        create beautiful crafts and gifts using your own two hands. Our expert
+        instructors will guide you through the process step by step, allowing
+        you to develop new skills and create one-of-a-kind items that you can be
+        proud of
+      </p>
+    </div>
+  </div>
+  <div class="mt-5 mx-3">
+    <app-workshop-card
+      *ngFor="let workshop of workshops"
+      class="pdtCard col-12"
+      [workshop]="workshop"
+    ></app-workshop-card>
+  </div>
+  <nav aria-label="Page navigation example " class="align-self-center">
     <ul class="pagination">
       <li class="page-item">
         <button (click)="previous()" class="page-link" aria-label="Previous">
