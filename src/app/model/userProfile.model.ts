@@ -5,10 +5,10 @@ export interface User {
     name : string ,
     email : string ,
     type : string ,
-  image: FileHandle[],
-  phone: Number,
+  image: string,
+  phone: Number | null,
     address: {
-    appartmentNo: number;
+    appartmentNo: number | null;
       city: string;
       country: string;
     };
