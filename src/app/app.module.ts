@@ -9,7 +9,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -41,11 +45,18 @@ import { WorkshopCardComponent } from './components/workshop-card/workshop-card.
 import { WorkshopHeaderComponent } from './components/workshop-header/workshop-header.component';
 import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
 import { SellersComponent } from './pages/sellers/sellers.component';
-import { GoogleLoginProvider, SocialAuthServiceConfig ,GoogleSigninButtonModule, SocialLoginModule, FacebookLoginProvider} from '@abacritt/angularx-social-login';
+import {
+  GoogleLoginProvider,
+  SocialAuthServiceConfig,
+  GoogleSigninButtonModule,
+  SocialLoginModule,
+  FacebookLoginProvider,
+} from '@abacritt/angularx-social-login';
 import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CacheInterceptor } from './helpers/cache.interceptor';
+import { CartComponent } from './components/cart/cart.component';
 import { SellerProductsComponent } from './components/seller-products/seller-products.component';
 import { SellerProductCardComponent } from './components/seller-product-card/seller-product-card.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
@@ -56,7 +67,6 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 
 @NgModule({
   declarations: [
-
     AppComponent,
     HorizontallScrollComponent,
     RegistrationComponent,
@@ -92,6 +102,10 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     WorkshopCardComponent,
     WorkshopHeaderComponent,
     WorkshopPageComponent,
+    CartProductsComponent,
+    EmptyCartComponent,
+    ProductCardComponent,
+    CartComponent,
     SellerProductsComponent,
     SellerProductCardComponent,
     EditProfileComponent,
@@ -112,10 +126,10 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory:HttpLoaderFactory,
-        deps:[HttpClient]
-      }
-    })
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
@@ -129,24 +143,22 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
               '748389809881-itoacndij8kntn22ovrorg263d3nlujp.apps.googleusercontent.com'
-            )
+            ),
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('1716037775480430')
-          }
+            provider: new FacebookLoginProvider('1716037775480430'),
+          },
         ],
         onError: (err) => {
           console.error(err);
-        }
+        },
       } as SocialAuthServiceConfig,
-    }
-
-
+    },
   ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-export function HttpLoaderFactory(http:HttpClient){
+export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }

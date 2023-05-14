@@ -1,0 +1,11 @@
+<div style="padding: 100px 0;">
+  <ng-container *ngIf="cartService.cartNotEmpty; else emptyCart">
+    <div class="col-12 col-lg-8 p-4">
+      <app-cart-products *ngIf="cartService.cartProducts.length > 0"></app-cart-products>
+    </div>
+  </ng-container>
+  <ng-template #emptyCart >
+    <app-empty-cart></app-empty-cart>
+
+  </ng-template>
+</div>
