@@ -102,9 +102,7 @@ import { SellerworkshopsComponent } from './components/sellerworkshops/sellerwor
     CartProductsComponent,
     EmptyCartComponent,
     SellersComponent,
-    WorkshopCardComponent,
     WorkshopHeaderComponent,
-    WorkshopPageComponent,
     ProductCardComponent,
     CartComponent,
     SellerProductsComponent,
@@ -116,6 +114,8 @@ import { SellerworkshopsComponent } from './components/sellerworkshops/sellerwor
     MyworkshopComponent,
     CheckoutComponent,
     SellerworkshopsComponent,
+    WorkshopPageComponent,
+    WorkshopCardComponent
   ],
   imports: [
     BrowserModule,
