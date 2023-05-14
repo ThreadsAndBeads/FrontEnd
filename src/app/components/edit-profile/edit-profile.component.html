@@ -10,7 +10,9 @@
                 <div class="text-wrapper">
                   <div class="centered">
                     Drag and drop your file or
-                    <a (click)="selectFile.click()" class="browse-btn">browse</a>
+                    <a (click)="selectFile.click()" class="browse-btn"
+                      >browse</a
+                    >
                     a file
                   </div>
                 </div>
@@ -24,9 +26,16 @@
                 (change)="onFileSelected($event)"
               />
             </div>
-            <div class="media-body mb-2 text-white d-flex justify-content-center">
+            <div
+              class="media-body mb-2 text-white d-flex justify-content-center"
+            >
               <h4 class="mt-0 mb-4"></h4>
-              <a (click)="editProfile()" class="btn btn-outline-dark btn-sm btn-block mt-2" href="/profile">Update Profile</a>
+              <a
+                (click)="editProfile()"
+                class="btn btn-outline-dark btn-sm btn-block mt-2"
+                href="/profile"
+                >Update Profile</a
+              >
             </div>
           </div>
         </div>
@@ -34,29 +43,48 @@
         <div class="px-4 py-3">
           <h6 class="mb-0 mt-2 mb-2">City:</h6>
           <div class="rounded shadow-sm bg-light">
-            <input type="text" class="form-control" [(ngModel)]="user.address.city">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.address.city"
+            />
           </div>
           <h6 class="mb-0 mt-2 mb-2">Country:</h6>
           <div class="rounded shadow-sm bg-light">
-            <input type="text" class="form-control" [(ngModel)]="user.address.country">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.address.country"
+            />
           </div>
           <h6 class="mb-0 mt-2 mb-2">Apartment number:</h6>
           <div class="rounded shadow-sm bg-light">
-            <input type="text" class="form-control" [(ngModel)]="user.address.appartmentNo">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.address.appartmentNo"
+            />
           </div>
           <h6 class="mb-0 mt-2 mb-2">Phone Number:</h6>
           <div class="rounded shadow-sm bg-light">
-            <input type="text" class="form-control" [(ngModel)]="user.phone">
+            <input type="text" class="form-control" [(ngModel)]="user.phone" />
           </div>
           <h6 class="mb-0 mt-2 mb-2">Facebook Link:</h6>
           <div class="rounded shadow-sm bg-light">
-            <input type="text" class="form-control" [(ngModel)]="user.socialMediaLinks[0].link">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.socialMediaLinks[0].link"
+            />
           </div>
           <h6 class="mb-0 mt-2 mb-2">Instagram Link:</h6>
           <div class="rounded shadow-sm bg-light">
-            <input type="text" class="form-control" [(ngModel)]="user.socialMediaLinks[1].link">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.socialMediaLinks[1].link"
+            />
           </div>
-
         </div>
       </div>
     </div>
