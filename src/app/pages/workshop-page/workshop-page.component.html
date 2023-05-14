@@ -1,4 +1,4 @@
-<app-workshop-header></app-workshop-header>
+<!-- <app-workshop-header></app-workshop-header>
 <div class="container">
   <div class="row d-flex flex-column flex-wrap">
     <app-workshop-card
@@ -29,4 +29,25 @@
       </li>
     </ul>
   </nav>
+</div> -->
+<div class="w-100" style="padding-top: 85px; margin-bottom: 200px">
+  <div class="workshop-cover">
+    <div class="workshop-header">
+      <h1>Workshops</h1>
+      <p>
+        Our website offers a unique handmade workshop where you can learn how to
+        create beautiful crafts and gifts using your own two hands. Our expert
+        instructors will guide you through the process step by step, allowing
+        you to develop new skills and create one-of-a-kind items that you can be
+        proud of
+      </p>
+    </div>
+  </div>
+  <div class="mt-5">
+    <app-workshop-card
+      *ngFor="let workshop of workshops"
+      class="pdtCard col-12"
+      [workshop]="workshop"
+    ></app-workshop-card>
+  </div>
 </div>
