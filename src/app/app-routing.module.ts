@@ -16,6 +16,7 @@ import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.compo
 import { GoToLoginComponent } from './pages/go-to-login/go-to-login.component';
 import { SellerProductsComponent } from './components/seller-products/seller-products.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'sellers', component: SellersComponent },
   { path: 'sellerProducts', component: SellerProductsComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
   {path: 'editProfile', component: EditProfileComponent},
   {path: 'welcome', component: GoToLoginComponent},
   { path: '**', component: ErrorComponent },
