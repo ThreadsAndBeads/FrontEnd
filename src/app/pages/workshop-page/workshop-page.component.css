@@ -27,3 +27,36 @@ button:active {
   -webkit-box-shadow: inset 5px 5px 15px #cccccc, inset -5px -5px 15px #ffffff;
   box-shadow: inset 5px 5px 15px #cccccc, inset -5px -5px 15px #ffffff;
 }
+
+.workshop-cover {
+  position: relative;
+  background-image: url("/assets/Images/pexels-workshop.jpg") !important;
+  width: 100%;
+  height: 550px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 9rem;
+}
+.workshop-header {
+  position: absolute;
+  top: 65%;
+  left: 10%;
+  background-color: #456268;
+  width: 46%;
+  height: 300px;
+  padding: 5%;
+  color: white;
+  line-height: 1.6;
+}
+.workshop-header h1 {
+  font-family: "Delicious Handrawn", cursive;
+}
+@media only screen and (max-width: 768px) {
+  .workshop-header {
+    top: 25%;
+    left: 10%;
+    width: 80%;
+    padding: 20px;
+  }
+}
