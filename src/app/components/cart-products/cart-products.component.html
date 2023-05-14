@@ -1,56 +1,53 @@
-<!-- make its in cart col-12 col-lg-8 p-4 -->
-<div class="col-12 col-lg-8 p-4">
-  <table class="table w-100">
-    <thead>
-      <th colspan="2">Product</th>
-      <th colspan="1">Price</th>
-      <th colspan="1">Quantity</th>
-      <th colspan="1">Total</th>
-      <th colspan="1"></th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let product of cartProducts">
-        <td colspan="2 d-flex">
-          <img
-            [src]="product.productId.images[0]" 
-            class="me-3"
-            alt=""
-          />
-          <p class="product-name d-inline-block">{{ product.productId.name }}</p>
-        </td>
-        <td colspan="1">${{ product.productId.price }}</td>
-        <td colspan="1" class="position-relative">
-          <i class="bi bi-dash fs-5 pointer" (click)="decrementQuantity(product)"></i>
-          <input
-            type="text"
-            name="quantity"
-            id="quantity"
-            min="1"
-            [(ngModel)]="product.quantity" 
-            (change)="changeQuantity(product)" 
-          />
-          <i class="bi bi-plus fs-5" (click)="incrementQuantity(product)"></i>
-        </td>
-        <td colspan="1">${{ product.productId.price * product.quantity }}</td>
-        <td colspan="1"><i class="bi bi-x fs-4" (click)="deleteProduct(product)"></i></td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="6">
-          <div class="d-flex justify-content-between">
-            <a>
-              <i
-                class="bi bi-chevron-double-left"
-                style="vertical-align: middle"
-              >
-                Back To Shopping</i
-              >
-            </a>
-            <button (click)="clearCart()">Clear Cart</button>
-          </div>
-        </td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
+<table class="table w-100" *ngIf="cartService.cartProducts" >
+  <thead>
+    <th colspan="2">Product</th>
+    <th colspan="1">Price</th>
+    <th colspan="1">Quantity</th>
+    <th colspan="1">Total</th>
+    <th colspan="1"></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of cartService.cartProducts">
+      <td colspan="2 d-flex">
+        <img
+          [src]="product.productId.images[0]" 
+          class="me-3"
+          alt=""
+        />
+        <p class="product-name d-inline-block">{{ product.productId.name }}</p>
+      </td>
+      <td colspan="1">${{ product.productId.price }}</td>
+      <td colspan="1" class="position-relative">
+        <i class="bi bi-dash fs-5 pointer" (click)="decrementQuantity(product)"></i>
+        <input
+          type="text"
+          name="quantity"
+          id="quantity"
+          min="1"
+          [(ngModel)]="product.quantity" 
+          (change)="changeQuantity(product)" 
+        />
+        <i class="bi bi-plus fs-5" (click)="incrementQuantity(product)"></i>
+      </td>
+      <td colspan="1">${{ product.productId.price * product.quantity }}</td>
+      <td colspan="1"><i class="bi bi-x fs-4" (click)="deleteProduct(product)"></i></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="6">
+        <div class="d-flex justify-content-between">
+          <a>
+            <i
+              class="bi bi-chevron-double-left"
+              style="vertical-align: middle"
+            >
+              Back To Shopping</i
+            >
+          </a>
+          <button (click)="clearCart()">Clear Cart</button>
+        </div>
+      </td>
+    </tr>
+  </tfoot>
+</table>

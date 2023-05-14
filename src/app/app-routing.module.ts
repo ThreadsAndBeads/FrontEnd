@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
-import { HorizontallScrollComponent } from './components/horizontall-scroll/horizontall-scroll.component';
-import { AppComponent } from './app.component';
 import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
 import { HomeComponent } from './components/home/home.component';
 import { RequestResetComponent } from './components/request-reset/request-reset.component';
@@ -13,11 +11,10 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { ErrorComponent } from './error/error.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
 import { SellersComponent } from './pages/sellers/sellers.component';
-
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { WorkshopCardComponent } from './components/workshop-card/workshop-card.component';
 import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
 import { SellerProductsComponent } from './components/seller-products/seller-products.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
@@ -36,9 +33,10 @@ const routes: Routes = [
   },
   { path: 'profile', component: UserProfileComponent },
   { path: 'products', component: ProductsPageComponent },
-  {path : 'workshops' , component:WorkshopPageComponent},
+  { path: 'workshops', component: WorkshopPageComponent },
   { path: 'sellers', component: SellersComponent },
-  {path: 'sellerProducts', component: SellerProductsComponent},
+  { path: 'sellerProducts', component: SellerProductsComponent },
+  { path: 'cart', component: CartComponent },
   { path: '**', component: ErrorComponent },
 ];
 

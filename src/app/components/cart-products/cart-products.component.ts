@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Cart } from 'src/app/model/cart.model';
+import { Component } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -7,21 +6,9 @@ import { CartService } from 'src/app/services/cart.service';
   templateUrl: './cart-products.component.html',
   styleUrls: ['./cart-products.component.css'],
 })
-export class CartProductsComponent implements OnInit {
-  cartProducts!: Cart['products'];
+export class CartProductsComponent {
 
-  constructor(protected cartService: CartService) {}
-
-  ngOnInit() {
-    this.cartService.getCartProducts().subscribe({
-      next: (response) => {
-        this.cartProducts = response.data.cart.products;
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
-  }
+  constructor(public cartService: CartService) {}
 
   changeQuantity(product: any) {
     if (this.getProductIndex(product) != -1) {
@@ -36,8 +23,8 @@ export class CartProductsComponent implements OnInit {
 
   incrementQuantity(product: any) {
     if (this.getProductIndex(product) != -1) {
-      if(product.quantity < product.productId.inStock){
-        product.quantity++
+      if (product.quantity < product.productId.inStock) {
+        product.quantity++;
         this.updateProduct(product);
       }
     }
@@ -45,15 +32,15 @@ export class CartProductsComponent implements OnInit {
 
   decrementQuantity(product: any) {
     if (this.getProductIndex(product) != -1) {
-      if(product.quantity > 1){
-        product.quantity--
+      if (product.quantity > 1) {
+        product.quantity--;
         this.updateProduct(product);
       }
     }
   }
 
   getProductIndex(product: any) {
-    const index = this.cartProducts.indexOf(product);
+    const index = this.cartService.cartProducts.indexOf(product);
     if (index !== -1) {
       return index;
     }
@@ -63,7 +50,7 @@ export class CartProductsComponent implements OnInit {
   updateProduct(product: any) {
     this.cartService.editProduct(product).subscribe({
       next: (response) => {
-        this.cartProducts = response.data.cart.products;
+        this.cartService.cartProducts = response.data.cart.products;
       },
       error: (error) => {
         console.log(error);
@@ -74,8 +61,7 @@ export class CartProductsComponent implements OnInit {
   clearCart() {
     this.cartService.clearCart().subscribe({
       next: (response) => {
-        // this.cartProducts = response.data.cart.products;
-        console.log(response)
+        this.cartService.cartNotEmpty = false;
       },
       error: (error) => {
         console.log(error);
@@ -87,8 +73,7 @@ export class CartProductsComponent implements OnInit {
     console.log(product.productId._id);
     this.cartService.deleteProduct(product.productId._id).subscribe({
       next: (response) => {
-        console.log(response);
-        // this.cartProducts = response.data.cart.products;
+        // this.cartService.cartIsEmpty = this.cartService.;
       },
       error: (error) => {
         console.log(error);
