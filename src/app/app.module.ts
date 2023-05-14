@@ -48,6 +48,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CacheInterceptor } from './helpers/cache.interceptor';
 import { SellerProductsComponent } from './components/seller-products/seller-products.component';
 import { SellerProductCardComponent } from './components/seller-product-card/seller-product-card.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { GoToLoginComponent } from './pages/go-to-login/go-to-login.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
@@ -93,6 +94,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     WorkshopPageComponent,
     SellerProductsComponent,
     SellerProductCardComponent,
+    EditProfileComponent,
     GoToLoginComponent,
     LogoComponent,
     SearchBarComponent
