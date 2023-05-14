@@ -63,6 +63,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 import { GoToLoginComponent } from './pages/go-to-login/go-to-login.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { WinwheelComponent } from './components/winwheel/winwheel.component';
 
 
 @NgModule({
@@ -111,7 +112,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     EditProfileComponent,
     GoToLoginComponent,
     LogoComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    WinwheelComponent
   ],
   imports: [
     BrowserModule,

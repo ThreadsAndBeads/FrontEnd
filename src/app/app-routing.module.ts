@@ -17,6 +17,7 @@ import { GoToLoginComponent } from './pages/go-to-login/go-to-login.component';
 import { SellerProductsComponent } from './components/seller-products/seller-products.component';
 import { CartComponent } from './components/cart/cart.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { WinwheelComponent } from './components/winwheel/winwheel.component';
 
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   {path: 'editProfile', component: EditProfileComponent},
   {path: 'welcome', component: GoToLoginComponent},
+  {path: 'winwheel', component: WinwheelComponent},
   { path: '**', component: ErrorComponent },
 ];
 

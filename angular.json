@@ -29,7 +29,11 @@
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/gsap/src/minified/TimelineMax.min.js",
+              "node_modules/gsap/src/minified/TweenMax.min.js",
+              "src/assets/JS/Winwheel.js"
+            ]
           },
           "configurations": {
             "production": {
