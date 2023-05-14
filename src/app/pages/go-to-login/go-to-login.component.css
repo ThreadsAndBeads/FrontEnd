@@ -1,0 +1,98 @@
+.welcome-container{
+    background-image: url("/assets/Images/pexels-min-an-713661.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.vertical-line {
+    position: relative;
+    width: 1px;
+    height: 100%;
+    left: 7%;
+  }
+  .welcome-logo{
+    font-family: 'Times New Roman', serif;
+    color: #fff;
+  }
+  .vertical-line::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  }
+  hr {
+    border: 0;
+    height: 1px;
+    width: 200px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  }
+.paragraph-container{
+    color: #fff;
+    font-size: 1.3em;
+}
+.words-container{
+    width: 50%;
+    background-color: rgb(69, 98, 104,0.65);
+    height: 100%;
+}
+.social-links-btn{
+    margin-left: 60px;
+}
+.social-links-btn i{
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.65;
+    transition: 1s all;
+}
+.social-links-btn i:hover{
+    opacity: 1;
+}
+.welcome-word h1{
+    font-family: 'Times New Roman', serif;
+    font-size: 10em;
+    line-height: 0.9;
+    font-weight: 1000;
+    color: #fff;
+    margin-top: 30%;
+    margin-left: 25%;
+}
+
+.welcome-word span{
+    color: #f9d949;
+}
+
+.login-button{
+    padding: 10px 50px;
+    border: none;
+    outline: none;
+    font-family: 'Times New Roman', serif;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: white;
+  color: #3C486B;
+}
+@media only screen and (max-width: 768px) {
+    .welcome-container {
+      min-height: auto;
+    }
+    .paragraph-container{
+       display: none !important;
+    }
+    .welcome-word h1{
+        font-size: 5em;
+        margin-top: 60%;
+    }
+    .social-links-btn{
+        margin-left: 120px;
+    }
+    .login-button{
+        margin-top: 30px;
+        margin-left: -30%;
+    }
+  }

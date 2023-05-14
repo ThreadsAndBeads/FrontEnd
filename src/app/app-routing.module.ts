@@ -13,8 +13,10 @@ import { ProductsPageComponent } from './components/products-page/products-page.
 import { SellersComponent } from './pages/sellers/sellers.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
+import { GoToLoginComponent } from './pages/go-to-login/go-to-login.component';
 import { SellerProductsComponent } from './components/seller-products/seller-products.component';
 import { CartComponent } from './components/cart/cart.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
@@ -37,6 +39,8 @@ const routes: Routes = [
   { path: 'sellers', component: SellersComponent },
   { path: 'sellerProducts', component: SellerProductsComponent },
   { path: 'cart', component: CartComponent },
+  {path: 'editProfile', component: EditProfileComponent},
+  {path: 'welcome', component: GoToLoginComponent},
   { path: '**', component: ErrorComponent },
 ];
 

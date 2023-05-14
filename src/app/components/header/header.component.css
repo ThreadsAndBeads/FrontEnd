@@ -119,31 +119,7 @@ li {
     flex-grow: unset;
   }
 }
-.search {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
 
-.search input[type="text"] {
-  margin-left: 8px;
-  height: 100%;
-  flex-grow: 1;
-  border: none;
-  outline: none;
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: white;
-  border: 1px solid #ccc;
-  max-height: 200px;
-  overflow-y: auto;
-  z-index: 1;
-}
 @media (max-width: 991px) {
   .nav-item-logo {
     display: none;
