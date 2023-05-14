@@ -17,6 +17,7 @@ import { SellersComponent } from './pages/sellers/sellers.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { WorkshopCardComponent } from './components/workshop-card/workshop-card.component';
 import { WorkshopPageComponent } from './pages/workshop-page/workshop-page.component';
+import { GoToLoginComponent } from './pages/go-to-login/go-to-login.component';
 import { SellerProductsComponent } from './components/seller-products/seller-products.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'sellers', component: SellersComponent },
   { path: 'sellerProducts', component: SellerProductsComponent },
   {path: 'editProfile', component: EditProfileComponent},
+  {path: 'welcome', component: GoToLoginComponent},
   { path: '**', component: ErrorComponent },
 ];
 
