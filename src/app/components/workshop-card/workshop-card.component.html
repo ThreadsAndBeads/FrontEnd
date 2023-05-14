@@ -8,14 +8,40 @@
     [style.background-image]="'url(' + workshop.image + ')'"
   ></div>
   <!-- Body -->
-  <div class="postcard__body col-sm-12 col-md-6 col-lg-6">
+  <div class="postcard__body col-sm-12 col-md-6 col-lg-6 h-100">
     <!-- Text -->
     <div class="postcard__text">
       <h2 class="postcard__title">
-        <a class="postcard__title--link" href="#" target="_blank">{{
-          workshop.title
-        }}</a>
+        <div class="postcard__title--link" href="#" target="_blank">
+          {{ workshop.title }}
+        </div>
       </h2>
+      <div class="workshop__time d-flex w-100">
+        <i class="bi bi-calendar2-week"></i>
+        <p class="author__time ms-1">
+          <ng-container
+            *ngIf="workshop.startDate === workshop.endDate; else dateRange"
+          >
+            {{ workshop.startDate | date : "dd MMMM yyyy" }}
+          </ng-container>
+          <ng-template #dateRange>
+            {{ workshop.startDate | date : "dd MMMM" }}
+            -
+            <ng-container
+              *ngIf="
+                (workshop.startDate | date : 'yyyy-MM') ===
+                  (workshop.endDate | date : 'yyyy-MM');
+                else differentMonth
+              "
+            >
+              {{ workshop.endDate | date : "dd" }}
+            </ng-container>
+            <ng-template #differentMonth>
+              {{ workshop.endDate | date : "dd MMMM yyyy" }}
+            </ng-template>
+          </ng-template>
+        </p>
+      </div>
       <p class="postcard__description">
         {{ workshop.description }}
       </p>
@@ -34,18 +60,17 @@
             <a class="author__name mx-2">{{ workshop.seller_name }}</a>
           </address>
         </div>
-        <div class="workshop__time d-flex flex-column w-100">
-          <time class="author__time"
-            ><span class="author__time">Start At:</span>
-            {{ workshop.startDate | date : "yyyy-MM-dd" }}</time
-          >
-          <time class="author__time"
-            ><span class="author__time">End At : </span>
-            {{ workshop.endDate | date : "yyyy-MM-dd" }}</time
-          >
+        <div class="d-flex author__time">
+          <i class="bi bi-geo-alt-fill"></i>
+          <p class="ms-1">Location</p>
         </div>
       </div>
     </div>
-    <button class="custom-btn btn-5 mt-2"><span>Book Now</span></button>
+    <div class="d-flex author__time align-items-baseline" style="float: right">
+      <i class="bi bi-currency-dollar"></i>
+      <p class="me-3 ms-1">{{ workshop.price }} Eg</p>
+
+      <button class="custom-btn btn-5 mt-2"><span>Book Now</span></button>
+    </div>
   </div>
 </div>
