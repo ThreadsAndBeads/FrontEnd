@@ -7,7 +7,6 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./cart-products.component.css'],
 })
 export class CartProductsComponent {
-
   constructor(public cartService: CartService) {}
 
   changeQuantity(product: any) {
@@ -50,7 +49,7 @@ export class CartProductsComponent {
   updateProduct(product: any) {
     this.cartService.editProduct(product).subscribe({
       next: (response) => {
-        this.cartService.cartProducts = response.data.cart.products;
+        window.location.reload();
       },
       error: (error) => {
         console.log(error);
@@ -73,7 +72,7 @@ export class CartProductsComponent {
     console.log(product.productId._id);
     this.cartService.deleteProduct(product.productId._id).subscribe({
       next: (response) => {
-        // this.cartService.cartIsEmpty = this.cartService.;
+        window.location.reload();
       },
       error: (error) => {
         console.log(error);

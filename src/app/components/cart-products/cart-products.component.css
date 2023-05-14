@@ -54,9 +54,15 @@
 }
 
 .table tfoot button{
-  background-color: #456268;
-  border: none;
-  color: white;
   padding: 8px 15px;
   text-transform: uppercase;
+  border: 2px solid #456268;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  color: white;
+  background-color: #456268;
+}
+
+.table tfoot button:hover{
+  background-color: transparent;
+  color: black;
 }
