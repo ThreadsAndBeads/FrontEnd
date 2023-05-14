@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -6,16 +6,13 @@ import { CartService } from 'src/app/services/cart.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
 })
-export class CartComponent{
+export class CartComponent {
   cartProducts!: any;
-  constructor(public cartService: CartService) {
 
-  }
-  
-  ngOnInit() {
+  constructor(public cartService: CartService) {
     this.checkCartStatus()
   }
-
+  
   checkCartStatus(){
     this.cartService.getCartProducts().subscribe({
       next: (response) => {
