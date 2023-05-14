@@ -22,15 +22,15 @@ export class EditProfileComponent {
     email: this.userData.email,
     type: this.userData.type,
     image: "",
-    phone: null,
+    phone:  this.userData.phone || null,
     address: {
-      appartmentNo: null,
-      city: "",
-      country: "",
+      appartmentNo: this.userData.address.appartmentNo || null,
+      city: this.userData.address.city || null,
+      country: this.userData.address.country || null,
     },
     socialMediaLinks: [
-      { name: "facebook", link: "" },
-      { name: "instagram", link: "" }
+      { name: "facebook", link: this.userData.socialMediaLinks[0].link },
+      { name: "instagram", link: this.userData.socialMediaLinks[1].link }
     ]
   };
   constructor(private sanitizer: DomSanitizer, private tokenService: TokenStorageService, private authService: AuthService) {
