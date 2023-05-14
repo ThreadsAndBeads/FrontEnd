@@ -29,8 +29,8 @@ export class AuthService {
   requestReset(body: string): Observable<any> {
     return this.http.post(`${BASEURL}/forgotPassword`, body);
   }
-  updateProfile(user: FormData,userID: any) {
-    return this.http.patch(`${BASEURL}/${userID}`, user);
+  updateProfile(body: any,userID: any) {
+    return this.http.patch(`${BASEURL}/${userID}`, body);
   }
   newPassword(body: any,token:string): Observable<any> {
     console.log(body);

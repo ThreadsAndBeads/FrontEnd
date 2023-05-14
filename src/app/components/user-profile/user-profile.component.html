@@ -23,26 +23,29 @@
       <div class="bg-light p-4 d-flex justify-content-end text-center">
         <ul class="list-inline mb-0">
           <li class="list-inline-item">
-            <h5 class="font-weight-bold mb-0 d-block"><i class="bi bi-facebook"><a href="{{ currentUser?.socialMediaLinks[0].link}}"></a></i></h5>
-            <small class="text-muted">
-
-              <i class="fas fa-image mr-1"></i>Facebook</small
-            >
+            <a href="{{ currentUser?.socialMediaLinks[0].link }}" target="_blank" class="text-dark">
+              <h5 class="font-weight-bold mb-0 d-block text-dark"><i class="bi bi-facebook"></i></h5>
+              <small>
+                <i class="fas fa-image mr-1"></i>Facebook
+              </small>
+            </a>
           </li>
           <li class="list-inline-item">
-            <h5 class="font-weight-bold mb-0 d-block"><i class="bi bi-instagram"><a href="{{ currentUser?.socialMediaLinks[1].link}}"></a></i></h5>
-            <small class="text-muted">
-              <i class="fas fa-user mr-1"></i>Instagram</small
-            >
+            <a href="{{ currentUser?.socialMediaLinks[1].link }}" target="_blank" class="text-dark">
+              <h5 class="font-weight-bold mb-0 d-block text-dark"><i class="bi bi-instagram"></i></h5>
+              <small>
+                <i class="fas fa-user mr-1"></i>Instagram
+              </small>
+            </a>
           </li>
         </ul>
       </div>
+
       <div class="px-4 py-3">
         <h5 class="mb-0">Address</h5>
         <div class="p-4 rounded shadow-sm bg-light">
           <p class="font-italic mb-0">{{ currentUser?.address?.country }}</p>
           <p class="font-italic mb-0">{{ currentUser?.address?.city }}</p>
-          <p class="font-italic mb-0">{{ currentUser?.address?.street }}</p>
           <p class="font-italic mb-0">{{ currentUser?.address?.appartmentNo }}</p>
         </div>
         <h5 class="mb-0 mt-2">Phone Number</h5>
