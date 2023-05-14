@@ -103,8 +103,6 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     WorkshopCardComponent,
     WorkshopHeaderComponent,
     WorkshopPageComponent,
-    CartProductsComponent,
-    EmptyCartComponent,
     ProductCardComponent,
     CartComponent,
     SellerProductsComponent,
