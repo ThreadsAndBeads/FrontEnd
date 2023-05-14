@@ -17,7 +17,7 @@
   padding: 0 1rem;
   color: #000;
   font-size: 15px;
-  border: 1px solid #0f0f0f;
+  border: 1px solid #B7472A;
   border-radius: 6px 0 0 6px;
   background-color: transparent;
 }
@@ -27,7 +27,7 @@
   padding: .5em 1em;
   border: none;
   border-radius: 0 6px 6px 0;
-  background-color: #0f0f0f;
+  background-color: #B7472A;
   color: #fff;
   font-size: 15px;
   cursor: pointer;
@@ -37,11 +37,11 @@
 .button--submit:hover {
   background-color: transparent;
   color: black;
-  border: 1px solid #0f0f0f;
+  border: 1px solid #B7472A;
 }
 
 .input:focus, .input:focus-visible {
-  border-color: #0f0f0f;
+  border-color: #B7472A;
   outline: none;
 }
 
@@ -66,14 +66,14 @@
 
 .checkbox-wrapper-37 .checkbox-box {
   fill: #ebeaea;
-  stroke: #32cd32;
+  stroke: #B7472A;
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
   transition: stroke-dashoffset 0.6s ease-in;
 }
 
 .checkbox-wrapper-37 .checkbox-tick {
-  stroke: #32cd32;
+  stroke: #B7472A;
   stroke-dasharray: 172;
   stroke-dashoffset: 172;
   transition: stroke-dashoffset 0.6s ease-in;
