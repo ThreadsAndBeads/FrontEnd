@@ -18,13 +18,14 @@ import { SellerProductsComponent } from './components/seller-products/seller-pro
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-
+import { MyworkshopComponent } from './myworkshop/myworkshop.component';
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
   { path: 'home', component: HomeComponent },
   { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'contact', component: ContactUsComponent },
+  {path: 'myworkshop', component: MyworkshopComponent},
   {
     path: 'forgetPassword',
     component: RequestResetComponent,
