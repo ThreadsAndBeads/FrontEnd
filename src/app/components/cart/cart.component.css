@@ -14,22 +14,20 @@
 
 .input {
   min-height: 40px;
-  /* width: 185px; */
   padding: 0 1rem;
-  color: #fff;
+  color: #000;
   font-size: 15px;
-  border: 1px solid #5e4dcd;
+  border: 1px solid #0f0f0f;
   border-radius: 6px 0 0 6px;
   background-color: transparent;
 }
 
 .button--submit {
   min-height: 40px;
-  /* max-width: 100px; */
   padding: .5em 1em;
   border: none;
   border-radius: 0 6px 6px 0;
-  background-color: #5e4dcd;
+  background-color: #0f0f0f;
   color: #fff;
   font-size: 15px;
   cursor: pointer;
@@ -37,11 +35,13 @@
 }
 
 .button--submit:hover {
-  background-color: #5e5dcd;
+  background-color: transparent;
+  color: black;
+  border: 1px solid #0f0f0f;
 }
 
 .input:focus, .input:focus-visible {
-  border-color: #3898EC;
+  border-color: #0f0f0f;
   outline: none;
 }
 
@@ -84,49 +84,107 @@
   stroke-dashoffset: 0;
 }
 
-.my-button {
-  background-color: #456268;
-  border: none;
-  color: white;
-  padding: 10px 20px;
+.toCheckout {
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
 }
 
-.my-button:after {
-  content: "";
-  background-color: rgba(255, 255, 255, 0.2);
-  position: absolute;
+.toCheckout::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: black;
   top: 50%;
-  left: 50%;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
 }
 
-.my-button:hover:after {
-  animation: ripple_401 1s ease-out;
+.toCheckout .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
 }
 
-@keyframes ripple_401 {
-  0% {
-    width: 5px;
-    height: 5px;
-    opacity: 1;
-  }
+.toCheckout .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
 
-  100% {
-    width: 200px;
-    height: 200px;
-    opacity: 0;
-  }
+.toCheckout .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.toCheckout .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.toCheckout:hover {
+  color: white;
+  background: black;
+}
+
+.toCheckout:hover::before {
+  width: 0.9375rem;
+  background: white;
+}
+
+.toCheckout:hover .text {
+  color: white;
+  padding-left: 1.5em;
+}
+
+.toCheckout:hover .top-key {
+  left: -2px;
+  width: 0px;
+}
+
+.toCheckout:hover .bottom-key-1,
+.toCheckout:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
 }
