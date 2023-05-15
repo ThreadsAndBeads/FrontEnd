@@ -30,6 +30,7 @@ export class CheckoutComponent {
   client=this.tokenService.getUser();
   constructor(private orderService : OrderService ,private router:Router,private tokenService: TokenStorageService,public cartService: CartService,  private fb: FormBuilder)
    { 
+    this.checkCartStatus();
      this.validationForm = this.fb.group({
        client_name: [this.client.name, [Validators.required]],
        phone: [this.client.phone, [Validators.required]],
@@ -37,12 +38,12 @@ export class CheckoutComponent {
        address:['', Validators.required],
        // payment_method:['']
      });
-    this.checkCartStatus();
-    console.log(this.validationForm);
+
+
 
   }
   checkCartStatus() {
-    if (this.validationForm.valid) {
+   
     this.cartService.getCartProducts().subscribe({
       next: (response) => {
         if (response.data.cart.products) {
@@ -57,7 +58,7 @@ export class CheckoutComponent {
         console.log(error);
       },
     });
-  }
+  
 }
 
   calculateSubtotal() {

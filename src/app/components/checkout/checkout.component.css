@@ -113,12 +113,17 @@
   font-size: 1.2em;
 }
 input[type="radio"] {
-    opacity: 0;
+    /* opacity: 0; */
     position: absolute;
     pointer-events: none;
+    background: linear-gradient(360deg, #fff 0%, rgba(255,255,255,0) 100%),#F2F2F2;
+    border: 1px solid rgba(0,0,0,0.11);
+    box-sizing: border-box;
+    margin-left: 4px;
+    margin-top: 18px;
     z-index: -1;
-    width: 1px;
-    height: 1px;
+    width: 18px;
+    height: 18px;
 }
 .wc_payment_method label {
     margin: 0 0 10px;
@@ -131,7 +136,7 @@ input[type="radio"] {
     width: 100%;
 }
 
-.payment_method_paypal label:before ,.payment_method_cash label:before{
+/* .payment_method_paypal label:before ,.payment_method_cash label:before{
     content: "";
     position: relative;
     vertical-align: middle;
@@ -152,6 +157,7 @@ input[type="radio"] {
 .payment_method_paypal input:checked+label:after ,.payment_method_cash input:checked+label:after{
     content: "";
     background: #743333;
+    vertical-align: middle;
     width: 10px;
     height: 10px;
     position: absolute;
@@ -160,7 +166,7 @@ input[type="radio"] {
     border-radius: 10px;
     opacity: 1;
     transition: 0.35s cubic-bezier(0.35, 1.35, 0.5, 1);
-}
+} */
   .toCheckout {
     background-color: transparent;
     border: 2px solid #000;
@@ -192,6 +198,7 @@ input[type="radio"] {
     background: black;
     top: 50%;
     left: 1.5em;
+    
     position: absolute;
     transform: translateY(-50%);
     transform-origin: center;
