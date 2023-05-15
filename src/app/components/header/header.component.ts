@@ -20,9 +20,7 @@ export class HeaderComponent  {
 
   constructor(
     private router: Router,
-    private authService: AuthService,
     private tokenService: TokenStorageService,
-    private productService: ProductService,
     private cartService: CartService,private translate:TranslateService
   ) {
     this.getCartCount();
@@ -54,16 +52,18 @@ export class HeaderComponent  {
 
   useLang(language:string){
     this.translate.use(language)
+    localStorage.setItem('language', language);
+
   }
   languageChanged(selectedValue: any) {
     if (selectedValue.target.value === 'english') {
       this.useLang('en');
-      document.documentElement.setAttribute('dir', 'ltr');
     } else if (selectedValue.target.value === 'arabic') {
-      this.useLang('ar');
-      document.documentElement.setAttribute('dir', 'rtl');
+      this.useLang('ar');   
     }
   }
+  
+
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     const navbar = document.querySelector('.navbar') as HTMLElement;

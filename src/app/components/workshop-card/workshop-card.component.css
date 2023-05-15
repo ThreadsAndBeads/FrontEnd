@@ -179,6 +179,7 @@
   padding: 10px 10px;
   border-radius: 10px 0 0 10px;
   font-family: "Open Sans", sans-serif;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 767px) {
