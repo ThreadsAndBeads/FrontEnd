@@ -14,3 +14,11 @@ body {
   height: 100vh;
   overflow-x:hidden;
 }
+
+span{
+  font-weight: 500;
+  /* display: block; */
+}
+.inline{
+  display: inline;
+}
