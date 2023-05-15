@@ -10,7 +10,6 @@
       <app-search-bar></app-search-bar>
     </div>
     <div class="user-icons d-flex justify-content-between my-auto">
-      <a class="user-link position-relative" routerLink="/cart">
       <div class="language-selector">
         <select
           class="language-selector--dropdown"
@@ -24,7 +23,7 @@
           </option>
         </select>
       </div>
-      <a class="user-link position-relative">
+      <a class="user-link position-relative" routerLink="/cart">
         <i class="bi bi-basket2-fill"></i>
         <span class="cartQuantity">{{ totalCartProducts }}</span>
       </a>
