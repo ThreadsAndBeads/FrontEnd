@@ -22,11 +22,12 @@ export class ProductService {
     return this.httpClient.get<Product[]>(url);
   }
 
-  public getAllProducts(page:number,limit:number) {
+  public getAllProducts(page: number, limit: number) {
     const url = `${this.BASE_URL}/?page=${page}&limit=${limit}`;
     return this.httpClient.get<any>(url);
   }
-  public getUserProducts(page:number,limit:number,user_id: any) {
+
+  public getUserProducts(page: number, limit: number, user_id: any) {
     const url = `${this.BASE_URL}/?page=${page}&limit=${limit}&user_id=${user_id}`;
     return this.httpClient.get<any>(url);
   }
@@ -35,16 +36,23 @@ export class ProductService {
     const url = `${this.BASE_URL}/${product_id}`;
     return this.httpClient.delete<any>(url);
   }
-  
-  public addToCart( data: any): Observable<Product[]> {
-    const url = `http://localhost:7000/api/v1/cart`;
-    return this.httpClient.post<Product[]>(url, data);
+
+  public getAllCategories() {
+    const url = `${this.BASE_URL}/categories`;
+    return this.httpClient.get(url);
   }
 
   search(query: string) {
-    return this.httpClient.get<SearchResult>(`http://localhost:7000/api/v1/products/search/?q=${query}`);
+    const url = `${this.BASE_URL}/search/?q=${query}`;
+    return this.httpClient.get<SearchResult>(url);
+  }
+
+  public addToCart(data: any): Observable<Product[]> {
+    const url = `http://localhost:7000/api/v1/cart`;
+    return this.httpClient.post<Product[]>(url, data);
   }
 }
+
 interface SearchResult {
   products: any[];
   workshops: any[];
