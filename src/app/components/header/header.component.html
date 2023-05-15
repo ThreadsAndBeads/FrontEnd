@@ -10,9 +10,9 @@
       <app-search-bar></app-search-bar>
     </div>
     <div class="user-icons d-flex justify-content-between my-auto">
-      <a class="user-link position-relative">
+      <a class="user-link position-relative" routerLink="/cart">
         <i class="bi bi-basket2-fill"></i>
-        <span class="cartQuantity">{{totalCartProducts}}</span>
+        <span class="cartQuantity">{{ totalCartProducts }}</span>
       </a>
       <a class="user-link toggle_btn" type="button" (click)="handleClick()">
         <i class="bi bi-person-circle"></i>
