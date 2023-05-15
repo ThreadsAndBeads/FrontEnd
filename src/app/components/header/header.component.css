@@ -27,10 +27,14 @@
   color: white;
 }
 
-.user-icons,
-.search {
+.user-icons{
   width: 80px;
 }
+
+.search {
+  min-width: 80px;
+}
+
 
 .cartQuantity{
   position: absolute;
