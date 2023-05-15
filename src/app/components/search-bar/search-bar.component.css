@@ -93,12 +93,3 @@ hr {
     width: fit-content;
   }
 }
-@media (max-width: 991px) {
-  .search {
-    margin-left: auto;
-    width: fit-content;
-  }
-}
-.search {
-  width: 80px;
-}
