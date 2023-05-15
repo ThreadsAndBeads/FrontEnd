@@ -5,7 +5,7 @@ export interface User {
     name : string ,
     email : string ,
     type : string ,
-  image: string,
+  image: FileHandle,
   phone: Number | null,
     address: {
     appartmentNo: number | null;
