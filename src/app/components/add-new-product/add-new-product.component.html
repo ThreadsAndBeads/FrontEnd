@@ -144,68 +144,88 @@
       <form
         #productForm="ngForm"
         (ngSubmit)="addProduct(productForm)"
-        class="d-flex gap-5 justify-content-center col-lg-12"
+        class="row col-12"
       >
-        <div class="parent1 my-auto">
+        <div class="parent1 mb-4 my-xl-auto col-12 col-xl-4 ">
           <div class="dropzone" appDrag (files)="fileDropped($event)">
             <div class="text-wrapper">
-              <div class="centered d-flex flex-column"><i class="bi bi-inbox-fill" style="font-size: 50px;"></i>
-                Drag and drop your file or
-                <a (click)="selectFile.click()" class="browse-btn">browse</a>
+              <div class="centered d-flex flex-column">
+                <svg viewBox="-17 0 59 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M7 10V9C7 6.23858 9.23858 4 12 4C14.7614 4 17 6.23858 17 9V10C19.2091 10 21 11.7909 21 14C21 15.4806 20.1956 16.8084 19 17.5M7 10C4.79086 10 3 11.7909 3 14C3 15.4806 3.8044 16.8084 5 17.5M7 10C7.43285 10 7.84965 10.0688 8.24006 10.1959M12 12V21M12 12L15 15M12 12L9 15"
+                    stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+              <div>
+                <span>Drag and drop your file or </span>
+                <a (click)="selectFile.click()" class="browse-btn text-info">browse</a>
                 a file
+              </div>
               </div>
             </div>
           </div>
-          <div class="image-container" *ngFor="let image of product.images; let i = index">
-            <div class="img-c m-0">
+          <div class="image-container row mt-1 p-1" *ngIf="product.images && product.images.length > 0">
+            <div class="img-c m-1 p-0" *ngFor="let image of product.images; let i = index">
               <span class="btn-remove-img" (click)="removeImage(i)">X</span>
-              <img class="card-img-top w-100 h-100 m-0" [src]="image.url" />
+              <img class="card-img-top m-0" style="max-width: 100%; max-height: 100%;" [src]="image.url" />
             </div>
           </div>
           <input style="display: none" multiple type="file" #selectFile value="select" (change)="onFileSelected($event)" />
         </div>
 
-        <div class="parent2">
+        <div class="parent2 col-12 col-md-6 col-xl-3">
           <div>
             <label for="inputProductName5" class="form-label">Product Name <span class="required-star">*</span></label>
-            <input type="text" id="inputProductName5" class="form-control col3" aria-labelledby="" name="name"
+            <input type="text" id="inputProductName5" class="form-control col-12" aria-labelledby="" name="name"
               [(ngModel)]="product.name" />
           </div>
 
           <div>
             <label for="inputProductPrice5" class="form-label">
               Price <span class="required-star">*</span></label>
-            <input type="number" id="inputProductPrice5" class="form-control" aria-labelledby="" width="100px" name="price"
+            <input type="number" id="inputProductPrice5" class="form-control col-12" aria-labelledby="" name="price"
               [(ngModel)]="product.price" />
           </div>
 
           <div>
             <label for="inputDiscountPrice5" class="form-label">
               Discount Price</label>
-            <input type="number" id="inputDiscountPrice5" class="form-control col3" aria-labelledby="" width="100px"
+            <input type="number" id="inputDiscountPrice5" class="form-control col-12" aria-labelledby=""
               name="discPrice" [(ngModel)]="product.priceDiscount" />
+          </div>
+
+          <div>
+            <label for="inputProductInStock" class="form-label">
+              In Sotck <span class="required-star">*</span></label>
+            <input type="number" id="inputProductInStock" class="form-control col-12" aria-labelledby="" name="inStock"
+              [(ngModel)]="product.inStock" />
           </div>
         </div>
 
-        <div class="my-auto">
+        <div class="col-12 col-md-6 col-xl-3">
           <label for="inputDiscountPrice5" class="form-label">
             Description
           </label>
-          <textarea class="description form-control" id="exampleFormControlTextarea1" cols="150" rows="2" name="description"
-            [(ngModel)]="product.description"></textarea>
+          <textarea class="description form-control text-white" id="exampleFormControlTextarea1" cols="150" rows="2" name="description"
+            [(ngModel)]="product.description" style="min-height: calc(100% - 0.75rem - 36px);"></textarea>
         </div>
 
-
-        <button type="submit" class="cssbuttons-io-button w-25 mt-2 align-self-end">
-          Add
-          <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="none" d="M0 0h24v24H0z"></path>
-              <path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z">
-              </path>
-            </svg>
-          </div>
-        </button>
+        <div class="col-12 col-md-12 col-xl-2 d-flex justify-content-end align-content-end">
+          <button type="submit" class="cssbuttons-io-button mt-2 mt-lg-auto">
+            Add
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z">
+                </path>
+              </svg>
+            </div>
+          </button>
+        </div>
       </form>
     </div>
 
+<!-- calc(100% - 0.75rem - 36px) -->

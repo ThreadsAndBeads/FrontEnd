@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+
 .productDetails {
   border-radius: 12px;
   border: 1px solid #7b52b9;
@@ -110,25 +112,14 @@ input:focus {
   cursor: pointer;
 }
 .img-c {
-  width: 100%;
-  height: 100px;
+  position: relative;
+  width: 60px;
+  height: 60px;
 }
 .product-card {
   width: 800px;
 }
 
-
-/* _____________________________________________________________________________ */
-/* _____________________________________________________________________________ */
-/* _____________________________________________________________________________ */
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
-
-/* body {
-  background: #999;
-  padding: 40px;
-  font-family: "Open Sans Condensed", sans-serif;
-} */
 label{
   color: white;
 }
@@ -158,7 +149,6 @@ form {
 
 form input,
 form button {
-  width: 212px;
   border: 1px solid;
   border-bottom-color: rgba(255, 255, 255, .5);
   border-right-color: rgba(60, 60, 60, .35);
@@ -204,7 +194,7 @@ form input.pass {
 }
 
 form button[type=submit] {
-  width: 248px;
+  width: 150px;
   margin-bottom: 0;
   color: #3f898a;
   letter-spacing: .05em;

@@ -27,9 +27,27 @@
   color: white;
 }
 
-.user-icons,
-.search {
+.user-icons{
   width: 80px;
+}
+
+.search {
+  min-width: 80px;
+}
+
+
+.cartQuantity{
+  position: absolute;
+  background: red;
+  color: white;
+  width: 15px;
+  height: 15px;
+  font-size: 9px;
+  border-radius: 50%;
+  text-align: center;
+  left: 0;
+  top: 0;
+  transform: translate(50%, -50%);
 }
 
 li {
