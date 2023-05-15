@@ -5,7 +5,7 @@ import { FileHandle } from 'src/app/model/file-handler.model';
 import { User } from 'src/app/model/userProfile.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
-
+import { switchMap, map } from 'rxjs/operators';
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -13,43 +13,70 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 })
 export class EditProfileComponent {
   userId = this.tokenService.getUser()._id;
-  userData = this.tokenService.getUser();
+  userD: any;
+  user!: User;
+  userData = this.authService.getUserByID(this.userId).subscribe((data: any) => {
+    // let userD = data.user.user;
+    this.userData = data.data.user;
+     data = this.userData;
+  // console.log(data.name);
 
-  userForm!: FormGroup;
-  user: User = {
+      this.user= {
     _id: this.userId,
-    name: this.userData.name,
-    email: this.userData.email,
-    type: this.userData.type,
-    image: "",
-    phone:  this.userData.phone || null,
+    name: data.name,
+    email: data.email,
+    type: data.type,
+    image:  data.image || '',
+    phone:  data.phone || null,
     address: {
-      appartmentNo: this.userData.address.appartmentNo || null,
-      city: this.userData.address.city || null,
-      country: this.userData.address.country || null,
+      appartmentNo: data.address.appartmentNo || null,
+      city: data.address.city || null,
+      country: data.address.country || null,
     },
     socialMediaLinks: [
-      { name: "facebook", link: this.userData.socialMediaLinks[0].link },
-      { name: "instagram", link: this.userData.socialMediaLinks[1].link }
+      { name: "facebook", link: data.socialMediaLinks[0].link },
+      { name: "instagram", link: data.socialMediaLinks[1].link }
     ]
-  };
+      };
+
+});
+  // userData: any;
+  userForm!: FormGroup;
+  // user: User = {
+  //   _id: this.userId,
+  //   name: this.userD.name,
+  //   email: this.userData.email,
+  //   type: this.userData.type,
+  //   image:  this.userData.image || '',
+  //   phone:  this.userData.phone || null,
+  //   address: {
+  //     appartmentNo: this.userData.address.appartmentNo || null,
+  //     city: this.userData.address.city || null,
+  //     country: this.userData.address.country || null,
+  //   },
+  //   socialMediaLinks: [
+  //     { name: "facebook", link: this.userData.socialMediaLinks[0].link },
+  //     { name: "instagram", link: this.userData.socialMediaLinks[1].link }
+  //   ]
+  // };
   constructor(private sanitizer: DomSanitizer, private tokenService: TokenStorageService, private authService: AuthService) {
+    // this.getUserData();
   }
 
-
   prepareFormData(user: User): FormData{
-    const formData:any = new FormData();
-    formData.append('appartmentNo', user.address.appartmentNo);
-    formData.append('city', user.address.city);
-    formData.append('country', user.address.country);
-   // formData.append('phone', user.phone.toString());
+    const formData: any = new FormData();
+    formData.append('name', "hahahaha");
+    formData.append('address[appartmentNo]', user.address.appartmentNo);
+    formData.append('address[city]', user.address.city);
+    formData.append('address[country]', user.address.country);
+    formData.append('phone', user.phone);
     user.socialMediaLinks.forEach((link, index) => {
       formData.append(`socialMediaLinks[${index}][name]`, link.name);
       formData.append(`socialMediaLinks[${index}][link]`, link.link);
     });
     // console.log(user);
-    // let image = user.image;
-    // formData.append(`image`,user.image.file, user.file!.name)
+    // let image = user.image;/
+    formData.append(`image`,user?.image?.file, user?.image?.file!.name)
 
     return formData;
   }
@@ -61,20 +88,23 @@ export class EditProfileComponent {
       file : file ,
       url : this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(file))
      }
-    //  this.user.image.push(fileHandle)
+      this.user.image = fileHandle;
      console.log(fileHandle)
     }
   }
-  removeImage(i :number) {
-    // this.user.image.splice(i,1);
+  removeImage() {
+    console.log("in remove");
+    this.user.image.file = undefined;
+    this.user.image.url = "";
+    // this.user.image = [];
   }
   fileDropped(fileHandel : FileHandle){
-    // this.user.image.push(fileHandel);
+    this.user.image =  fileHandel;
   }
   editProfile() {
+    // const userForm = this.prepareFormData(this.user);
     this.authService.updateProfile( this.user,this.userId).subscribe(
       response => {
-        // console.log(response);
         this.tokenService.setUser(this.user)
         console.log(response);
       },

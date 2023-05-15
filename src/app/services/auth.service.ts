@@ -26,11 +26,14 @@ export class AuthService {
     this.tokenStorage.removeToken();
     return this.http.get(`${BASEURL}/logout`)
   }
-  requestReset(body: string): Observable<any> {
+  requestReset(body: FormData): Observable<any> {
     return this.http.post(`${BASEURL}/forgotPassword`, body);
   }
   updateProfile(body: any,userID: any) {
     return this.http.patch(`${BASEURL}/${userID}`, body);
+  }
+  getUserByID(userID: any): Observable<any>  {
+    return this.http.get(`${BASEURL}/${userID}`);
   }
   newPassword(body: any,token:string): Observable<any> {
     console.log(body);
