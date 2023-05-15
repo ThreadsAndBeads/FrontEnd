@@ -66,6 +66,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { MyworkshopComponent } from './myworkshop/myworkshop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
+import { SuccessModalComponent } from './components/success-modal/success-modal.component';
 
 
 @NgModule({
@@ -115,7 +116,9 @@ import { SellerworkshopsComponent } from './components/sellerworkshops/sellerwor
     CheckoutComponent,
     SellerworkshopsComponent,
     WorkshopPageComponent,
-    WorkshopCardComponent
+    WorkshopCardComponent,
+    SuccessModalComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
