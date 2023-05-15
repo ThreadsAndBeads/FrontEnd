@@ -35,6 +35,9 @@ export class AuthService {
   getUserByID(userID: any): Observable<any>  {
     return this.http.get(`${BASEURL}/${userID}`);
   }
+  uploadImage(image: FormData, userID: any) {
+    return this.http.patch(`${BASEURL}/${userID}`,image);
+  }
   newPassword(body: any,token:string): Observable<any> {
     console.log(body);
 

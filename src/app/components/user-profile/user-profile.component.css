@@ -22,3 +22,100 @@ span{
 .inline{
   display: inline;
 }
+.avatar-container {
+  position: relative;
+  /* width: 50%; */
+}
+
+.img {
+opacity: 1;
+display: block;
+/* width: 100%; */
+/* height: auto; */
+transition: .5s ease;
+backface-visibility: hidden;
+}
+
+.middle {
+transition: .5s ease;
+opacity: 0;
+position: absolute;
+top: 50%;
+left: 11%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%)
+}
+
+.avatar-container:hover .img {
+opacity: 0.3;
+}
+
+.avatar-container:hover .middle {
+opacity: 1;
+}
+.avatar-button a{
+  color: black;
+  background-color: white;
+  padding: 5px;
+  width: fit-content;
+  height: fit-content;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.avatar-button{
+  padding: 50px;
+}
+
+.modal-body{
+  text-align: center;
+}
+.modal{
+  border-radius: 4px;
+}
+.modal-header {
+  border: none;
+}
+
+.modal-body {
+  border: none;
+  justify-content: center;
+
+}
+.modal-footer{
+  border: none;
+  justify-content: center;
+  padding-bottom: 2px;
+}
+.modal-dialog{
+margin: 170px auto;
+width: fit-content;
+height: fit-content;
+display: flex;
+justify-content: space-between;
+}
+.modal-content{
+  width: 350px;
+  /* padding: 5px; */
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.modal-title{
+  text-align: center;
+  padding-left: 10px;
+}
+
+.text-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+.centered {
+  text-align: center;
+}
+.browse-btn {
+  color: #456268;
+  cursor: pointer;
+}
