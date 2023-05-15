@@ -27,7 +27,7 @@
   color: white;
 }
 
-.user-icons{
+.user-icons {
   width: 80px;
 }
 
@@ -35,8 +35,7 @@
   min-width: 80px;
 }
 
-
-.cartQuantity{
+.cartQuantity {
   position: absolute;
   background: red;
   color: white;
@@ -176,5 +175,5 @@ select option {
   color: #fff;
 }
 select {
-  color: white;
+  /* color: white; */
 }

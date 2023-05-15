@@ -1,5 +1,14 @@
 {
-	"welcome": {
-		"title": "تجربة"
-	}
+    "Nav": {
+        "about": "عنا",
+        "contact": "تواصل معنا",
+        "home": "الرئيسية",
+        "products": "المنتجات",
+        "sellers": "البائعين",
+        "workshops": "الورشات"
+    },
+    "language": {
+        "arabic": "ar",
+        "english": "en"
+    }
 }
