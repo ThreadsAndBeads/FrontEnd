@@ -1,14 +1,21 @@
 {
-	"Nav": {
-		"about": "About",
-		"contact": "Contact",
-		"home": "Home",
-		"products": "Products",
-		"sellers": "Sellers",
-		"workshops": "Workshops"
-	},
-	"language": {
-		"arabic": "ar",
-		"english": "en"
-	}
+    "Nav": {
+        "about": "About",
+        "contact": "Contact",
+        "home": "Home",
+        "products": "Products",
+        "sellers": "Sellers",
+        "workshops": "Workshops"
+    },
+    "WorkshopsPage": {
+        "Header": "Our Workshops",
+        "paragraph": "Our website offers a unique handmade workshop where you can learn how to create beautiful crafts and gifts using your own two hands. Our expert instructors will guide you through the process step by step, allowing you to develop new skills and create one-of-a-kind items that you can be proud of"
+    },
+    "language": {
+        "arabic": "ar",
+        "english": "en"
+    },
+    "workshopCard": {
+        "bookBtn": "Book Now"
+    }
 }
