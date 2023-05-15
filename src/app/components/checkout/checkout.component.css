@@ -1,6 +1,6 @@
-.checkout-container-all{
+/* .checkout-container-all{
    
-    /* background-color: rgb(239, 239, 239); */
+    background-color: rgb(239, 239, 239);
     margin-top: 10rem;
     margin-bottom: 3rem;
 }
@@ -8,14 +8,18 @@
     font-family: "Inter",-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
     font-weight: 600;
     margin-bottom: 10px;
-}
+} */
   .checkout-panel {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2); */
   }  
 
+  .cartTotalsForm,
+  .cartTotalPrices{
+    border: 1px solid #e8e8e8;
+  }
    .bi{
     cursor: pointer;
     margin: auto 0;
@@ -75,7 +79,11 @@
   input[type='text']:focus{
     border-color: none
   }
-   
+
+  
+  .cartTotalPrices{
+    font-size: 14px;
+  }
   hr {
     border: 0;
     height: 1px;
@@ -90,16 +98,16 @@
   }
    
   .small-inputs div {
-    width: 182px;
+    width: 50%;
    
   }
 
-   
+/*    
   .blue-border {
     border: 1px solid  rgb(69, 98, 104,0.65);
-  }
+  } */
 .order-container{
-    background-color:#ECEFF3;
+    /* background-color:#ECEFF3; */
 }
 .order-details{
   font-size: 1.2em;
@@ -114,7 +122,7 @@ input[type="radio"] {
 }
 .wc_payment_method label {
     margin: 0 0 10px;
-    background: #fff;
+    background: rgb(69, 98, 104,0.33);
     padding: 16px;
     cursor: pointer;
     border-radius: 5px;
@@ -143,7 +151,7 @@ input[type="radio"] {
 }
 .payment_method_paypal input:checked+label:after ,.payment_method_cash input:checked+label:after{
     content: "";
-    background: #2F80ED;
+    background: #743333;
     width: 10px;
     height: 10px;
     position: absolute;
@@ -153,38 +161,107 @@ input[type="radio"] {
     opacity: 1;
     transition: 0.35s cubic-bezier(0.35, 1.35, 0.5, 1);
 }
-
-.pay-now button{
-    padding: 8px 15px;
-    text-transform: uppercase;
-    border: 2px solid #456268;
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-    color: white;
-    background-color: #456268;
-    width: 100%;
+  .toCheckout {
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 1.25em 2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 13px;
   }
   
-  .pay-now button:hover{
-    background-color: transparent;
+  .toCheckout::before {
+    content: " ";
+    width: 1.5625rem;
+    height: 2px;
+    background: black;
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+  }
+  
+  .toCheckout .text {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
     color: black;
-  } 
-  .pay-now button:focus {
-    outline: none;
   }
-
-.shop_table {
-    width: 100%;
-    margin-bottom: 30px;
-}
-  .product-name{
-    text-align: left;
+  
+  .toCheckout .top-key {
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
   }
-  .product-total{
-    text-align: right;
+  
+  .toCheckout .bottom-key-1 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
   }
-  .cart-subtotal{
-    text-align: left;
+  
+  .toCheckout .bottom-key-2 {
+    height: 2px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
   }
-  .amount{
-    text-align: right;
+  
+  .toCheckout:hover {
+    color: white;
+    background: black;
+  }
+  
+  .toCheckout:hover::before {
+    width: 0.9375rem;
+    background: white;
+  }
+  
+  .toCheckout:hover .text {
+    color: white;
+    padding-left: 1.5em;
+  }
+  
+  .toCheckout:hover .top-key {
+    left: -2px;
+    width: 0px;
+  }
+  
+  .toCheckout:hover .bottom-key-1,
+  .toCheckout:hover .bottom-key-2 {
+    right: 0;
+    width: 0;
   }

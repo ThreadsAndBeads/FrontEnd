@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Order } from 'src/app/model/order.model';
+import { CartService } from 'src/app/services/cart.service';
 import { OrderService } from 'src/app/services/order.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
@@ -14,12 +15,48 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 })
 export class CheckoutComponent {
   userId = this.tokenService.getUser()._id ;
-  constructor(private orderService : OrderService ,private router:Router,private tokenService: TokenStorageService) { }
+  cartProducts!: any;
+  totalItems!: number;
+  totalPrice!: number;
+  client=this.tokenService.getUser();
+  constructor(private orderService : OrderService ,private router:Router,private tokenService: TokenStorageService,public cartService: CartService)
+   { 
+    this.checkCartStatus();
+  }
 
+
+  checkCartStatus() {
+    this.cartService.getCartProducts().subscribe({
+      next: (response) => {
+        if (response.data.cart.products) {
+          this.cartService.cartProducts = response.data.cart.products;
+          if (this.cartService.cartProducts.length > 0) {
+            this.cartService.cartNotEmpty = true;
+            this.calculateSubtotal();
+          }
+        }
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
+
+  calculateSubtotal() {
+    this.totalItems = 0;
+    this.totalPrice = 0;
+
+    this.cartService.cartProducts.forEach((product) => {
+      this.totalItems += product.quantity;
+      this.totalPrice += product.quantity * product.productId.price;
+    });
+  }
   createOrder(client_name:string, phone:string, address:string,payment_method:string){
     // console.log(this.userId);
     const order ={client_name,phone,address,payment_method}; 
     const newOrder=this.prepareFormData(order);
+    console.log(newOrder);
+    
     this.orderService.createOrder(newOrder).subscribe({
      next: (res : any) =>{
         // console.log(response);
@@ -32,28 +69,31 @@ export class CheckoutComponent {
       }
   });
   }
-  prepareFormData(order: any): FormData{
-    const formData:any = new FormData();
+  prepareFormData(order: any){
     const orderDate=formatDate(new Date(), 'yyyy/MM/dd', 'en');
-    let products=[{}]
-    formData.append('client_name',order.client_name);
-    formData.append('userId',this.userId);
-    formData.append('address',order.address);
-    formData.append('phone',order.phone );
-    formData.append('payment_method',order.payment_method );
-    formData.append('totalPrice',255 );
-    formData.append('orderStatus','pending' ); 
-    formData.append('orderDate',orderDate); 
-    formData.append('products',products ); 
+    let newOrder = {
+      userId: this.userId,
+      client_name: order.client_name,
+      address: order.address,
+      phone: order.phone,
+      payment_method: order.payment_method ,
+      totalPrice:  this.totalPrice,
+      orderDate:orderDate,
+      orderStatus:'pending',
+      products:this.cartProducts
+    };
    // formData.append('phone', user.phone.toString());
-
-    return formData;
+    return newOrder;
   }
 
   validationForm = new FormGroup({
-    client_name:new FormControl(null,[Validators.required, Validators.minLength(3)]),
-    // age:new FormControl(null,[Validators.min(20),Validators.max(40)]),
-    // email:new FormControl(null,[Validators.email,Validators.required])
+    client_name:new FormControl(this.client.name),
+    phone:new FormControl(this.client.phone),
+    city:new FormControl(null),
+    ZIP:new FormControl(null),
+    flat:new FormControl(null),
+    address:new FormControl(null),
+    payment_method:new FormControl(null),
   })
 
   get NameValid(){

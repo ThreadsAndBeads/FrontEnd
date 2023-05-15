@@ -1,188 +1,188 @@
-<div class="checkout-container-all">
-  <div class="checkout-container p-5">
-    <form
-      action=""
-      (ngSubmit)="
-        createOrder(
-          client_name.value,
-          phone.value,
-          address.value,
-          payment_method.value
-        )
-      "
-      [formGroup]="validationForm"
-    >
-      <div class="row justify-content-between">
-        <div class="col-md-6 col-sm-12">
-          <h3>Billing details</h3>
-          <div class="input-fields p-4 mt-4 mb-5">
-            <div class="row">
-              <div class="">
-                <label for="name">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  formControlName="client_name"
-                  name="client_name"
-                  #client_name
-                />
+<div class="row w-100 m-0" style="padding: 100px 20px">
+  <ng-container>
+    <div class="checkout-container-all">
+      <!-- <div class="checkout-container p-5"> -->
+      <form
+        action=""
+        (ngSubmit)="
+          createOrder(
+            client_name.value,
+            phone.value,
+            address.value,
+            payment_method.value
+          )
+        "
+        [formGroup]="validationForm"
+      >
+        <div class="row justify-content-between">
+          <div
+            class="col-md-8 col-sm-12 cartTotalPrices"
+            style="margin-bottom: 45px"
+          >
+            <h3 class="mt-3 text-center">Billing details</h3>
+            <div class="input-fields px-4 mt-4 mb-5">
+              <div class="row">
+                <div class="">
+                  <label for="name">Full Name</label>
+                  <input
+                    type="text"
+                    #client_name
+                    id="name"
+                    formControlName="client_name"
+                    name="client_name"
+                  />
+                  <label for="address">Address</label>
+                  <input
+                    type="text"
+                    id="address"
+                    #address
+                    formControlName="address"
+                    name="address"
+                  />
+                  <div class="small-inputs">
+                    <div class="me-3">
+                      <label for="phone">Phone</label>
+                      <input
+                        type="text"
+                        #phone
+                        id="phone"
+                        formControlName="phone"
+                        name="phone"
+                      />
+                    </div>
 
-                <label for="phone">Phone</label>
-                <input
-                  type="text"
-                  id="phone"
-                  formControlName="phone"
-                  name="phone"
-                  #phone
-                />
-
-                <label for="ZIP">ZIP Code</label>
-                <input
-                  type="text"
-                  id="ZIP"
-                  formControlName="ZIP"
-                  name="ZIP"
-                  #ZIP
-                />
-
-                <label for="address">Address</label>
-                <input
-                  type="text"
-                  id="address"
-                  formControlName="address"
-                  name="address"
-                  #address
-                />
-
-                <div class="small-inputs">
-                  <div class="me-3">
-                    <label for="city">City</label>
-                    <input
-                      type="text"
-                      id="city"
-                      formControlName="city"
-                      name="city"
-                      #city
-                    />
+                    <div>
+                      <label for="ZIP">ZIP Code</label>
+                      <input
+                        type="text"
+                        id="ZIP"
+                        #ZIP
+                        formControlName="ZIP"
+                        name="ZIP"
+                      />
+                    </div>
                   </div>
+                  <div class="small-inputs">
+                    <div class="me-3">
+                      <label for="city">City</label>
+                      <input
+                        type="text"
+                        #city
+                        id="city"
+                        name="city"
+                        formControlName="city"
+                      />
+                    </div>
 
-                  <div>
-                    <label for="flat">Apartment</label>
-                    <input
-                      type="text"
-                      id="flat"
-                      formControlName="flat"
-                      name="flat"
-                      #flat
-                    />
+                    <div>
+                      <label for="flat">Apartment</label>
+                      <input
+                        type="text"
+                        id="flat"
+                        #flat
+                        formControlName="flat"
+                        name="flat"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="panel-footer">
+              <div class="d-flex justify-content-between">
+                <a routerLink="/cart" class="text-decoration-none text-dark">
+                  <i
+                    class="bi bi-chevron-double-left"
+                    style="vertical-align: middle"
+                  >
+                    Return To Cart</i
+                  >
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="panel-footer pb-5">
-            <div class="d-flex justify-content-between">
-              <a routerLink="/cart" class="text-decoration-none text-dark">
-                <i
-                  class="bi bi-chevron-double-left"
-                  style="vertical-align: middle"
+
+          <div class="order-container cartTotal col-md-4 col-sm-12 px-3 pb-5">
+            <div class="cartTotalsForm">
+              <h3 class="text-center">Your order</h3>
+              <div class="cartTotalPrices col-12 p-4">
+                <div class="d-flex justify-content-between my-2">
+                  <span>SubTotal</span>
+                  <span class="price text-muted">${{ totalPrice }}</span>
+                </div>
+                <div class="d-flex justify-content-between my-2">
+                  <span>Shipping</span>
+                  <span class="price text-muted">Calculated at next step</span>
+                </div>
+                <div class="d-flex justify-content-between my-2">
+                  <span>Tax</span>
+                  <span class="price text-muted">Calculated at next step</span>
+                </div>
+                <div class="d-flex justify-content-between my-2">
+                  <span>Discount</span>
+                  <span class="price text-muted">$0</span>
+                </div>
+                <hr class="" />
+                <div
+                  class="d-flex justify-content-between my-2 text-bold"
+                  style="font-size: 14px"
                 >
-                  Return To Cart</i
-                >
-              </a>
+                  <span class="text-uppercase">Total cost</span>
+                  <span class="price">${{ totalPrice }}</span>
+                </div>
+              </div>
+              <div class="payment-method">
+                <h3 class="text-center mt-2">Payment Method</h3>
+                <ul class="list-unstyled p-5">
+                  <li class="wc_payment_method payment_method_paypal">
+                    <input
+                      id="payment_method_paypal"
+                      type="radio"
+                      class="input-radio valid"
+                      name="payment_method"
+                      value="credit"
+                      formControlName="payment_method"
+                      #payment_method
+                    />
+
+                    <label for="payment_method_paypal">
+                      <i class="bi bi-credit-card-2-front">
+                        Pay with credit card
+                      </i>
+                    </label>
+                  </li>
+                  <li class="wc_payment_method payment_method_cash">
+                    <input
+                      id="payment_method_cash"
+                      type="radio"
+                      class="input-radio valid"
+                      name="payment_method"
+                      value="cash"
+                      formControlName="payment_method"
+                      #payment_method
+                    />
+
+                    <label for="payment_method_cash">
+                      <i class="bi bi-wallet2"> Pay with cash </i>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <!-- <div class="d-flex justify-content-end w-100 pay-now"> -->
+              <div class="d-flex justify-content-center w-100 pay-now mb-5">
+                <button class="toCheckout" type="submit">
+                  <span class="top-key"></span>
+                  <span class="text">Purchase Now</span>
+                  <span class="bottom-key-1"></span>
+                  <span class="bottom-key-2"></span>
+                </button>
+              </div>
+              <!-- </div> -->
             </div>
           </div>
         </div>
-
-        <div class="order-container col-md-6 col-sm-12 pt-4 px-3 pb-5">
-          <h3>Your order</h3>
-          <div class="order-details p-4">
-            <table class="shop_table">
-              <thead>
-                <tr>
-                  <th class="product-name">Product</th>
-                  <th class="product-total">Subtotal</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="cart_item">
-                  <td class="product-name">
-                    Slides - Business (Annually)
-                    <strong class="product-quantity"></strong>
-                  </td>
-                  <td class="product-total">
-                    <span class="subscription-price">
-                      <span class="amount"> <span class="">$ </span>199 </span>
-                      <span class="subscription-details"> / year </span>
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-
-              <tfoot>
-                <tr class="d-flex justify-content-center">
-                  <hr class="center-ball" />
-                </tr>
-                <tr class="cart-subtotal">
-                  <th>Subtotal</th>
-                  <td class="product-total">
-                    <span class="amount"><span class="">$</span>199</span>
-                  </td>
-                </tr>
-                <tr class="order-total">
-                  <th>Total</th>
-                  <td class="product-total">
-                    <strong
-                      ><span class="amount"
-                        ><span class="">$ </span>199</span
-                      ></strong
-                    >
-                  </td>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
-          <div class="payment-method">
-            <ul class="list-unstyled p-5">
-              <li class="wc_payment_method payment_method_paypal">
-                <input
-                  id="payment_method_paypal"
-                  type="radio"
-                  class="input-radio valid"
-                  name="payment_method"
-                  value="credit"
-                  formControlName="payment_method"
-                  #payment_method
-                />
-
-                <label for="payment_method_paypal">
-                  <i class="bi bi-credit-card-2-front">
-                    Pay with credit card
-                  </i>
-                </label>
-              </li>
-              <li class="wc_payment_method payment_method_cash">
-                <input
-                  id="payment_method_cash"
-                  type="radio"
-                  class="input-radio valid"
-                  name="payment_method"
-                  value="cash"
-                  formControlName="payment_method"
-                  #payment_method
-                />
-
-                <label for="payment_method_cash">
-                  <i class="bi bi-wallet2"> Pay with cash </i>
-                </label>
-              </li>
-            </ul>
-          </div>
-          <div class="d-flex justify-content-end w-100 pay-now">
-            <button>Purchase Now</button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
+      </form>
+      <!-- </div> -->
+    </div>
+  </ng-container>
 </div>
