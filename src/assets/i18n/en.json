@@ -7,6 +7,30 @@
 		"sellers": "Sellers",
 		"workshops": "Workshops"
 	},
+	"checkout": {
+		"address": "Address",
+		"addressRequired": "Address is required",
+		"apartment": "Apartment number",
+		"billingDetails": "Billing Details",
+		"city": "City",
+		"cityRequired": "City is required",
+		"discount": "Discount",
+		"fullName": "Full Name",
+		"nameRequired": "Name is required",
+		"payWithCash": "Pay with Cash",
+		"payWithCreditCard": "Pay with Credit Card",
+		"paymentMethod": "Payment Method",
+		"phone": "Phone",
+		"phoneRequired": "phone is required",
+		"purchaseNow": "Purchase Now",
+		"returnToCart": "Return To Cart",
+		"shipping": "Shipping",
+		"subTotal": "SubTotal",
+		"tax": "Tax",
+		"totalCost": "Total Cost",
+		"yourOrder": "Your Order",
+		"zipCode": "ZIP Code"
+	},
 	"language": {
 		"arabic": "ar",
 		"english": "en"

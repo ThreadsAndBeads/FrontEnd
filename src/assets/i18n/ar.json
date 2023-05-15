@@ -1,14 +1,38 @@
 {
-    "Nav": {
-        "about": "عنا",
-        "contact": "تواصل معنا",
-        "home": "الرئيسية",
-        "products": "المنتجات",
-        "sellers": "البائعين",
-        "workshops": "الورشات"
-    },
-    "language": {
-        "arabic": "ar",
-        "english": "en"
-    }
+	"Nav": {
+		"about": "عنا",
+		"contact": "تواصل معنا",
+		"home": "الرئيسية",
+		"products": "المنتجات",
+		"sellers": "البائعين",
+		"workshops": "الورشات"
+	},
+	"checkout": {
+		"address": "العنوان",
+		"addressRequired": "العنوان مطلوب",
+		"apartment": "رقم الشقة",
+		"billingDetails": "تفاصيل الفاتورة",
+		"city": "المدينة",
+		"cityRequired": "المدينة مطلوبة",
+		"discount": "الخصم",
+		"fullName": "الأسم بالكامل",
+		"nameRequired": "الأسم مطلوب",
+		"payWithCash": "الدفع نقدا",
+		"payWithCreditCard": "ادفع ببطاقة الائتمان",
+		"paymentMethod": "طريقة الدفع",
+		"phone": "رقم الهاتف",
+		"phoneRequired": "رقم الهاتف مطلوب",
+		"purchaseNow": "شراء الان",
+		"returnToCart": "الرجوع الى عربه التسوق",
+		"shipping": "الشحن",
+		"subTotal": "المجموع بدون ضريبه",
+		"tax": "الضريبه",
+		"totalCost": "اجمالي الفاتورة",
+		"yourOrder": "طلبك",
+		"zipCode": "الرمز البريدي"
+	},
+	"language": {
+		"arabic": "ar",
+		"english": "en"
+	}
 }
