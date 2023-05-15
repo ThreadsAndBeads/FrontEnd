@@ -1,11 +1,11 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="user">
   <div class="row py-2 px-4 mt-5">
     <div class="col-md-5 mx-auto mt-5">
       <!-- Profile widget -->
       <div class="bg-white shadow rounded overflow-hidden">
         <div class="px-4 pt-0 pb-4 cover">
           <div class="media align-items-end profile-head">
-            <div class="profile mr-3 mt-2">
+            <!-- <div class="profile mr-3 mt-2">
               <div class="dropzone col-3" appDrag (files)="fileDropped($event)">
                 <div class="text-wrapper">
                   <div class="centered">
@@ -25,14 +25,21 @@
                 value="select"
                 (change)="onFileSelected($event)"
               />
-            </div>
+              <div class="image-container" *ngIf="user.image">
+                <div class="img-c m-0">
+                  <span class="btn-remove-img" (click)="removeImage()">X</span>
+                  <img class="card-img-top w-50 h-50 m-0" [src]="user.image.url" />
+                 <h1>{{user.image.url}}</h1> -->
+            <!-- </div>
+              </div>
+            </div> -->
             <div
               class="media-body mb-2 text-white d-flex justify-content-center"
             >
               <h4 class="mt-0 mb-4"></h4>
               <a
                 (click)="editProfile()"
-                class="btn btn-outline-dark btn-sm btn-block mt-2"
+                class="btn btn-outline-dark btn-sm btn-block mt-5"
                 href="/profile"
                 >Update Profile</a
               >
