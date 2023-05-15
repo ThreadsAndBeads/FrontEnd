@@ -25,12 +25,16 @@ export class ProductCardComponent {
 
 
     this.productService.addToCart(data).subscribe(
-      (response) => {
-        console.log('Added to cart:', response);
-      },
-      (error) => {
-        console.error('Error adding to cart:', error);
+      {
+        next:    (response) => {
+          console.log('Added to cart:', response);
+        },
+        error:    (error) => {
+          console.error('Error adding to cart:', error);
+        }
       }
+  
+  
     );
   }
 
