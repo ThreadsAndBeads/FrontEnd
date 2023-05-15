@@ -14,12 +14,13 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
   styleUrls: ['./add-new-product.component.css']
 })
 export class AddNewProductComponent {
-   userId = this.tokenService.getUser()._id ; 
+  userId = this.tokenService.getUser()._id ; 
   product : Product = {
     user_id : this.userId  ,
     name :"",
     description : "",
-    price : 0 , 
+    price : 0 ,
+    inStock: 0, 
     priceDiscount : 0,
     images : [],
   }
@@ -51,8 +52,9 @@ export class AddNewProductComponent {
     formData.append('user_id', product.user_id);
     formData.append('name', product.name);
     formData.append('description', product.description);
-    formData.append('price', product.price.toString());
-    formData.append('priceDiscount', product.priceDiscount.toString());
+    formData.append('price', product.price);
+    formData.append('inStock', product.inStock);
+    formData.append('priceDiscount', product.priceDiscount);
     for(let img of product.images) {
       formData.append(`images`, img.file, img.file!.name)  
       }

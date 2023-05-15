@@ -196,13 +196,20 @@
             <input type="number" id="inputDiscountPrice5" class="form-control col-12" aria-labelledby=""
               name="discPrice" [(ngModel)]="product.priceDiscount" />
           </div>
+
+          <div>
+            <label for="inputProductInStock" class="form-label">
+              In Sotck <span class="required-star">*</span></label>
+            <input type="number" id="inputProductInStock" class="form-control col-12" aria-labelledby="" name="inStock"
+              [(ngModel)]="product.inStock" />
+          </div>
         </div>
 
         <div class="col-12 col-md-6 col-xl-3">
           <label for="inputDiscountPrice5" class="form-label">
             Description
           </label>
-          <textarea class="description form-control" id="exampleFormControlTextarea1" cols="150" rows="2" name="description"
+          <textarea class="description form-control text-white" id="exampleFormControlTextarea1" cols="150" rows="2" name="description"
             [(ngModel)]="product.description" style="min-height: calc(100% - 0.75rem - 36px);"></textarea>
         </div>
 
