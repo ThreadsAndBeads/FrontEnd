@@ -1,59 +1,75 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {Router} from "@angular/router"
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css']
 })
-export class UserProfileComponent {
+export class UserProfileComponent implements OnInit{
   currentUser: any;
   userId = this.tokenService.getUser()._id;
-  showButton = false;
   constructor(
     private tokenService: TokenStorageService,
     private authService: AuthService,
-    private modalService: NgbModal) {
-  }
-  openUploadModal() {
-    // const modalRef = this.modalService.open(UploadModalComponent);
-    // modalRef.result.then(
-    //   (result) => {
-    //     // Handle modal close
-    //     if (result === 'uploaded') {
-    //       // Perform necessary actions after successful upload
-    //     }
-    //   },
-    //   (reason) => {
-    //     // Handle modal dismissal (e.g., when the user closes the modal without uploading)
-    //   }
-    // );
-    console.log("hiii");
+  private router:Router) {
   }
 
-  userData = this.authService.getUserByID(this.userId).subscribe((data: any) => {
-    // let userD = data.user.user;
-    this.userData = data.data.user;
-    data = this.userData;
+  saveImage(imageInput: HTMLInputElement) {
+    const file = imageInput.files?.[0];
+
+    if (file) {
+
+      console.log('File selected:', file);
+      const formData: any = new FormData();
+
+      formData.append(`image`,file, file.name)
+      this.authService.uploadImage(formData, this.userId).subscribe({
+        next: (response) => {
+          console.log(response);
+          location.reload(); 
+          this.router.navigate(['/profile']);
+        },
+        error: (error) => {
+          console.log(error);
+
+        },
+      });
+
+    }
+
+
+  }
+  ngOnInit() {
+
+    this.authService.getUserByID(this.userId).subscribe((data: any) => {
+    let userData;
+    userData = data.data.user;
+    //data = userData;
 
       this.currentUser= {
     _id: this.userId,
-    name: data.name,
-    email: data.email,
-    type: data.type,
-    image:  data.image || '',
-    phone:  data.phone || null,
+    name: userData.name,
+    email: userData.email,
+    type: userData.type,
+    image:  userData.image || '',
+    phone:  userData.phone || null,
     address: {
-      appartmentNo: data.address.appartmentNo || null,
-      city: data.address.city || null,
-      country: data.address.country || null,
+      appartmentNo: userData.address.appartmentNo || null,
+      city: userData.address.city || null,
+      country: userData.address.country || null,
     },
     socialMediaLinks: [
-      { name: "facebook", link: data.socialMediaLinks[0].link },
-      { name: "instagram", link: data.socialMediaLinks[1].link }
+      { name: "facebook", link: userData.socialMediaLinks[0].link },
+      { name: "instagram", link: userData.socialMediaLinks[1].link }
     ]
       };
 
-});
+  });
+}
+
+
+
 }
