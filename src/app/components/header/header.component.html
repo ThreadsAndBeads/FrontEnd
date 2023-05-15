@@ -8,6 +8,12 @@
     >
     <app-search-bar></app-search-bar>
     <div class="user-icons d-flex justify-content-between my-auto">
+      <div class="language-selector">
+        <select class="language-selector--dropdown">
+          <option class="language-selector--option uppercase">en</option>
+          <option class="language-selector--option uppercase">es</option>
+        </select>
+      </div>
       <a class="user-link"><i class="bi bi-basket2-fill"></i></a>
       <a class="user-link toggle_btn" type="button" (click)="handleClick()">
         <i class="bi bi-person-circle"></i>

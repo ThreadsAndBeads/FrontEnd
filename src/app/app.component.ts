@@ -9,8 +9,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   constructor(public router: Router,private translate:TranslateService){
+    translate.addLangs(['en' ,'ar']);
     translate.setDefaultLang('en')
   }
   title = 'handmadeProject';
-
+  useLang(language:string){
+    this.translate.use(language)
+  }
 }
