@@ -66,7 +66,7 @@ export class HeaderComponent  {
       } 
     }
   }
-  
+
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {

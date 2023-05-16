@@ -1,221 +1,100 @@
-<div class="container-fluid">
-  <div class="row py-2 px-4 mt-5">
-    <div class="col-md-5 mx-auto mt-5">
-      <!-- Profile widget -->
-      <div class="bg-white shadow rounded overflow-hidden">
-        <div class="px-4 pt-0 pb-4 cover">
-          <div class="media align-items-end profile-head">
-            <div class="profile mr-3">
-              <img
-                src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                alt="..."
-                width="130"
-                class="rounded mb-2 img-thumbnail"
-              />
-            </div>
-            <div class="media-body mb-2 text-white">
-              <h4 class="mt-0 mb-4">{{ currentUser.name }}</h4>
 
-              <div class="container-fluid">
-                <div class="row py-2 px-4 mt-5">
-                  <div class="col-md-5 mx-auto mt-5">
-                    <!-- Profile widget -->
-                    <div class="bg-white shadow rounded overflow-hidden">
-                      <div class="px-4 pt-0 pb-4 cover">
-                        <div class="media align-items-end profile-head">
-                          <div class="profile mr-3">
-                            <!-- <img
-              src="{{currentUser.image}}"
-              alt="..."
-              width="130"
-              class="rounded mb-2 img-thumbnail"
-            /> -->
-                            <div class="avatar-container">
-                              <img
-                                src="{{ currentUser?.image }}"
-                                alt=""
-                                width="130"
-                                class="rounded mb-2 img-thumbnail"
-                              />
-                              <div class="middle">
-                                <div class="avatar-button">
-                                  <a
-                                    href="#"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal"
-                                  >
-                                    Change Avatar?
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="media-body mb-2 text-white">
-                            <h4 class="mt-0 mb-4">{{ currentUser?.name }}</h4>
-
-                            <a
-                              href="/editProfile"
-                              class="btn btn-outline-dark btn-sm btn-block"
-                              >Edit profile</a
-                            >
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="bg-light p-4 d-flex justify-content-end text-center"
-                      >
-                        <ul class="list-inline mb-0">
-                          <li class="list-inline-item">
-                            <a
-                              href="{{ currentUser?.socialMediaLinks[0].link }}"
-                              target="_blank"
-                              class="text-dark"
-                            >
-                              <i class="bi bi-facebook fs-5"></i>
-                              <!-- <small>
-                <i class="fas fa-image mr-1"></i>Facebook
-              </small> -->
-                            </a>
-                          </li>
-                          <li class="list-inline-item">
-                            <a
-                              href="{{ currentUser?.socialMediaLinks[1].link }}"
-                              target="_blank"
-                              class="text-dark"
-                            >
-                              <i class="bi bi-instagram"></i>
-                              <!-- <small>
-                <i class="fas fa-user mr-1"></i>Instagram
-              </small> -->
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div class="px-4 py-3">
-                        <h5 class="mb-0">Address</h5>
-                        <div class="p-4 rounded shadow-sm bg-light">
-                          <span *ngIf="currentUser?.address?.country"
-                            >Country:
-                          </span>
-                          <p class="font-italic mb-0 inline">
-                            {{ currentUser?.address?.country }}
-                          </p>
-                          <br />
-                          <span *ngIf="currentUser?.address?.city">City: </span>
-                          <p class="font-italic mb-0 inline">
-                            {{ currentUser?.address?.city }}
-                          </p>
-                          <br />
-                          <span *ngIf="currentUser?.address?.appartmentNo"
-                            >Apartment number:
-                          </span>
-                          <p class="font-italic mb-0 inline">
-                            {{ currentUser?.address?.appartmentNo }}
-                          </p>
-                        </div>
-                        <div class="py-4 px-4">
-                          <div
-                            class="d-flex align-items-center justify-content-between mb-3"
-                          >
-                            <h5 class="mb-0">Recent photos</h5>
-                            <a href="#" class="btn btn-link text-muted"
-                              >Show all</a
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+<div class="container-fluid"><div class="row py-2 px-4 mt-5">
+  <div class="col-lg-5 col-md-8 mx-auto mt-5">
+    <!-- Profile widget -->
+    <div class="bg-white shadow rounded overflow-hidden">
+      <div class="px-4 pt-0 pb-4 cover">
+        <div class="media align-items-end profile-head">
+          <div class="profile mr-3">
+            <div class="avatar-container">
+              <img src="{{currentUser?.image}}" alt=""  width="130"
+              class="rounded mb-2 img-thumbnail"/>
+              <div class="middle">
+                <div class="avatar-button"><a href="#" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal">{{"profile.changeAvatar" | translate}}</a></div>
               </div>
-              <div
-                class="modal fade h-60"
-                id="exampleModal"
-                tabindex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog d-flex justify-content-center">
-                  <div class="modal-content">
-                    <div class="modal-header d-flex justify-content-center">
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div
-                      class="container d-flex justify-content-center text-center"
-                    >
-                      <h5
-                        class="modal-title d-flex justify-content-center"
-                        id="exampleModalLabel"
-                      >
-                        <!-- <span>Drag and drop your file or </span>
-          <a (click)="selectFile.click()" class="browse-btn text-info">browse</a>
-          a file
-   </div> -->
-                        <!-- </div> -->
-                        <!-- </div> -->
-                        <!-- </div> -->
-                        <!-- <div class="image-container row mt-1 p-1">
-      <div class="img-c m-1 p-0">
-        <span class="btn-remove-img" >X</span>
-        <img class="card-img-top m-0" style="max-width: 100%; max-height: 100%;" />
-      </div>
-    </div>
-    <input style="display: none" multiple type="file" #selectFile value="select"/> -->
-                        <!-- </div> -->
-                        <!-- <div class="text-wrapper">
-    <div class="centered d-flex flex-column"> -->
-                        <svg
-                          viewBox="0 0 59 27"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                          <g
-                            id="SVGRepo_tracerCarrier"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></g>
-                          <g id="SVGRepo_iconCarrier">
-                            <path
-                              d="M7 10V9C7 6.23858 9.23858 4 12 4C14.7614 4 17 6.23858 17 9V10C19.2091 10 21 11.7909 21 14C21 15.4806 20.1956 16.8084 19 17.5M7 10C4.79086 10 3 11.7909 3 14C3 15.4806 3.8044 16.8084 5 17.5M7 10C7.43285 10 7.84965 10.0688 8.24006 10.1959M12 12V21M12 12L15 15M12 12L9 15"
-                              stroke="#ffffff"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            ></path>
-                          </g>
-                        </svg>
-                        <!-- </div>
-  </div> -->
-                        <div class="file text-center">
-                          <input type="file" #imageInput />
-                        </div>
-                      </h5>
-                    </div>
 
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        (click)="saveImage(imageInput)"
-                        data-bs-dismiss="exampleModal"
-                      >
-                        Save changes
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
+          <div class="media-body mb-2 text-white">
+            <h4 class="mt-0 mb-4">{{ currentUser?.name }}</h4>
+
+            <a href="/editProfile" class="btn btn-outline-dark btn-sm btn-block">{{"profile.editProfile" | translate}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="bg-light p-4 d-flex justify-content-end text-center">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item">
+            <a href="{{ currentUser?.socialMediaLinks[0].link }}" target="_blank" class="text-dark">
+              <i class="bi bi-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="{{ currentUser?.socialMediaLinks[1].link }}" target="_blank" class="text-dark">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="px-4 py-3">
+        <h5 class="mb-0">{{"profile.address" | translate}}</h5>
+        <div class="p-4 rounded shadow-sm bg-light">
+          <span *ngIf="currentUser?.address?.country">{{"profile.country" | translate}}</span>
+          <p class="font-italic mb-0 inline">{{ currentUser?.address?.country }}</p>
+          <br>
+          <span *ngIf="currentUser?.address?.city">{{"profile.city" | translate}}</span>
+          <p class="font-italic mb-0 inline">{{ currentUser?.address?.city }}</p>
+          <br>
+          <span *ngIf="currentUser?.address?.appartmentNo">{{"profile.appartmentNo" | translate}}</span>
+          <p class="font-italic mb-0 inline">{{ currentUser?.address?.appartmentNo }}</p>
+        </div>
+        <h5 class="mb-0 mt-2">{{"profile.phone" | translate}}</h5>
+        <div class="p-4 rounded shadow-sm bg-light">
+          <p class="font-italic mb-0">{{ currentUser?.phone }}</p>
+        </div>
+      </div>
+      <div class="py-4 px-4">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h5 class="mb-0">{{"profile.recentPhotos" | translate}}</h5>
+          <a href="#" class="btn btn-link text-muted">{{"profile.showAll" | translate}}</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+</div>
+<div
+  class="modal fade h-60"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog d-flex justify-content-center">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-center">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="container d-flex justify-content-center text-center">
+
+        <div class="svg-container">
+          <div class="svg-header">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <path d="M7 10V9C7 6.23858 9.23858 4 12 4C14.7614 4 17 6.23858 17 9V10C19.2091 10 21 11.7909 21 14C21 15.4806 20.1956 16.8084 19 17.5M7 10C4.79086 10 3 11.7909 3 14C3 15.4806 3.8044 16.8084 5 17.5M7 10C7.43285 10 7.84965 10.0688 8.24006 10.1959M12 12V21M12 12L15 15M12 12L9 15" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> <p>Browse File to upload!</p>
+          </div>
+          <label for="file" class="footer">
+            <svg fill="#000000" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M15.331 6H8.5v20h15V14.154h-8.169z"></path><path d="M18.153 6h-.009v5.342H23.5v-.002z"></path></g></svg>
+            <p>{{ fileText }}</p>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5.16565 10.1534C5.07629 8.99181 5.99473 8 7.15975 8H16.8402C18.0053 8 18.9237 8.9918 18.8344 10.1534L18.142 19.1534C18.0619 20.1954 17.193 21 16.1479 21H7.85206C6.80699 21 5.93811 20.1954 5.85795 19.1534L5.16565 10.1534Z" stroke="#000000" stroke-width="2"></path> <path d="M19.5 5H4.5" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> <path d="M10 3C10 2.44772 10.4477 2 11 2H13C13.5523 2 14 2.44772 14 3V5H10V3Z" stroke="#000000" stroke-width="2"></path> </g></svg>
+          </label>
+          <input id="file" type="file" #imageInput (change)="onFileChange($event)">
+           <button type="button" class="btn" (click)="saveImage(imageInput)" data-bs-dismiss="exampleModal">Upload Avatar</button>
+        </div>
+      </div>
