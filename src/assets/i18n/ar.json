@@ -44,6 +44,9 @@
 	"footer": {
 		"followUs": "تابعنا"
 	},
+	"landingPage": {
+		"btn": "الرئيسية"
+	},
 	"language": {
 		"arabic": "ar",
 		"english": "en"
