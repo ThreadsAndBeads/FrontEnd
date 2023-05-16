@@ -119,7 +119,8 @@ import { SetDirectionDirective } from './directives/set-direction.directive';
     WorkshopCardComponent,
     SuccessModalComponent,
     SpinnerComponent,
-    SetDirectionDirective
+    SetDirectionDirective,
+    WorkshopPageComponent
   ],
   imports: [
     BrowserModule,
