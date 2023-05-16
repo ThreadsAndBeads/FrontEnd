@@ -38,7 +38,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
 import { WorkshopHomeSectionComponent } from './components/workshop-home-section/workshop-home-section.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-// import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { CartProductsComponent } from './components/cart-products/cart-products.component';
 import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
 import { WorkshopCardComponent } from './components/workshop-card/workshop-card.component';
@@ -67,7 +66,6 @@ import { MyworkshopComponent } from './myworkshop/myworkshop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
-import { NgxStripeModule } from 'ngx-stripe';
 import { SetDirectionDirective } from './directives/set-direction.directive';
 
 
@@ -140,7 +138,6 @@ import { SetDirectionDirective } from './directives/set-direction.directive';
         deps: [HttpClient],
       },
     }),
-    NgxStripeModule.forRoot('pk_test_51N8TnoIudPN1uZnnijC0SWZydb6SEHCPOYhHrs1WLbpxtdTWyjOmqbx6SS6EAMKlUCYYAd9JZ7GyobbGQ4bMJ8pY005OrIYVCA'),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
