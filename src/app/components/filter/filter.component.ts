@@ -86,24 +86,18 @@ export class FilterComponent {
   }
 
   getFilteredProducts() {
-    // const query = Object.entries(this.filterBy)
-    //   .filter(([key, value]) => value !== null)
-    //   .map(([key, value]) => {
-    //     if (key === 'categories') {
-    //       if (Array.isArray(value)) {
-    //         return value.map((category) => `category=${encodeURIComponent(category)}`).join('&');
-    //       } else {
-    //         return '';
-    //       }
-    //     } else if (key === 'price') {
-    //       return `gte=${value.min}&lte=${value.max}` 
-    //     } else {
-    //       return `${key}=${value}`;
-    //     }
-    //   })
-    //   .join('&');
-
-    // console.log(query);
+    let query = '';
+    if (this.filterBy.categories) {
+      query += `category=${this.filterBy.categories.join('&category=')}&`;
+    }
+    if (this.filterBy.price) {
+      query += `price[gte]=${this.filterBy.price.min}&price[lte]=${this.filterBy.price.max}&`;
+    }
+    if (this.filterBy.rating) {
+      query += `rating=${this.filterBy.rating}&`;
+    }
+    query = query.slice(0, -1);
+    
   }
 
 }
