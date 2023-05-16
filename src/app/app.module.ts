@@ -67,8 +67,9 @@ import { MyworkshopComponent } from './myworkshop/myworkshop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
-import { SetDirectionDirective } from './helpers/set-direction.directive';
 import { NgxStripeModule } from 'ngx-stripe';
+import { SetDirectionDirective } from './directives/set-direction.directive';
+
 
 @NgModule({
   declarations: [

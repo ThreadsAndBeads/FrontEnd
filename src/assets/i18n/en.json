@@ -7,6 +7,12 @@
 		"sellers": "Sellers",
 		"workshops": "Workshops"
 	},
+	"SellerCard": {
+		"Products": "Products",
+		"ProductsBtn": "Show Products",
+		"Ratings": "Ratings",
+		"tags": "Tags"
+	},
 	"WorkshopsPage": {
 		"Header": "Our Workshops",
 		"paragraph": "Our website offers a unique handmade workshop where you can learn how to create beautiful crafts and gifts using your own two hands. Our expert instructors will guide you through the process step by step, allowing you to develop new skills and create one-of-a-kind items that you can be proud of"
@@ -37,6 +43,9 @@
 	},
 	"footer": {
 		"followUs": "Follow us"
+	},
+	"landingPage": {
+		"btn": "Home"
 	},
 	"language": {
 		"arabic": "ar",
