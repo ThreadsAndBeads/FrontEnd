@@ -6,12 +6,6 @@
       <div class="px-4 pt-0 pb-4 cover">
         <div class="media align-items-end profile-head">
           <div class="profile mr-3">
-            <!-- <img
-              src="{{currentUser.image}}"
-              alt="..."
-              width="130"
-              class="rounded mb-2 img-thumbnail"
-            /> -->
             <div class="avatar-container">
               <img src="{{currentUser?.image}}" alt=""  width="130"
               class="rounded mb-2 img-thumbnail"/>
@@ -33,18 +27,12 @@
         <ul class="list-inline mb-0">
           <li class="list-inline-item">
             <a href="{{ currentUser?.socialMediaLinks[0].link }}" target="_blank" class="text-dark">
-              <i class="bi bi-facebook fs-5"></i>
-              <!-- <small>
-                <i class="fas fa-image mr-1"></i>Facebook
-              </small> -->
+              <i class="bi bi-facebook"></i>
             </a>
           </li>
           <li class="list-inline-item">
             <a href="{{ currentUser?.socialMediaLinks[1].link }}" target="_blank" class="text-dark">
               <i class="bi bi-instagram"></i>
-              <!-- <small>
-                <i class="fas fa-user mr-1"></i>Instagram
-              </small> -->
             </a>
           </li>
         </ul>
@@ -95,20 +83,6 @@
         ></button>
       </div>
       <div class="container d-flex justify-content-center text-center">
-        <!-- <h5 class="modal-title d-flex justify-content-center" id="exampleModalLabel">
-      <svg viewBox="20 0 59 27" fill="black" xmlns="http://www.w3.org/2000/svg">
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-      <g id="SVGRepo_iconCarrier">
-        <path
-          d="M7 10V9C7 6.23858 9.23858 4 12 4C14.7614 4 17 6.23858 17 9V10C19.2091 10 21 11.7909 21 14C21 15.4806 20.1956 16.8084 19 17.5M7 10C4.79086 10 3 11.7909 3 14C3 15.4806 3.8044 16.8084 5 17.5M7 10C7.43285 10 7.84965 10.0688 8.24006 10.1959M12 12V21M12 12L15 15M12 12L9 15"
-          stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-      </g>
-    </svg>
-   </div>
-  </div> -->
-          <!-- <div class="file text-center w-40 form-control-sm mx-auto"><input type="file" #imageInput></div>
-        </h5> -->
 
         <div class="svg-container">
           <div class="svg-header">
@@ -123,9 +97,4 @@
           <input id="file" type="file" #imageInput (change)="onFileChange($event)">
            <button type="button" class="btn" (click)="saveImage(imageInput)" data-bs-dismiss="exampleModal">Upload Avatar</button>
         </div>
-      </div>
-
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn" (click)="saveImage(imageInput)" data-bs-dismiss="exampleModal">Upload Avatar</button> -->
-
       </div>

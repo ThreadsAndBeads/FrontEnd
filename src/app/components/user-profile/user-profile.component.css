@@ -206,3 +206,13 @@ justify-content: space-between;
 #file {
   display: none;
 }
+
+.bi {font-size: 30px;}
+.bi:hover {opacity:0.75;transition:225ms;}
+.bi-facebook {color: #1F3A93;transition:350ms;}
+.bi-instagram {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
