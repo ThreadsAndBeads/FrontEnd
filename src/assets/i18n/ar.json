@@ -1,0 +1,59 @@
+{
+	"Nav": {
+		"about": "عنا",
+		"contact": "تواصل معنا",
+		"home": "الرئيسية",
+		"products": "المنتجات",
+		"sellers": "البائعين",
+		"workshops": "الورشات"
+	},
+	"WorkshopsPage": {
+		"Header": "ورشاتنا",
+		"paragraph": "بفضل موقعنا، ستتاح لك فرصة فريدة لحضور ورش عمل يدوية حيث ستتعلم كيفية إبداع الأشياء الجميلة والهدايا المميزة باستخدام يديك الخاصتين. سيقوم مدرسونا الخبراء بإرشادك خطوة بخطوة في هذه العملية، مما يتيح لك فرصة تطوير مهاراتك وإنشاء قطع فريدة ومميزة تفخر بها"
+	},
+	"checkout": {
+		"address": "العنوان",
+		"addressRequired": "العنوان مطلوب",
+		"apartment": "رقم الشقة",
+		"billingDetails": "تفاصيل الفاتورة",
+		"city": "المدينة",
+		"cityRequired": "المدينة مطلوبة",
+		"discount": "الخصم",
+		"fullName": "الأسم بالكامل",
+		"nameRequired": "الأسم مطلوب",
+		"payWithCash": "الدفع نقدا",
+		"payWithCreditCard": "ادفع ببطاقة الائتمان",
+		"paymentMethod": "طريقة الدفع",
+		"phone": "رقم الهاتف",
+		"phoneRequired": "رقم الهاتف مطلوب",
+		"purchaseNow": "شراء الان",
+		"returnToCart": "الرجوع الى عربه التسوق",
+		"shipping": "الشحن",
+		"subTotal": "المجموع بدون ضريبه",
+		"tax": "الضريبه",
+		"totalCost": "اجمالي الفاتورة",
+		"yourOrder": "طلبك",
+		"zipCode": "الرمز البريدي"
+	},
+	"footer": {
+		"followUs": "تابعنا"
+	},
+	"language": {
+		"arabic": "ar",
+		"english": "en"
+	},
+	"profile": {
+		"address": "العنوان",
+		"appartmentNo": ":رقم الشقة",
+		"changeAvatar": "تغير الصوره",
+		"city": ":المدينة",
+		"country": "البلد:",
+		"editProfile": "تعديل الملف الشخصي",
+		"phone": "رقم الهاتف:",
+		"recentPhotos": "الصور:",
+		"showAll": "اظهر الكل:"
+	},
+	"workshopCard": {
+		"bookBtn": "احجز الان"
+	}
+}

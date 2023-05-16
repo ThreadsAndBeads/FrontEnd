@@ -10,9 +10,22 @@
       <app-search-bar></app-search-bar>
     </div>
     <div class="user-icons d-flex justify-content-between my-auto">
-      <a class="user-link position-relative">
+      <div class="language-selector">
+        <select
+          class="language-selector--dropdown"
+          (change)="languageChanged($event)"
+        >
+          <option class="language-selector--option uppercase" value="english">
+            {{ "language.english" | translate }}
+          </option>
+          <option class="language-selector--option uppercase" value="arabic">
+            {{ "language.arabic" | translate }}
+          </option>
+        </select>
+      </div>
+      <a class="user-link position-relative" routerLink="/cart">
         <i class="bi bi-basket2-fill"></i>
-        <span class="cartQuantity">{{totalCartProducts}}</span>
+        <span class="cartQuantity">{{ totalCartProducts }}</span>
       </a>
       <a class="user-link toggle_btn" type="button" (click)="handleClick()">
         <i class="bi bi-person-circle"></i>
@@ -39,13 +52,19 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/home">Home</a>
+          <a class="nav-link" routerLink="/home">{{
+            "Nav.home" | translate
+          }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/about">About</a>
+          <a class="nav-link" routerLink="/about">{{
+            "Nav.about" | translate
+          }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="contact">Contact</a>
+          <a class="nav-link" routerLink="contact">{{
+            "Nav.contact" | translate
+          }}</a>
         </li>
         <li class="nav-item nav-item-logo">
           <a href="" class="nav-item threadsAndBeads"
@@ -53,13 +72,19 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/products">Products</a>
+          <a class="nav-link" routerLink="/products">{{
+            "Nav.products" | translate
+          }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/sellers">Sellers</a>
+          <a class="nav-link" routerLink="/sellers">{{
+            "Nav.sellers" | translate
+          }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/workshops">Workshops</a>
+          <a class="nav-link" routerLink="/workshops">{{
+            "Nav.workshops" | translate
+          }}</a>
         </li>
       </ul>
     </div>

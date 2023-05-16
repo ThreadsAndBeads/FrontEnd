@@ -67,6 +67,7 @@ import { MyworkshopComponent } from './myworkshop/myworkshop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
+import { SetDirectionDirective } from './helpers/set-direction.directive';
 
 
 @NgModule({
@@ -118,7 +119,8 @@ import { SuccessModalComponent } from './components/success-modal/success-modal.
     WorkshopPageComponent,
     WorkshopCardComponent,
     SuccessModalComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SetDirectionDirective
   ],
   imports: [
     BrowserModule,

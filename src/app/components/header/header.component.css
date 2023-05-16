@@ -27,16 +27,15 @@
   color: white;
 }
 
-.user-icons{
-  width: 80px;
+.user-icons {
+  width: 100px;
 }
 
 .search {
   min-width: 80px;
 }
 
-
-.cartQuantity{
+.cartQuantity {
   position: absolute;
   background: red;
   color: white;
@@ -160,4 +159,21 @@ li {
   .nav-item:last-of-type {
     border: none;
   }
+}
+
+.language-selector {
+  background: transparent;
+  border: none;
+}
+.language-selector--dropdown {
+  background: transparent;
+  border: none;
+}
+select option {
+  margin: 40px;
+  background: #456268;
+  color: #fff;
+}
+select {
+  /* color: white; */
 }
