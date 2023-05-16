@@ -1,19 +1,16 @@
 {
-    "Nav": {
-        "about": "About",
-        "contact": "Contact",
-        "home": "Home",
-        "products": "Products",
-        "sellers": "Sellers",
-        "workshops": "Workshops"
-    },
-    "WorkshopsPage": {
-        "Header": "Our Workshops",
-        "paragraph": "Our website offers a unique handmade workshop where you can learn how to create beautiful crafts and gifts using your own two hands. Our expert instructors will guide you through the process step by step, allowing you to develop new skills and create one-of-a-kind items that you can be proud of"
-    },
-    "workshopCard": {
-        "bookBtn": "Book Now"
-    },
+	"Nav": {
+		"about": "About",
+		"contact": "Contact",
+		"home": "Home",
+		"products": "Products",
+		"sellers": "Sellers",
+		"workshops": "Workshops"
+	},
+	"WorkshopsPage": {
+		"Header": "Our Workshops",
+		"paragraph": "Our website offers a unique handmade workshop where you can learn how to create beautiful crafts and gifts using your own two hands. Our expert instructors will guide you through the process step by step, allowing you to develop new skills and create one-of-a-kind items that you can be proud of"
+	},
 	"checkout": {
 		"address": "Address",
 		"addressRequired": "Address is required",
@@ -44,5 +41,19 @@
 	"language": {
 		"arabic": "ar",
 		"english": "en"
+	},
+	"profile": {
+		"address": "Address:",
+		"appartmentNo": "Apartment Number:",
+		"changeAvatar": "Change Avatar",
+		"city": "City:",
+		"country": "Country:",
+		"editProfile": "Edit Profile",
+		"phone": "Phone Number",
+		"recentPhotos": "Recent Photos",
+		"showAll": "Show All"
+	},
+	"workshopCard": {
+		"bookBtn": "Book Now"
 	}
 }

@@ -11,7 +11,7 @@
               class="rounded mb-2 img-thumbnail"/>
               <div class="middle">
                 <div class="avatar-button"><a href="#" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"> Change Avatar? </a></div>
+                  data-bs-target="#exampleModal">{{"profile.changeAvatar" | translate}}</a></div>
               </div>
 
             </div>
@@ -19,7 +19,7 @@
           <div class="media-body mb-2 text-white">
             <h4 class="mt-0 mb-4">{{ currentUser?.name }}</h4>
 
-            <a href="/editProfile" class="btn btn-outline-dark btn-sm btn-block">Edit profile</a>
+            <a href="/editProfile" class="btn btn-outline-dark btn-sm btn-block">{{"profile.editProfile" | translate}}</a>
           </div>
         </div>
       </div>
@@ -39,26 +39,26 @@
       </div>
 
       <div class="px-4 py-3">
-        <h5 class="mb-0">Address</h5>
+        <h5 class="mb-0">{{"profile.address" | translate}}</h5>
         <div class="p-4 rounded shadow-sm bg-light">
-          <span *ngIf="currentUser?.address?.country">Country: </span>
+          <span *ngIf="currentUser?.address?.country">{{"profile.country" | translate}}</span>
           <p class="font-italic mb-0 inline">{{ currentUser?.address?.country }}</p>
           <br>
-          <span *ngIf="currentUser?.address?.city">City: </span>
+          <span *ngIf="currentUser?.address?.city">{{"profile.city" | translate}}</span>
           <p class="font-italic mb-0 inline">{{ currentUser?.address?.city }}</p>
           <br>
-          <span *ngIf="currentUser?.address?.appartmentNo">Apartment number: </span>
+          <span *ngIf="currentUser?.address?.appartmentNo">{{"profile.appartmentNo" | translate}}</span>
           <p class="font-italic mb-0 inline">{{ currentUser?.address?.appartmentNo }}</p>
         </div>
-        <h5 class="mb-0 mt-2">Phone Number</h5>
+        <h5 class="mb-0 mt-2">{{"profile.phone" | translate}}</h5>
         <div class="p-4 rounded shadow-sm bg-light">
           <p class="font-italic mb-0">{{ currentUser?.phone }}</p>
         </div>
       </div>
       <div class="py-4 px-4">
         <div class="d-flex align-items-center justify-content-between mb-3">
-          <h5 class="mb-0">Recent photos</h5>
-          <a href="#" class="btn btn-link text-muted">Show all</a>
+          <h5 class="mb-0">{{"profile.recentPhotos" | translate}}</h5>
+          <a href="#" class="btn btn-link text-muted">{{"profile.showAll" | translate}}</a>
         </div>
       </div>
     </div>
