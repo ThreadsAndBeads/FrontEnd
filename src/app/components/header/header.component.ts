@@ -58,8 +58,12 @@ export class HeaderComponent  {
   languageChanged(selectedValue: any) {
     if (selectedValue.target.value === 'english') {
       this.useLang('en');
+      document.documentElement.setAttribute('dir', 'ltr'); 
     } else if (selectedValue.target.value === 'arabic') {
-      this.useLang('ar');   
+      this.useLang('ar');  
+      if (this.router.url !== '/home') { 
+        document.documentElement.setAttribute('dir', 'rtl'); 
+      } 
     }
   }
   
