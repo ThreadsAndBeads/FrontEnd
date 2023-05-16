@@ -5,6 +5,10 @@ html {
   font: 400 15px/1.8 "Lato", sans-serif;
   color: #777;
 } */
+.text{
+    font-family: "Delicious Handrawn", cursive;
+    font-size: 30px;
+}
 
 .bgimg-1,
 .bgimg-2,
@@ -45,6 +49,9 @@ html {
   width: 100%;
   text-align: center;
   color: #456268;
+}
+.middleSpan{
+  background-color: #f9f9f9b8 !important;
 }
 
 .caption span.border {
