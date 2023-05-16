@@ -38,6 +38,9 @@
 		"yourOrder": "Your Order",
 		"zipCode": "ZIP Code"
 	},
+	"footer": {
+		"followUs": "Follow us"
+	},
 	"language": {
 		"arabic": "ar",
 		"english": "en"

@@ -11,6 +11,17 @@ import {Router} from "@angular/router"
 export class UserProfileComponent implements OnInit{
   currentUser: any;
   userId = this.tokenService.getUser()._id;
+  fileText: string = 'Not selected file';
+
+  onFileChange(event: any) {
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      this.fileText = 'One file selected';
+    } else {
+      this.fileText = 'Not selected file';
+    }
+  }
+
   constructor(
     private tokenService: TokenStorageService,
     private authService: AuthService,
@@ -29,7 +40,7 @@ export class UserProfileComponent implements OnInit{
       this.authService.uploadImage(formData, this.userId).subscribe({
         next: (response) => {
           console.log(response);
-          location.reload(); 
+          location.reload();
           this.router.navigate(['/profile']);
         },
         error: (error) => {
