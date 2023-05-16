@@ -58,10 +58,10 @@ export class HeaderComponent  {
   languageChanged(selectedValue: any) {
     if (selectedValue.target.value === 'english') {
       this.useLang('en');
-      document.documentElement.setAttribute('dir', 'ltr');
+      // document.documentElement.setAttribute('dir', 'ltr');
     } else if (selectedValue.target.value === 'arabic') {
       this.useLang('ar');
-      document.documentElement.setAttribute('dir', 'rtl');
+      // document.documentElement.setAttribute('dir', 'rtl');
     }
   }
   @HostListener('window:scroll', ['$event'])

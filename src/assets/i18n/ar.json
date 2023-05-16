@@ -1,14 +1,17 @@
 {
-    "Nav": {
-        "about": "عنا",
-        "contact": "تواصل معنا",
-        "home": "الرئيسية",
-        "products": "المنتجات",
-        "sellers": "البائعين",
-        "workshops": "الورشات"
-    },
-    "language": {
-        "arabic": "ar",
-        "english": "en"
-    }
+	"Nav": {
+		"about": "عنا",
+		"contact": "تواصل معنا",
+		"home": "الرئيسية",
+		"products": "المنتجات",
+		"sellers": "البائعين",
+		"workshops": "الورشات"
+	},
+	"footer": {
+		"followUs": "تابعنا"
+	},
+	"language": {
+		"arabic": "ar",
+		"english": "en"
+	}
 }
