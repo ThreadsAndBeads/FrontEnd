@@ -22,8 +22,11 @@ export class ProductService {
     return this.httpClient.get<Product[]>(url);
   }
 
-  public getAllProducts(page: number, limit: number) {
-    const url = `${this.BASE_URL}/?page=${page}&limit=${limit}`;
+  public getAllProducts(page: number, limit: number, filter?: string) {
+    let url = `${this.BASE_URL}/?page=${page}&limit=${limit}`;
+    if(filter){
+      url += `&${filter}`;
+    }
     return this.httpClient.get<any>(url);
   }
 

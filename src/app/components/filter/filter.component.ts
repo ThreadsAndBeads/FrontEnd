@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Category } from '../../model/category.model';
-import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-filter',
@@ -9,22 +8,15 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./filter.component.css'],
 })
 export class FilterComponent {
+  @Input() filterBy: any;
+  @Output() filterByEvent = new EventEmitter();
+
   categories: Category[] = [];
   minPrice = 100;
   maxPrice = 500;
   minInputPrice = 100;
   maxInputPrice = 500;
   selectedStar = 0;
-
-  filterBy: {
-    categories: string[] | null;
-    price: { min: number; max: number } | null;
-    rating: number | null;
-  } = {
-    categories: null,
-    price: null,
-    rating: null,
-  };
 
   constructor(protected productService: ProductService) {
     this.getCategories();
@@ -47,7 +39,7 @@ export class FilterComponent {
       min: this.minInputPrice,
       max: this.maxInputPrice,
     };
-    this.getFilteredProducts();
+    this.filterByEvent.emit(this.filterBy);
   }
 
   updateMinInputPrice() {
@@ -56,7 +48,7 @@ export class FilterComponent {
       min: this.minInputPrice,
       max: this.maxInputPrice,
     };
-    this.getFilteredProducts();
+    this.filterByEvent.emit(this.filterBy);
   }
 
   categoriesFilter() {
@@ -67,7 +59,7 @@ export class FilterComponent {
       const categoryName = checkbox.nextElementSibling?.innerHTML as string;
       return categoryName;
     });
-    this.getFilteredProducts();
+    this.filterByEvent.emit(this.filterBy);
   }
 
   ratingFilter(min: number) {
@@ -82,22 +74,6 @@ export class FilterComponent {
       }
     });
     this.filterBy['rating'] = min;
-    this.getFilteredProducts();
+    this.filterByEvent.emit(this.filterBy);
   }
-
-  getFilteredProducts() {
-    let query = '';
-    if (this.filterBy.categories) {
-      query += `category=${this.filterBy.categories.join('&category=')}&`;
-    }
-    if (this.filterBy.price) {
-      query += `price[gte]=${this.filterBy.price.min}&price[lte]=${this.filterBy.price.max}&`;
-    }
-    if (this.filterBy.rating) {
-      query += `rating=${this.filterBy.rating}&`;
-    }
-    query = query.slice(0, -1);
-    
-  }
-
 }

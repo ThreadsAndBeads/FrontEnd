@@ -1,8 +1,26 @@
 <div class="row col-12 m-0">
   <div class="col-3 h-100 p-0">
-    <app-filter></app-filter>
+    <app-filter [filterBy]="filterBy" (filterByEvent)="onFilterChange($event)"></app-filter>
   </div>
-  <div class="container-fluid ms-auto me-0 col-9" style="padding: 150px 0;">
+  <div class="container-fluid ms-auto me-0 col-9" style="padding: 100px 0;">
+    <div class="filters" *ngIf="filterBy" style="height: 150px; border: 1px solid #000000">
+      <span *ngIf="filterBy.categories">
+        <span class="filter" *ngFor="let category of filterBy.categories">
+          {{ category }}
+          <i class="bi bi-x" (click)="removeFromFilter('categories', category)"></i>
+        </span>
+      </span>
+      <span class="filter" *ngIf="filterBy.price">
+        $ {{ filterBy.price.min }} - {{ filterBy.price.max }}
+        <i class="bi bi-x" (click)="removeFromFilter('price')"></i>
+      </span>
+      <span class="filter" *ngIf="filterBy.rating">
+        rate: {{ filterBy.rating }}
+        <i class="bi bi-x my-auto" (click)="removeFromFilter('rating')"></i>
+      </span>
+      <p (click)="clearFilter()">clear all</p>
+    </div>
+
     <div class="row d-flex flex-wrap mx-auto">
       <app-product-card *ngFor="let product of productService.products" class="pdtCard col-12 col-md-4 col-lg-3" [product]="product"></app-product-card>
     </div>
