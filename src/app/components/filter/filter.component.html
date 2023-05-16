@@ -5,7 +5,7 @@
       <div class="filter-checkbox-item d-flex justify-content-between" *ngFor="let category of categories">
         <input type="checkbox" class="filter-checkbox-value" name="filter-category-checkbox" id="filter-category{{category.id}}" (click)="categoriesFilter()">
         <label for="filter-category{{category.id}}" class="filter-checkbox-text">{{ category.name }}</label>
-        <div class="filter-item-quantity">1</div>
+        <div class="filter-item-quantity">{{ category.productNum }}</div>
       </div>
     </div>
   </div>

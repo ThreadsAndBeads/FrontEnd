@@ -2,8 +2,8 @@
   <div class="col-3 h-100 p-0">
     <app-filter [filterBy]="filterBy" (filterByEvent)="onFilterChange($event)"></app-filter>
   </div>
-  <div class="container-fluid ms-auto me-0 col-9" style="padding: 100px 0;">
-    <div class="filters" *ngIf="filterBy" style="height: 150px; border: 1px solid #000000">
+  <div class="container-fluid ms-auto me-0 col-9" style="padding: 90px 0;">
+    <div class="filters" *ngIf="filterBy" style="min-height: 50px; border: 1px solid #000000">
       <span *ngIf="filterBy.categories">
         <span class="filter" *ngFor="let category of filterBy.categories">
           {{ category }}
@@ -18,7 +18,7 @@
         rate: {{ filterBy.rating }}
         <i class="bi bi-x my-auto" (click)="removeFromFilter('rating')"></i>
       </span>
-      <p (click)="clearFilter()">clear all</p>
+      <span (click)="clearFilter()">clear all</span>
     </div>
 
     <div class="row d-flex flex-wrap mx-auto">
