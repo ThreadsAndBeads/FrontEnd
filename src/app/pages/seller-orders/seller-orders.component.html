@@ -1,0 +1,67 @@
+<div class="orders-container d-flex justify-content-center">
+  <div class="">
+    <h1 class="mb-5 text-center">Manage Your orders</h1>
+    <div class="example-container">
+      <div
+        cdkDropList
+        #pendingList="cdkDropList"
+        [cdkDropListData]="pending"
+        [cdkDropListConnectedTo]="[processingList, shippedList, deliveredList]"
+        class="example-list pending"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <h2 class="text-center">Pending</h2>
+        <div class="example-box" *ngFor="let item of pending" cdkDrag>
+          {{ item }}
+        </div>
+        <app-seller-order-card></app-seller-order-card>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <div
+        cdkDropList
+        #processingList="cdkDropList"
+        [cdkDropListData]="processing"
+        [cdkDropListConnectedTo]="[shippedList, deliveredList]"
+        class="example-list processing"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <h2 class="text-center">Processing</h2>
+        <div class="example-box" *ngFor="let item of processing" cdkDrag>
+          {{ item }}
+        </div>
+      </div>
+    </div>
+    <div class="example-container">
+      <div
+        cdkDropList
+        #shippedList="cdkDropList"
+        [cdkDropListData]="shipped"
+        [cdkDropListConnectedTo]="[deliveredList]"
+        class="example-list shipped"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <h2 class="text-center">Shipped</h2>
+        <div class="example-box" *ngFor="let item of shipped" cdkDrag>
+          {{ item }}
+        </div>
+      </div>
+    </div>
+    <div class="example-container">
+      <div
+        cdkDropList
+        #deliveredList="cdkDropList"
+        [cdkDropListData]="delivered"
+        [cdkDropListConnectedTo]="[]"
+        class="example-list delivered"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <h2 class="text-center">Delivered</h2>
+        <div class="example-box" *ngFor="let item of delivered" cdkDrag>
+          {{ item }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

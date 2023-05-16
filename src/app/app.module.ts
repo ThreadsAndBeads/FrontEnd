@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
@@ -68,6 +69,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
 import { SetDirectionDirective } from './helpers/set-direction.directive';
+import { SellerOrdersComponent } from './pages/seller-orders/seller-orders.component';
+import { SellerOrderCardComponent } from './components/seller-order-card/seller-order-card.component';
 
 
 @NgModule({
@@ -120,7 +123,9 @@ import { SetDirectionDirective } from './helpers/set-direction.directive';
     WorkshopCardComponent,
     SuccessModalComponent,
     SpinnerComponent,
-    SetDirectionDirective
+    SetDirectionDirective,
+    SellerOrdersComponent,
+    SellerOrderCardComponent
   ],
   imports: [
     BrowserModule,
@@ -132,6 +137,7 @@ import { SetDirectionDirective } from './helpers/set-direction.directive';
     GoogleSigninButtonModule,
     SocialLoginModule,
     NgbModule,
+    DragDropModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
