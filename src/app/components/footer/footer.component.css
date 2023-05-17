@@ -1,6 +1,6 @@
 .footer {
     z-index: 1;
-    --footer-background: rgb(29, 22, 22);
+    --footer-background: #181818;
     display: grid;
     position: relative;
     grid-area: footer;

@@ -30,7 +30,7 @@
 }
 
 button {
-  color: #456268;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: bold;
@@ -38,7 +38,7 @@ button {
   padding: 0.5rem 1rem;
   border: 1px solid #ffffff1f;
   border-radius: 20px;
-  background-color: #ebebeb;
+  background-color: #F6EEC9;
   -webkit-box-shadow: 5px 5px 15px #cccccc,
     -5px -5px 15px #ffffff;
   box-shadow: 5px 5px 15px #cccccc,
