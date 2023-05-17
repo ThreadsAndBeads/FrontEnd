@@ -1,6 +1,6 @@
 .footer {
     z-index: 1;
-    --footer-background: #456268;
+    --footer-background: rgb(29, 22, 22);
     display: grid;
     position: relative;
     grid-area: footer;
@@ -101,6 +101,6 @@ h1{
 }
 
 .cr-con{
-  background-color:#334a4e ;
+  background-color:black ;
 }
 
