@@ -1,16 +1,4 @@
-/* Inspired by this pen by Pieter Biesemans https://codepen.io/pieter-biesemans/pen/BQBWXX and My Mother Before Me project http://mymotherbeforeme.com/ */
 
-body {
-  font-family: Hepta Slab, sans-serif;
-  font-weight: 500;
-  background: #fff;
-  color: #5d3737;
-}
-* {
-  box-sizing: border-box;
-}
-
-/* hide scrollbar */
 ::-webkit-scrollbar {
   width: 1px;
   height: 1px;
@@ -109,7 +97,7 @@ h1 {
   display: block;
   padding: 1vh ;
   background: #efecdb;
-  box-shadow: 0 10px 50px #17698f1e;
+  box-shadow: 0 10px 50px #996d47;
 }
 img {
   max-width: 45vh;
