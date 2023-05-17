@@ -67,6 +67,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
 import { SetDirectionDirective } from './directives/set-direction.directive';
+import { StripeComponent } from './components/stripe/stripe.component';
 
 
 @NgModule({
@@ -120,7 +121,8 @@ import { SetDirectionDirective } from './directives/set-direction.directive';
     SuccessModalComponent,
     SpinnerComponent,
     SetDirectionDirective,
-    WorkshopPageComponent
+    WorkshopPageComponent,
+    StripeComponent
   ],
   imports: [
     BrowserModule,
