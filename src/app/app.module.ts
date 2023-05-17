@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -68,8 +67,12 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
 import { SetDirectionDirective } from './directives/set-direction.directive';
-
-
+import { CreateWorkshopComponent } from './components/create-workshop/create-workshop.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule   } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -120,7 +123,8 @@ import { SetDirectionDirective } from './directives/set-direction.directive';
     WorkshopCardComponent,
     SuccessModalComponent,
     SpinnerComponent,
-    SetDirectionDirective
+    SetDirectionDirective,
+    CreateWorkshopComponent,
   ],
   imports: [
     BrowserModule,
@@ -132,6 +136,10 @@ import { SetDirectionDirective } from './directives/set-direction.directive';
     GoogleSigninButtonModule,
     SocialLoginModule,
     NgbModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -139,6 +147,7 @@ import { SetDirectionDirective } from './directives/set-direction.directive';
         deps: [HttpClient],
       },
     }),
+    BrowserAnimationsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

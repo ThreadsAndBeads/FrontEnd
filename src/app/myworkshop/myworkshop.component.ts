@@ -27,18 +27,20 @@ export class MyworkshopComponent implements OnInit {
   ngOnInit() {
     this.currentUser = this.tokenService.getUser();
     this.currentUserId = this.currentUser._id;
+    console.log(this.currentUserId );
+    
     this.getworkshop();
 
   }
 
   getworkshop() {
     // this.workshopService.products = [];
-    this.workshopService.getworkshop(this.page, this.limit,this.currentUserId).subscribe(
+    this.workshopService.getSellerWorkshops(this.page, this.limit,this.currentUserId).subscribe(
       (response: any) => {
-        this.workshops  = response.data.workshops;
-        console.log(this.workshops);
-        this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
 
+        this.workshops  = response.data.workshops;
+        console.log(response);
+        this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
         // this.productService.products.push(...products);
       },
       ({ status, message }: HttpErrorResponse) => {

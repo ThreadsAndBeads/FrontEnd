@@ -7,10 +7,9 @@ export interface Workshop {
     seller_name:string,
     title : string ,
     description : string ,
-    category : string,
     price : number ,
-    startDate : Date ,
-    endDate :Date 
-    image: FileHandle[]
+    startDate : Date |null,
+    endDate :Date | null,
+    image: FileHandle | null
 
 }
