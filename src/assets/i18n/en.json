@@ -1,0 +1,74 @@
+{
+	"AboutUs": {
+		"Fiber": "Fiber and textiles",
+		"Jewelry": "Jewelry",
+		"brief": "\"We endeavor to make a transportive, copious affair that revives thoughts, gives us ponder, and rouses new reasoning. By crafters, for crafters. We are attached to our client network with a common energy for making things and the procedure of creation....\"",
+		"slogan": "\"Crafted with Love, Delivered with Care\""
+	},
+	"Nav": {
+		"about": "About",
+		"contact": "Contact",
+		"home": "Home",
+		"products": "Products",
+		"sellers": "Sellers",
+		"workshops": "Workshops"
+	},
+	"SellerCard": {
+		"Products": "Products",
+		"ProductsBtn": "Show Products",
+		"Ratings": "Ratings",
+		"tags": "Tags"
+	},
+	"WorkshopsPage": {
+		"Header": "Our Workshops",
+		"paragraph": "Our website offers a unique handmade workshop where you can learn how to create beautiful crafts and gifts using your own two hands. Our expert instructors will guide you through the process step by step, allowing you to develop new skills and create one-of-a-kind items that you can be proud of"
+	},
+	"checkout": {
+		"address": "Address",
+		"addressRequired": "Address is required",
+		"apartment": "Apartment number",
+		"billingDetails": "Billing Details",
+		"city": "City",
+		"cityRequired": "City is required",
+		"discount": "Discount",
+		"fullName": "Full Name",
+		"nameRequired": "Name is required",
+		"payWithCash": "Pay with Cash",
+		"payWithCreditCard": "Pay with Credit Card",
+		"paymentMethod": "Payment Method",
+		"phone": "Phone",
+		"phoneRequired": "phone is required",
+		"purchaseNow": "Purchase Now",
+		"returnToCart": "Return To Cart",
+		"shipping": "Shipping",
+		"subTotal": "SubTotal",
+		"tax": "Tax",
+		"totalCost": "Total Cost",
+		"yourOrder": "Your Order",
+		"zipCode": "ZIP Code"
+	},
+	"footer": {
+		"followUs": "Follow us"
+	},
+	"landingPage": {
+		"btn": "Home"
+	},
+	"language": {
+		"arabic": "ar",
+		"english": "en"
+	},
+	"profile": {
+		"address": "Address:",
+		"appartmentNo": "Apartment Number:",
+		"changeAvatar": "Change Avatar",
+		"city": "City:",
+		"country": "Country:",
+		"editProfile": "Edit Profile",
+		"phone": "Phone Number",
+		"recentPhotos": "Recent Photos",
+		"showAll": "Show All"
+	},
+	"workshopCard": {
+		"bookBtn": "Book Now"
+	}
+}

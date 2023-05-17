@@ -1,5 +1,7 @@
 <!-- Postcard -->
 <div class="postcard d-flex row">
+  <div class="badge">{{ workshop.price }}Eg</div>
+
   <!-- Image -->
   <div
     class="postcard__image col-sm-12 col-md-6 col-lg-6"
@@ -47,7 +49,7 @@
       </p>
     </div>
     <!-- Footer -->
-    <div class="postcard__footer">
+    <div class="postcard__footer d-flex">
       <!-- Author -->
       <div class="postcard__author d-flex flex-column gap-3">
         <div class="author__avatar-wrap d-flex gap-1 align-self-start">
@@ -60,18 +62,15 @@
             <a class="author__name mx-2">{{ workshop.seller_name }}</a>
           </address>
         </div>
-        <div class="d-flex author__time">
-          <i class="bi bi-geo-alt-fill"></i>
-          <p class="ms-1">Location</p>
-        </div>
       </div>
-    </div>
-    <div class="d-flex author__time align-items-baseline" style="float: right">
-      <i class="bi bi-currency-dollar"></i>
-      <p class="me-3 ms-1">{{ workshop.price }} Eg</p>
-
-      <button class="custom-btn btn-5 mt-2"><span>Book Now</span></button>
+      <div
+        class="d-flex author__time flex-column align-items-baseline"
+        style="float: right"
+      >
+        <a rel="outline-outward" class="button outline-outward">{{
+          "workshopCard.bookBtn" | translate
+        }}</a>
+      </div>
     </div>
   </div>
 </div>
-

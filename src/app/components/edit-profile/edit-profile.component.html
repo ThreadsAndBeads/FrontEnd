@@ -1,16 +1,18 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="user">
   <div class="row py-2 px-4 mt-5">
     <div class="col-md-5 mx-auto mt-5">
       <!-- Profile widget -->
       <div class="bg-white shadow rounded overflow-hidden">
         <div class="px-4 pt-0 pb-4 cover">
           <div class="media align-items-end profile-head">
-            <div class="profile mr-3 mt-2">
+            <!-- <div class="profile mr-3 mt-2">
               <div class="dropzone col-3" appDrag (files)="fileDropped($event)">
                 <div class="text-wrapper">
                   <div class="centered">
                     Drag and drop your file or
-                    <a (click)="selectFile.click()" class="browse-btn">browse</a>
+                    <a (click)="selectFile.click()" class="browse-btn"
+                      >browse</a
+                    >
                     a file
                   </div>
                 </div>
@@ -23,10 +25,24 @@
                 value="select"
                 (change)="onFileSelected($event)"
               />
-            </div>
-            <div class="media-body mb-2 text-white d-flex justify-content-center">
+              <div class="image-container" *ngIf="user.image">
+                <div class="img-c m-0">
+                  <span class="btn-remove-img" (click)="removeImage()">X</span>
+                  <img class="card-img-top w-50 h-50 m-0" [src]="user.image.url" />
+                 <h1>{{user.image.url}}</h1> -->
+            <!-- </div>
+              </div>
+            </div> -->
+            <div
+              class="media-body mb-2 text-white d-flex justify-content-center"
+            >
               <h4 class="mt-0 mb-4"></h4>
-              <a (click)="editProfile()" class="btn btn-outline-dark btn-sm btn-block mt-2" href="/profile">Update Profile</a>
+              <a
+                (click)="editProfile()"
+                class="btn btn-outline-dark btn-sm btn-block mt-5"
+                href="/profile"
+                >Update Profile</a
+              >
             </div>
           </div>
         </div>
@@ -34,29 +50,48 @@
         <div class="px-4 py-3">
           <h6 class="mb-0 mt-2 mb-2">City:</h6>
           <div class="rounded shadow-sm bg-light">
-            <input type="text" class="form-control" [(ngModel)]="user.address.city">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.address.city"
+            />
           </div>
           <h6 class="mb-0 mt-2 mb-2">Country:</h6>
           <div class="rounded shadow-sm bg-light">
-            <input type="text" class="form-control" [(ngModel)]="user.address.country">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.address.country"
+            />
           </div>
           <h6 class="mb-0 mt-2 mb-2">Apartment number:</h6>
           <div class="rounded shadow-sm bg-light">
-            <input type="text" class="form-control" [(ngModel)]="user.address.appartmentNo">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.address.appartmentNo"
+            />
           </div>
           <h6 class="mb-0 mt-2 mb-2">Phone Number:</h6>
           <div class="rounded shadow-sm bg-light">
-            <input type="text" class="form-control" [(ngModel)]="user.phone">
+            <input type="text" class="form-control" [(ngModel)]="user.phone" />
           </div>
           <h6 class="mb-0 mt-2 mb-2">Facebook Link:</h6>
           <div class="rounded shadow-sm bg-light">
-            <input type="text" class="form-control" [(ngModel)]="user.socialMediaLinks[0].link">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.socialMediaLinks[0].link"
+            />
           </div>
           <h6 class="mb-0 mt-2 mb-2">Instagram Link:</h6>
           <div class="rounded shadow-sm bg-light">
-            <input type="text" class="form-control" [(ngModel)]="user.socialMediaLinks[1].link">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.socialMediaLinks[1].link"
+            />
           </div>
-
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ export class TopSellComponent implements OnInit {
   ngOnInit() {
     this.productService.getTopDiscountedProduct().subscribe(
       (response: any) => {
-        console.log(response);
+        // console.log(response);
         for(let i = 0; i < response.data.products.length; i++) {
           this.products.push(response.data.products[i]);
         }
