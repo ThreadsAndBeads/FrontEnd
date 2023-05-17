@@ -1,42 +1,37 @@
 .footer {
-    z-index: 1;
-    --footer-background: rgb(29, 22, 22);
-    display: grid;
-    position: relative;
-    grid-area: footer;
-    min-height: 10rem;
-  }
-  .footer .content {
-    z-index: 2;
-    display: grid;
-    background: var(--footer-background);
-  }
-  /* .footer .content h6{
-    color: #d9bfb1;
-    margin-right: 70%;
-  } */
-  .footer .content a, .footer .content p {
-    color: #f5f7fa;
-    text-decoration: none;
-    margin-right: 70%;
-  }
+  z-index: 1;
+  --footer-background: #0f0f0f;
+  display: grid;
+  position: relative;
+  grid-area: footer;
+  min-height: 10rem;
+}
+.footer .content {
+  z-index: 2;
+  display: grid;
+  background: var(--footer-background);
+}
 
-  .footer .content b {
-    color: white;
-    margin-right: 70%;
-  }
+.footer .content a, .footer .content p {
+  color: #f5f7fa;
+  text-decoration: none;
+  margin-right: 70%;
+}
 
-  .footer .content p {
-    margin: 0;
-    font-size: 1.2rem;
+.footer .content b {
+  color: white;
+  margin-right: 70%;
+}
 
-
-  }
+.footer .content p {
+  margin: 0;
+  font-size: 1.2rem;
+}
 
 .logo {
-    font-family: 'Delicious Handrawn', cursive;
-    font-size: 40px;
-  }
+  font-family: 'Delicious Handrawn', cursive;
+  font-size: 40px;
+}
 
 h1{
   color: white;
