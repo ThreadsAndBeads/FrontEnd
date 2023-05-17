@@ -37,6 +37,8 @@ export class SellerOrdersComponent implements OnInit {
         event.currentIndex,
       );
       let orderStatus=this.getOrderStatus(event);
+      console.log(orderStatus);
+      
       let body={"orderId":event.container.data[0]!._id,"orderStatus":orderStatus}
       this.orderService.manageOrder(body).subscribe(
 {
@@ -44,7 +46,7 @@ export class SellerOrdersComponent implements OnInit {
             console.log(response);
            },
            error:(err)=>{
-            console.log(err);
+            // console.log(err);
            }
       }
       )
@@ -93,7 +95,6 @@ export class SellerOrdersComponent implements OnInit {
 
   getOrdersByStatus() {
     console.log(this.orderService.seller_orders);
-    
     const ordersByStatus = this.orderService.seller_orders.reduce((result:any, order) => {
       console.log(result);
       
