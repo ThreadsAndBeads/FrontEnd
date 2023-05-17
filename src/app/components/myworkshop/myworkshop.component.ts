@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Workshop } from '../model/workshop.model';
-import { WorkshopService } from '../services/workshop.service';
-import { TokenStorageService } from '../services/token-storage.service';
+import { Workshop } from '../../model/workshop.model';
+import { WorkshopService } from '../../services/workshop.service';
+import { TokenStorageService } from '../../services/token-storage.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 
@@ -14,7 +14,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class MyworkshopComponent implements OnInit {
 
   page = 1;
-  limit = 6;
+  limit = 3;
   NumberOfPages!: number;
   currentUser: any;
   currentUserId: any;
@@ -29,11 +29,11 @@ export class MyworkshopComponent implements OnInit {
     this.currentUserId = this.currentUser._id;
     console.log(this.currentUserId );
     
-    this.getworkshop();
+    this.getWorkshops();
 
   }
 
-  getworkshop() {
+  getWorkshops() {
     // this.workshopService.products = [];
     this.workshopService.getSellerWorkshops(this.page, this.limit,this.currentUserId).subscribe(
       (response: any) => {
@@ -54,20 +54,20 @@ export class MyworkshopComponent implements OnInit {
   previous() {
     if (this.page > 1) {
       this.page--;
-      this.getworkshop();
+      this.getWorkshops();
     }
   }
 
   next() {
     if (this.page < this.NumberOfPages) {
       this.page++;
-      this.getworkshop();
+      this.getWorkshops();
     }
   }
 
   navToPage(page: number){
     this.page = page;
-    this.getworkshop();
+    this.getWorkshops();
   };
 }
 

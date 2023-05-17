@@ -67,17 +67,15 @@
         style="float: right"
       >
         <div class="wcf-right">
-          <!-- <div class="editdelete">   <i class="bi bi-trash"></i>
-           <a href="#" class="edit-btn" ></a>
-            <i class="bi bi-pen"></i></div> -->
-          <a href="/sellerProducts" class="delete-btn">
+          <a
+            href="/myWorkshops"
+            class="delete-btn"
+            (click)="deleteWorkshop(workshop._id)"
+          >
             <i class="bi bi-trash"></i
           ></a>
           <a href="#" class="edit-btn"> <i class="bi bi-pen"></i></a>
         </div>
-        <!-- <a rel="outline-outward" class="button outline-outward">{{
-          "workshopCard.bookBtn" | translate
-        }}</a> -->
       </div>
     </div>
   </div>

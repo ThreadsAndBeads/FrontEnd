@@ -8,8 +8,8 @@
   margin: 2rem auto;
   max-width: 58rem;
   display: flex;
-  background-color: hsl(240, 14%, 93%);
-  border: 1px dotted #eee;
+  background-color: #f9f1eb;
+  border: 1px dotted #fff;
   width: inherit;
 }
 
@@ -128,12 +128,12 @@
   padding: 0;
   border: none;
   border-radius: 5px;
-  background: #456268;
+  background: #a20a0a;
   color: white;
   background: linear-gradient(0deg, #456268 0%, #456268 100%);
 }
 .btn-5:hover {
-  color: #456268;
+  color: #a20a0a;
   background: transparent;
   box-shadow: none;
 }
@@ -145,7 +145,7 @@
   right: 0;
   height: 2px;
   width: 0;
-  background: #456268;
+  background: #a20a0a;
   box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003,
     4px 4px 5px 0px #0002;
   transition: 400ms ease all;
@@ -208,7 +208,7 @@ a.edit-btn:focus {
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 700;
-  background: #456268;
+  background: #a20a0a;
   color: #fff;
   padding: 10px 10px;
   border-radius: 10px 0 0 10px;

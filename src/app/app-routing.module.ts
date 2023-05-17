@@ -18,7 +18,7 @@ import { SellerProductsComponent } from './components/seller-products/seller-pro
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-import { MyworkshopComponent } from './myworkshop/myworkshop.component';
+import { MyworkshopComponent } from './components/myworkshop/myworkshop.component';
 import { CreateWorkshopComponent } from './components/create-workshop/create-workshop.component';
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },

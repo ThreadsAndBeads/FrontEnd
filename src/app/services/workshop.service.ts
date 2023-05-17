@@ -23,6 +23,10 @@ export class WorkshopService {
   public addWorkshop(workshop: FormData) {
     return this.httpClient.post<Workshop>(`${this.BASE_URL}/`, workshop);
   }
+  public deleteWorkshop(workshop_id: any) {
+    const url = `${this.BASE_URL}/${workshop_id}`;
+    return this.httpClient.delete<any>(url);
+  }
 }
 
 
