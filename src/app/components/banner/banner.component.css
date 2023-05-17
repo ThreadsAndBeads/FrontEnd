@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap');
 
+.banner-title{
+    font-family: "Delicious Handrawn", cursive;
+}
 section{
   width: 100%;
   height: 100vh;
