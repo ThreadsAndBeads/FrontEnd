@@ -21,7 +21,7 @@ export class ProductsPageComponent implements OnInit {
   page = 1;
   limit = 3;
   NumberOfPages!: number;
-
+  
   constructor(protected productService: ProductService) {}
 
   ngOnInit() {
@@ -72,6 +72,7 @@ export class ProductsPageComponent implements OnInit {
       this.filterBy[filterName] = null;
     }
     let query = this.setFilterQuery();
+    this.filterBy = { ...this.filterBy };
     this.getProducts(query);
   }
 
@@ -82,13 +83,14 @@ export class ProductsPageComponent implements OnInit {
       rating: null,
     };
     let query = this.setFilterQuery();
+    this.filterBy = { ...this.filterBy };
     this.getProducts(query);
   }
 
   setFilterQuery() {
     let query = '';
     if (this.filterBy.categories) {
-      if(this.filterBy.categories.length > 0){
+      if (this.filterBy.categories.length > 0) {
         query += `category=${this.filterBy.categories.join('&category=')}&`;
       }
     }

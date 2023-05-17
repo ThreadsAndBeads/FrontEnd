@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter,  OnChanges, SimpleChanges } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Category } from '../../model/category.model';
 
@@ -7,7 +7,7 @@ import { Category } from '../../model/category.model';
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.css'],
 })
-export class FilterComponent {
+export class FilterComponent implements OnChanges {
   @Input() filterBy: any;
   @Output() filterByEvent = new EventEmitter();
 
@@ -20,6 +20,13 @@ export class FilterComponent {
 
   constructor(protected productService: ProductService) {
     this.getCategories();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('Filter changed in parent');
+    if (changes['filterBy'] && !changes['filterBy'].firstChange) {
+      this.resetInputFilters();
+    }
   }
 
   getCategories() {
@@ -75,5 +82,31 @@ export class FilterComponent {
     });
     this.filterBy['rating'] = min;
     this.filterByEvent.emit(this.filterBy);
+  }
+
+  resetCategory() {
+    const checkedCheckboxes = document.querySelectorAll(
+      'input.filter-checkbox-value:checked'
+    );
+    
+    if(this.filterBy.categories) {
+      checkedCheckboxes.forEach((checkbox) => {
+        let categoryName = checkbox.nextElementSibling?.innerHTML as string;
+        if ( !this.filterBy.categories.includes( categoryName )) {
+          (checkbox as HTMLInputElement).checked = false;
+        }
+      });
+    }else{
+      checkedCheckboxes.forEach((checkbox) => {
+        (checkbox as HTMLInputElement).checked = false;
+      })
+    }
+  }
+  
+  resetInputFilters(){
+    this.resetCategory();
+    this.ratingFilter(0);
+    this.minInputPrice = this.minPrice;
+    this.maxInputPrice = this.maxPrice;
   }
 }
