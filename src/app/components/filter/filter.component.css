@@ -15,8 +15,8 @@
 }
 
 .filter-checkbox-value:checked + .filter-checkbox-text:before {
-  background: #FF9800;
-  border-color: #FF9800;
+  background: #52ab98;
+  border-color: #52ab98;
 }
 
 .filter-checkbox-text {

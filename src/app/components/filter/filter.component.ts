@@ -12,10 +12,10 @@ export class FilterComponent implements OnChanges {
   @Output() filterByEvent = new EventEmitter();
 
   categories: Category[] = [];
-  minPrice = 100;
-  maxPrice = 500;
-  minInputPrice = 100;
-  maxInputPrice = 500;
+  minPrice = 0;
+  maxPrice = 1000;
+  minInputPrice = 0;
+  maxInputPrice = 1000;
   selectedStar = 0;
 
   constructor(protected productService: ProductService) {
@@ -23,7 +23,6 @@ export class FilterComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('Filter changed in parent');
     if (changes['filterBy'] && !changes['filterBy'].firstChange) {
       this.resetInputFilters();
     }
@@ -39,7 +38,7 @@ export class FilterComponent implements OnChanges {
       },
     });
   }
-
+  
   updateMaxInputPrice() {
     this.maxInputPrice = Math.max(this.minInputPrice, this.maxInputPrice);
     this.filterBy['price'] = {
@@ -88,22 +87,22 @@ export class FilterComponent implements OnChanges {
     const checkedCheckboxes = document.querySelectorAll(
       'input.filter-checkbox-value:checked'
     );
-    
-    if(this.filterBy.categories) {
+
+    if (this.filterBy.categories) {
       checkedCheckboxes.forEach((checkbox) => {
         let categoryName = checkbox.nextElementSibling?.innerHTML as string;
-        if ( !this.filterBy.categories.includes( categoryName )) {
+        if (!this.filterBy.categories.includes(categoryName)) {
           (checkbox as HTMLInputElement).checked = false;
         }
       });
-    }else{
+    } else {
       checkedCheckboxes.forEach((checkbox) => {
         (checkbox as HTMLInputElement).checked = false;
-      })
+      });
     }
   }
-  
-  resetInputFilters(){
+
+  resetInputFilters() {
     this.resetCategory();
     this.ratingFilter(0);
     this.minInputPrice = this.minPrice;

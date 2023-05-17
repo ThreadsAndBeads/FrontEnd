@@ -38,7 +38,7 @@ button {
   padding: 0.5rem 1rem;
   border: 1px solid #ffffff1f;
   border-radius: 20px;
-  background: #ebebeb;
+  background-color: #ebebeb;
   -webkit-box-shadow: 5px 5px 15px #cccccc,
     -5px -5px 15px #ffffff;
   box-shadow: 5px 5px 15px #cccccc,
@@ -49,7 +49,7 @@ button {
 
 button:hover {
   color: #357af0;
-  background: linear-gradient(145deg, #d4d4d4, #fbfbfb);
+  background-color: linear-gradient(145deg, #d4d4d4, #fbfbfb);
   -webkit-box-shadow: 5px 5px 15px #cccccc,
     -5px -5px 15px #ffffff;
   box-shadow: 5px 5px 15px #cccccc,
@@ -58,7 +58,7 @@ button:hover {
 
 button:active {
   color: #357af0;
-  background: #ebebeb;
+  background-color: #ebebeb;
   -webkit-box-shadow: inset 5px 5px 15px #cccccc,
     inset -5px -5px 15px #ffffff;
   box-shadow: inset 5px 5px 15px #cccccc,
