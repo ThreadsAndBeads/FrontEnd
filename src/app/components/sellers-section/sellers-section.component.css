@@ -1,7 +1,9 @@
 .container{
   padding: 100px 0;
 }
-
+.Title {
+  color: #996d47;
+}
 .section h2{
   font-family: 'Delicious Handrawn', cursive;
   font-weight: 500;
@@ -44,7 +46,7 @@ hr {
   display: flex;
   justify-content: center;
   --color-text: #ffffff;
-  --color-background: #79A3B1;
+  --color-background: #A20A0A;
   --color-outline: #ff145b80;
   --color-shadow: #00000080;
 }

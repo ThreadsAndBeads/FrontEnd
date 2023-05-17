@@ -93,8 +93,8 @@ hr {
     width: fit-content;
   }
 }
-@media screen and (max-width: 1250px) {
+/* @media screen and (max-width: 1250px) {
   .search-box:focus {
-    /* width: calc(100vw - 60px); */
+    width: calc(100vw - 60px);
   }
-}
+} */

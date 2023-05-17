@@ -24,7 +24,7 @@
 .navbar.scrolled .user-link,
 .navbar.scrolled .search,
 .navbar.scrolled .navbar-toggler-icon {
-  color: white;
+  color: black;
 }
 
 .user-icons {
@@ -54,7 +54,7 @@ li {
 }
 
 .navbar.scrolled {
-  background-color: #456268;
+  background-color: white;
 }
 
 #checkbox {

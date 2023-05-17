@@ -1,6 +1,6 @@
 
 button {
-  color: #456268;
+  color: black;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: bold;
@@ -8,7 +8,7 @@ button {
   padding: 0.5rem 1rem;
   border: 1px solid #ffffff1f;
   border-radius: 20px;
-  background: #ebebeb;
+  background: #F6EEC9;
   -webkit-box-shadow: 5px 5px 15px #cccccc, -5px -5px 15px #ffffff;
   box-shadow: 5px 5px 15px #cccccc, -5px -5px 15px #ffffff;
   -webkit-transition: box-shadow 0.3s ease-in-out;
@@ -31,7 +31,7 @@ button:active {
 
 .workshop-cover {
   position: relative;
-  background-image: url("/assets/Images/pexels-workshop.jpg") !important;
+  background-image: url("/assets/Images/pexels-brett-sayles-6424244.jpg") !important;
   width: 100%;
   height: 550px;
   background-repeat: no-repeat;
@@ -43,7 +43,7 @@ button:active {
   position: absolute;
   top: 65%;
   left: 10%;
-  background-color: #456268;
+  background-color: #996d47;
   width: 46%;
   height: 300px;
   padding: 5%;

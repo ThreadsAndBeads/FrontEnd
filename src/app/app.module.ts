@@ -68,6 +68,7 @@ import { SellerworkshopsComponent } from './components/sellerworkshops/sellerwor
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { SetDirectionDirective } from './directives/set-direction.directive';
+import { Top2sellersComponent } from './components/top2sellers/top2sellers.component';
 
 
 @NgModule({
@@ -122,7 +123,8 @@ import { SetDirectionDirective } from './directives/set-direction.directive';
     SpinnerComponent,
     FilterComponent,
     SetDirectionDirective,
-    WorkshopPageComponent
+    WorkshopPageComponent,
+    Top2sellersComponent
   ],
   imports: [
     BrowserModule,
