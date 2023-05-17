@@ -41,6 +41,9 @@ export class ProductService {
     return this.httpClient.post<Product[]>(url, data);
   }
 
+  // public getProduct( id: any){
+  //   return this.httpClient.get(`${this.BASE_URL}/${id}`);
+  // }
   search(query: string) {
     return this.httpClient.get<SearchResult>(`http://localhost:7000/api/v1/products/search/?q=${query}`);
   }

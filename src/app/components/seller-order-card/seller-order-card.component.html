@@ -1,16 +1,27 @@
 <div class="order" draggable="true">
   <div class="order__tags">
-    <span class="order__tag order__tag--copyright">Client: Mariam</span>
-    <span class="client-address">Address: Alex,sidi-bashr</span>
+    <span class="order__tag order__tag--copyright"
+      >Client: {{ order.client_name }}</span
+    >
+    <span class="client-address"
+      >Address: {{ order.clientAddress.city }},{{
+        order.clientAddress.address
+      }}</span
+    >
   </div>
-  <p>Konsep hero title yang menarik</p>
+  <div class="example-box" *ngFor="let product of order.products">
+    <p>{{ product.quantity }}</p>
+  </div>
   <div class="order__stats">
     <span
       ><time datetime="2021-11-24T20:00:00"
-        ><i class="bi bi-flag me-1"></i>Nov 24</time
+        ><i class="bi bi-flag me-1"></i
+        >{{ order.orderDate | date : "dd MMMM yyyy" }}</time
       ></span
     >
-    <span><i class="bi bi-cash-coin me-1"></i>Total 3$</span>
+    <span
+      ><i class="bi bi-cash-coin me-1"></i>Total {{ order.totalPrice }}$</span
+    >
     <span class="order__owner"></span>
   </div>
 </div>

@@ -11,10 +11,11 @@
         (cdkDropListDropped)="drop($event)"
       >
         <h2 class="text-center">Pending</h2>
-        <div class="example-box" *ngFor="let item of pending" cdkDrag>
-          {{ item }}
-        </div>
-        <app-seller-order-card></app-seller-order-card>
+        <app-seller-order-card
+          [order]="order"
+          *ngFor="let order of pending"
+          cdkDrag
+        ></app-seller-order-card>
       </div>
     </div>
 
@@ -28,9 +29,11 @@
         (cdkDropListDropped)="drop($event)"
       >
         <h2 class="text-center">Processing</h2>
-        <div class="example-box" *ngFor="let item of processing" cdkDrag>
-          {{ item }}
-        </div>
+        <app-seller-order-card
+          [order]="order"
+          *ngFor="let order of processing"
+          cdkDrag
+        ></app-seller-order-card>
       </div>
     </div>
     <div class="example-container">
@@ -43,9 +46,11 @@
         (cdkDropListDropped)="drop($event)"
       >
         <h2 class="text-center">Shipped</h2>
-        <div class="example-box" *ngFor="let item of shipped" cdkDrag>
-          {{ item }}
-        </div>
+        <app-seller-order-card
+          [order]="order"
+          *ngFor="let order of shipped"
+          cdkDrag
+        ></app-seller-order-card>
       </div>
     </div>
     <div class="example-container">
@@ -58,9 +63,11 @@
         (cdkDropListDropped)="drop($event)"
       >
         <h2 class="text-center">Delivered</h2>
-        <div class="example-box" *ngFor="let item of delivered" cdkDrag>
-          {{ item }}
-        </div>
+        <app-seller-order-card
+          [order]="order"
+          *ngFor="let order of delivered"
+          cdkDrag
+        ></app-seller-order-card>
       </div>
     </div>
   </div>
