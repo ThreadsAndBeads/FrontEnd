@@ -1,5 +1,5 @@
 <div class="col-12 h-100" style="padding: 90px 15px 0; ">
-  <div class="categories-filter" style="border-bottom: 1px solid #F2F2F2;">
+  <div class="categories-filter pb-2" style="border-bottom: 1px solid #F2F2F2;">
     <h6 class="filter-item-title">categories</h6>
     <div class="filter-category">
       <div class="filter-checkbox-item d-flex justify-content-between" *ngFor="let category of categories">
@@ -10,20 +10,19 @@
     </div>
   </div>
   <div class="filter-price pt-2" style="border-bottom: 1px solid #F2F2F2;">
-    <h6 class="filter-item-title">Price</h6>
-    <div class="price-filter position-relative pt-3">
+    <h6 class="filter-item-title pb-3">Price</h6>
+    <div class="slider">
+      <div class="progress"></div>
+    </div>
+    <div class="range-input">
       <input type="range" step='5' [min]="minPrice" [max]="maxPrice" [(ngModel)]="minInputPrice" (ngModelChange)="updateMaxInputPrice()">
       <input type="range" step='5' [min]="minPrice" [max]="maxPrice" [(ngModel)]="maxInputPrice" (ngModelChange)="updateMinInputPrice()">
     </div>
 
-    <div class="price-wrap mt-4">
-      <div class="price-wrap-1">
-        <p class="min">$ {{ minInputPrice }}</p>
-      </div>
-      <div class="price-wrap_line">-</div>
-      <div class="price-wrap-2">
-        <p class="max">$ {{ maxInputPrice }}</p>
-      </div>
+    <div class="price-wrap m-3 text-center">
+      <span class="min">$ {{ minInputPrice }}</span> 
+      -
+      <span class="max">$ {{ maxInputPrice }}</span>
     </div>
   </div>
   <div class="rating-price py-2" style="border-bottom: 1px solid #F2F2F2;">

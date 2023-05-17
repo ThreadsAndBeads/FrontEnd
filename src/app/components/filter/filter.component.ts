@@ -45,6 +45,7 @@ export class FilterComponent implements OnChanges {
       min: this.minInputPrice,
       max: this.maxInputPrice,
     };
+    this.calculatProgressBar();
     this.filterByEvent.emit(this.filterBy);
   }
 
@@ -54,7 +55,14 @@ export class FilterComponent implements OnChanges {
       min: this.minInputPrice,
       max: this.maxInputPrice,
     };
+    this.calculatProgressBar();
     this.filterByEvent.emit(this.filterBy);
+  }
+
+  calculatProgressBar(){
+    let range = document.querySelector('.slider .progress') as HTMLElement;
+    range.style.width = `${((this.maxInputPrice-this.minInputPrice)/(this.maxPrice-this.minPrice))*100}%`;
+    range.style.left = `${(this.minInputPrice)/(this.maxPrice-this.minPrice)*100}%`;
   }
 
   categoriesFilter() {
@@ -102,10 +110,15 @@ export class FilterComponent implements OnChanges {
     }
   }
 
-  resetInputFilters() {
-    this.resetCategory();
-    this.ratingFilter(0);
+  resetPrice() {
     this.minInputPrice = this.minPrice;
     this.maxInputPrice = this.maxPrice;
+    this.calculatProgressBar();
+  }
+
+  resetInputFilters() {
+    this.resetCategory();
+    this.resetPrice();
+    this.ratingFilter(0);
   }
 }

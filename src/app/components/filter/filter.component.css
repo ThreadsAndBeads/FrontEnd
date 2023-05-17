@@ -55,151 +55,56 @@
 }
 
 /* price filter */
-
-.price-filter input[type=range] {
-    position: absolute;
-    width: 100%;
-    height: 2px; 
-    border: 0;
-    outline: 0;
-    box-sizing: border-box;
-    border-radius: 5px;
-    pointer-events: none;
-    -webkit-appearance: none;
-}
-
-.price-filter input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-}
-
-.price-filter input[type=range]:active,
-.price-filter input[type=range]:focus {
-  outline: 0;
-}
-
-
-/* Style toddler input range */
-
-.price-filter input[type=range]::-webkit-slider-thumb { 
-  /* WebKit/Blink */
-    position: relative;
-    -webkit-appearance: none;
-    margin: 0;
-    border: 0;
-    outline: 0;
-    border-radius: 50%;
-    height: 10px;
-    width: 10px;
-    margin-top: -4px;
-    background-color: #000;
-    cursor: pointer;
-    cursor: pointer;
-    pointer-events: all;
-    z-index: 100;
-}
-
-.price-filter input[type=range]::-moz-range-thumb { 
-  /* Firefox */
+.slider{
+  height: 5px;
   position: relative;
-  appearance: none;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  border-radius: 50%;
-  height: 10px;
-  width: 10px;
-  margin-top: -5px;
-  background-color: #000;
-  cursor: pointer;
-  cursor: pointer;
-  pointer-events: all;
-  z-index: 100;
+  background: #ddd;
+  border-radius: 5px;
 }
 
-.price-filter input[type=range]::-ms-thumb  { 
-  /* IE */
+.slider .progress{
+  height: 100%;
+  left: 0%;
+  right: 0%;
+  position: absolute;
+  border-radius: 5px;
+  background: #17A2B8;
+}
+
+.range-input{
   position: relative;
-  appearance: none;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  border-radius: 50%;
-  height: 10px;
-  width: 10px;
-  margin-top: -5px;
-  background-color: #000;
-  cursor: pointer;
-  cursor: pointer;
-  pointer-events: all;
-  z-index: 100;
 }
 
-.price-filter input[type=range]::-webkit-slider-runnable-track { 
-  /* WebKit/Blink */
-  width: 188px;
-  height: 2px;
-  cursor: pointer;
-  background: #f5f5f5;
-  border-radius: 5px;
-}
-
-.price-filter input[type=range]::-moz-range-track { 
-  /* Firefox */
-  width: 188px;
-  height: 2px;
-  cursor: pointer;
-  background: #f5f5f5;
-  border-radius: 5px;
-}
-
-
-.price-filter input[type=range]::-ms-track {
-  width: 188px;
-  height: 2px; 
-  border: 0;
-  outline: 0;
-  box-sizing: border-box;
-  border-radius: 5px;
+.range-input input{
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: -5px;
+  background: none;
   pointer-events: none;
-  color: transparent;
-  border-radius: 5px;
-  cursor: pointer;
-  background: #f5f5f5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-/* Style for input value block */
-.price-wrap {
-  display: flex;
-  justify-content: center;
-  color: #000;
-  font-size: 14px;
-  line-height: 1.2em;
-  font-weight: 400;
-  margin-bottom: 7px;
+input[type="range"]::-webkit-slider-thumb{
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  border: 1px solid #747474;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
 }
 
-.price-wrap-1, 
-.price-wrap-2 {
-  display: flex;
-}
-
-.price-wrap_line {
-  margin: 0 10px;
-}
-
-.price-wrap #min, 
-.price-wrap #max {
-  width: 30px;
-  text-align: right;
-  margin: 0;
-  padding: 0;
-  margin-right: 2px;
-  background:  0;
-  border: 0;
-  outline: 0;
-  color: #000;
-  font-size: 14px;
-  line-height: 1.2em;
-  font-weight: 400;
+input[type="range"]::-moz-range-thumb{
+  height: 17px;
+  width: 17px;
+  border: 1px solid #747474;
+  border-radius: 50%;
+  background: #f1f1f1;
+  pointer-events: auto;
+  -moz-appearance: none;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
 }
 

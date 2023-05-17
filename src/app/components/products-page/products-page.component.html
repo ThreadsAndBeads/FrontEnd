@@ -1,8 +1,8 @@
 <div class="row col-12 m-0">
-  <div class="col-3 h-100 p-0">
+  <div class="col-3 col-lg-2 h-100 p-0">
     <app-filter [filterBy]="filterBy" (filterByEvent)="onFilterChange($event)"></app-filter>
   </div>
-  <div class="container-fluid ms-auto me-0 col-9" style="padding: 90px 0;">
+  <div class="container-fluid ms-auto me-0 col-9 col-lg-10" style="padding: 90px 0;">
     <div class="filters  d-flex justify-content-center flex-wrap" *ngIf="filterBy" style="min-height: 30px;">
       <span class="m-0 p-0" *ngIf="filterBy.categories">
         <span class="filter" *ngFor="let category of filterBy.categories">
@@ -22,7 +22,6 @@
     </div>
     <div>
       <!-- <span>Showing {{productNumbers>limit ? limit : productNumbers}} of {{productNumbers}}</span> -->
-
     </div>
     <div *ngIf="productService.products.length > 0; else NoProducts">
       <div class="row d-flex flex-wrap mx-auto">
