@@ -1,0 +1,77 @@
+.orders-container{
+    margin-top: 10rem !important;
+}
+
+.orders-container h1{
+    font-family: "Delicious Handrawn", cursive;
+    font-size: 5rem;
+}
+.orders-container h2{
+    font-family: "Delicious Handrawn", cursive;
+    
+}
+.example-container {
+    width: 400px;
+    max-width: 100%;
+    margin: 0 25px 25px 0;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .example-list {
+    border: solid 1px #f3f3f3;
+    min-height: 400px;
+    background: #f2f2f2;
+    border-radius: 10px;
+    overflow: hidden;
+    display: block;
+    padding: 0.9rem;
+  }
+  
+  .example-box {
+    padding: 20px 10px;
+    border-bottom: solid 1px #eaeaea;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+    margin-bottom: 0.2rem;
+  }
+  .pending{
+    background-color: #f1f1f1;
+  }
+  .shipped{
+    background-color: #c8d8e4;
+  }
+  .delivered{
+    background-color: #b2c4d4;
+  }
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  .example-box:last-child {
+    border: none;
+  }
+  
+  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  

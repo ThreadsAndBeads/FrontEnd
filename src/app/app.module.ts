@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
@@ -66,8 +67,11 @@ import { MyworkshopComponent } from './myworkshop/myworkshop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
+import { SellerOrdersComponent } from './pages/seller-orders/seller-orders.component';
+import { SellerOrderCardComponent } from './components/seller-order-card/seller-order-card.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { SetDirectionDirective } from './directives/set-direction.directive';
+import { StripeComponent } from './components/stripe/stripe.component';
 import { Top2sellersComponent } from './components/top2sellers/top2sellers.component';
 
 
@@ -117,14 +121,16 @@ import { Top2sellersComponent } from './components/top2sellers/top2sellers.compo
     MyworkshopComponent,
     CheckoutComponent,
     SellerworkshopsComponent,
-    WorkshopPageComponent,
     WorkshopCardComponent,
     SuccessModalComponent,
     SpinnerComponent,
+    SellerOrdersComponent,
+    SellerOrderCardComponent,
     FilterComponent,
     SetDirectionDirective,
     WorkshopPageComponent,
-    Top2sellersComponent,
+    StripeComponent,
+    Top2sellersComponent
   ],
   imports: [
     BrowserModule,
@@ -136,6 +142,7 @@ import { Top2sellersComponent } from './components/top2sellers/top2sellers.compo
     GoogleSigninButtonModule,
     SocialLoginModule,
     NgbModule,
+    DragDropModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
