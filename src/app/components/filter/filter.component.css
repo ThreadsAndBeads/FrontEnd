@@ -1,0 +1,110 @@
+.filter-item-title {
+  font-size: 16px;
+  margin: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filter-checkbox-item{
+  width: 100%;
+  height: 35px;
+}
+
+.filter-checkbox-value{
+  display: none;
+}
+
+.filter-checkbox-value:checked + .filter-checkbox-text:before {
+  background: #52ab98;
+  border-color: #52ab98;
+}
+
+.filter-checkbox-text {
+  position: relative;
+  display: flex;
+  width: 80%;
+  height: 100%;
+  align-items: center;
+  font-size: 15px;
+  padding-left: 30px;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  transition: all .2s;
+}
+
+.filter-checkbox-text::before {
+  transition: all .2s;
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 0;
+  border-radius: 2px;
+  border: 2px solid #747474;
+}
+
+.filter-item-quantity{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  text-align: center;
+  line-height: 25px;
+  font-size: 11px;
+}
+
+/* price filter */
+.slider{
+  height: 5px;
+  position: relative;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+.slider .progress{
+  height: 100%;
+  left: 0%;
+  right: 0%;
+  position: absolute;
+  border-radius: 5px;
+  background: #17A2B8;
+}
+
+.range-input{
+  position: relative;
+}
+
+.range-input input{
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: -5px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  border: 1px solid #747474;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+input[type="range"]::-moz-range-thumb{
+  height: 17px;
+  width: 17px;
+  border: 1px solid #747474;
+  border-radius: 50%;
+  background: #f1f1f1;
+  pointer-events: auto;
+  -moz-appearance: none;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+

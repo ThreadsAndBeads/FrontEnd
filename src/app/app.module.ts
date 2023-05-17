@@ -66,6 +66,7 @@ import { MyworkshopComponent } from './myworkshop/myworkshop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
+import { FilterComponent } from './components/filter/filter.component';
 import { SetDirectionDirective } from './directives/set-direction.directive';
 import { Top2sellersComponent } from './components/top2sellers/top2sellers.component';
 
@@ -120,6 +121,7 @@ import { Top2sellersComponent } from './components/top2sellers/top2sellers.compo
     WorkshopCardComponent,
     SuccessModalComponent,
     SpinnerComponent,
+    FilterComponent,
     SetDirectionDirective,
     WorkshopPageComponent,
     Top2sellersComponent
