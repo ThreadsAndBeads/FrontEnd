@@ -16,7 +16,10 @@ export class ProductService {
   public addProduct(product: FormData) {
     return this.httpClient.post<Product>(`${this.BASE_URL}/`, product);
   }
-
+  public updateProduct(product: FormData, product_id: any) {
+    console.log(product);
+    return this.httpClient.patch<Product>(`${this.BASE_URL}/${product_id}`, product);
+  }
   public getTopDiscountedProduct() {
     const url = `${this.BASE_URL}/discountedproducts`;
     return this.httpClient.get<Product[]>(url);
@@ -44,7 +47,7 @@ export class ProductService {
     const url = `${this.BASE_URL}/categories`;
     return this.httpClient.get(url);
   }
-  
+
   search(query: string) {
     const url = `${this.BASE_URL}/search/?q=${query}`;
     return this.httpClient.get<SearchResult>(url);

@@ -19,6 +19,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { MyworkshopComponent } from './myworkshop/myworkshop.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
   { path: 'home', component: HomeComponent },
@@ -43,7 +44,8 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
   {path: 'editProfile', component: EditProfileComponent},
-  {path: 'welcome', component: GoToLoginComponent},
+  { path: 'welcome', component: GoToLoginComponent },
+  { path: 'editProduct/:productId', component: EditProductComponent },
   { path: '**', component: ErrorComponent },
 ];
 
