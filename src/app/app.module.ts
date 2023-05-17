@@ -73,6 +73,7 @@ import { FilterComponent } from './components/filter/filter.component';
 import { SetDirectionDirective } from './directives/set-direction.directive';
 import { StripeComponent } from './components/stripe/stripe.component';
 import { Top2sellersComponent } from './components/top2sellers/top2sellers.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 
 @NgModule({
@@ -130,7 +131,8 @@ import { Top2sellersComponent } from './components/top2sellers/top2sellers.compo
     SetDirectionDirective,
     WorkshopPageComponent,
     StripeComponent,
-    Top2sellersComponent
+    Top2sellersComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
