@@ -69,7 +69,10 @@ import { SellerworkshopsComponent } from './components/sellerworkshops/sellerwor
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
 import { SellerOrdersComponent } from './pages/seller-orders/seller-orders.component';
 import { SellerOrderCardComponent } from './components/seller-order-card/seller-order-card.component';
+import { FilterComponent } from './components/filter/filter.component';
 import { SetDirectionDirective } from './directives/set-direction.directive';
+import { StripeComponent } from './components/stripe/stripe.component';
+import { Top2sellersComponent } from './components/top2sellers/top2sellers.component';
 
 
 @NgModule({
@@ -118,13 +121,16 @@ import { SetDirectionDirective } from './directives/set-direction.directive';
     MyworkshopComponent,
     CheckoutComponent,
     SellerworkshopsComponent,
-    WorkshopPageComponent,
     WorkshopCardComponent,
     SuccessModalComponent,
     SpinnerComponent,
-    SetDirectionDirective,
     SellerOrdersComponent,
-    SellerOrderCardComponent
+    SellerOrderCardComponent,
+    FilterComponent,
+    SetDirectionDirective,
+    WorkshopPageComponent,
+    StripeComponent,
+    Top2sellersComponent
   ],
   imports: [
     BrowserModule,

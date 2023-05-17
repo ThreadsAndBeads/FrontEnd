@@ -1,23 +1,55 @@
-<div class="container" style="margin-top: 150px;">
-  <div class="row d-flex flex-wrap">
-    <app-product-card *ngFor="let product of productService.products" class="pdtCard col-12 col-md-4 col-lg-3" [product]="product"></app-product-card>
+<div class="row col-12 m-0">
+  <div class="col-3 col-lg-2 h-100 p-0">
+    <app-filter [filterBy]="filterBy" (filterByEvent)="onFilterChange($event)"></app-filter>
   </div>
-  <nav aria-label="Page navigation example ">
-            <ul class="pagination d-flex justify-content-center">
-              <li class="page-item ">
-                <button  (click)="previous()" class="page-link" aria-label="Previous">
-                  <span aria-hidden="true"><i class="bi bi-caret-left-fill"></i></span>
-                </button>
-              </li>
-              <li class="page-item" *ngFor="let page of pages" (click)="navToPage(page)">
-                <button class="page-link">{{page}}</button>
-              </li>
-              <li class="page-item">
-                <button  (click)="next()" class="page-link" aria-label="Next">
-                  <span aria-hidden="true"><i class="bi bi-caret-right-fill"></i></span>
-                </button>
-              </li>
-            </ul>
-  </nav>
+  <div class="container-fluid ms-auto me-0 col-9 col-lg-10" style="padding: 90px 0;">
+    <div class="filters  d-flex justify-content-center flex-wrap" *ngIf="filterBy" style="min-height: 30px;">
+      <span class="m-0 p-0" *ngIf="filterBy.categories">
+        <span class="filter" *ngFor="let category of filterBy.categories">
+          {{ category }}
+          <i class="bi bi-x" (click)="removeFromFilter('categories', category)"></i>
+        </span>
+      </span>
+      <span class="filter" *ngIf="filterBy.price">
+        $ {{ filterBy.price.min }} - {{ filterBy.price.max }}
+        <i class="bi bi-x" (click)="removeFromFilter('price')"></i>
+      </span>
+      <span class="filter" *ngIf="filterBy.rating">
+        rate: {{ filterBy.rating }}
+        <i class="bi bi-x my-auto" (click)="removeFromFilter('rating')"></i>
+      </span>
+      <span (click)="clearFilter()" class="FilterClearAll my-auto" *ngIf="filterBy.categories || filterBy.price || filterBy.rating">Clear All</span>
+    </div>
+    <div>
+      <!-- <span>Showing {{productNumbers>limit ? limit : productNumbers}} of {{productNumbers}}</span> -->
+    </div>
+    <div *ngIf="productService.products.length > 0; else NoProducts">
+      <div class="row d-flex flex-wrap mx-auto">
+        <app-product-card *ngFor="let product of productService.products" class="pdtCard col-12 col-md-4 col-lg-3" [product]="product"></app-product-card>
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination d-flex justify-content-center">
+          <li class="page-item ">
+            <button  (click)="previous()" class="page-link" aria-label="Previous">
+              <span aria-hidden="true"><i class="bi bi-caret-left-fill"></i></span>
+            </button>
+          </li>
+          <li class="page-item" *ngFor="let page of pages" (click)="navToPage(page)">
+            <button class="page-link">{{page}}</button>
+          </li>
+          <li class="page-item">
+            <button  (click)="next()" class="page-link" aria-label="Next">
+              <span aria-hidden="true"><i class="bi bi-caret-right-fill"></i></span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <ng-template #NoProducts>
+      <div class="text-center mt-5">
+        <h3>No products found</h3>
+        <p>Please try again later or refine your search</p>
+      </div>
+    </ng-template>
+  </div>
 </div>
-
