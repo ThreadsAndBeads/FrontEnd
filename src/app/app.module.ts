@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -29,7 +30,7 @@ import { ErrorComponent } from './error/error.component';
 import { DragDirective } from './directives/drag.directive';
 import { ResponseResetPasswordComponent } from './components/response-reset-password/response-reset-password.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
-import { TopSellComponent } from './components/top-sell/top-sell.component';
+import { TopSellingProductsComponent } from './components/top-selling-products/top-selling-products.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { SellersSectionComponent } from './components/sellers-section/sellers-section.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
@@ -65,6 +66,8 @@ import { MyworkshopComponent } from './components/myworkshop/myworkshop.componen
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
+import { SellerOrdersComponent } from './pages/seller-orders/seller-orders.component';
+import { SellerOrderCardComponent } from './components/seller-order-card/seller-order-card.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { SetDirectionDirective } from './directives/set-direction.directive';
 import { CreateWorkshopComponent } from './components/create-workshop/create-workshop.component';
@@ -73,7 +76,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule   } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
+import { StripeComponent } from './components/stripe/stripe.component';
 import { Top2sellersComponent } from './components/top2sellers/top2sellers.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 
 @NgModule({
@@ -100,7 +105,7 @@ import { Top2sellersComponent } from './components/top2sellers/top2sellers.compo
     DragDirective,
     ResponseResetPasswordComponent,
     ProductCardComponent,
-    TopSellComponent,
+    TopSellingProductsComponent,
     SellersSectionComponent,
     SidebarComponent,
     ProductsPageComponent,
@@ -122,16 +127,19 @@ import { Top2sellersComponent } from './components/top2sellers/top2sellers.compo
     MyworkshopComponent,
     CheckoutComponent,
     SellerworkshopsComponent,
-    WorkshopPageComponent,
     WorkshopCardComponent,
     SuccessModalComponent,
     SpinnerComponent,
     SetDirectionDirective,
     CreateWorkshopComponent,
+    SellerOrdersComponent,
+    SellerOrderCardComponent,
     FilterComponent,
     SetDirectionDirective,
     WorkshopPageComponent,
-    Top2sellersComponent
+    StripeComponent,
+    Top2sellersComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
@@ -147,6 +155,7 @@ import { Top2sellersComponent } from './components/top2sellers/top2sellers.compo
     MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,
+    DragDropModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
