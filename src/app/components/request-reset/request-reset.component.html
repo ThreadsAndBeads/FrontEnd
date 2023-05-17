@@ -3,11 +3,32 @@
     <div class="form-container">
       <div class="wrapper container-fluid form card-body pb-3 d-flex flex-column">
         <div class="d-flex mb-5">
-          <a href="" class="threadsAndBeads"><h1 class="logo">Threads &amp; Beads</h1></a>
         </div>
         <div class="justify-content-center">
+          <div class="animatedCloud d-flex justify-content-center">
+            <div class="wrapper">
+              <div class="cloud">
+                <div class="cloud_left"></div>
+                <div class="cloud_right"></div>
+              </div>
+              <div class="rain">
+                <div class="drop"></div>
+                <div class="drop"></div>
+                <div class="drop"></div>
+                <div class="drop"></div>
+                <div class="drop"></div>
+              </div>
+              <div class="surface">
+                <div class="hit"></div>
+                <div class="hit"></div>
+                <div class="hit"></div>
+                <div class="hit"></div>
+                <div class="hit"></div>
+              </div>
+            </div>
+          </div>
           <form action="" [formGroup]="RequestResetForm" (ngSubmit)="RequestResetUser(RequestResetForm)">
-            <h2>Forgot Password</h2>
+            <h2>Forgot Password?</h2>
             <input type="email" placeholder="Email" name="email" formControlName="email" />
             <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
             <div class="error" *ngIf="successMessage">{{ successMessage }}</div>
@@ -21,4 +42,3 @@
     </div>
   </div>
 
-  

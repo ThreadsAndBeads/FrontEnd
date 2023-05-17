@@ -37,7 +37,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
 import { WorkshopHomeSectionComponent } from './components/workshop-home-section/workshop-home-section.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-// import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { CartProductsComponent } from './components/cart-products/cart-products.component';
 import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
 import { WorkshopCardComponent } from './components/workshop-card/workshop-card.component';
@@ -66,6 +65,7 @@ import { MyworkshopComponent } from './myworkshop/myworkshop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
+import { FilterComponent } from './components/filter/filter.component';
 import { SetDirectionDirective } from './directives/set-direction.directive';
 import { CreateWorkshopComponent } from './components/create-workshop/create-workshop.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -73,6 +73,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule   } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
+import { Top2sellersComponent } from './components/top2sellers/top2sellers.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -125,6 +128,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     SpinnerComponent,
     SetDirectionDirective,
     CreateWorkshopComponent,
+    FilterComponent,
+    SetDirectionDirective,
+    WorkshopPageComponent,
+    Top2sellersComponent
   ],
   imports: [
     BrowserModule,
