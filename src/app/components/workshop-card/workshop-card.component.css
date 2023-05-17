@@ -34,7 +34,6 @@
 }
 /* Body */
 .postcard__body {
-  /* padding: clamp(1rem, 3vw, 2rem) 1.25rem; */
   padding-left: clamp(1.25rem, 3vw, 2rem);
 }
 
@@ -68,7 +67,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* margin-top: clamp(0.5rem, 5vw, 2rem); */
 }
 
 /* Author */
