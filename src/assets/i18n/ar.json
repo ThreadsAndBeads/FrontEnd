@@ -57,6 +57,11 @@
 		"arabic": "ar",
 		"english": "en"
 	},
+	"productFilter": {
+		"categoryFilter": "الفئات",
+		"priceFilter": "السعر",
+		"rateFilter": "التقيم"
+	},
 	"profile": {
 		"address": "العنوان",
 		"appartmentNo": ":رقم الشقة",
