@@ -120,7 +120,7 @@ export class CheckoutComponent {
 
   isCredit(e:any){
     if (this.payment_method === "credit") {
-      this.paymentService.invokeStripe();
+      // this.paymentService.invokeStripe();
       this.paymentService.makePayment();
     }
   }

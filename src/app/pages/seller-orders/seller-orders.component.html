@@ -1,6 +1,8 @@
 <div class="orders-container d-flex justify-content-center">
   <div class="">
-    <h1 class="mb-5 text-center">Manage Your orders</h1>
+    <h1 class="mb-5 text-center">
+      {{ "sellerOrders.manageYourOrders" | translate }}
+    </h1>
     <div class="container d-flex flex-wrap justify-content-center">
       <div class="example-container">
         <div
@@ -11,7 +13,7 @@
           class="example-list pending"
           (cdkDropListDropped)="drop($event)"
         >
-          <h2 class="text-center">Pending</h2>
+          <h2 class="text-center">{{ "sellerOrders.pending" | translate }}</h2>
           <app-seller-order-card
             [order]="order"
             *ngFor="let order of pending"
@@ -19,24 +21,6 @@
           ></app-seller-order-card>
         </div>
       </div>
-
-      <!-- <div class="example-container">
-      <div
-        cdkDropList
-        #processingList="cdkDropList"
-        [cdkDropListData]="processing"
-        [cdkDropListConnectedTo]="[shippedList, deliveredList]"
-        class="example-list processing"
-        (cdkDropListDropped)="drop($event)"
-      >
-        <h2 class="text-center">Processing</h2>
-        <app-seller-order-card
-          [order]="order"
-          *ngFor="let order of processing"
-          cdkDrag
-        ></app-seller-order-card>
-      </div>
-    </div> -->
       <div class="example-container">
         <div
           cdkDropList
@@ -46,7 +30,7 @@
           class="example-list shipped"
           (cdkDropListDropped)="drop($event)"
         >
-          <h2 class="text-center">Shipped</h2>
+          <h2 class="text-center">{{ "sellerOrders.shipped" | translate }}</h2>
           <app-seller-order-card
             [order]="order"
             *ngFor="let order of shipped"
@@ -59,11 +43,12 @@
           cdkDropList
           #deliveredList="cdkDropList"
           [cdkDropListData]="delivered"
-          [cdkDropListConnectedTo]="[]"
           class="example-list delivered"
           (cdkDropListDropped)="drop($event)"
         >
-          <h2 class="text-center">Delivered</h2>
+          <h2 class="text-center">
+            {{ "sellerOrders.delivered" | translate }}
+          </h2>
           <app-seller-order-card
             [order]="order"
             *ngFor="let order of delivered"
@@ -75,15 +60,17 @@
       <div class="example-container">
         <div
           cdkDropList
-          #cancelingList="cdkDropList"
-          [cdkDropListData]="canceled"
+          #cancellingList="cdkDropList"
+          [cdkDropListData]="cancelled"
           class="example-list canceling"
           (cdkDropListDropped)="drop($event)"
         >
-          <h2 class="text-center">Canceled</h2>
+          <h2 class="text-center">
+            {{ "sellerOrders.cancelled" | translate }}
+          </h2>
           <app-seller-order-card
             [order]="order"
-            *ngFor="let order of canceled"
+            *ngFor="let order of cancelled"
           ></app-seller-order-card>
         </div>
       </div>
