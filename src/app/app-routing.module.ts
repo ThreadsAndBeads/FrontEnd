@@ -22,6 +22,7 @@ import { MyworkshopComponent } from './myworkshop/myworkshop.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 import { SellerOrdersComponent } from './pages/seller-orders/seller-orders.component';
+// import { StripeComponent } from './components/stripe/stripe.component';
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
   { path: 'home', component: HomeComponent },
@@ -48,6 +49,7 @@ const routes: Routes = [
   {path: 'editProfile', component: EditProfileComponent},
   { path: 'welcome', component: GoToLoginComponent },
   { path: 'editProduct/:productId', component: EditProductComponent },
+  // {path: 'stripe', component: StripeComponent },
   {path: 'orders', component: SellerOrdersComponent},
   { path: '**', component: ErrorComponent },
 ];
