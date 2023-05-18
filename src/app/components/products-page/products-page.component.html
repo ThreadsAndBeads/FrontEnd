@@ -15,10 +15,10 @@
         <i class="bi bi-x" (click)="removeFromFilter('price')"></i>
       </span>
       <span class="filter" *ngIf="filterBy.rating">
-        rate: {{ filterBy.rating }}
+        {{"productPageFilter:rate" | translate}}: {{ filterBy.rating }}
         <i class="bi bi-x my-auto" (click)="removeFromFilter('rating')"></i>
       </span>
-      <span (click)="clearFilter()" class="FilterClearAll my-auto" *ngIf="filterBy.categories || filterBy.price || filterBy.rating">Clear All</span>
+      <span (click)="clearFilter()" class="FilterClearAll my-auto" *ngIf="filterBy.categories || filterBy.price || filterBy.rating">{{"productPageFilter:clear" | translate}}</span>
     </div>
     <div>
       <!-- <span>Showing {{productNumbers>limit ? limit : productNumbers}} of {{productNumbers}}</span> -->
@@ -47,8 +47,8 @@
     </div>
     <ng-template #NoProducts>
       <div class="text-center mt-5">
-        <h3>No products found</h3>
-        <p>Please try again later or refine your search</p>
+        <h3>{{"productPageFilter:noProduct" | translate}}</h3>
+        <p>{{"productPageFilter:noProductMessage" | translate}}</p>
       </div>
     </ng-template>
   </div>
