@@ -91,6 +91,13 @@
 		"recentPhotos": "Recent Photos",
 		"showAll": "Show All"
 	},
+	"sellerOrders": {
+		"cancelled": "Cancelled",
+		"delivered": "Delivered",
+		"manageYourOrders": "Manage Your Orders",
+		"pending": "Pending",
+		"shipped": "Shipped"
+	},
 	"sidebar": {
 		"MyWorkshopsBtn": "My Workshops",
 		"MyproductsBtn": "My products",

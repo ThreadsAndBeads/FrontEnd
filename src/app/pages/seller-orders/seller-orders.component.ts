@@ -11,7 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class SellerOrdersComponent implements OnInit {
   @Output() order: any
   pending: any[] = [];
-  processing: any[] = [];
+  cancelled: any[] = [];
   shipped: any[] = [];
   delivered: any[] = [];
   currentUser: any;
@@ -22,6 +22,8 @@ export class SellerOrdersComponent implements OnInit {
     this.currentUser = this.tokenService.getUser();
     this.currentUserId = this.currentUser._id;
     this.getOrders();
+    console.log('hiiii');
+    
   }
 
  
@@ -37,13 +39,14 @@ export class SellerOrdersComponent implements OnInit {
         event.currentIndex,
       );
       let orderStatus=this.getOrderStatus(event);
-      console.log(orderStatus);
+      console.log(event.container!.id);
       
       let body={"orderId":event.container.data[0]!._id,"orderStatus":orderStatus}
       this.orderService.manageOrder(body).subscribe(
 {
            next:(response: any) => {
-            console.log(response);
+            console.log(response,'hi');
+            
            },
            error:(err)=>{
             // console.log(err);
@@ -62,8 +65,11 @@ export class SellerOrdersComponent implements OnInit {
           const ordersByStatus = this.getOrdersByStatus();
           this.pending = ordersByStatus['pending'] || [];
           this.shipped = ordersByStatus['shipped'] || [];
-          this.processing = ordersByStatus['processing'] || [];
+          this.cancelled = ordersByStatus['cancelled'] || [];
           this.delivered = ordersByStatus['delivered'] || [];
+
+          console.log(this.delivered);
+          
         },
       error:  ({ status, message }: HttpErrorResponse) => {
           console.log(`Error ${status}: ${message}`);
@@ -80,24 +86,18 @@ export class SellerOrdersComponent implements OnInit {
         orderStatus="pending";
         break;
       case "cdk-drop-list-1":
-        orderStatus="processing"
+        orderStatus="shipped"
         break;
       case "cdk-drop-list-2":
-        orderStatus="shipped";
-        break;
-      case "cdk-drop-list-3":
         orderStatus="delivered";
-        break;      
+        break;   
     }
 
     return orderStatus;
   }
 
   getOrdersByStatus() {
-    console.log(this.orderService.seller_orders);
     const ordersByStatus = this.orderService.seller_orders.reduce((result:any, order) => {
-      console.log(result);
-      
       if (!result[order.orderStatus]) {
         result[order.orderStatus] = [];
       }
