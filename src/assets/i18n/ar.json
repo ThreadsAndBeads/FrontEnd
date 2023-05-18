@@ -80,6 +80,17 @@
 		"recentPhotos": "الصور:",
 		"showAll": "اظهر الكل:"
 	},
+	"sidebar": {
+		"MyWorkshopsBtn": "ورشتي",
+		"MyproductsBtn": "منتجاتي",
+		"NewProductBtn": "منتج جديد",
+		"NewWorkshopBtn": "ورشة عمل جديدة",
+		"logoutBtn": "الخروج",
+		"ordersBtn": "طلبات",
+		"productsBtn": "منتجات",
+		"profileBtn": "الحساب الشخصي",
+		"workshopsBtn": "ورش العمل"
+	},
 	"workshopCard": {
 		"bookBtn": "احجز الان"
 	}
