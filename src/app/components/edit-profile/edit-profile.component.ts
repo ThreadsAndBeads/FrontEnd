@@ -65,7 +65,6 @@ export class EditProfileComponent {
 
   prepareFormData(user: User): FormData{
     const formData: any = new FormData();
-    formData.append('name', "hahahaha");
     formData.append('address[appartmentNo]', user.address.appartmentNo);
     formData.append('address[city]', user.address.city);
     formData.append('address[country]', user.address.country);
