@@ -57,6 +57,18 @@
 		"arabic": "ar",
 		"english": "en"
 	},
+	"productCard": {
+		"detailsBtn": "Details"
+	},
+	"productFilter": {
+		"categoryFilter": "Categories",
+		"priceFilter": "Price",
+		"rateFilter": "Rating"
+	},
+	"productPageFilter:clear": "Clear All",
+	"productPageFilter:noProduct": "No products found",
+	"productPageFilter:noProductMessage": "Please try again later or refine your search",
+	"productPageFilter:rate": "rating",
 	"profile": {
 		"address": "Address:",
 		"appartmentNo": "Apartment Number:",
