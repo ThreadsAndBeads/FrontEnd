@@ -27,6 +27,14 @@ export class WorkshopService {
     const url = `${this.BASE_URL}/${workshop_id}`;
     return this.httpClient.delete<any>(url);
   }
+  public getWorkshopById(workshop_id: any): Observable<Workshop> {
+    const url = `${this.BASE_URL}/${workshop_id}`;
+    return this.httpClient.get<Workshop>(url);
+  }
+  public updateWorkshop(workshop_id: any, workshop: FormData): Observable<Workshop> {
+    const url = `${this.BASE_URL}/${workshop_id}`;
+    return this.httpClient.patch<Workshop>(url, workshop);
+  }
 }
 
 

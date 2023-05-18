@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { FormBuilder, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FileHandle } from 'src/app/model/file-handler.model';
 import { Workshop } from 'src/app/model/workshop.model';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
@@ -12,7 +12,7 @@ import { WorkshopService } from 'src/app/services/workshop.service';
   templateUrl: './edit-workshop.component.html',
   styleUrls: ['./edit-workshop.component.css']
 })
-export class EditWorkshopComponent {
+export class EditWorkshopComponent implements OnInit{
   workshop : Workshop = {
     seller_id: "this.userId" ,
     seller_name :"",
@@ -23,24 +23,44 @@ export class EditWorkshopComponent {
     endDate :null ,
     image: null
   }
+  range = new FormGroup({
+    start: new FormControl<Date | null>(null),
+    end: new FormControl<Date | null>(null),
+  });
   constructor(
     private router: Router,
-  
-    private fb: FormBuilder, private workshopService : WorkshopService , private sanitizer :DomSanitizer , private tokenService: TokenStorageService) { 
+    private fb: FormBuilder,
+     private workshopService : WorkshopService ,
+     private route: ActivatedRoute, 
+      private sanitizer :DomSanitizer , private tokenService: TokenStorageService) {  
   }
-  addWorkshop(workshopForm : NgForm){
-    const workshopFormData =  this.prepareFormData(this.workshop)
-    this.workshopService.addWorkshop(workshopFormData).subscribe(
-      (response : Workshop) =>{
-        workshopForm.reset();
-        this.workshop.image = null;
-        this.router.navigate(['/myWorkshops']);
+
+ngOnInit(): void {
+  const id = this.route.snapshot.paramMap.get('workshopId');
+  this.workshopService.getWorkshopById(id).subscribe({next: (data : any) => {
+    this.workshop = data.data.data;    
+  } , error :(err)=>{
+    console.log(err);
+    
+  }});  
+}      
   
-      },
-      (error : HttpErrorResponse)=>{
-        console.log(error);
-      }
-    );
+editWorkshop(workshopForm : NgForm){
+  console.log(workshopForm);
+  
+    const workshopFormData =  this.prepareFormData(workshopForm)
+    // console.log(workshopFormData); 
+    // workshopFormData.forEach((value: FormDataEntryValue, key: string) => {
+    //   console.log(key + ': ' + value);
+    // });
+    const id = this.route.snapshot.paramMap.get('workshopId');
+    this.workshopService.updateWorkshop(id, workshopFormData).subscribe({next:(data) => {
+      // console.log(data);
+      
+      this.router.navigate(['/myWorkshops']);
+    } ,error : (err)=>{
+      console.log(err);      
+    }});
   }
   
   prepareFormData(workshop: any): FormData {
@@ -49,20 +69,19 @@ export class EditWorkshopComponent {
     formData.append('title', workshop.title);
     formData.append('description', workshop.description);
     formData.append('price', workshop.price);
-    // const startDate = this.range.value.start;
-    // const endDate = this.range.value.end;
+    const startDate = this.range.value.start;
+    const endDate = this.range.value.end;
   
-    // if (startDate) {
-    //   const utcStartDate = new Date(Date.UTC(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()));
-    //   formData.append('startDate', utcStartDate.toISOString());
-    // }
+    if (startDate) {
+      const utcStartDate = new Date(Date.UTC(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()));
+      formData.append('startDate', utcStartDate.toISOString());
+    }
   
-    // if (endDate) {
-    //   const utcEndDate = new Date(Date.UTC(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()));
-    //   formData.append('endDate', utcEndDate.toISOString());
-    // }
-  
-    formData.append('image', workshop.image!.file, workshop.image!.file!.name);
+    if (endDate) {
+      const utcEndDate = new Date(Date.UTC(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()));
+      formData.append('endDate', utcEndDate.toISOString());
+    }
+    formData.append('image', this.workshop.image!.file, this.workshop.image!.file!.name);
   
     return formData;
   }

@@ -23,6 +23,7 @@ import { CreateWorkshopComponent } from './components/create-workshop/create-wor
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 import { SellerOrdersComponent } from './pages/seller-orders/seller-orders.component';
+import { EditWorkshopComponent } from './components/edit-workshop/edit-workshop.component';
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
   { path: 'home', component: HomeComponent },
@@ -50,6 +51,7 @@ const routes: Routes = [
   {path: 'editProfile', component: EditProfileComponent},
   { path: 'welcome', component: GoToLoginComponent },
   { path: 'editProduct/:productId', component: EditProductComponent },
+  { path: 'editWorkshop/:workshopId', component: EditWorkshopComponent},
   {path: 'orders', component: SellerOrdersComponent},
   { path: '**', component: ErrorComponent },
 ];

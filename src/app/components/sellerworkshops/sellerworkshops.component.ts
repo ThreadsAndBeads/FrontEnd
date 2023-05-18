@@ -1,12 +1,9 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { FormBuilder, NgForm } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import * as bootstrap from 'bootstrap';
-import { FileHandle } from 'src/app/model/file-handler.model';
 import { Workshop } from 'src/app/model/workshop.model';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { WorkshopService } from 'src/app/services/workshop.service';
 
 @Component({
@@ -17,17 +14,7 @@ import { WorkshopService } from 'src/app/services/workshop.service';
 export class SellerworkshopsComponent {
 @Input () workshop: any
 @ViewChild('myModal') myModal!: ElementRef;
-workshop1 : Workshop = {
-  seller_id: "this.userId" ,
-  seller_name :"",
-  title : "" ,
-  description : "" ,
-  price : 0 ,
-  startDate : null ,
-  endDate :null ,
-  image: null
-}
-constructor( private workshopService : WorkshopService ) { 
+constructor( private workshopService : WorkshopService , private router : Router ) { 
 }
 
   deleteWorkshop(workshopId:string) {
@@ -42,6 +29,15 @@ constructor( private workshopService : WorkshopService ) {
     const modal = new bootstrap.Modal(this.myModal.nativeElement);
     modal.show();
   }
-
+  openEditWorkshopModal() {
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(this.workshop)
+      }
+    };
+    console.log(navigationExtras.queryParams);
+    
+    this.router.navigate([`editWorkshop/${this.workshop._id}`,navigationExtras]);
+  }
 
 }
