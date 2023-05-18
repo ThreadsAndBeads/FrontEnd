@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PaymentService } from 'src/app/services/payment.service';
 
 @Component({
   selector: 'app-stripe',
@@ -7,12 +8,15 @@ import { Component } from '@angular/core';
 })
 export class StripeComponent {
   paymentHandler: any = null;
-  constructor() {}
+  constructor(private paymentService: PaymentService) {}
   ngOnInit() {
     this.invokeStripe();
+    this.makePayment();
   }
-  makePayment(amount: any) {
-    const paymentHandler = (<any>window).StripeCheckout.configure({
+  makePayment() {
+    const amount = this.paymentService.getAmount();
+    console.log(amount);
+     this.paymentHandler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51N8TnoIudPN1uZnnijC0SWZydb6SEHCPOYhHrs1WLbpxtdTWyjOmqbx6SS6EAMKlUCYYAd9JZ7GyobbGQ4bMJ8pY005OrIYVCA',
       locale: 'auto',
       token: function (stripeToken: any) {
@@ -20,7 +24,16 @@ export class StripeComponent {
         alert('Stripe token generated!');
       },
     });
-    paymentHandler.open({
+    if (this.paymentHandler) {
+      this.openPayment(amount);
+    } else {
+      setTimeout(() => {
+        this.makePayment();
+      }, 500);
+    }
+  }
+  openPayment(amount: number) {
+    this.paymentHandler.open({
       name: 'Positronx',
       description: '3 widgets',
       amount: amount * 100,

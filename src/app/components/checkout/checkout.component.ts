@@ -7,6 +7,7 @@ import { Order } from 'src/app/model/order.model';
 import { CartService } from 'src/app/services/cart.service';
 import { OrderService } from 'src/app/services/order.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { PaymentService } from 'src/app/services/payment.service';
 
 @Component({
   selector: 'app-checkout',
@@ -28,8 +29,13 @@ export class CheckoutComponent {
     address: '',
   };
   client=this.tokenService.getUser();
-  constructor(private orderService : OrderService ,private router:Router,private tokenService: TokenStorageService,public cartService: CartService,  private fb: FormBuilder)
-   { 
+  constructor(private orderService: OrderService,
+    private router: Router,
+    private tokenService: TokenStorageService,
+    public cartService: CartService,
+    private fb: FormBuilder,
+    private paymentService: PaymentService)
+   {
     this.checkCartStatus();
      this.validationForm = this.fb.group({
        client_name: [this.client.name, [Validators.required]],
@@ -43,7 +49,7 @@ export class CheckoutComponent {
 
   }
   checkCartStatus() {
-   
+
     this.cartService.getCartProducts().subscribe({
       next: (response) => {
         if (response.data.cart.products) {
@@ -58,7 +64,7 @@ export class CheckoutComponent {
         console.log(error);
       },
     });
-  
+
 }
 
   calculateSubtotal() {
@@ -69,6 +75,7 @@ export class CheckoutComponent {
       this.totalItems += product.quantity;
       this.totalPrice += product.quantity * product.productId.price;
     });
+    this.paymentService.setAmount(this.totalPrice);
   }
   get client_name() {
     return this.validationForm.get('client_name');
@@ -86,18 +93,18 @@ export class CheckoutComponent {
   createOrder(){
     // console.log(this.userId);
     if (this.validationForm.valid) {
-      
-    const order ={address:this.address!.value,client_name:this.client_name!.value,phone:this.phone!.value,city:this.city!.value}; 
+
+    const order ={address:this.address!.value,client_name:this.client_name!.value,phone:this.phone!.value,city:this.city!.value};
     console.log(order);
-    
+
     const newOrder=this.prepareOrder(order);
     console.log(newOrder);
-    
+
     this.orderService.createOrder(newOrder).subscribe({
      next: (res : any) =>{
- 
+
         this.router.navigate(['/home']);
-        
+
       },
     error:  (error : HttpErrorResponse)=>{
         console.log(error);
@@ -106,8 +113,17 @@ export class CheckoutComponent {
   }
 }
   paymentMethod(e:any) {
-    this.payment_method= e.target.value;
- }
+    this.payment_method = e.target.value;
+
+
+  }
+
+  isCredit(e:any){
+    if (this.payment_method === "credit") {
+      this.paymentService.invokeStripe();
+      this.paymentService.makePayment();
+    }
+  }
   prepareOrder(order: any){
     let newOrder = {
       userId: this.userId,
