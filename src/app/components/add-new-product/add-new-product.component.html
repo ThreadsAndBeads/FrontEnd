@@ -160,9 +160,9 @@
                 </g>
               </svg>
               <div>
-                <span>Drag and drop your file or </span>
-                <a (click)="selectFile.click()" class="browse-btn text-info">browse</a>
-                a file
+                <span>{{"add-new-product.dragAndDropText" | translate}} </span>
+                <a (click)="selectFile.click()" class="browse-btn text-info">{{"add-new-product.browse" | translate}}</a>
+                {{"add-new-product.file" | translate}}
               </div>
               </div>
             </div>
@@ -178,28 +178,28 @@
 
         <div class="parent2 col-12 col-md-6 col-xl-3">
           <div>
-            <label for="inputProductName5" class="form-label">Product Name <span class="required-star">*</span></label>
+            <label for="inputProductName5" class="form-label">{{"add-new-product.productName" | translate}} <span class="required-star">*</span></label>
             <input type="text" id="inputProductName5" class="form-control col-12" aria-labelledby="" name="name"
               [(ngModel)]="product.name" />
           </div>
 
           <div>
             <label for="inputProductPrice5" class="form-label">
-              Price <span class="required-star">*</span></label>
+             {{"add-new-product.productPrice" | translate}} <span class="required-star">*</span></label>
             <input type="number" id="inputProductPrice5" class="form-control col-12" aria-labelledby="" name="price"
               [(ngModel)]="product.price" />
           </div>
 
           <div>
             <label for="inputDiscountPrice5" class="form-label">
-              Discount Price</label>
+              {{"add-new-product.discountPrice" | translate}}</label>
             <input type="number" id="inputDiscountPrice5" class="form-control col-12" aria-labelledby=""
               name="discPrice" [(ngModel)]="product.priceDiscount" />
           </div>
 
           <div>
             <label for="inputProductInStock" class="form-label">
-              In Sotck <span class="required-star">*</span></label>
+              {{"add-new-product.productInStock" | translate}} <span class="required-star">*</span></label>
             <input type="number" id="inputProductInStock" class="form-control col-12" aria-labelledby="" name="inStock"
               [(ngModel)]="product.inStock" />
           </div>
@@ -207,7 +207,7 @@
 
         <div class="col-12 col-md-6 col-xl-3">
           <label for="inputDiscountPrice5" class="form-label">
-            Description
+           {{"add-new-product.productDescription" | translate}}
           </label>
           <textarea class="description form-control text-white" id="exampleFormControlTextarea1" cols="150" rows="2" name="description"
             [(ngModel)]="product.description" style="min-height: calc(100% - 0.75rem - 36px);"></textarea>
@@ -215,7 +215,7 @@
 
         <div class="col-12 col-md-12 col-xl-2 d-flex justify-content-end align-content-end">
           <button type="submit" class="cssbuttons-io-button mt-2 mt-lg-auto">
-            Add
+            {{"add-new-product.add" | translate}}
             <div class="icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                 <path fill="none" d="M0 0h24v24H0z"></path>
