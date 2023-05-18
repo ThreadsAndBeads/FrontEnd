@@ -20,7 +20,7 @@
       <ul>
         <li>
           <a class="text-decoration-none" href="/profile">
-            <i class="bi bi-person" style="margin-right: 5px"></i>Profile
+            <i class="bi bi-person" style="margin-right: 5px"></i>{{"sidebar.profileBtn" | translate}}
           </a>
         </li>
         <li *ngIf="currentUser.type == 'seller'" class="dropdown">
@@ -31,7 +31,7 @@
             aria-expanded="false"
             href="#"
           >
-            My Products
+            {{"sidebar.productsBtn" | translate}}
           </a>
           <ul
             class="dropdown-menu dropdown-menu-center"
@@ -42,7 +42,7 @@
                 class="text-decoration-none dropdown-item"
                 href="/sellerProducts"
               >
-                My Products
+                {{"sidebar.MyproductsBtn" | translate}}
               </a>
             </li>
             <li>
@@ -54,14 +54,14 @@
                   class="bi bi-plus-square-dotted"
                   style="margin-right: 5px"
                 ></i>
-                New Product
+                {{"sidebar.NewProductBtn" | translate}}
               </a>
             </li>
           </ul>
         </li>
         <li>
           <a class="text-decoration-none" href="/orders">
-            <i class="bi bi-box" style="margin-right: 5px"></i>Orders
+            <i class="bi bi-box" style="margin-right: 5px"></i>{{"sidebar.ordersBtn" | translate}}
           </a>
         </li>
         <li *ngIf="currentUser.type == 'seller'" class="dropdown">
@@ -72,7 +72,7 @@
             aria-expanded="false"
             href="#"
           >
-            Workshops
+            {{"sidebar.workshopsBtn" | translate}}
           </a>
           <ul
             class="dropdown-menu dropdown-menu-center"
@@ -81,6 +81,8 @@
             <li>
               <a class="text-decoration-none dropdown-item" href="/myWorkshops">
                 My Workshop
+              <a class="text-decoration-none dropdown-item" href="myworkshop">
+                {{"sidebar.MyWorkshopsBtn" | translate}}
               </a>
             </li>
             <li>
@@ -92,7 +94,7 @@
                   class="bi bi-plus-square-dotted"
                   style="margin-right: 5px"
                 ></i>
-                New Workshop
+                {{"sidebar.NewWorkshopBtn" | translate}}
               </a>
             </li>
           </ul>
@@ -104,7 +106,7 @@
             (click)="onLogoutClick()"
           >
             <i class="bi bi-door-closed" style="margin-right: 5px"></i>
-            Logout</a
+            {{"sidebar.logoutBtn" | translate}}</a
           >
         </li>
       </ul>

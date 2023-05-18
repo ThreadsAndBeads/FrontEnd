@@ -1,12 +1,10 @@
 <app-header
-  *ngIf="router.url !== '/auth' && router.url !== '/welcome'"
-></app-header>
+  *ngIf="router.url !== '/auth' && router.url !== '/welcome'"></app-header>
 <router-outlet appSetDirection></router-outlet>
+<!-- <app-stripe></app-stripe> -->
 <app-spinner
   *ngIf="router.url !== '/auth' && router.url !== '/welcome'"
 ></app-spinner>
 <!-- <app-sidebar></app-sidebar> -->
 <app-footer
-  *ngIf="router.url !== '/auth' && router.url !== '/welcome'"
-></app-footer>
-<!-- <app-modal></app-modal> -->
+  *ngIf="router.url !== '/auth' && router.url !== '/welcome'"></app-footer>

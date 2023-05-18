@@ -80,6 +80,7 @@ import { StripeComponent } from './components/stripe/stripe.component';
 import { Top2sellersComponent } from './components/top2sellers/top2sellers.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { EditWorkshopComponent } from './components/edit-workshop/edit-workshop.component';
+import { ClientOrdersComponent } from './components/client-orders/client-orders.component';
 
 
 @NgModule({
@@ -141,7 +142,8 @@ import { EditWorkshopComponent } from './components/edit-workshop/edit-workshop.
     StripeComponent,
     Top2sellersComponent,
     EditProductComponent,
-    EditWorkshopComponent
+    EditWorkshopComponent,
+    ClientOrdersComponent
   ],
   imports: [
     BrowserModule,

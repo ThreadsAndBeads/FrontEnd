@@ -235,7 +235,7 @@
                 </ul>
               </div>
               <div class="d-flex justify-content-center w-100 pay-now mb-5">
-                <button class="toCheckout" type="submit">
+                <button class="toCheckout" type="submit" (click)="isCredit($event)">
                   <span class="top-key"></span>
                   <span class="text">{{
                     "checkout.purchaseNow" | translate

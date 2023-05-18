@@ -23,6 +23,18 @@
 		"Header": "ورشاتنا",
 		"paragraph": "بفضل موقعنا، ستتاح لك فرصة فريدة لحضور ورش عمل يدوية حيث ستتعلم كيفية إبداع الأشياء الجميلة والهدايا المميزة باستخدام يديك الخاصتين. سيقوم مدرسونا الخبراء بإرشادك خطوة بخطوة في هذه العملية، مما يتيح لك فرصة تطوير مهاراتك وإنشاء قطع فريدة ومميزة تفخر بها"
 	},
+	"add-new-product": {
+		"add": " اضافة",
+		"browse": " تصفح",
+		"discountPrice": "  سعر الخصم",
+		"dragAndDropText": "  قم بسحب وإسقاط الملفات هنا للتحميل",
+
+		"file": " الملف",
+		"productDescription": " وصف المنتج",
+		"productInStock": " المنتج في المخزن",
+		"productName": "اسم المنتج",
+		"productPrice": " سعر المنتج"
+	},
 	"checkout": {
 		"address": "العنوان",
 		"addressRequired": "العنوان مطلوب",
@@ -79,6 +91,17 @@
 		"phone": "رقم الهاتف:",
 		"recentPhotos": "الصور:",
 		"showAll": "اظهر الكل:"
+	},
+	"sidebar": {
+		"MyWorkshopsBtn": "ورشتي",
+		"MyproductsBtn": "منتجاتي",
+		"NewProductBtn": "منتج جديد",
+		"NewWorkshopBtn": "ورشة عمل جديدة",
+		"logoutBtn": "الخروج",
+		"ordersBtn": "طلبات",
+		"productsBtn": "منتجات",
+		"profileBtn": "الحساب الشخصي",
+		"workshopsBtn": "ورش العمل"
 	},
 	"workshopCard": {
 		"bookBtn": "احجز الان"
