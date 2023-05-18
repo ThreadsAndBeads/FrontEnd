@@ -23,6 +23,17 @@
 		"Header": "Our Workshops",
 		"paragraph": "Our website offers a unique handmade workshop where you can learn how to create beautiful crafts and gifts using your own two hands. Our expert instructors will guide you through the process step by step, allowing you to develop new skills and create one-of-a-kind items that you can be proud of"
 	},
+	"add-new-product": {
+		"add": "Add",
+		"browse": " Browse",
+		"discountPrice": "Discount Price",
+		"dragAndDropText": "Drag and drop files here to upload",
+		"file": " File",
+		"productDescription": "Product description",
+		"productInStock": "Stock ",
+		"productName": "Product name",
+		"productPrice": "Product Price "
+	},
 	"checkout": {
 		"address": "Address",
 		"addressRequired": "Address is required",
@@ -57,6 +68,18 @@
 		"arabic": "ar",
 		"english": "en"
 	},
+	"productCard": {
+		"detailsBtn": "Details"
+	},
+	"productFilter": {
+		"categoryFilter": "Categories",
+		"priceFilter": "Price",
+		"rateFilter": "Rating"
+	},
+	"productPageFilter:clear": "Clear All",
+	"productPageFilter:noProduct": "No products found",
+	"productPageFilter:noProductMessage": "Please try again later or refine your search",
+	"productPageFilter:rate": "rating",
 	"profile": {
 		"address": "Address:",
 		"appartmentNo": "Apartment Number:",
@@ -67,6 +90,17 @@
 		"phone": "Phone Number",
 		"recentPhotos": "Recent Photos",
 		"showAll": "Show All"
+	},
+	"sidebar": {
+		"MyWorkshopsBtn": "My Workshops",
+		"MyproductsBtn": "My products",
+		"NewProductBtn": "New Product",
+		"NewWorkshopBtn": "New Workshop",
+		"logoutBtn": "Logout",
+		"ordersBtn": "Orders",
+		"productsBtn": "Products",
+		"profileBtn": "Profile",
+		"workshopsBtn": "Workshops"
 	},
 	"workshopCard": {
 		"bookBtn": "Book Now"

@@ -18,8 +18,7 @@
       </div>
       <div class="description-prod">
         <p>
-          Description Product tell me how to change playlist height size like
-          600px in html5 player. player good work now check this link
+          {{product.description}}
         </p>
       </div>
       <div class="card-footer">
@@ -27,7 +26,7 @@
         <div class="wcf-right">
           <a href="/sellerProducts" class="delete-btn" (click)="deleteProduct(product._id)">
             <i class="bi bi-trash"></i></a>
-            <a href="#" class="edit-btn" >
+            <a [href]="'/editProduct/' + product._id"  class="edit-btn" (click)="openEditProductModal(product._id)">
               <i class="bi bi-pen"></i></a>
         </div>
       </div>

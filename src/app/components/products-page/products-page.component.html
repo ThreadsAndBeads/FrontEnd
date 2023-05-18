@@ -1,8 +1,9 @@
-<div class="row col-12 m-0">
-  <div class="col-3 col-lg-2 h-100 p-0">
+<div class="row col-12 m-0 position-relative">
+  <div class="col-9 col-sm-4 col-md-3 col-xl-2 h-100 p-0 filterBy">
     <app-filter [filterBy]="filterBy" (filterByEvent)="onFilterChange($event)"></app-filter>
+    <i class="bi bi-sliders2 fs-2 toggleFilter" (click)="viewFilter()"></i>
   </div>
-  <div class="container-fluid ms-auto me-0 col-9 col-lg-10" style="padding: 90px 0;">
+  <div class="container-fluid mx-auto me-md-0 col-12 col-md-9 col-xl-10" style="padding: 90px 20px;">
     <div class="filters  d-flex justify-content-center flex-wrap" *ngIf="filterBy" style="min-height: 30px;">
       <span class="m-0 p-0" *ngIf="filterBy.categories">
         <span class="filter" *ngFor="let category of filterBy.categories">
@@ -15,17 +16,28 @@
         <i class="bi bi-x" (click)="removeFromFilter('price')"></i>
       </span>
       <span class="filter" *ngIf="filterBy.rating">
-        rate: {{ filterBy.rating }}
+        {{"productPageFilter:rate" | translate}}: {{ filterBy.rating }}
         <i class="bi bi-x my-auto" (click)="removeFromFilter('rating')"></i>
       </span>
-      <span (click)="clearFilter()" class="FilterClearAll my-auto" *ngIf="filterBy.categories || filterBy.price || filterBy.rating">Clear All</span>
+      <span (click)="clearFilter()" class="FilterClearAll my-auto" *ngIf="filterBy.categories || filterBy.price || filterBy.rating">{{"productPageFilter:clear" | translate}}</span>
     </div>
-    <div>
+    <div class="col-12 d-flex justify-content-between">
+      <p>Showing 10 of 100</p>
       <!-- <span>Showing {{productNumbers>limit ? limit : productNumbers}} of {{productNumbers}}</span> -->
+      <div class="" style="width: 210px;">
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="sortBySelectedValue" (ngModelChange)="onSelectionChange()">
+          <option value="default" selected>Default Sorting</option>
+          <option value="-createdAt">Sort By Newest</option>
+          <option value="rating">Sort By Highest Rating</option>
+          <option value="price">Sort By Price: Low to High</option>
+          <option value="-price">Sort By Price: High To Low</option>
+          <option value="-priceDiscount">Sort By Highest Discount</option>
+        </select>
+      </div>
     </div>
     <div *ngIf="productService.products.length > 0; else NoProducts">
       <div class="row d-flex flex-wrap mx-auto">
-        <app-product-card *ngFor="let product of productService.products" class="pdtCard col-12 col-md-4 col-lg-3" [product]="product"></app-product-card>
+        <app-product-card *ngFor="let product of productService.products" class="pdtCard col-12 col-sm-6 col-lg-4 col-xl-3" [product]="product"></app-product-card>
       </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination d-flex justify-content-center">
@@ -47,8 +59,8 @@
     </div>
     <ng-template #NoProducts>
       <div class="text-center mt-5">
-        <h3>No products found</h3>
-        <p>Please try again later or refine your search</p>
+        <h3>{{"productPageFilter:noProduct" | translate}}</h3>
+        <p>{{"productPageFilter:noProductMessage" | translate}}</p>
       </div>
     </ng-template>
   </div>

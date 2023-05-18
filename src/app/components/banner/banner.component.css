@@ -90,9 +90,9 @@ section .slide-dashes li p{
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #456268;
+  background-color: #A20A0A;
 }
 
 section .slide-dashes .active{
-  border: 1px solid #456268;
+  border: 1px solid #A20A0A;
 }

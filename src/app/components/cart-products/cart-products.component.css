@@ -53,14 +53,19 @@
   left: 95px;
 }
 
+.table td .bi-x:hover {
+  color: #A20A0A;
+}
+
 .table tfoot button{
   padding: 8px 15px;
   text-transform: uppercase;
-  border: 2px solid #456268;
+  border: 2px solid #A20A0A;
   transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
   color: white;
-  background-color: #456268;
+  background-color: #A20A0A;
 }
+
 
 .table tfoot button:hover{
   background-color: transparent;

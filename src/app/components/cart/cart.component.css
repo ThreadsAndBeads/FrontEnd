@@ -17,7 +17,7 @@
   padding: 0 1rem;
   color: #000;
   font-size: 15px;
-  border: 1px solid #000;
+  border: 1px solid #52ab98;
   border-radius: 6px 0 0 6px;
   background-color: transparent;
 }
@@ -27,7 +27,7 @@
   padding: .5em 1em;
   border: none;
   border-radius: 0 6px 6px 0;
-  background-color: #000;
+  background-color: #52ab98;
   color: #fff;
   font-size: 15px;
   cursor: pointer;
@@ -37,11 +37,11 @@
 .button--submit:hover {
   background-color: transparent;
   color: black;
-  border: 1px solid #000;
+  border: 1px solid #52ab98;
 }
 
 .input:focus, .input:focus-visible {
-  border-color: #000;
+  border-color: #52ab98;
   outline: none;
 }
 
@@ -66,14 +66,14 @@
 
 .checkbox-wrapper-37 .checkbox-box {
   fill: #ebeaea;
-  stroke: #000;
+  stroke: #52ab98;
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
   transition: stroke-dashoffset 0.6s ease-in;
 }
 
 .checkbox-wrapper-37 .checkbox-tick {
-  stroke: #000;
+  stroke: #52ab98;
   stroke-dasharray: 172;
   stroke-dashoffset: 172;
   transition: stroke-dashoffset 0.6s ease-in;
@@ -86,7 +86,7 @@
 
 .toCheckout {
   background-color: transparent;
-  border: 2px solid #000;
+  border: 2px solid #996d47;
   border-radius: 0;
   box-sizing: border-box;
   color: #fff;
@@ -112,7 +112,7 @@
   content: " ";
   width: 1.5625rem;
   height: 2px;
-  background: black;
+  background: #996d47;
   top: 50%;
   left: 1.5em;
   position: absolute;
@@ -165,7 +165,7 @@
 
 .toCheckout:hover {
   color: white;
-  background: black;
+  background: #996d47;
 }
 
 .toCheckout:hover::before {

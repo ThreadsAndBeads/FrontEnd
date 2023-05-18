@@ -22,16 +22,33 @@ export class ProductsPageComponent implements OnInit {
   page = 1;
   limit = 3;
   NumberOfPages!: number;
-  
-  constructor(protected productService: ProductService, private cdr: ChangeDetectorRef) {}
+  sortBySelectedValue = 'default';
+
+  constructor(
+    protected productService: ProductService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.getProducts();
+    window.onresize = () => {
+      let filter = document.querySelector('.filterBy') as HTMLElement;
+      if(window.innerWidth >= 769){
+        filter.style.transform = "translate(0)";
+      }else{
+        filter.style.transform = 'translate(-100%)';
+      }
+    };
   }
 
   onFilterChange(filter: any) {
     this.filterBy = filter;
     let query = this.setFilterQuery();
+    this.getProducts(query);
+  }
+
+  onSelectionChange(): void {
+    let query = this.setFilterQuery()
     this.getProducts(query);
   }
 
@@ -74,7 +91,7 @@ export class ProductsPageComponent implements OnInit {
       this.filterBy[filterName] = null;
     }
     let query = this.setFilterQuery();
-    console.log(query)
+    console.log(query);
     this.filterBy = { ...this.filterBy };
     this.getProducts(query);
   }
@@ -102,6 +119,9 @@ export class ProductsPageComponent implements OnInit {
     if (this.filterBy.rating) {
       query += `rating=${this.filterBy.rating}&`;
     }
+    if (this.sortBySelectedValue != "default") {
+      query += `sort=${this.sortBySelectedValue}&`;
+    }
     query = query.slice(0, -1);
     return query;
   }
@@ -123,5 +143,16 @@ export class ProductsPageComponent implements OnInit {
   navToPage(page: number) {
     this.page = page;
     this.getProducts();
+  }
+
+  viewFilter() {
+    let filter = document.querySelector('.filterBy') as HTMLElement;
+    if(filter.classList.contains('shown')){
+      filter.style.transform = "translateX(-100%)";  
+      filter.classList.remove('shown')
+    }else{
+      filter.style.transform = "translateX(0%)";
+      filter.classList.add('shown')
+    }
   }
 }
