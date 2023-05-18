@@ -1,5 +1,30 @@
-<!-- Postcard -->
+<!-- <div
+  class="modal fade h-60"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  #myModal
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-center">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <app-edit-workshop></app-edit-workshop>
+      </div>
+    </div>
+  </div>
+</div> -->
 <div class="postcard d-flex row">
+  <div class="badge">{{ workshop.price }}Eg</div>
+
   <!-- Image -->
   <div
     class="postcard__image col-sm-12 col-md-6 col-lg-6"
@@ -47,7 +72,7 @@
       </p>
     </div>
     <!-- Footer -->
-    <div class="postcard__footer">
+    <div class="postcard__footer d-flex">
       <!-- Author -->
       <div class="postcard__author d-flex flex-column gap-3">
         <div class="author__avatar-wrap d-flex gap-1 align-self-start">
@@ -60,27 +85,24 @@
             <a class="author__name mx-2">{{ workshop.seller_name }}</a>
           </address>
         </div>
-        <div class="d-flex author__time">
-          <i class="bi bi-geo-alt-fill"></i>
-          <p class="ms-1">Location</p>
-        </div>
       </div>
-    </div>
-    <div class="d-flex author__time align-items-baseline" style="float: right">
-      <i class="bi bi-currency-dollar"></i>
-      <p class="me-3 ms-1">{{ workshop.price }} Eg</p>
-
-      <div class="card-footer">
-        <div class="wcf-left"><span class="price">{{workshop.price}}$</span></div>
+      <div
+        class="d-flex author__time flex-column align-items-baseline"
+        style="float: right"
+      >
         <div class="wcf-right">
-
-         <div class="editdelete">   <i class="bi bi-trash"></i>
-             <a href="#" class="edit-btn" ></a>
-              <i class="bi bi-pen"></i></div>
+          <a
+            href="/myWorkshops"
+            class="delete-btn"
+            (click)="deleteWorkshop(workshop._id)"
+          >
+            <i class="bi bi-trash"></i
+          ></a>
+          <a class="edit-btn" [routerLink]="['/editWorkshop', workshop._id]">
+            <i class="bi bi-pen"></i
+          ></a>
         </div>
       </div>
-    </div>
     </div>
   </div>
-
-
+</div>

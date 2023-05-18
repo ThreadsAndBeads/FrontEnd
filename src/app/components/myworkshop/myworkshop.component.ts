@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Workshop } from '../model/workshop.model';
-import { WorkshopService } from '../services/workshop.service';
-import { TokenStorageService } from '../services/token-storage.service';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Workshop } from '../../model/workshop.model';
+import { WorkshopService } from '../../services/workshop.service';
+import { TokenStorageService } from '../../services/token-storage.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import * as bootstrap from 'bootstrap';
 
 
 
@@ -12,9 +13,10 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./myworkshop.component.css']
 })
 export class MyworkshopComponent implements OnInit {
+  @ViewChild('myModal') myModal!: ElementRef;
 
   page = 1;
-  limit = 6;
+  limit = 3;
   NumberOfPages!: number;
   currentUser: any;
   currentUserId: any;
@@ -27,18 +29,20 @@ export class MyworkshopComponent implements OnInit {
   ngOnInit() {
     this.currentUser = this.tokenService.getUser();
     this.currentUserId = this.currentUser._id;
-    this.getworkshop();
+    console.log(this.currentUserId );
+    
+    this.getWorkshops();
 
   }
 
-  getworkshop() {
+  getWorkshops() {
     // this.workshopService.products = [];
-    this.workshopService.getworkshop(this.page, this.limit,this.currentUserId).subscribe(
+    this.workshopService.getSellerWorkshops(this.page, this.limit,this.currentUserId).subscribe(
       (response: any) => {
-        this.workshops  = response.data.workshops;
-        console.log(this.workshops);
-        this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
 
+        this.workshops  = response.data.workshops;
+        console.log(response);
+        this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
         // this.productService.products.push(...products);
       },
       ({ status, message }: HttpErrorResponse) => {
@@ -52,21 +56,25 @@ export class MyworkshopComponent implements OnInit {
   previous() {
     if (this.page > 1) {
       this.page--;
-      this.getworkshop();
+      this.getWorkshops();
     }
   }
 
   next() {
     if (this.page < this.NumberOfPages) {
       this.page++;
-      this.getworkshop();
+      this.getWorkshops();
     }
   }
 
   navToPage(page: number){
     this.page = page;
-    this.getworkshop();
+    this.getWorkshops();
   };
+  showModal() {
+    const modal = new bootstrap.Modal(this.myModal.nativeElement);
+    modal.show();
+  }
 }
 
 

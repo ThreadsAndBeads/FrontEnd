@@ -16,36 +16,25 @@ export class WorkshopService {
   }
 
 
-  public getworkshop(page:number,limit:number,user_id: any) {
-    const url = `${this.BASE_URL}/?page=${page}&limit=${limit}&user_id=${user_id}`;
+  public getSellerWorkshops(page:number,limit:number,user_id: any) {
+    const url = `${this.BASE_URL}/?page=${page}&limit=${limit}&seller_id=${user_id}`;
     return this.httpClient.get<any>(url);
   }
-
-
-  // public getWorkshops(): Observable<Workshop[]> {
-  //   return this.httpClient.get<any[]>(this.BASE_URL).pipe(
-  //     map(workshops => {
-  //       if (Array.isArray(workshops)) {
-  //         return workshops.map(workshop => ({
-  //           seller_id: workshop.seller_id,
-  //           seller_name: workshop.seller_name,
-  //           title: workshop.title,
-  //           description: workshop.description,
-  //           price: workshop.price,
-  //           category: workshop.category,
-  //           startDate: new Date(workshop.startDate),
-  //           endDate: new Date(workshop.endDate),
-  //           image: workshop.image.map((image: any) => ({
-  //             url: image.url,
-  //             filename: image.filename
-  //           }))
-  //         }));
-  //       } else {
-  //         return [];
-  //       }
-  //     })
-  //   );
-  // }
+  public addWorkshop(workshop: FormData) {
+    return this.httpClient.post<Workshop>(`${this.BASE_URL}/`, workshop);
+  }
+  public deleteWorkshop(workshop_id: any) {
+    const url = `${this.BASE_URL}/${workshop_id}`;
+    return this.httpClient.delete<any>(url);
+  }
+  public getWorkshopById(workshop_id: any): Observable<Workshop> {
+    const url = `${this.BASE_URL}/${workshop_id}`;
+    return this.httpClient.get<Workshop>(url);
+  }
+  public updateWorkshop(workshop_id: any, workshop: FormData): Observable<Workshop> {
+    const url = `${this.BASE_URL}/${workshop_id}`;
+    return this.httpClient.patch<Workshop>(url, workshop);
+  }
 }
 
 

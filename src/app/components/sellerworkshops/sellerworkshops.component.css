@@ -3,14 +3,26 @@
   --border-radius: 0.625rem;
   position: relative;
   border-radius: var(--border-radius);
+  min-height: 300px;
   padding: 1.25rem;
   margin: 2rem auto;
   max-width: 58rem;
   display: flex;
-  background-color: hsl(240, 14%, 93%);
-  border: 1px dotted #eee;
+  background-color: #f9f1eb;
+  border: 1px dotted #fff;
+  width: inherit;
 }
-
+.modal-body {
+  position: fixed;
+  left: 0;
+  top: 0;
+  /* width: 100%; */
+  /* height: 100%; */
+  background: url(/assets/Images/pexels-giovana-spiller-6679220.jpg) no-repeat
+    center center fixed;
+  background-size: cover;
+  filter: blur(3px);
+}
 /* Image */
 .postcard__image {
   position: relative;
@@ -24,6 +36,9 @@
 }
 @media screen and (min-width: 48em) {
   .postcard__image {
+    height: auto;
+  }
+  .postcard {
     height: auto;
   }
 }
@@ -123,12 +138,12 @@
   padding: 0;
   border: none;
   border-radius: 5px;
-  background: #456268;
+  background: #a20a0a;
   color: white;
   background: linear-gradient(0deg, #456268 0%, #456268 100%);
 }
 .btn-5:hover {
-  color: #456268;
+  color: #a20a0a;
   background: transparent;
   box-shadow: none;
 }
@@ -140,7 +155,7 @@
   right: 0;
   height: 2px;
   width: 0;
-  background: #456268;
+  background: #a20a0a;
   box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003,
     4px 4px 5px 0px #0002;
   transition: 400ms ease all;
@@ -159,12 +174,60 @@
 
 /* (: */
 
-
-.editdelete{
-  margin-left: 100px;
+a.delete-btn,
+a.edit-btn {
+  display: inline-block;
+  color: #212121;
+  text-align: center;
+  font-size: 18px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  border: 1px solid #212121;
+  transition: all 0.2s ease-in-out;
+  margin-left: 4px;
+}
+a.delete-btn:hover,
+a.delete-btn:active,
+a.delete-btn:focus {
+  border-color: #ff0000;
+  background: #ff0000;
+  color: #fff;
+  text-decoration: none;
+}
+a.edit-btn:hover,
+a.edit-btn:active,
+a.edit-btn:focus {
+  border-color: #006eff;
+  background: #006eff;
+  color: #fff;
+  text-decoration: none;
+}
+.red {
+  color: #f44336;
+  font-size: 22px;
+  display: inline-block;
+  margin: 0 5px;
+}
+.badge {
+  position: absolute;
+  width: 60px;
+  right: 0;
+  top: 20px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  background: #a20a0a;
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 10px 0 0 10px;
+  font-family: "Open Sans", sans-serif;
+  z-index: 1;
 }
 
-.bi-trash
-{
-  margin-right: 20px;
+@media only screen and (max-width: 767px) {
+  .badge {
+    top: -230px;
+  }
 }

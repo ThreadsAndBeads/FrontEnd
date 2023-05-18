@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-
 import { FooterComponent } from './components/footer/footer.component';
 import { BubbleComponent } from './components/bubble/bubble.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -63,7 +62,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 import { GoToLoginComponent } from './pages/go-to-login/go-to-login.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { MyworkshopComponent } from './myworkshop/myworkshop.component';
+import { MyworkshopComponent } from './components/myworkshop/myworkshop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SellerworkshopsComponent } from './components/sellerworkshops/sellerworkshops.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
@@ -71,9 +70,16 @@ import { SellerOrdersComponent } from './pages/seller-orders/seller-orders.compo
 import { SellerOrderCardComponent } from './components/seller-order-card/seller-order-card.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { SetDirectionDirective } from './directives/set-direction.directive';
+import { CreateWorkshopComponent } from './components/create-workshop/create-workshop.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule   } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 import { StripeComponent } from './components/stripe/stripe.component';
 import { Top2sellersComponent } from './components/top2sellers/top2sellers.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { EditWorkshopComponent } from './components/edit-workshop/edit-workshop.component';
 import { ClientOrdersComponent } from './components/client-orders/client-orders.component';
 
 
@@ -126,6 +132,8 @@ import { ClientOrdersComponent } from './components/client-orders/client-orders.
     WorkshopCardComponent,
     SuccessModalComponent,
     SpinnerComponent,
+    SetDirectionDirective,
+    CreateWorkshopComponent,
     SellerOrdersComponent,
     SellerOrderCardComponent,
     FilterComponent,
@@ -134,6 +142,7 @@ import { ClientOrdersComponent } from './components/client-orders/client-orders.
     StripeComponent,
     Top2sellersComponent,
     EditProductComponent,
+    EditWorkshopComponent,
     ClientOrdersComponent
   ],
   imports: [
@@ -146,6 +155,10 @@ import { ClientOrdersComponent } from './components/client-orders/client-orders.
     GoogleSigninButtonModule,
     SocialLoginModule,
     NgbModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
     DragDropModule,
     TranslateModule.forRoot({
       loader: {
@@ -154,6 +167,7 @@ import { ClientOrdersComponent } from './components/client-orders/client-orders.
         deps: [HttpClient],
       },
     }),
+    BrowserAnimationsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
