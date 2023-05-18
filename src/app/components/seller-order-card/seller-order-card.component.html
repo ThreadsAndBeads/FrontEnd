@@ -1,8 +1,8 @@
 <div class="order" draggable="true">
   <div class="order__tags">
-    <span class="order__tag order__tag--copyright"
-      >Client: {{ order.client_name }}</span
-    >
+    <span class="order__tag order__tag--copyright">{{
+      order.client_name
+    }}</span>
     <span class="client-address"
       >Address: {{ order.clientAddress.city }},{{
         order.clientAddress.address
@@ -23,6 +23,5 @@
     <span
       ><i class="bi bi-cash-coin me-1"></i>Total {{ order.totalPrice }}$</span
     >
-    <span class="order__owner"></span>
   </div>
 </div>

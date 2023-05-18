@@ -1,25 +1,26 @@
 <div class="orders-container d-flex justify-content-center">
   <div class="">
     <h1 class="mb-5 text-center">Manage Your orders</h1>
-    <div class="example-container">
-      <div
-        cdkDropList
-        #pendingList="cdkDropList"
-        [cdkDropListData]="pending"
-        [cdkDropListConnectedTo]="[processingList, shippedList, deliveredList]"
-        class="example-list pending"
-        (cdkDropListDropped)="drop($event)"
-      >
-        <h2 class="text-center">Pending</h2>
-        <app-seller-order-card
-          [order]="order"
-          *ngFor="let order of pending"
-          cdkDrag
-        ></app-seller-order-card>
+    <div class="container d-flex flex-wrap justify-content-center">
+      <div class="example-container">
+        <div
+          cdkDropList
+          #pendingList="cdkDropList"
+          [cdkDropListData]="pending"
+          [cdkDropListConnectedTo]="[shippedList, deliveredList]"
+          class="example-list pending"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <h2 class="text-center">Pending</h2>
+          <app-seller-order-card
+            [order]="order"
+            *ngFor="let order of pending"
+            cdkDrag
+          ></app-seller-order-card>
+        </div>
       </div>
-    </div>
 
-    <div class="example-container">
+      <!-- <div class="example-container">
       <div
         cdkDropList
         #processingList="cdkDropList"
@@ -35,39 +36,56 @@
           cdkDrag
         ></app-seller-order-card>
       </div>
-    </div>
-    <div class="example-container">
-      <div
-        cdkDropList
-        #shippedList="cdkDropList"
-        [cdkDropListData]="shipped"
-        [cdkDropListConnectedTo]="[deliveredList]"
-        class="example-list shipped"
-        (cdkDropListDropped)="drop($event)"
-      >
-        <h2 class="text-center">Shipped</h2>
-        <app-seller-order-card
-          [order]="order"
-          *ngFor="let order of shipped"
-          cdkDrag
-        ></app-seller-order-card>
+    </div> -->
+      <div class="example-container">
+        <div
+          cdkDropList
+          #shippedList="cdkDropList"
+          [cdkDropListData]="shipped"
+          [cdkDropListConnectedTo]="[deliveredList]"
+          class="example-list shipped"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <h2 class="text-center">Shipped</h2>
+          <app-seller-order-card
+            [order]="order"
+            *ngFor="let order of shipped"
+            cdkDrag
+          ></app-seller-order-card>
+        </div>
       </div>
-    </div>
-    <div class="example-container">
-      <div
-        cdkDropList
-        #deliveredList="cdkDropList"
-        [cdkDropListData]="delivered"
-        [cdkDropListConnectedTo]="[]"
-        class="example-list delivered"
-        (cdkDropListDropped)="drop($event)"
-      >
-        <h2 class="text-center">Delivered</h2>
-        <app-seller-order-card
-          [order]="order"
-          *ngFor="let order of delivered"
-          cdkDrag
-        ></app-seller-order-card>
+      <div class="example-container">
+        <div
+          cdkDropList
+          #deliveredList="cdkDropList"
+          [cdkDropListData]="delivered"
+          [cdkDropListConnectedTo]="[]"
+          class="example-list delivered"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <h2 class="text-center">Delivered</h2>
+          <app-seller-order-card
+            [order]="order"
+            *ngFor="let order of delivered"
+            cdkDrag
+          ></app-seller-order-card>
+        </div>
+      </div>
+
+      <div class="example-container">
+        <div
+          cdkDropList
+          #cancelingList="cdkDropList"
+          [cdkDropListData]="canceled"
+          class="example-list canceling"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <h2 class="text-center">Canceled</h2>
+          <app-seller-order-card
+            [order]="order"
+            *ngFor="let order of canceled"
+          ></app-seller-order-card>
+        </div>
       </div>
     </div>
   </div>

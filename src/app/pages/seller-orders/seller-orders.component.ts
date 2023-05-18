@@ -11,7 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class SellerOrdersComponent implements OnInit {
   @Output() order: any
   pending: any[] = [];
-  processing: any[] = [];
+  canceled: any[] = [];
   shipped: any[] = [];
   delivered: any[] = [];
   currentUser: any;
@@ -62,7 +62,7 @@ export class SellerOrdersComponent implements OnInit {
           const ordersByStatus = this.getOrdersByStatus();
           this.pending = ordersByStatus['pending'] || [];
           this.shipped = ordersByStatus['shipped'] || [];
-          this.processing = ordersByStatus['processing'] || [];
+          this.canceled = ordersByStatus['canceled'] || [];
           this.delivered = ordersByStatus['delivered'] || [];
         },
       error:  ({ status, message }: HttpErrorResponse) => {
@@ -80,14 +80,14 @@ export class SellerOrdersComponent implements OnInit {
         orderStatus="pending";
         break;
       case "cdk-drop-list-1":
-        orderStatus="processing"
+        orderStatus="shipped"
         break;
       case "cdk-drop-list-2":
-        orderStatus="shipped";
-        break;
-      case "cdk-drop-list-3":
         orderStatus="delivered";
-        break;      
+        break;
+      // case "cdk-drop-list-3":
+      //   orderStatus="delivered";
+      //   break;      
     }
 
     return orderStatus;
