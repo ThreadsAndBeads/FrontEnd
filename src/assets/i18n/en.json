@@ -57,6 +57,11 @@
 		"arabic": "ar",
 		"english": "en"
 	},
+	"productFilter": {
+		"categoryFilter": "Categories",
+		"priceFilter": "Price",
+		"rateFilter": "Rating"
+	},
 	"profile": {
 		"address": "Address:",
 		"appartmentNo": "Apartment Number:",
