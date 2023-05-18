@@ -28,7 +28,7 @@ export class EditProductComponent implements OnInit{
   error = {
     name: 'product name required',
     price: 'product price required',
-    priceDiscount: 'discount price should be below regular price',
+    // priceDiscount: 'discount price should be below regular price',
     type: ''
   };
   ngOnInit() {
@@ -46,8 +46,9 @@ export class EditProductComponent implements OnInit{
   private router: Router) { }
 
   updateProduct(productForm : NgForm){
-    console.log(this.userId);
-
+    // console.log("my product" + this.product);
+    // console.log("my product price" + this.product.price);
+    // console.log("my product discount" + this.product.priceDiscount);
     const productFormData =  this.prepareFormData(this.product)
     this.productService.updateProduct(productFormData,this.productId).subscribe(
       (response : Product) =>{
@@ -63,6 +64,7 @@ export class EditProductComponent implements OnInit{
     );
   }
   prepareFormData(product: Product): FormData {
+    console.log(product);
     const formData:any = new FormData();
     formData.append('user_id', product.user_id);
     formData.append('name', product.name);
