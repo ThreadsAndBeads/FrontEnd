@@ -57,11 +57,18 @@
 		"arabic": "ar",
 		"english": "en"
 	},
+	"productCard": {
+		"detailsBtn": "التفاصيل"
+	},
 	"productFilter": {
 		"categoryFilter": "الفئات",
 		"priceFilter": "السعر",
-		"rateFilter": "التقيم"
+		"rateFilter": "التقييم"
 	},
+	"productPageFilter:clear": "حذف الكل",
+	"productPageFilter:noProduct": "لا توجد منتجات",
+	"productPageFilter:noProductMessage": "برجاء المحاولة مره اخرى أو قم بتغير البحث الخاص بك",
+	"productPageFilter:rate": "التقييم",
 	"profile": {
 		"address": "العنوان",
 		"appartmentNo": ":رقم الشقة",
