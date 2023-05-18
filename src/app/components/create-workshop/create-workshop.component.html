@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 150px; margin-bottom: 150px">
+<div class="container create-workshop" style="margin-top: 150px; margin-bottom: 150px">
   <div id="bg"></div>
 
   <form
@@ -93,29 +93,32 @@
           [(ngModel)]="workshop.price"
         />
       </div>
-      <mat-form-field>
-        <mat-label>Enter a date range</mat-label>
-        <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
-          <input
-            matStartDate
-            formControlName="start"
-            placeholder="Start date"
-          />
-          <input matEndDate formControlName="end" placeholder="End date" />
-        </mat-date-range-input>
-        <mat-datepicker-toggle
-          matIconSuffix
-          [for]="picker"
-        ></mat-datepicker-toggle>
-        <mat-date-range-picker #picker></mat-date-range-picker>
+      <div class="indigo-pink">
+        <mat-form-field>
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+            <input
+              matStartDate
+              formControlName="start"
+              placeholder="Start date"
+            />
+            <input matEndDate formControlName="end" placeholder="End date" />
+          </mat-date-range-input>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
 
-        <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')"
-          >Invalid start date</mat-error
-        >
-        <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')"
-          >Invalid end date</mat-error
-        >
-      </mat-form-field>
+          <mat-error
+            *ngIf="range.controls.start.hasError('matStartDateInvalid')"
+            >Invalid start date</mat-error
+          >
+          <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')"
+            >Invalid end date</mat-error
+          >
+        </mat-form-field>
+      </div>
     </div>
 
     <div class="col-12 col-md-6">

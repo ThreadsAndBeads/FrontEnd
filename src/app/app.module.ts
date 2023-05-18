@@ -79,6 +79,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { StripeComponent } from './components/stripe/stripe.component';
 import { Top2sellersComponent } from './components/top2sellers/top2sellers.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { EditWorkshopComponent } from './components/edit-workshop/edit-workshop.component';
 
 
 @NgModule({
@@ -139,7 +140,8 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     WorkshopPageComponent,
     StripeComponent,
     Top2sellersComponent,
-    EditProductComponent
+    EditProductComponent,
+    EditWorkshopComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,153 @@
+<form
+  #workshopForm="ngForm"
+  (ngSubmit)="addWorkshop(workshopForm)"
+  class="row col-9"
+>
+  <div class="parent1 mb-4 my-xl-auto col-12">
+    <div class="dropzone" appDrag (files)="fileDropped($event)">
+      <div class="text-wrapper">
+        <div class="centered d-flex flex-column">
+          <svg
+            viewBox="-17 0 59 27"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M7 10V9C7 6.23858 9.23858 4 12 4C14.7614 4 17 6.23858 17 9V10C19.2091 10 21 11.7909 21 14C21 15.4806 20.1956 16.8084 19 17.5M7 10C4.79086 10 3 11.7909 3 14C3 15.4806 3.8044 16.8084 5 17.5M7 10C7.43285 10 7.84965 10.0688 8.24006 10.1959M12 12V21M12 12L15 15M12 12L9 15"
+                stroke="#ffffff"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g>
+          </svg>
+          <div>
+            <span>Drag and drop your file or </span>
+            <a (click)="selectFile.click()" class="browse-btn text-info"
+              >browse</a
+            >
+            a file
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="image-container row mt-1 p-1"
+      *ngIf="workshop!.image"
+      style="width: 100px; height: 100px"
+    >
+      <span class="btn-remove-img" (click)="removeImage()">X</span>
+      <img
+        class="card-img-top m-0"
+        style="width: 100px; height: 100px"
+        [src]="workshop!.image!.url"
+      />
+    </div>
+    <input
+      class="g-input"
+      style="display: none"
+      multiple
+      type="file"
+      #selectFile
+      required
+      value="select"
+      (change)="onFileSelected($event)"
+    />
+  </div>
+
+  <div class="parent2 col-12 col-md-6">
+    <div>
+      <label for="inputProductName5" class="form-label"
+        >Workshop title <span class="required-star">*</span></label
+      >
+      <input
+        type="text"
+        id="inputProductName5"
+        class="form-control col-12 g-input"
+        aria-labelledby=""
+        name="title"
+        [(ngModel)]="workshop.title"
+      />
+    </div>
+
+    <div>
+      <label for="inputProductPrice5" class="form-label">
+        Price <span class="required-star">*</span></label
+      >
+      <input
+        type="number"
+        id="inputProductPrice5"
+        class="form-control col-12 g-input"
+        aria-labelledby=""
+        name="price"
+        [(ngModel)]="workshop.price"
+      />
+    </div>
+    <div class="indigo-pink">
+      <!-- <mat-form-field>
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+      <input
+        matStartDate
+        formControlName="start"
+        placeholder="Start date"
+      />
+      <input matEndDate formControlName="end" placeholder="End date" />
+    </mat-date-range-input>
+    <mat-datepicker-toggle
+      matIconSuffix
+      [for]="picker"
+    ></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+
+    <mat-error
+      *ngIf="range.controls.start.hasError('matStartDateInvalid')"
+      >Invalid start date</mat-error
+    >
+    <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')"
+      >Invalid end date</mat-error
+    >
+  </mat-form-field> -->
+    </div>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <label for="inputDiscountPrice5" class="form-label"> Description </label>
+    <textarea
+      class="description form-control text-white"
+      id="exampleFormControlTextarea1"
+      cols="150"
+      rows="2"
+      name="description"
+      [(ngModel)]="workshop.description"
+      style="min-height: calc(100% - 0.75rem - 36px)"
+    ></textarea>
+  </div>
+
+  <div class="col-12 col-md-12 d-flex justify-content-end align-content-end">
+    <button type="submit" class="cssbuttons-io-button mt-2 mt-lg-auto">
+      Add
+      <div class="icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path fill="none" d="M0 0h24v24H0z"></path>
+          <path
+            fill="currentColor"
+            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+          ></path>
+        </svg>
+      </div>
+    </button>
+  </div>
+</form>

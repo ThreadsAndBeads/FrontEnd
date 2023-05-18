@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Workshop } from '../../model/workshop.model';
 import { WorkshopService } from '../../services/workshop.service';
 import { TokenStorageService } from '../../services/token-storage.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import * as bootstrap from 'bootstrap';
 
 
 
@@ -12,6 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./myworkshop.component.css']
 })
 export class MyworkshopComponent implements OnInit {
+  @ViewChild('myModal') myModal!: ElementRef;
 
   page = 1;
   limit = 3;
@@ -69,6 +71,10 @@ export class MyworkshopComponent implements OnInit {
     this.page = page;
     this.getWorkshops();
   };
+  showModal() {
+    const modal = new bootstrap.Modal(this.myModal.nativeElement);
+    modal.show();
+  }
 }
 
 

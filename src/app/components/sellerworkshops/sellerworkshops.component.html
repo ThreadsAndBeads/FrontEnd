@@ -1,3 +1,36 @@
+<div
+  class="modal fade h-60"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  #myModal
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-center">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <!-- <div class="container d-flex justify-content-center text-center">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <img
+            alt="lastbit"
+            width="200"
+            src="https://i.imgur.com/LXjRs5h.gif"
+          />
+        </h5>
+      </div> -->
+      <div class="modal-body">
+        <app-edit-workshop></app-edit-workshop>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="postcard d-flex row">
   <div class="badge">{{ workshop.price }}Eg</div>
 
@@ -74,7 +107,9 @@
           >
             <i class="bi bi-trash"></i
           ></a>
-          <a href="#" class="edit-btn"> <i class="bi bi-pen"></i></a>
+          <a class="edit-btn" (click)="showModal()">
+            <i class="bi bi-pen"></i
+          ></a>
         </div>
       </div>
     </div>
