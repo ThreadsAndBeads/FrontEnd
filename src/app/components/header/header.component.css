@@ -121,6 +121,10 @@ li {
   transform: rotate(180deg);
 }
 
+.active {
+  color: #A20A0A !important;
+}
+
 @media (min-width: 992px) {
   .navbar-toggler,
   .nav-logo,
