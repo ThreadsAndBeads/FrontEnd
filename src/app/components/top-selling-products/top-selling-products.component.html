@@ -1,0 +1,31 @@
+<div class="py-5">
+  <h1 class="title text-dark text-center" style="font-family: 'Delicious Handrawn', cursive;">TOP SELLER</h1>
+  <div class="slider" x-data="{start: true, end: false}">
+    <div class="slider__content" x-ref="slider"
+      x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+      <div class="slider__item" style="width: 100px; height:400px" *ngFor="let product of products">
+        <div class="img-content">
+          <img class="slider__image"
+            [src]="product.images[0]"
+            alt="Image">
+        </div>
+        <div class="slider__info d-flex flex-column justify-content-end">
+          <p class="title m-0 p-0">{{product.name}}<br><span>$ {{product.price}}</span></p>
+          <div class="d-flex justify-content-between w-100">
+            <a href="#" class="details">
+              Details
+            </a>
+          
+            <ul class="sci m-0 p-0">
+              <li>
+                <a href="#"><i class="bi bi-cart-plus fs-5" style="color: #c8d8e4"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-heart-fill fs-5" style="color: #c8d8e4"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

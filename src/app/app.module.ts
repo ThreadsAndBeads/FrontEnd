@@ -31,7 +31,7 @@ import { ErrorComponent } from './error/error.component';
 import { DragDirective } from './directives/drag.directive';
 import { ResponseResetPasswordComponent } from './components/response-reset-password/response-reset-password.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
-import { TopSellComponent } from './components/top-sell/top-sell.component';
+import { TopSellingProductsComponent } from './components/top-selling-products/top-selling-products.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { SellersSectionComponent } from './components/sellers-section/sellers-section.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
@@ -100,7 +100,7 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     DragDirective,
     ResponseResetPasswordComponent,
     ProductCardComponent,
-    TopSellComponent,
+    TopSellingProductsComponent,
     SellersSectionComponent,
     SidebarComponent,
     ProductsPageComponent,
