@@ -64,3 +64,32 @@ button:active {
   box-shadow: inset 5px 5px 15px #cccccc,
     inset -5px -5px 15px #ffffff;
 }
+
+
+@media(max-width: 768px){
+  .filterBy{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    background-color: #fff;
+  }
+}
+
+@media(min-width: 769px){
+  .toggleFilter{
+    display: none;
+  }
+}
+
+.toggleFilter {
+  position: absolute;
+  right: -45px;
+  top: 150px;
+  padding: 0 10px;
+}
+
+.toggleFilter:hover {
+  background-color: #000;
+  color: #fff;
+}
