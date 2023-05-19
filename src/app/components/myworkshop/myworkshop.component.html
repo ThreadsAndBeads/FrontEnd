@@ -3,12 +3,11 @@
     class="w-25 d-flex mx-3 flex-wrap"
     *ngFor="let workshop of workshops; let i = index"
   >
-    <div class="w-25 d-flex mx-3 flex-wrap">
-      <app-sellerworkshops
-        class="w-100 mx-1"
-        [workshop]="workshop"
-      ></app-sellerworkshops>
-    </div>
+    <app-sellerworkshops
+      class="w-100 mx-1"
+      [workshop]="workshop"
+      [index]="i"
+    ></app-sellerworkshops>
   </div>
   <nav aria-label="Page navigation example" class="align-self-center mx-auto">
     <ul class="pagination">
