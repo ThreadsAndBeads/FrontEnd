@@ -13,6 +13,7 @@ import {
   HTTP_INTERCEPTORS,
   HttpClient,
   HttpClientModule,
+  HttpErrorResponse
 } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { SigninComponent } from './components/signin/signin.component';
