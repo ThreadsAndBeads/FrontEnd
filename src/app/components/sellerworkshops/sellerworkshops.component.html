@@ -22,19 +22,17 @@
     </div>
   </div>
 </div> -->
-<div class="postcard d-flex row">
+<!-- <div class="postcard d-flex row">
   <div class="badge">{{ workshop.price }}Eg</div>
-
-  <!-- Image -->
   <div
     class="postcard__image col-sm-12 col-md-6 col-lg-6"
     role="img"
     title="image"
     [style.background-image]="'url(' + workshop.image + ')'"
   ></div>
-  <!-- Body -->
+
   <div class="postcard__body col-sm-12 col-md-6 col-lg-6 h-100">
-    <!-- Text -->
+
     <div class="postcard__text">
       <h2 class="postcard__title">
         <div class="postcard__title--link" href="#" target="_blank">
@@ -71,9 +69,7 @@
         {{ workshop.description }}
       </p>
     </div>
-    <!-- Footer -->
     <div class="postcard__footer d-flex">
-      <!-- Author -->
       <div class="postcard__author d-flex flex-column gap-3">
         <div class="author__avatar-wrap d-flex gap-1 align-self-start">
           <img
@@ -103,6 +99,30 @@
           ></a>
         </div>
       </div>
+    </div>
+  </div>
+</div> -->
+
+<div
+  class="workshop-card col-lg-4 col-md-6 col-sm-12"
+  [ngClass]="'workshop-card-color-' + (index % 3)"
+>
+  <!-- <div class="border-card"></div> -->
+  <img [src]="workshop.image" />
+  <div class="d-flex flex-column h-100">
+    <h1>{{ workshop.title }}</h1>
+    <span class="card-description subtle">{{ workshop.description }}</span>
+    <div class="wcf-right align-self-end m-2">
+      <a
+        href="/myWorkshops"
+        class="delete-btn"
+        (click)="deleteWorkshop(workshop._id)"
+      >
+        <i class="bi bi-trash"></i
+      ></a>
+      <a class="edit-btn" [routerLink]="['/editWorkshop', workshop._id]">
+        <i class="bi bi-pen"></i
+      ></a>
     </div>
   </div>
 </div>

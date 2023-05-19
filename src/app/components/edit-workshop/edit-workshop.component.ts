@@ -13,16 +13,9 @@ import { WorkshopService } from 'src/app/services/workshop.service';
   styleUrls: ['./edit-workshop.component.css']
 })
 export class EditWorkshopComponent implements OnInit{
-  workshop : Workshop = {
-    seller_id: "this.userId" ,
-    seller_name :"",
-    title : "" ,
-    description : "" ,
-    price : 0 ,
-    startDate : null ,
-    endDate :null ,
-    image: null
-  }
+  userId = this.tokenService.getUser()._id ; 
+
+  workshop! : Workshop ;
   range = new FormGroup({
     start: new FormControl<Date | null>(null),
     end: new FormControl<Date | null>(null),
@@ -36,9 +29,21 @@ export class EditWorkshopComponent implements OnInit{
   }
 
 ngOnInit(): void {
+ this. workshop ={
+    seller_id: "" ,
+    seller_name :"",
+    title : "" ,
+    description : "" ,
+    price : 0 ,
+    startDate : null ,
+    endDate :null ,
+    image: null
+  }
   const id = this.route.snapshot.paramMap.get('workshopId');
   this.workshopService.getWorkshopById(id).subscribe({next: (data : any) => {
-    this.workshop = data.data.data;    
+    this.workshop = data.data.data;  
+    // console.log("hereeeeeeeeeeee");
+      
   } , error :(err)=>{
     console.log(err);
     
@@ -46,26 +51,24 @@ ngOnInit(): void {
 }      
   
 editWorkshop(workshopForm : NgForm){
-  console.log(workshopForm);
-  
-    const workshopFormData =  this.prepareFormData(workshopForm)
-    // console.log(workshopFormData); 
-    // workshopFormData.forEach((value: FormDataEntryValue, key: string) => {
-    //   console.log(key + ': ' + value);
-    // });
+    let workshopFormData =  this.prepareFormData(this.workshop)
+    // for (const [key, value] of workshopFormData.entries()) {
+    //   console.log(key + ": " + value);
+    // }
+      // console.log(workshopFormData.getAll);
     const id = this.route.snapshot.paramMap.get('workshopId');
     this.workshopService.updateWorkshop(id, workshopFormData).subscribe({next:(data) => {
-      // console.log(data);
-      
+      // console.log(data);   
       this.router.navigate(['/myWorkshops']);
     } ,error : (err)=>{
       console.log(err);      
     }});
   }
   
-  prepareFormData(workshop: any): FormData {
-    const formData:any = new FormData();
-    formData.append('seller_id', workshop.seller_id);
+  prepareFormData(workshop: Workshop) :FormData {
+    console.log(workshop.title); 
+    const formData :any = new FormData();
+    formData.append('seller_id', this.userId);
     formData.append('title', workshop.title);
     formData.append('description', workshop.description);
     formData.append('price', workshop.price);
@@ -81,24 +84,26 @@ editWorkshop(workshopForm : NgForm){
       const utcEndDate = new Date(Date.UTC(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()));
       formData.append('endDate', utcEndDate.toISOString());
     }
-    formData.append('image', this.workshop.image!.file, this.workshop.image!.file!.name);
-  
+    // formData.append('image', this.workshop.image!.file, this.workshop.image!.file!.name);
+    if (workshop.image) { // Check if the image property exists
+      formData.append('image', workshop.image.file, workshop.image!.file!.name);
+    }
+    // console.log(formData);
+    // for (const [key, value] of formData.entries()) {
+    //   console.log(key + ": " + value);
+    // }
     return formData;
   }
 
   onFileSelected(event :any){
     if(event.target.files){
-      console.log(event.target.files[0])
+      // console.log(event.target.files[0])
      const file = event.target.files[0];
      const fileHandle : FileHandle = {
       file : file , 
       url : this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(file))
      }
      this.workshop.image = (fileHandle)
-    // this.workshopForm.get('image')!.setValue(fileHandle);
-    // this.fileInput.nativeElement.value = '';
-
-     console.log(fileHandle)
     }
   }
 
