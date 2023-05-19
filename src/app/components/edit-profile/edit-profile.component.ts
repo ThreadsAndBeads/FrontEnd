@@ -29,36 +29,19 @@ export class EditProfileComponent {
     image:  data.image || '',
     phone:  data.phone || null,
     address: {
-      appartmentNo: data.address.appartmentNo || null,
-      city: data.address.city || null,
-      country: data.address.country || null,
+      appartmentNo: data.address?.appartmentNo || null,
+      city: data.address?.city || null,
+      country: data.address?.country || null,
     },
     socialMediaLinks: [
-      { name: "facebook", link: data.socialMediaLinks[0].link },
-      { name: "instagram", link: data.socialMediaLinks[1].link }
+      { name: "facebook", link: data.socialMediaLinks[0]?.link },
+      { name: "instagram", link: data.socialMediaLinks[1]?.link }
     ]
       };
 
 });
   // userData: any;
   userForm!: FormGroup;
-  // user: User = {
-  //   _id: this.userId,
-  //   name: this.userD.name,
-  //   email: this.userData.email,
-  //   type: this.userData.type,
-  //   image:  this.userData.image || '',
-  //   phone:  this.userData.phone || null,
-  //   address: {
-  //     appartmentNo: this.userData.address.appartmentNo || null,
-  //     city: this.userData.address.city || null,
-  //     country: this.userData.address.country || null,
-  //   },
-  //   socialMediaLinks: [
-  //     { name: "facebook", link: this.userData.socialMediaLinks[0].link },
-  //     { name: "instagram", link: this.userData.socialMediaLinks[1].link }
-  //   ]
-  // };
   constructor(private sanitizer: DomSanitizer, private tokenService: TokenStorageService, private authService: AuthService) {
     // this.getUserData();
   }
