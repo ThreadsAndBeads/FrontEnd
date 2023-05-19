@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Workshop } from '../model/workshop.model';
 import { map } from 'rxjs/operators';
@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class WorkshopService {
-  private BASE_URL = 'http://localhost:7000/api/v1/workshops/';
+  private BASE_URL = 'http://localhost:7000/api/v1/workshops';
 
   constructor(private httpClient: HttpClient) { }
   public getAllWorkshops(page:number,limit:number) {

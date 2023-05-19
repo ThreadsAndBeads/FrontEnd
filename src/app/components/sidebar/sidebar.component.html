@@ -20,7 +20,8 @@
       <ul>
         <li>
           <a class="text-decoration-none" href="/profile">
-            <i class="bi bi-person" style="margin-right: 5px"></i>{{"sidebar.profileBtn" | translate}}
+            <i class="bi bi-person" style="margin-right: 5px"></i
+            >{{ "sidebar.profileBtn" | translate }}
           </a>
         </li>
         <li *ngIf="currentUser.type == 'seller'" class="dropdown">
@@ -31,7 +32,7 @@
             aria-expanded="false"
             href="#"
           >
-            {{"sidebar.productsBtn" | translate}}
+            {{ "sidebar.productsBtn" | translate }}
           </a>
           <ul
             class="dropdown-menu dropdown-menu-center"
@@ -42,7 +43,7 @@
                 class="text-decoration-none dropdown-item"
                 href="/sellerProducts"
               >
-                {{"sidebar.MyproductsBtn" | translate}}
+                {{ "sidebar.MyproductsBtn" | translate }}
               </a>
             </li>
             <li>
@@ -54,14 +55,15 @@
                   class="bi bi-plus-square-dotted"
                   style="margin-right: 5px"
                 ></i>
-                {{"sidebar.NewProductBtn" | translate}}
+                {{ "sidebar.NewProductBtn" | translate }}
               </a>
             </li>
           </ul>
         </li>
         <li>
           <a class="text-decoration-none" href="/orders">
-            <i class="bi bi-box" style="margin-right: 5px"></i>{{"sidebar.ordersBtn" | translate}}
+            <i class="bi bi-box" style="margin-right: 5px"></i
+            >{{ "sidebar.ordersBtn" | translate }}
           </a>
         </li>
         <li *ngIf="currentUser.type == 'seller'" class="dropdown">
@@ -72,7 +74,7 @@
             aria-expanded="false"
             href="#"
           >
-            {{"sidebar.workshopsBtn" | translate}}
+            {{ "sidebar.workshopsBtn" | translate }}
           </a>
           <ul
             class="dropdown-menu dropdown-menu-center"
@@ -80,10 +82,7 @@
           >
             <li>
               <a class="text-decoration-none dropdown-item" href="/myWorkshops">
-                My Workshop
-                </a>
-              <a class="text-decoration-none dropdown-item" href="myworkshop">
-                {{"sidebar.MyWorkshopsBtn" | translate}}
+                {{ "sidebar.MyWorkshopsBtn" | translate }}
               </a>
             </li>
             <li>
@@ -95,7 +94,7 @@
                   class="bi bi-plus-square-dotted"
                   style="margin-right: 5px"
                 ></i>
-                {{"sidebar.NewWorkshopBtn" | translate}}
+                {{ "sidebar.NewWorkshopBtn" | translate }}
               </a>
             </li>
           </ul>
@@ -107,7 +106,7 @@
             (click)="onLogoutClick()"
           >
             <i class="bi bi-door-closed" style="margin-right: 5px"></i>
-            {{"sidebar.logoutBtn" | translate}}</a
+            {{ "sidebar.logoutBtn" | translate }}</a
           >
         </li>
       </ul>

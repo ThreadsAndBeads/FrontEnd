@@ -33,8 +33,6 @@ export class AddNewProductComponent {
   constructor(private productService : ProductService , private sanitizer :DomSanitizer , private tokenService: TokenStorageService) { }
 
   addProduct(productForm : NgForm){
-    console.log(this.userId);
-
     const productFormData =  this.prepareFormData(this.product)
     this.productService.addProduct(productFormData).subscribe(
       (response : Product) =>{
