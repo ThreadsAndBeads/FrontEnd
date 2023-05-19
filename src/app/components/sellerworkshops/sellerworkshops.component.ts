@@ -16,12 +16,12 @@ export class SellerworkshopsComponent {
 @Input() index: any;
 
 @ViewChild('myModal') myModal!: ElementRef;
-constructor( private workshopService : WorkshopService , private router : Router ) { 
+constructor( private workshopService : WorkshopService , private router : Router ) {
 }
 
   deleteWorkshop(workshopId:string) {
     console.log(workshopId);
-    
+
     this.workshopService.deleteWorkshop(workshopId).subscribe
     ({next:(data) => {
 
@@ -38,7 +38,7 @@ constructor( private workshopService : WorkshopService , private router : Router
       }
     };
     console.log(navigationExtras.queryParams);
-    
+
     this.router.navigate([`editWorkshop/${this.workshop._id}`,navigationExtras]);
   }
 
