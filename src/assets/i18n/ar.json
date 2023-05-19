@@ -28,7 +28,6 @@
 		"browse": " تصفح",
 		"discountPrice": "  سعر الخصم",
 		"dragAndDropText": "  قم بسحب وإسقاط الملفات هنا للتحميل",
-
 		"file": " الملف",
 		"productDescription": " وصف المنتج",
 		"productInStock": " المنتج في المخزن",
@@ -91,6 +90,13 @@
 		"phone": "رقم الهاتف:",
 		"recentPhotos": "الصور:",
 		"showAll": "اظهر الكل:"
+	},
+	"sellerOrders": {
+		"cancelled": "ملغى",
+		"delivered": "تم التوصيل",
+		"manageYourOrders": "إدارة الطلبات الخاصة بك",
+		"pending": "قيد الانتظار",
+		"shipped": "تم شحنها"
 	},
 	"sidebar": {
 		"MyWorkshopsBtn": "ورشتي",

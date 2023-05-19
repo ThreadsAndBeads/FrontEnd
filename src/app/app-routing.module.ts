@@ -18,10 +18,12 @@ import { SellerProductsComponent } from './components/seller-products/seller-pro
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-import { MyworkshopComponent } from './myworkshop/myworkshop.component';
+import { MyworkshopComponent } from './components/myworkshop/myworkshop.component';
+import { CreateWorkshopComponent } from './components/create-workshop/create-workshop.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 import { SellerOrdersComponent } from './pages/seller-orders/seller-orders.component';
+import { EditWorkshopComponent } from './components/edit-workshop/edit-workshop.component';
 // import { StripeComponent } from './components/stripe/stripe.component';
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
@@ -29,7 +31,8 @@ const routes: Routes = [
   { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'contact', component: ContactUsComponent },
-  {path: 'myworkshop', component: MyworkshopComponent},
+  {path: 'myWorkshops', component: MyworkshopComponent},
+  {path: 'addNewWorkshop', component: CreateWorkshopComponent},
   {
     path: 'forgetPassword',
     component: RequestResetComponent,
@@ -49,6 +52,7 @@ const routes: Routes = [
   {path: 'editProfile', component: EditProfileComponent},
   { path: 'welcome', component: GoToLoginComponent },
   { path: 'editProduct/:productId', component: EditProductComponent },
+  { path: 'editWorkshop/:workshopId', component: EditWorkshopComponent},
   // {path: 'stripe', component: StripeComponent },
   {path: 'orders', component: SellerOrdersComponent},
   { path: '**', component: ErrorComponent },

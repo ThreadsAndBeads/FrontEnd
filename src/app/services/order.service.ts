@@ -12,7 +12,7 @@ export class OrderService {
   constructor(private httpClient: HttpClient) { }
 
   public createOrder(order: any) {
-    return this.httpClient.post<Order>(`${this.BASE_URL}/createOrder`, order);
+    return this.httpClient.post<Order>(`${this.BASE_URL}/`, order);
   }
   public getSellerOrder(id:any) {
     return this.httpClient.get(`${this.BASE_URL}/${id}`);
@@ -21,4 +21,5 @@ export class OrderService {
   public manageOrder(order: any){
     return this.httpClient.patch(`${this.BASE_URL}/manageOrder`, order);
   }
+
 }
