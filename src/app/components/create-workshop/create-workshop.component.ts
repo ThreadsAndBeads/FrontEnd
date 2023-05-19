@@ -71,13 +71,15 @@ export class CreateWorkshopComponent {
     const endDate = this.range.value.end;
 
     if (startDate) {
-      const utcStartDate = new Date(Date.UTC(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()));
-      formData.append('startDate', utcStartDate.toISOString());
+      console.log(startDate);
+      
+      // const utcStartDate = new Date(Date.UTC(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()));
+      formData.append('startDate', startDate);
     }
 
     if (endDate) {
-      const utcEndDate = new Date(Date.UTC(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()));
-      formData.append('endDate', utcEndDate.toISOString());
+      // const utcEndDate = new Date(Date.UTC(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()));
+      formData.append('endDate', endDate);
     }
 
     formData.append('image', workshop.image!.file, workshop.image!.file!.name);

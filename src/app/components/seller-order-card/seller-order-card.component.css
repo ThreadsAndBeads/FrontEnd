@@ -32,7 +32,7 @@ p {
 .order__options {
 background:transparent; 
 border:0;
-color:c4cad3;
+color:#c4cad3;
 font-size:17px;
 }
     
@@ -40,7 +40,7 @@ font-size:17px;
 
 position:relative;
 width:100%;
-color:c4cad3;
+color:#b0b1b2;
 
 font-size:12px;
 }
@@ -60,13 +60,12 @@ position:absolute;
 display:inline-block;
 right:0;
 bottom:0;
-
 }
  
 .order__tag--copyright {
     color:#fff;
     width: fit-content;
-    background-color:#456268;
+    background-color:#484848
   }
 
 
