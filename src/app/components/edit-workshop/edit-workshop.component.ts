@@ -52,13 +52,8 @@ ngOnInit(): void {
   
 editWorkshop(workshopForm : NgForm){
     let workshopFormData =  this.prepareFormData(this.workshop)
-    // for (const [key, value] of workshopFormData.entries()) {
-    //   console.log(key + ": " + value);
-    // }
-      // console.log(workshopFormData.getAll);
     const id = this.route.snapshot.paramMap.get('workshopId');
     this.workshopService.updateWorkshop(id, workshopFormData).subscribe({next:(data) => {
-      // console.log(data);   
       this.router.navigate(['/myWorkshops']);
     } ,error : (err)=>{
       console.log(err);      
@@ -76,22 +71,15 @@ editWorkshop(workshopForm : NgForm){
     const endDate = this.range.value.end;
   
     if (startDate) {
-      const utcStartDate = new Date(Date.UTC(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()));
-      formData.append('startDate', utcStartDate.toISOString());
+      formData.append('startDate',startDate);
     }
   
     if (endDate) {
-      const utcEndDate = new Date(Date.UTC(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()));
-      formData.append('endDate', utcEndDate.toISOString());
+      formData.append('endDate', endDate);
     }
-    // formData.append('image', this.workshop.image!.file, this.workshop.image!.file!.name);
-    if (workshop.image) { // Check if the image property exists
-      formData.append('image', workshop.image.file, workshop.image!.file!.name);
+    if (this.workshop.image?.file) { // Check if the image property exists
+      formData.append('image', this.workshop.image.file,this.workshop.image!.file!.name);
     }
-    // console.log(formData);
-    // for (const [key, value] of formData.entries()) {
-    //   console.log(key + ": " + value);
-    // }
     return formData;
   }
 
