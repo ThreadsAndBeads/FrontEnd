@@ -1,57 +1,14 @@
-<div
-  class="modal fade h-60"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
-  #myModal
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header d-flex justify-content-center">
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="container d-flex justify-content-center text-center">
-        <h5 class="modal-title" id="exampleModalLabel">
-          <img
-            alt="lastbit"
-            width="200"
-            src="https://i.imgur.com/LXjRs5h.gif"
-          />
-        </h5>
-      </div>
-      <div class="modal-body">
-        Almost there! We just need you to verify your email address to finish
-        signing up.
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-      </div> -->
-    </div>
-  </div>
-</div>
+
 <div class="my-workshops w-100 d-flex" style="margin-top: 120px">
   <div
     class="w-25 d-flex mx-3 flex-wrap"
     *ngFor="let workshop of workshops; let i = index"
-
   >
-  <div
-    class="w-25 d-flex mx-3 flex-wrap"
-
-
-  >
-
-
-    <!-- <app-sellerworkshops
-    class="w-100 mx-1"
-    [workshop]="workshop"
-  ></app-sellerworkshops> -->
+    <app-sellerworkshops
+      class="w-100 mx-1"
+      [workshop]="workshop"
+      [index]="i"
+    ></app-sellerworkshops>
   </div>
 </div>
 <nav aria-label="Page navigation example" class="align-self-center mx-auto">
