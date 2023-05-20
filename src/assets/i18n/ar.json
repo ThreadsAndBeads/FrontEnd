@@ -1,115 +1,182 @@
 {
-	"AboutUs": {
-		"Fiber": "المنسوجات",
-		"Jewelry": "مجوهرات",
-		"brief": "\"نحن نسعى إلى إقامة علاقة انتقالية وغزيرة تحيي الأفكار وتعطينا التأمل وتوقظ تفكيرًا جديدًا. من قبل الحرفيين ، للحرفيين. نحن مرتبطون بشبكة عملائنا بطاقة مشتركة لصنع الأشياء وإجراءات الإنشاء....\"",
-		"slogan": "\"صُنع بحب ، ويسلم بعناية\""
-	},
-	"Nav": {
-		"about": "عنا",
-		"contact": "تواصل معنا",
-		"home": "الرئيسية",
-		"products": "المنتجات",
-		"sellers": "البائعين",
-		"workshops": "الورشات"
-	},
-	"SellerCard": {
-		"Products": "المنتجات",
-		"ProductsBtn": "عرض المنتجات",
-		"Ratings": "التقيمات",
-		"tags": "العلامات"
-	},
-	"WorkshopsPage": {
-		"Header": "ورشاتنا",
-		"paragraph": "بفضل موقعنا، ستتاح لك فرصة فريدة لحضور ورش عمل يدوية حيث ستتعلم كيفية إبداع الأشياء الجميلة والهدايا المميزة باستخدام يديك الخاصتين. سيقوم مدرسونا الخبراء بإرشادك خطوة بخطوة في هذه العملية، مما يتيح لك فرصة تطوير مهاراتك وإنشاء قطع فريدة ومميزة تفخر بها"
-	},
-	"add-new-product": {
-		"add": " اضافة",
-		"browse": " تصفح",
-		"discountPrice": "  سعر الخصم",
-		"dragAndDropText": "  قم بسحب وإسقاط الملفات هنا للتحميل",
-		"file": " الملف",
-		"productDescription": " وصف المنتج",
-		"productInStock": " المنتج في المخزن",
-		"productName": "اسم المنتج",
-		"productPrice": " سعر المنتج"
-	},
-	"checkout": {
-		"address": "العنوان",
-		"addressRequired": "العنوان مطلوب",
-		"apartment": "رقم الشقة",
-		"billingDetails": "تفاصيل الفاتورة",
-		"city": "المدينة",
-		"cityRequired": "المدينة مطلوبة",
-		"discount": "الخصم",
-		"fullName": "الأسم بالكامل",
-		"nameRequired": "الأسم مطلوب",
-		"payWithCash": "الدفع نقدا",
-		"payWithCreditCard": "ادفع ببطاقة الائتمان",
-		"paymentMethod": "طريقة الدفع",
-		"phone": "رقم الهاتف",
-		"phoneRequired": "رقم الهاتف مطلوب",
-		"purchaseNow": "شراء الان",
-		"returnToCart": "الرجوع الى عربه التسوق",
-		"shipping": "الشحن",
-		"subTotal": "المجموع بدون ضريبه",
-		"tax": "الضريبه",
-		"totalCost": "اجمالي الفاتورة",
-		"yourOrder": "طلبك",
-		"zipCode": "الرمز البريدي"
-	},
-	"footer": {
-		"followUs": "تابعنا"
-	},
-	"landingPage": {
-		"btn": "الرئيسية"
-	},
-	"language": {
-		"arabic": "ar",
-		"english": "en"
-	},
-	"productCard": {
-		"detailsBtn": "التفاصيل"
-	},
-	"productFilter": {
-		"categoryFilter": "الفئات",
-		"priceFilter": "السعر",
-		"rateFilter": "التقييم"
-	},
-	"productPageFilter:clear": "حذف الكل",
-	"productPageFilter:noProduct": "لا توجد منتجات",
-	"productPageFilter:noProductMessage": "برجاء المحاولة مره اخرى أو قم بتغير البحث الخاص بك",
-	"productPageFilter:rate": "التقييم",
-	"profile": {
-		"address": "العنوان",
-		"appartmentNo": ":رقم الشقة",
-		"changeAvatar": "تغير الصوره",
-		"city": ":المدينة",
-		"country": "البلد:",
-		"editProfile": "تعديل الملف الشخصي",
-		"phone": "رقم الهاتف:",
-		"recentPhotos": "الصور:",
-		"showAll": "اظهر الكل:"
-	},
-	"sellerOrders": {
-		"cancelled": "ملغى",
-		"delivered": "تم التوصيل",
-		"manageYourOrders": "إدارة الطلبات الخاصة بك",
-		"pending": "قيد الانتظار",
-		"shipped": "تم شحنها"
-	},
-	"sidebar": {
-		"MyWorkshopsBtn": "ورشتي",
-		"MyproductsBtn": "منتجاتي",
-		"NewProductBtn": "منتج جديد",
-		"NewWorkshopBtn": "ورشة عمل جديدة",
-		"logoutBtn": "الخروج",
-		"ordersBtn": "طلبات",
-		"productsBtn": "منتجات",
-		"profileBtn": "الحساب الشخصي",
-		"workshopsBtn": "ورش العمل"
-	},
-	"workshopCard": {
-		"bookBtn": "احجز الان"
-	}
+  "AboutUs": {
+    "Fiber": "المنسوجات",
+    "Jewelry": "مجوهرات",
+    "brief": "\"نحن نسعى إلى إقامة علاقة انتقالية وغزيرة تحيي الأفكار وتعطينا التأمل وتوقظ تفكيرًا جديدًا. من قبل الحرفيين ، للحرفيين. نحن مرتبطون بشبكة عملائنا بطاقة مشتركة لصنع الأشياء وإجراءات الإنشاء....\"",
+    "canva": "كانفا",
+    "slogan": "\"صُنع بحب ، ويسلم بعناية\"",
+    "thankyou": "شكرا لزيارتكم!",
+    "title": "تعرف علينا"
+  },
+  "Banner": {
+    "btn1": "احجز الآن",
+    "btn2": "تسوق الآن",
+    "btn3": "انضم الان",
+    "p1": "اكتشف إبداعك وتعلم من الأفضل مع ورش العمل لدينا بأسعار معقولة",
+    "p2": "اكتشف مجموعتنا من المشاريع اليدوية الفريدة ، كل منها مصنوع بحب واهتمام. من المجوهرات المميزة إلى الملابس المحبوكة المريحة ، أضف لمسة شخصية إلى منزلك أو خزانة ملابسك مع كنوزنا المصنوعة يدويًا.",
+    "p3": "تواصل مع الحرفيين المتحمسين من جميع أنحاء العالم وأطلق العنان لإبداعك معنا.",
+    "title1": {
+      "1": "أطلق ",
+      "2": "العنان لإمكانياتك"
+    },
+    "title2": {
+      "1": "تسوق كنوزنا المصنوعة ",
+      "2": "يدويا"
+    },
+    "title3": "شارك شغفك بالمصنوعات اليدوية."
+  },
+  "Nav": {
+    "about": "عنا",
+    "contact": "تواصل معنا",
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "sellers": "البائعين",
+    "workshops": "الورشات"
+  },
+  "SellerCard": {
+    "Products": "المنتجات",
+    "ProductsBtn": "عرض المنتجات",
+    "Ratings": "التقيمات",
+    "tags": "العلامات"
+  },
+  "SellerSection": {
+    "btn": "عرض البائعين",
+    "p": "يعد سوقنا موطنًا لمجموعة متنوعة من البائعين المستقلين ، ولكل منهم قصة فريدة وعروض منتجات خاصة. من المجوهرات المصنوعة يدويًا إلى الملابس القديمة ، فإن البائعين لدينا متحمسون لما يفعلونه وملتزمون بتزويد عملائنا بمنتجات عالية الجودة.",
+    "title": "تعرف علي بائعينا المتميزين."
+  },
+  "WorkshopHomeSection": {
+    "btn": "عرض ورش العمل",
+    "p": "في Thread & Beads ، نلتزم بمساعدتك على إطلاق العنان لإبداعك واستكشاف مهارات جديدة. لهذا السبب نقدم مجموعة واسعة من ورش العمل الفريدة ، المصممة لإلهام وتثقيف الحرفيين من جميع المستويات. من الفصول الصديقة للمبتدئين إلى التقنيات المتقدمة ، يتم تدريس ورش العمل لدينا من قبل حرفيين مهرة ومصممة وفقًا لاحتياجاتك. بالإضافة إلى ذلك ، مع توفر ورش العمل بجميع نقاط الأسعار ، فمن المؤكد أنك ستجد فصلًا يناسب ميزانيتك. استكشف قسم ورش العمل لدينا اليوم وابدأ رحلتك الحرفية معنا.",
+    "title": "أطلق العنان لإبداعك من خلال ورش العمل لدينا"
+  },
+  "WorkshopHorizontal": {
+    "title": "ورشنا"
+  },
+  "WorkshopsPage": {
+    "Header": "ورشاتنا",
+    "paragraph": "بفضل موقعنا، ستتاح لك فرصة فريدة لحضور ورش عمل يدوية حيث ستتعلم كيفية إبداع الأشياء الجميلة والهدايا المميزة باستخدام يديك الخاصتين. سيقوم مدرسونا الخبراء بإرشادك خطوة بخطوة في هذه العملية، مما يتيح لك فرصة تطوير مهاراتك وإنشاء قطع فريدة ومميزة تفخر بها"
+  },
+  "add-new-product": {
+    "add": " اضافة",
+    "browse": " تصفح",
+    "discountPrice": "  سعر الخصم",
+    "dragAndDropText": "  قم بسحب وإسقاط الملفات هنا للتحميل",
+    "file": " الملف",
+    "productDescription": " وصف المنتج",
+    "productInStock": " المنتج في المخزن",
+    "productName": "اسم المنتج",
+    "productPrice": " سعر المنتج"
+  },
+  "cart": {
+    "backToShopping": "العوده إلى التسوق",
+    "checkout": "إلى الدفع",
+    "clear": "حذف الكل",
+    "coupun": "هل لديك خصم",
+    "discound": "الخصم",
+    "gift": "هل هذه هدية",
+    "nextStep": "سيتم حسابها الخطوة القادمة",
+    "productName": "المنتج",
+    "productPrice": "السعر",
+    "productQuantity": "الكمية",
+    "productTotalPrice": "السعرالكلى",
+    "shipping": "الشحن",
+    "subTotal": "سيتم احتسابة",
+    "total": "اجمالي الفاتورة"
+  },
+  "emptyCart": {
+    "empty": "سلة التسوق فارغة",
+    "goBack": "الرجوع",
+    "paragraph": "يبدو انك لم تقم باضافة أى شئ إلى سلة التسوق الخاصة بك",
+    "startShopping": "ابدأ التسوق"
+  },
+  "checkout": {
+    "address": "العنوان",
+    "addressRequired": "العنوان مطلوب",
+    "apartment": "رقم الشقة",
+    "billingDetails": "تفاصيل الفاتورة",
+    "city": "المدينة",
+    "cityRequired": "المدينة مطلوبة",
+    "discount": "الخصم",
+    "fullName": "الأسم بالكامل",
+    "nameRequired": "الأسم مطلوب",
+    "payWithCash": "الدفع نقدا",
+    "payWithCreditCard": "ادفع ببطاقة الائتمان",
+    "paymentMethod": "طريقة الدفع",
+    "phone": "رقم الهاتف",
+    "phoneRequired": "رقم الهاتف مطلوب",
+    "purchaseNow": "شراء الان",
+    "returnToCart": "الرجوع الى عربه التسوق",
+    "shipping": "الشحن",
+    "subTotal": "المجموع بدون ضريبه",
+    "tax": "الضريبه",
+    "totalCost": "اجمالي الفاتورة",
+    "yourOrder": "طلبك",
+    "zipCode": "الرمز البريدي"
+  },
+  "editProfile": {
+    "apartment": ":رقم الشقة",
+    "city": ":المدينة",
+    "country": "البلد:",
+    "facebook": "رابط الفيسبوك:",
+    "instagram": "رابط الانستغرام:",
+    "phone": "رقم الهاتف:",
+    "updateProfile": "تحديث الملف"
+  },
+  "footer": {
+    "followUs": "تابعنا"
+  },
+  "landingPage": {
+    "btn": "الرئيسية"
+  },
+  "language": {
+    "arabic": "ar",
+    "english": "en"
+  },
+  "productCard": {
+    "detailsBtn": "التفاصيل"
+  },
+  "productFilter": {
+    "categoryFilter": "الفئات",
+    "priceFilter": "السعر",
+    "rateFilter": "التقييم"
+  },
+  "productPageFilter:clear": "حذف الكل",
+  "productPageFilter:noProduct": "لا توجد منتجات",
+  "productPageFilter:noProductMessage": "برجاء المحاولة مره اخرى أو قم بتغير البحث الخاص بك",
+  "productPageFilter:rate": "التقييم",
+  "profile": {
+    "address": "العنوان",
+    "appartmentNo": ":رقم الشقة",
+    "changeAvatar": "تغير الصوره",
+    "city": ":المدينة",
+    "country": "البلد:",
+    "editProfile": "تعديل الملف الشخصي",
+    "phone": "رقم الهاتف:",
+    "recentPhotos": "الصور:",
+    "showAll": "اظهر الكل:"
+  },
+  "sellerOrders": {
+    "cancelled": "ملغى",
+    "delivered": "تم التوصيل",
+    "manageYourOrders": "إدارة الطلبات الخاصة بك",
+    "pending": "قيد الانتظار",
+    "shipped": "تم شحنها"
+  },
+  "sidebar": {
+    "MyWorkshopsBtn": "ورشتي",
+    "MyproductsBtn": "منتجاتي",
+    "NewProductBtn": "منتج جديد",
+    "NewWorkshopBtn": "ورشة عمل جديدة",
+    "logoutBtn": "الخروج",
+    "ordersBtn": "طلبات",
+    "productsBtn": "منتجات",
+    "profileBtn": "الحساب الشخصي",
+    "workshopsBtn": "ورش العمل"
+  },
+  "topSellerHome": {
+    "title": "الاكثر مبيعا"
+  },
+  "workshopCard": {
+    "bookBtn": "احجز الان"
+  }
 }

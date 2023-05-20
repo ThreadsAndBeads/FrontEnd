@@ -52,10 +52,11 @@ td {
 }
 .Remove{
     background: #850000;
-    color: white;
+    color: white !important;
     padding: 10px ;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .modal-body{
@@ -127,7 +128,7 @@ flex-direction: column;
 /* body {
   letter-spacing: 0.8px;
   background: linear-gradient(0deg , #fff , 50% , #74a0ff);
-  background-repeat: no-repeat;    
+  background-repeat: no-repeat;
 } */
 
 .container-fluid {
@@ -199,7 +200,7 @@ a{
   position: relative;
   font-weight: 400;
   color: #455A64 !important;
-  
+
 }
 
 #progressbar #step1:before {
@@ -245,7 +246,7 @@ a{
   right: 0%;
   top: 15px;
   z-index: -1;
-} 
+}
 
 #progressbar li:nth-child(2):after {
   left: 50%;
@@ -262,7 +263,7 @@ a{
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-  background: #4bb8a9; 
+  background: #4bb8a9;
 }
 
 .card {
