@@ -3,7 +3,27 @@
 		"Fiber": "Fiber and textiles",
 		"Jewelry": "Jewelry",
 		"brief": "\"We endeavor to make a transportive, copious affair that revives thoughts, gives us ponder, and rouses new reasoning. By crafters, for crafters. We are attached to our client network with a common energy for making things and the procedure of creation....\"",
-		"slogan": "\"Crafted with Love, Delivered with Care\""
+		"canva": "Canva",
+		"slogan": "\"Crafted with Love, Delivered with Care\"",
+		"thankyou": "Thank YOU FOR VISITING US!",
+		"title": "ABOUT US"
+	},
+	"Banner": {
+		"btn1": "Book Now",
+		"btn2": "SHOP NOW",
+		"btn3": "Join Now",
+		"p1": "Discover your creativity, and learn from the best with our affordable workshops",
+		"p2": "Discover our collection of unique handmade projects, each one crafted with love and care. From statement jewelry to cozy knitwear, add a touch of personality to your home or wardrobe with our handmade treasures.",
+		"p3": "Connect with passionate crafters from around the world and unleash your creativity with us.",
+		"title1": {
+			"1": "Unlock",
+			"2": "Your Potential"
+		},
+		"title2": {
+			"1": "Shop Our Handmade",
+			"2": "Treasures"
+		},
+		"title3": "Share Your Passion for Handmade"
 	},
 	"Nav": {
 		"about": "About",
@@ -18,6 +38,19 @@
 		"ProductsBtn": "Show Products",
 		"Ratings": "Ratings",
 		"tags": "Tags"
+	},
+	"SellerSection": {
+		"btn": "Show all sellers",
+		"p": "Our marketplace is home to a diverse range of independent sellers, each with their own unique story and special product offerings. From handmade jewelry to vintage clothing, our sellers are passionate about what they do and are committed to providing our customers with the highest quality products.",
+		"title": "Meet Our Unique Sellers"
+	},
+	"WorkshopHomeSection": {
+		"btn": "Show all Workshops",
+		"p": "At Threads & Beads, we're committed to helping you unleash your creativity and explore new skills. That's why we offer a wide range of unique workshops, designed to inspire and educate crafters of all levels. From beginner-friendly classes to advanced techniques, our workshops are taught by skilled artisans and tailored to your needs. Plus, with workshops available at all price points, you're sure to find a class that fits your budget. Explore our workshop section today and start your crafting journey with us.",
+		"title": "Unlock Your Creativity with Our Workshops"
+	},
+	"WorkshopHorizontal": {
+		"title": "Our Workshops"
 	},
 	"WorkshopsPage": {
 		"Header": "Our Workshops",
@@ -108,6 +141,9 @@
 		"productsBtn": "Products",
 		"profileBtn": "Profile",
 		"workshopsBtn": "Workshops"
+	},
+	"topSellerHome": {
+		"title": "TOP SELLER"
 	},
 	"workshopCard": {
 		"bookBtn": "Book Now"
