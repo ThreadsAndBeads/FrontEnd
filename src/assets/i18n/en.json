@@ -67,6 +67,22 @@
 		"productName": "Product name",
 		"productPrice": "Product Price "
 	},
+	"cart": {
+		"backToShopping": "go back to shopping",
+		"checkout": "To Checkout",
+		"clear": "clear cart",
+		"coupon": "Have Coupon",
+		"discound": "Discound",
+		"gift": "Is this a gift",
+		"nextStep": "calculatesd at next step",
+		"productName": "Name",
+		"productPrice": "Price",
+		"productQuantity": "Quantity",
+		"productTotalPrice": "Total",
+		"shipping": "Shipping",
+		"subTotal": "SubTotal",
+		"total": "Total Cost"
+	},
 	"checkout": {
 		"address": "Address",
 		"addressRequired": "Address is required",
@@ -90,6 +106,12 @@
 		"totalCost": "Total Cost",
 		"yourOrder": "Your Order",
 		"zipCode": "ZIP Code"
+	},
+	"emptyCart": {
+		"empty": "Your cart is empty",
+		"goBack": "Go Back",
+		"paragraph": "Looks like your haven't added anything to your cart yet",
+		"startShopping": "Start Shopping"
 	},
 	"footer": {
 		"followUs": "Follow us"

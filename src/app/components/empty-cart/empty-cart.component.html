@@ -1,9 +1,9 @@
 <div class="col-12 col-md-6 mx-auto d-flex flex-column justify-content-center">
   <img src="../../../assets/Images/emptycart.jpg" class="empty-cart-img mx-auto col-5" alt="Empty Cart">
-  <p class="fs-5 fw-bold mb-0 pt-0 mt-3 text-center"> Your cart is empty! </p>
-  <p class="text-center ">Looks like you haven't added anything for your cart yet.</p>
+  <p class="fs-5 fw-bold mb-0 pt-0 mt-3 text-center"> {{ "emptyCart.empty" | translate }} </p>
+  <p class="text-center ">{{ "emptyCart.paragraph" | translate }}.</p>
   <div class="btns text-center">
-    <button class="goBack" (click)="goBack()">Go Back</button>
-    <button class="shop" routerLink="/products">Start Shopping</button>
+    <button class="goBack" (click)="goBack()">{{ "emptyCart.goBack" | translate }}</button>
+    <button class="shop" routerLink="/products">{{ "emptyCart.startShopping" | translate }}</button>
   </div>
 </div>

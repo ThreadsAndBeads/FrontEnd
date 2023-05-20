@@ -67,6 +67,22 @@
 		"productName": "اسم المنتج",
 		"productPrice": " سعر المنتج"
 	},
+	"cart": {
+		"backToShopping": "العوده إلى التسوق",
+		"checkout": "إلى الدفع",
+		"clear": "حذف الكل",
+		"coupun": "هل لديك خصم",
+		"discound": "الخصم",
+		"gift": "هل هذه هدية",
+		"nextStep": "سيتم حسابها الخطوة القادمة",
+		"productName": "المنتج",
+		"productPrice": "السعر",
+		"productQuantity": "الكمية",
+		"productTotalPrice": "السعرالكلى",
+		"shipping": "الشحن",
+		"subTotal": "سيتم احتسابة",
+		"total": "اجمالي الفاتورة"
+	},
 	"checkout": {
 		"address": "العنوان",
 		"addressRequired": "العنوان مطلوب",
@@ -90,6 +106,12 @@
 		"totalCost": "اجمالي الفاتورة",
 		"yourOrder": "طلبك",
 		"zipCode": "الرمز البريدي"
+	},
+	"emptyCart": {
+		"empty": "سلة التسوق فارغة",
+		"goBack": "الرجوع",
+		"paragraph": "يبدو انك لم تقم باضافة أى شئ إلى سلة التسوق الخاصة بك",
+		"startShopping": "ابدأ التسوق"
 	},
 	"footer": {
 		"followUs": "تابعنا"
