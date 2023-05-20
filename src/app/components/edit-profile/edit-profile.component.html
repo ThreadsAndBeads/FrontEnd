@@ -13,14 +13,14 @@
                 (click)="editProfile()"
                 class="btn btn-outline-dark btn-sm btn-block mt-5"
                 href="/profile"
-                >Update Profile</a
+                >{{"editProfile.updateProfile" | translate}}</a
               >
             </div>
           </div>
         </div>
 
         <div class="px-4 py-3">
-          <h6 class="mb-0 mt-2 mb-2">City:</h6>
+          <h6 class="mb-0 mt-2 mb-2">{{"editProfile.city" | translate}}</h6>
           <div class="rounded shadow-sm bg-light">
             <input
               type="text"
@@ -28,7 +28,7 @@
               [(ngModel)]="user.address.city"
             />
           </div>
-          <h6 class="mb-0 mt-2 mb-2">Country:</h6>
+          <h6 class="mb-0 mt-2 mb-2">{{"editProfile.country" | translate}}</h6>
           <div class="rounded shadow-sm bg-light">
             <input
               type="text"
@@ -36,7 +36,7 @@
               [(ngModel)]="user.address.country"
             />
           </div>
-          <h6 class="mb-0 mt-2 mb-2">Apartment number:</h6>
+          <h6 class="mb-0 mt-2 mb-2">{{"editProfile.apartment" | translate}}</h6>
           <div class="rounded shadow-sm bg-light">
             <input
               type="text"
@@ -44,11 +44,11 @@
               [(ngModel)]="user.address.appartmentNo"
             />
           </div>
-          <h6 class="mb-0 mt-2 mb-2">Phone Number:</h6>
+          <h6 class="mb-0 mt-2 mb-2">{{"editProfile.phone" | translate}}</h6>
           <div class="rounded shadow-sm bg-light">
             <input type="text" class="form-control" [(ngModel)]="user.phone" />
           </div>
-          <h6 class="mb-0 mt-2 mb-2">Facebook Link:</h6>
+          <h6 class="mb-0 mt-2 mb-2">{{"editProfile.facebook" | translate}}</h6>
           <div class="rounded shadow-sm bg-light">
             <input
               type="text"
@@ -56,7 +56,7 @@
               [(ngModel)]="user.socialMediaLinks[0].link"
             />
           </div>
-          <h6 class="mb-0 mt-2 mb-2">Instagram Link:</h6>
+          <h6 class="mb-0 mt-2 mb-2">{{"editProfile.instagram" | translate}}</h6>
           <div class="rounded shadow-sm bg-light">
             <input
               type="text"
