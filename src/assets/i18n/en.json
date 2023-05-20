@@ -91,6 +91,15 @@
 		"yourOrder": "Your Order",
 		"zipCode": "ZIP Code"
 	},
+	"editProfile": {
+		"apartment": "Apartment num:",
+		"city": "City:",
+		"country": "Country:",
+		"facebook": "Facebook Link:",
+		"instagram": "Instagram Link:",
+		"phone": "Phone Number:",
+		"updateProfile": "Update Profile:"
+	},
 	"footer": {
 		"followUs": "Follow us"
 	},

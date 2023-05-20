@@ -91,6 +91,15 @@
 		"yourOrder": "طلبك",
 		"zipCode": "الرمز البريدي"
 	},
+	"editProfile": {
+		"apartment": ":رقم الشقة",
+		"city": ":المدينة",
+		"country": "البلد:",
+		"facebook": "رابط الفيسبوك:",
+		"instagram": "رابط الانستغرام:",
+		"phone": "رقم الهاتف:",
+		"updateProfile": "تحديث الملف"
+	},
 	"footer": {
 		"followUs": "تابعنا"
 	},
