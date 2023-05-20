@@ -9,10 +9,10 @@ import { PaymentService } from 'src/app/services/payment.service';
 export class StripeComponent {
   paymentHandler: any = null;
   constructor(private paymentService: PaymentService) {}
-  ngOnInit() {
-    this.invokeStripe();
-    this.makePayment();
-  }
+  // ngOnInit() {
+  //   this.invokeStripe();
+  //   this.makePayment();
+  // }
   makePayment() {
     const amount = this.paymentService.getAmount();
     console.log(amount);
@@ -22,15 +22,18 @@ export class StripeComponent {
       token: function (stripeToken: any) {
         console.log(stripeToken);
         alert('Stripe token generated!');
+        //call create order endpoint
+
       },
     });
     if (this.paymentHandler) {
       this.openPayment(amount);
-    } else {
-      setTimeout(() => {
-        this.makePayment();
-      }, 500);
     }
+    // else {
+    //   setTimeout(() => {
+    //     this.makePayment();
+    //   }, 500);
+    // }
   }
   openPayment(amount: number) {
     this.paymentHandler.open({

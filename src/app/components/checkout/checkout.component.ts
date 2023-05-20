@@ -99,7 +99,7 @@ export class CheckoutComponent {
 
     const newOrder=this.prepareOrder(order);
     console.log(newOrder);
-
+    // await this.isCredit();
     this.orderService.createOrder(newOrder).subscribe({
      next: (res : any) =>{
 
