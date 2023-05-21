@@ -14,8 +14,9 @@ export class Top2sellersComponent implements OnInit {
     this.sellerService.getTopSellers().subscribe(
       {
         next:(data : any)=>{
-          this.topSellers = data.data.topSellers;          
+          this.topSellers = data.data.result;                    
         }, error: (err)=>{
+          console.log(err);
           
         }
       }
