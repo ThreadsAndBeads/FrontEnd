@@ -1,16 +1,16 @@
 <table class="table w-100" *ngIf="cartService.cartProducts" >
   <thead>
-    <th colspan="2">Product</th>
-    <th colspan="1">Price</th>
-    <th colspan="1">Quantity</th>
-    <th colspan="1">Total</th>
+    <th colspan="2">{{ "cart.productName" | translate }}</th>
+    <th colspan="1">{{ "cart.productPrice" | translate }}</th>
+    <th colspan="1">{{ "cart.productQuantity" | translate }}</th>
+    <th colspan="1">{{ "cart.productTotalPrice" | translate }}</th>
     <th colspan="1"></th>
   </thead>
   <tbody>
     <tr *ngFor="let product of cartService.cartProducts">
       <td colspan="2 d-flex">
         <img
-          [src]="product.productId.images[0]" 
+          [src]="product.productId.images[0]"
           class="me-3"
           alt=""
         />
@@ -24,8 +24,8 @@
           name="quantity"
           id="quantity"
           min="1"
-          [(ngModel)]="product.quantity" 
-          (change)="changeQuantity(product)" 
+          [(ngModel)]="product.quantity"
+          (change)="changeQuantity(product)"
         />
         <i class="bi bi-plus fs-5" (click)="incrementQuantity(product)"></i>
       </td>
@@ -42,11 +42,11 @@
               class="bi bi-chevron-double-left"
               style="vertical-align: middle"
             >
-              Back To Shopping</i
+              {{ "cart.backToShopping" | translate }}</i
             >
           </a>
           <div>
-            <button (click)="clearCart()">Clear Cart</button>
+            <button (click)="clearCart()">{{ "cart.clear" | translate }}</button>
           </div>
         </div>
       </td>

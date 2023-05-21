@@ -47,7 +47,7 @@
 .form input {
   display: block;
   width: 300px;
-  margin: 0 auto;
+  margin-bottom: 20px;
   height: 35px;
   font-family: "Montserrat";
   font-size: 14px;
