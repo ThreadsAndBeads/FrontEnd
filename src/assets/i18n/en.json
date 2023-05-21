@@ -25,6 +25,16 @@
 		},
 		"title3": "Share Your Passion for Handmade"
 	},
+	"ContactUs": {
+		"btn": "Send",
+		"email": "Email",
+		"info": "1000+ Travel partners and 65+ Service city across India, USA, Canada &UAE",
+		"infotitle": "Contact Info",
+		"message": "Message",
+		"name": "Name",
+		"p": "Feel Free to contact us any time. We will get back to you as soon as we can!.",
+		"title": "Contact us"
+	},
 	"Nav": {
 		"about": "About",
 		"contact": "Contact",
