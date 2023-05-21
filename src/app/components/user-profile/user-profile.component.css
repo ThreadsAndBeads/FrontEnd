@@ -235,11 +235,22 @@ padding: 0 !important;
 
 } */
 .revenue-card{
-  color:#996d47 ;
+  background-color: rgb(98, 0, 0);
+    color:#fff ;
    font-family: "Delicious Handrawn", cursive !important;
+   border-radius: 1.5rem;
+   border: none !important;
+   transition: all .6s;
+   max-height: 80px;
 }
-.bi-graph-up-arrow{
-  color: #A20A0A;
+.media-body span{
+  font-size: 1.6rem;
+}
+.revenue-card:hover{
+  scale: 1.1;
+}
+.bi-rocket-fill,.bi-piggy-bank-fill{
+  color: #fff;
 }
 
 .test{
