@@ -30,7 +30,10 @@
       <a class="user-link toggle_btn" type="button" (click)="handleClick()">
         <i class="bi bi-person-circle"></i>
       </a>
-      <a class="user-link" href="#"><i class="bi bi-heart-fill"></i></a>
+      <a class="user-link position-relative" href="#">
+        <i class="bi bi-heart-fill"></i>
+        <span class="favouriteQuantity">{{ totalFavouritesProducts }}</span>
+      </a>
     </div>
 
     <input

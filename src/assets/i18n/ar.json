@@ -43,6 +43,14 @@
 		"sellers": "البائعين",
 		"workshops": "الورشات"
 	},
+	"ProductPageSort": {
+		"default": "الترتيب الافتراضي",
+		"highest rating": "الترتيب حسب التقييم الأعلى",
+		"highestDiscound": "الترتيب حسب أعلى الخصومات",
+		"newest": "الترتيب حسب الأحدث",
+		"priceAsc": "الترتيب حسب السعر: من الأقل للأعلى",
+		"priceDesc": "الترتيب حسب السعر: من الأعلى للأقل"
+	},
 	"SellerCard": {
 		"Products": "المنتجات",
 		"ProductsBtn": "عرض المنتجات",
@@ -82,21 +90,24 @@
 		"productPrice": " سعر المنتج"
 	},
 	"cart": {
-		"backToShopping": "العوده إلى التسوق",
-		"checkout": "إلى الدفع",
-		"clear": "حذف الكل",
-		"coupon": "",
-		"discound": "الخصم",
-		"gift": "هل هذه هدية",
-		"nextStep": "سيتم حسابها الخطوة القادمة",
-		"productName": "المنتج",
-		"productPrice": "السعر",
-		"productQuantity": "الكمية",
-		"productTotalPrice": "السعرالكلى",
-		"shipping": "الشحن",
-		"subTotal": "سيتم احتسابة",
-		"total": "اجمالي الفاتورة"
-	},
+    "backToShopping": "العوده إلى التسوق",
+    "checkout": "إلى الدفع",
+    "clear": "حذف الكل",
+    "coupon": "هل لديك خصم",
+    "couponCode": "كود الخصم",
+    "discound": "الخصم",
+    "gift": "هل هذه هدية",
+    "nextStep": "سيتم حسابها الخطوة القادمة",
+    "productName": "المنتج",
+    "productPrice": "السعر",
+    "productQuantity": "الكمية",
+    "productTotalPrice": "السعرالكلى",
+    "shipping": "الشحن",
+    "send": "أرسل",
+    "subTotal": "سيتم احتسابة",
+    "tax": "الضريبة",
+    "total": "اجمالي الفاتورة"
+  },
 	"checkout": {
 		"address": "العنوان",
 		"addressRequired": "العنوان مطلوب",
@@ -135,6 +146,14 @@
 		"goBack": "الرجوع",
 		"paragraph": "يبدو انك لم تقم باضافة أى شئ إلى سلة التسوق الخاصة بك",
 		"startShopping": "ابدأ التسوق"
+	},
+	"emptyWishList": {
+    "empty": "قائمة الأماني الخاصة بك فارغة",
+    "goProducts": "الانتقال إلى المنتجات",
+    "paragraph": "أنشئ أول طلب في قائمة الأماني"
+  },
+	"favourite": {
+		"clear": "حذف الكل"
 	},
 	"footer": {
 		"followUs": "تابعنا"

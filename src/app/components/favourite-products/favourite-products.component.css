@@ -16,6 +16,7 @@
   padding: 3px 7px;
   border-radius: 50%;
   display: none;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .wsk-cp-product:hover .removeProduct {
@@ -24,7 +25,6 @@
 
 .removeProduct:hover {
   color: #A20A0A;
-  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .wsk-cp-img{

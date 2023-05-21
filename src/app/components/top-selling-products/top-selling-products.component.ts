@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product.model';
+import { FavouriteService } from 'src/app/services/favourite.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -11,7 +12,10 @@ import { ProductService } from 'src/app/services/product.service';
 export class TopSellingProductsComponent implements OnInit {
   products: Product[] = [];
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private favouriteService: FavouriteService
+  ) {}
 
   ngOnInit() {
     this.productService.getTopDiscountedProduct().subscribe(
@@ -25,4 +29,8 @@ export class TopSellingProductsComponent implements OnInit {
       }
     );
   }
+
+  addToCart(productId: any) {}
+
+  addToFavourites(productId: any) {}
 }
