@@ -13,7 +13,8 @@ import { WorkshopService } from 'src/app/services/workshop.service';
 })
 export class SellerworkshopsComponent {
 @Input () workshop: any
-@Input() index: any;
+  @Input() index: any;
+  workshopIdToDelete: any;
 
 @ViewChild('myModal') myModal!: ElementRef;
 constructor( private workshopService : WorkshopService , private router : Router ) {
