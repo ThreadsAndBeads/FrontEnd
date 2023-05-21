@@ -86,6 +86,7 @@ import { FavouriteComponent } from './components/favourite/favourite.component';
 import { FavouriteProductsComponent } from './components/favourite-products/favourite-products.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { EmptyFavouritesComponent } from './components/empty-favourites/empty-favourites.component';
+import { AnimatedNumberComponent } from './components/animated-number/animated-number.component';
 
 
 @NgModule({
@@ -152,10 +153,10 @@ import { EmptyFavouritesComponent } from './components/empty-favourites/empty-fa
     FavouriteComponent,
     FavouriteProductsComponent,
     ProductDetailsComponent,
-    EmptyFavouritesComponent
+    EmptyFavouritesComponent,
+    AnimatedNumberComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     NgbCarouselModule,
     ReactiveFormsModule,

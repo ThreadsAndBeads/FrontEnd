@@ -1,7 +1,13 @@
 import { formatDate } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  NgForm,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { Order } from 'src/app/model/order.model';
 import { CartService } from 'src/app/services/cart.service';
@@ -47,7 +53,6 @@ export class CheckoutComponent {
       // payment_method:['']
     });
   }
-
   checkCartStatus() {
     this.cartService.getCartProducts().subscribe({
       next: (response) => {
@@ -75,7 +80,6 @@ export class CheckoutComponent {
     });
     this.paymentService.setAmount(this.totalPrice);
   }
-
   get client_name() {
     return this.validationForm.get('client_name');
   }
@@ -98,9 +102,10 @@ export class CheckoutComponent {
         phone: this.phone!.value,
         city: this.city!.value,
       };
-      console.log(order);
+      // console.log(order);
+
       const newOrder = this.prepareOrder(order);
-      console.log(newOrder);
+      // console.log(newOrder);
       // await this.isCredit();
       this.orderService.createOrder(newOrder).subscribe({
         next: (res: any) => {
@@ -111,6 +116,13 @@ export class CheckoutComponent {
           console.log(error);
         },
       });
+    } else {
+      this.error = {
+        client_name: 'name is required',
+        phone: 'phone is required',
+        city: 'city is required',
+        address: 'address is required',
+      };
     }
   }
   paymentMethod(e: any) {
@@ -122,7 +134,7 @@ export class CheckoutComponent {
       this.paymentService.invokeStripe();
       this.paymentService.makePayment();
     } else {
-      this.createOrder();
+      // this.createOrder();
     }
   }
   prepareOrder(order: any) {

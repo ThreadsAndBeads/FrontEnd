@@ -22,4 +22,9 @@ export class SellerService {
     const url = `http://localhost:7000/api/v1/users/top-sellers`;
     return this.httpClient.get<any[]>(url);
   }
+
+  public getSellerStatistics(sellerId:any){
+    const url = `http://localhost:7000/api/v1/users/revenue/${sellerId}`;
+    return this.httpClient.get<any>(url);
+  }
 }
