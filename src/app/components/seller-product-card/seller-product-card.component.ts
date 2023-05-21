@@ -8,18 +8,18 @@ import { Router } from '@angular/router';
 })
 export class SellerProductCardComponent {
   @Input() product: any
+  productIdToDelete: any;
   constructor(protected productService: ProductService,
     private router: Router) { }
   deleteProduct(productId:string) {
     this.productService.deleteProduct(productId).subscribe(res => {
+      location.reload();
+      this.router.navigate(['sellerProducts']);
     });
+
   }
   openEditProductModal(productId: string) {
     this.router.navigate(['editProduct', productId]);
   }
-
-
-
-
 
 }

@@ -24,6 +24,7 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
 import { SellerOrdersComponent } from './pages/seller-orders/seller-orders.component';
 import { EditWorkshopComponent } from './components/edit-workshop/edit-workshop.component';
 import { FavouriteComponent } from './components/favourite/favourite.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 // import { StripeComponent } from './components/stripe/stripe.component';
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
@@ -44,6 +45,7 @@ const routes: Routes = [
   },
   { path: 'profile', component: UserProfileComponent },
   { path: 'products', component: ProductsPageComponent },
+  {path: 'productDetails/:id', component: ProductDetailsComponent},
   { path: 'workshops', component: WorkshopPageComponent },
   { path: 'sellers', component: SellersComponent },
   { path: 'sellerProducts', component: SellerProductsComponent },
