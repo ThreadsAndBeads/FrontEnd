@@ -104,6 +104,7 @@ export class CheckoutComponent {
       // await this.isCredit();
       this.orderService.createOrder(newOrder).subscribe({
         next: (res: any) => {
+          this.cartService.cartUpdatedSubject.next();
           this.router.navigate(['/home']);
         },
         error: (error: HttpErrorResponse) => {
