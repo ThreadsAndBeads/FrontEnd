@@ -1,182 +1,196 @@
 {
-  "AboutUs": {
-    "Fiber": "Fiber and textiles",
-    "Jewelry": "Jewelry",
-    "brief": "\"We endeavor to make a transportive, copious affair that revives thoughts, gives us ponder, and rouses new reasoning. By crafters, for crafters. We are attached to our client network with a common energy for making things and the procedure of creation....\"",
-    "canva": "Canva",
-    "slogan": "\"Crafted with Love, Delivered with Care\"",
-    "thankyou": "Thank YOU FOR VISITING US!",
-    "title": "ABOUT US"
-  },
-  "Banner": {
-    "btn1": "Book Now",
-    "btn2": "SHOP NOW",
-    "btn3": "Join Now",
-    "p1": "Discover your creativity, and learn from the best with our affordable workshops",
-    "p2": "Discover our collection of unique handmade projects, each one crafted with love and care. From statement jewelry to cozy knitwear, add a touch of personality to your home or wardrobe with our handmade treasures.",
-    "p3": "Connect with passionate crafters from around the world and unleash your creativity with us.",
-    "title1": {
-      "1": "Unlock",
-      "2": "Your Potential"
-    },
-    "title2": {
-      "1": "Shop Our Handmade",
-      "2": "Treasures"
-    },
-    "title3": "Share Your Passion for Handmade"
-  },
-  "Nav": {
-    "about": "About",
-    "contact": "Contact",
-    "home": "Home",
-    "products": "Products",
-    "sellers": "Sellers",
-    "workshops": "Workshops"
-  },
-  "SellerCard": {
-    "Products": "Products",
-    "ProductsBtn": "Show Products",
-    "Ratings": "Ratings",
-    "tags": "Tags"
-  },
-  "SellerSection": {
-    "btn": "Show all sellers",
-    "p": "Our marketplace is home to a diverse range of independent sellers, each with their own unique story and special product offerings. From handmade jewelry to vintage clothing, our sellers are passionate about what they do and are committed to providing our customers with the highest quality products.",
-    "title": "Meet Our Unique Sellers"
-  },
-  "WorkshopHomeSection": {
-    "btn": "Show all Workshops",
-    "p": "At Threads & Beads, we're committed to helping you unleash your creativity and explore new skills. That's why we offer a wide range of unique workshops, designed to inspire and educate crafters of all levels. From beginner-friendly classes to advanced techniques, our workshops are taught by skilled artisans and tailored to your needs. Plus, with workshops available at all price points, you're sure to find a class that fits your budget. Explore our workshop section today and start your crafting journey with us.",
-    "title": "Unlock Your Creativity with Our Workshops"
-  },
-  "WorkshopHorizontal": {
-    "title": "Our Workshops"
-  },
-  "WorkshopsPage": {
-    "Header": "Our Workshops",
-    "paragraph": "Our website offers a unique handmade workshop where you can learn how to create beautiful crafts and gifts using your own two hands. Our expert instructors will guide you through the process step by step, allowing you to develop new skills and create one-of-a-kind items that you can be proud of"
-  },
-  "add-new-product": {
-    "add": "Add",
-    "browse": " Browse",
-    "discountPrice": "Discount Price",
-    "dragAndDropText": "Drag and drop files here to upload",
-    "file": " File",
-    "productDescription": "Product description",
-    "productInStock": "Stock ",
-    "productName": "Product name",
-    "productPrice": "Product Price "
-  },
-  "cart": {
-    "backToShopping": "go back to shopping",
-    "checkout": "To Checkout",
-    "clear": "clear cart",
-    "coupon": "Have Coupon",
-    "discound": "Discound",
-    "gift": "Is this a gift",
-    "nextStep": "calculatesd at next step",
-    "productName": "Name",
-    "productPrice": "Price",
-    "productQuantity": "Quantity",
-    "productTotalPrice": "Total",
-    "shipping": "Shipping",
-    "subTotal": "SubTotal",
-    "total": "Total Cost"
-  },
-  "emptyCart": {
-    "empty": "Your cart is empty",
-    "goBack": "Go Back",
-    "paragraph": "Looks like your haven't added anything to your cart yet",
-    "startShopping": "Start Shopping"
-  },
-  "checkout": {
-    "address": "Address",
-    "addressRequired": "Address is required",
-    "apartment": "Apartment number",
-    "billingDetails": "Billing Details",
-    "city": "City",
-    "cityRequired": "City is required",
-    "discount": "Discount",
-    "fullName": "Full Name",
-    "nameRequired": "Name is required",
-    "payWithCash": "Pay with Cash",
-    "payWithCreditCard": "Pay with Credit Card",
-    "paymentMethod": "Payment Method",
-    "phone": "Phone",
-    "phoneRequired": "phone is required",
-    "purchaseNow": "Purchase Now",
-    "returnToCart": "Return To Cart",
-    "shipping": "Shipping",
-    "subTotal": "SubTotal",
-    "tax": "Tax",
-    "totalCost": "Total Cost",
-    "yourOrder": "Your Order",
-    "zipCode": "ZIP Code"
-  },
-  "editProfile": {
-    "apartment": "Apartment num:",
-    "city": "City:",
-    "country": "Country:",
-    "facebook": "Facebook Link:",
-    "instagram": "Instagram Link:",
-    "phone": "Phone Number:",
-    "updateProfile": "Update Profile:"
-  },
-  "footer": {
-    "followUs": "Follow us"
-  },
-  "landingPage": {
-    "btn": "Home"
-  },
-  "language": {
-    "arabic": "ar",
-    "english": "en"
-  },
-  "productCard": {
-    "detailsBtn": "Details"
-  },
-  "productFilter": {
-    "categoryFilter": "Categories",
-    "priceFilter": "Price",
-    "rateFilter": "Rating"
-  },
-  "productPageFilter:clear": "Clear All",
-  "productPageFilter:noProduct": "No products found",
-  "productPageFilter:noProductMessage": "Please try again later or refine your search",
-  "productPageFilter:rate": "rating",
-  "profile": {
-    "address": "Address:",
-    "appartmentNo": "Apartment Number:",
-    "changeAvatar": "Change Avatar",
-    "city": "City:",
-    "country": "Country:",
-    "editProfile": "Edit Profile",
-    "phone": "Phone Number",
-    "recentPhotos": "Recent Photos",
-    "showAll": "Show All"
-  },
-  "sellerOrders": {
-    "cancelled": "Cancelled",
-    "delivered": "Delivered",
-    "manageYourOrders": "Manage Your Orders",
-    "pending": "Pending",
-    "shipped": "Shipped"
-  },
-  "sidebar": {
-    "MyWorkshopsBtn": "My Workshops",
-    "MyproductsBtn": "My products",
-    "NewProductBtn": "New Product",
-    "NewWorkshopBtn": "New Workshop",
-    "logoutBtn": "Logout",
-    "ordersBtn": "Orders",
-    "productsBtn": "Products",
-    "profileBtn": "Profile",
-    "workshopsBtn": "Workshops"
-  },
-  "topSellerHome": {
-    "title": "TOP SELLER"
-  },
-  "workshopCard": {
-    "bookBtn": "Book Now"
-  }
+	"AboutUs": {
+		"Fiber": "Fiber and textiles",
+		"Jewelry": "Jewelry",
+		"brief": "\"We endeavor to make a transportive, copious affair that revives thoughts, gives us ponder, and rouses new reasoning. By crafters, for crafters. We are attached to our client network with a common energy for making things and the procedure of creation....\"",
+		"canva": "Canva",
+		"slogan": "\"Crafted with Love, Delivered with Care\"",
+		"thankyou": "Thank YOU FOR VISITING US!",
+		"title": "ABOUT US"
+	},
+	"Banner": {
+		"btn1": "Book Now",
+		"btn2": "SHOP NOW",
+		"btn3": "Join Now",
+		"p1": "Discover your creativity, and learn from the best with our affordable workshops",
+		"p2": "Discover our collection of unique handmade projects, each one crafted with love and care. From statement jewelry to cozy knitwear, add a touch of personality to your home or wardrobe with our handmade treasures.",
+		"p3": "Connect with passionate crafters from around the world and unleash your creativity with us.",
+		"title1": {
+			"1": "Unlock",
+			"2": "Your Potential"
+		},
+		"title2": {
+			"1": "Shop Our Handmade",
+			"2": "Treasures"
+		},
+		"title3": "Share Your Passion for Handmade"
+	},
+	"ContactUs": {
+		"btn": "Send",
+		"email": "Email",
+		"info": "1000+ Travel partners and 65+ Service city across India, USA, Canada &UAE",
+		"infotitle": "Contact Info",
+		"message": "Message",
+		"name": "Name",
+		"p": "Feel Free to contact us any time. We will get back to you as soon as we can!.",
+		"title": "Contact us"
+	},
+	"Nav": {
+		"about": "About",
+		"contact": "Contact",
+		"home": "Home",
+		"products": "Products",
+		"sellers": "Sellers",
+		"workshops": "Workshops"
+	},
+	"SellerCard": {
+		"Products": "Products",
+		"ProductsBtn": "Show Products",
+		"Ratings": "Ratings",
+		"tags": "Tags"
+	},
+	"SellerSection": {
+		"btn": "Show all sellers",
+		"p": "Our marketplace is home to a diverse range of independent sellers, each with their own unique story and special product offerings. From handmade jewelry to vintage clothing, our sellers are passionate about what they do and are committed to providing our customers with the highest quality products.",
+		"title": "Meet Our Unique Sellers"
+	},
+	"TopSellerSection": {
+		"header": "OUR AMAZING SELLERS",
+		"products": "Products"
+	},
+	"WorkshopHomeSection": {
+		"btn": "Show all Workshops",
+		"p": "At Threads & Beads, we're committed to helping you unleash your creativity and explore new skills. That's why we offer a wide range of unique workshops, designed to inspire and educate crafters of all levels. From beginner-friendly classes to advanced techniques, our workshops are taught by skilled artisans and tailored to your needs. Plus, with workshops available at all price points, you're sure to find a class that fits your budget. Explore our workshop section today and start your crafting journey with us.",
+		"title": "Unlock Your Creativity with Our Workshops"
+	},
+	"WorkshopHorizontal": {
+		"title": "Our Workshops"
+	},
+	"WorkshopsPage": {
+		"Header": "Our Workshops",
+		"paragraph": "Our website offers a unique handmade workshop where you can learn how to create beautiful crafts and gifts using your own two hands. Our expert instructors will guide you through the process step by step, allowing you to develop new skills and create one-of-a-kind items that you can be proud of"
+	},
+	"add-new-product": {
+		"add": "Add",
+		"browse": " Browse",
+		"discountPrice": "Discount Price",
+		"dragAndDropText": "Drag and drop files here to upload",
+		"file": " File",
+		"productDescription": "Product description",
+		"productInStock": "Stock ",
+		"productName": "Product name",
+		"productPrice": "Product Price "
+	},
+	"cart": {
+		"backToShopping": "go back to shopping",
+		"checkout": "To Checkout",
+		"clear": "clear cart",
+		"coupon": "Have Coupon",
+		"discound": "Discound",
+		"gift": "Is this a gift",
+		"nextStep": "calculatesd at next step",
+		"productName": "Name",
+		"productPrice": "Price",
+		"productQuantity": "Quantity",
+		"productTotalPrice": "Total",
+		"shipping": "Shipping",
+		"subTotal": "SubTotal",
+		"total": "Total Cost"
+	},
+	"checkout": {
+		"address": "Address",
+		"addressRequired": "Address is required",
+		"apartment": "Apartment number",
+		"billingDetails": "Billing Details",
+		"city": "City",
+		"cityRequired": "City is required",
+		"discount": "Discount",
+		"fullName": "Full Name",
+		"nameRequired": "Name is required",
+		"payWithCash": "Pay with Cash",
+		"payWithCreditCard": "Pay with Credit Card",
+		"paymentMethod": "Payment Method",
+		"phone": "Phone",
+		"phoneRequired": "phone is required",
+		"purchaseNow": "Purchase Now",
+		"returnToCart": "Return To Cart",
+		"shipping": "Shipping",
+		"subTotal": "SubTotal",
+		"tax": "Tax",
+		"totalCost": "Total Cost",
+		"yourOrder": "Your Order",
+		"zipCode": "ZIP Code"
+	},
+	"editProfile": {
+		"apartment": "Apartment num:",
+		"city": "City:",
+		"country": "Country:",
+		"facebook": "Facebook Link:",
+		"instagram": "Instagram Link:",
+		"phone": "Phone Number:",
+		"updateProfile": "Update Profile:"
+	},
+	"emptyCart": {
+		"empty": "Your cart is empty",
+		"goBack": "Go Back",
+		"paragraph": "Looks like your haven't added anything to your cart yet",
+		"startShopping": "Start Shopping"
+	},
+	"footer": {
+		"followUs": "Follow us"
+	},
+	"landingPage": {
+		"btn": "Home"
+	},
+	"language": {
+		"arabic": "ar",
+		"english": "en"
+	},
+	"productCard": {
+		"detailsBtn": "Details"
+	},
+	"productFilter": {
+		"categoryFilter": "Categories",
+		"priceFilter": "Price",
+		"rateFilter": "Rating"
+	},
+	"productPageFilter:clear": "Clear All",
+	"productPageFilter:noProduct": "No products found",
+	"productPageFilter:noProductMessage": "Please try again later or refine your search",
+	"productPageFilter:rate": "rating",
+	"profile": {
+		"address": "Address:",
+		"appartmentNo": "Apartment Number:",
+		"changeAvatar": "Change Avatar",
+		"city": "City:",
+		"country": "Country:",
+		"editProfile": "Edit Profile",
+		"phone": "Phone Number",
+		"recentPhotos": "Recent Photos",
+		"showAll": "Show All"
+	},
+	"sellerOrders": {
+		"cancelled": "Cancelled",
+		"delivered": "Delivered",
+		"manageYourOrders": "Manage Your Orders",
+		"pending": "Pending",
+		"shipped": "Shipped"
+	},
+	"sidebar": {
+		"MyWorkshopsBtn": "My Workshops",
+		"MyproductsBtn": "My products",
+		"NewProductBtn": "New Product",
+		"NewWorkshopBtn": "New Workshop",
+		"logoutBtn": "Logout",
+		"ordersBtn": "Orders",
+		"productsBtn": "Products",
+		"profileBtn": "Profile",
+		"workshopsBtn": "Workshops"
+	},
+	"topSellerHome": {
+		"title": "TOP SELLER"
+	},
+	"workshopCard": {
+		"bookBtn": "Book Now"
+	}
 }

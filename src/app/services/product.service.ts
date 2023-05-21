@@ -32,7 +32,9 @@ export class ProductService {
     }
     return this.httpClient.get<any>(url);
   }
-
+  public getOneProduct(productId:any) {
+    return this.httpClient.get<Product>(`${this.BASE_URL}/${productId}`);
+  }
   public getUserProducts(page: number, limit: number, user_id: any) {
     const url = `${this.BASE_URL}/?page=${page}&limit=${limit}&user_id=${user_id}`;
     return this.httpClient.get<any>(url);

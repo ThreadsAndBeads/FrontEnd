@@ -21,9 +21,10 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 import { MyworkshopComponent } from './components/myworkshop/myworkshop.component';
 import { CreateWorkshopComponent } from './components/create-workshop/create-workshop.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
-
 import { SellerOrdersComponent } from './pages/seller-orders/seller-orders.component';
 import { EditWorkshopComponent } from './components/edit-workshop/edit-workshop.component';
+import { FavouriteComponent } from './components/favourite/favourite.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 // import { StripeComponent } from './components/stripe/stripe.component';
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
@@ -31,8 +32,8 @@ const routes: Routes = [
   { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'contact', component: ContactUsComponent },
-  {path: 'myWorkshops', component: MyworkshopComponent},
-  {path: 'addNewWorkshop', component: CreateWorkshopComponent},
+  { path: 'myWorkshops', component: MyworkshopComponent },
+  { path: 'addNewWorkshop', component: CreateWorkshopComponent },
   {
     path: 'forgetPassword',
     component: RequestResetComponent,
@@ -44,17 +45,19 @@ const routes: Routes = [
   },
   { path: 'profile', component: UserProfileComponent },
   { path: 'products', component: ProductsPageComponent },
+  {path: 'productDetails/:id', component: ProductDetailsComponent},
   { path: 'workshops', component: WorkshopPageComponent },
   { path: 'sellers', component: SellersComponent },
   { path: 'sellerProducts', component: SellerProductsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
-  {path: 'editProfile', component: EditProfileComponent},
+  { path: 'editProfile', component: EditProfileComponent },
   { path: 'welcome', component: GoToLoginComponent },
   { path: 'editProduct/:productId', component: EditProductComponent },
-  { path: 'editWorkshop/:workshopId', component: EditWorkshopComponent},
+  { path: 'editWorkshop/:workshopId', component: EditWorkshopComponent },
   // {path: 'stripe', component: StripeComponent },
-  {path: 'orders', component: SellerOrdersComponent},
+  { path: 'orders', component: SellerOrdersComponent },
+  { path: 'favourites', component: FavouriteComponent },
   { path: '**', component: ErrorComponent },
 ];
 
