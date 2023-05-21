@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class SellerProductCardComponent {
   @Input() product: any
+  productIdToDelete: any;
   constructor(protected productService: ProductService,
     private router: Router) { }
   deleteProduct(productId:string) {
