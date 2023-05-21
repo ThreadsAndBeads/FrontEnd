@@ -2,11 +2,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AuthService } from 'src/app/services/auth.service';
 import { CartService } from 'src/app/services/cart.service';
-import { ProductService } from 'src/app/services/product.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
-import {io}  from 'socket.io-client';
 
 
 @Component({
@@ -28,18 +25,9 @@ export class HeaderComponent implements OnInit {
     this.getCartCount();
     translate.addLangs(['en' ,'ar']);
     translate.setDefaultLang('en')
-    this.socket = io('http://127.0.0.1:7000', { transports: ['websocket'] });
 
   }
   public ngOnInit(): void {
-    let userId = this.tokenService.getUser()._id ;     
-    const room = `seller_${userId}`;
-    this.socket.emit("join", room);
-    this.socket.on("notification", (data: any) => {
-      this.data = data;
-      console.log(data);
-    });
-
   }
   handleClick() {
     if (this.isUserLogged()) {

@@ -1,0 +1,13 @@
+<div class="notification-container">
+  <div class="notification-icon" (click)="showNotifications()">
+    <span class="notification-dot" *ngIf="hasUnreadNotifications"></span>
+    <!-- <i class="fas fa-bell"></i> -->
+    <i class="bi bi-bell"></i>
+  </div>
+
+  <div class="notification-dropdown" *ngIf="showDropdown">
+    <ul>
+      <li *ngFor="let notification of data">{{ notification.data }}</li>
+    </ul>
+  </div>
+</div>

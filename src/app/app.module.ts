@@ -85,6 +85,7 @@ import { ClientOrdersComponent } from './components/client-orders/client-orders.
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { FavouriteProductsComponent } from './components/favourite-products/favourite-products.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 
 @NgModule({
@@ -150,7 +151,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     ClientOrdersComponent,
     FavouriteComponent,
     FavouriteProductsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,

@@ -121,7 +121,7 @@ export class CheckoutComponent {
       this.paymentService.invokeStripe();
       this.paymentService.makePayment();
     } else {
-      this.createOrder();
+      // this.createOrder();
     }
   }
   prepareOrder(order: any){
