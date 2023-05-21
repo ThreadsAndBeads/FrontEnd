@@ -82,6 +82,9 @@ import { Top2sellersComponent } from './components/top2sellers/top2sellers.compo
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { EditWorkshopComponent } from './components/edit-workshop/edit-workshop.component';
 import { ClientOrdersComponent } from './components/client-orders/client-orders.component';
+import { FavouriteComponent } from './components/favourite/favourite.component';
+import { FavouriteProductsComponent } from './components/favourite-products/favourite-products.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 
 @NgModule({
@@ -144,7 +147,10 @@ import { ClientOrdersComponent } from './components/client-orders/client-orders.
     Top2sellersComponent,
     EditProductComponent,
     EditWorkshopComponent,
-    ClientOrdersComponent
+    ClientOrdersComponent,
+    FavouriteComponent,
+    FavouriteProductsComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
