@@ -114,14 +114,14 @@ export class CheckoutComponent {
 }
   paymentMethod(e:any) {
     this.payment_method = e.target.value;
-
-
   }
 
   isCredit(e:any){
     if (this.payment_method === "credit") {
       this.paymentService.invokeStripe();
       this.paymentService.makePayment();
+    } else {
+      this.createOrder();
     }
   }
   prepareOrder(order: any){
