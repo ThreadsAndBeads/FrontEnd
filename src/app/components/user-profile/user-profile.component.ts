@@ -3,6 +3,8 @@ import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {Router} from "@angular/router"
+import { error } from 'jquery';
+import { SellerService } from 'src/app/services/seller.service';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -10,6 +12,8 @@ import {Router} from "@angular/router"
 })
 export class UserProfileComponent implements OnInit{
   currentUser: any;
+  revenue: any;
+  totalOrders: any;
   userId = this.tokenService.getUser()._id;
   fileText: string = 'Not selected file';
 
@@ -25,6 +29,7 @@ export class UserProfileComponent implements OnInit{
   constructor(
     private tokenService: TokenStorageService,
     private authService: AuthService,
+    private sellerService: SellerService,
   private router:Router) {
   }
 
@@ -50,16 +55,19 @@ export class UserProfileComponent implements OnInit{
       });
 
     }
-
-
   }
   ngOnInit() {
 
     this.authService.getUserByID(this.userId).subscribe((data: any) => {
     let userData;
     userData = data.data.user;
-    //data = userData;
 
+    console.log(userData);
+    if(userData.type=='seller') {
+     this.getSellerStatistics()   
+    //  console.log(this.totalOrders) 
+    }
+    //data = userData;
       this.currentUser= {
     _id: this.userId,
     name: userData.name,
@@ -78,9 +86,27 @@ export class UserProfileComponent implements OnInit{
     ]
       };
 
+
+
   });
 }
 
+    checkIfSeller(){
+      this.authService.getUserByID(this.userId).subscribe({next:(data: any) => {
+        console.log(data);
+        
+      },error:(error: any) => {}})
+    }
 
-
+    getSellerStatistics(){
+      this.sellerService.getSellerStatistics(this.userId).subscribe(
+        {
+          next:(data:any)=>{ 
+            this.revenue=data.totalRevenue;
+            this.totalOrders=data.totalOrders;
+           },
+          error:(error: any) => {console.log(error)}
+       }
+      )
+    }
 }
