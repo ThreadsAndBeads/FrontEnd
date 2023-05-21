@@ -17,7 +17,9 @@ export class OrderService {
   public getSellerOrder(id:any) {
     return this.httpClient.get(`${this.BASE_URL}/${id}`);
   }
-
+  public getClientOrder(id:any) {
+    return this.httpClient.get(`${this.BASE_URL}/client/${id}`);
+  }
   public manageOrder(order: any){
     return this.httpClient.patch(`${this.BASE_URL}/manageOrder`, order);
   }

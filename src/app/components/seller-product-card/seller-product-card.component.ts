@@ -12,14 +12,13 @@ export class SellerProductCardComponent {
     private router: Router) { }
   deleteProduct(productId:string) {
     this.productService.deleteProduct(productId).subscribe(res => {
+      location.reload();
+      this.router.navigate(['sellerProducts']);
     });
+
   }
   openEditProductModal(productId: string) {
     this.router.navigate(['editProduct', productId]);
   }
-
-
-
-
 
 }

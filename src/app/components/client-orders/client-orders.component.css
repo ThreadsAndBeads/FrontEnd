@@ -52,10 +52,11 @@ td {
 }
 .Remove{
     background: #850000;
-    color: white;
+    color: white !important;
     padding: 10px ;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .modal-body{
@@ -63,6 +64,8 @@ td {
 }
 .modal{
   border-radius: 4px;
+  /* width: 400px; */
+  margin: 0 auto !important;
 }
 .modal-header {
   border: none;
@@ -85,19 +88,26 @@ height: fit-content;
 display: flex;
 justify-content: center;
 flex-direction: column;
+
+}
+.btn-close{
+top: 0% !important;
 }
 .modal-content{
   margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 10px;
+  padding: 5px;
   height: fit-content;
-  width: fit-content;
+  width: 550px !important;
+  background-color: white;
+  max-width: 100%;
+  overflow: hidden;
 }
 .modal-title{
   text-align: center;
-  /* padding-left: 10px; */
+
   width: fit-content;
 }
 
@@ -112,27 +122,10 @@ flex-direction: column;
   color: #456268;
   cursor: pointer;
 }
-.modal-footer{
-  /* color: white;
-  background-color: #8b1d1d;
-  color: white; */
 
-}
 .modal-footer button{
   background-color: #8b1d1d;
   color: white;
-}
-
-
-/* body {
-  letter-spacing: 0.8px;
-  background: linear-gradient(0deg , #fff , 50% , #74a0ff);
-  background-repeat: no-repeat;    
-} */
-
-.container-fluid {
-  /* margin-top: 80px !important;
-  margin-bottom: 80px !important; */
 }
 
 p {
@@ -152,6 +145,7 @@ a{
 .bold{
   font-weight: 600;
 }
+
 
 .small{
   font-size: 12px !important;
@@ -199,7 +193,7 @@ a{
   position: relative;
   font-weight: 400;
   color: #455A64 !important;
-  
+
 }
 
 #progressbar #step1:before {
@@ -245,7 +239,7 @@ a{
   right: 0%;
   top: 15px;
   z-index: -1;
-} 
+}
 
 #progressbar li:nth-child(2):after {
   left: 50%;
@@ -262,7 +256,7 @@ a{
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-  background: #4bb8a9; 
+  background: #4bb8a9;
 }
 
 .card {

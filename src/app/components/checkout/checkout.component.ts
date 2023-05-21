@@ -99,7 +99,7 @@ export class CheckoutComponent {
 
     const newOrder=this.prepareOrder(order);
     console.log(newOrder);
-
+    // await this.isCredit();
     this.orderService.createOrder(newOrder).subscribe({
      next: (res : any) =>{
 
@@ -114,14 +114,14 @@ export class CheckoutComponent {
 }
   paymentMethod(e:any) {
     this.payment_method = e.target.value;
-
-
   }
 
   isCredit(e:any){
     if (this.payment_method === "credit") {
       this.paymentService.invokeStripe();
       this.paymentService.makePayment();
+    } else {
+      this.createOrder();
     }
   }
   prepareOrder(order: any){
