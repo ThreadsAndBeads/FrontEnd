@@ -43,6 +43,14 @@
 		"sellers": "Sellers",
 		"workshops": "Workshops"
 	},
+	"ProductPageSort": {
+		"default": "Default Sorting",
+		"highest rating": "Sort By highest Rating",
+		"highestDiscound": "Sort By highest Discound",
+		"newest": "Sort By Newest",
+		"priceAsc": "Sort By Price: Low to High",
+		"priceDesc": "Sort By Price: High to Low"
+	},
 	"SellerCard": {
 		"Products": "Products",
 		"ProductsBtn": "Show Products",
@@ -86,6 +94,7 @@
 		"checkout": "To Checkout",
 		"clear": "clear cart",
 		"coupon": "Have Coupon",
+    "couponCode": "Coupon Code",
 		"discound": "Discound",
 		"gift": "Is this a gift",
 		"nextStep": "calculatesd at next step",
@@ -93,8 +102,10 @@
 		"productPrice": "Price",
 		"productQuantity": "Quantity",
 		"productTotalPrice": "Total",
+    "send": "SEND",
 		"shipping": "Shipping",
 		"subTotal": "SubTotal",
+    "tax": "Tax",
 		"total": "Total Cost"
 	},
 	"checkout": {
@@ -135,6 +146,14 @@
 		"goBack": "Go Back",
 		"paragraph": "Looks like your haven't added anything to your cart yet",
 		"startShopping": "Start Shopping"
+	},
+	"emptyWishList": {
+		"empty": "Your Wishlist is empty",
+		"goProducts": "Go To Products",
+		"paragraph": "Create your first wishlist request"
+	},
+	"favourite": {
+		"clear": "clear wishlist"
 	},
 	"footer": {
 		"followUs": "Follow us"
