@@ -24,11 +24,30 @@
       <div class="card-footer">
         <div class="wcf-left"><span class="price">{{product.price}}$</span></div>
         <div class="wcf-right">
-          <a href="/sellerProducts" class="delete-btn" (click)="deleteProduct(product._id)">
+          <a href="#myModal" class="delete-btn" data-bs-toggle="modal" data-bs-target="#myModal">
             <i class="bi bi-trash"></i></a>
             <a [href]="'/editProduct/' + product._id"  class="edit-btn" (click)="openEditProductModal(product._id)">
               <i class="bi bi-pen"></i></a>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-center flex-column">
+        <div class="icon-box">
+          <i class="material-icons">&#xE5CD;</i>
+        </div>
+        <h4 class="modal-title">Are you sure?</h4>
+      </div>
+      <div class="modal-body">
+        <p>Do you really want to delete these records? This process cannot be undone.</p>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="deleteProduct(product._id)" data-bs-dismiss="modal">Delete</button>
       </div>
     </div>
   </div>

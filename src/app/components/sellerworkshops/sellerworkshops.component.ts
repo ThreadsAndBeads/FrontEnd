@@ -23,7 +23,10 @@ constructor( private workshopService : WorkshopService , private router : Router
     console.log(workshopId);
 
     this.workshopService.deleteWorkshop(workshopId).subscribe
-    ({next:(data) => {
+      ({
+        next: (data) => {
+          location.reload();
+          this.router.navigate(['myWorkshops']);
 
     },error: (err)=>{}});
   }
