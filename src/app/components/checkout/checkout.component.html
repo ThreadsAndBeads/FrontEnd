@@ -34,11 +34,15 @@
                     class="alert alert-danger text-danger mt-2 p-2 text-center px-3"
                     *ngIf="
                       client_name?.invalid &&
-                      (client_name?.dirty || client_name?.touched)
+                      (client_name?.dirty ||
+                        client_name?.touched ||
+                        error.client_name)
                     "
                   >
                     <p style="font-size: small; margin: 0">
-                      <small *ngIf="client_name?.errors?.['required']"
+                      <small
+                        *ngIf="client_name?.errors?.['required'] ||
+                      error.client_name"
                         >{{ "checkout.nameRequired" | translate }}.</small
                       >
                     </p>
@@ -63,7 +67,8 @@
                   <div
                     class="alert alert-danger text-danger mt-2 p-2 text-center px-3"
                     *ngIf="
-                      address?.invalid && (address?.dirty || address?.touched)
+                      address?.invalid &&
+                      (address?.dirty || address?.touched || error.address)
                     "
                   >
                     <p style="font-size: small; margin: 0">
@@ -100,13 +105,15 @@
                   </div>
                   <div
                     class="text-danger mt-1"
-                    *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)"
+                    *ngIf="
+                      phone?.invalid &&
+                      (phone?.dirty || phone?.touched || error.phone)
+                    "
                   >
                     <p style="font-size: small; margin: 0">
                       <small *ngIf="phone?.errors?.['required']"
                         >{{ "checkout.phoneRequired" | translate }}.</small
                       >
-                      <!-- <small *ngIf="phone?.errors?.['required']">Phone must be valid.</small> -->
                     </p>
                   </div>
                   <div class="small-inputs">
@@ -136,7 +143,10 @@
                   </div>
                   <div
                     class="text-danger mt-1"
-                    *ngIf="city?.invalid && (city?.dirty || city?.touched)"
+                    *ngIf="
+                      city?.invalid &&
+                      (city?.dirty || city?.touched || error.city)
+                    "
                   >
                     <p style="font-size: small; margin: 0">
                       <small *ngIf="city?.errors?.['required']"
@@ -235,7 +245,11 @@
                 </ul>
               </div>
               <div class="d-flex justify-content-center w-100 pay-now mb-5">
-                <button class="toCheckout" type="submit" (click)="isCredit($event)">
+                <button
+                  class="toCheckout"
+                  type="submit"
+                  (click)="isCredit($event)"
+                >
                   <span class="top-key"></span>
                   <span class="text">{{
                     "checkout.purchaseNow" | translate

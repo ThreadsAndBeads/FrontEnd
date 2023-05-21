@@ -93,23 +93,27 @@ export class CheckoutComponent {
   createOrder(){
     // console.log(this.userId);
     if (this.validationForm.valid) {
-
     const order ={address:this.address!.value,client_name:this.client_name!.value,phone:this.phone!.value,city:this.city!.value};
-    console.log(order);
+    // console.log(order);
 
     const newOrder=this.prepareOrder(order);
-    console.log(newOrder);
+    // console.log(newOrder);
     // await this.isCredit();
     this.orderService.createOrder(newOrder).subscribe({
      next: (res : any) =>{
-
         this.router.navigate(['/home']);
-
       },
     error:  (error : HttpErrorResponse)=>{
         console.log(error);
       }
   });
+  }else{
+    this.  error = {
+      client_name: 'name is required',
+      phone: 'phone is required',
+      city: 'city is required',
+      address: 'address is required',
+    };
   }
 }
   paymentMethod(e:any) {
@@ -121,7 +125,7 @@ export class CheckoutComponent {
       this.paymentService.invokeStripe();
       this.paymentService.makePayment();
     } else {
-      this.createOrder();
+      // this.createOrder();
     }
   }
   prepareOrder(order: any){

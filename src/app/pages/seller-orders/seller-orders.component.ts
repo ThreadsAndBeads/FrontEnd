@@ -68,7 +68,7 @@ export class SellerOrdersComponent implements OnInit {
           this.cancelled = ordersByStatus['cancelled'] || [];
           this.delivered = ordersByStatus['delivered'] || [];
 
-          console.log(this.delivered);
+          console.log(response.data.data);
           
         },
       error:  ({ status, message }: HttpErrorResponse) => {
