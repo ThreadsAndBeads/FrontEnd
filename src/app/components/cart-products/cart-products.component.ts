@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -7,7 +7,11 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./cart-products.component.css'],
 })
 export class CartProductsComponent {
-  constructor(public cartService: CartService) {}
+  @Input() cartProducts: any;
+  constructor(
+    public cartService: CartService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   changeQuantity(product: any) {
     if (this.getProductIndex(product) != -1) {
@@ -39,7 +43,7 @@ export class CartProductsComponent {
   }
 
   getProductIndex(product: any) {
-    const index = this.cartService.cartProducts.indexOf(product);
+    const index = this.cartProducts.indexOf(product);
     if (index !== -1) {
       return index;
     }
@@ -49,7 +53,7 @@ export class CartProductsComponent {
   updateProduct(product: any) {
     this.cartService.editProduct(product).subscribe({
       next: (response) => {
-        window.location.reload();
+        this.cartService.cartUpdatedSubject.next();
       },
       error: (error) => {
         console.log(error);
@@ -60,7 +64,9 @@ export class CartProductsComponent {
   clearCart() {
     this.cartService.clearCart().subscribe({
       next: (response) => {
-        this.cartService.cartNotEmpty = false;
+        this.cartProducts = [];
+        this.cartService.cartUpdatedSubject.next();
+        this.cdr.detectChanges();
       },
       error: (error) => {
         console.log(error);
@@ -72,7 +78,7 @@ export class CartProductsComponent {
     console.log(product.productId._id);
     this.cartService.deleteProduct(product.productId._id).subscribe({
       next: (response) => {
-        window.location.reload();
+        this.cartService.cartUpdatedSubject.next();
       },
       error: (error) => {
         console.log(error);

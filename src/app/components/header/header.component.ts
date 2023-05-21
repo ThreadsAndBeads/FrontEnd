@@ -34,6 +34,9 @@ export class HeaderComponent implements OnInit{
     this.favouriteService.favoritesUpdated$.subscribe(() => {
       this.getFavouritesCount();
     });
+    this.cartService.cartUpdated$.subscribe(() => {
+      this.getCartCount();
+    });
   }
 
   handleClick() {

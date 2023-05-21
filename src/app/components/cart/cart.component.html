@@ -1,8 +1,9 @@
 <div class="row w-100 m-0" style="padding: 100px 20px">
-  <ng-container *ngIf="cartService.cartNotEmpty; else emptyCart">
+  <ng-container *ngIf="cartNotEmpty; else emptyCart">
     <div class="col-12 col-lg-8">
       <app-cart-products
-        *ngIf="cartService.cartProducts.length > 0"
+        *ngIf="cartProducts.length > 0"
+        [cartProducts]="cartProducts" 
       ></app-cart-products>
     </div>
     <div class="cartTotal col-12 col-lg-4" *ngIf="totalItems">

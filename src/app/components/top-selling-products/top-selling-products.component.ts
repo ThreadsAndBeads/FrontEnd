@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product.model';
+import { CartService } from 'src/app/services/cart.service';
 import { FavouriteService } from 'src/app/services/favourite.service';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -14,7 +15,8 @@ export class TopSellingProductsComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private favouriteService: FavouriteService
+    private favouriteService: FavouriteService,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -30,7 +32,23 @@ export class TopSellingProductsComponent implements OnInit {
     );
   }
 
-  addToCart(productId: any) {}
+  addToCart(productId: any) {
+    const data = {
+      products: {
+        productId: productId,
+        quantity: 1,
+      },
+    };
+
+    this.cartService.addToCart(data).subscribe({
+      next: (response) => {
+        this.cartService.cartUpdatedSubject.next();
+      },
+      error: (error) => {
+        console.error('Error adding to cart:', error);
+      },
+    });
+  }
 
   addToFavourites(productId: any) {}
 }

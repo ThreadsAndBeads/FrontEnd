@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { FavouriteService } from 'src/app/services/favourite.service';
 import { ProductService } from 'src/app/services/product.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
@@ -13,6 +14,7 @@ export class ProductCardComponent {
   constructor(
     protected productService: ProductService,
     protected favouriteService: FavouriteService,
+    protected cartService: CartService,
     protected tokenService: TokenStorageService
   ) {}
   userId = this.tokenService.getUser()._id;
@@ -26,9 +28,9 @@ export class ProductCardComponent {
       },
     };
 
-    this.productService.addToCart(data).subscribe({
+    this.cartService.addToCart(data).subscribe({
       next: (response) => {
-        console.log('Added to cart:', response);
+        this.cartService.cartUpdatedSubject.next();
       },
       error: (error) => {
         console.error('Error adding to cart:', error);
@@ -38,26 +40,26 @@ export class ProductCardComponent {
 
   toggleFavourite(event: Event) {
     const favouriteBtn = event.target as HTMLInputElement;
-    if(favouriteBtn.checked) {
-      this.favouriteService.addToFavourite({productId: this.product._id}).subscribe({
-        next: (response) => {
-          this.favouriteService.favoritesUpdatedSubject.next();
-        },
-        error: (error) => {
-          console.error('Error adding to favourite:', error);
-        },
-      });
-    } else {
+    if (favouriteBtn.checked) {
       this.favouriteService
-        .deleteProduct(this.product._id)
+        .addToFavourite({ productId: this.product._id })
         .subscribe({
           next: (response) => {
             this.favouriteService.favoritesUpdatedSubject.next();
           },
           error: (error) => {
-            console.error('Error removing from favourite:', error);
+            console.error('Error adding to favourite:', error);
           },
         });
+    } else {
+      this.favouriteService.deleteProduct(this.product._id).subscribe({
+        next: (response) => {
+          this.favouriteService.favoritesUpdatedSubject.next();
+        },
+        error: (error) => {
+          console.error('Error removing from favourite:', error);
+        },
+      });
     }
   }
 }
