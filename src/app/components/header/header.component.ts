@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import {io}  from 'socket.io-client';
 
 
 @Component({
@@ -14,10 +15,11 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
   styleUrls: ['./header.component.css']
 })
 
-export class HeaderComponent  {
+export class HeaderComponent implements OnInit {
   isUserLoggedIn: string|null = '';
   totalCartProducts: Number = 0;
-
+  private socket: any;
+  public data: any;
   constructor(
     private router: Router,
     private tokenService: TokenStorageService,
@@ -26,8 +28,19 @@ export class HeaderComponent  {
     this.getCartCount();
     translate.addLangs(['en' ,'ar']);
     translate.setDefaultLang('en')
-  }
+    this.socket = io('http://127.0.0.1:7000', { transports: ['websocket'] });
 
+  }
+  public ngOnInit(): void {
+    let userId = this.tokenService.getUser()._id ;     
+    const room = `seller_${userId}`;
+    this.socket.emit("join", room);
+    this.socket.on("notification", (data: any) => {
+      this.data = data;
+      console.log(data);
+    });
+
+  }
   handleClick() {
     if (this.isUserLogged()) {
     } else {
@@ -66,7 +79,12 @@ export class HeaderComponent  {
       } 
     }
   }
-
+  ngOnDestroy(): void {
+    // Leave the seller's room when the component is destroyed
+    const sellerId = "123"; // replace with the seller's id
+    const room = `seller_${this.tokenService.getUser()._id }`;
+    this.socket.emit("leave", room);
+  }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
