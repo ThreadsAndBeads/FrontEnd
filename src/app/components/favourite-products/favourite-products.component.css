@@ -1,0 +1,40 @@
+.product {
+  padding: 20px;
+  border: 1px solid #e8e8e8;
+}
+
+.product .product-img-container {
+  width: 80px;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+}
+
+.product img {
+  width: 100%;
+  height: 100%;
+}
+
+.product .product-details,
+.product .product-status,
+.product .product-actions {
+  padding-left: 25px;
+}
+
+.product .product-details p {
+  margin: 0;
+}
+
+.product .product-details .product-name {
+  line-height: 2;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.product .product-actions .bi{
+  cursor: pointer;
+}
+
+.product .product-actions .bi-x:hover {
+  color: #A20A0A;
+}
