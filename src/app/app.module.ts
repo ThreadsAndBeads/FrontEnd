@@ -84,6 +84,7 @@ import { EditWorkshopComponent } from './components/edit-workshop/edit-workshop.
 import { ClientOrdersComponent } from './components/client-orders/client-orders.component';
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { FavouriteProductsComponent } from './components/favourite-products/favourite-products.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 
 @NgModule({
@@ -148,7 +149,8 @@ import { FavouriteProductsComponent } from './components/favourite-products/favo
     EditWorkshopComponent,
     ClientOrdersComponent,
     FavouriteComponent,
-    FavouriteProductsComponent
+    FavouriteProductsComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
