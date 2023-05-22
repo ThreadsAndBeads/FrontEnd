@@ -209,7 +209,7 @@ form button[type="submit"] {
 }
 
 input[type="date"]{
-  background-color: rgb(162, 10, 10,0.88);;
+  background-color: rgb(162, 10, 10,0.88);
   padding: 10px;
   font-family: "Roboto Mono",monospace;
   color: #ffffff;
