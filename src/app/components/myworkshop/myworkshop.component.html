@@ -1,4 +1,3 @@
-
 <div class="my-workshops w-100 d-flex" style="margin-top: 120px">
   <div
     class="w-25 d-flex mx-3 flex-wrap"
@@ -10,22 +9,26 @@
       [index]="i"
     ></app-sellerworkshops>
   </div>
-</div>
-<nav aria-label="Page navigation example" class="align-self-center mx-auto">
-  <ul class="pagination">
-    <li class="page-item">
-      <button (click)="previous()" class="page-link" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </button>
-    </li>
-    <li class="page-item" *ngFor="let page of pages" (click)="navToPage(page)">
-      <button class="page-link">{{ page }}</button>
-    </li>
+  <nav aria-label="Page navigation example" class="align-self-center mx-auto">
+    <ul class="pagination">
+      <li class="page-item">
+        <button (click)="previous()" class="page-link" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </button>
+      </li>
+      <li
+        class="page-item"
+        *ngFor="let page of pages"
+        (click)="navToPage(page)"
+      >
+        <button class="page-link">{{ page }}</button>
+      </li>
 
-    <li class="page-item">
-      <button (click)="next()" class="page-link" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </button>
-    </li>
-  </ul>
-</nav>
+      <li class="page-item">
+        <button (click)="next()" class="page-link" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>

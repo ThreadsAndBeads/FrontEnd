@@ -216,3 +216,44 @@ justify-content: space-between;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
+/* .revenue-card{
+background-color: #f6eec9;
+height: 70px;
+padding: 0.6rem !important;
+}
+.revenue-card .card-body{
+padding: 0 !important;
+}
+.revenue-img{
+  width: 50px;
+  height: 50px;
+}
+.revenue-card span{
+  font-weight: bold;
+
+} */
+.revenue-card{
+  background-color: rgb(98, 0, 0);
+    color:#fff ;
+   font-family: "Delicious Handrawn", cursive !important;
+   border-radius: 1.5rem;
+   border: none !important;
+   transition: all .6s;
+   max-height: 80px;
+}
+.media-body span{
+  font-size: 1.6rem;
+}
+.revenue-card:hover{
+  scale: 1.1;
+}
+.bi-rocket-fill,.bi-piggy-bank-fill{
+  color: #fff;
+}
+
+.test{
+  width: 50px;
+  height: 50px;
+}

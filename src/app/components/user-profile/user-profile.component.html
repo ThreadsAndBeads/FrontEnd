@@ -37,6 +37,49 @@
             </li>
           </ul>
         </div>
+        <div class="row" *ngIf="revenue">
+          <div class="col-sm-6 col-12">
+            <div class="card revenue-card m-3">
+              <div class="card-content">
+                <div class="card-body p-2">
+                  <div class="media d-flex justify-content-around">
+                    <div class="align-self-center">
+                      <!-- <i class="bi bi-graph-up-arrow"></i> -->
+                      <i class="bi bi-piggy-bank-fill"></i>
+                      <!-- <img src="assets/svg/revenue.svg" alt="" class="test" /> -->
+                    </div>
+                    <div class="media-body text-right">
+                      <span>Revenue</span>
+                      <div class="d-flex">
+                        <app-animated-number [digit]="revenue" [duration]="1000"></app-animated-number>
+                        $
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-12">
+            <div class="card revenue-card m-3">
+              <div class="card-content">
+                <div class="card-body p-2">
+                  <div class="media d-flex justify-content-around">
+                    <div class="align-self-center">
+                      <i class="bi bi-rocket-fill"></i>
+                    </div>
+                    <div class="media-body text-right">
+                      <span>Orders</span>
+                      <div class="d-flex">
+                        <app-animated-number [digit]="totalOrders" [duration]="1000"></app-animated-number>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="px-4 py-3">
           <h5 class="mb-0">{{"profile.address" | translate}}</h5>

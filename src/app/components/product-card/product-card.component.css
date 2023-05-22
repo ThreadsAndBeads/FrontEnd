@@ -54,7 +54,7 @@
 .wsk-cp-text .category-prod p{
   margin:0;
 }
-/* Truncate */
+
 .wsk-cp-text .category-prod {
   width: 100%;
   padding-bottom: 15px;
@@ -105,32 +105,13 @@
   }
 }
 
-.button {
-  width: 35px;
-  height: 35px;
-  background-image: linear-gradient(#f9f1eb, #996d47);
-  border: none;
-  border-radius: 50px;
-  color: rgb(255, 255, 255);
-  font-weight: 600;
+.bi-cart-plus{
+  color: #52ab98;
   cursor: pointer;
-  box-shadow: 1px 3px 0px #996d47;
-  transition-duration: .3s;
 }
 
-.cartIcon {
-  width: 14px;
-  height: fit-content;
-}
-
-.cartIcon path {
-  fill: white;
-}
-
-.button:active {
-  transform: translate(2px ,0px);
-  box-shadow: 0px 1px 0px #996d47;
-  padding-bottom: 1px;
+.bi-cart-plus:hover {
+  color: #996d47;
 }
 
 .favouriteContainer input {

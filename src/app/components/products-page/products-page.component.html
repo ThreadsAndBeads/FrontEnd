@@ -26,12 +26,12 @@
       <!-- <span>Showing {{productNumbers>limit ? limit : productNumbers}} of {{productNumbers}}</span> -->
       <div class="" style="width: 210px;">
         <select class="form-select" aria-label="Default select example" [(ngModel)]="sortBySelectedValue" (ngModelChange)="onSelectionChange()">
-          <option value="default" selected>Default Sorting</option>
-          <option value="-createdAt">Sort By Newest</option>
-          <option value="rating">Sort By Highest Rating</option>
-          <option value="price">Sort By Price: Low to High</option>
-          <option value="-price">Sort By Price: High To Low</option>
-          <option value="-priceDiscount">Sort By Highest Discount</option>
+          <option value="default" selected>{{"ProductPageSort.default" | translate}}</option>
+          <option value="-createdAt">{{"ProductPageSort.newest" | translate}}</option>
+          <option value="rating">{{"ProductPageSort.highest rating" | translate}}</option>
+          <option value="price">{{"ProductPageSort.priceAsc" | translate}}</option>
+          <option value="-price">{{"ProductPageSort.priceDesc" | translate}}</option>
+          <option value="-priceDiscount">{{"ProductPageSort.highestDiscound" | translate}}</option>
         </select>
       </div>
     </div>
