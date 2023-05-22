@@ -1,11 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AuthService } from 'src/app/services/auth.service';
 import { CartService } from 'src/app/services/cart.service';
 import { FavouriteService } from 'src/app/services/favourite.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
-import {io}  from 'socket.io-client';
 
 
 @Component({
@@ -33,16 +31,9 @@ export class HeaderComponent implements OnInit{
     translate.setDefaultLang('en');
     translate.addLangs(['en' ,'ar']);
     translate.setDefaultLang('en')
-    this.socket = io('http://127.0.0.1:7000', { transports: ['websocket'] });
   }
 
   ngOnInit(): void {
-    let userId = this.tokenService.getUser()._id ;     
-    const room = `seller_${userId}`;
-    this.socket.emit("join", room);
-    this.socket.on("notification", (data: any) => {
-      this.data = data;
-    });
     
     this.favouriteService.favoritesUpdated$.subscribe(() => {
       this.getFavouritesCount();
@@ -73,7 +64,6 @@ export class HeaderComponent implements OnInit{
       },
     });
   }
-
   public getFavouritesCount() {
     this.favouriteService.getFavouritesProductsCount().subscribe({
       next: (response) => {
@@ -101,8 +91,6 @@ export class HeaderComponent implements OnInit{
     }
   }
   ngOnDestroy(): void {
-    // Leave the seller's room when the component is destroyed
-    const sellerId = "123"; // replace with the seller's id
     const room = `seller_${this.tokenService.getUser()._id }`;
     this.socket.emit("leave", room);
   }
