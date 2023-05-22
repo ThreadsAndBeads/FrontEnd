@@ -62,12 +62,13 @@ export class UserProfileComponent implements OnInit{
     let userData;
     userData = data.data.user;
 
-    console.log(userData);
+
     if(userData.type=='seller') {
-     this.getSellerStatistics()   
-    //  console.log(this.totalOrders) 
+     this.getSellerStatistics()
+    //  console.log(this.totalOrders)
     }
     //data = userData;
+    console.log("current user"+this.currentUser);
       this.currentUser= {
     _id: this.userId,
     name: userData.name,
@@ -94,14 +95,14 @@ export class UserProfileComponent implements OnInit{
     checkIfSeller(){
       this.authService.getUserByID(this.userId).subscribe({next:(data: any) => {
         console.log(data);
-        
+
       },error:(error: any) => {}})
     }
 
     getSellerStatistics(){
       this.sellerService.getSellerStatistics(this.userId).subscribe(
         {
-          next:(data:any)=>{ 
+          next:(data:any)=>{
             this.revenue=data.totalRevenue;
             this.totalOrders=data.totalOrders;
            },
