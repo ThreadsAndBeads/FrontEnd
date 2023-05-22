@@ -29,6 +29,9 @@ export class CheckoutComponent {
   cartNotEmpty: boolean = false;
   totalItems!: number;
   totalPrice!: number;
+  subTotalPrice!: number;
+  discount: number = 0;
+  is_gift: boolean = false;
   error = {
     client_name: '',
     phone: '',
@@ -52,7 +55,15 @@ export class CheckoutComponent {
       address: ['', Validators.required],
       // payment_method:['']
     });
+    this.getSessionData();
   }
+
+  getSessionData(){
+    const discountString = sessionStorage.getItem('discount');
+    this.discount = discountString ? parseInt(discountString, 10) : 0;
+    this.is_gift = sessionStorage.getItem('is_gift') === 'true';
+  }
+
   checkCartStatus() {
     this.cartService.getCartProducts().subscribe({
       next: (response) => {
@@ -73,11 +84,13 @@ export class CheckoutComponent {
   calculateSubtotal() {
     this.totalItems = 0;
     this.totalPrice = 0;
+    this.subTotalPrice = 0;
 
     this.cartProducts.forEach((product) => {
       this.totalItems += product.quantity;
-      this.totalPrice += product.quantity * product.productId.price;
+      this.subTotalPrice += product.quantity * product.productId.price;
     });
+    this.totalPrice = this.subTotalPrice - this.discount;
     this.paymentService.setAmount(this.totalPrice);
   }
   get client_name() {
@@ -94,15 +107,15 @@ export class CheckoutComponent {
     return this.validationForm.get('address');
   }
   createOrder() {
-    // console.log(this.userId);
     if (this.validationForm.valid) {
       const order = {
         address: this.address!.value,
         client_name: this.client_name!.value,
         phone: this.phone!.value,
         city: this.city!.value,
+        is_gift: this.is_gift,
+        discount: this.discount
       };
-      // console.log(order);
 
       const newOrder = this.prepareOrder(order);
       // console.log(newOrder);
@@ -110,6 +123,8 @@ export class CheckoutComponent {
       this.orderService.createOrder(newOrder).subscribe({
         next: (res: any) => {
           this.cartService.cartUpdatedSubject.next();
+          sessionStorage.removeItem('is_gift');
+          sessionStorage.removeItem('discount');
           this.router.navigate(['/home']);
         },
         error: (error: HttpErrorResponse) => {
