@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import {io}  from 'socket.io-client';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-notification',
@@ -8,34 +9,56 @@ import {io}  from 'socket.io-client';
   styleUrls: ['./notification.component.css']
 })
 export class NotificationComponent implements OnInit {
-  data: any[] = []; // Array to store received notifications
-  hasUnreadNotifications: boolean = false; // Flag to track unread notifications
-  showDropdown: boolean = false; // Flag to control dropdown visibility
+  notifications: any[] = []; 
+  hasUnreadNotifications: boolean = false; 
+  showDropdown: boolean = false; 
   private socket: any;
+  bell = document.getElementById('notification');
   constructor(
-    private tokenService: TokenStorageService,
+    private tokenService: TokenStorageService,    private userService: UserService
   ) {
     this.socket = io('http://127.0.0.1:7000', { transports: ['websocket'] });
-
   }
   ngOnInit() {
-    console.log("hereeeee");
-    let userId = this.tokenService.getUser()._id ;     
+    let userId = this.tokenService.getUser()._id;
     const room = `seller_${userId}`;
     this.socket.emit("join", room);
-    console.log(this.socket);
-    
     this.socket.on("notification", (data: any) => {
-      this.data.push(data); // Store the received notification
-      this.hasUnreadNotifications = true; // Set the flag to indicate unread notifications
-      console.log(data);
-    });
+      this.notifications.push(data); 
+      this.hasUnreadNotifications = true; 
+      this.bell!.classList.add('notify');
+        });
+
+    this.userService.getSellerNotifications(userId)
+      .subscribe(
+        (notifications) => {
+          this.notifications = this.normalizeNotifications(notifications);
+          // this.hasUnreadNotifications = this.notifications.length > 0;
+          // console.log(this.notifications);
+          
+          console.log('Received notifications:', this.notifications);
+        },
+        (error) => {
+          console.error('Failed to retrieve notifications:', error);
+        }
+      );
+
   }
 
   showNotifications(): void {
-    this.hasUnreadNotifications = false; // Clear the unread notification flag
-    this.showDropdown = !this.showDropdown; // Toggle the dropdown visibility
+    this.hasUnreadNotifications = false; 
+    this.showDropdown = !this.showDropdown; 
   }
 
-  // Add any additional methods or event handlers as needed...
+  normalizeNotifications(notifications: any[]): any[] {
+
+    return notifications.map((notification) => {
+      console.log(notification);   
+      return { 
+        data: notification.notificationDetails ,
+        timestamp: notification.timestamp,
+
+      }; 
+    });
+  }
 }

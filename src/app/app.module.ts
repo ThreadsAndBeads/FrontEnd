@@ -88,6 +88,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { NotificationComponent } from './components/notification/notification.component';
 import { EmptyFavouritesComponent } from './components/empty-favourites/empty-favourites.component';
 import { AnimatedNumberComponent } from './components/animated-number/animated-number.component';
+import { TimeAgoPipe } from './pipes/time-ago.pipe';
 
 
 @NgModule({
@@ -157,7 +158,8 @@ import { AnimatedNumberComponent } from './components/animated-number/animated-n
     NotificationComponent,
     AnimatedNumberComponent,
     EmptyFavouritesComponent,
-    AnimatedNumberComponent
+    AnimatedNumberComponent,
+    TimeAgoPipe
   ],
   imports: [
     AppRoutingModule,

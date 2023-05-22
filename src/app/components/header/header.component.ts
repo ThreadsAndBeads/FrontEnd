@@ -64,7 +64,6 @@ export class HeaderComponent implements OnInit{
       },
     });
   }
-
   public getFavouritesCount() {
     this.favouriteService.getFavouritesProductsCount().subscribe({
       next: (response) => {
@@ -92,8 +91,6 @@ export class HeaderComponent implements OnInit{
     }
   }
   ngOnDestroy(): void {
-    // Leave the seller's room when the component is destroyed
-    const sellerId = "123"; // replace with the seller's id
     const room = `seller_${this.tokenService.getUser()._id }`;
     this.socket.emit("leave", room);
   }

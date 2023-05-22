@@ -1,13 +1,19 @@
 <div class="notification-container">
-  <div class="notification-icon" (click)="showNotifications()">
+  <div
+    class="notification-icon"
+    id="notification"
+    (click)="showNotifications()"
+  >
     <span class="notification-dot" *ngIf="hasUnreadNotifications"></span>
-    <!-- <i class="fas fa-bell"></i> -->
     <i class="bi bi-bell"></i>
   </div>
 
   <div class="notification-dropdown" *ngIf="showDropdown">
     <ul>
-      <li *ngFor="let notification of data">{{ notification.data }}</li>
+      <li *ngFor="let notification of notifications">
+        <p class="data">{{ notification.data }}</p>
+        <p class="timestamp">{{ notification.timestamp | timeAgo }}</p>
+      </li>
     </ul>
   </div>
 </div>
