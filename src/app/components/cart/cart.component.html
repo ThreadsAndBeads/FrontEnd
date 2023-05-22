@@ -3,7 +3,7 @@
     <div class="col-12 col-lg-8">
       <app-cart-products
         *ngIf="cartProducts.length > 0"
-        [cartProducts]="cartProducts" 
+        [cartProducts]="cartProducts"
       ></app-cart-products>
     </div>
     <div class="cartTotal col-12 col-lg-4" *ngIf="totalItems">
@@ -81,7 +81,7 @@
           <span class="price">${{ totalPrice }}</span>
         </div>
         <div class="d-flex justify-content-center">
-          <a class="toCheckout" routerLink="/checkout">
+          <a class="toCheckout" routerLink="/customer/checkout">
             <span class="top-key"></span>
             <span class="text">{{ "cart.checkout" | translate }}</span>
             <span class="bottom-key-1"></span>

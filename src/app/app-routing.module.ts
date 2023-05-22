@@ -26,40 +26,66 @@ import { EditWorkshopComponent } from './components/edit-workshop/edit-workshop.
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ClientOrdersComponent } from './components/client-orders/client-orders.component';
-// import { StripeComponent } from './components/stripe/stripe.component';
+import { AuthGuard } from './guard/auth.guard';
+import { SellerGuard } from './guard/seller.guard';
+import { CustomerGuard } from './guard/customer.guard';
+
 const routes: Routes = [
   { path: '', component: AnimatedSectionComponent },
   { path: 'home', component: HomeComponent },
   { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'contact', component: ContactUsComponent },
-  { path: 'myWorkshops', component: MyworkshopComponent },
-  { path: 'addNewWorkshop', component: CreateWorkshopComponent },
+  { path: 'products', component: ProductsPageComponent },
+  { path: 'welcome', component: GoToLoginComponent },
+  { path: 'sellers', component: SellersComponent },
+  { path: 'workshops', component: WorkshopPageComponent },
+  {
+    path: 'profile',
+    component: UserProfileComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'productDetails/:id',
+    component: ProductDetailsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'editProfile',
+    component: EditProfileComponent,
+    canActivate: [AuthGuard],
+  },
   {
     path: 'forgetPassword',
     component: RequestResetComponent,
   },
-  { path: 'addNewProduct', component: AddNewProductComponent },
   {
     path: 'response-reset-password/:token',
     component: ResponseResetPasswordComponent,
   },
-  { path: 'profile', component: UserProfileComponent },
-  { path: 'products', component: ProductsPageComponent },
-  {path: 'productDetails/:id', component: ProductDetailsComponent},
-  { path: 'workshops', component: WorkshopPageComponent },
-  { path: 'sellers', component: SellersComponent },
-  { path: 'sellerProducts', component: SellerProductsComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'checkout', component: CheckoutComponent },
-  { path: 'editProfile', component: EditProfileComponent },
-  { path: 'welcome', component: GoToLoginComponent },
-  { path: 'editProduct/:productId', component: EditProductComponent },
-  { path: 'editWorkshop/:workshopId', component: EditWorkshopComponent },
-  // {path: 'stripe', component: StripeComponent },
-  { path: 'orders', component: SellerOrdersComponent },
-  {path: 'clientOrders', component: ClientOrdersComponent },
-  { path: 'favourites', component: FavouriteComponent },
+  {
+    path: 'seller',
+    canActivate: [SellerGuard],
+    children: [
+      { path: 'myWorkshops', component: MyworkshopComponent },
+      { path: 'addNewWorkshop', component: CreateWorkshopComponent },
+      { path: 'addNewProduct', component: AddNewProductComponent },
+      { path: 'sellerProducts', component: SellerProductsComponent },
+      { path: 'editProduct/:productId', component: EditProductComponent },
+      { path: 'editWorkshop/:workshopId', component: EditWorkshopComponent },
+      { path: 'orders', component: SellerOrdersComponent },
+    ],
+  },
+  {
+    path: 'customer',
+    canActivate: [CustomerGuard],
+    children: [
+      { path: 'cart', component: CartComponent },
+      { path: 'checkout', component: CheckoutComponent },
+      { path: 'clientOrders', component: ClientOrdersComponent },
+      { path: 'favourites', component: FavouriteComponent },
+    ],
+  },
   { path: '**', component: ErrorComponent },
 ];
 

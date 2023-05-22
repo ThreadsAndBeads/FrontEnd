@@ -27,7 +27,7 @@ constructor( private workshopService : WorkshopService , private router : Router
       ({
         next: (data) => {
           location.reload();
-          this.router.navigate(['myWorkshops']);
+          this.router.navigate(['seller/myWorkshops']);
 
     },error: (err)=>{}});
   }
@@ -41,9 +41,8 @@ constructor( private workshopService : WorkshopService , private router : Router
         special: JSON.stringify(this.workshop)
       }
     };
-    console.log(navigationExtras.queryParams);
 
-    this.router.navigate([`editWorkshop/${this.workshop._id}`,navigationExtras]);
+    this.router.navigate([`seller/editWorkshop/${this.workshop._id}`,navigationExtras]);
   }
 
 }
