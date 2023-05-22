@@ -64,6 +64,7 @@ export class CheckoutComponent {
     const discountString = sessionStorage.getItem('discount');
     this.discount = discountString ? parseInt(discountString, 10) : 0;
     this.is_gift = sessionStorage.getItem('is_gift') === 'true';
+    
   }
 
   checkCartStatus() {
@@ -110,6 +111,7 @@ export class CheckoutComponent {
   }
 
   createOrder() {
+
     if (this.validationForm.valid) {
       const order = {
         address: this.address!.value,
@@ -163,6 +165,8 @@ export class CheckoutComponent {
       },
       phone: order.phone,
       payment_method: this.payment_method,
+      is_gift: this.is_gift,
+      discount: this.discount
     };
     return newOrder;
   }
