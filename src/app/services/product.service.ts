@@ -54,12 +54,6 @@ export class ProductService {
     const url = `${this.BASE_URL}/search/?q=${query}`;
     return this.httpClient.get<SearchResult>(url);
   }
-
-  public addToCart(data: any): Observable<Product[]> {
-    const url = `http://localhost:7000/api/v1/cart`;
-    return this.httpClient.post<Product[]>(url, data);
-  }
-
 }
 
 interface SearchResult {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FavouriteService } from 'src/app/services/favourite.service';
 
 @Component({
@@ -7,50 +7,40 @@ import { FavouriteService } from 'src/app/services/favourite.service';
   styleUrls: ['./favourite.component.css'],
 })
 export class FavouriteComponent implements OnInit {
-  constructor(private favouriteService: FavouriteService) {}
+  favouriteProducts: any[] = [];
+  constructor(private favouriteService: FavouriteService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
+    this.getFavouriteProducts();
     this.favouriteService.favoritesUpdated$.subscribe(() => {
-      this.getFavoriteProducts();
-    });
-  }
-
-  deleteProduct(productId: any) {
-    this.favouriteService.deleteProduct(productId).subscribe({
-      next: () => {
-        // Success callback (optional)
-      },
-      error: (error) => {
-        console.log(error);
-      }
+      this.getFavouriteProducts();
+      this.cdr.detectChanges();
     });
   }
 
   clearFavourite() {
     this.favouriteService.clearFavourite().subscribe({
       next: () => {
-        // Success callback (optional)
+        this.favouriteService.favoritesUpdatedSubject.next();
       },
       error: (error) => {
         console.log(error);
-      }
+      },
     });
   }
 
-  addToFavourite(data: any) {
-    this.favouriteService.addToFavourite(data).subscribe({
-      next: (Response) => {
-        // Success callback (optional)
+  getFavouriteProducts() {
+    this.favouriteService.getFavouritesProducts().subscribe({
+      next: (response: any) => {
+        if (response.data && response.data.products) {
+          this.favouriteProducts = response.data.products;
+        } else {
+          this.favouriteProducts = [];
+        }
       },
       error: (error) => {
         console.log(error);
-      }
-  });
-  }
-
-  getFavoriteProducts() {
-    this.favouriteService.getFavouritesProducts().subscribe((products) => {
-      // Update the component's favorite products with the updated data
+      },
     });
   }
 }

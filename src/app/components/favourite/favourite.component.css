@@ -1,0 +1,14 @@
+.clear button{
+  padding: 8px 15px;
+  text-transform: uppercase;
+  border: 2px solid #A20A0A;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  color: white;
+  background-color: #A20A0A;
+}
+
+
+.clear button:hover{
+  background-color: transparent;
+  color: black;
+}

@@ -1,4 +1,4 @@
-<table class="table w-100" *ngIf="cartService.cartProducts" >
+<table class="table w-100" *ngIf="cartProducts" >
   <thead>
     <th colspan="2">{{ "cart.productName" | translate }}</th>
     <th colspan="1">{{ "cart.productPrice" | translate }}</th>
@@ -7,7 +7,7 @@
     <th colspan="1"></th>
   </thead>
   <tbody>
-    <tr *ngFor="let product of cartService.cartProducts">
+    <tr *ngFor="let product of cartProducts">
       <td colspan="2 d-flex">
         <img
           [src]="product.productId.images[0]"
