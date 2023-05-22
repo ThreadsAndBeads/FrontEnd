@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./top-selling-products.component.css'],
 })
 export class TopSellingProductsComponent implements OnInit {
-  products: Product[] = [];
+  products: any[] = [];
 
   constructor(
     private productService: ProductService,
@@ -20,16 +20,15 @@ export class TopSellingProductsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.productService.getTopDiscountedProduct().subscribe(
-      (response: any) => {
-        for (let i = 0; i < response.data.products.length; i++) {
-          this.products.push(response.data.products[i]);
-        }
+    this.productService.getTopDiscountedProduct().subscribe({
+      next: (response: any) => {
+        this.products = response.data.products;
+        this.isInFavourite();
       },
-      (error: HttpErrorResponse) => {
+      error: (error: HttpErrorResponse) => {
         console.log(error);
       }
-    );
+    });
   }
 
   addToCart(productId: any) {
@@ -50,5 +49,56 @@ export class TopSellingProductsComponent implements OnInit {
     });
   }
 
-  addToFavourites(productId: any) {}
+  toggleFavourite(productId: any, event: Event) {
+    const favourite = (event.target as HTMLElement).parentElement;
+    const inFavourite = favourite?.classList.contains('inFavourite');
+
+    if (inFavourite) {
+      this.favouriteService.deleteProduct(productId).subscribe({
+        next: (response) => {
+          (event.target as HTMLElement).style.color = '#c8d8e4';
+          favourite?.classList.remove('inFavourite');
+          this.favouriteService.favoritesUpdatedSubject.next();
+        },
+        error: (error) => {
+          console.error('Error removing from favourite:', error);
+        },
+      });
+    } else {
+      this.favouriteService.addToFavourite({ productId }).subscribe({
+        next: (response) => {
+          favourite?.classList.add('inFavourite');
+          (event.target as HTMLElement).style.color = '#A20A0A';
+          this.favouriteService.favoritesUpdatedSubject.next();
+        },
+        error: (error) => {
+          console.error('Error adding to favourite:', error);
+        },
+      });
+    }
+  }
+
+  isInFavourite() {
+    this.products.forEach((product) => {
+      this.favouriteService.isInFavourite(product._id).subscribe({
+        next: (response) => {
+          let favourite = document.getElementById(product._id) as HTMLElement;
+          if (favourite) {
+            if (response) {
+              favourite.style.color = '#A20A0A';
+              favourite.closest('a')?.classList.add('inFavourite');
+            } else {
+              favourite.style.color = '#c8d8e4';
+              favourite.closest('a')?.classList.remove('inFavourite');
+            }
+          } else {
+            console.error('Error: Element not found');
+          }
+        },
+        error: (error) => {
+          console.error('Error:', error);
+        },
+      });
+    });
+  }
 }
