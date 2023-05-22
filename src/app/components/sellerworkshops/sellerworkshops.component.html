@@ -1,113 +1,7 @@
-<!-- <div
-  class="modal fade h-60"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
-  #myModal
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header d-flex justify-content-center">
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <app-edit-workshop></app-edit-workshop>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- <div class="postcard d-flex row">
-  <div class="badge">{{ workshop.price }}Eg</div>
-  <div
-    class="postcard__image col-sm-12 col-md-6 col-lg-6"
-    role="img"
-    title="image"
-    [style.background-image]="'url(' + workshop.image + ')'"
-  ></div>
-
-  <div class="postcard__body col-sm-12 col-md-6 col-lg-6 h-100">
-
-    <div class="postcard__text">
-      <h2 class="postcard__title">
-        <div class="postcard__title--link" href="#" target="_blank">
-          {{ workshop.title }}
-        </div>
-      </h2>
-      <div class="workshop__time d-flex w-100">
-        <i class="bi bi-calendar2-week"></i>
-        <p class="author__time ms-1">
-          <ng-container
-            *ngIf="workshop.startDate === workshop.endDate; else dateRange"
-          >
-            {{ workshop.startDate | date : "dd MMMM yyyy" }}
-          </ng-container>
-          <ng-template #dateRange>
-            {{ workshop.startDate | date : "dd MMMM" }}
-            -
-            <ng-container
-              *ngIf="
-                (workshop.startDate | date : 'yyyy-MM') ===
-                  (workshop.endDate | date : 'yyyy-MM');
-                else differentMonth
-              "
-            >
-              {{ workshop.endDate | date : "dd" }}
-            </ng-container>
-            <ng-template #differentMonth>
-              {{ workshop.endDate | date : "dd MMMM yyyy" }}
-            </ng-template>
-          </ng-template>
-        </p>
-      </div>
-      <p class="postcard__description">
-        {{ workshop.description }}
-      </p>
-    </div>
-    <div class="postcard__footer d-flex">
-      <div class="postcard__author d-flex flex-column gap-3">
-        <div class="author__avatar-wrap d-flex gap-1 align-self-start">
-          <img
-            class="author__avatar"
-            src="https://raw.githubusercontent.com/alawe45/Html-Css-postcard/master/images/author__image.png"
-            alt="Profile image for Darlene Robertson"
-          />
-          <address>
-            <a class="author__name mx-2">{{ workshop.seller_name }}</a>
-          </address>
-        </div>
-      </div>
-      <div
-        class="d-flex author__time flex-column align-items-baseline"
-        style="float: right"
-      >
-        <div class="wcf-right">
-          <a
-            href="/myWorkshops"
-            class="delete-btn"
-            (click)="deleteWorkshop(workshop._id)"
-          >
-            <i class="bi bi-trash"></i
-          ></a>
-          <a class="edit-btn" [routerLink]="['/editWorkshop', workshop._id]">
-            <i class="bi bi-pen"></i
-          ></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <div
   class="workshop-card col-lg-4 col-md-6 col-sm-12"
   [ngClass]="'workshop-card-color-' + (index % 3)"
 >
-  <!-- <div class="border-card"></div> -->
   <img [src]="workshop.image" />
   <div class="d-flex flex-column h-100">
     <h1>{{ workshop.title }}</h1>
@@ -122,7 +16,7 @@
       >
         <i class="bi bi-trash"></i
       ></a>
-      <a class="edit-btn" [routerLink]="['/editWorkshop', workshop._id]">
+      <a class="edit-btn" [routerLink]="['/seller/editWorkshop', workshop._id]">
         <i class="bi bi-pen"></i
       ></a>
     </div>

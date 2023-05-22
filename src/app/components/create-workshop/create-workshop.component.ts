@@ -14,7 +14,7 @@ import { WorkshopService } from 'src/app/services/workshop.service';
   styleUrls: ['./create-workshop.component.css']
 })
 export class CreateWorkshopComponent {
-  userId = this.tokenService.getUser()._id ; 
+  userId = this.tokenService.getUser()._id ;
   form!: FormGroup;
   workshop : Workshop = {
     seller_id: this.userId ,
@@ -35,15 +35,7 @@ export class CreateWorkshopComponent {
   constructor(
     private router: Router,
 
-    private fb: FormBuilder, private workshopService : WorkshopService , private sanitizer :DomSanitizer , private tokenService: TokenStorageService) { 
-
-    // this.validationForm = this.fb.group({
-    //   title: ['', [Validators.required]],
-    //   price: ['', [Validators.required]],
-    //   description:['', Validators.required],
-    //   // address:['', Validators.required],
-    //   // payment_method:['']
-    // });
+    private fb: FormBuilder, private workshopService : WorkshopService , private sanitizer :DomSanitizer , private tokenService: TokenStorageService) {
   }
 
   addWorkshop(workshopForm : NgForm){
@@ -52,7 +44,7 @@ export class CreateWorkshopComponent {
       (response : Workshop) =>{
         workshopForm.reset();
         this.workshop.image = null;
-        this.router.navigate(['/myWorkshops']);
+        this.router.navigate(['/seller/myWorkshops']);
 
       },
       (error : HttpErrorResponse)=>{
@@ -71,14 +63,10 @@ export class CreateWorkshopComponent {
     const endDate = this.range.value.end;
 
     if (startDate) {
-      console.log(startDate);
-      
-      // const utcStartDate = new Date(Date.UTC(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()));
       formData.append('startDate', startDate);
     }
 
     if (endDate) {
-      // const utcEndDate = new Date(Date.UTC(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()));
       formData.append('endDate', endDate);
     }
 
@@ -88,17 +76,12 @@ export class CreateWorkshopComponent {
   }
   onFileSelected(event :any){
     if(event.target.files){
-      console.log(event.target.files[0])
      const file = event.target.files[0];
      const fileHandle : FileHandle = {
-      file : file , 
+      file : file ,
       url : this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(file))
      }
      this.workshop.image = (fileHandle)
-    // this.workshopForm.get('image')!.setValue(fileHandle);
-    // this.fileInput.nativeElement.value = '';
-
-     console.log(fileHandle)
     }
   }
 

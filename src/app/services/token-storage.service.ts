@@ -36,4 +36,10 @@ export class TokenStorageService {
     const token = this.getToken();
     return !!token;
   }
+  public isSeller(): boolean {
+    if(this.getUser().type === "seller"){
+      return true;
+    }
+      return false;
+  }
 }
