@@ -16,7 +16,7 @@ h1{
 }
 #table-container{
     overflow: auto;
-    width: 600px;
+    /* width: 800px; */
     height: auto; /* or a specific height value */
     max-height: 100%; /* or a specific value */
 }
