@@ -8,6 +8,8 @@ import { CartService } from 'src/app/services/cart.service';
 import { OrderService } from 'src/app/services/order.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { PaymentService } from 'src/app/services/payment.service';
+import { delay } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-checkout',
@@ -99,7 +101,6 @@ export class CheckoutComponent {
 
     const newOrder=this.prepareOrder(order);
     console.log(newOrder);
-    // await this.isCredit();
     this.orderService.createOrder(newOrder).subscribe({
      next: (res : any) =>{
 
@@ -112,15 +113,32 @@ export class CheckoutComponent {
   });
   }
 }
-  paymentMethod(e:any) {
+
+  paymentMethod(e: any) {
+    e.preventDefault();
     this.payment_method = e.target.value;
   }
+  // isCredit(): Promise<void> {
+  //   return new Promise<void>((resolve) => {
+  //     if (this.payment_method === "credit") {
+  //       this.paymentService.invokeStripe();
+  //       this.paymentService.makePayment();
+
+  //       // Perform any necessary asynchronous operations here
+  //       // For example, you can wait for the Stripe package to open
+
+  //       // Once the processing is completed, resolve the Promise
+  //       resolve();
+  //     } else {
+  //       resolve();
+  //     }
+  //   });
+  // }
 
   isCredit(e:any){
     if (this.payment_method === "credit") {
       this.paymentService.invokeStripe();
       this.paymentService.makePayment();
-    } else {
       this.createOrder();
     }
   }
