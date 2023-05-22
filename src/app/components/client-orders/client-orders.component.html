@@ -37,11 +37,12 @@
               >Details</a
             >
                       <a
+            href="#myModal"
             class="Cancel text-light"
             data-bs-toggle="modal"
-            data-bs-target="#cancelModal"
+            data-bs-target="#myModal"
             (click)="selectedOrder = orderItem"
-            (click)="cancelOrder(orderItem._id)"
+            *ngIf="selectedOrder?.orderStatus !== 'shipped' && selectedOrder?.orderStatus !== 'delivered'"
             >Cancel</a
           >
         </tr>
@@ -126,22 +127,28 @@
     </div>
   </div>
 </div>
-<!-- <div id="myModal" class="modal fade">
+
+<div id="myModal" class="modal fade">
   <div class="modal-dialog modal-confirm">
     <div class="modal-content">
       <div class="modal-header d-flex justify-content-center flex-column">
         <div class="icon-box">
-          <i class="material-icons">&#xE5CD;</i>
+          <i class="material-icons">X</i>
         </div>
         <h4 class="modal-title">Are you sure?</h4>
       </div>
       <div class="modal-body">
-        <p>Do you really want to delete these records? This process cannot be undone.</p>
+        <p *ngIf="selectedOrder?.orderStatus === 'shipped' || selectedOrder?.orderStatus === 'delivered'">
+          This order has already been shipped or delivered and cannot be canceled.
+        </p>
+        <p *ngIf="selectedOrder?.orderStatus !== 'shipped' && selectedOrder?.orderStatus !== 'delivered'">
+          Do you really want to delete these records? This process cannot be undone.
+        </p>
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <button type="button" class="btn btn-info" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+        <button type="button" class="btn btn-danger" (click)="cancelOrder(selectedOrder._id)" [disabled]="disableDeleteButton" data-bs-dismiss="modal">Delete</button>
       </div>
     </div>
   </div>
-</div> -->
+</div>
