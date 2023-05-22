@@ -14,7 +14,7 @@ export class ClientOrdersComponent implements OnInit{
   orders: any;
   selectedOrder: any;
   step1: any;
-  step2: any;;
+  step2: any;
   step3: any;
   openModal(orderItem: any) {
     this.selectedOrder = orderItem;
@@ -60,19 +60,26 @@ export class ClientOrdersComponent implements OnInit{
     this.step1 = document.querySelector('#step1');
     this.step2 = document.querySelector('#step2');
     this.step3 = document.querySelector('#step3');
+
     this.step1.classList.remove('active');
     this.step2.classList.remove('active');
     this.step3.classList.remove('active');
-    if (orderStatus === 'delivered') {
-      this.step1.classList.add('active');
-      this.step2.classList.add('active');
-      this.step3.classList.add('active');
-    } else if (orderStatus === 'shipped') {
-      this.step1.classList.add('active');
-      this.step2.classList.add('active');
-    } else {
-      this.step1.classList.add('active');
+
+    switch (orderStatus) {
+      case 'delivered':
+        this.step1.classList.add('active');
+        this.step2.classList.add('active');
+        this.step3.classList.add('active');
+        break;
+      case 'shipped':
+        this.step1.classList.add('active');
+        this.step2.classList.add('active');
+        break;
+      default:
+        this.step1.classList.add('active');
+        break;
     }
+
     return this.selectedOrder?.orderStatus === orderStatus;
   }
 
