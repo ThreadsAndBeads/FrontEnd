@@ -81,6 +81,7 @@
 	"add-new-product": {
 		"add": " اضافة",
 		"browse": " تصفح",
+		"category": "الفئه",
 		"discountPrice": "  سعر الخصم",
 		"dragAndDropText": "  قم بسحب وإسقاط الملفات هنا للتحميل",
 		"file": " الملف",
@@ -90,24 +91,24 @@
 		"productPrice": " سعر المنتج"
 	},
 	"cart": {
-    "backToShopping": "العوده إلى التسوق",
-    "checkout": "إلى الدفع",
-    "clear": "حذف الكل",
-    "coupon": "هل لديك خصم",
-    "couponCode": "كود الخصم",
-    "discound": "الخصم",
-    "gift": "هل هذه هدية",
-    "nextStep": "سيتم حسابها الخطوة القادمة",
-    "productName": "المنتج",
-    "productPrice": "السعر",
-    "productQuantity": "الكمية",
-    "productTotalPrice": "السعرالكلى",
-    "shipping": "الشحن",
-    "send": "أرسل",
-    "subTotal": "سيتم احتسابة",
-    "tax": "الضريبة",
-    "total": "اجمالي الفاتورة"
-  },
+		"backToShopping": "العوده إلى التسوق",
+		"checkout": "إلى الدفع",
+		"clear": "حذف الكل",
+		"coupon": "هل لديك خصم",
+		"couponCode": "كود الخصم",
+		"discound": "الخصم",
+		"gift": "هل هذه هدية",
+		"nextStep": "سيتم حسابها الخطوة القادمة",
+		"productName": "المنتج",
+		"productPrice": "السعر",
+		"productQuantity": "الكمية",
+		"productTotalPrice": "السعرالكلى",
+		"send": "أرسل",
+		"shipping": "الشحن",
+		"subTotal": "سيتم احتسابة",
+		"tax": "الضريبة",
+		"total": "اجمالي الفاتورة"
+	},
 	"checkout": {
 		"address": "العنوان",
 		"addressRequired": "العنوان مطلوب",
@@ -148,10 +149,10 @@
 		"startShopping": "ابدأ التسوق"
 	},
 	"emptyWishList": {
-    "empty": "قائمة الأماني الخاصة بك فارغة",
-    "goProducts": "الانتقال إلى المنتجات",
-    "paragraph": "أنشئ أول طلب في قائمة الأماني"
-  },
+		"empty": "قائمة الأماني الخاصة بك فارغة",
+		"goProducts": "الانتقال إلى المنتجات",
+		"paragraph": "أنشئ أول طلب في قائمة الأماني"
+	},
 	"favourite": {
 		"clear": "حذف الكل"
 	},
@@ -187,6 +188,11 @@
 		"phone": "رقم الهاتف:",
 		"recentPhotos": "الصور:",
 		"showAll": "اظهر الكل:"
+	},
+	"sellerOrderCard": {
+		"address": "العنوان",
+		"quantity": "الكمية",
+		"total": "المجموع"
 	},
 	"sellerOrders": {
 		"cancelled": "ملغى",

@@ -21,9 +21,7 @@ export class SellerOrdersComponent implements OnInit {
   ngOnInit() {
     this.currentUser = this.tokenService.getUser();
     this.currentUserId = this.currentUser._id;
-    this.getOrders();
-    console.log('hiiii');
-    
+    this.getOrders();    
   }
 
  
@@ -39,17 +37,13 @@ export class SellerOrdersComponent implements OnInit {
         event.currentIndex,
       );
       let orderStatus=this.getOrderStatus(event);
-      // console.log(event.container!.id);
-      
       let body={"orderId":event.container.data[0]!._id,"orderStatus":orderStatus}
       this.orderService.manageOrder(body).subscribe(
 {
            next:(response: any) => {
             console.log(response,'hi');
-            // this.getOrders();
            },
            error:(err)=>{
-            // console.log(err);
            }
       }
       )

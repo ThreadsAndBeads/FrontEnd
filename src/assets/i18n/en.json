@@ -81,6 +81,7 @@
 	"add-new-product": {
 		"add": "Add",
 		"browse": " Browse",
+		"category": "Category",
 		"discountPrice": "Discount Price",
 		"dragAndDropText": "Drag and drop files here to upload",
 		"file": " File",
@@ -94,7 +95,7 @@
 		"checkout": "To Checkout",
 		"clear": "clear cart",
 		"coupon": "Have Coupon",
-    "couponCode": "Coupon Code",
+		"couponCode": "Coupon Code",
 		"discound": "Discound",
 		"gift": "Is this a gift",
 		"nextStep": "calculatesd at next step",
@@ -102,10 +103,10 @@
 		"productPrice": "Price",
 		"productQuantity": "Quantity",
 		"productTotalPrice": "Total",
-    "send": "SEND",
+		"send": "SEND",
 		"shipping": "Shipping",
 		"subTotal": "SubTotal",
-    "tax": "Tax",
+		"tax": "Tax",
 		"total": "Total Cost"
 	},
 	"checkout": {
@@ -187,6 +188,11 @@
 		"phone": "Phone Number",
 		"recentPhotos": "Recent Photos",
 		"showAll": "Show All"
+	},
+	"sellerOrderCard": {
+		"address": "Address",
+		"quantity": "Quantity",
+		"total": "total"
 	},
 	"sellerOrders": {
 		"cancelled": "Cancelled",
