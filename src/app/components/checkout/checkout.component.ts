@@ -30,6 +30,8 @@ export class CheckoutComponent {
   cartNotEmpty: boolean = false;
   totalItems!: number;
   totalPrice!: number;
+  tax: number = 0;
+  shipping: number = 0;
   subTotalPrice!: number;
   discount: number = 0;
   is_gift: boolean = false;
@@ -90,7 +92,7 @@ export class CheckoutComponent {
       this.totalItems += product.quantity;
       this.subTotalPrice += product.quantity * product.productId.price;
     });
-    this.totalPrice = this.subTotalPrice - this.discount;
+    this.totalPrice = this.subTotalPrice - this.discount - this.tax - this.shipping;
     this.paymentService.setAmount(this.totalPrice);
   }
   get client_name() {
@@ -106,7 +108,7 @@ export class CheckoutComponent {
   get address() {
     return this.validationForm.get('address');
   }
-  
+
   createOrder() {
     if (this.validationForm.valid) {
       const order = {

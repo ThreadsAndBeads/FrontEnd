@@ -49,6 +49,8 @@ export class CartComponent implements OnInit {
           this.cartNotEmpty = true;
         } else {
           this.cartNotEmpty = false;
+          sessionStorage.removeItem('is_gift');
+          sessionStorage.removeItem('discount');
         }
         this.cdr.detectChanges();
       },
