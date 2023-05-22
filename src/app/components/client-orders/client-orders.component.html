@@ -1,8 +1,14 @@
+<div *ngIf="orders.length === 0">
+  <div class="col-12 col-md-6 mx-auto d-flex flex-column justify-content-center mt-3">
+    <img src="../../../assets/Images/emptycart.jpg" class="empty-cart-img mx-auto col-5 mt-5" alt="Empty Cart">
+    <p class="fs-5 fw-bold mb-0 pt-0 mt-3 text-center">No Orders yet</p>
+    <p class="text-center ">It looks like you haven't made any order yet</p>
+    <button class="shop" routerLink="/products">{{ "emptyCart.startShopping" | translate }}</button>
+  </div>
+</div>
 <div class="container h-auto">
   <h1 class="text-center mb-3" *ngIf="orders.length > 0">Your Orders</h1>
-  <div *ngIf="orders.length === 0" class="text-center">
-    <h1>No orders yet</h1>
-  </div>
+
   <div id="table-container" *ngIf="orders.length > 0">
     <table class="col-4 col-sm-4 col-md-8 col-lg-10 w-100">
       <thead>
