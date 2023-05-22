@@ -52,6 +52,7 @@ td {
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    margin-right: 5px;
 }
 
 .modal-body{
