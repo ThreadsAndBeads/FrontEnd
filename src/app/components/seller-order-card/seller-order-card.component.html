@@ -4,14 +4,18 @@
       order.client_name
     }}</span>
     <span class="client-address"
-      >Address: {{ order.clientAddress.city }},{{
-        order.clientAddress.address
-      }}</span
+      >{{ "sellerOrderCard.address" | translate }}:
+      {{ order.clientAddress.city }},{{ order.clientAddress.address }}</span
     >
   </div>
   <div class="example-box" *ngFor="let product of order.products">
-    <p></p>
-    <span>{{ product.quantity }}</span>
+    <div class="d-flex justify-content-between product-details">
+      <span>{{ product?.product?.name }}</span>
+      <span class="quantity"
+        >{{ "sellerOrderCard.quantity" | translate }}:
+        {{ product.quantity }}</span
+      >
+    </div>
   </div>
   <div class="order__stats">
     <span
@@ -21,7 +25,8 @@
       ></span
     >
     <span
-      ><i class="bi bi-cash-coin me-1"></i>Total {{ order.totalPrice }}$</span
+      ><i class="bi bi-cash-coin me-1"></i
+      >{{ "sellerOrderCard.total" | translate }} {{ order.totalPrice }}$</span
     >
   </div>
 </div>
