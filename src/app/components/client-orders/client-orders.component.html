@@ -9,6 +9,7 @@
           <th>Order Status</th>
           <th>Order Date</th>
           <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -26,6 +27,14 @@
               (click)="setActiveStatus(selectedOrder?.orderStatus)"
               >Details</a
             >
+            <a
+            class="Remove text-light"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            (click)="selectedOrder = orderItem"
+            (click)="setActiveStatus(selectedOrder?.orderStatus)"
+            >Cancel Order</a
+          >
           </td>
         </tr>
       </tbody>
@@ -100,7 +109,7 @@
             </div>
             <div class="card-footer bg-white px-sm-3 pt-sm-4 px-0">
               <div class="row text-center">
-                <div class="col my-auto border-line" data-bs-dismiss="modal"><h5>Cancel</h5></div>
+                <div class="col my-auto border-line" data-bs-dismiss="modal"><h5>Close</h5></div>
               </div>
             </div>
           </div>

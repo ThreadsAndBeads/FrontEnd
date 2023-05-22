@@ -36,6 +36,10 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     this.authService.getUserByID(this.userId).subscribe({next:(data: any) => {
       this.userData = data.data.user;
+      if(this.userData.type=='seller') {
+     this.getSellerStatistics()
+    //  console.log(this.totalOrders)
+    }
 
     },error:(error) => {
 
@@ -82,5 +86,4 @@ export class UserProfileComponent implements OnInit {
           )
         }
   }
-
 
