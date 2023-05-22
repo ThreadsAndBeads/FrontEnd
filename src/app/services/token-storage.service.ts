@@ -32,4 +32,8 @@ export class TokenStorageService {
   public removeToken(){
     window.localStorage.removeItem(TOKEN_KEY);
   }
+  public isLoggedIn(): boolean {
+    const token = this.getToken();
+    return !!token;
+  }
 }

@@ -30,6 +30,11 @@ export class CheckoutComponent {
   cartNotEmpty: boolean = false;
   totalItems!: number;
   totalPrice!: number;
+  tax: number = 0;
+  shipping: number = 0;
+  subTotalPrice!: number;
+  discount: number = 0;
+  is_gift: boolean = false;
   error = {
     client_name: '',
     phone: '',
@@ -52,7 +57,16 @@ export class CheckoutComponent {
       city: ['', Validators.required],
       address: ['', Validators.required],
     });
+    this.getSessionData();
   }
+
+  getSessionData(){
+    const discountString = sessionStorage.getItem('discount');
+    this.discount = discountString ? parseInt(discountString, 10) : 0;
+    this.is_gift = sessionStorage.getItem('is_gift') === 'true';
+    
+  }
+
   checkCartStatus() {
     this.cartService.getCartProducts().subscribe({
       next: (response) => {
@@ -73,11 +87,13 @@ export class CheckoutComponent {
   calculateSubtotal() {
     this.totalItems = 0;
     this.totalPrice = 0;
+    this.subTotalPrice = 0;
 
     this.cartProducts.forEach((product) => {
       this.totalItems += product.quantity;
-      this.totalPrice += product.quantity * product.productId.price;
+      this.subTotalPrice += product.quantity * product.productId.price;
     });
+    this.totalPrice = this.subTotalPrice - this.discount - this.tax - this.shipping;
     this.paymentService.setAmount(this.totalPrice);
   }
   get client_name() {
@@ -93,6 +109,7 @@ export class CheckoutComponent {
   get address() {
     return this.validationForm.get('address');
   }
+
   createOrder() {
 
     if (this.validationForm.valid) {
@@ -101,11 +118,16 @@ export class CheckoutComponent {
         client_name: this.client_name!.value,
         phone: this.phone!.value,
         city: this.city!.value,
+        is_gift: this.is_gift,
+        discount: this.discount
       };
+      
       const newOrder = this.prepareOrder(order);
       this.orderService.createOrder(newOrder).subscribe({
         next: (res: any) => {
           this.cartService.cartUpdatedSubject.next();
+          sessionStorage.removeItem('is_gift');
+          sessionStorage.removeItem('discount');
           this.router.navigate(['/home']);
         },
         error: (error: HttpErrorResponse) => {
@@ -143,6 +165,8 @@ export class CheckoutComponent {
       },
       phone: order.phone,
       payment_method: this.payment_method,
+      is_gift: this.is_gift,
+      discount: this.discount
     };
     return newOrder;
   }

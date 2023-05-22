@@ -21,7 +21,7 @@
                 <a (click)="addToCart(product._id)"><i class="bi bi-cart-plus fs-5" style="color: #c8d8e4"></i></a>
               </li>
               <li>
-                <a (click)="addToFavourites(product._id)"><i class="bi bi-heart-fill fs-5" style="color: #c8d8e4"></i></a>
+                <a (click)="toggleFavourite(product._id, $event)"><i class="bi bi-heart-fill fs-5" id={{product._id}} style="color: #c8d8e4"></i></a>
               </li>
             </ul>
           </div>

@@ -177,3 +177,12 @@
   border-radius: 4px;
   transition: 0.5s;
 }
+
+.bi-cart-plus,
+.bi-heart-fill {
+  cursor: pointer;
+}
+
+.inFavourite {
+  color: #A20A0A;
+}

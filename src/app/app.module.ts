@@ -85,8 +85,10 @@ import { ClientOrdersComponent } from './components/client-orders/client-orders.
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { FavouriteProductsComponent } from './components/favourite-products/favourite-products.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { NotificationComponent } from './components/notification/notification.component';
 import { EmptyFavouritesComponent } from './components/empty-favourites/empty-favourites.component';
 import { AnimatedNumberComponent } from './components/animated-number/animated-number.component';
+import { TimeAgoPipe } from './pipes/time-ago.pipe';
 
 
 @NgModule({
@@ -153,8 +155,11 @@ import { AnimatedNumberComponent } from './components/animated-number/animated-n
     FavouriteComponent,
     FavouriteProductsComponent,
     ProductDetailsComponent,
+    NotificationComponent,
+    AnimatedNumberComponent,
     EmptyFavouritesComponent,
     AnimatedNumberComponent,
+    TimeAgoPipe
   ],
   imports: [
     AppRoutingModule,
