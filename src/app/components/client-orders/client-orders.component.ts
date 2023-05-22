@@ -13,7 +13,9 @@ import { ProductService } from 'src/app/services/product.service';
 export class ClientOrdersComponent implements OnInit{
   orders: any;
   selectedOrder: any;
-
+  step1: any;
+  step2: any;;
+  step3: any;
   openModal(orderItem: any) {
     this.selectedOrder = orderItem;
   }
@@ -24,17 +26,6 @@ export class ClientOrdersComponent implements OnInit{
     private productService: ProductService
   ) { }
   ngOnInit() {
-    // this.orderService.getClientOrder(this.userId).subscribe({
-    //   next: (response: any) => {
-    //     this.orders = response.data.data;
-    //     console.log(this.orders);
-    //     console.log(this.orders[0].products[0].productId);
-    //   },
-    //   error: (error) => {
-    //     console.log(error);
-
-    //   },
-    // })
     this.orderService.getClientOrder(this.userId).subscribe({
       next: (response: any) => {
         this.orders = response.data.data;
@@ -62,5 +53,27 @@ export class ClientOrdersComponent implements OnInit{
         console.log(error);
       }
     });
+
+
   }
+  setActiveStatus(orderStatus: any): boolean {
+    this.step1 = document.querySelector('#step1');
+    this.step2 = document.querySelector('#step2');
+    this.step3 = document.querySelector('#step3');
+    this.step1.classList.remove('active');
+    this.step2.classList.remove('active');
+    this.step3.classList.remove('active');
+    if (orderStatus === 'delivered') {
+      this.step1.classList.add('active');
+      this.step2.classList.add('active');
+      this.step3.classList.add('active');
+    } else if (orderStatus === 'shipped') {
+      this.step1.classList.add('active');
+      this.step2.classList.add('active');
+    } else {
+      this.step1.classList.add('active');
+    }
+    return this.selectedOrder?.orderStatus === orderStatus;
+  }
+
 }

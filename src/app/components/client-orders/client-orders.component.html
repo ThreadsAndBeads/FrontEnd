@@ -23,6 +23,7 @@
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
               (click)="selectedOrder = orderItem"
+              (click)="setActiveStatus(selectedOrder?.orderStatus)"
               >Details</a
             >
           </td>
@@ -65,37 +66,22 @@
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
-                <div class="flex-col my-auto">
-                  <h6 class="ml-auto mr-3">
-                    <a href="#">View Details</a>
-                  </h6>
-                </div>
+
               </div>
             </div>
             <div class="card-body">
               <div class="media flex-column flex-sm-row" *ngFor="let product of selectedOrder?.products">
                 <div class="media-body">
                   <h5 class="bold">{{ product.productData?.data.name }}</h5>
-                  <p class="text-muted">Qt: Qt: {{ product.quantity }}</p>
+                  <p class="text-muted">Qt: {{ product.quantity }}</p>
                   <h4 class="mt-3 mb-4 bold">
                     <span class="mt-5">{{ selectedOrder?.totalPrice }}$</span>
                     <span class="small text-muted"> via {{selectedOrder?.payment_method}} </span>
                   </h4>
-                  <p class="text-muted">
-                    Tracking Status on:
-                    <span class="Today">11:30pm, Today</span>
-                  </p>
                 </div>
-                <!-- <img
-                  class="align-self-center img-fluid"
-                  src="{{selectedOrder?.productData?.data.images[0]}}"
-                  width="180 "
-                  height="180"
-                /> -->
                 <img
                 class="align-self-center img-fluid"
-                *ngFor="let image of product.productData?.data.images"
-                [src]="image"
+                src="{{selectedOrder?.productData?.data.images[0]}}"
                 width="180"
                 height="180"
               />
@@ -104,14 +90,13 @@
             <div class="row px-3">
               <div class="col">
                 <ul id="progressbar">
-                  <li class="step0 active" id="step1">PLACED</li>
-                  <li class="step0 active text-center" id="step2">SHIPPED</li>
-                  <li class="step0 text-muted text-right" id="step3">
-                    DELIVERED
-                  </li>
+                  <li class="step0" id="step1">PENDING</li>
+                  <li class="step0 text-center" id="step2">SHIPPED</li>
+                  <li class="step0 text-muted text-right" id="step3">DELIVERED</li>
                 </ul>
-                {{selectedOrder?.orderStatus}}
               </div>
+
+
             </div>
             <div class="card-footer bg-white px-sm-3 pt-sm-4 px-0">
               <div class="row text-center">
