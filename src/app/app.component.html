@@ -1,6 +1,8 @@
 <app-header
   *ngIf="router.url !== '/auth' && router.url !== '/welcome'"></app-header>
 <router-outlet appSetDirection></router-outlet>
+<!-- <app-client-orders></app-client-orders> -->
+<!-- <app-stripe></app-stripe> -->
 
 <app-spinner
   *ngIf="router.url !== '/auth' && router.url !== '/welcome'"
