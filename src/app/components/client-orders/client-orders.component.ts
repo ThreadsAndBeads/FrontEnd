@@ -16,6 +16,8 @@ export class ClientOrdersComponent implements OnInit{
   step1: any;
   step2: any;
   step3: any;
+  disableDeleteButton: boolean = false;
+
   openModal(orderItem: any) {
     this.selectedOrder = orderItem;
   }
@@ -86,13 +88,17 @@ export class ClientOrdersComponent implements OnInit{
   cancelOrder(id: any) {
     this.orderService.cancelOrder(id).subscribe({
       next: (Response: any) => {
+        this.disableDeleteButton = true;
         location.reload();
-      
+
       },
       error:  (error) => {
         console.log(error);
       },
     });
   }
+
+
+
 
 }
