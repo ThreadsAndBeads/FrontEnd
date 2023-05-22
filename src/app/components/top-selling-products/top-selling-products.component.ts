@@ -1,9 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/model/product.model';
 import { CartService } from 'src/app/services/cart.service';
 import { FavouriteService } from 'src/app/services/favourite.service';
 import { ProductService } from 'src/app/services/product.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-top-selling-products',
@@ -11,44 +13,111 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./top-selling-products.component.css'],
 })
 export class TopSellingProductsComponent implements OnInit {
-  products: Product[] = [];
+  products: any[] = [];
+  isUserLoggedIn: boolean = false;
 
   constructor(
-    private productService: ProductService,
     private favouriteService: FavouriteService,
-    private cartService: CartService
-  ) {}
-
-  ngOnInit() {
-    this.productService.getTopDiscountedProduct().subscribe(
-      (response: any) => {
-        for (let i = 0; i < response.data.products.length; i++) {
-          this.products.push(response.data.products[i]);
-        }
-      },
-      (error: HttpErrorResponse) => {
-        console.log(error);
-      }
-    );
+    private tokenService: TokenStorageService,
+    private productService: ProductService,
+    private cartService: CartService,
+    private router: Router
+  ) {
+    this.isUserLoggedIn = this.tokenService.isLoggedIn();
   }
 
-  addToCart(productId: any) {
-    const data = {
-      products: {
-        productId: productId,
-        quantity: 1,
+  ngOnInit() {
+    this.productService.getTopDiscountedProduct().subscribe({
+      next: (response: any) => {
+        this.products = response.data.products;
+        this.isInFavourite();
       },
-    };
-
-    this.cartService.addToCart(data).subscribe({
-      next: (response) => {
-        this.cartService.cartUpdatedSubject.next();
-      },
-      error: (error) => {
-        console.error('Error adding to cart:', error);
+      error: (error: HttpErrorResponse) => {
+        console.log(error);
       },
     });
   }
 
-  addToFavourites(productId: any) {}
+  addToCart(productId: any) {
+    if( this.isUserLoggedIn ) {
+      const data = {
+        products: {
+          productId: productId,
+          quantity: 1,
+        },
+      };
+  
+      this.cartService.addToCart(data).subscribe({
+        next: (response) => {
+          this.cartService.cartUpdatedSubject.next();
+        },
+        error: (error) => {
+          console.error('Error adding to cart:', error);
+        },
+      });
+    } else {
+      this.router.navigateByUrl('/auth');
+    }
+  }
+
+  toggleFavourite(productId: any, event: Event) {
+    if( this.isUserLoggedIn ) {
+      const favourite = (event.target as HTMLElement).parentElement;
+      const inFavourite = favourite?.classList.contains('inFavourite');
+
+      if (inFavourite) {
+        this.favouriteService.deleteProduct(productId).subscribe({
+          next: (response) => {
+            (event.target as HTMLElement).style.color = '#c8d8e4';
+            favourite?.classList.remove('inFavourite');
+            this.favouriteService.favoritesUpdatedSubject.next();
+          },
+          error: (error) => {
+            console.error('Error removing from favourite:', error);
+          },
+        });
+      } else {
+        this.favouriteService.addToFavourite({ productId }).subscribe({
+          next: (response) => {
+            favourite?.classList.add('inFavourite');
+            (event.target as HTMLElement).style.color = '#A20A0A';
+            this.favouriteService.favoritesUpdatedSubject.next();
+          },
+          error: (error) => {
+            console.error('Error adding to favourite:', error);
+          },
+        });
+      }
+    } else {
+      this.router.navigateByUrl('/auth');
+    }
+  }
+
+  isInFavourite() {
+    if( this.isUserLoggedIn ) {
+      this.products.forEach((product) => {
+        this.favouriteService.isInFavourite(product._id).subscribe({
+          next: (response) => {
+            let favourite = document.getElementById(product._id) as HTMLElement;
+            if (favourite) {
+              if (response) {
+                favourite.style.color = '#A20A0A';
+                favourite.closest('a')?.classList.add('inFavourite');
+              } else {
+                favourite.style.color = '#c8d8e4';
+                favourite.closest('a')?.classList.remove('inFavourite');
+              }
+            } else {
+              console.error('Error: Element not found');
+            }
+          },
+          error: (error) => {
+            console.error('Error:', error);
+          },
+        });
+      });
+    } else {
+      this.router.navigateByUrl('/auth');
+    }
+  }
 }

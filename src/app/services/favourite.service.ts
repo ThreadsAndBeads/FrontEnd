@@ -36,4 +36,9 @@ export class FavouriteService {
     const url = `${this.BASE_URL}/`;
     return this.httpClient.post(url, data);
   }
+
+  public isInFavourite(productId: any): Observable<any> {
+    const url = `${this.BASE_URL}/${productId}/`;
+    return this.httpClient.get<any>(url);
+  }
 }

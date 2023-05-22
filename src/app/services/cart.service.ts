@@ -43,4 +43,9 @@ export class CartService {
     const url = `${this.BASE_URL}`;
     return this.httpClient.post<any>(url, data);
   }
+
+  public isValidCoupon(coupon: any): Observable<any> {
+    const url = `${this.BASE_URL}/coupon`;
+    return this.httpClient.post<any>(url, { coupon });
+  }
 }

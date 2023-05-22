@@ -23,5 +23,8 @@ export class OrderService {
   public manageOrder(order: any){
     return this.httpClient.patch(`${this.BASE_URL}/manageOrder`, order);
   }
+  public cancelOrder(id:any) {
+    return this.httpClient.delete(`${this.BASE_URL}/cancelOrder/${id}`);
+  }
 
 }
