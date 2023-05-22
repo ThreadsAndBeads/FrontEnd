@@ -1,6 +1,9 @@
 <div class="container h-auto">
-  <h1 class="text-center mb-3">Your Orders</h1>
-  <div id="table-container">
+  <h1 class="text-center mb-3" *ngIf="orders.length > 0">Your Orders</h1>
+  <div *ngIf="orders.length === 0" class="text-center">
+    <h1>No orders yet</h1>
+  </div>
+  <div id="table-container" *ngIf="orders.length > 0">
     <table class="col-4 col-sm-4 col-md-8 col-lg-10 w-100">
       <thead>
         <tr>
@@ -8,6 +11,7 @@
           <th>Total Price</th>
           <th>Order Status</th>
           <th>Order Date</th>
+          <th></th>
           <th></th>
         </tr>
       </thead>
@@ -23,9 +27,17 @@
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
               (click)="selectedOrder = orderItem"
+              (click)="setActiveStatus(selectedOrder?.orderStatus)"
               >Details</a
             >
-          </td>
+                      <a
+            class="Cancel text-light"
+            data-bs-toggle="modal"
+            data-bs-target="#cancelModal"
+            (click)="selectedOrder = orderItem"
+            (click)="cancelOrder(orderItem._id)"
+            >Cancel</a
+          >
         </tr>
       </tbody>
     </table>
@@ -65,37 +77,22 @@
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
-                <div class="flex-col my-auto">
-                  <h6 class="ml-auto mr-3">
-                    <a href="#">View Details</a>
-                  </h6>
-                </div>
+
               </div>
             </div>
             <div class="card-body">
               <div class="media flex-column flex-sm-row" *ngFor="let product of selectedOrder?.products">
                 <div class="media-body">
                   <h5 class="bold">{{ product.productData?.data.name }}</h5>
-                  <p class="text-muted">Qt: Qt: {{ product.quantity }}</p>
+                  <p class="text-muted">Qt: {{ product.quantity }}</p>
                   <h4 class="mt-3 mb-4 bold">
                     <span class="mt-5">{{ selectedOrder?.totalPrice }}$</span>
                     <span class="small text-muted"> via {{selectedOrder?.payment_method}} </span>
                   </h4>
-                  <p class="text-muted">
-                    Tracking Status on:
-                    <span class="Today">11:30pm, Today</span>
-                  </p>
                 </div>
-                <!-- <img
-                  class="align-self-center img-fluid"
-                  src="{{selectedOrder?.productData?.data.images[0]}}"
-                  width="180 "
-                  height="180"
-                /> -->
                 <img
                 class="align-self-center img-fluid"
-                *ngFor="let image of product.productData?.data.images"
-                [src]="image"
+                src="{{selectedOrder?.productData?.data.images[0]}}"
                 width="180"
                 height="180"
               />
@@ -104,18 +101,17 @@
             <div class="row px-3">
               <div class="col">
                 <ul id="progressbar">
-                  <li class="step0 active" id="step1">PLACED</li>
-                  <li class="step0 active text-center" id="step2">SHIPPED</li>
-                  <li class="step0 text-muted text-right" id="step3">
-                    DELIVERED
-                  </li>
+                  <li class="step0" id="step1">PENDING</li>
+                  <li class="step0 text-center" id="step2">SHIPPED</li>
+                  <li class="step0 text-muted text-right" id="step3">DELIVERED</li>
                 </ul>
-                {{selectedOrder?.orderStatus}}
               </div>
+
+
             </div>
             <div class="card-footer bg-white px-sm-3 pt-sm-4 px-0">
               <div class="row text-center">
-                <div class="col my-auto border-line" data-bs-dismiss="modal"><h5>Cancel</h5></div>
+                <div class="col my-auto border-line" data-bs-dismiss="modal"><h5>Close</h5></div>
               </div>
             </div>
           </div>
@@ -124,3 +120,22 @@
     </div>
   </div>
 </div>
+<!-- <div id="myModal" class="modal fade">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-center flex-column">
+        <div class="icon-box">
+          <i class="material-icons">&#xE5CD;</i>
+        </div>
+        <h4 class="modal-title">Are you sure?</h4>
+      </div>
+      <div class="modal-body">
+        <p>Do you really want to delete these records? This process cannot be undone.</p>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div> -->

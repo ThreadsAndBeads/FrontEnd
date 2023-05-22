@@ -14,6 +14,8 @@ import { CartService } from 'src/app/services/cart.service';
 import { OrderService } from 'src/app/services/order.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { PaymentService } from 'src/app/services/payment.service';
+import { delay } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-checkout',
@@ -21,7 +23,6 @@ import { PaymentService } from 'src/app/services/payment.service';
   styleUrls: ['./checkout.component.css'],
 })
 export class CheckoutComponent {
-  // @ViewChild('myModal') myModal!: ElementRef;
   userId = this.tokenService.getUser()._id;
   validationForm!: FormGroup;
   payment_method: any;
@@ -53,7 +54,6 @@ export class CheckoutComponent {
       phone: [this.client.phone, [Validators.required]],
       city: ['', Validators.required],
       address: ['', Validators.required],
-      // payment_method:['']
     });
     this.getSessionData();
   }
@@ -106,6 +106,7 @@ export class CheckoutComponent {
   get address() {
     return this.validationForm.get('address');
   }
+  
   createOrder() {
     if (this.validationForm.valid) {
       const order = {
@@ -116,10 +117,8 @@ export class CheckoutComponent {
         is_gift: this.is_gift,
         discount: this.discount
       };
-
+      
       const newOrder = this.prepareOrder(order);
-      // console.log(newOrder);
-      // await this.isCredit();
       this.orderService.createOrder(newOrder).subscribe({
         next: (res: any) => {
           this.cartService.cartUpdatedSubject.next();
@@ -144,12 +143,11 @@ export class CheckoutComponent {
     this.payment_method = e.target.value;
   }
 
+
   isCredit(e: any) {
     if (this.payment_method === 'credit') {
       this.paymentService.invokeStripe();
       this.paymentService.makePayment();
-    } else {
-      // this.createOrder();
     }
   }
   prepareOrder(order: any) {
@@ -167,20 +165,4 @@ export class CheckoutComponent {
     return newOrder;
   }
 
-  // get NameValid(){
-  //   return this.validationForm.controls["client_name"].valid;
-  // }
-  // get PhoneValid(){
-  //   return this.validationForm.controls["phone"].valid;
-  // }
-  // get AddressValid(){
-  //   // return this.validationForm.controls["address"].valid;
-  // }
-  // get CityValid(){
-  //   return this.validationForm.controls["city"].valid;
-  // }
-
-  // get payment_method() {
-  //   return this.validationForm.get('payment_method');
-  // }
 }

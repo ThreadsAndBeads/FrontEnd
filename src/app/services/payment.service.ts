@@ -23,11 +23,12 @@ export class PaymentService {
     const amount = this.getAmount();
     if (this.paymentHandler) {
       this.openPayment(amount);
-    } else {
-      setTimeout(() => {
-        this.makePayment();
-      }, 500);
     }
+    // else {
+    //   setTimeout(() => {
+    //     this.makePayment();
+    //   }, 500);
+    // }
   }
 
   openPayment(amount: number) {
