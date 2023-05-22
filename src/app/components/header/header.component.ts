@@ -42,7 +42,6 @@ export class HeaderComponent implements OnInit{
     this.socket.emit("join", room);
     this.socket.on("notification", (data: any) => {
       this.data = data;
-      console.log(data);
     });
     
     this.favouriteService.favoritesUpdated$.subscribe(() => {

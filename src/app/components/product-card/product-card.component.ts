@@ -10,6 +10,8 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 })
 export class ProductCardComponent {
   @Input() product: any;
+  userId = this.tokenService.getUser()._id;
+  isFavourite = false;
 
   constructor(
     protected productService: ProductService,
@@ -17,7 +19,10 @@ export class ProductCardComponent {
     protected cartService: CartService,
     protected tokenService: TokenStorageService
   ) {}
-  userId = this.tokenService.getUser()._id;
+
+  ngOnInit() {
+    this.isInFavourite();
+  }
 
   addToCart(productId: string) {
     const data = {
@@ -41,29 +46,44 @@ export class ProductCardComponent {
   toggleFavourite(event: Event) {
     const favouriteBtn = event.target as HTMLInputElement;
     if (favouriteBtn.checked) {
-      this.favouriteService
-        .addToFavourite({ productId: this.product._id })
-        .subscribe({
-          next: (response) => {
-            this.favouriteService.favoritesUpdatedSubject.next();
-          },
-          error: (error) => {
-            console.error('Error adding to favourite:', error);
-          },
-        });
+      this.addToFavourite();
     } else {
-      this.favouriteService.deleteProduct(this.product._id).subscribe({
+      this.removeFromFavourite();
+    }
+  }
+
+  addToFavourite(){
+    this.favouriteService
+      .addToFavourite({ productId: this.product._id })
+      .subscribe({
         next: (response) => {
           this.favouriteService.favoritesUpdatedSubject.next();
         },
         error: (error) => {
-          console.error('Error removing from favourite:', error);
+          console.error('Error adding to favourite:', error);
         },
       });
-    }
+  }
+
+  removeFromFavourite(){
+    this.favouriteService.deleteProduct(this.product._id).subscribe({
+      next: (response) => {
+        this.favouriteService.favoritesUpdatedSubject.next();
+      },
+      error: (error) => {
+        console.error('Error removing from favourite:', error);
+      },
+    });
+  }
+
+  isInFavourite() {
+    this.favouriteService.isInFavourite(this.product._id).subscribe({
+      next: (response) => {
+        this.isFavourite = response;
+      },
+      error: (error) => {
+        console.error('Error:', error);
+      },
+    });
   }
 }
-
-
-
-
