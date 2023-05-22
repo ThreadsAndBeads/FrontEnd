@@ -5,7 +5,7 @@ export interface Product {
   user_id: string | null;
   name: string;
   description: string;
-  // category: string;
+  category: string;
   price: number;
   inStock: number;
   priceDiscount: number;

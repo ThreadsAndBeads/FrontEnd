@@ -295,12 +295,13 @@ small{
 
 /* no orders */
 button{
-  padding: 10px 50px;
-  border: 2px solid #A20A0A;
+  padding: 2px 90px;
+  /* border: 2px solid #A20A0A; */
   margin: 5px;
   border-radius: 5px;
   width: fit-content;
   margin: 5px auto;
+  margin-right: 5px;
 }
 
 .goBack{
