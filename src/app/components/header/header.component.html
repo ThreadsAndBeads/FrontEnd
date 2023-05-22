@@ -30,7 +30,10 @@
       <a class="user-link toggle_btn" type="button" (click)="handleClick()">
         <i class="bi bi-person-circle"></i>
       </a>
-      <a class="user-link" href="#"><i class="bi bi-heart-fill"></i></a>
+      <a class="user-link position-relative" href="#">
+        <i class="bi bi-heart-fill"></i>
+        <span class="favouriteQuantity">{{ totalFavouritesProducts }}</span>
+      </a>
     </div>
 
     <input
@@ -52,19 +55,31 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/home">{{
-            "Nav.home" | translate
-          }}</a>
+          <a
+            class="nav-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="/home"
+            >{{ "Nav.home" | translate }}</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/about">{{
-            "Nav.about" | translate
-          }}</a>
+          <a
+            class="nav-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="/about"
+            >{{ "Nav.about" | translate }}</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="contact">{{
-            "Nav.contact" | translate
-          }}</a>
+          <a
+            class="nav-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="contact"
+            >{{ "Nav.contact" | translate }}</a
+          >
         </li>
         <li class="nav-item nav-item-logo">
           <a href="" class="nav-item threadsAndBeads"
@@ -72,20 +87,33 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/products">{{
-            "Nav.products" | translate
-          }}</a>
+          <a
+            class="nav-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="/products"
+            >{{ "Nav.products" | translate }}</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/sellers">{{
-            "Nav.sellers" | translate
-          }}</a>
+          <a
+            class="nav-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="/sellers"
+            >{{ "Nav.sellers" | translate }}</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/workshops">{{
-            "Nav.workshops" | translate
-          }}</a>
+          <a
+            class="nav-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="/workshops"
+            >{{ "Nav.workshops" | translate }}</a
+          >
         </li>
+        <li>{{ data }}</li>
       </ul>
     </div>
   </div>

@@ -35,7 +35,8 @@
   min-width: 80px;
 }
 
-.cartQuantity {
+.cartQuantity,
+.favouriteQuantity {
   position: absolute;
   background: red;
   color: white;

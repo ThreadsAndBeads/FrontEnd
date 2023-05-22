@@ -1,0 +1,13 @@
+<div class="" style="padding: 100px 50px;">
+  <div class="clear d-flex justify-content-end" *ngIf="favouriteProducts && favouriteProducts.length > 0" >
+    <button (click)="clearFavourite()">{{ "favourite.clear" | translate }}</button>
+  </div>
+  <div *ngIf="favouriteProducts && favouriteProducts.length > 0" class="d-flex justify-content-center gap-4">
+    <div class="product col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let product of favouriteProducts">
+      <app-favourite-products [product]="product"></app-favourite-products>
+    </div>
+  </div>
+  <div *ngIf="!favouriteProducts || favouriteProducts.length === 0" class="d-flex justify-content-center">
+    <app-empty-favourites></app-empty-favourites>
+  </div>
+</div>

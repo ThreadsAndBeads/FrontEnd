@@ -1,0 +1,25 @@
+
+<div class="wsk-cp-product">
+  <i class="bi bi-x fs-3 removeProduct" (click)="deleteProduct(product.product._id)"></i>
+  <div class="wsk-cp-img">
+    <img [src]="product.product.images[0]" alt="Product" class="img-responsive" />
+  </div>
+  <div class="wsk-cp-text">
+    <div class="title-product">
+      <h3>{{product.product.name}}</h3>
+    </div>
+    <div class="category-prod text-muted">
+      <p>
+        {{product.product.category}}
+      </p>
+    </div>
+    <div class="card-footer">
+      <div class="wcf-left">
+        <span class="price">$ {{product.product.price}}</span>
+      </div>
+      <div class="wcf-right d-flex">
+        <a class="my-auto" (click)="addToCart(product._id)"><i class="bi bi-cart-plus fs-4"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
