@@ -1,11 +1,12 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FileHandle } from 'src/app/model/file-handler.model';
 import { Product } from 'src/app/model/product.model';
 import { ProductService } from 'src/app/services/product.service';
 import { NgForm } from '@angular/forms';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { Category } from 'src/app/model/category.model';
 
 
 @Component({
@@ -13,14 +14,16 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
   templateUrl: './add-new-product.component.html',
   styleUrls: ['./add-new-product.component.css']
 })
-export class AddNewProductComponent {
+export class AddNewProductComponent implements OnInit {
+  categories: Category[] = [];
   userId = this.tokenService.getUser()._id ; 
   product : Product = {
     user_id : this.userId  ,
     name :"",
     description : "",
     price : 0 ,
-    inStock: 0, 
+    inStock: 0,
+    category: "", 
     priceDiscount : 0,
     images : [],
   }
@@ -32,8 +35,12 @@ export class AddNewProductComponent {
   };
   constructor(private productService : ProductService , private sanitizer :DomSanitizer , private tokenService: TokenStorageService) { }
 
+  ngOnInit(): void {
+    this.getCategories();
+  }
   addProduct(productForm : NgForm){
     const productFormData =  this.prepareFormData(this.product)
+    console.log(productFormData)
     this.productService.addProduct(productFormData).subscribe(
       (response : Product) =>{
         // console.log(response);
@@ -51,6 +58,7 @@ export class AddNewProductComponent {
     formData.append('name', product.name);
     formData.append('description', product.description);
     formData.append('price', product.price);
+    formData.append('category', product.category);
     formData.append('inStock', product.inStock);
     formData.append('priceDiscount', product.priceDiscount);
     for(let img of product.images) {
@@ -75,5 +83,16 @@ export class AddNewProductComponent {
   }
   fileDropped(fileHandel : FileHandle){
     this.product.images.push(fileHandel);
+  }
+
+  getCategories() {
+    this.productService.getAllCategories().subscribe({
+      next: (response) => {
+        this.categories = response as Category[];
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 }

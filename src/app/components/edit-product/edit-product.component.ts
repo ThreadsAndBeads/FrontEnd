@@ -8,12 +8,14 @@ import { NgForm } from '@angular/forms';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { ActivatedRoute } from '@angular/router';
 import {Router} from "@angular/router"
+import { Category } from 'src/app/model/category.model';
 @Component({
   selector: 'app-edit-product',
   templateUrl: './edit-product.component.html',
   styleUrls: ['./edit-product.component.css']
 })
 export class EditProductComponent implements OnInit{
+  categories: Category[] = [];
   userId = this.tokenService.getUser()._id;
   productId: any;
   product : Product = {
@@ -22,6 +24,7 @@ export class EditProductComponent implements OnInit{
     description : "",
     price : 0 ,
     inStock: 0,
+    category:"",
     priceDiscount : 0,
     images : [],
   }
@@ -35,7 +38,9 @@ export class EditProductComponent implements OnInit{
     this.route.params.subscribe(params => {
       this.productId = params['productId'];
     });
-    console.log(this.productId);
+    // console.log(this.productId);
+
+    this.getCategories();
   }
 
   constructor(
@@ -69,6 +74,7 @@ export class EditProductComponent implements OnInit{
     formData.append('user_id', product.user_id);
     formData.append('name', product.name);
     formData.append('description', product.description);
+    formData.append('category', product.category);
     formData.append('price', product.price);
     formData.append('inStock', product.inStock);
     formData.append('priceDiscount', product.priceDiscount);
@@ -94,5 +100,16 @@ export class EditProductComponent implements OnInit{
   }
   fileDropped(fileHandel : FileHandle){
     this.product.images.push(fileHandel);
+  }
+
+  getCategories() {
+    this.productService.getAllCategories().subscribe({
+      next: (response) => {
+        this.categories = response as Category[];
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 }
