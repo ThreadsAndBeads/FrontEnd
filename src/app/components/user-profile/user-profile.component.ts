@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { Router } from '@angular/router';
+import { SellerService } from 'src/app/services/seller.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -28,7 +29,8 @@ export class UserProfileComponent implements OnInit {
   constructor(
     private tokenService: TokenStorageService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private sellerService: SellerService
   ) {}
 
   ngOnInit() {
@@ -38,7 +40,7 @@ export class UserProfileComponent implements OnInit {
     },error:(error) => {
 
     }});
-  
+
   }
 
   saveImage(imageInput: HTMLInputElement) {
