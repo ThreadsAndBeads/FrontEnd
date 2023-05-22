@@ -83,4 +83,16 @@ export class ClientOrdersComponent implements OnInit{
     return this.selectedOrder?.orderStatus === orderStatus;
   }
 
+  cancelOrder(id: any) {
+    this.orderService.cancelOrder(id).subscribe({
+      next: (Response: any) => {
+        location.reload();
+      
+      },
+      error:  (error) => {
+        console.log(error);
+      },
+    });
+  }
+
 }

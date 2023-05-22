@@ -53,6 +53,15 @@ td {
     cursor: pointer;
     text-decoration: none;
     margin-right: 5px;
+    margin-left: 5px;
+}
+.Cancel{
+  background: #000000;
+  color: white !important;
+  padding: 10px ;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .modal-body{
