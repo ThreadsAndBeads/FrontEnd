@@ -133,6 +133,26 @@
 		"yourOrder": "طلبك",
 		"zipCode": "الرمز البريدي"
 	},
+	"customerOrders": {
+		"AreYouSure": "هل أنت متأكد؟",
+		"Cancel": "الغاء",
+		"DELIVERED": "تم التوصيل",
+		"Delete": "حذف",
+		"Details": "تفاصيل",
+		"OrderAlreadyShipped": "تم شحن أو توصيل هذا الطلب بالفعل ولا يمكن إلغاؤه",
+		"OrderCanBeCancelled": "هل ترغب حقًا في حذف هذه السجلات؟ هذه العملية لا يمكن التراجع عنها",
+		"PENDING": "قيد الانتظار",
+		"SHIPPED": "تم الشحن",
+		"cancel": "الغاء",
+		"close": "غلق",
+		"noOrders": "لا توجد طلبات حتى الآن",
+		"noOrdersContent": "يبدو أنك لم تقم بأي طلب حتى الآن",
+		"orderDate": "تاريخ الطلب",
+		"orderID": "رقم الطلب",
+		"orderStatus": "حالة الطلب",
+		"placeOn": "تم تنفيذ الطلب في",
+		"yourOrders": "طلباتك"
+	},
 	"editProfile": {
 		"apartment": ":رقم الشقة",
 		"city": ":المدينة",
@@ -211,6 +231,12 @@
 		"productsBtn": "منتجات",
 		"profileBtn": "الحساب الشخصي",
 		"workshopsBtn": "ورش العمل"
+	},
+	"successModal": {
+		"close": "غلق",
+		"orderContent": "تم إنشاء طلبك بنجاح يمكنك تتبع طلبك لمزيد من المعلومات",
+		"orderCreated": "تم إنشاء الطلب",
+		"trackOrder": "تتبع الطلب"
 	},
 	"topSellerHome": {
 		"title": "الاكثر مبيعا"
