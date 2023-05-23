@@ -79,8 +79,16 @@
           class="form-control col-12 g-input"
           aria-labelledby=""
           name="title"
+          required
           [(ngModel)]="workshop.title"
+          #title="ngModel"
         />
+        <div
+          *ngIf="title.invalid && (title.dirty || title.touched || submitted)"
+          class="alert alert-danger text-danger mt-2 p-2 text-center px-3"
+        >
+          <div *ngIf="title.errors?.['required']">title is required.</div>
+        </div>
       </div>
 
       <div>

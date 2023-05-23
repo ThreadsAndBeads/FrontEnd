@@ -16,6 +16,7 @@ import { WorkshopService } from 'src/app/services/workshop.service';
 export class CreateWorkshopComponent {
   userId = this.tokenService.getUser()._id ;
   form!: FormGroup;
+  submitted = false;
   workshop : Workshop = {
     seller_id: this.userId ,
     seller_name :"",
@@ -39,6 +40,8 @@ export class CreateWorkshopComponent {
   }
 
   addWorkshop(workshopForm : NgForm){
+    this.submitted = true ; 
+    if(workshopForm.valid){   
     const workshopFormData =  this.prepareFormData(this.workshop)
     this.workshopService.addWorkshop(workshopFormData).subscribe(
       (response : Workshop) =>{
@@ -51,6 +54,7 @@ export class CreateWorkshopComponent {
         console.log(error);
       }
     );
+  }
   }
 
   prepareFormData(workshop: any): FormData {
