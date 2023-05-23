@@ -82,7 +82,7 @@ const routes: Routes = [
     children: [
       { path: 'cart', component: CartComponent },
       { path: 'checkout', component: CheckoutComponent },
-      { path: 'clientOrders', component: ClientOrdersComponent },
+      { path: 'orders', component: ClientOrdersComponent },
       { path: 'favourites', component: FavouriteComponent },
     ],
   },
