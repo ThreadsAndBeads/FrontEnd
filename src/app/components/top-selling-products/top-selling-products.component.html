@@ -12,7 +12,7 @@
         <div class="slider__info d-flex flex-column justify-content-end">
           <p class="title m-0 p-0">{{product.name}}<br><span>$ {{product.price}}</span></p>
           <div class="d-flex justify-content-between w-100">
-            <a href="#" class="details">
+            <a href="#" class="details" [routerLink]="['/productDetails', product._id]">
               {{ "productCard.detailsBtn" | translate }}
             </a>
 
