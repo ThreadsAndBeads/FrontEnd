@@ -133,6 +133,26 @@
 		"yourOrder": "Your Order",
 		"zipCode": "ZIP Code"
 	},
+	"customerOrders": {
+		"AreYouSure": "Are you Sure?",
+		"Cancel": "Cancel",
+		"DELIVERED": "DELIVERED",
+		"Delete": "Delete",
+		"Details": "Details",
+		"OrderAlreadyShipped": "This order has already been shipped or delivered and cannot be canceled.",
+		"OrderCanBeCancelled": "Do you really want to delete these records? This process cannot be undone.",
+		"PENDING": "PENDING",
+		"SHIPPED": "SHIPPED",
+		"cancel": "Cancel",
+		"close": "Close",
+		"noOrders": "No Orders Yet",
+		"noOrdersContent": "It looks like you haven't made any order yet  translate to arabic",
+		"orderDate": "order Date",
+		"orderID": "order ID",
+		"orderStatus": "order Status",
+		"placeOn": "Place on",
+		"yourOrders": "Your Orders"
+	},
 	"editProfile": {
 		"apartment": "Apartment num:",
 		"city": "City:",

@@ -1,22 +1,22 @@
 <div *ngIf="orders.length === 0">
   <div class="col-12 col-md-6 mx-auto d-flex flex-column justify-content-center mt-3">
     <img src="../../../assets/Images/emptycart.jpg" class="empty-cart-img mx-auto col-5 mt-5" alt="Empty Cart">
-    <p class="fs-5 fw-bold mb-0 pt-0 mt-3 text-center">No Orders yet</p>
-    <p class="text-center ">It looks like you haven't made any order yet</p>
+    <p class="fs-5 fw-bold mb-0 pt-0 mt-3 text-center">{{"customerOrders.noOrders" | translate}}</p>
+    <p class="text-center ">{{"customerOrders.noOrdersContent" | translate}}</p>
     <button class="shop" routerLink="/products">{{ "emptyCart.startShopping" | translate }}</button>
   </div>
 </div>
 <div class="container h-auto">
-  <h1 class="text-center mb-3" *ngIf="orders.length > 0">Your Orders</h1>
+  <h1 class="text-center mb-3" *ngIf="orders.length > 0">{{"customerOrders.yourOrders" | translate}}</h1>
 
   <div id="table-container" *ngIf="orders.length > 0">
     <table class="col-4 col-sm-4 col-md-8 col-lg-10 w-100">
       <thead>
         <tr>
-          <th>Order ID</th>
+          <th>{{"customerOrders.orderID" | translate}}</th>
           <th>Total Price</th>
-          <th>Order Status</th>
-          <th>Order Date</th>
+          <th>{{"customerOrders.orderStatus" | translate}}</th>
+          <th>{{"customerOrders.orderDate" | translate}}</th>
           <th></th>
           <th></th>
         </tr>
@@ -34,7 +34,7 @@
               data-bs-target="#exampleModal"
               (click)="selectedOrder = orderItem"
               (click)="setActiveStatus(selectedOrder?.orderStatus)"
-              >Details</a
+              >{{"customerOrders.Details" | translate}}</a
             >
                       <a
             href="#myModal"
@@ -43,7 +43,7 @@
             data-bs-target="#myModal"
             (click)="selectedOrder = orderItem"
 
-            >Cancel</a
+            >{{"customerOrders.Cancel" | translate}}</a
           >
         </tr>
       </tbody>
@@ -68,11 +68,11 @@
               <div class="row justify-content-between mt-2">
                 <div class="col">
                   <p class="text-muted">
-                    Order ID
+                    {{"customerOrders.orderID" | translate}}
                     <span class="font-weight-bold text-dark">{{ selectedOrder?._id }}</span>
                   </p>
                   <p class="text-muted">
-                    Place On
+                    {{"customerOrders.placeOn" | translate}}
                     <span class="font-weight-bold text-dark"
                       >{{ selectedOrder?.orderDate | date:'dd, MMMM yyyy' }}</span
                     >
@@ -108,9 +108,9 @@
             <div class="row px-3">
               <div class="col">
                 <ul id="progressbar">
-                  <li class="step0" id="step1">PENDING</li>
-                  <li class="step0 text-center" id="step2">SHIPPED</li>
-                  <li class="step0 text-muted text-right" id="step3">DELIVERED</li>
+                  <li class="step0" id="step1">{{"customerOrders.PENDING" | translate}}</li>
+                  <li class="step0 text-center" id="step2">{{"customerOrders.SHIPPED" | translate}}</li>
+                  <li class="step0 text-muted text-right" id="step3">{{"customerOrders.DELIVERED" | translate}}</li>
                 </ul>
               </div>
 
@@ -118,7 +118,7 @@
             </div>
             <div class="card-footer bg-white px-sm-3 pt-sm-4 px-0">
               <div class="row text-center">
-                <div class="col my-auto border-line" data-bs-dismiss="modal"><h5>Close</h5></div>
+                <div class="col my-auto border-line" data-bs-dismiss="modal"><h5>{{"customerOrders.close" | translate}}</h5></div>
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@
   </div>
 </div>
 
-<div id="myModal" class="modal fade">
+<!-- <div id="myModal" class="modal fade">
   <div class="modal-dialog modal-confirm">
     <div class="modal-content">
       <div class="modal-header d-flex justify-content-center flex-column">
@@ -151,7 +151,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <div id="myModal" class="modal fade">
   <div class="modal-dialog modal-confirm">
     <div class="modal-content">
@@ -159,22 +159,22 @@
         <div class="icon-box">
           <i class="material-icons">X</i>
         </div>
-        <h4 class="modal-title">Are you sure?</h4>
+        <h4 class="modal-title">{{"customerOrders.AreYouSure" | translate}}</h4>
       </div>
       <div class="modal-body">
         <p *ngIf="selectedOrder?.orderStatus === 'shipped' || selectedOrder?.orderStatus === 'delivered'">
-          This order has already been shipped or delivered and cannot be canceled.
+          {{"customerOrders.OrderAlreadyShipped" | translate}}
         </p>
         <p *ngIf="selectedOrder?.orderStatus !== 'shipped' && selectedOrder?.orderStatus !== 'delivered'">
-          Do you really want to delete these records? This process cannot be undone.
+          {{"customerOrders.OrderCanBeCancelled" | translate}}
         </p>
       </div>
       <div class="modal-footer d-flex justify-content-between">
 
-      <button type="button" class="btn btn-info" data-bs-dismiss="modal">Cancel</button>
+      <button type="button" class="btn btn-info" data-bs-dismiss="modal">{{"customerOrders.cancel" | translate}}</button>
         <button
         *ngIf="selectedOrder?.orderStatus !== 'shipped' && selectedOrder?.orderStatus !== 'delivered'"
-        type="button" class="btn btn-info" (click)="cancelOrder(selectedOrder._id)" [disabled]="disableDeleteButton" data-bs-dismiss="modal">Delete</button>
+        type="button" class="btn btn-danger" (click)="cancelOrder(selectedOrder._id)" [disabled]="disableDeleteButton" data-bs-dismiss="modal">{{"customerOrders.Delete" | translate}}</button>
 
       </div>
 
