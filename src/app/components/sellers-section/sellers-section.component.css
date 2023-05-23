@@ -148,6 +148,10 @@ hr {
   }
 }
 
+.parentLine{
+  position: absolute;
+  width: 100%;
+}
 .line1{
   width: 205px;
   height: 205px;
@@ -157,10 +161,6 @@ hr {
   z-index: -100;
   top: 224px;
   left: 10px;
-}
-.parentLine{
-  position: absolute;
-  width: 100%;
 }
 .line2{
   width: 210px;
@@ -173,12 +173,12 @@ hr {
   left: 14px;
 }
 .line3{
-    width: 350px;
-      height: 300px;
-      border: 6px solid #A20A0A;
-      position: absolute;
-      transform: rotate(51deg) translate(-50px, -10px);
-      z-index: -100;
-      top: 79px;
-      right: -26px;
+  width: 350px;
+  height: 300px;
+  border: 6px solid #A20A0A;
+  position: absolute;
+  transform: rotate(51deg) translate(-50px, -10px);
+  z-index: -100;
+  top: 79px;
+  right: -26px;
 }
