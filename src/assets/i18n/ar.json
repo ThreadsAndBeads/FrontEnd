@@ -134,7 +134,7 @@
 		"zipCode": "الرمز البريدي"
 	},
 	"customerOrders": {
-		"AreYouSure": "هل أنت متأكد؟",
+    "AreYouSure": "هل أنت متأكد؟",
 		"Cancel": "الغاء",
 		"DELIVERED": "تم التوصيل",
 		"Delete": "حذف",
@@ -151,6 +151,7 @@
 		"orderID": "رقم الطلب",
 		"orderStatus": "حالة الطلب",
 		"placeOn": "تم تنفيذ الطلب في",
+		"totalPrice": "السعر الإجمالي",
 		"yourOrders": "طلباتك"
 	},
 	"editProfile": {
