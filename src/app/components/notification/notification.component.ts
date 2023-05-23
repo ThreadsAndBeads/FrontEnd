@@ -21,27 +21,26 @@ export class NotificationComponent implements OnInit {
   }
   ngOnInit() {
     let userId = this.tokenService.getUser()._id;
-    const room = `seller_${userId}`;
-    this.socket.emit("join", room);
-    this.socket.on("notification", (data: any) => {
-      this.notifications.push(data); 
-      this.hasUnreadNotifications = true; 
-      this.bell!.classList.add('notify');
-        });
-
-    this.userService.getSellerNotifications(userId)
-      .subscribe(
-        (notifications) => {
-          this.notifications = this.normalizeNotifications(notifications);
-          // this.hasUnreadNotifications = this.notifications.length > 0;
-          // console.log(this.notifications);
-          
-          console.log('Received notifications:', this.notifications);
-        },
-        (error) => {
-          console.error('Failed to retrieve notifications:', error);
-        }
-      );
+    if(userId){
+      const room = `seller_${userId}`;
+      this.socket.emit("join", room);
+      this.socket.on("notification", (data: any) => {
+        this.notifications.push(data); 
+        this.hasUnreadNotifications = true; 
+        this.bell!.classList.add('notify');
+          });
+  
+      this.userService.getSellerNotifications(userId)
+        .subscribe(
+          (notifications) => {
+            this.notifications = this.normalizeNotifications(notifications);
+          },
+          (error) => {
+            console.error('Failed to retrieve notifications:', error);
+          }
+        );
+    }
+    
 
   }
 
