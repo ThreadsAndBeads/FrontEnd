@@ -268,10 +268,10 @@
     <div *ngIf="showModal" class="success-modal">
       <div class="success-modal-content mt-2">
         <svg class="checkmark mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>
-        <h2>Order Created!</h2>
-        <p>Your order has been successfully created. You can track your order for more information.</p>
-        <button class="track-btn btn-success" (click)="navigateToTrackOrder()">Track Order</button>
-        <button class="success-modal-close-btn" (click)="showModal = false">Close</button>
+        <h2>{{ "successModal.orderCreated" | translate}}</h2>
+        <p>{{ "successModal.orderContent" | translate}}</p>
+        <button class="track-btn btn-success" (click)="navigateToTrackOrder()">{{ "successModal.trackOrder" | translate}}</button>
+        <button class="success-modal-close-btn" (click)="showModal = false">{{ "successModal.close" | translate}}</button>
 
       </div>
     </div>
