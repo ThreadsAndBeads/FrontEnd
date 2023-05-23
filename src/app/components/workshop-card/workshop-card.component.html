@@ -67,10 +67,24 @@
         class="d-flex author__time flex-column align-items-baseline"
         style="float: right"
       >
-        <a rel="outline-outward" class="button outline-outward">{{
+        <a href="#myModal" rel="outline-outward" data-bs-toggle="modal" data-bs-target="#exampleModal"class="button outline-outward"
+       >{{
           "workshopCard.bookBtn" | translate
         }}</a>
       </div>
     </div>
   </div>
 </div>
+<!-- <div class="overlay"> -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modal-confirm w-auto">
+        <form class="sign-up">
+          <h1 class="sign-up-title">Register Here</h1>
+          <input type="text" class="sign-up-input" placeholder="Enter your Name" autofocus id="nameInput">
+          <input type="email" class="sign-up-input" placeholder="Enter your Email" id="emailInput">
+          <input type="submit" value="Register me up!" class="sign-up-button" (click)="sendWorkshopEmail()" data-bs-dismiss="modal">
+        </form>
+      </div>
+    </div>
+  </div>
