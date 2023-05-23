@@ -174,7 +174,7 @@ export class CheckoutComponent {
   }
   navigateToTrackOrder() {
     this.showModal = false; // Hide the modal
-    this.router.navigate(['/clientOrders']); // Navigate to the home page
+    this.router.navigate(['/customer/orders']); // Navigate to the home page
   }
 
 }

@@ -11,12 +11,14 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class SidebarComponent implements OnInit {
   currentUser: any;
+  isCustomer: any;
   constructor(
     private tokenService: TokenStorageService,
     private authService: AuthService) {
   }
   ngOnInit(): void {
     this.currentUser = this.tokenService.getUser();
+    this.isCustomer = this.currentUser.type;
   }
   ngAfterViewInit() {
     jQuery('body').on({

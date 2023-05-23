@@ -83,8 +83,11 @@ td {
 }
 .modal-footer{
   border: none;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   padding-bottom: 2px;
+
 }
 .modal-dialog{
 /* margin: 0 auto; */
@@ -295,8 +298,7 @@ small{
 
 /* no orders */
 button{
-  padding: 2px 90px;
-  /* border: 2px solid #A20A0A; */
+  padding: 2px 50px;
   margin: 5px;
   border-radius: 5px;
   width: fit-content;
@@ -328,7 +330,6 @@ button{
   pointer-events: none;
   opacity: 0.5;
 }
-
 .modal-confirm {
   color: #636363;
   width: 400px;
@@ -412,3 +413,16 @@ button{
   display: inline-block;
   margin: 100px auto;
 }
+
+.modal-footer{
+display: flex;
+justify-content: space-between;
+/* justify-items: flex-end; */
+flex-direction: row !important;
+}
+
+
+
+
+
+
