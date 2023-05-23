@@ -91,6 +91,7 @@ import { AnimatedNumberComponent } from './components/animated-number/animated-n
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -159,7 +160,7 @@ import { TimeAgoPipe } from './pipes/time-ago.pipe';
     AnimatedNumberComponent,
     EmptyFavouritesComponent,
     AnimatedNumberComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
   ],
   imports: [
     AppRoutingModule,

@@ -23,6 +23,7 @@ import { delay } from 'rxjs/operators';
   styleUrls: ['./checkout.component.css'],
 })
 export class CheckoutComponent {
+  showModal = false;
   userId = this.tokenService.getUser()._id;
   validationForm!: FormGroup;
   payment_method: any;
@@ -64,7 +65,7 @@ export class CheckoutComponent {
     const discountString = sessionStorage.getItem('discount');
     this.discount = discountString ? parseInt(discountString, 10) : 0;
     this.is_gift = sessionStorage.getItem('is_gift') === 'true';
-    
+
   }
 
   checkCartStatus() {
@@ -121,14 +122,15 @@ export class CheckoutComponent {
         is_gift: this.is_gift,
         discount: this.discount
       };
-      
+
       const newOrder = this.prepareOrder(order);
       this.orderService.createOrder(newOrder).subscribe({
         next: (res: any) => {
           this.cartService.cartUpdatedSubject.next();
           sessionStorage.removeItem('is_gift');
           sessionStorage.removeItem('discount');
-          this.router.navigate(['/home']);
+          this.showModal = true;
+          // this.router.navigate(['/home']);
         },
         error: (error: HttpErrorResponse) => {
           console.log(error);
@@ -169,6 +171,10 @@ export class CheckoutComponent {
       discount: this.discount
     };
     return newOrder;
+  }
+  navigateToTrackOrder() {
+    this.showModal = false; // Hide the modal
+    this.router.navigate(['/customer/orders']); // Navigate to the home page
   }
 
 }
