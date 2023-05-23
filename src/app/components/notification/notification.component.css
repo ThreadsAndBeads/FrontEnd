@@ -8,7 +8,7 @@
   right: 0;
   z-index: 1;
   height: 120px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .notification-dropdown ul {
@@ -68,35 +68,4 @@
   background-color: black;
   border: 2px solid black;
   border-radius: 5px;
-}
-.notification.notify::before {
-  animation: bell 1s ease-out;
-  transform-origin: center top;
-}
-
-@keyframes bell {
-  0% {
-    transform: rotate(35deg);
-  }
-  12.5% {
-    transform: rotate(-30deg);
-  }
-  25% {
-    transform: rotate(25deg);
-  }
-  37.5% {
-    transform: rotate(-20deg);
-  }
-  50% {
-    transform: rotate(15deg);
-  }
-  62.5% {
-    transform: rotate(-10deg);
-  }
-  75% {
-    transform: rotate(5deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
 }

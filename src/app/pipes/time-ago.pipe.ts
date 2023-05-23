@@ -7,7 +7,10 @@ export class TimeAgoPipe implements PipeTransform {
 
   transform(timestamp: string): string {
     const seconds = Math.floor((+new Date() - +new Date(timestamp)) / 1000);
-
+    // console.log(timestamp);
+    if(!seconds){
+      return `now`;
+    }
     if (seconds < 60) {
       return `${seconds} seconds ago`;
     }

@@ -18,7 +18,7 @@ export class SidebarComponent implements OnInit {
   }
   ngOnInit(): void {
     this.currentUser = this.tokenService.getUser();
-    this.isCustomer = this.currentUser.type;
+    this.isCustomer = !this.tokenService.isSeller();
   }
   ngAfterViewInit() {
     jQuery('body').on({
