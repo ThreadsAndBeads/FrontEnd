@@ -212,6 +212,12 @@
 		"profileBtn": "Profile",
 		"workshopsBtn": "Workshops"
 	},
+	"successModal": {
+		"close": "close",
+		"orderContent": "Your order has been successfully created. You can track your order for more information.",
+		"orderCreated": "Order Created!",
+		"trackOrder": "Track order"
+	},
 	"topSellerHome": {
 		"title": "TOP SELLER"
 	},

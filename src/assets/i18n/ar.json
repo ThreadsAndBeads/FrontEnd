@@ -212,6 +212,12 @@
 		"profileBtn": "الحساب الشخصي",
 		"workshopsBtn": "ورش العمل"
 	},
+	"successModal": {
+		"close": "غلق",
+		"orderContent": "تم إنشاء طلبك بنجاح يمكنك تتبع طلبك لمزيد من المعلومات",
+		"orderCreated": "تم إنشاء الطلب",
+		"trackOrder": "تتبع الطلب"
+	},
 	"topSellerHome": {
 		"title": "الاكثر مبيعا"
 	},

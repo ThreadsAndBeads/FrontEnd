@@ -32,24 +32,6 @@ export class ClientOrdersComponent implements OnInit{
       next: (response: any) => {
         this.orders = response.data.data;
         console.log(this.orders);
-
-        // this.orders.forEach((order: any) => {
-
-        //   const productId = order.products[0].productId;
-
-        //   this.productService.getOneProduct(productId).subscribe({
-        //     next: (productResponse: any) => {
-
-        //       order.productData = productResponse.data;
-        //       // console.log(order.productData);
-
-        //     },
-        //     error: (error) => {
-        //       console.log(error);
-        //     }
-        //   });
-        // });
-        // console.log(this.orders);
       },
       error: (error) => {
         console.log(error);
