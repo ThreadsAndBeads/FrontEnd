@@ -35,6 +35,9 @@ export class WorkshopService {
     const url = `${this.BASE_URL}/${workshop_id}`;
     return this.httpClient.patch<Workshop>(url, workshop);
   }
+  public sendWorkshopEmail(body: any) {
+    return this.httpClient.post<Workshop>(`${this.BASE_URL}/sendEmail`, body);
+  }
 }
 
 

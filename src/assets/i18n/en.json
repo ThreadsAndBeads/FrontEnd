@@ -134,7 +134,7 @@
 		"zipCode": "ZIP Code"
 	},
 	"customerOrders": {
-		"AreYouSure": "Are you Sure?",
+    "AreYouSure": "Are you Sure?",
 		"Cancel": "Cancel",
 		"DELIVERED": "DELIVERED",
 		"Delete": "Delete",
@@ -151,6 +151,7 @@
 		"orderID": "order ID",
 		"orderStatus": "order Status",
 		"placeOn": "Place on",
+		"totalPrice": "total Price",
 		"yourOrders": "Your Orders"
 	},
 	"editProfile": {
