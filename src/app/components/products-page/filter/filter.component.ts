@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter,  OnChanges, SimpleChanges } from '@angular/core';
 import { ProductService } from 'src/app/services/product/product.service';
-import { Category } from '../../model/category.model';
+import { Category } from '../../../model/category.model';
 
 @Component({
   selector: 'app-filter',

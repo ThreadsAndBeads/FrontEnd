@@ -47,7 +47,7 @@ section {
 }
 
 .container .overlay-container .overlay {
-  background-image: url("../../../assets/Images/top-view-hands-holding-furoshiki-package.jpg");
+  background-image: url("/assets/Images/top-view-hands-holding-furoshiki-package.jpg");
   background-size: cover;
   background-position: center center;
   position: absolute;

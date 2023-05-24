@@ -1,8 +1,8 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Workshop } from 'src/app/model/workshop.model';
 import { WorkshopService } from 'src/app/services/workshop/workshop.service';
-import { TokenStorageService } from '../../services/token/token-storage.service';
-import { AuthService } from '../../services/auth/auth.service';
+import { TokenStorageService } from '../../../services/token/token-storage.service';
+import { AuthService } from '../../../services/auth/auth.service';
 
 @Component({
   selector: 'app-workshop-card',
