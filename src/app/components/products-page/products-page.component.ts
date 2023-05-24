@@ -53,12 +53,14 @@ export class ProductsPageComponent implements OnInit {
   }
 
   getProducts(query?: string) {
+    
+    console.log('getProducts() called with query: ', query);
     this.productService.products = [];
     this.productService.getAllProducts(this.page, this.limit, query).subscribe(
       (response: any) => {
         this.cdr.detectChanges();
         const { products } = response.data;
-        this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
+        this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit); 
         this.productService.products.push(...products);
       },
       ({ status, message }: HttpErrorResponse) => {
@@ -93,7 +95,7 @@ export class ProductsPageComponent implements OnInit {
     let query = this.setFilterQuery();
     console.log(query);
     this.filterBy = { ...this.filterBy };
-    this.getProducts(query);
+    // this.getProducts(query);
   }
 
   clearFilter() {
@@ -103,7 +105,7 @@ export class ProductsPageComponent implements OnInit {
       rating: null,
     };
     this.filterBy = { ...this.filterBy };
-    this.getProducts();
+    // this.getProducts();
   }
 
   setFilterQuery() {
