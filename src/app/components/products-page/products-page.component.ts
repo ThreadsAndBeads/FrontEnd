@@ -12,11 +12,9 @@ export class ProductsPageComponent implements OnInit {
   filterBy: {
     categories: string[] | null;
     price: { min: number; max: number } | null;
-    rating: number | null;
   } = {
     categories: null,
     price: null,
-    rating: null,
   };
 
   page = 1;
@@ -53,14 +51,14 @@ export class ProductsPageComponent implements OnInit {
   }
 
   getProducts(query?: string) {
-    
+
     console.log('getProducts() called with query: ', query);
     this.productService.products = [];
     this.productService.getAllProducts(this.page, this.limit, query).subscribe(
       (response: any) => {
         this.cdr.detectChanges();
         const { products } = response.data;
-        this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit); 
+        this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
         this.productService.products.push(...products);
       },
       ({ status, message }: HttpErrorResponse) => {
@@ -102,7 +100,7 @@ export class ProductsPageComponent implements OnInit {
     this.filterBy = {
       categories: null,
       price: null,
-      rating: null,
+
     };
     this.filterBy = { ...this.filterBy };
     // this.getProducts();
@@ -117,9 +115,6 @@ export class ProductsPageComponent implements OnInit {
     }
     if (this.filterBy.price) {
       query += `price[gte]=${this.filterBy.price.min}&price[lte]=${this.filterBy.price.max}&`;
-    }
-    if (this.filterBy.rating) {
-      query += `rating=${this.filterBy.rating}&`;
     }
     if (this.sortBySelectedValue != "default") {
       query += `sort=${this.sortBySelectedValue}&`;
@@ -150,7 +145,7 @@ export class ProductsPageComponent implements OnInit {
   viewFilter() {
     let filter = document.querySelector('.filterBy') as HTMLElement;
     if(filter.classList.contains('shown')){
-      filter.style.transform = "translateX(-100%)";  
+      filter.style.transform = "translateX(-100%)";
       filter.classList.remove('shown')
     }else{
       filter.style.transform = "translateX(0%)";

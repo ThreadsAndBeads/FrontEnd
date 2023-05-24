@@ -129,16 +129,15 @@ label {
   top: 0;
   width: 100%;
   height: 100%;
-  background: url(/assets/Images/pexels-giovana-spiller-6679220.jpg) no-repeat
-    center center fixed;
+  background: url(/assets/Images/woman-craftmaster-pottery-shop.jpg) no-repeat center center fixed;
   background-size: cover;
-  filter: blur(3px);
+  filter: brightness(0.7);
 }
 
 form {
   position: relative;
   margin: 0 auto;
-  background: rgba(130, 130, 130, 0.3);
+  background: rgb(43 40 40 / 40%);
   padding: 20px 22px;
   border: 1px solid;
   border-top-color: rgba(255, 255, 255, 0.4);
@@ -209,7 +208,7 @@ form button[type="submit"] {
 }
 
 input[type="date"]{
-  background-color: rgb(162, 10, 10,0.88);
+  background-color: rgb(255 255 255 / 20%);
   padding: 10px;
   font-family: "Roboto Mono",monospace;
   color: #ffffff;

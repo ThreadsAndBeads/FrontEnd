@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { WorkshopService } from 'src/app/services/workshop/workshop.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-workshop-page',
@@ -8,14 +9,27 @@ import { WorkshopService } from 'src/app/services/workshop/workshop.service';
   styleUrls: ['./workshop-page.component.css']
 })
 export class WorkshopPageComponent implements OnInit {
-  constructor(protected workshopService: WorkshopService) {}
+  constructor(protected workshopService: WorkshopService,
+  private AuthService: AuthService) { }
   page = 1;
   limit = 2;
   NumberOfPages!: number;
-  workshops = []; 
+  workshops = [];
+  sellerImage: any;
   ngOnInit(): void {
     this.getWorkshops();
-    }
+  }
+
+  getSeller(userId: any) {
+    this.AuthService.getUserByID(userId).subscribe({
+      next: (response: any) => {
+        this.sellerImage = response.data.user.image;
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
     getWorkshops() {
       this.workshopService.getAllWorkshops(this.page, this.limit).subscribe(
         (response: any) => {
@@ -38,14 +52,14 @@ export class WorkshopPageComponent implements OnInit {
         this.getWorkshops();
       }
     }
-  
+
     next() {
       if (this.page < this.NumberOfPages) {
         this.page++;
         this.getWorkshops();
       }
     }
-  
+
     navToPage(page: number){
       this.page = page;
       this.getWorkshops();
