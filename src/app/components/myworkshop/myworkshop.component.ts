@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Workshop } from '../../model/workshop.model';
-import { WorkshopService } from '../../services/workshop.service';
-import { TokenStorageService } from '../../services/token-storage.service';
+import { WorkshopService } from '../../services/workshop/workshop.service';
+import { TokenStorageService } from '../../services/token/token-storage.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import * as bootstrap from 'bootstrap';
 

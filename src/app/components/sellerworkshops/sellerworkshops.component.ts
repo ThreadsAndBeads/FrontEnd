@@ -4,7 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { NavigationExtras, Router } from '@angular/router';
 import * as bootstrap from 'bootstrap';
 import { Workshop } from 'src/app/model/workshop.model';
-import { WorkshopService } from 'src/app/services/workshop.service';
+import { WorkshopService } from 'src/app/services/workshop/workshop.service';
 
 @Component({
   selector: 'app-sellerworkshops',

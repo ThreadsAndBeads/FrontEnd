@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartService } from 'src/app/services/cart.service';
-import { FavouriteService } from 'src/app/services/favourite.service';
-import { ProductService } from 'src/app/services/product.service';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { CartService } from 'src/app/services/cart/cart.service';
+import { FavouriteService } from 'src/app/services/favorite/favourite.service';
+import { ProductService } from 'src/app/services/product/product.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',

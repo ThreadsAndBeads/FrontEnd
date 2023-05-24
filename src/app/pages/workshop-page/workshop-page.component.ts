@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { WorkshopService } from 'src/app/services/workshop.service';
+import { WorkshopService } from 'src/app/services/workshop/workshop.service';
 
 @Component({
   selector: 'app-workshop-page',

@@ -1,5 +1,5 @@
 import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { TokenStorageService } from '../services/token-storage.service';
+import { TokenStorageService } from '../services/token/token-storage.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { inject } from '@angular/core';
 

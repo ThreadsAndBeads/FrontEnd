@@ -1,10 +1,10 @@
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService ,GoogleSigninButtonModule, SocialLoginModule, SocialUser} from '@abacritt/angularx-social-login';
 
 import { Router } from '@angular/router';
-import {  AuthService } from 'src/app/services/auth.service';
+import {  AuthService } from 'src/app/services/auth/auth.service';
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import * as bootstrap from 'bootstrap';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 

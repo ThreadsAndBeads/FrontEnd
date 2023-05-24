@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/model/product.model';
-import { AuthService } from 'src/app/services/auth.service';
-import { CartService } from 'src/app/services/cart.service';
-import { FavouriteService } from 'src/app/services/favourite.service';
-import { ProductService } from 'src/app/services/product.service';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { CartService } from 'src/app/services/cart/cart.service';
+import { FavouriteService } from 'src/app/services/favorite/favourite.service';
+import { ProductService } from 'src/app/services/product/product.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 
 @Component({
   selector: 'app-product-details',
