@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-const TOKEN_KEY =  "auth-token";
-const USER_ID_KEY =  "user";
 
 @Injectable({
   providedIn: 'root'
@@ -9,28 +7,35 @@ const USER_ID_KEY =  "user";
 
 export class TokenStorageService {
   constructor() { }
+  private TOKEN_KEY = 'threadAndBeads_token_' ;
+  private USER_ID_KEY = 'threadAndBeads_user_id_' ;
 
-  public setToken(token: string){
-    window.localStorage.setItem(TOKEN_KEY, token);
+  public setToken(token: string): void {
+    sessionStorage.setItem(this.TOKEN_KEY, token);
   }
-  public setUser(user: any){
-    window.localStorage.setItem(USER_ID_KEY, JSON.stringify(user));
+
+  public setUser(user: any): void {
+    sessionStorage.setItem(this.USER_ID_KEY, JSON.stringify(user));
   }
-  public getToken(){
-    return window.localStorage.getItem(TOKEN_KEY);
+
+  public getToken(): any {
+    return sessionStorage.getItem(this.TOKEN_KEY);
   }
-  public getUser(){
-    const user =  window.localStorage.getItem(USER_ID_KEY) ;
+
+  public getUser(): any {
+    const user = sessionStorage.getItem(this.USER_ID_KEY);
     if (user) {
       return JSON.parse(user);
     }
-    return {};
+    return null;
   }
-  public removeUser(){
-    window.localStorage.removeItem(USER_ID_KEY);
+
+  public removeUser(): void {
+    sessionStorage.removeItem(this.USER_ID_KEY);
   }
-  public removeToken(){
-    window.localStorage.removeItem(TOKEN_KEY);
+
+  public removeToken(): void {
+    sessionStorage.removeItem(this.TOKEN_KEY);
   }
   public isLoggedIn(): boolean {
     const token = this.getToken();
