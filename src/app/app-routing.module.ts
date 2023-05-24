@@ -83,7 +83,7 @@ const routes: Routes = [
       { path: 'cart', component: CartComponent },
       { path: 'checkout', component: CheckoutComponent },
       { path: 'orders', component: ClientOrdersComponent },
-      { path: 'favourites', component: FavouriteComponent },
+      { path: 'favorites', component: FavouriteComponent },
     ],
   },
   { path: '**', component: ErrorComponent },

@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FileHandle } from 'src/app/model/file-handler.model';
 import { Product } from 'src/app/model/product.model';
-import { ProductService } from 'src/app/services/product.service';
+import { ProductService } from 'src/app/services/product/product.service';
 import { NgForm } from '@angular/forms';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 import { ActivatedRoute } from '@angular/router';
 import {Router} from "@angular/router"
 import { Category } from 'src/app/model/category.model';

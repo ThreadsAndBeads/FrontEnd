@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
-import { TokenStorageService } from './token-storage.service';
+import { TokenStorageService } from '../token/token-storage.service';
 
 const BASEURL = 'http://localhost:7000/api/v1/users';
 declare const FB: any;

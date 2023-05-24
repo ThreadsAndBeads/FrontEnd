@@ -10,10 +10,10 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Order } from 'src/app/model/order.model';
-import { CartService } from 'src/app/services/cart.service';
-import { OrderService } from 'src/app/services/order.service';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
-import { PaymentService } from 'src/app/services/payment.service';
+import { CartService } from 'src/app/services/cart/cart.service';
+import { OrderService } from 'src/app/services/order/order.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
+import { PaymentService } from 'src/app/services/payment/payment.service';
 import { delay } from 'rxjs/operators';
 
 

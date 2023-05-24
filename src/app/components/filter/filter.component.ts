@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter,  OnChanges, SimpleChanges } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
+import { ProductService } from 'src/app/services/product/product.service';
 import { Category } from '../../model/category.model';
 
 @Component({
@@ -38,9 +38,10 @@ export class FilterComponent implements OnChanges {
       },
     });
   }
-  
+
   updateMaxInputPrice() {
     this.maxInputPrice = Math.max(this.minInputPrice, this.maxInputPrice);
+    // this.filterBy = cloneDeep(this.filterBy);
     this.filterBy['price'] = {
       min: this.minInputPrice,
       max: this.maxInputPrice,
@@ -51,6 +52,7 @@ export class FilterComponent implements OnChanges {
 
   updateMinInputPrice() {
     this.minInputPrice = Math.min(this.maxInputPrice, this.minInputPrice);
+    // this.filterBy = cloneDeep(this.filterBy);
     this.filterBy['price'] = {
       min: this.minInputPrice,
       max: this.maxInputPrice,
@@ -76,20 +78,6 @@ export class FilterComponent implements OnChanges {
     this.filterByEvent.emit(this.filterBy);
   }
 
-  ratingFilter(min: number) {
-    let allStars = document.querySelectorAll('.ratingStar');
-    allStars.forEach((star, i) => {
-      if (i < min) {
-        star.classList.add('bi-star-fill');
-        star.classList.remove('bi-star');
-      } else {
-        star.classList.add('bi-star');
-        star.classList.remove('bi-star-fill');
-      }
-    });
-    this.filterBy['rating'] = min;
-    this.filterByEvent.emit(this.filterBy);
-  }
 
   resetCategory() {
     const checkedCheckboxes = document.querySelectorAll(
@@ -119,6 +107,5 @@ export class FilterComponent implements OnChanges {
   resetInputFilters() {
     this.resetCategory();
     this.resetPrice();
-    this.ratingFilter(0);
   }
 }

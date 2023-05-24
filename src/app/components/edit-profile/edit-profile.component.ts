@@ -3,8 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FileHandle } from 'src/app/model/file-handler.model';
 import { User } from 'src/app/model/userProfile.model';
-import { AuthService } from 'src/app/services/auth.service';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 import { switchMap, map } from 'rxjs/operators';
 @Component({
   selector: 'app-edit-profile',

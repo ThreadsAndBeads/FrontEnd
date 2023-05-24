@@ -4,8 +4,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FileHandle } from 'src/app/model/file-handler.model';
 import { Workshop } from 'src/app/model/workshop.model';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
-import { WorkshopService } from 'src/app/services/workshop.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
+import { WorkshopService } from 'src/app/services/workshop/workshop.service';
 @Component({
   selector: 'app-edit-workshop',
   templateUrl: './edit-workshop.component.html',

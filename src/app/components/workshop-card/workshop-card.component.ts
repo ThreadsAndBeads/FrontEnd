@@ -1,6 +1,8 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Workshop } from 'src/app/model/workshop.model';
-import { WorkshopService } from 'src/app/services/workshop.service';
+import { WorkshopService } from 'src/app/services/workshop/workshop.service';
+import { TokenStorageService } from '../../services/token/token-storage.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-workshop-card',
@@ -9,8 +11,10 @@ import { WorkshopService } from 'src/app/services/workshop.service';
 })
 export class WorkshopCardComponent  {
   @Input() workshop: any
+  sellerImage: any;
+  constructor(private workshopService: WorkshopService,
+  private AuthService: AuthService) { }
 
-  constructor(private workshopService: WorkshopService){}
   sendWorkshopEmail() {
   const nameInput = document.getElementById('nameInput') as HTMLInputElement;
   const emailInput = document.getElementById('emailInput') as HTMLInputElement;
@@ -28,6 +32,7 @@ export class WorkshopCardComponent  {
       }
     );
   }
+
 }
 
 

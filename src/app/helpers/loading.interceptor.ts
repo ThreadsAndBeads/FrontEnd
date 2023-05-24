@@ -8,7 +8,7 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { finalize, delay, tap } from 'rxjs/operators';
-import { LoaderService } from '../services/loader.service';
+import { LoaderService } from '../services/loader/loader.service';
 
 
 @Injectable()

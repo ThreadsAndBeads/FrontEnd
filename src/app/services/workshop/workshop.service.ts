@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Workshop } from '../model/workshop.model';
+import { Workshop } from '../../model/workshop.model';
 import { map } from 'rxjs/operators';
 
 @Injectable({

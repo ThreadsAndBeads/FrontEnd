@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 import {io}  from 'socket.io-client';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-notification',

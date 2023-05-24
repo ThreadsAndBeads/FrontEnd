@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, Output } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { ProductService } from 'src/app/services/product/product.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 
 @Component({
   selector: 'app-seller-products',

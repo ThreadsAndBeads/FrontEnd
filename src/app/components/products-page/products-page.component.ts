@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
+import { ProductService } from 'src/app/services/product/product.service';
 import { of } from 'rxjs';
 
 @Component({
@@ -12,11 +12,9 @@ export class ProductsPageComponent implements OnInit {
   filterBy: {
     categories: string[] | null;
     price: { min: number; max: number } | null;
-    rating: number | null;
   } = {
     categories: null,
     price: null,
-    rating: null,
   };
 
   page = 1;
@@ -53,6 +51,8 @@ export class ProductsPageComponent implements OnInit {
   }
 
   getProducts(query?: string) {
+
+    console.log('getProducts() called with query: ', query);
     this.productService.products = [];
     this.productService.getAllProducts(this.page, this.limit, query).subscribe(
       (response: any) => {
@@ -93,17 +93,17 @@ export class ProductsPageComponent implements OnInit {
     let query = this.setFilterQuery();
     console.log(query);
     this.filterBy = { ...this.filterBy };
-    this.getProducts(query);
+    // this.getProducts(query);
   }
 
   clearFilter() {
     this.filterBy = {
       categories: null,
       price: null,
-      rating: null,
+
     };
     this.filterBy = { ...this.filterBy };
-    this.getProducts();
+    // this.getProducts();
   }
 
   setFilterQuery() {
@@ -115,9 +115,6 @@ export class ProductsPageComponent implements OnInit {
     }
     if (this.filterBy.price) {
       query += `price[gte]=${this.filterBy.price.min}&price[lte]=${this.filterBy.price.max}&`;
-    }
-    if (this.filterBy.rating) {
-      query += `rating=${this.filterBy.rating}&`;
     }
     if (this.sortBySelectedValue != "default") {
       query += `sort=${this.sortBySelectedValue}&`;
@@ -148,7 +145,7 @@ export class ProductsPageComponent implements OnInit {
   viewFilter() {
     let filter = document.querySelector('.filterBy') as HTMLElement;
     if(filter.classList.contains('shown')){
-      filter.style.transform = "translateX(-100%)";  
+      filter.style.transform = "translateX(-100%)";
       filter.classList.remove('shown')
     }else{
       filter.style.transform = "translateX(0%)";

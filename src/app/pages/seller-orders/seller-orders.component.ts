@@ -1,7 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
-import { OrderService } from 'src/app/services/order.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
+import { OrderService } from 'src/app/services/order/order.service';
 import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-seller-orders',

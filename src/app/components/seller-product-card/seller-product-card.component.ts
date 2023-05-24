@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
+import { ProductService } from 'src/app/services/product/product.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-seller-product-card',
