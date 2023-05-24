@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/model/order.model';
-import { OrderService } from 'src/app/services/order.service';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { OrderService } from 'src/app/services/order/order.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 import { Product } from '../../model/product.model';
-import { ProductService } from 'src/app/services/product.service';
+import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
   selector: 'app-client-orders',

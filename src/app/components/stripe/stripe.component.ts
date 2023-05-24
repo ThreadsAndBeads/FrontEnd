@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PaymentService } from 'src/app/services/payment.service';
+import { PaymentService } from 'src/app/services/payment/payment.service';
 
 @Component({
   selector: 'app-stripe',

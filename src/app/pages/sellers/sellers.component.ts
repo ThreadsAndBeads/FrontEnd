@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { SellerService } from 'src/app/services/seller.service';
+import { SellerService } from 'src/app/services/seller/seller.service';
 
 @Component({
   selector: 'app-sellers',

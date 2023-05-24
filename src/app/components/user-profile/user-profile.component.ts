@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 import { Router } from '@angular/router';
-import { SellerService } from 'src/app/services/seller.service';
+import { SellerService } from 'src/app/services/seller/seller.service';
 
 @Component({
   selector: 'app-user-profile',

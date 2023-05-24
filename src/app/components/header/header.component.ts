@@ -1,9 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { CartService } from 'src/app/services/cart.service';
-import { FavouriteService } from 'src/app/services/favourite.service';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { CartService } from 'src/app/services/cart/cart.service';
+import { FavouriteService } from 'src/app/services/favorite/favourite.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 
 
 @Component({

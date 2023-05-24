@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FavouriteService } from 'src/app/services/favourite.service';
+import { FavouriteService } from 'src/app/services/favorite/favourite.service';
 
 @Component({
   selector: 'app-favourite',

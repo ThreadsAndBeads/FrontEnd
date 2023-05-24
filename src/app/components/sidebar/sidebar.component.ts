@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 import * as bootstrap from 'bootstrap';
 import * as jQuery from 'jquery';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-sidebar',
