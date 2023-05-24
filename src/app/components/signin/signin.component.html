@@ -1,0 +1,55 @@
+<div class="form sign-in-form">
+  <div class="wrapper">
+    <form [formGroup]="validationForm" (ngSubmit)="SignInSubmit()" method="post">
+      <h1>Sign In</h1>
+      <input
+        type="email"
+        placeholder="Email"
+        name="email"
+        formControlName="email"
+        [ngClass]="{
+                'is-invalid':
+                  email?.invalid && (email?.dirty || email?.touched),
+                'is-valid': !email?.invalid && (email?.dirty || email?.touched)
+              }"
+      />
+      <div class="alert alert-danger text-danger mt-2 p-2 text-center px-3"
+        *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+        <p style="font-size: small; margin: 0">
+          <small *ngIf="email?.errors?.['required']">Email is required.</small>
+          <small *ngIf="email?.errors?.['email']">Please enter a valid email address.</small>
+        </p>
+      </div>
+      <div class="alert alert-danger text-danger mt-2 p-2 text-center " *ngIf="email?.valid && error.email ">
+        <small>{{ error.email }}</small>
+      </div>
+      <input
+        type="password"
+        placeholder="password"
+        name="password"
+        formControlName="password"
+        [ngClass]="{
+                'is-invalid':
+                  password?.invalid && (password?.dirty || password?.touched),
+                'is-valid':
+                  !password?.invalid && (password?.dirty || password?.touched)
+              }"
+      />
+      <div class="alert alert-danger text-danger mt-2 p-2 text-center "
+        *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+        <p style="font-size: small; margin: 0">
+          <small *ngIf="password?.errors?.['required']">Password is required.</small>
+          <small *ngIf="password?.errors?.['minlength']">please enter password contain capital word , number and special
+            character .</small>
+          </p>
+        </div>
+        <div class="alert alert-danger text-danger mt-2 p-2 text-center "
+        *ngIf="password?.valid && error.password ">
+          <small>{{ error.password }}</small>
+        </div>
+      <a routerLink="/forgetPassword">Forget Password?</a>
+      <button type="submit">Sign In</button>
+      <div *ngIf="error.invalidData" class="error">{{ error.invalidData }}</div>
+    </form>
+  </div>
+</div>

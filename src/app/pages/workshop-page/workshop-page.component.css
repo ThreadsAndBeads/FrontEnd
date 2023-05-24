@@ -1,0 +1,63 @@
+
+button {
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  font-size: 17px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ffffff1f;
+  border-radius: 20px;
+  background: #F6EEC9;
+  -webkit-box-shadow: 5px 5px 15px #cccccc, -5px -5px 15px #ffffff;
+  box-shadow: 5px 5px 15px #cccccc, -5px -5px 15px #ffffff;
+  -webkit-transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+  color: #357af0;
+  background: linear-gradient(145deg, #d4d4d4, #fbfbfb);
+  -webkit-box-shadow: 5px 5px 15px #cccccc, -5px -5px 15px #ffffff;
+  box-shadow: 5px 5px 15px #cccccc, -5px -5px 15px #ffffff;
+}
+
+button:active {
+  color: #357af0;
+  background: #ebebeb;
+  -webkit-box-shadow: inset 5px 5px 15px #cccccc, inset -5px -5px 15px #ffffff;
+  box-shadow: inset 5px 5px 15px #cccccc, inset -5px -5px 15px #ffffff;
+}
+
+.workshop-cover {
+  position: relative;
+  background-image: url("/assets/Images/pexels-brett-sayles-6424244.jpg") !important;
+  width: 100%;
+  height: 550px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 9rem;
+}
+.workshop-header {
+  position: absolute;
+  top: 65%;
+  left: 10%;
+  background-color: #996d47;
+  width: 46%;
+  height: 300px;
+  padding: 5%;
+  color: white;
+  line-height: 1.6;
+}
+.workshop-header h1 {
+  font-family: "Delicious Handrawn", cursive;
+}
+@media only screen and (max-width: 768px) {
+  .workshop-header {
+    top: 25%;
+    left: 10%;
+    width: 80%;
+    padding: 20px;
+  }
+}

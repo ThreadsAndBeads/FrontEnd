@@ -1,0 +1,278 @@
+<div class="row w-100 m-0" style="padding: 100px 20px">
+  <ng-container>
+    <div class="checkout-container-all">
+      <form [formGroup]="validationForm" (ngSubmit)="createOrder()">
+        <div class="row justify-content-between">
+          <div
+            class="col-md-8 col-sm-12 cartTotalPrices"
+            style="margin-bottom: 45px"
+          >
+            <h3 class="mt-3 text-center">
+              {{ "checkout.billingDetails" | translate }}
+            </h3>
+            <div class="input-fields px-4 mt-4 mb-5">
+              <div class="row">
+                <div class="">
+                  <label for="name">{{
+                    "checkout.fullName" | translate
+                  }}</label>
+                  <input
+                    type="text"
+                    id="name"
+                    formControlName="client_name"
+                    name="client_name"
+                    [ngClass]="{
+                      'is-invalid':
+                        client_name?.invalid &&
+                        (client_name?.dirty || client_name?.touched),
+                      'is-valid':
+                        !client_name?.invalid &&
+                        (client_name?.dirty || client_name?.touched)
+                    }"
+                  />
+                  <div
+                    class="alert alert-danger text-danger mt-2 p-2 text-center px-3"
+                    *ngIf="
+                      client_name?.invalid &&
+                      (client_name?.dirty ||
+                        client_name?.touched ||
+                        error.client_name)
+                    "
+                  >
+                    <p style="font-size: small; margin: 0">
+                      <small
+                        *ngIf="client_name?.errors?.['required'] ||
+                      error.client_name"
+                        >{{ "checkout.nameRequired" | translate }}.</small
+                      >
+                    </p>
+                  </div>
+                  <label for="address">{{
+                    "checkout.address" | translate
+                  }}</label>
+                  <input
+                    type="text"
+                    id="address"
+                    formControlName="address"
+                    name="address"
+                    [ngClass]="{
+                      'is-invalid':
+                        address?.invalid &&
+                        (address?.dirty || address?.touched),
+                      'is-valid':
+                        !address?.invalid &&
+                        (address?.dirty || address?.touched)
+                    }"
+                  />
+                  <div
+                    class="alert alert-danger text-danger mt-2 p-2 text-center px-3"
+                    *ngIf="
+                      address?.invalid &&
+                      (address?.dirty || address?.touched || error.address)
+                    "
+                  >
+                    <p style="font-size: small; margin: 0">
+                      <small *ngIf="address?.errors?.['required']"
+                        >{{ "checkout.addressRequired" | translate }}.</small
+                      >
+                    </p>
+                  </div>
+                  <div class="small-inputs">
+                    <div class="me-3">
+                      <label for="phone">{{
+                        "checkout.phone" | translate
+                      }}</label>
+                      <input
+                        type="text"
+                        id="phone"
+                        formControlName="phone"
+                        name="phone"
+                        [ngClass]="{
+                          'is-invalid':
+                            phone?.invalid && (phone?.dirty || phone?.touched),
+                          'is-valid':
+                            !phone?.invalid && (phone?.dirty || phone?.touched)
+                        }"
+                      />
+                    </div>
+
+                    <div>
+                      <label for="ZIP">{{
+                        "checkout.zipCode" | translate
+                      }}</label>
+                      <input type="text" id="ZIP" name="ZIP" />
+                    </div>
+                  </div>
+                  <div
+                    class="text-danger mt-1"
+                    *ngIf="
+                      phone?.invalid &&
+                      (phone?.dirty || phone?.touched || error.phone)
+                    "
+                  >
+                    <p style="font-size: small; margin: 0">
+                      <small *ngIf="phone?.errors?.['required']"
+                        >{{ "checkout.phoneRequired" | translate }}.</small
+                      >
+                    </p>
+                  </div>
+                  <div class="small-inputs">
+                    <div class="me-3">
+                      <label for="city">{{
+                        "checkout.city" | translate
+                      }}</label>
+                      <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        formControlName="city"
+                        [ngClass]="{
+                          'is-invalid':
+                            city?.invalid && (city?.dirty || city?.touched),
+                          'is-valid':
+                            !city?.invalid && (city?.dirty || city?.touched)
+                        }"
+                      />
+                    </div>
+                    <div>
+                      <label for="apartmentNo">{{
+                        "checkout.apartment" | translate
+                      }}</label>
+                      <input type="text" id="apartmentNo" name="apartmentNo" />
+                    </div>
+                  </div>
+                  <div
+                    class="text-danger mt-1"
+                    *ngIf="
+                      city?.invalid &&
+                      (city?.dirty || city?.touched || error.city)
+                    "
+                  >
+                    <p style="font-size: small; margin: 0">
+                      <small *ngIf="city?.errors?.['required']"
+                        >{{ "checkout.cityRequired" | translate }}.</small
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <div class="d-flex justify-content-between">
+                <a routerLink="/cart" class="text-decoration-none text-dark">
+                  <i
+                    class="bi bi-chevron-double-left"
+                    style="vertical-align: middle"
+                  >
+                    {{ "checkout.returnToCart" | translate }}</i
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-container cartTotal col-md-4 col-sm-12 px-3 pb-5">
+            <div class="cartTotalsForm">
+              <h3 class="text-center">
+                {{ "checkout.yourOrder" | translate }}
+              </h3>
+              <div class="cartTotalPrices col-12 p-4">
+                <div class="d-flex justify-content-between my-2">
+                  <span>{{ "checkout.subTotal" | translate }}</span>
+                  <span class="price text-muted">${{ subTotalPrice }}</span>
+                </div>
+                <div class="d-flex justify-content-between my-2">
+                  <span>{{ "checkout.shipping" | translate }}</span>
+                  <span class="price text-muted">- ${{shipping}}</span>
+                </div>
+                <div class="d-flex justify-content-between my-2">
+                  <span>{{ "checkout.tax" | translate }}</span>
+                  <span class="price text-muted">- ${{tax}}</span>
+                </div>
+                <div class="d-flex justify-content-between my-2">
+                  <span>{{ "checkout.discount" | translate }}</span>
+                  <span class="price text-muted">- ${{discount}}</span>
+                </div>
+                <hr class="" />
+                <div
+                  class="d-flex justify-content-between my-2 text-bold"
+                  style="font-size: 14px"
+                >
+                  <span class="text-uppercase">{{
+                    "checkout.totalCost" | translate
+                  }}</span>
+                  <span class="price">${{ totalPrice }}</span>
+                </div>
+              </div>
+              <div class="payment-method">
+                <h3 class="text-center mt-2">
+                  {{ "checkout.paymentMethod" | translate }}
+                </h3>
+                <ul class="list-unstyled p-5">
+                  <li class="wc_payment_method payment_method_paypal">
+                    <input
+                      id="payment_method_paypal"
+                      type="radio"
+                      class="input-radio valid mx-2"
+                      name="payment_method"
+                      value="credit"
+                      (change)="paymentMethod($event)"
+                    />
+
+                    <label for="payment_method_paypal">
+                      <i class="bi bi-credit-card-2-front mx-3">
+                        {{ "checkout.payWithCreditCard" | translate }}
+                      </i>
+                    </label>
+                  </li>
+                  <li class="wc_payment_method payment_method_cash">
+                    <input
+                      id="payment_method_cash"
+                      type="radio"
+                      class="input-radio valid mx-2"
+                      name="payment_method"
+                      value="cash"
+                      (change)="paymentMethod($event)"
+                      checked
+                    />
+
+                    <label for="payment_method_cash">
+                      <i class="bi bi-wallet2 mx-3">
+                        {{ "checkout.payWithCash" | translate }}
+                      </i>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="d-flex justify-content-center w-100 pay-now mb-5">
+                <button
+                  class="toCheckout"
+                  type="submit"
+                  (click)="isCredit($event)"
+                >
+                  <span class="top-key"></span>
+                  <span class="text">{{
+                    "checkout.purchaseNow" | translate
+                  }}</span>
+                  <span class="bottom-key-1"></span>
+                  <span class="bottom-key-2"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </ng-container>
+    <!-- Modal -->
+    <div *ngIf="showModal" class="success-modal">
+      <div class="success-modal-content mt-2">
+        <svg class="checkmark mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>
+        <h2>{{ "successModal.orderCreated" | translate}}</h2>
+        <p>{{ "successModal.orderContent" | translate}}</p>
+        <button class="track-btn btn-success" (click)="navigateToTrackOrder()">{{ "successModal.trackOrder" | translate}}</button>
+        <button class="success-modal-close-btn" (click)="showModal = false">{{ "successModal.close" | translate}}</button>
+
+      </div>
+    </div>
+</div>

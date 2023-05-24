@@ -1,0 +1,95 @@
+.filter{
+  padding: 3px 5px;
+  background-color: #e9ecef;
+  color: #000;
+  border-radius: 10px;
+  margin-right: 10px;
+  font-size: 13px;
+  border: 1px solid #f1f1f1;
+  box-sizing: border-box;
+  height: 27px;
+}
+
+.filter i{
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter:hover{
+  color: #eee;
+  background-color: #7e7e7e;
+}
+
+.FilterClearAll{
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.FilterClearAll:hover{
+  color: red;
+}
+
+button {
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  font-size: 17px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ffffff1f;
+  border-radius: 20px;
+  background-color: #F6EEC9;
+  -webkit-box-shadow: 5px 5px 15px #cccccc,
+    -5px -5px 15px #ffffff;
+  box-shadow: 5px 5px 15px #cccccc,
+    -5px -5px 15px #ffffff;
+  -webkit-transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+  color: #357af0;
+  background-color: linear-gradient(145deg, #d4d4d4, #fbfbfb);
+  -webkit-box-shadow: 5px 5px 15px #cccccc,
+    -5px -5px 15px #ffffff;
+  box-shadow: 5px 5px 15px #cccccc,
+    -5px -5px 15px #ffffff;
+}
+
+button:active {
+  color: #357af0;
+  background-color: #ebebeb;
+  -webkit-box-shadow: inset 5px 5px 15px #cccccc,
+    inset -5px -5px 15px #ffffff;
+  box-shadow: inset 5px 5px 15px #cccccc,
+    inset -5px -5px 15px #ffffff;
+}
+
+
+@media(max-width: 768px){
+  .filterBy{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    background-color: #fff;
+  }
+}
+
+@media(min-width: 769px){
+  .toggleFilter{
+    display: none;
+  }
+}
+
+.toggleFilter {
+  position: absolute;
+  right: -45px;
+  top: 150px;
+  padding: 0 10px;
+}
+
+.toggleFilter:hover {
+  background-color: #000;
+  color: #fff;
+}

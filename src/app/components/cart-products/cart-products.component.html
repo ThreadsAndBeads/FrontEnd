@@ -1,0 +1,55 @@
+<table class="table w-100" *ngIf="cartProducts" >
+  <thead>
+    <th colspan="2">{{ "cart.productName" | translate }}</th>
+    <th colspan="1">{{ "cart.productPrice" | translate }}</th>
+    <th colspan="1">{{ "cart.productQuantity" | translate }}</th>
+    <th colspan="1">{{ "cart.productTotalPrice" | translate }}</th>
+    <th colspan="1"></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of cartProducts">
+      <td colspan="2 d-flex">
+        <img
+          [src]="product.productId.images[0]"
+          class="me-3"
+          alt=""
+        />
+        <p class="product-name d-inline-block">{{ product.productId.name }}</p>
+      </td>
+      <td colspan="1">${{ product.productId.price }}</td>
+      <td colspan="1" class="position-relative">
+        <i class="bi bi-dash fs-5 pointer" (click)="decrementQuantity(product)"></i>
+        <input
+          type="text"
+          name="quantity"
+          id="quantity"
+          min="1"
+          [(ngModel)]="product.quantity"
+          (change)="changeQuantity(product)"
+        />
+        <i class="bi bi-plus fs-5" (click)="incrementQuantity(product)"></i>
+      </td>
+      <td colspan="1">${{ product.productId.price * product.quantity }}</td>
+      <td colspan="1"><i class="bi bi-x fs-4" (click)="deleteProduct(product)"></i></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="6">
+        <div class="d-flex justify-content-between">
+          <a routerLink="/products" class="text-decoration-none text-dark">
+            <i
+              class="bi bi-chevron-double-left"
+              style="vertical-align: middle"
+            >
+              {{ "cart.backToShopping" | translate }}</i
+            >
+          </a>
+          <div>
+            <button (click)="clearCart()">{{ "cart.clear" | translate }}</button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tfoot>
+</table>

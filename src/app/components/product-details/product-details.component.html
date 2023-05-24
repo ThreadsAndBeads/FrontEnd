@@ -1,0 +1,68 @@
+<div class="parent " *ngIf="product">
+  <div class="wrapper col-12 col-lg-10 mx-auto d-flex flex-wrap position-relative" >
+    <label class="favouriteContainer my-auto ms-1">
+      <input type="checkbox" (click)="toggleFavourite($event)" [checked]="isFavourite">
+      <svg id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M16.4,4C14.6,4,13,4.9,12,6.3C11,4.9,9.4,4,7.6,4C4.5,4,2,6.5,2,9.6C2,14,12,22,12,22s10-8,10-12.4C22,6.5,19.5,4,16.4,4z"></path></svg>
+    </label>
+    <div class="product-img col-12 col-md-6 col-lg-5 position-relative">
+      <div class="bullets d-flex flex-column justify-content-center h-100 position-absolute ps-2">
+        <span class="bullet" *ngFor="let image of product.images; let i = index" [class.activebullet]="i === 0" (click)="imageShow(i)"></span>
+      </div>
+      <img [src]="activeImage" class="activeImage" height="420" width="327">
+    </div>
+    <div class="product-info my-auto col-12 col-md-6 col-lg-7">
+      <div class="product-text">
+        <h1>{{product.name}}</h1>
+        <h2>{{sellerName}}</h2>
+        <p>{{product.description}}</p>
+          <p>
+            <span>{{product.price}}</span>$
+          </p>
+          <ng-container *ngIf="product.inStock > 0; else outOfStock">
+            <p class="product-available">
+              In stock. <span class="product-extended"><a style="font-size: 15px;">Buy Extended Warranty</a></span>
+            </p>
+          </ng-container>
+
+          <ng-template #outOfStock>
+            <p class="product-unavailable">
+              Out of stock.
+            </p>
+          </ng-template>
+
+          <div class="product-rating">
+            <p class="text-uppercase me-5 d-inline text-dark">Rating</p>
+            <i class="bi bi-star rating" star-data="1"></i>
+            <i class="bi bi-star rating" star-data="2"></i>
+            <i class="bi bi-star rating" star-data="3"></i>
+            <i class="bi bi-star" star-data="4"></i>
+            <i class="bi bi-star" star-data="5"></i>
+          </div>
+      </div>
+      <div>
+        <div class="product-quantity">
+          <label for="product-quantity-input" class="product-quantity-label">Quantity</label>
+          <div class="product-quantity-subtract">
+            <i class="bi bi-caret-left-fill" style="cursor: pointer;" (click)="decQuantity()"></i>
+          </div>
+          <div>
+            <input type="text" id="product-quantity-input" placeholder="0" [(ngModel)]="quantity"
+              (change)="changeQuantity()"
+            />
+          </div>
+          <div class="product-quantity-add">
+            <i class="bi bi-caret-right-fill" style="cursor: pointer;" (click)="incQuantity()"></i>
+          </div>
+        </div>
+      </div>
+      <div class="images d-flex mt-3">
+        <span  *ngFor="let image of product.images let i = index" (click)="imageShow(i)">
+          <img [src]="image" alt="product image" class="productAllImages">
+        </span>
+      </div>
+      <div class="product-price-btn d-flex justify-content-end">
+        <button type="button" class="addtoCartBtn" (click)="addToCart(product._id)">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>

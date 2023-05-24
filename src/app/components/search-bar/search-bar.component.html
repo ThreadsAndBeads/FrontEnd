@@ -1,0 +1,79 @@
+<div class="search my-auto">
+  <input
+    id="search-box"
+    type="text"
+    class="search-box"
+    name="q"
+    [(ngModel)]="query"
+    (input)="search()"
+    #searchBox
+  />
+  <label for="search-box"
+    ><span class="glyphicon glyphicon-search search-icon">
+      <i class="bi bi-search"></i></span
+  ></label>
+  <input type="submit" id="search-submit" />
+
+  <div
+    class="dropdown"
+    [ngClass]="{ 'd-none': !showDropdown }"
+    [style.width.px]="searchBox.offsetWidth"
+  >
+    <div class="product-results" *ngIf="products.length">
+      <div class="result" *ngFor="let product of products">
+        <a
+          class="text-decoration-none"
+          (click)="navigate('products')"
+          style="cursor: pointer"
+        >
+          <div class="d-flex gap-2">
+            <i class="bi bi-box-seam" style="color: #456268"></i>
+            <div class="d-flex flex-column">
+              <P
+                class="fw-bold"
+                style="color: black; margin-bottom: -3px; font-size: 12px"
+                >{{ product.name }}</P
+              >
+              <p class="mb-0" style="font-size: 10px; color: #456268">
+                product
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <hr class="center-ball" />
+    <div class="product-results" *ngIf="workshops.length">
+      <div class="result" *ngFor="let workshop of workshops">
+        <a
+          class="text-decoration-none"
+          (click)="navigate('about')"
+          style="cursor: pointer"
+        >
+          <div class="d-flex gap-3">
+            <i
+              class="bi bi-person-workspace"
+              style="color: #456268; width: 10px; height: 10px"
+            ></i>
+            <div class="d-flex flex-column">
+              <P
+                class="fw-bold"
+                style="color: black; margin-bottom: -3px; font-size: 12px"
+                >{{ workshop.title }}</P
+              >
+              <p class="mb-0" style="font-size: 10px; color: #456268">
+                workshop
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="no-results mx-2" *ngIf="!products.length && !workshops.length">
+      No results found.
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("click", onClick);
+</script>

@@ -1,0 +1,38 @@
+<div class="col-12 h-100" style="padding: 90px 15px 0; ">
+  <div class="categories-filter pb-2" style="border-bottom: 1px solid #F2F2F2;">
+    <h6 class="filter-item-title">{{"productFilter.categoryFilter" | translate }}</h6>
+    <div class="filter-category">
+      <div class="filter-checkbox-item d-flex justify-content-between" *ngFor="let category of categories">
+        <input type="checkbox" class="filter-checkbox-value" name="filter-category-checkbox" id="filter-category{{category.id}}" (click)="categoriesFilter()">
+        <label for="filter-category{{category.id}}" class="filter-checkbox-text">{{ category.name }}</label>
+        <div class="filter-item-quantity">{{ category.productNum }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="filter-price pt-2" style="border-bottom: 1px solid #F2F2F2;">
+    <h6 class="filter-item-title pb-3">{{"productFilter.priceFilter" | translate }}</h6>
+    <div class="slider">
+      <div class="progress"></div>
+    </div>
+    <div class="range-input">
+      <input type="range" step='5' [min]="minPrice" [max]="maxPrice" [(ngModel)]="minInputPrice" (ngModelChange)="updateMaxInputPrice()">
+      <input type="range" step='5' [min]="minPrice" [max]="maxPrice" [(ngModel)]="maxInputPrice" (ngModelChange)="updateMinInputPrice()">
+    </div>
+
+    <div class="price-wrap m-3 text-center">
+      <span class="min">$ {{ minInputPrice }}</span>
+      -
+      <span class="max">$ {{ maxInputPrice }}</span>
+    </div>
+  </div>
+  <div class="rating-price py-2" style="border-bottom: 1px solid #F2F2F2;">
+    <h6 class="filter-item-title">{{"productFilter.rateFilter" | translate }}</h6>
+    <div class="text-center">
+      <i class="ratingStar bi bi-star text-warning mx-1 fs-4" id="1" (click)="ratingFilter(1)"></i>
+      <i class="ratingStar bi bi-star text-warning mx-1 fs-4" id="2" (click)="ratingFilter(2)"></i>
+      <i class="ratingStar bi bi-star text-warning mx-1 fs-4" id="3" (click)="ratingFilter(3)"></i>
+      <i class="ratingStar bi bi-star text-warning mx-1 fs-4" id="4" (click)="ratingFilter(4)"></i>
+      <i class="ratingStar bi bi-star text-warning mx-1 fs-4" id="5" (click)="ratingFilter(5)"></i>
+    </div>
+  </div>
+</div>

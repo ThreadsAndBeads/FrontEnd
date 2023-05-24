@@ -1,0 +1,136 @@
+.form {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  padding: 0 20px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f5f7;
+  transition: 0.7s ease-in-out transform;
+  overflow: hidden;
+}
+
+.form.sign-up-form {
+  right: 0;
+}
+
+.form .wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.7s ease-in-out transform;
+}
+
+.form.sign-up-form .wrapper {
+  transform: translateX(-100%);
+}
+.sign-up-form.active .wrapper {
+  transform: translateX(0);
+}
+
+.form h1 {
+  font-family: "Montserrat";
+  font-size: 40px;
+  font-weight: 300;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+
+.form input {
+  display: block;
+  width: 300px;
+  margin-bottom: 20px;
+  height: 35px;
+  font-family: "Montserrat";
+  font-size: 14px;
+  padding-left: 15px;
+  border: none;
+  background-color: rgba(199, 197, 197, 0.425);
+  outline: none;
+}
+
+.form input::placeholder {
+  color: rgba(0, 0, 0, 0.658);
+}
+
+.form button {
+  padding: 10px 50px;
+  border: none;
+  outline: none;
+  font-family: "Montserrat";
+  font-size: 18px;
+  background-color: rgba(60, 72, 107, 0.8);
+  cursor: pointer;
+  color: #f6f5f7;
+  margin-top: 10px;
+}
+
+#type{
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  height: 35px;
+  font-family: "Montserrat";
+  font-size: 14px;
+  padding-left: 15px;
+  border: none;
+  background-color: rgba(199, 197, 197, 0.425);
+  outline: none;
+  color: rgba(0, 0, 0, 0.658);
+}
+
+select{
+  font-family: "Montserrat";
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.658);
+}
+
+.error{
+  display: block;
+  width: fit-content;
+  height: 25px;
+  font-family: "Montserrat";
+  font-size: 12px;
+  padding-left: 15px;
+  color: red;
+  position: relative;
+}
+.modal-title h5{
+  text-align: center;
+  margin: 0 auto;
+}
+.modal-body{
+  text-align: center
+}
+.modal{
+  border-radius: 4px;
+}
+.modal-header {
+  border: none;
+}
+
+.modal-body {
+  border: none;
+}
+.modal-footer{
+  border: none;
+}
+.modal-dialog{
+margin: 170px auto;
+width: fit-content;
+height: fit-content;
+}
+.modal-content{
+  width: 350px;
+  padding: 5px;
+  height: 350px;
+  margin: 0 auto;
+}

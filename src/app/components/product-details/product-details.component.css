@@ -1,0 +1,189 @@
+.parent {
+  padding: 100px 50px;
+}
+
+.wrapper {
+  min-height: 500px;
+}
+
+.product-img {
+  height: 500px;
+}
+
+.product-img img {
+  border-radius: 7px 0 0 7px;
+  width: 100%;
+  height: 100%;
+}
+
+.bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d2d2d2;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.activebullet {
+  background-color: #474747;
+}
+
+.product-info {
+  padding: 37px;
+  height: 500px;
+  border-radius: 0 7px 10px 7px;
+  background-color: #ffffff;
+}
+
+.product-text {
+  width: 100%;
+}
+
+.product-text h1 {
+  font-size: 34px;
+  color: #474747;
+}
+
+.product-text h1,
+.product-price-btn p {
+  font-family: "Bentham", serif;
+}
+
+.product-text h2 {
+  margin: 0 0 30px 0;
+  font-size: 13px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #d2d2d2;
+  letter-spacing: 0.2em;
+}
+
+.product-text p {
+  width: 100%;
+  font-family: "Playfair Display", serif;
+  color: #8d8d8d;
+  line-height: 1.5em;
+  font-size: 13px;
+  font-weight: lighter;
+}
+
+.product-price-btn {
+  margin-top: 10px;
+  position: relative;
+}
+
+span {
+  display: inline-block;
+  font-family: "Suranna", serif;
+  font-size: 34px;
+}
+
+.product-price-btn button {
+  display: inline-block;
+  padding: 15px;
+  margin: 0 10px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  outline: none;
+  color: #ffffff;
+  background-color: #a20a0a;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.product-price-btn button:hover {
+  background-color: #fff0bc;
+  color: #000;
+}
+
+.product-quantity {
+  padding: 10px 0;
+}
+
+.product-quantity-label {
+  text-transform: uppercase;
+}
+
+.product-quantity * {
+  display: inline-block;
+}
+
+#product-quantity-input {
+  border: none;
+  width: 2.5em;
+  text-align: center;
+}
+
+.product-quantity-subtract,
+.product-quantity-add {
+  margin-left: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.product-quantity-subtract {
+  margin-right: 20px;
+}
+
+i.bi-star {
+  color: #aaa;
+  display: inline-block;
+}
+
+i.bi-star.rating {
+  color: rgb(232, 217, 31);
+}
+
+.product-extended {
+  color: #235ba8;
+  padding-left: 5px;
+}
+
+.productAllImages {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.favouriteContainer {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  user-select: none;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
+.favouriteContainer input {
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.favouriteContainer svg {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  transition: all 0.3s;
+  fill: #666;
+}
+
+.favouriteContainer svg:hover {
+  transform: scale(1.1);
+}
+
+.favouriteContainer input:checked ~ svg {
+  fill: #e3474f;
+}

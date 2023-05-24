@@ -1,0 +1,218 @@
+/* Cards */
+
+.workshop-card {
+  width: 92%;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background: #eb5160;
+  color: #fff;
+  cursor: pointer;
+  min-height: 350px;
+  margin-bottom: 60px;
+  height: 350px;
+}
+
+.border-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+  border: 1px solid #fff;
+  opacity: 0.5;
+  left: -6px;
+  top: -6px;
+}
+
+.workshop-card h1 {
+  position: relative;
+  padding: 150px 0px 10px 10px;
+  width: 90%;
+  font-family: "Delicious Handrawn", cursive;
+}
+
+.workshop-card > img {
+  width: 90%;
+  position: absolute;
+  top: -6%;
+  left: -6%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.workshop-card-color-0 {
+  background-color: #996d47bb;
+}
+
+.workshop-card-color-1 {
+  background-color: #a20a0a;
+}
+
+.workshop-card-color-2 {
+  background-color: #8daa91;
+}
+
+.workshop-card-color-3 {
+  background-color: #888da7;
+}
+
+.x-1 {
+  transform: rotate(45deg);
+}
+
+.x-2 {
+  transform: rotate(-45deg);
+}
+
+.card-description {
+  display: inline-block;
+  font-weight: 300;
+  line-height: 22px;
+  margin: 10px 0;
+  padding: 10px;
+  display: block;
+  width: 70%; /* Change this value to the width you want */
+  white-space: normal;
+  word-wrap: break-word;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* color: #aaa; */
+}
+
+@media screen and (max-width: 600px) {
+  .workshop-card-column {
+    width: 90%;
+  }
+
+  .column-1 {
+    padding-top: 0px;
+  }
+
+  .open-content img {
+    margin-top: 40px;
+  }
+}
+a.delete-btn,
+a.edit-btn {
+  display: inline-block;
+  color: #212121;
+  text-align: center;
+  font-size: 18px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  border: 1px solid #212121;
+  transition: all 0.2s ease-in-out;
+  margin-left: 4px;
+}
+a.delete-btn:hover,
+a.delete-btn:active,
+a.delete-btn:focus {
+  border-color: #ff0000;
+  background: #ff0000;
+  color: #fff;
+  text-decoration: none;
+}
+a.edit-btn:hover,
+a.edit-btn:active,
+a.edit-btn:focus {
+  border-color: #006eff;
+  background: #006eff;
+  color: #fff;
+  text-decoration: none;
+}
+.red {
+  color: #f44336;
+  font-size: 22px;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+
+
+.modal-confirm {
+  color: #636363;
+  width: 400px;
+}
+.modal-confirm .modal-content {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  font-size: 14px;
+}
+.modal-confirm .modal-header {
+  border-bottom: none;
+  position: relative;
+}
+.modal-confirm h4 {
+  text-align: center;
+  font-size: 26px;
+  margin: 30px 0 -10px;
+}
+.modal-confirm .close {
+  position: absolute;
+  top: -5px;
+  right: -2px;
+}
+.modal-confirm .modal-body {
+  color: #999;
+}
+.modal-confirm .modal-footer {
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 10px 15px 25px;
+}
+.modal-confirm .modal-footer a {
+  color: #999;
+}
+.modal-confirm .icon-box {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  z-index: 9;
+  text-align: center;
+  border: 3px solid #f15e5e;
+}
+.modal-confirm .icon-box i {
+  color: #f15e5e;
+  font-size: 46px;
+  display: inline-block;
+  margin-top: 13px;
+}
+.modal-confirm .btn {
+  color: #fff;
+  border-radius: 4px;
+  background: #60c7c1;
+  text-decoration: none;
+  transition: all 0.4s;
+  line-height: normal;
+  min-width: 120px;
+  border: none;
+  min-height: 40px;
+  border-radius: 3px;
+  margin: 0 5px;
+  outline: none !important;
+}
+.modal-confirm .btn-info {
+  background: #c1c1c1;
+}
+.modal-confirm .btn-info:hover, .modal-confirm .btn-info:focus {
+  background: #a8a8a8;
+}
+.modal-confirm .btn-danger {
+  background: #f15e5e;
+}
+.modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
+  background: #ee3535;
+}
+.trigger-btn {
+  display: inline-block;
+  margin: 100px auto;
+}

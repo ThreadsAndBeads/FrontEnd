@@ -1,0 +1,137 @@
+<div
+  class="modal fade h-60"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  #myModal
+  *ngIf="!hasErrors"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-center">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="container d-flex justify-content-center text-center">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <img
+            alt="lastbit"
+            width="200"
+            src="https://i.imgur.com/LXjRs5h.gif"
+          />
+        </h5>
+      </div>
+      <div class="modal-body">
+        Almost there! We just need you to verify your email address to finish
+        signing up.
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<div class="form sign-up-form active">
+  <div class="wrapper">
+    <form [formGroup]="validationForm" (ngSubmit)="onSignUpSubmit()" method="post">
+      <h1>Sign up</h1>
+      <input
+        type="text"
+        placeholder="Full Name"
+        name="name"
+        formControlName="name"
+      />
+      <!-- <div class="error">{{ error.name }}</div> -->
+      <div class="alert alert-danger text-danger mt-2 p-2 text-center "
+        *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+        <p style="font-size: small; margin: 0">
+          <small *ngIf="name?.errors?.['required']">Name is required.</small>
+          <small *ngIf="name?.errors?.['minlength']">Minimum length is 5.</small>
+        </p>
+      </div>
+      <div class="alert alert-danger text-danger mt-2 p-2 text-center " *ngIf="password?.valid && error.password ">
+        <small>{{ error.password }}</small>
+      </div>
+      <input
+        type="email"
+        placeholder="Email"
+        name="email"
+        formControlName="email"
+        [ngClass]="{
+          'is-invalid':
+            email?.invalid && (email?.dirty || email?.touched),
+          'is-valid': !email?.invalid && (email?.dirty || email?.touched)
+        }"
+      />
+      <div class="alert alert-danger text-danger mt-2 p-2 text-center px-3"
+        *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+        <p style="font-size: small; margin: 0">
+          <small *ngIf="email?.errors?.['required']">Email is required.</small>
+          <small *ngIf="email?.errors?.['email']">Please enter a valid email address.</small>
+        </p>
+      </div>
+      <div class="alert alert-danger text-danger mt-2 p-2 text-center " *ngIf="email?.valid && error.email ">
+        <small>{{ error.email }}</small>
+      </div>
+      <!-- <div class="error">{{ error.email }}</div> -->
+      <input
+        type="password"
+        placeholder="password"
+        name="password"
+        formControlName="password"
+        [ngClass]="{
+        'is-invalid':
+          password?.invalid && (password?.dirty || password?.touched),
+        'is-valid':
+          !password?.invalid && (password?.dirty || password?.touched)
+        }"
+      />
+      <div class="alert alert-danger text-danger mt-2 p-2 text-center "
+        *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+        <p style="font-size: small; margin: 0">
+          <small *ngIf="password?.errors?.['required']">Password is required.</small>
+          <small *ngIf="password?.errors?.['minlength']">please enter password contain capital word , number and special
+            character .</small>
+        </p>
+      </div>
+      <div class="alert alert-danger text-danger mt-2 p-2 text-center " *ngIf="password?.valid && error.password ">
+        <small>{{ error.password }}</small>
+      </div>
+      <!-- <div class="error">{{ error.password }}</div> -->
+      <select name="type" id="type" formControlName="type">
+        <option value="" disabled selected>Select account type</option>
+        <option value="customer">Customer</option>
+        <option value="seller">Seller</option>
+      </select>
+      <div class="alert alert-danger text-danger mt-2 p-2 text-center "
+        *ngIf="type?.invalid && (type?.dirty || type?.touched)">
+        <p style="font-size: small; margin: 0">
+          <small *ngIf="type?.errors?.['required']">type is required.</small>
+        </p>
+      </div>
+      <div class="alert alert-danger text-danger mt-2 p-2 text-center " *ngIf="password?.valid && error.password ">
+        <small>{{ error.password }}</small>
+      </div>
+      <!-- <div class="error">{{ error.type }}</div> -->
+      <button type="submit">Sign Up</button>
+
+      <div class="d-flex justify-content-center mt-3">
+        <div class="g-signin2">
+          <asl-google-signin-button
+            cookiePolicy="single-host-origin "
+            size="large"
+            theme="outline"
+            shape="pill"
+            data-ux_mode="redirect"
+          >
+          </asl-google-signin-button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<aside
+  class="sidebar offcanvas offcanvas-end"
+  tabindex="1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+  style="width: 50px"
+>
+  <div class="toggle">
+    <a
+      href="#"
+      class="burger js-menu-toggle"
+      data-toggle="collapse"
+      data-target="#main-navbar"
+    >
+      <span></span>
+    </a>
+  </div>
+  <div class="side-inner mt-5">
+    <div class="nav-menu">
+      <ul>
+        <li>
+          <a class="text-decoration-none" href="/profile">
+            <i class="bi bi-person" style="margin-right: 5px"></i
+            >{{ "sidebar.profileBtn" | translate }}
+          </a>
+        </li>
+        <li *ngIf="currentUser.type == 'seller'" class="dropdown">
+          <a
+            class="text-decoration-none dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            href="#"
+          >
+            {{ "sidebar.productsBtn" | translate }}
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-center"
+            style="background-color: #456268; min-width: 150px"
+          >
+            <li>
+              <a
+                class="text-decoration-none dropdown-item"
+                href="/seller/sellerProducts"
+              >
+                {{ "sidebar.MyproductsBtn" | translate }}
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-decoration-none dropdown-item"
+                href="/seller/addNewProduct"
+              >
+                <i
+                  class="bi bi-plus-square-dotted"
+                  style="margin-right: 5px"
+                ></i>
+                {{ "sidebar.NewProductBtn" | translate }}
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a class="text-decoration-none" *ngIf="isCustomer" href="/customer/orders">
+            <i class="bi bi-box" style="margin-right: 5px"></i>
+            {{ "sidebar.ordersBtn" | translate }}
+          </a>
+          <a class="text-decoration-none" *ngIf="!isCustomer" href="/seller/orders">
+            <i class="bi bi-box" style="margin-right: 5px"></i>
+            {{ "sidebar.ordersBtn" | translate }}
+          </a>
+        </li>
+        <li *ngIf="currentUser.type == 'seller'" class="dropdown">
+          <a
+            class="text-decoration-none dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            href="#"
+          >
+            {{ "sidebar.workshopsBtn" | translate }}
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-center"
+            style="background-color: #456268; min-width: 150px"
+          >
+            <li>
+              <a class="text-decoration-none dropdown-item" href="/seller/myWorkshops">
+                {{ "sidebar.MyWorkshopsBtn" | translate }}
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-decoration-none dropdown-item"
+                href="/seller/addNewWorkshop"
+              >
+                <i
+                  class="bi bi-plus-square-dotted"
+                  style="margin-right: 5px"
+                ></i>
+                {{ "sidebar.NewWorkshopBtn" | translate }}
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            class="text-decoration-none"
+            href="/home"
+            (click)="onLogoutClick()"
+          >
+            <i class="bi bi-door-closed" style="margin-right: 5px"></i>
+            {{ "sidebar.logoutBtn" | translate }}</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>

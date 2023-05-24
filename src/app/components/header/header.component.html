@@ -1,0 +1,121 @@
+<nav
+  class="navbar navbar-expand-lg fixed-top p-lg-3 py-3"
+  (scroll)="onWindowScroll()"
+>
+  <div class="container-fluid w-100">
+    <a href="" class="nav-logo threadsAndBeads"
+      ><h1 class="logo">Threads & Beads</h1></a
+    >
+    <div class="search">
+      <app-search-bar></app-search-bar>
+    </div>
+    <div class="user-icons d-flex justify-content-between my-auto">
+      <div class="language-selector">
+        <select
+          class="language-selector--dropdown"
+          (change)="languageChanged($event)"
+        >
+          <option class="language-selector--option uppercase" value="english">
+            {{ "language.english" | translate }}
+          </option>
+          <option class="language-selector--option uppercase" value="arabic">
+            {{ "language.arabic" | translate }}
+          </option>
+        </select>
+      </div>
+      <a class="user-link position-relative" routerLink="/customer/cart">
+        <i class="bi bi-basket2-fill"></i>
+        <span class="cartQuantity">{{ totalCartProducts }}</span>
+      </a>
+      <a class="user-link toggle_btn" type="button" (click)="handleClick()">
+        <i class="bi bi-person-circle"></i>
+      </a>
+      <a class="user-link position-relative" href="#">
+        <i class="bi bi-heart-fill"></i>
+        <span class="favouriteQuantity">{{ totalFavouritesProducts }}</span>
+      </a>
+    </div>
+
+    <input
+      class="navbar-toggler"
+      type="checkbox"
+      id="checkbox"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    />
+    <label for="checkbox" class="toggle">
+      <div class="bars" id="bar1"></div>
+      <div class="bars" id="bar2"></div>
+      <div class="bars" id="bar3"></div>
+    </label>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active">
+          <a
+            class="nav-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="/home"
+            >{{ "Nav.home" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="/about"
+            >{{ "Nav.about" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="contact"
+            >{{ "Nav.contact" | translate }}</a
+          >
+        </li>
+        <li class="nav-item nav-item-logo">
+          <a href="" class="nav-item threadsAndBeads"
+            ><h1 class="logo">Threads & Beads</h1></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="/products"
+            >{{ "Nav.products" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="/sellers"
+            >{{ "Nav.sellers" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="/workshops"
+            >{{ "Nav.workshops" | translate }}</a
+          >
+        </li>
+        <li><app-notification></app-notification></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<app-sidebar></app-sidebar>

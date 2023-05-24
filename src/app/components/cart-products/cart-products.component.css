@@ -1,0 +1,73 @@
+.table{
+  border: 1px solid #e8e8e8;
+  border-collapse: collapse
+}
+
+.table td,
+.table th{
+  vertical-align: middle;
+  padding: 15px;
+}
+
+.table th{
+  border-bottom: 1px solid #e8e8e8;
+  line-height: 2;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.table td .product-name{
+  line-height: 2;
+  letter-spacing: 1.5px;
+}
+
+.table td img{
+  width: 70px ;
+  height: 85px ;
+}
+
+.table td input{
+  width: 110px;
+  padding: 5px 30px;
+  text-align: center;
+}
+
+.table .bi{
+  cursor: pointer;
+  margin: auto 0;
+}
+
+.table td .bi-dash,
+.table td .bi-plus{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.table td .bi-dash{
+  left: 25px;
+}
+
+.table td .bi-plus{
+  left: 95px;
+}
+
+.table td .bi-x:hover {
+  color: #A20A0A;
+}
+
+.table tfoot button{
+  padding: 8px 15px;
+  text-transform: uppercase;
+  border: 2px solid #A20A0A;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  color: white;
+  background-color: #A20A0A;
+}
+
+
+.table tfoot button:hover{
+  background-color: transparent;
+  color: black;
+}

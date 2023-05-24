@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Great+Vibes&family=Oswald:wght@700&display=swap");
+
+aside {
+  /* width: 50px !important; */
+  min-width: 150px !important;
+  right: 0;
+  position: fixed;
+  background-color: #334a4e;
+  transition: 1s transform cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+aside.show-sidebar {
+  transform: translateX(0%);
+  box-shadow: -10px 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+aside .toggle {
+  padding-right: 30px;
+  padding-top: 30px;
+  position: absolute;
+  left: 0;
+  transform: translateX(100%);
+}
+
+aside.show-sidebar .toggle {
+  transform: translateX(0%);
+}
+
+aside.show-sidebar .toggle .burger:before,
+aside.show-sidebar .toggle .burger span,
+aside.show-sidebar .toggle .burger:after {
+  background: #456268;
+}
+
+aside .side-inner {
+  /* padding: 30px 0; */
+  height: 100vh;
+  /* overflow-y: scroll; */
+  /* -webkit-overflow-scrolling: touch; */
+}
+
+aside .side-inner .profile {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  background-color: #456268;
+  border-bottom: 1px solid #456268;
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  transition: box-shadow 0.3s ease-in-out;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+}
+.right {
+  height: 50px;
+  background-color: #090909;
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  transition: box-shadow 0.3s ease-in-out;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+  transform: scaleX(-1);
+}
+aside .side-inner .profile img {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto 20px auto;
+  border-radius: 50%;
+  animation: blob-animation 2.5s linear infinite;
+  border: 2px solid var(--orange-color);
+  border-radius: 50% 32% 20% 70%/60% 40% 55% 40%;
+}
+/* BLOB CSS ANIMATION */
+@keyframes blob-animation {
+  0% {
+    border-radius: 50% 32% 20% 70%/60% 40% 55% 40%;
+  }
+
+  25% {
+    border-radius: 40% 57% 40% 81% / 84% 76% 45% 38%;
+  }
+
+  50% {
+    border-radius: 25% 68% 40% 46% / 59% 36% 45% 38%;
+  }
+
+  75% {
+    border-radius: 40% 27% 26% 58%/70% 36% 64% 32%;
+  }
+
+  100% {
+    border-radius: 50% 32% 20% 70%/60% 40% 55% 40%;
+  }
+}
+.side-inner .profile img:hover {
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+aside .side-inner .profile .name {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #efefef;
+}
+
+aside .side-inner .nav-menu ul,
+aside .side-inner .nav-menu ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+aside .side-inner .nav-menu ul li a {
+  text-align: start;
+  display: block;
+  padding-right: 30px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #fff;
+  position: relative;
+  transition: 0.3s padding-right ease;
+}
+aside .side-inner .nav-menu ul li a i {
+  align-self: flex-start;
+}
+aside .side-inner .nav-menu ul li a:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0px;
+  background-color: #456268;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s opacity ease, 0.3s visibility ease, 0.3s width ease;
+}
+
+aside .side-inner .nav-menu ul li a:active,
+aside .side-inner .nav-menu ul li a:focus,
+aside .side-inner .nav-menu ul li a:hover {
+  outline: none;
+}
+
+aside .side-inner .nav-menu ul li a:hover {
+  background: lighten(#efefef, 5%);
+  color: #000;
+}
+
+aside .side-inner .nav-menu ul li a:hover:before {
+  width: 4px;
+  opacity: 1;
+  visibility: visible;
+}
+
+aside .side-inner .nav-menu ul li.active a {
+  background: lighten(#efefef, 5%);
+  color: #000;
+}
+
+aside .side-inner .nav-menu ul li.active a:before {
+  opacity: 1;
+  visibility: visible;
+  width: 4px;
+}
+.dropdown-menu-center {
+  left: 50% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
+}

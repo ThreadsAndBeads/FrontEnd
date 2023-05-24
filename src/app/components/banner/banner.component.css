@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap');
+
+.banner-title{
+    font-family: "Delicious Handrawn", cursive;
+}
+section{
+  width: 100%;
+  height: 100vh;
+}
+
+section .banner-slider{
+  overflow-x: hidden;
+}
+
+section .banner-content{
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+section .banner-slider .banner-content img{
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+}
+
+section .banner-slider .banner-content .banner-info{
+  position: absolute;
+  height: fit-content;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-95%);
+  padding: 0 13%;
+  transition: transform 1s ease-in-out;
+}
+
+section .banner-slider .banner-info .banner-title{
+  margin-bottom: 25px;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #996d47;
+  text-transform: capitalize;
+}
+
+section .banner-slider .banner-info .banner-title .title-italic{
+  font-style: italic;
+  font-family: 'Libre Baskerville', serif;
+}
+
+section .banner-slider .banner-info .banner-description{
+  color: #313232;
+  padding-bottom: 30px;
+}
+
+section .banner-slider .banner-info .banner-button{
+  line-height: 45px;
+  padding: 25px 35px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #A20A0A;
+  cursor: pointer;
+}
+
+section .banner-slider .banner-info .banner-button:hover{
+  background-color: #313232;
+}
+
+section .slide-dashes{
+  position: absolute;
+  width: 100%;
+  bottom: 30px;
+  padding: 20px;
+  z-index: 5;
+  margin: 0
+}
+
+section .slide-dashes li{
+  margin: 5px;
+  padding: 3px;
+  height: 18px;
+  border-radius: 50%;
+  list-style: none;
+  cursor: pointer;
+}
+
+section .slide-dashes li p{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #A20A0A;
+}
+
+section .slide-dashes .active{
+  border: 1px solid #A20A0A;
+}
+
+
+
+.modal-confirm {
+  color: #636363;
+  width: 400px;
+}
+.modal-confirm .modal-content {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  font-size: 14px;
+}
+.modal-confirm .modal-header {
+  border-bottom: none;
+  position: relative;
+}
+.modal-confirm h4 {
+  text-align: center;
+  font-size: 26px;
+  margin: 30px 0 -10px;
+}
+.modal-confirm .close {
+  position: absolute;
+  top: -5px;
+  right: -2px;
+}
+.modal-confirm .modal-body {
+  color: #999;
+}
+.modal-confirm .modal-footer {
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 10px 15px 25px;
+}
+.modal-confirm .modal-footer a {
+  color: #999;
+}
+.modal-confirm .icon-box {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  z-index: 9;
+  text-align: center;
+  border: 3px solid #f15e5e;
+}
+.modal-confirm .icon-box i {
+  color: #f15e5e;
+  font-size: 46px;
+  display: inline-block;
+  margin-top: 13px;
+}
+.modal-confirm .btn {
+  color: #fff;
+  border-radius: 4px;
+  background: #60c7c1;
+  text-decoration: none;
+  transition: all 0.4s;
+  line-height: normal;
+  min-width: 120px;
+  border: none;
+  min-height: 40px;
+  border-radius: 3px;
+  margin: 0 5px;
+  outline: none !important;
+}
+.modal-confirm .btn-info {
+  background: #c1c1c1;
+}
+.modal-confirm .btn-info:hover, .modal-confirm .btn-info:focus {
+  background: #a8a8a8;
+}
+.modal-confirm .btn-danger {
+  background: #f15e5e;
+}
+.modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
+  background: #ee3535;
+}
+.trigger-btn {
+  display: inline-block;
+  margin: 100px auto;
+}
+
+
+
+/*////////////////////////////////////////////////////////////////////*/

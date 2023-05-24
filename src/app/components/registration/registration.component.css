@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;500&display=swap");
+
+section {
+  min-height: 95vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.199);
+  padding: 50px 30px;
+  border-radius: 10px;
+  min-width: 800px;
+  max-width: 1000px;
+  min-height: 500px;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f5f7;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-container .overlay button{
+  padding: 10px 50px;
+  border: none;
+  outline: none;
+  font-family: "Montserrat";
+  font-size: 18px;
+  background-color: rgba(220, 20, 60, 0.568);
+  cursor: pointer;
+  color: #f6f5f7;
+}
+
+.container .overlay-container {
+  position: absolute;
+  background-color: #3C486B;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.7s ease-in-out transform;
+}
+
+.container .overlay-container .overlay {
+  background-image: url("../../../assets/Images/top-view-hands-holding-furoshiki-package.jpg");
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  left: 0%;
+  width: 200%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: 0.7s ease-in-out transform;
+  z-index: 1;
+}
+
+.container .overlay::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgb(60, 72, 107);
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.overlay-container .overlay .overlay-left,
+.overlay-container .overlay .overlay-right {
+  flex-basis: 50%;
+  text-align: center;
+}
+.overlay-container .overlay h1 {
+  font-family: "Montserrat";
+  font-size: 40px;
+  font-weight: 300;
+  color: white;
+}
+.overlay-container .overlay p {
+  color: white;
+  font-family: "Roboto";
+  font-size: 25px;
+  font-weight: 300;
+}
+.overlay-container .overlay button {
+  background-color: white;
+  color: #3C486B;
+  margin-top: 20px;
+}
+

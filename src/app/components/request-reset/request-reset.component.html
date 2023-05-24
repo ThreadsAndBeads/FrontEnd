@@ -1,0 +1,44 @@
+<div class="container d-flex align-items-center forget-password-container" style="height: 100vh; width: 100%">
+  <div class="row g-0" style="width: 100%">
+    <div class="form-container">
+      <div class="wrapper container-fluid form card-body pb-3 d-flex flex-column">
+        <div class="d-flex mb-5">
+        </div>
+        <div class="justify-content-center">
+          <div class="animatedCloud d-flex justify-content-center">
+            <div class="wrapper">
+              <div class="cloud">
+                <div class="cloud_left"></div>
+                <div class="cloud_right"></div>
+              </div>
+              <div class="rain">
+                <div class="drop"></div>
+                <div class="drop"></div>
+                <div class="drop"></div>
+                <div class="drop"></div>
+                <div class="drop"></div>
+              </div>
+              <div class="surface">
+                <div class="hit"></div>
+                <div class="hit"></div>
+                <div class="hit"></div>
+                <div class="hit"></div>
+                <div class="hit"></div>
+              </div>
+            </div>
+          </div>
+          <form action="" [formGroup]="RequestResetForm" (ngSubmit)="RequestResetUser(RequestResetForm)">
+            <h2>Forgot Password?</h2>
+            <input type="email" placeholder="Email" name="email" formControlName="email" />
+            <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+            <div class="error" *ngIf="successMessage">{{ successMessage }}</div>
+            <span *ngIf="!RequestResetForm.get('email').valid && !IsvalidForm" class="help-block text-center">Please enter a valid email!</span>
+            <div class="d-flex justify-content-center align-items-center">
+              <button type="submit"><img src="assets/svg/sendmail.svg" alt="" /><span>Send Email</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

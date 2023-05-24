@@ -1,0 +1,27 @@
+button{
+  padding: 10px 50px;
+  border: 2px solid #A20A0A;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.goBack{
+  background-color: transparent;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.goBack:hover{
+  background-color: #A20A0A;
+  color: white;
+}
+
+.shop{
+  background-color: #A20A0A;
+  color: white;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.shop:hover{
+  background-color: transparent;
+  color: black;
+}

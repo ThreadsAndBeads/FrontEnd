@@ -1,0 +1,90 @@
+<!-- Postcard -->
+<div class="postcard d-flex row">
+  <div class="badge">{{ workshop.price }}Eg</div>
+
+  <!-- Image -->
+  <div
+    class="postcard__image col-sm-12 col-md-6 col-lg-6"
+    role="img"
+    title="image"
+    [style.background-image]="'url(' + workshop.image + ')'"
+  ></div>
+  <!-- Body -->
+  <div class="postcard__body col-sm-12 col-md-6 col-lg-6 h-100">
+    <!-- Text -->
+    <div class="postcard__text">
+      <h2 class="postcard__title">
+        <div class="postcard__title--link" href="#" target="_blank">
+          {{ workshop.title }}
+        </div>
+      </h2>
+      <div class="workshop__time d-flex w-100">
+        <i class="bi bi-calendar2-week"></i>
+        <p class="author__time ms-1">
+          <ng-container
+            *ngIf="workshop.startDate === workshop.endDate; else dateRange"
+          >
+            {{ workshop.startDate | date : "dd MMMM yyyy" }}
+          </ng-container>
+          <ng-template #dateRange>
+            {{ workshop.startDate | date : "dd MMMM" }}
+            -
+            <ng-container
+              *ngIf="
+                (workshop.startDate | date : 'yyyy-MM') ===
+                  (workshop.endDate | date : 'yyyy-MM');
+                else differentMonth
+              "
+            >
+              {{ workshop.endDate | date : "dd" }}
+            </ng-container>
+            <ng-template #differentMonth>
+              {{ workshop.endDate | date : "dd MMMM yyyy" }}
+            </ng-template>
+          </ng-template>
+        </p>
+      </div>
+      <p class="postcard__description">
+        {{ workshop.description }}
+      </p>
+    </div>
+    <!-- Footer -->
+    <div class="postcard__footer d-flex">
+      <!-- Author -->
+      <div class="postcard__author d-flex flex-column gap-3">
+        <div class="author__avatar-wrap d-flex gap-1 align-self-start">
+          <img
+            class="author__avatar"
+            src="https://raw.githubusercontent.com/alawe45/Html-Css-postcard/master/images/author__image.png"
+            alt="Profile image for Darlene Robertson"
+          />
+          <address>
+            <a class="author__name mx-2">{{ workshop.seller_name }}</a>
+          </address>
+        </div>
+      </div>
+      <div
+        class="d-flex author__time flex-column align-items-baseline"
+        style="float: right"
+      >
+        <a href="#myModal" rel="outline-outward" data-bs-toggle="modal" data-bs-target="#exampleModal"class="button outline-outward"
+       >{{
+          "workshopCard.bookBtn" | translate
+        }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="overlay"> -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modal-confirm w-auto">
+        <form class="sign-up">
+          <h1 class="sign-up-title">Register Here</h1>
+          <input type="text" class="sign-up-input" placeholder="Enter your Name" autofocus id="nameInput">
+          <input type="email" class="sign-up-input" placeholder="Enter your Email" id="emailInput">
+          <input type="submit" value="Register me up!" class="sign-up-button" (click)="sendWorkshopEmail()" data-bs-dismiss="modal">
+        </form>
+      </div>
+    </div>
+  </div>
