@@ -16,9 +16,12 @@ import { Category } from 'src/app/model/category.model';
 })
 export class EditProductComponent implements OnInit{
   categories: Category[] = [];
+  submitted = false;
   userId = this.tokenService.getUser()._id;
   productId: any;
-  product : Product = {
+  product! : Product 
+  ngOnInit() {
+    this.product ={
     user_id : this.userId  ,
     name :"",
     description : "",
@@ -27,19 +30,14 @@ export class EditProductComponent implements OnInit{
     category:"",
     priceDiscount : 0,
     images : [],
-  }
-  error = {
-    name: 'product name required',
-    price: 'product price required',
-    // priceDiscount: 'discount price should be below regular price',
-    type: ''
-  };
-  ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.productId = params['productId'];
-    });
-    // console.log(this.productId);
-
+    }
+    const id = this.route.snapshot.paramMap.get('productId');
+    this.productService.getOneProduct(id).subscribe({next: (data : any) => {      
+      this.product = data.data.data;        
+    } , error :(err)=>{
+      console.log(err);
+      
+    }}); 
     this.getCategories();
   }
 
@@ -51,25 +49,21 @@ export class EditProductComponent implements OnInit{
   private router: Router) { }
 
   updateProduct(productForm : NgForm){
-    // console.log("my product" + this.product);
-    // console.log("my product price" + this.product.price);
-    // console.log("my product discount" + this.product.priceDiscount);
+    this.submitted = true ; 
+    if(productForm.valid){ 
     const productFormData =  this.prepareFormData(this.product)
-    this.productService.updateProduct(productFormData,this.productId).subscribe(
+    const id = this.route.snapshot.paramMap.get('productId');    
+    this.productService.updateProduct(productFormData,id).subscribe(
       (response : Product) =>{
-        // console.log(response);
-        productForm.reset();
-        this.product.images = [];
-        this.router.navigate(['/sellerProducts']);
-
+        this.router.navigate(['/seller/sellerProducts']);
       },
       (error : HttpErrorResponse)=>{
         console.log(error);
       }
     );
+    }
   }
   prepareFormData(product: Product): FormData {
-    console.log(product);
     const formData:any = new FormData();
     formData.append('user_id', product.user_id);
     formData.append('name', product.name);
@@ -78,7 +72,8 @@ export class EditProductComponent implements OnInit{
     formData.append('price', product.price);
     formData.append('inStock', product.inStock);
     formData.append('priceDiscount', product.priceDiscount);
-    for(let img of product.images) {
+    for(let img of this.product.images) {
+      if(img.file)
       formData.append(`images`, img.file, img.file!.name)
       }
     return formData;

@@ -79,13 +79,14 @@
           class="form-control col-12 g-input"
           aria-labelledby=""
           name="title"
-          required
           [(ngModel)]="workshop.title"
+          required
           #title="ngModel"
         />
         <div
           *ngIf="title.invalid && (title.dirty || title.touched || submitted)"
-          class="alert alert-danger text-danger mt-2 p-2 text-center px-3"
+          class="text-danger p-0 m-0 fw-bold"
+          style="font-size: 14px"
         >
           <div *ngIf="title.errors?.['required']">title is required.</div>
         </div>
@@ -102,31 +103,42 @@
           aria-labelledby=""
           name="price"
           [(ngModel)]="workshop.price"
+          required
+          #price="ngModel"
         />
+        <div
+          *ngIf="price.invalid && (price.dirty || price.touched || submitted)"
+          class="text-danger p-0 m-0 fw-bold"
+          style="font-size: 14px"
+        >
+          <div *ngIf="price.errors?.['required']">price is required.</div>
+        </div>
       </div>
       <div class="" [formGroup]="range">
-        <div class="mt-1">
-          <label for="startDate" class="form-label">
+        <div class="mt-1 row">
+          <label for="startDate" class="form-label col-4">
             Start Date <span class="required-star">*</span></label
           >
           <input
             id="startDate"
             type="date"
             formControlName="start"
-            class="mx-2"
+            class="mx-2 col-4"
             placeholder="Start date"
+            required
           />
         </div>
-        <div class="mt-2">
-          <label for="end" class="form-label">
+        <div class="mt-2 row">
+          <label for="end" class="form-label col-4">
             End Date <span class="required-star">*</span></label
           >
           <input
             type="date"
             id="end"
             formControlName="end"
-            class="mx-2"
+            class="mx-2 col-4"
             placeholder="End date"
+            required
           />
         </div>
       </div>
@@ -141,8 +153,17 @@
         rows="2"
         name="description"
         [(ngModel)]="workshop.description"
+        #desc="ngModel"
+        required
         style="min-height: calc(100% - 0.75rem - 36px)"
       ></textarea>
+      <div
+        *ngIf="desc.invalid && (desc.dirty || desc.touched || submitted)"
+        class="text-danger p-0 m-0 fw-bold"
+        style="font-size: 14px"
+      >
+        <div *ngIf="desc.errors?.['required']">Description is required.</div>
+      </div>
     </div>
 
     <div class="col-12 col-md-12 d-flex justify-content-end align-content-end">

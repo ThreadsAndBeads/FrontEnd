@@ -32,11 +32,11 @@
               </g>
             </svg>
             <div>
-              <span>Drag and drop your file or </span>
-              <a (click)="selectFile.click()" class="browse-btn text-info"
-                >browse</a
-              >
-              a file
+              <span>{{ "add-new-product.dragAndDropText" | translate }} </span>
+              <a (click)="selectFile.click()" class="browse-btn text-info">{{
+                "add-new-product.browse" | translate
+              }}</a>
+              {{ "add-new-product.file" | translate }}
             </div>
           </div>
         </div>
@@ -54,6 +54,7 @@
             class="card-img-top m-0"
             style="max-width: 100%; max-height: 100%"
             [src]="image.url"
+            [src]="image!.url ? image!.url : image!"
           />
         </div>
       </div>
@@ -70,7 +71,8 @@
     <div class="parent2 col-12 col-md-6 col-xl-3">
       <div>
         <label for="inputProductName5" class="form-label"
-          >Product Name <span class="required-star">*</span></label
+          >{{ "add-new-product.productName" | translate }}
+          <span class="required-star">*</span></label
         >
         <input
           type="text"
@@ -79,73 +81,127 @@
           aria-labelledby=""
           name="name"
           [(ngModel)]="product.name"
+          required
+          #name="ngModel"
         />
-      </div>
-      <div>
-        <label for="inputProductName6" class="form-label"
-          >Category <span class="required-star">*</span></label
+        <div
+          *ngIf="name.invalid && (name.dirty || name.touched || submitted)"
+          class="text-danger p-0 m-0 fw-bold"
+          style="font-size: 14px"
         >
-
-        <select
-          name=""
-          id="inputProductName6"
-          [(ngModel)]="product.category"
-          name="category"
-          class="w-100"
-        >
-          <option
-            *ngFor="let category of categories"
-            value="{{ category.name }}"
+          <div *ngIf="name.errors?.['required']">
+            {{ "add-new-product.nameError" | translate }}
+          </div>
+        </div>
+        <div>
+          <label for="inputProductName6" class="form-label"
+            >{{ "add-new-product.category" | translate }}
+            <span class="required-star">*</span></label
           >
-            {{ category.name }}
-          </option>
-        </select>
-      </div>
-      <div>
-        <label for="inputProductPrice5" class="form-label">
-          Price <span class="required-star">*</span></label
-        >
-        <input
-          type="number"
-          id="inputProductPrice5"
-          class="form-control col-12"
-          aria-labelledby=""
-          name="price"
-          [(ngModel)]="product.price"
-        />
-      </div>
+          <select
+            name=""
+            id="inputProductName6"
+            [(ngModel)]="product.category"
+            name="category"
+            #category="ngModel"
+            required
+            class="w-100"
+          >
+            <option
+              *ngFor="let category of categories"
+              value="{{ category.name }}"
+            >
+              {{ category.name }}
+            </option>
+          </select>
+          <div
+            *ngIf="
+              category.invalid &&
+              (category.dirty || category.touched || submitted)
+            "
+            class="text-danger p-0 m-0 fw-bold"
+            style="font-size: 14px"
+          >
+            <div *ngIf="category.errors?.['required']">
+              {{ "add-new-product.categoryError" | translate }}
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="inputProductPrice5" class="form-label">
+            {{ "add-new-product.productPrice" | translate
+            }}<span class="required-star">*</span></label
+          >
+          <input
+            type="number"
+            id="inputProductPrice5"
+            class="form-control col-12"
+            aria-labelledby=""
+            name="price"
+            [(ngModel)]="product.price"
+            #price="ngModel"
+            required
+          />
+          <div
+            *ngIf="price.invalid && (price.dirty || price.touched || submitted)"
+            class="text-danger p-0 m-0 fw-bold"
+            style="font-size: 14px"
+          >
+            <div *ngIf="price.errors?.['required']">
+              {{ "workshop.priceError" | translate }}.
+            </div>
+          </div>
+        </div>
 
-      <div>
-        <label for="inputDiscountPrice5" class="form-label">
-          Discount Price</label
-        >
-        <input
-          type="number"
-          id="inputDiscountPrice5"
-          class="form-control col-12"
-          aria-labelledby=""
-          name="discPrice"
-          [(ngModel)]="product.priceDiscount"
-        />
-      </div>
+        <div>
+          <label for="inputDiscountPrice5" class="form-label">
+            {{ "add-new-product.discountPrice" | translate }}</label
+          >
+          <input
+            type="number"
+            id="inputDiscountPrice5"
+            class="form-control col-12"
+            aria-labelledby=""
+            name="discPrice"
+            [(ngModel)]="product.priceDiscount"
+            #discPrice="ngModel"
+            [max]="product.price"
+          />
+          <div
+            *ngIf="
+              discPrice.invalid &&
+              (discPrice.dirty || discPrice.touched || submitted)
+            "
+            class="text-danger p-0 m-0 fw-bold"
+            style="font-size: 14px"
+          >
+            <div *ngIf="discPrice.errors?.['max']">
+              {{ "add-new-product.discPriceError" | translate }}
+            </div>
+          </div>
+        </div>
 
-      <div>
-        <label for="inputProductInStock" class="form-label">
-          In Stock <span class="required-star">*</span></label
-        >
-        <input
-          type="number"
-          id="inputProductInStock"
-          class="form-control col-12"
-          aria-labelledby=""
-          name="inStock"
-          [(ngModel)]="product.inStock"
-        />
+        <div>
+          <label for="inputProductInStock" class="form-label">
+            {{ "add-new-product.productInStock" | translate }}
+            <span class="required-star">*</span></label
+          >
+          <input
+            type="number"
+            id="inputProductInStock"
+            class="form-control col-12"
+            aria-labelledby=""
+            name="inStock"
+            [(ngModel)]="product.inStock"
+          />
+        </div>
       </div>
     </div>
 
     <div class="col-12 col-md-6 col-xl-3">
-      <label for="inputDiscountPrice5" class="form-label"> Description </label>
+      <label for="inputDiscountPrice5" class="form-label">
+        {{ "add-new-product.productDescription" | translate }}
+      </label>
       <textarea
         class="description form-control text-white"
         id="exampleFormControlTextarea1"
@@ -161,7 +217,7 @@
       class="col-12 col-md-12 col-xl-2 d-flex justify-content-end align-content-end"
     >
       <button type="submit" class="cssbuttons-io-button mt-2 mt-lg-auto">
-        Update
+        {{ "workshop.updateBtn" | translate }}
         <div class="icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
