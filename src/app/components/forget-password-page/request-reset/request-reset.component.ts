@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { SuccessModalComponent } from 'src/app/components/success-modal/success-modal.component';
+import { SuccessModalComponent } from 'src/app/components/forget-password-page/success-modal/success-modal.component';
 @Component({
   selector: 'app-request-reset',
   templateUrl: './request-reset.component.html',

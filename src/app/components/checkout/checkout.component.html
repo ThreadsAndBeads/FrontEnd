@@ -31,7 +31,7 @@
                     }"
                   />
                   <div
-                    class="alert alert-danger text-danger mt-2 p-2 text-center px-3"
+                    class="text-danger mt-1"
                     *ngIf="
                       client_name?.invalid &&
                       (client_name?.dirty ||
@@ -65,7 +65,7 @@
                     }"
                   />
                   <div
-                    class="alert alert-danger text-danger mt-2 p-2 text-center px-3"
+                    class="text-danger mt-1"
                     *ngIf="
                       address?.invalid &&
                       (address?.dirty || address?.touched || error.address)
@@ -183,15 +183,15 @@
                 </div>
                 <div class="d-flex justify-content-between my-2">
                   <span>{{ "checkout.shipping" | translate }}</span>
-                  <span class="price text-muted">- ${{shipping}}</span>
+                  <span class="price text-muted">- ${{ shipping }}</span>
                 </div>
                 <div class="d-flex justify-content-between my-2">
                   <span>{{ "checkout.tax" | translate }}</span>
-                  <span class="price text-muted">- ${{tax}}</span>
+                  <span class="price text-muted">- ${{ tax }}</span>
                 </div>
                 <div class="d-flex justify-content-between my-2">
                   <span>{{ "checkout.discount" | translate }}</span>
-                  <span class="price text-muted">- ${{discount}}</span>
+                  <span class="price text-muted">- ${{ discount }}</span>
                 </div>
                 <hr class="" />
                 <div
@@ -264,15 +264,29 @@
       </form>
     </div>
   </ng-container>
-    <!-- Modal -->
-    <div *ngIf="showModal" class="success-modal">
-      <div class="success-modal-content mt-2">
-        <svg class="checkmark mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>
-        <h2>{{ "successModal.orderCreated" | translate}}</h2>
-        <p>{{ "successModal.orderContent" | translate}}</p>
-        <button class="track-btn btn-success" (click)="navigateToTrackOrder()">{{ "successModal.trackOrder" | translate}}</button>
-        <button class="success-modal-close-btn" (click)="showModal = false">{{ "successModal.close" | translate}}</button>
-
-      </div>
+  <!-- Modal -->
+  <div *ngIf="showModal" class="success-modal">
+    <div class="success-modal-content mt-2">
+      <svg
+        class="checkmark mb-4"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 52 52"
+      >
+        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+        <path
+          class="checkmark__check"
+          fill="none"
+          d="M14.1 27.2l7.1 7.2 16.7-16.8"
+        />
+      </svg>
+      <h2>{{ "successModal.orderCreated" | translate }}</h2>
+      <p>{{ "successModal.orderContent" | translate }}</p>
+      <button class="track-btn btn-success" (click)="navigateToTrackOrder()">
+        {{ "successModal.trackOrder" | translate }}
+      </button>
+      <button class="success-modal-close-btn" (click)="showModal = false">
+        {{ "successModal.close" | translate }}
+      </button>
     </div>
+  </div>
 </div>
