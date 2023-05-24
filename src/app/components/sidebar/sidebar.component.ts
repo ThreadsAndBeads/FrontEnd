@@ -27,7 +27,6 @@ export class SidebarComponent implements OnInit {
         const bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas);
         e.stopPropagation();
         bsOffcanvas.toggle();
-        console.log('hit');
       }
     }, '.toggle_btn');
   }
