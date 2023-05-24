@@ -15,11 +15,7 @@
         $ {{ filterBy.price.min }} - {{ filterBy.price.max }}
         <i class="bi bi-x" (click)="removeFromFilter('price')"></i>
       </span>
-      <span class="filter" *ngIf="filterBy.rating">
-        {{"productPageFilter:rate" | translate}}: {{ filterBy.rating }}
-        <i class="bi bi-x my-auto" (click)="removeFromFilter('rating')"></i>
-      </span>
-      <span (click)="clearFilter()" class="FilterClearAll my-auto" *ngIf="filterBy.categories || filterBy.price || filterBy.rating">{{"productPageFilter:clear" | translate}}</span>
+      <span (click)="clearFilter()" class="FilterClearAll my-auto" *ngIf="filterBy.categories || filterBy.price">{{"productPageFilter:clear" | translate}}</span>
     </div>
     <div class="col-12 d-flex justify-content-between">
       <p>Showing 10 of 100</p>

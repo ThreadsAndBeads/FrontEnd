@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpErrorResponse } from '@angular/common/http';
-import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
+import {  FormControl, FormGroup, NgForm } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FileHandle } from 'src/app/model/file-handler.model';
@@ -14,7 +13,7 @@ import { WorkshopService } from 'src/app/services/workshop/workshop.service';
 })
 export class EditWorkshopComponent implements OnInit{
   userId = this.tokenService.getUser()._id ; 
-
+  submitted = false;
   workshop! : Workshop ;
   range = new FormGroup({
     start: new FormControl<Date | null>(null),
@@ -22,7 +21,6 @@ export class EditWorkshopComponent implements OnInit{
   });
   constructor(
     private router: Router,
-    private fb: FormBuilder,
      private workshopService : WorkshopService ,
      private route: ActivatedRoute, 
       private sanitizer :DomSanitizer , private tokenService: TokenStorageService) {  
@@ -41,27 +39,27 @@ ngOnInit(): void {
   }
   const id = this.route.snapshot.paramMap.get('workshopId');
   this.workshopService.getWorkshopById(id).subscribe({next: (data : any) => {
-    this.workshop = data.data.data;  
-    // console.log("hereeeeeeeeeeee");
-      
+    this.workshop = data.data.data;        
   } , error :(err)=>{
     console.log(err);
     
   }});  
 }      
   
-editWorkshop(workshopForm : NgForm){
+  editWorkshop(workshopForm : NgForm){
+  this.submitted = true ; 
+    if(workshopForm.valid){  
     let workshopFormData =  this.prepareFormData(this.workshop)
     const id = this.route.snapshot.paramMap.get('workshopId');
     this.workshopService.updateWorkshop(id, workshopFormData).subscribe({next:(data) => {
-      this.router.navigate(['/myWorkshops']);
+      this.router.navigate(['/seller/myWorkshops']);
     } ,error : (err)=>{
       console.log(err);      
     }});
   }
+  }
   
   prepareFormData(workshop: Workshop) :FormData {
-    console.log(workshop.title); 
     const formData :any = new FormData();
     formData.append('seller_id', this.userId);
     formData.append('title', workshop.title);
@@ -77,7 +75,7 @@ editWorkshop(workshopForm : NgForm){
     if (endDate) {
       formData.append('endDate', endDate);
     }
-    if (this.workshop.image?.file) { // Check if the image property exists
+    if (this.workshop.image?.file) { 
       formData.append('image', this.workshop.image.file,this.workshop.image!.file!.name);
     }
     return formData;
@@ -85,7 +83,6 @@ editWorkshop(workshopForm : NgForm){
 
   onFileSelected(event :any){
     if(event.target.files){
-      // console.log(event.target.files[0])
      const file = event.target.files[0];
      const fileHandle : FileHandle = {
       file : file , 

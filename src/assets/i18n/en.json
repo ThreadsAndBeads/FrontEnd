@@ -82,9 +82,12 @@
 		"add": "Add",
 		"browse": " Browse",
 		"category": "Category",
+		"categoryError": "you must choose a category",
+		"discPriceError": "Invalid discount Price",
 		"discountPrice": "Discount Price",
 		"dragAndDropText": "Drag and drop files here to upload",
 		"file": " File",
+		"nameError": "Name is required",
 		"productDescription": "Product description",
 		"productInStock": "Stock ",
 		"productName": "Product name",
@@ -134,7 +137,7 @@
 		"zipCode": "ZIP Code"
 	},
 	"customerOrders": {
-    "AreYouSure": "Are you Sure?",
+		"AreYouSure": "Are you Sure?",
 		"Cancel": "Cancel",
 		"DELIVERED": "DELIVERED",
 		"Delete": "Delete",
@@ -241,6 +244,17 @@
 	},
 	"topSellerHome": {
 		"title": "TOP SELLER"
+	},
+	"workshop": {
+		"description": "Description",
+		"descriptionError": "You must provide a description",
+		"endDate": "End Date",
+		"price": "Price",
+		"priceError": "Price is required",
+		"startDate": "Start Date",
+		"title": "Title",
+		"titleError": "Title is required",
+		"updateBtn": "Update"
 	},
 	"workshopCard": {
 		"bookBtn": "Book Now"

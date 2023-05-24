@@ -80,7 +80,18 @@
           aria-labelledby=""
           name="name"
           [(ngModel)]="product.name"
+          required
+          #name="ngModel"
         />
+        <div
+          *ngIf="name.invalid && (name.dirty || name.touched || submitted)"
+          class="text-danger p-0 m-0 fw-bold"
+          style="font-size: 14px"
+        >
+          <div *ngIf="name.errors?.['required']">
+            {{ "add-new-product.nameError" | translate }}
+          </div>
+        </div>
       </div>
       <div>
         <label for="inputProductName6" class="form-label"
@@ -92,6 +103,9 @@
           id="inputProductName6"
           [(ngModel)]="product.category"
           name="category"
+          #category="ngModel"
+          required
+          class="w-100"
         >
           <option
             *ngFor="let category of categories"
@@ -100,6 +114,18 @@
             {{ category.name }}
           </option>
         </select>
+        <div
+          *ngIf="
+            category.invalid &&
+            (category.dirty || category.touched || submitted)
+          "
+          class="text-danger p-0 m-0 fw-bold"
+          style="font-size: 14px"
+        >
+          <div *ngIf="category.errors?.['required']">
+            {{ "add-new-product.categoryError" | translate }}
+          </div>
+        </div>
       </div>
       <div>
         <label for="inputProductPrice5" class="form-label">
@@ -112,8 +138,17 @@
           class="form-control col-12"
           aria-labelledby=""
           name="price"
+          #price="ngModel"
+          required
           [(ngModel)]="product.price"
         />
+        <div
+        *ngIf="price.invalid && (price.dirty || price.touched || submitted)"
+        class="text-danger p-0 m-0 fw-bold"
+        style="font-size: 14px"
+      >
+        <div *ngIf="price.errors?.['required']">{{ "workshop.priceError" | translate }}.</div>
+      </div>
       </div>
 
       <div>
@@ -127,7 +162,21 @@
           aria-labelledby=""
           name="discPrice"
           [(ngModel)]="product.priceDiscount"
+          #discPrice="ngModel"
+          [max]="product.price"
         />
+        <div
+          *ngIf="
+            discPrice.invalid &&
+            (discPrice.dirty || discPrice.touched || submitted)
+          "
+          class="text-danger p-0 m-0 fw-bold"
+          style="font-size: 14px"
+        >
+          <div *ngIf="discPrice.errors?.['max']">
+            {{ "add-new-product.discPriceError" | translate }}
+          </div>
+        </div>
       </div>
 
       <div>

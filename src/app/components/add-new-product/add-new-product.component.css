@@ -27,7 +27,7 @@
   text-align: center;
 }
 .cssbuttons-io-button {
-  background: #3c486b;
+  background: #a20a0a;
   color: white;
   font-family: inherit;
   padding: 0.35em;
@@ -39,7 +39,6 @@
   letter-spacing: 0.05em;
   display: flex;
   align-items: center;
-  box-shadow: inset 0 0 1.6em -0.6em #714da6;
   overflow: hidden;
   position: relative;
   height: 2.8em;
@@ -56,7 +55,6 @@
   height: 2.2em;
   width: 2.2em;
   border-radius: 0.7em;
-  box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
   right: 0.3em;
   transition: all 0.3s;
 }
@@ -85,7 +83,7 @@ input:focus {
   outline: none;
   box-shadow: none;
 }
-.description{
+.description {
   background-color: rgba(0, 0, 0, 0.219) !important;
 }
 .dropzone {
@@ -120,7 +118,7 @@ input:focus {
   width: 800px;
 }
 
-label{
+label {
   color: white;
 }
 #bg {
@@ -129,43 +127,43 @@ label{
   top: 0;
   width: 100%;
   height: 100%;
-  background: url(/assets/Images/pexels-giovana-spiller-6679220.jpg) no-repeat center center fixed;
+  background: url(/assets/Images/woman-craftmaster-pottery-shop.jpg) no-repeat center center fixed;
   background-size: cover;
-  filter: blur(3px);
+  filter: brightness(0.7);
 }
 
 form {
   position: relative;
   width: fit-content;
   margin: 0 auto;
-  background: rgba(130, 130, 130, .3);
+  background: rgb(43 40 40 / 40%);
   padding: 20px 22px;
   border: 1px solid;
-  border-top-color: rgba(255, 255, 255, .4);
-  border-left-color: rgba(255, 255, 255, .4);
-  border-bottom-color: rgba(60, 60, 60, .4);
-  border-right-color: rgba(60, 60, 60, .4);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.4);
+  border-bottom-color: rgba(60, 60, 60, 0.4);
+  border-right-color: rgba(60, 60, 60, 0.4);
 }
 
 form input,
 form button {
   border: 1px solid;
-  border-bottom-color: rgba(255, 255, 255, .5);
-  border-right-color: rgba(60, 60, 60, .35);
-  border-top-color: rgba(60, 60, 60, .35);
-  border-left-color: rgba(80, 80, 80, .45);
-  background-color: rgba(0, 0, 0, .2);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  border-right-color: rgba(60, 60, 60, 0.35);
+  border-top-color: rgba(60, 60, 60, 0.35);
+  border-left-color: rgba(80, 80, 80, 0.45);
+  background-color: rgba(0, 0, 0, 0.2);
   background-repeat: no-repeat;
   padding: 8px 24px 8px 10px;
-  font: bold .875em/1.25em "Open Sans Condensed", sans-serif;
-  letter-spacing: .075em;
+  font: bold 0.875em/1.25em "Open Sans Condensed", sans-serif;
+  letter-spacing: 0.075em;
   color: #fff;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
-  margin-bottom: 19px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
 }
 
 form input:focus {
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 form input.email {
@@ -175,7 +173,7 @@ form input.email {
 
 form input.pass {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAYAAADNo/U5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTVFMDg1QzU3QzIzMTFFMjgwQThGODZFM0EwQUZFQ0YiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTVFMDg1QzY3QzIzMTFFMjgwQThGODZFM0EwQUZFQ0YiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NUUwODVDMzdDMjMxMUUyODBBOEY4NkUzQTBBRkVDRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1NUUwODVDNDdDMjMxMUUyODBBOEY4NkUzQTBBRkVDRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv2NSIIAAADYSURBVHjanJAxCsJAEEXXaBMQtvIMqTxDKjtPELC1svMoOYM2WlqIhVcQFMVgG7ATAoIggfGPjrLIrBo/vCzZ+Z+dGUNExiECI7Clhw5gAtqur8YfUQxm4AzGIAMRSIAFXbC8OyUdghwsgH173cp9Lr5XqAeOSsANcj3h/8BpbQ4Ko6uQOvtMQy6noG4+iz3XZ4iHbIEQ9L8EeUlN3t5etvSrMg6RqajAc78BQ7BTq6QrllV3tKLvpZOclyrt/TWTlTP0zVQqba/BAKyUWsmh1BPUxL70JsAABHkyyK1uocIAAAAASUVORK5CYII=);
-  background-position: 223px 8px
+  background-position: 223px 8px;
 }
 
 ::-webkit-input-placeholder {
@@ -193,48 +191,43 @@ form input.pass {
   text-transform: uppercase;
 }
 
-form button[type=submit] {
+form button[type="submit"] {
   width: 150px;
   margin-bottom: 0;
-  color: #3f898a;
-  letter-spacing: .05em;
+  color: #fff;
+  letter-spacing: 0.05em;
   text-shadow: 0 1px 0 #133d3e;
   text-transform: uppercase;
-  background: #225556;
-  border-top-color: #9fb5b5;
-  border-left-color: #608586;
-  border-bottom-color: #1b4849;
-  border-right-color: #1e4d4e;
+  background: #a20a0a;
   cursor: pointer;
 }
 
-
-select{
+select {
   border: 1px solid;
-  border-bottom-color: rgba(255, 255, 255, .5);
-  border-right-color: rgba(60, 60, 60, .35);
-  border-top-color: rgba(60, 60, 60, .35);
-  border-left-color: rgba(80, 80, 80, .45);
-  background-color: rgba(0, 0, 0, .2);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  border-right-color: rgba(60, 60, 60, 0.35);
+  border-top-color: rgba(60, 60, 60, 0.35);
+  border-left-color: rgba(80, 80, 80, 0.45);
+  background-color: rgba(0, 0, 0, 0.2);
   background-repeat: no-repeat;
   padding: 8px 24px 8px 10px;
   font: bold 0.875em/1.25em "Open Sans Condensed", sans-serif;
-  letter-spacing: .075em;
+  letter-spacing: 0.075em;
   color: #fff;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
-  margin-bottom: 19px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
   border-radius: 0.6rem;
 }
 
-select option{
-background-color:  rgb(162, 10, 10,0.88);
+select option {
+  background-color: rgb(162, 10, 10, 0.88);
 }
 
-select option:active{
-  background-color: rgb(162, 10, 10,0.88);
+select option:active {
+  background-color: rgb(162, 10, 10, 0.88);
 }
 
 select option:focus {
-    outline: none !important;;
-    box-shadow: none;
+  outline: none !important;
+  box-shadow: none;
 }
