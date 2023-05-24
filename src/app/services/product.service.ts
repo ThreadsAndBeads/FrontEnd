@@ -17,7 +17,6 @@ export class ProductService {
     return this.httpClient.post<Product>(`${this.BASE_URL}/`, product);
   }
   public updateProduct(product: FormData, product_id: any) {
-    console.log(product);
     return this.httpClient.patch<Product>(`${this.BASE_URL}/${product_id}`, product);
   }
   public getTopDiscountedProduct() {

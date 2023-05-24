@@ -82,9 +82,12 @@
 		"add": " اضافة",
 		"browse": " تصفح",
 		"category": "الفئه",
+		"categoryError": "يجب اختيار الفئة",
+		"discPriceError": "سعر الخصم غير مناسب",
 		"discountPrice": "  سعر الخصم",
 		"dragAndDropText": "  قم بسحب وإسقاط الملفات هنا للتحميل",
 		"file": " الملف",
+		"nameError": "الاسم مطلوب",
 		"productDescription": " وصف المنتج",
 		"productInStock": " المنتج في المخزن",
 		"productName": "اسم المنتج",
@@ -134,7 +137,7 @@
 		"zipCode": "الرمز البريدي"
 	},
 	"customerOrders": {
-    "AreYouSure": "هل أنت متأكد؟",
+		"AreYouSure": "هل أنت متأكد؟",
 		"Cancel": "الغاء",
 		"DELIVERED": "تم التوصيل",
 		"Delete": "حذف",
@@ -241,6 +244,17 @@
 	},
 	"topSellerHome": {
 		"title": "الاكثر مبيعا"
+	},
+	"workshop": {
+		"description": "وصف الورشة",
+		"descriptionError": "وصف الورشة مطلوب",
+		"endDate": "ينتهي يوم",
+		"price": "السعر",
+		"priceError": "السعر مطلوب",
+		"startDate": "يبدأ يوم",
+		"title": "العنوان",
+		"titleError": "العنوان مطلوب",
+		"updateBtn": "تعديل"
 	},
 	"workshopCard": {
 		"bookBtn": "احجز الان"

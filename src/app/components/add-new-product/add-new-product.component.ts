@@ -16,6 +16,7 @@ import { Category } from 'src/app/model/category.model';
 })
 export class AddNewProductComponent implements OnInit {
   categories: Category[] = [];
+  submitted = false;
   userId = this.tokenService.getUser()._id ; 
   product : Product = {
     user_id : this.userId  ,
@@ -27,23 +28,18 @@ export class AddNewProductComponent implements OnInit {
     priceDiscount : 0,
     images : [],
   }
-  error = {
-    name: 'product name required',
-    price: 'product price required',
-    priceDiscount: 'discount price should be below regular price',
-    type: ''
-  };
   constructor(private productService : ProductService , private sanitizer :DomSanitizer , private tokenService: TokenStorageService) { }
 
   ngOnInit(): void {
     this.getCategories();
   }
   addProduct(productForm : NgForm){
+    this.submitted = true ; 
+    if(productForm.valid){  
     const productFormData =  this.prepareFormData(this.product)
     console.log(productFormData)
     this.productService.addProduct(productFormData).subscribe(
       (response : Product) =>{
-        // console.log(response);
         productForm.reset();
         this.product.images = [];
       },
@@ -51,6 +47,7 @@ export class AddNewProductComponent implements OnInit {
         console.log(error);
       }
     );
+    }
   }
   prepareFormData(product: Product): FormData {
     const formData:any = new FormData();
@@ -68,14 +65,12 @@ export class AddNewProductComponent implements OnInit {
   }
   onFileSelected(event :any){
     if(event.target.files){
-      console.log(event.target.files[0])
      const file = event.target.files[0];
      const fileHandle : FileHandle = {
       file : file , 
       url : this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(file))
      }
      this.product.images.push(fileHandle)
-     console.log(fileHandle)
     }
   }
   removeImage(i :number) {

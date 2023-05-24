@@ -27,7 +27,7 @@
   text-align: center;
 }
 .cssbuttons-io-button {
-  background: #3c486b;
+  background: #a20a0a;
   color: white;
   font-family: inherit;
   padding: 0.35em;
@@ -39,7 +39,6 @@
   letter-spacing: 0.05em;
   display: flex;
   align-items: center;
-  box-shadow: inset 0 0 1.6em -0.6em #714da6;
   overflow: hidden;
   position: relative;
   height: 2.8em;
@@ -56,7 +55,6 @@
   height: 2.2em;
   width: 2.2em;
   border-radius: 0.7em;
-  box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
   right: 0.3em;
   transition: all 0.3s;
 }
@@ -161,7 +159,7 @@ form button {
   letter-spacing: 0.075em;
   color: #fff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  margin-bottom: 19px;
+  margin-bottom: 5px;
 }
 
 form input:focus {
@@ -196,29 +194,29 @@ form input.pass {
 form button[type="submit"] {
   width: 150px;
   margin-bottom: 0;
-  color: #3f898a;
+  color: #fff;
   letter-spacing: 0.05em;
-  text-shadow: 0 1px 0 #133d3e;
+  text-shadow: 0 1px 0 #a20a0a;
   text-transform: uppercase;
-  background: #225556;
-  border-top-color: #9fb5b5;
+  background: #a20a0a;
+  /* border-top-color: #9fb5b5;
   border-left-color: #608586;
   border-bottom-color: #1b4849;
-  border-right-color: #1e4d4e;
+  border-right-color: #1e4d4e; */
   cursor: pointer;
 }
 
-input[type="date"]{
-  background-color: rgb(162, 10, 10,0.88);
+input[type="date"] {
+  background-color: rgb(162, 10, 10, 0.88);
   padding: 10px;
-  font-family: "Roboto Mono",monospace;
+  font-family: "Roboto Mono", monospace;
   color: #ffffff;
   font-size: 14px;
   border: none;
   outline: none;
   border-radius: 5px;
 }
-::-webkit-calendar-picker-indicator{
+::-webkit-calendar-picker-indicator {
   background-color: #ffffff;
   padding: 5px;
   cursor: pointer;
