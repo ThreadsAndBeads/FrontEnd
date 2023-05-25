@@ -35,6 +35,10 @@
 		"p": "Feel Free to contact us any time. We will get back to you as soon as we can!.",
 		"title": "Contact us"
 	},
+	"LandingPage": {
+		"home": "Home",
+		"message": "Welcome back to our vibrant handmade community! Immerse yourself in a world of exquisite handmade products, thoughtfully crafted by talented artisans. Each item tells a unique story and carries the essence of passion and dedication. you'll find treasures that resonate with your personal style and values."
+	},
 	"Nav": {
 		"about": "About",
 		"contact": "Contact",
@@ -65,6 +69,10 @@
 	"TopSellerSection": {
 		"header": "OUR AMAZING SELLERS",
 		"products": "Products"
+	},
+	"WelcomePage": {
+		"login": "Log In",
+		"message": "Welcome to our handmade community! As a new member, log in to discover exclusive workshops and a unique selection of handmade products for sale. Connect with like-minded individuals and unleash your creativity. Thanks for joining us!"
 	},
 	"WorkshopHomeSection": {
 		"btn": "Show all Workshops",
@@ -183,9 +191,6 @@
 	"footer": {
 		"followUs": "Follow us"
 	},
-	"landingPage": {
-		"btn": "Home"
-	},
 	"language": {
 		"arabic": "ar",
 		"english": "en"
@@ -195,13 +200,11 @@
 	},
 	"productFilter": {
 		"categoryFilter": "Categories",
-		"priceFilter": "Price",
-		"rateFilter": "Rating"
+		"priceFilter": "Price"
 	},
 	"productPageFilter:clear": "Clear All",
 	"productPageFilter:noProduct": "No products found",
 	"productPageFilter:noProductMessage": "Please try again later or refine your search",
-	"productPageFilter:rate": "rating",
 	"profile": {
 		"address": "Address:",
 		"appartmentNo": "Apartment Number:",
