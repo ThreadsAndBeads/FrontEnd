@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FooterComponent } from './components/footer/footer.component';
 import { SignupComponent } from './components/registration-page/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,12 +12,12 @@ import {
   HTTP_INTERCEPTORS,
   HttpClient,
   HttpClientModule,
-  HttpErrorResponse
+  HttpErrorResponse,
 } from '@angular/common/http';
 import { HeaderComponent } from './components/navbar/header/header.component';
 import { SigninComponent } from './components/registration-page/signin/signin.component';
 import { RegistrationComponent } from './components/registration-page/registration/registration.component';
-import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HorizontallScrollComponent } from './components/home-page/horizontall-scroll/horizontall-scroll.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { SellercardComponent } from './components/sellers-page/sellercard/sellercard.component';
@@ -69,9 +69,9 @@ import { SellerOrderCardComponent } from './components/seller-orders-page/seller
 import { FilterComponent } from './components/products-page/filter/filter.component';
 import { SetDirectionDirective } from './directives/set-direction.directive';
 import { CreateWorkshopComponent } from './components/create-workshop/create-workshop.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDatepickerModule   } from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { StripeComponent } from './components/stripe/stripe.component';
@@ -87,8 +87,6 @@ import { EmptyFavouritesComponent } from './components/favorite-page/empty-favou
 import { AnimatedNumberComponent } from './components/profile/animated-number/animated-number.component';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,7 +98,7 @@ import { TimeAgoPipe } from './pipes/time-ago.pipe';
     AboutUsComponent,
     FooterComponent,
     HeaderComponent,
-    AnimatedSectionComponent,
+    LandingPageComponent,
     RequestResetComponent,
     ErrorComponent,
     HomeComponent,
