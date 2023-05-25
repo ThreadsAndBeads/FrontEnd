@@ -138,6 +138,7 @@
           class="form-control col-12"
           aria-labelledby=""
           name="price"
+          min="0"
           #price="ngModel"
           required
           [(ngModel)]="product.price"
@@ -161,6 +162,7 @@
           class="form-control col-12"
           aria-labelledby=""
           name="discPrice"
+          min="0"
           [(ngModel)]="product.priceDiscount"
           #discPrice="ngModel"
           [max]="product.price"
@@ -190,6 +192,7 @@
           class="form-control col-12"
           aria-labelledby=""
           name="inStock"
+          min="0"
           [(ngModel)]="product.inStock"
         />
       </div>
