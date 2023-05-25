@@ -1,22 +1,18 @@
 <div class="col-md-12">
   <div class="wsk-cp-product">
-    <div class="wsk-cp-img">
+    <div
+      class="wsk-cp-img"
+      [routerLink]="['/user/productDetails', product._id]"
+    >
       <img [src]="product.images[0]" alt="Product" class="img-responsive" />
     </div>
     <div class="wsk-cp-text">
-      <div class="category">
-        <span
-          style="cursor: pointer"
-          [routerLink]="['/user/productDetails', product._id]"
-          >Details</span
-        >
-      </div>
       <div class="title-product">
         <h3>{{ product.name }}</h3>
       </div>
-      <div class="description-prod">
+      <div class="category-prod text-muted">
         <p>
-          {{ product.description }}
+          {{ product.category }}
         </p>
       </div>
       <div class="card-footer">
@@ -30,9 +26,8 @@
           <ng-template #noDiscount>
             <span class="price">${{ product.price }}</span>
           </ng-template>
-          <!-- <span class="price">{{ product.actualPrice }}$</span> -->
         </div>
-        <div class="wcf-right">
+        <div class="wcf-right d-flex">
           <a
             href="#myModal"
             class="delete-btn"
@@ -54,6 +49,7 @@
     </div>
   </div>
 </div>
+
 <div id="myModal" class="modal fade">
   <div class="modal-dialog modal-confirm">
     <div class="modal-content">
