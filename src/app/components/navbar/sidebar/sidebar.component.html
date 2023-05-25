@@ -61,21 +61,15 @@
           </ul>
         </li>
         <li>
-          <a
-            class="text-decoration-none"
-            *ngIf="isCustomer"
-            href="/customer/orders"
-          >
+          <a class="text-decoration-none" href="/user/orders">
             <i class="bi bi-box" style="margin-right: 5px"></i>
             {{ "sidebar.ordersBtn" | translate }}
           </a>
-          <a
-            class="text-decoration-none"
-            *ngIf="!isCustomer"
-            href="/seller/orders"
-          >
+        </li>
+        <li *ngIf="!isCustomer">
+          <a class="text-decoration-none" href="/seller/orders">
             <i class="bi bi-box" style="margin-right: 5px"></i>
-            {{ "sidebar.ordersBtn" | translate }}
+            {{ "sidebar.requestsBtn" | translate }}
           </a>
         </li>
         <li *ngIf="currentUser.type == 'seller'" class="dropdown">

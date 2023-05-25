@@ -92,7 +92,7 @@ export class CheckoutComponent {
 
     this.cartProducts.forEach((product) => {
       this.totalItems += product.quantity;
-      this.subTotalPrice += product.quantity * product.productId.price;
+      this.subTotalPrice += product.quantity * product.productId.actualPrice;
     });
     this.totalPrice = this.subTotalPrice - this.discount - this.tax - this.shipping;
     this.paymentService.setAmount(this.totalPrice);
@@ -173,8 +173,12 @@ export class CheckoutComponent {
     return newOrder;
   }
   navigateToTrackOrder() {
-    this.showModal = false; // Hide the modal
-    this.router.navigate(['/customer/orders']); // Navigate to the home page
+    this.showModal = false; 
+    this.router.navigate(['/customer/orders']); 
+  }
+  navigateToHome(){
+    this.showModal = false; 
+    this.router.navigate(['/home']);
   }
 
 }
