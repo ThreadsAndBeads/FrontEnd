@@ -1,16 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
-
 @import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic");
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300");
-
-
-.services_p {
-  font-family: "Droid Serif ";
-  font-size: 17px;
-}
 
 * {
   margin: 0;
@@ -18,19 +10,10 @@
   vertical-align: baseline;
 }
 
-img {
-  border: 0;
-}
-
 .containerContent {
   margin: 0 auto;
   width: 100%;
   max-width: 1400px;
-}
-
-ul {
-  list-style: none;
-  list-style-position: outside;
 }
 
 a {
@@ -41,21 +24,8 @@ p {
   line-height: 150%;
 }
 
-a:link,
-a:visited {
-  text-decoration: none;
-}
-
-.clear {
-  clear: both;
-}
-
 .center {
   text-align: center;
-}
-
-section {
-  width: 100%;
 }
 
 #amazingTeam {
@@ -100,21 +70,8 @@ section {
   display: inline-block;
 }
 
-.section4_article img {
-  margin-bottom: 25px;
-  width: 180px;
-}
-
 .section4_article > h3 {
   font-family: "MontserratBold", sans-serif;
-  /*font-weight: bold;*/
-  color: black;
-  margin-bottom: 3%;
-  font-size: 18px;
-}
-.seller-name {
-  font-family: "MontserratBold", sans-serif;
-  /*font-weight: bold;*/
   color: black;
   margin-bottom: 3%;
   font-size: 18px;
@@ -311,10 +268,6 @@ section {
 }
 
 @media (min-width: 460px) {
-  /*.icon2 {
-    margin-left: 100px;
-}*/
-
   .article_center4 {
     width: 70%;
   }
@@ -326,11 +279,6 @@ section {
 }
 
 @media (min-width: 630px) {
-  /*.icon2 {
-    margin-left: 8%;
-}*/
-
-
   .article_center4 .md-modal {
     width: 350px;
     height: auto;
@@ -359,10 +307,6 @@ section {
   }
 }
 
-/*****************************************************************************************************************/
-
-/* SECTION 4 - MODAL VIEW WINDOW */
-
 .md-modal {
   position: fixed;
   top: 50%;
@@ -387,174 +331,12 @@ section {
   visibility: visible;
 }
 
-.md-overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  top: 0;
-  left: 0;
-  z-index: 800;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0;
-  background: rgba(247, 247, 247, 0.8);
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  cursor: default;
-}
-
-.md-overlay-show {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
-  opacity: 1;
-  visibility: visible;
-  cursor: pointer;
-  cursor: url("https://cdn0.iconfinder.com/data/icons/app-tab-bar-icons-for-iphone/30/Undo_arrow_left_edit_back_cancel_rotate_delete_return_remove.png"),
-    auto;
-}
-
 .md-effect-9.md-modal {
   -webkit-perspective: 1300px;
   -moz-perspective: 1300px;
   -ms-perspective: 1300px;
   -o-perspective: 1300px;
   perspective: 1300px;
-}
-.md-modal button {
-  border: none;
-  padding: 0.6em 1.2em;
-  background: rgb(254, 209, 54);
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.2em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  -webkit-background-clip: padding-box;
-  -ms-background-clip: padding-box;
-  background-clip: padding-box;
-  -moz-transition: -moz-box-shadow 0.3s;
-  -o-transition: -o-box-shadow 0.3s;
-  -ms-transition: -ms-box-shadow 0.3s;
-  -webkit-transition: -webkit-box-shadow 0.3s;
-  transition: box-shadow 0.3s;
-  -ms-transition: -moz-box-shadow 0.3s;
-  -moz-transition: -moz-box-shadow 0.3s;
-  -o-transition: -o-box-shadow 0.3s;
-  -webkit-transition: -webkit-box-shadow 0.3s;
-  transition: box-shadow 0.3s;
-}
-
-.md-modal button:hover {
-  -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 6px #f89f05;
-  -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 6px #f89f05;
-  box-shadow: 0 0 0 3px #fff, 0 0 0 6px #f89f05;
-  background-color: #f89f05;
-  -moz-transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
-  -o-transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
-  -webkit-transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
-  transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
-  -webkit-animation: gelatine 0.5s 1;
-  animation: gelatine 0.5s 1;
-}
-
-@keyframes gelatine {
-  from,
-  to {
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-
-  25% {
-    -webkit-transform: scale(0.9, 1.1);
-    transform: scale(0.9, 1.1);
-  }
-
-  50% {
-    -webkit-transform: scale(1.1, 0.9);
-    transform: scale(1.1, 0.9);
-  }
-
-  75% {
-    -webkit-transform: scale(0.95, 1.05);
-    transform: scale(0.95, 1.05);
-  }
-
-  from,
-  to {
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-
-  25% {
-    -webkit-transform: scale(0.9, 1.1);
-    transform: scale(0.9, 1.1);
-  }
-
-  50% {
-    -webkit-transform: scale(1.1, 0.9);
-    transform: scale(1.1, 0.9);
-  }
-
-  75% {
-    -webkit-transform: scale(0.95, 1.05);
-    transform: scale(0.95, 1.05);
-  }
-}
-
-@-webkit-keyframes gelatine {
-  from,
-  to {
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-
-  25% {
-    -webkit-transform: scale(0.9, 1.1);
-    transform: scale(0.9, 1.1);
-  }
-
-  50% {
-    -webkit-transform: scale(1.1, 0.9);
-    transform: scale(1.1, 0.9);
-  }
-
-  75% {
-    -webkit-transform: scale(0.95, 1.05);
-    transform: scale(0.95, 1.05);
-  }
-
-  from,
-  to {
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-
-  25% {
-    -webkit-transform: scale(0.9, 1.1);
-    transform: scale(0.9, 1.1);
-  }
-
-  50% {
-    -webkit-transform: scale(1.1, 0.9);
-    transform: scale(1.1, 0.9);
-  }
-
-  75% {
-    -webkit-transform: scale(0.95, 1.05);
-    transform: scale(0.95, 1.05);
-  }
 }
 
 .thumbnail {
