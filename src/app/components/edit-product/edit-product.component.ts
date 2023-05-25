@@ -19,7 +19,7 @@ export class EditProductComponent implements OnInit{
   submitted = false;
   userId = this.tokenService.getUser()._id;
   productId: any;
-  product! : Product 
+  product! : Product
   ngOnInit() {
     this.product ={
     user_id : this.userId  ,
@@ -32,12 +32,12 @@ export class EditProductComponent implements OnInit{
     images : [],
     }
     const id = this.route.snapshot.paramMap.get('productId');
-    this.productService.getOneProduct(id).subscribe({next: (data : any) => {      
-      this.product = data.data.data;        
+    this.productService.getOneProduct(id).subscribe({next: (data : any) => {
+      this.product = data.data.data;
     } , error :(err)=>{
       console.log(err);
-      
-    }}); 
+
+    }});
     this.getCategories();
   }
 
@@ -46,13 +46,13 @@ export class EditProductComponent implements OnInit{
     private sanitizer: DomSanitizer,
     private tokenService: TokenStorageService,
     private route: ActivatedRoute,
-  private router: Router) { }
+    private router: Router) { }
 
   updateProduct(productForm : NgForm){
-    this.submitted = true ; 
-    if(productForm.valid){ 
+    this.submitted = true ;
+    if(productForm.valid){
     const productFormData =  this.prepareFormData(this.product)
-    const id = this.route.snapshot.paramMap.get('productId');    
+    const id = this.route.snapshot.paramMap.get('productId');
     this.productService.updateProduct(productFormData,id).subscribe(
       (response : Product) =>{
         this.router.navigate(['/seller/sellerProducts']);
