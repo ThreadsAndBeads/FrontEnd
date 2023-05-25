@@ -48,7 +48,7 @@ html {
   top: 50%;
   width: 100%;
   text-align: center;
-  color: #456268;
+  color: #A20A0A;
 }
 .middleSpan{
   background-color: #f9f9f9b8 !important;
@@ -56,7 +56,7 @@ html {
 
 .caption span.border {
   font-family: "Delicious Handrawn", cursive;
-  background-color: #456268;
+  background-color: #A20A0A;
   border-radius: 10px;
   color: #fff;
   padding: 18px;
