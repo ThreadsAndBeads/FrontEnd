@@ -7,6 +7,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 import { NgForm } from '@angular/forms';
 import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 import { Category } from 'src/app/model/category.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,31 +18,35 @@ import { Category } from 'src/app/model/category.model';
 export class AddNewProductComponent implements OnInit {
   categories: Category[] = [];
   submitted = false;
-  userId = this.tokenService.getUser()._id ; 
+  userId = this.tokenService.getUser()._id ;
   product : Product = {
     user_id : this.userId  ,
     name :"",
     description : "",
     price : 0 ,
     inStock: 0,
-    category: "", 
+    category: "",
     priceDiscount : 0,
     images : [],
   }
-  constructor(private productService : ProductService , private sanitizer :DomSanitizer , private tokenService: TokenStorageService) { }
+  constructor(private productService: ProductService,
+              private sanitizer: DomSanitizer,
+              private tokenService: TokenStorageService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.getCategories();
   }
   addProduct(productForm : NgForm){
-    this.submitted = true ; 
-    if(productForm.valid){  
+    this.submitted = true ;
+    if(productForm.valid){
     const productFormData =  this.prepareFormData(this.product)
     console.log(productFormData)
     this.productService.addProduct(productFormData).subscribe(
       (response : Product) =>{
         productForm.reset();
         this.product.images = [];
+        this.router.navigate(['/seller/sellerProducts']);
       },
       (error : HttpErrorResponse)=>{
         console.log(error);
@@ -59,7 +64,7 @@ export class AddNewProductComponent implements OnInit {
     formData.append('inStock', product.inStock);
     formData.append('priceDiscount', product.priceDiscount);
     for(let img of product.images) {
-      formData.append(`images`, img.file, img.file!.name)  
+      formData.append(`images`, img.file, img.file!.name)
       }
     return formData;
   }
@@ -67,7 +72,7 @@ export class AddNewProductComponent implements OnInit {
     if(event.target.files){
      const file = event.target.files[0];
      const fileHandle : FileHandle = {
-      file : file , 
+      file : file ,
       url : this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(file))
      }
      this.product.images.push(fileHandle)
