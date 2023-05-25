@@ -41,7 +41,6 @@ export class MyworkshopComponent implements OnInit {
       (response: any) => {
 
         this.workshops  = response.data.workshops;
-        console.log(response);
         this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
         // this.productService.products.push(...products);
       },
