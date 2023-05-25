@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 import {io}  from 'socket.io-client';
 import { UserService } from 'src/app/services/user/user.service';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
@@ -13,11 +13,11 @@ export class NotificationComponent implements OnInit {
   hasUnreadNotifications: boolean = false; 
   showDropdown: boolean = false; 
   private socket: any;
-
+  apiUrl = environment.apiUrl;
   constructor(
     private tokenService: TokenStorageService,    private userService: UserService
   ) {
-    this.socket = io('http://127.0.0.1:7000', { transports: ['websocket'] });
+    this.socket = io(this.apiUrl, { transports: ['websocket'] });
   }
   ngOnInit() {
     let userId = this.tokenService.getUser()._id;
