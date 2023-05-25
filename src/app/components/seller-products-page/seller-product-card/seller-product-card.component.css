@@ -191,9 +191,6 @@ a.edit-btn:focus {
 } */
 }
 
-
-
-
 .modal-confirm {
   color: #636363;
   width: 400px;
@@ -264,16 +261,23 @@ a.edit-btn:focus {
 .modal-confirm .btn-info {
   background: #c1c1c1;
 }
-.modal-confirm .btn-info:hover, .modal-confirm .btn-info:focus {
+.modal-confirm .btn-info:hover,
+.modal-confirm .btn-info:focus {
   background: #a8a8a8;
 }
 .modal-confirm .btn-danger {
   background: #f15e5e;
 }
-.modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
+.modal-confirm .btn-danger:hover,
+.modal-confirm .btn-danger:focus {
   background: #ee3535;
 }
 .trigger-btn {
   display: inline-block;
   margin: 100px auto;
+}
+.original-price {
+  text-decoration: line-through;
+  color: gray;
+  margin-left: 5px;
 }

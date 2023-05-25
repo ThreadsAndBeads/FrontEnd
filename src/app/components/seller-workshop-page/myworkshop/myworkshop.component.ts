@@ -52,24 +52,24 @@ export class MyworkshopComponent implements OnInit {
   get pages(): number[] {
     return Array.from({ length: this.NumberOfPages }, (_, i) => i + 1);
   }
-  previous() {
-    if (this.page > 1) {
-      this.page--;
-      this.getWorkshops();
-    }
-  }
+  // previous() {
+  //   if (this.page > 1) {
+  //     this.page--;
+  //     this.getWorkshops();
+  //   }
+  // }
 
-  next() {
-    if (this.page < this.NumberOfPages) {
-      this.page++;
-      this.getWorkshops();
-    }
-  }
+  // next() {
+  //   if (this.page < this.NumberOfPages) {
+  //     this.page++;
+  //     this.getWorkshops();
+  //   }
+  // }
 
-  navToPage(page: number){
-    this.page = page;
-    this.getWorkshops();
-  };
+  // navToPage(page: number){
+  //   this.page = page;
+  //   this.getWorkshops();
+  // };
   showModal() {
     const modal = new bootstrap.Modal(this.myModal.nativeElement);
     modal.show();
