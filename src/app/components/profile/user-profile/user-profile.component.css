@@ -214,12 +214,6 @@ span {
 }
 .media-body span{
   font-size: 1rem;
-  color: #fff;
-  font-family: "Delicious Handrawn", cursive !important;
-  border-radius: 1.5rem;
-  border: none !important;
-  transition: all 0.6s;
-  max-height: 60px;
 }
 .revenue-card:hover {
   scale: 1.1;
