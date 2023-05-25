@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegistrationComponent } from './components/registration-page/registration/registration.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
-import { AnimatedSectionComponent } from './components/animated-section/animated-section.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HomeComponent } from './components/home-page/home/home.component';
 import { RequestResetComponent } from './components/forget-password-page/request-reset/request-reset.component';
 import { AddNewProductComponent } from './components/create-product/add-new-product.component';
@@ -31,7 +31,7 @@ import { SellerGuard } from './guard/seller.guard';
 import { CustomerGuard } from './guard/customer.guard';
 
 const routes: Routes = [
-  { path: '', component: AnimatedSectionComponent },
+  { path: '', component: LandingPageComponent },
   { path: 'home', component: HomeComponent },
   { path: 'auth', component: RegistrationComponent },
   { path: 'about', component: AboutUsComponent },

@@ -64,7 +64,7 @@ hr {
   color: #f9d949;
 }
 
-.login-button {
+.home-button {
   padding: 10px 50px;
   border: none;
   outline: none;
@@ -74,6 +74,7 @@ hr {
   background-color: white;
   color: #3c486b;
 }
+
 @media only screen and (max-width: 768px) {
   .welcome-container {
     min-height: auto;
@@ -85,7 +86,7 @@ hr {
     font-size: 5em;
     margin-top: 60%;
   }
-  .login-button {
+  .home-button {
     margin-top: 30px;
     margin-left: -30%;
   }
