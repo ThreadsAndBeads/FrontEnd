@@ -92,7 +92,7 @@ export class CheckoutComponent {
 
     this.cartProducts.forEach((product) => {
       this.totalItems += product.quantity;
-      this.subTotalPrice += product.quantity * product.productId.price;
+      this.subTotalPrice += product.quantity * product.productId.actualPrice;
     });
     this.totalPrice = this.subTotalPrice - this.discount - this.tax - this.shipping;
     this.paymentService.setAmount(this.totalPrice);
