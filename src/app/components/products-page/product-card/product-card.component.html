@@ -16,8 +16,19 @@
         </p>
       </div>
       <div class="card-footer">
-        <div class="wcf-left">
+        <!-- <div class="wcf-left">
           <span class="price">${{ product.price }}</span>
+        </div> -->
+        <div class="wcf-left">
+          <ng-container *ngIf="product.priceDiscount > 0; else noDiscount">
+            <span class="discount-price price"
+              >${{ product.price - product.priceDiscount }}</span
+            >
+            <span class="original-price">${{ product.price }}</span>
+          </ng-container>
+          <ng-template #noDiscount>
+            <span class="price">${{ product.price }}</span>
+          </ng-template>
         </div>
         <div class="wcf-right d-flex">
           <a class="my-auto" (click)="addToCart(product._id)"
