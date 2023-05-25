@@ -2,12 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Cart } from 'src/app/model/cart.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  private BASE_URL = 'http://localhost:7000/api/v1/cart';
+  apiUrl = environment.apiUrl;
+  BASE_URL = this.apiUrl + '/api/v1/cart';
   public cartUpdatedSubject: Subject<void> = new Subject<void>();
   public cartUpdated$: Observable<void> =
     this.cartUpdatedSubject.asObservable();

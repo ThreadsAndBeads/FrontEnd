@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaymentService {
-  private BASE_URL = 'http://localhost:7000/api/v1/payments/processPayment';
+  apiUrl = environment.apiUrl;
+  BASE_URL = this.apiUrl + '/api/v1/processPayment';
   private amount: number = 0;
   paymentHandler: any = null;
 
@@ -24,11 +26,6 @@ export class PaymentService {
     if (this.paymentHandler) {
       this.openPayment(amount);
     }
-    // else {
-    //   setTimeout(() => {
-    //     this.makePayment();
-    //   }, 500);
-    // }
   }
 
   openPayment(amount: number) {
