@@ -30,7 +30,6 @@ export class SellerProductsComponent implements OnInit {
     this.productService.getUserProducts(this.page, this.limit,this.currentUserId).subscribe(
       (response: any) => {
         const { products } = response.data;
-        console.log(products);
         this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
 
         this.productService.products.push(...products);
