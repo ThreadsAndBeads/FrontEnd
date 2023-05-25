@@ -41,21 +41,6 @@ const routes: Routes = [
   { path: 'sellers', component: SellersComponent },
   { path: 'workshops', component: WorkshopPageComponent },
   {
-    path: 'profile',
-    component: UserProfileComponent,
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'productDetails/:id',
-    component: ProductDetailsComponent,
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'editProfile',
-    component: EditProfileComponent,
-    canActivate: [AuthGuard],
-  },
-  {
     path: 'forgetPassword',
     component: RequestResetComponent,
   },
@@ -74,16 +59,19 @@ const routes: Routes = [
       { path: 'editProduct/:productId', component: EditProductComponent },
       { path: 'editWorkshop/:workshopId', component: EditWorkshopComponent },
       { path: 'orders', component: SellerOrdersComponent },
+      {path: 'profile',component: UserProfileComponent}
     ],
   },
   {
-    path: 'customer',
-    canActivate: [CustomerGuard],
+    path: 'user',
+    canActivate: [AuthGuard],
     children: [
       { path: 'cart', component: CartComponent },
       { path: 'checkout', component: CheckoutComponent },
       { path: 'orders', component: ClientOrdersComponent },
       { path: 'favorites', component: FavouriteComponent },
+      {path: 'editProfile',component: EditProfileComponent},
+      {path: 'productDetails/:id' , component: ProductDetailsComponent}
     ],
   },
   { path: '**', component: ErrorComponent },

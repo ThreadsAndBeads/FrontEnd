@@ -31,7 +31,6 @@ export class ClientOrdersComponent implements OnInit{
     this.orderService.getClientOrder(this.userId).subscribe({
       next: (response: any) => {
         this.orders = response.data.data;
-        console.log(this.orders);
       },
       error: (error) => {
         console.log(error);

@@ -28,7 +28,7 @@
 }
 
 .user-icons {
-  width: 100px;
+  width: 120px;
 }
 
 .search {
@@ -123,7 +123,7 @@ li {
 }
 
 .active {
-  color: #A20A0A !important;
+  color: #a20a0a !important;
 }
 
 @media (min-width: 992px) {
