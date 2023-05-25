@@ -2,12 +2,12 @@
   <section id="amazingTeam" class="clear">
     <div class="containerContent">
       <div class="set_size_section1">
-        <h2 class="services_h2 center">
+        <h2 class="services_h2 center p-4">
           {{ "TopSellerSection.header" | translate }}
         </h2>
-        <article class="article_center4 d-flex">
+        <article class="article_center4 d-flex justify-content-center flex-wrap">
           <div class="md-modal md-effect-9" id="modal-9"></div>
-          <div class="col-sm-6 col-md-4" *ngFor="let seller of topSellers">
+          <div class="col-12 col-sm-6 col-md-4" *ngFor="let seller of topSellers">
             <div class="thumbnail">
               <article class="section4_article article1">
                 <div class="itemli">
@@ -31,8 +31,7 @@
                     </div>
                   </div>
                 </div>
-                <h3>{{ seller.sellerName }}</h3>
-                <p>{{ seller.role }}</p>
+                <h3 class="text-capitalize">{{ seller.sellerName }}</h3>
               </article>
             </div>
           </div>
