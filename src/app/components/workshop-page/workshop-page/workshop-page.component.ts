@@ -12,7 +12,7 @@ export class WorkshopPageComponent implements OnInit {
     protected workshopService: WorkshopService,
   ) {}
   page = 1;
-  limit = 2;
+  limit = 8;
   NumberOfPages!: number;
   workshops = [];
   ngOnInit(): void {
