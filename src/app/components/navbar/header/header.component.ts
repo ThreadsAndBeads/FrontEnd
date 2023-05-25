@@ -15,7 +15,6 @@ export class HeaderComponent implements OnInit{
   isUserLoggedIn: string | null = '';
   totalCartProducts: Number = 0;
   totalFavouritesProducts: Number = 0;
-  private socket: any;
   public data: any;
 
   constructor(
@@ -55,6 +54,7 @@ export class HeaderComponent implements OnInit{
   }
 
   public getCartCount() {
+    if (this.isUserLogged()) {
     this.cartService.getProductsCount().subscribe({
       next: (response) => {
         this.totalCartProducts = response.totalProducts;
@@ -64,7 +64,9 @@ export class HeaderComponent implements OnInit{
       },
     });
   }
+  }
   public getFavouritesCount() {
+    if (this.isUserLogged()) {
     this.favouriteService.getFavouritesProductsCount().subscribe({
       next: (response) => {
         this.totalFavouritesProducts = response.totalFavourites;
@@ -73,6 +75,7 @@ export class HeaderComponent implements OnInit{
         console.log(error);
       },
     });
+  }
   }
 
   useLang(language: string) {
@@ -90,10 +93,7 @@ export class HeaderComponent implements OnInit{
       }
     }
   }
-  ngOnDestroy(): void {
-    const room = `seller_${this.tokenService.getUser()._id }`;
-    this.socket.emit("leave", room);
-  }
+
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
