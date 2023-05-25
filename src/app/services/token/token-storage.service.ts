@@ -42,6 +42,7 @@ export class TokenStorageService {
     return !!token;
   }
   public isSeller(): boolean {
+    if(this.isLoggedIn())
     if(this.getUser().type === "seller"){
       return true;
     }
