@@ -1,158 +1,93 @@
-.Parent{
-  overflow: hidden;
+.welcome-container {
+  background-image: url("/assets/Images/pexels-min-an-713661.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
 }
 
-svg {
-  margin: 0;
-  padding: 0;
-	transform: scale(1.2);
-	transition: transform 5s;
-	will-change: transform;
-  height: 100vh;
-}
-
-svg:hover {
-	transform: scale(1.1);
-}
-
-#Sfondo {
-  animation-duration: 25s;
-  animation-name: translateBg;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#Fronte {
-  animation-duration: 18s;
-  animation-name: translateFr;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#Mano_e_ago {
-  animation-duration: 10s;
-  animation-name: hand;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#Uomo_e_nodi {
-  animation-duration: 5s;
-  animation-name: man;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#filo1,
-#filo2 {
-  animation-duration: 10s;
-  animation-name: thread;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes thread {
-  from {
-    transform: scaleX(1);
-		transform-origin: center center;
-  }
-
-  to {
-    transform: scale(1.1, 1.02);
-  }
-}
-
-@keyframes man {
-  from {
-    transform: translateX(.5em);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes hand {
-  from {
-    transform: rotate(-2deg);
-    transform-origin: right bottom;
-  }
-
-  to {
-    transform: rotate(0);
-  }
-}
-
-@keyframes translateBg {
-  from {
-    transform: translateX(-4%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes translateFr {
-  from {
-    transform: translateX(4%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
-.cssbuttons-io-button {
-  background: #A20A0A;
-  color: white;
-  font-family: inherit;
-  padding: 0.35em;
-  padding-left: 1.2em;
-  font-size: 17px;
-  font-weight: 500;
-  border-radius: 0.9em;
-  border: none;
-  letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
-  box-shadow: inset 0 0 1.6em -0.6em #714da6;
-  overflow: hidden;
+.vertical-line {
   position: relative;
-  height: 2.8em;
-  padding-right: 3.3em;
+  width: 1px;
+  height: 100%;
+  left: 7%;
 }
-
-.cssbuttons-io-button .icon {
-  background: white;
-  margin-left: 1em;
+.welcome-logo {
+  font-family: "Times New Roman", serif;
+  color: #fff;
+}
+.vertical-line::before {
+  content: "";
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.2em;
-  width: 2.2em;
-  border-radius: 0.7em;
-  box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
-  right: 0.3em;
-  transition: all 0.3s;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+}
+hr {
+  border: 0;
+  height: 1px;
+  width: 200px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+}
+.paragraph-container {
+  color: #fff;
+  font-size: 1.3em;
+}
+.words-container {
+  width: 50%;
+  background-color: rgb(69, 98, 104, 0.65);
+  height: 100%;
+}
+.welcome-word h1 {
+  font-family: "Times New Roman", serif;
+  font-size: 10em;
+  line-height: 0.9;
+  font-weight: 1000;
+  color: #fff;
+  margin-top: 20%;
+  margin-left: 25%;
 }
 
-.cssbuttons-io-button:hover .icon {
-  width: calc(100% - 0.6em);
+.welcome-word span {
+  color: #f9d949;
 }
 
-.cssbuttons-io-button .icon svg {
-  width: 1.1em;
-  transition: transform 0.3s;
-  color: #7b52b9;
+.home-button {
+  padding: 10px 50px;
+  border: none;
+  outline: none;
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: white;
+  color: #3c486b;
 }
 
-.cssbuttons-io-button:hover .icon svg {
-  transform: translateX(0.1em);
-}
-
-.cssbuttons-io-button:active .icon {
-  transform: scale(0.95);
+@media only screen and (max-width: 768px) {
+  .welcome-container {
+    min-height: auto;
+  }
+  .paragraph-container {
+    display: none !important;
+  }
+  .welcome-word h1 {
+    font-size: 5em;
+    margin-top: 60%;
+  }
+  .home-button {
+    margin-top: 30px;
+    margin-left: -30%;
+  }
 }

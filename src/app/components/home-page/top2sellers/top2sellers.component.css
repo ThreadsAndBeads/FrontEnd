@@ -9,7 +9,6 @@
 
 .services_p {
   font-family: "Droid Serif ";
-  /* font-style: italic; */
   font-size: 17px;
 }
 
@@ -54,8 +53,6 @@ a:visited {
 .center {
   text-align: center;
 }
-
-/*GENERAL SECTION SETTINGS*/
 
 section {
   width: 100%;
@@ -133,52 +130,10 @@ section {
   margin: 0 auto;
 }
 
-.icon {
-  display: inline-block;
-  margin-top: 10px;
-}
-
-.icon_twitter {
-  height: 50px;
-  width: 50px;
-  background: url("http://www.vivebooks.com/site/wp-content/themes/vivebooks/images/twitter.png")
-    no-repeat;
-  float: left;
-  cursor: pointer;
-}
-
-.icon_google {
-  height: 50px;
-  width: 50px;
-  background: url("https://www.nataliebarneyjewellery.com.au/wp-content/uploads/2014/06/icon-gplus.png")
-    no-repeat;
-  float: left;
-  cursor: pointer;
-}
-
-.icon_fb {
-  height: 50px;
-  width: 50px;
-  background: url("http://www.adoptivefamiliescircle.com/images/site_images/facebook-circle-35.png")
-    no-repeat;
-  float: left;
-  cursor: pointer;
-}
-
-.icon_pinterest {
-  height: 50px;
-  width: 50px;
-  background: url("https://www.oxondigital.co.uk//wp-content/uploads/2012/02/Pinterest-Logo-44125_40x40.png")
-    no-repeat;
-  float: left;
-  cursor: pointer;
-}
-
 .ch-item {
   width: 100%;
   height: 100%;
   -moz-border-radius: 50%;
-  /*behavior: url(../pie/PIE.htc);*/
   -webkit-border-radius: 50%;
   border-radius: 50%;
   border: 8px solid white;
@@ -235,7 +190,6 @@ section {
   height: 100%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  /*behavior: url(../pie/PIE.htc);*/
   border-radius: 50%;
   background-position: center center;
   -moz-transition: all 0.4s linear;
