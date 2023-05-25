@@ -8,6 +8,7 @@ export interface Product {
   category: string;
   price: number;
   inStock: number;
+  actualPrice?:number| null;
   priceDiscount: number;
   images: FileHandle[];
 }
