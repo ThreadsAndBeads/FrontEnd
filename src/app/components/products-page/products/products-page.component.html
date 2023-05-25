@@ -1,0 +1,63 @@
+<div class="row col-12 m-0 position-relative">
+  <div class="col-9 col-sm-4 col-md-3 col-xl-2 h-100 p-0 filterBy">
+    <app-filter [filterBy]="filterBy" (filterByEvent)="onFilterChange($event)"></app-filter>
+    <i class="bi bi-sliders2 fs-2 toggleFilter" (click)="viewFilter()"></i>
+  </div>
+  <div class="container-fluid mx-auto me-md-0 col-12 col-md-9 col-xl-10" style="padding: 90px 20px;">
+    <div class="filters  d-flex justify-content-center flex-wrap" *ngIf="filterBy" style="min-height: 30px;">
+      <span class="m-0 p-0" *ngIf="filterBy.categories">
+        <span class="filter" *ngFor="let category of filterBy.categories">
+          {{ category }}
+          <i class="bi bi-x" (click)="removeFromFilter('categories', category)"></i>
+        </span>
+      </span>
+      <span class="filter" *ngIf="filterBy.price">
+        $ {{ filterBy.price.min }} - {{ filterBy.price.max }}
+        <i class="bi bi-x" (click)="removeFromFilter('price')"></i>
+      </span>
+      <span (click)="clearFilter()" class="FilterClearAll my-auto" *ngIf="filterBy.categories || filterBy.price">{{"productPageFilter:clear" | translate}}</span>
+    </div>
+    <div class="col-12 d-flex justify-content-between">
+      <p>Showing 10 of 100</p>
+      <!-- <span>Showing {{productNumbers>limit ? limit : productNumbers}} of {{productNumbers}}</span> -->
+      <div class="" style="width: 210px;">
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="sortBySelectedValue" (ngModelChange)="onSelectionChange()">
+          <option value="default" selected>{{"ProductPageSort.default" | translate}}</option>
+          <option value="-createdAt">{{"ProductPageSort.newest" | translate}}</option>
+          <option value="rating">{{"ProductPageSort.highest rating" | translate}}</option>
+          <option value="price">{{"ProductPageSort.priceAsc" | translate}}</option>
+          <option value="-price">{{"ProductPageSort.priceDesc" | translate}}</option>
+          <option value="-priceDiscount">{{"ProductPageSort.highestDiscound" | translate}}</option>
+        </select>
+      </div>
+    </div>
+    <div *ngIf="productService.products.length > 0; else NoProducts">
+      <div class="row d-flex flex-wrap mx-auto">
+        <app-product-card *ngFor="let product of productService.products" class="pdtCard col-12 col-sm-6 col-lg-4 col-xl-3" [product]="product"></app-product-card>
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination d-flex justify-content-center">
+          <li class="page-item ">
+            <button  (click)="previous()" class="page-link" aria-label="Previous">
+              <span aria-hidden="true"><i class="bi bi-caret-left-fill"></i></span>
+            </button>
+          </li>
+          <li class="page-item" *ngFor="let page of pages" (click)="navToPage(page)">
+            <button class="page-link">{{page}}</button>
+          </li>
+          <li class="page-item">
+            <button  (click)="next()" class="page-link" aria-label="Next">
+              <span aria-hidden="true"><i class="bi bi-caret-right-fill"></i></span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <ng-template #NoProducts>
+      <div class="text-center mt-5">
+        <h3>{{"productPageFilter:noProduct" | translate}}</h3>
+        <p>{{"productPageFilter:noProductMessage" | translate}}</p>
+      </div>
+    </ng-template>
+  </div>
+</div>

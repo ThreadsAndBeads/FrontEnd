@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
-import { TokenStorageService } from '../services/token-storage.service';
+import { TokenStorageService } from '../services/token/token-storage.service';
 
 export const SellerGuard: CanActivateFn = (
   route: ActivatedRouteSnapshot,

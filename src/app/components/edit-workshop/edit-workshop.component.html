@@ -34,11 +34,11 @@
               </g>
             </svg>
             <div>
-              <span>Drag and drop your file or </span>
-              <a (click)="selectFile.click()" class="browse-btn text-info"
-                >browse</a
-              >
-              a file
+              <span>{{ "add-new-product.dragAndDropText" | translate }}</span>
+              <a (click)="selectFile.click()" class="browse-btn text-info">{{
+                "add-new-product.browse" | translate
+              }}</a>
+              {{ "add-new-product.file" | translate }}
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@
         <img
           class="card-img-top m-0"
           style="width: 100px; height: 100px"
-          [src]="workshop!.image!"
+          [src]="workshop!.image!.url ? workshop!.image!.url : workshop!.image!"
         />
       </div>
       <input
@@ -70,7 +70,8 @@
     <div class="parent2 col-12 col-md-6">
       <div>
         <label for="inputProductName5" class="form-label"
-          >Workshop title <span class="required-star">*</span></label
+          >{{ "workshop.title" | translate
+          }}<span class="required-star">*</span></label
         >
         <input
           type="text"
@@ -79,12 +80,24 @@
           aria-labelledby=""
           name="title"
           [(ngModel)]="workshop.title"
+          required
+          #title="ngModel"
         />
+        <div
+          *ngIf="title.invalid && (title.dirty || title.touched || submitted)"
+          class="text-danger p-0 m-0 fw-bold"
+          style="font-size: 14px"
+        >
+          <div *ngIf="title.errors?.['required']">
+            {{ "workshop.titleError" | translate }}
+          </div>
+        </div>
       </div>
 
       <div>
         <label for="inputProductPrice5" class="form-label">
-          Price <span class="required-star">*</span></label
+          {{ "workshop.price" | translate }}
+          <span class="required-star">*</span></label
         >
         <input
           type="number"
@@ -93,30 +106,43 @@
           aria-labelledby=""
           name="price"
           [(ngModel)]="workshop.price"
+          required
+          #price="ngModel"
         />
+        <div
+          *ngIf="price.invalid && (price.dirty || price.touched || submitted)"
+          class="text-danger p-0 m-0 fw-bold"
+          style="font-size: 14px"
+        >
+          <div *ngIf="price.errors?.['required']">
+            {{ "workshop.priceError" | translate }}.
+          </div>
+        </div>
       </div>
       <div class="" [formGroup]="range">
-        <div class="mt-1">
-          <label for="startDate" class="form-label">
-            Start Date <span class="required-star">*</span></label
+        <div class="mt-1 row">
+          <label for="startDate" class="form-label col-4">
+            {{ "workshop.startDate" | translate }}
+            <span class="required-star">*</span></label
           >
           <input
             id="startDate"
             type="date"
             formControlName="start"
-            class="mx-2"
+            class="mx-2 col-4"
             placeholder="Start date"
           />
         </div>
-        <div class="mt-2">
-          <label for="end" class="form-label">
-            End Date <span class="required-star">*</span></label
+        <div class="mt-2 row">
+          <label for="end" class="form-label col-4">
+            {{ "workshop.endDate" | translate }}
+            <span class="required-star">*</span></label
           >
           <input
             type="date"
             id="end"
             formControlName="end"
-            class="mx-2"
+            class="mx-2 col-4"
             placeholder="End date"
           />
         </div>
@@ -124,7 +150,9 @@
     </div>
 
     <div class="col-12 col-md-6">
-      <label for="inputDiscountPrice5" class="form-label"> Description </label>
+      <label for="inputDiscountPrice5" class="form-label">
+        {{ "workshop.description" | translate }}
+      </label>
       <textarea
         class="description form-control text-white"
         id="exampleFormControlTextarea1"
@@ -133,12 +161,23 @@
         name="description"
         [(ngModel)]="workshop.description"
         style="min-height: calc(100% - 0.75rem - 36px)"
+        #desc="ngModel"
+        required
       ></textarea>
+      <div
+        *ngIf="desc.invalid && (desc.dirty || desc.touched || submitted)"
+        class="text-danger p-0 m-0 fw-bold"
+        style="font-size: 14px"
+      >
+        <div *ngIf="desc.errors?.['required']">
+          {{ "workshop.descriptionError" | translate }}
+        </div>
+      </div>
     </div>
 
     <div class="col-12 col-md-12 d-flex justify-content-end align-content-end">
       <button type="submit" class="cssbuttons-io-button mt-2 mt-lg-auto">
-        Add
+        {{ "workshop.updateBtn" | translate }}
         <div class="icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
