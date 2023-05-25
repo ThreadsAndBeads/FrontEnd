@@ -5,7 +5,7 @@ aside {
   min-width: 150px !important;
   right: 0;
   position: fixed;
-  background-color: #334a4e;
+  background-color: #996d47;
   transition: 1s transform cubic-bezier(0.23, 1, 0.32, 1);
 }
 

@@ -1,6 +1,10 @@
 <app-header
-  *ngIf="router.url !== '/auth' && router.url !== '/welcome'"></app-header>
-<router-outlet appSetDirection></router-outlet>
+  *ngIf="router.url !== '/auth' && router.url !== '/welcome'"
+></app-header>
+<div class="all-container">
+  <router-outlet appSetDirection></router-outlet>
+</div>
+
 <!-- <app-client-orders></app-client-orders> -->
 <!-- <app-stripe></app-stripe> -->
 
@@ -9,5 +13,5 @@
 ></app-spinner>
 <!-- <app-sidebar></app-sidebar> -->
 <app-footer
-  *ngIf="router.url !== '/auth' && router.url !== '/welcome'"></app-footer>
-
+  *ngIf="router.url !== '/auth' && router.url !== '/welcome'"
+></app-footer>
