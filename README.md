@@ -48,3 +48,17 @@ Follow these instructions to run the frontend on your local machine:
 
 Open your web browser and navigate to `http://localhost:4200` to access the Threads & Beads website.
 
+  # Contributors
+
+- [Nada saeed](https://github.com/Nada98Sakr)
+
+- [Hager Khaled](https://github.com/hagerk720)
+
+- [Mariam Khaled](https://github.com/Marim99)
+
+- [Radwa Nabil](https://github.com/radwanabil)
+
+- [Radwa Khalil](https://github.com/radwakhalil22)
+
+- [Ahmed Orabi](https://github.com/orabi55555)
+
