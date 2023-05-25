@@ -1,5 +1,5 @@
 button {
-  color: black;
+  color: #456268;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: bold;
@@ -7,7 +7,7 @@ button {
   padding: 0.5rem 1rem;
   border: 1px solid #ffffff1f;
   border-radius: 20px;
-  background: #f6eec9;
+  background: #ebebeb;
   -webkit-box-shadow: 5px 5px 15px #cccccc, -5px -5px 15px #ffffff;
   box-shadow: 5px 5px 15px #cccccc, -5px -5px 15px #ffffff;
   -webkit-transition: box-shadow 0.3s ease-in-out;

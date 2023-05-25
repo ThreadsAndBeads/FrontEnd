@@ -10,7 +10,7 @@ import { TokenStorageService } from 'src/app/services/token/token-storage.servic
 })
 export class SellerProductsComponent implements OnInit {
   page = 1;
-  limit = 3;
+  limit = 10;
   NumberOfPages!: number;
   currentUser: any;
   currentUserId: any;
@@ -30,7 +30,6 @@ export class SellerProductsComponent implements OnInit {
     this.productService.getUserProducts(this.page, this.limit,this.currentUserId).subscribe(
       (response: any) => {
         const { products } = response.data;
-        console.log(products);
         this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
 
         this.productService.products.push(...products);
@@ -43,22 +42,22 @@ export class SellerProductsComponent implements OnInit {
   get pages(): number[] {
     return Array.from({ length: this.NumberOfPages }, (_, i) => i + 1);
   }
-  previous() {
-    if (this.page > 1) {
-      this.page--;
-      this.getProducts();
-    }
-  }
+  // previous() {
+  //   if (this.page > 1) {
+  //     this.page--;
+  //     this.getProducts();
+  //   }
+  // }
 
-  next() {
-    if (this.page < this.NumberOfPages) {
-      this.page++;
-      this.getProducts();
-    }
-  }
+  // next() {
+  //   if (this.page < this.NumberOfPages) {
+  //     this.page++;
+  //     this.getProducts();
+  //   }
+  // }
 
-  navToPage(page: number){
-    this.page = page;
-    this.getProducts();
-  };
+  // navToPage(page: number){
+  //   this.page = page;
+  //   this.getProducts();
+  // };
 }
