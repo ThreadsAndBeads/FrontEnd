@@ -34,17 +34,15 @@ export class UserProfileComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.authService.getUserByID(this.userId).subscribe({next:(data: any) => {
-      this.userData = data.data.user;
-      if(this.userData.type=='seller') {
-     this.getSellerStatistics()
-    //  console.log(this.totalOrders)
-    }
-
-    },error:(error) => {
-
-    }});
-
+    this.authService.getUserByID(this.userId).subscribe({
+      next: (data: any) => {
+        this.userData = data.data.user;
+        if (this.userData.type == 'seller') {
+          this.getSellerStatistics();
+        }
+      },
+      error: (error) => {},
+    });
   }
 
   saveImage(imageInput: HTMLInputElement) {
@@ -65,25 +63,27 @@ export class UserProfileComponent implements OnInit {
           console.log(error);
         },
       });
-    }}
-
-        checkIfSeller(){
-          this.authService.getUserByID(this.userId).subscribe({next:(data: any) => {
-            console.log(data);
-
-          },error:(error: any) => {}})
-        }
-
-        getSellerStatistics(){
-          this.sellerService.getSellerStatistics(this.userId).subscribe(
-            {
-              next:(data:any)=>{
-                this.revenue=data.totalRevenue;
-                this.totalOrders=data.totalOrders;
-               },
-              error:(error: any) => {console.log(error)}
-           }
-          )
-        }
+    }
   }
 
+  checkIfSeller() {
+    this.authService.getUserByID(this.userId).subscribe({
+      next: (data: any) => {
+        console.log(data);
+      },
+      error: (error: any) => {},
+    });
+  }
+
+  getSellerStatistics() {
+    this.sellerService.getSellerStatistics(this.userId).subscribe({
+      next: (data: any) => {
+        this.revenue = data.totalRevenue;
+        this.totalOrders = data.totalOrders;
+      },
+      error: (error: any) => {
+        console.log(error);
+      },
+    });
+  }
+}
