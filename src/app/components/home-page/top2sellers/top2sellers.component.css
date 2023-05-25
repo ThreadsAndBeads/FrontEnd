@@ -92,6 +92,7 @@ p {
   -ms-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
+
 }
 
 
@@ -104,6 +105,7 @@ p {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   background-position: center center;
+  background-size:cover;
   -moz-transition: all 0.4s linear;
   -ms-transition: all 0.4s linear;
   -o-transition: all 0.4s linear;
