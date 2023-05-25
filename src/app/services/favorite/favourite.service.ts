@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FavouriteService {
-  private BASE_URL = 'http://localhost:7000/api/v1/favourites';
+  apiUrl = environment.apiUrl;
+  BASE_URL = this.apiUrl + '/api/v1/favourites';
   public favoritesUpdatedSubject: Subject<void> = new Subject<void>();
   public favoritesUpdated$: Observable<void> = this.favoritesUpdatedSubject.asObservable();
 

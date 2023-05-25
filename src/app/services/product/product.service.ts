@@ -2,14 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../../model/product.model';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
   products: Product[] = [];
-
-  private BASE_URL = 'http://localhost:7000/api/v1/products';
+  apiUrl = environment.apiUrl;
+  BASE_URL = this.apiUrl + '/api/v1/products';
 
   constructor(private httpClient: HttpClient) {}
 

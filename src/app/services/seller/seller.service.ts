@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Seller } from '../../model/seller.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ export class SellerService {
 
   sellers: Seller[] = [];
 
-  private BASE_URL = 'http://localhost:7000/api/v1/users/sellers';
+  apiUrl = environment.apiUrl;
+  BASE_URL = this.apiUrl + '/api/v1/users';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -19,12 +21,12 @@ export class SellerService {
     return this.httpClient.get<any>(url);
   }
   public getTopSellers(): Observable<Seller[]> {
-    const url = `http://localhost:7000/api/v1/users/top-sellers`;
+    const url = `${this.BASE_URL}/top-sellers`;
     return this.httpClient.get<any[]>(url);
   }
 
   public getSellerStatistics(sellerId:any){
-    const url = `http://localhost:7000/api/v1/users/revenue/${sellerId}`;
+    const url = `${this.BASE_URL}/revenue/${sellerId}`;
     return this.httpClient.get<any>(url);
   }
 }
