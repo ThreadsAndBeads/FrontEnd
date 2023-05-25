@@ -241,13 +241,10 @@ padding: 0 !important;
    border-radius: 1.5rem;
    border: none !important;
    transition: all .6s;
-   max-height: 80px;
+   max-height: 60px;
 }
 .media-body span{
-  font-size: 1.6rem;
-}
-.revenue-card:hover{
-  scale: 1.1;
+  font-size: 1rem;
 }
 .bi-rocket-fill,.bi-piggy-bank-fill{
   color: #fff;

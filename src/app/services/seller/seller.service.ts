@@ -17,7 +17,7 @@ export class SellerService {
   constructor(private httpClient: HttpClient) {}
 
   public getAllSellers(page:number,limit:number) {
-    const url = `${this.BASE_URL}/?page=${page}&limit=${limit}`;
+    const url = `${this.BASE_URL}/sellers/?page=${page}&limit=${limit}`;
     return this.httpClient.get<any>(url);
   }
   public getTopSellers(): Observable<Seller[]> {
