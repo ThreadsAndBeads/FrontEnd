@@ -11,8 +11,20 @@
   <div class="notification-dropdown" *ngIf="showDropdown">
     <ul>
       <li *ngFor="let notification of notifications">
-        <p class="data">{{ notification.data }}</p>
-        <p class="timestamp">{{ notification.timestamp | timeAgo }}</p>
+        <div class="row me-0">
+          <div class="col-2">
+            <img
+              src="assets/Images/icons/icons8-order-100.png"
+              alt=""
+              width="35px"
+              height="35px"
+            />
+          </div>
+          <div class="col-9">
+            <p class="data">{{ notification.data }}</p>
+            <p class="timestamp">{{ notification.timestamp | timeAgo }}</p>
+          </div>
+        </div>
       </li>
     </ul>
   </div>
