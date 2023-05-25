@@ -237,6 +237,7 @@
 		"ordersBtn": "Orders",
 		"productsBtn": "Products",
 		"profileBtn": "Profile",
+		"requestsBtn": "Requests",
 		"workshopsBtn": "Workshops"
 	},
 	"successModal": {

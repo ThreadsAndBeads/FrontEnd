@@ -173,8 +173,12 @@ export class CheckoutComponent {
     return newOrder;
   }
   navigateToTrackOrder() {
-    this.showModal = false; // Hide the modal
-    this.router.navigate(['/customer/orders']); // Navigate to the home page
+    this.showModal = false; 
+    this.router.navigate(['/customer/orders']); 
+  }
+  navigateToHome(){
+    this.showModal = false; 
+    this.router.navigate(['/home']);
   }
 
 }
