@@ -9,6 +9,8 @@
   z-index: 1;
   height: 120px;
   overflow-y: auto;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
 }
 
 .notification-dropdown ul {
@@ -20,7 +22,7 @@
 .notification-dropdown li {
   padding: 5px;
   background-color: white;
-  min-width: 210px;
+  min-width: 200px;
 }
 .notification-dropdown p {
   margin: 0;

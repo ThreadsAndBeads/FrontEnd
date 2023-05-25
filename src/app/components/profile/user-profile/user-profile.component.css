@@ -1,62 +1,50 @@
 .profile-head {
-  transform: translateY(5rem)
+  transform: translateY(5rem);
 }
 
 .cover {
-  background-image:  url(/assets/Images/pexels-giovana-spiller-6679220.jpg);
+  background-image: url(/assets/Images/pexels-giovana-spiller-6679220.jpg);
   background-size: cover;
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
 }
 
-body {
-  background: #654ea3;
-  background: linear-gradient(to right, #e96443, #904e95);
-  height: 100vh;
-  overflow-x:hidden;
-}
-
-span{
+span {
   font-weight: 500;
-  /* display: block; */
 }
-.inline{
+.inline {
   display: inline;
 }
 .avatar-container {
   position: relative;
-  /* width: 50%; */
 }
 
 .img {
-opacity: 1;
-display: block;
-/* width: 100%; */
-/* height: auto; */
-transition: .5s ease;
-backface-visibility: hidden;
+  opacity: 1;
+  display: block;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
 }
 
 .middle {
-transition: .5s ease;
-opacity: 0;
-position: absolute;
-top: 50%;
-left: 13%;
-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%);
-width: 130px;
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 13%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 130px;
 }
 
-
-.avatar-container:hover{
+.avatar-container:hover {
   opacity: 0.8;
   filter: brightness(60%);
 }
 .avatar-container:hover .middle {
- opacity: 1;
- filter: brightness(150%);
+  opacity: 1;
+  filter: brightness(150%);
 }
-.avatar-button a{
+.avatar-button a {
   color: white;
   padding: 5px;
   width: fit-content;
@@ -64,16 +52,15 @@ width: 130px;
   text-decoration: none;
   cursor: pointer;
   border-radius: 2px;
-
 }
-.avatar-button:hover a{
+.avatar-button:hover a {
   opacity: 1;
   filter: brightness(150%);
 }
-.modal-body{
+.modal-body {
   text-align: center;
 }
-.modal{
+.modal {
   border-radius: 4px;
 }
 .modal-header {
@@ -83,24 +70,20 @@ width: 130px;
 .modal-body {
   border: none;
   justify-content: center;
-
 }
-.modal-footer{
+.modal-footer {
   border: none;
   justify-content: center;
   padding-bottom: 2px;
 }
-.modal-dialog{
-margin: 170px auto;
-width: fit-content;
-height: fit-content;
-display: flex;
-justify-content: space-between;
+.modal-dialog {
+  margin: 170px auto;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
 }
-.modal-content{
-  /* width: 350px; */
-  /* padding: 5px; */
-  /* height: 200px; */
+.modal-content {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -108,9 +91,8 @@ justify-content: space-between;
   height: fit-content;
   width: fit-content;
 }
-.modal-title{
+.modal-title {
   text-align: center;
-  /* padding-left: 10px; */
   width: fit-content;
 }
 
@@ -125,26 +107,16 @@ justify-content: space-between;
   color: #456268;
   cursor: pointer;
 }
-.modal-footer{
-  /* color: white;
-  background-color: #8b1d1d;
-  color: white; */
-
-}
-.modal-footer button{
+.modal-footer button {
   background-color: #8b1d1d;
   color: white;
 }
-
-
-
-
 
 .svg-container {
   height: 300px;
   width: 300px;
   border-radius: 10px;
-  box-shadow: 4px 4px 30px rgba(0, 0, 0, .2);
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -207,53 +179,57 @@ justify-content: space-between;
   display: none;
 }
 
-.bi {font-size: 30px;}
-.bi:hover {opacity:0.75;transition:225ms;}
-.bi-facebook {color: #1F3A93;transition:350ms;}
+.bi {
+  font-size: 30px;
+}
+.bi:hover {
+  opacity: 0.75;
+  transition: 225ms;
+}
+.bi-facebook {
+  color: #1f3a93;
+  transition: 350ms;
+}
 .bi-instagram {
   background: #d6249f;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-
-/* .revenue-card{
-background-color: #f6eec9;
-height: 70px;
-padding: 0.6rem !important;
-}
-.revenue-card .card-body{
-padding: 0 !important;
-}
-.revenue-img{
-  width: 50px;
-  height: 50px;
-}
-.revenue-card span{
-  font-weight: bold;
-
-} */
-.revenue-card{
+.revenue-card {
   background-color: rgb(98, 0, 0);
     color:#fff ;
    font-family: "Delicious Handrawn", cursive !important;
    border-radius: 1.5rem;
    border: none !important;
    transition: all .6s;
-   max-height: 80px;
+   max-height: 60px;
 }
 .media-body span{
-  font-size: 1.6rem;
+  font-size: 1rem;
+  color: #fff;
+  font-family: "Delicious Handrawn", cursive !important;
+  border-radius: 1.5rem;
+  border: none !important;
+  transition: all 0.6s;
+  max-height: 60px;
 }
-.revenue-card:hover{
+.revenue-card:hover {
   scale: 1.1;
 }
-.bi-rocket-fill,.bi-piggy-bank-fill{
+.bi-rocket-fill,
+.bi-piggy-bank-fill {
   color: #fff;
 }
 
-.test{
+.test {
   width: 50px;
   height: 50px;
 }

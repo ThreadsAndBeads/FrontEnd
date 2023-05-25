@@ -3,7 +3,6 @@ import { TokenStorageService } from 'src/app/services/token/token-storage.servic
 import {io}  from 'socket.io-client';
 import { UserService } from 'src/app/services/user/user.service';
 import { environment } from 'src/environments/environment';
-
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
@@ -15,7 +14,6 @@ export class NotificationComponent implements OnInit {
   showDropdown: boolean = false; 
   private socket: any;
   apiUrl = environment.apiUrl;
-
   constructor(
     private tokenService: TokenStorageService,    private userService: UserService 
   ) {
