@@ -47,7 +47,7 @@ section {
 }
 
 .container .overlay-container .overlay {
-  background-image: url("/assets/Images/top-view-hands-holding-furoshiki-package.jpg");
+  background-image: url("/assets/Images/20210902_103708.jpg");
   background-size: cover;
   background-position: center center;
   position: absolute;
@@ -68,7 +68,7 @@ section {
   width: 100%;
   left: 0;
   top: 0;
-  background-color: rgb(60, 72, 107);
+  background-color: #dfd193;
   z-index: -1;
   opacity: 0.6;
 }
@@ -82,10 +82,10 @@ section {
   font-family: "Montserrat";
   font-size: 40px;
   font-weight: 300;
-  color: white;
+  color: #000;
 }
 .overlay-container .overlay p {
-  color: white;
+  color: #000;
   font-family: "Roboto";
   font-size: 25px;
   font-weight: 300;
