@@ -25,6 +25,7 @@ export class NotificationComponent implements OnInit {
       const room = `seller_${userId}`;
       this.socket.emit("join", room);
       this.socket.on("notification", (data: any) => {
+
         this.notifications.unshift(data); 
         this.notifications.sort(this.compareTimestamps);
         this.hasUnreadNotifications = true; 
@@ -57,7 +58,6 @@ export class NotificationComponent implements OnInit {
       return { 
         data: notification.notificationDetails ,
         timestamp: notification.timestamp,
-
       }; 
     });
   }

@@ -61,13 +61,15 @@
           </ul>
         </li>
         <li>
-          <a class="text-decoration-none" *ngIf="isCustomer" href="/customer/orders">
+          <a class="text-decoration-none" href="/user/orders">
             <i class="bi bi-box" style="margin-right: 5px"></i>
             {{ "sidebar.ordersBtn" | translate }}
           </a>
-          <a class="text-decoration-none" *ngIf="!isCustomer" href="/seller/orders">
+        </li>
+        <li *ngIf="!isCustomer">
+          <a class="text-decoration-none" href="/seller/orders">
             <i class="bi bi-box" style="margin-right: 5px"></i>
-            {{ "sidebar.ordersBtn" | translate }}
+            {{ "sidebar.requestsBtn" | translate }}
           </a>
         </li>
         <li *ngIf="currentUser.type == 'seller'" class="dropdown">
@@ -85,7 +87,10 @@
             style="background-color: #456268; min-width: 150px"
           >
             <li>
-              <a class="text-decoration-none dropdown-item" href="/seller/myWorkshops">
+              <a
+                class="text-decoration-none dropdown-item"
+                href="/seller/myWorkshops"
+              >
                 {{ "sidebar.MyWorkshopsBtn" | translate }}
               </a>
             </li>
