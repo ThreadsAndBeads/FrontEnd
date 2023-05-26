@@ -50,6 +50,11 @@ export class ProductService {
     return this.httpClient.get(url);
   }
 
+  public priceRange() {
+    const url = `${this.BASE_URL}/priceRange`;
+    return this.httpClient.get(url);
+  }
+
   search(query: string) {
     const url = `${this.BASE_URL}/search/?q=${query}`;
     return this.httpClient.get<SearchResult>(url);

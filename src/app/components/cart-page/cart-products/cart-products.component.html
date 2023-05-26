@@ -12,7 +12,7 @@
         <img [src]="product.productId.images[0]" class="me-3" alt="" />
         <p class="product-name d-inline-block">{{ product.productId.name }}</p>
       </td>
-      <td colspan="1">${{ product.productId.actualPrice }}</td>
+      <td colspan="1">EGP {{ product.productId.actualPrice }}</td>
       <td colspan="1" class="position-relative">
         <i
           class="bi bi-dash fs-5 pointer"
@@ -28,7 +28,7 @@
         />
         <i class="bi bi-plus fs-5" (click)="incrementQuantity(product)"></i>
       </td>
-      <td colspan="1">${{ product.productId.actualPrice * product.quantity }}</td>
+      <td colspan="1">EGP {{ product.productId.actualPrice * product.quantity }}</td>
       <td colspan="1">
         <i class="bi bi-x fs-4" (click)="deleteProduct(product)"></i>
       </td>
