@@ -33,13 +33,15 @@ export class HeaderComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    
+    this.isUserLogged();
+    if (this.isUserLoggedIn) {
     this.favouriteService.favoritesUpdated$.subscribe(() => {
       this.getFavouritesCount();
     });
     this.cartService.cartUpdated$.subscribe(() => {
       this.getCartCount();
     });
+  }
   }
   
   handleClick() {
@@ -54,19 +56,16 @@ export class HeaderComponent implements OnInit{
   }
 
   public getCartCount() {
-    if (this.isUserLogged()) {
     this.cartService.getProductsCount().subscribe({
       next: (response) => {
         this.totalCartProducts = response.totalProducts;
       },
       error: (error) => {
-        console.log(error);
+        // console.log(error);
       },
     });
   }
-  }
   public getFavouritesCount() {
-    if (this.isUserLogged()) {
     this.favouriteService.getFavouritesProductsCount().subscribe({
       next: (response) => {
         this.totalFavouritesProducts = response.totalFavourites;
@@ -75,7 +74,6 @@ export class HeaderComponent implements OnInit{
         console.log(error);
       },
     });
-  }
   }
 
   useLang(language: string) {

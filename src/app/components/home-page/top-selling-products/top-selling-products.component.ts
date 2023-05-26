@@ -107,16 +107,14 @@ export class TopSellingProductsComponent implements OnInit {
                 favourite.closest('a')?.classList.remove('inFavourite');
               }
             } else {
-              console.error('Error: Element not found');
+              // console.error('Error: Element not found');
             }
           },
           error: (error) => {
-            console.error('Error:', error);
+            // console.error('Error:', error);
           },
         });
       });
-    } else {
-      this.router.navigateByUrl('/auth');
     }
   }
 }

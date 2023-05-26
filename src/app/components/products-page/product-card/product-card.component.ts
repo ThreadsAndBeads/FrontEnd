@@ -11,7 +11,7 @@ import { TokenStorageService } from 'src/app/services/token/token-storage.servic
 })
 export class ProductCardComponent {
   @Input() product: any;
-  userId = this.tokenService.getUser()._id;
+  userId = this.tokenService.getUser()?._id;
   isFavourite = false;
   isUserLoggedIn: boolean = false;
 
@@ -25,7 +25,9 @@ export class ProductCardComponent {
     this.isUserLoggedIn = this.tokenService.isLoggedIn();
   }
   ngOnInit() {
+    if (this.isUserLoggedIn) {
     this.isInFavourite();
+    }
   }
 
   addToCart(productId: string) {
@@ -43,7 +45,7 @@ export class ProductCardComponent {
           this.cartService.cartUpdatedSubject.next();
         },
         error: (error) => {
-          console.error('Error adding to cart:', error);
+          // console.error('Error adding to cart:', error);
         },
       });
     } else {
@@ -72,7 +74,7 @@ export class ProductCardComponent {
           this.favouriteService.favoritesUpdatedSubject.next();
         },
         error: (error) => {
-          console.error('Error adding to favourite:', error);
+          // console.error('Error adding to favourite:', error);
         },
       });
   }
@@ -83,7 +85,7 @@ export class ProductCardComponent {
         this.favouriteService.favoritesUpdatedSubject.next();
       },
       error: (error) => {
-        console.error('Error removing from favourite:', error);
+        // console.error('Error removing from favourite:', error);
       },
     });
   }
@@ -94,7 +96,7 @@ export class ProductCardComponent {
         this.isFavourite = response;
       },
       error: (error) => {
-        console.error('Error:', error);
+        // console.error('Error:', error);
       },
     });
   }
