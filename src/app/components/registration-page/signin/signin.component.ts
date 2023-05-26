@@ -11,9 +11,6 @@ import { TokenStorageService } from 'src/app/services/token/token-storage.servic
 })
 export class SigninComponent {
   validationForm!: FormGroup;
-
-  // email: string = '';
-  // password: string = '';
   error = {
     email: '',
     password: '',
@@ -32,7 +29,6 @@ export class SigninComponent {
           '',
           [
             Validators.required,
-            Validators.minLength(6),
           ],
         ],
         rememberMe: [false],
