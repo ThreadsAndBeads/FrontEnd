@@ -76,4 +76,3 @@ Open your web browser and navigate to `http://localhost:4200` to access the Thre
 
 - [Ahmed Orabi](https://github.com/orabi55555)
 
-We appreciate your interest in Threads & Beads and hope you enjoy exploring our frontend repository!
