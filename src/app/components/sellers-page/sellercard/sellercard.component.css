@@ -1,102 +1,3 @@
-/* * {
-  font-size: 1.04em;
-  outline: none;
-  border: none;
-  box-sizing: border-box;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-::selection {
-  background-color: #95a5a6;
-}
-
-img {
-  height: auto;
-  width: 100%;
-  user-select: none;
-}
-
-.mline {
-  border: 2px solid #ecf0f1;
-  width: 14%;
-  margin: 0 auto;
-}
-
-#wrapper {
-  color: #212129;
-  background-color: #fff;
-  box-shadow: 0 0 7px 3px #5353553b;
-  max-width: 250px;
-  max-height: 360px;
-  margin: 20px auto;
-  position: relative;
-  z-index: 0;
-  text-align: center;
-}
-
-.header {
-  box-shadow: inset 0 0 60px 20px rgba(0,0,0,0.5);
-  min-height: 130px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 10px;
-  height: 100px;
-}
-
-.header img{
-  height: 100%;
-  width: 100%;
-}
-
-.name h1 {
-  color: #ecf0f1;
-  font-size: 1.1em;
-}
-
-.info {
-  color: #212129;
-  font-size: 0.8em;
-  margin: 15px 0;
-}
-
-.button {
-  margin: 20px 0;
-}
-
-.products {
-  color: #212129;
-  border: 2px #212129 solid;
-  border-radius: 30px;
-  padding: 6px 20px;
-  background: #fff;
-  transition: 0.5s;
-  text-decoration: none;
-}
-
-.products:hover {
-  color: #fff;
-  border-radius: 30px;
-  padding: 8px 25px;
-  background: #212129;
-  transition: 0.5s;
-}
-
-.stats {
-  font-size: 0.75em;
-  padding: 10px 0;
-  background-color: #ECF0F1;
-}
-
-.stats span{
-  font-size: 1em;
-} */
-
-
 .card {
   position: relative;
   background: #f9f1eb;
@@ -178,36 +79,8 @@ img {
   z-index: 3;
 }
 
-.tape-1 {
-  position: absolute;
-  top: -20%;
-  left: 2%;
-  width: 35px;
-  height: auto;
-  filter: drop-shadow(1px 3px 3px #18181870);
-  z-index: 6;
-}
-
-.tape-2 {
-  position: absolute;
-  top: -25%;
-  right: 2%;
-  width: 35px;
-  height: auto;
-  filter: drop-shadow(1px 3px 3px #18181870);
-  z-index: 6;
-}
-
 .card:hover {
   transform: scale(1.02);
-}
-
-.card:hover .tape-1 {
-  transform: scale(1);
-}
-
-.card:hover .tape-2 {
-  transform: scale(1);
 }
 
 .card:hover .shine-effect {
@@ -216,25 +89,6 @@ img {
 
 .card:active {
   transform: scale(1.02) translate(0, 5%);
-}
-
-.card:active .tape-1 {
-  transform-origin: 0 100%;
-  transform: scaleY(1.1);
-}
-
-.card:active .tape-2 {
-  transform-origin: 0 100%;
-  transform: scaleY(1.1);
-}
-
-
-.fil-tape-11 {
-  fill-rule: nonzero
-}
-
-.fil-tape-21 {
-  fill-rule: nonzero
 }
 
 .fil-pattern-1 {
@@ -249,4 +103,3 @@ img {
 .fil0 {
   fill: #996d47
 }
-

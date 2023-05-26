@@ -1,4 +1,4 @@
-<div class="workshop-card" [ngClass]="'workshop-card-color-' + (index % 3)">
+<div class="workshop-card border" [ngClass]="'workshop-card-color-' + (index % 3)">
   <img
     class="card__img"
     [src]="workshop.image"
@@ -11,13 +11,13 @@
     </p>
     <p class="card__text text-muted">
       {{ calculateDuration() }} <br>
-      Time Frame: half Day.
+      Half Day Training.
     </p>
-    <div class="card__footer d-flex justify-content-between">
-      <p class="card__price text-muted fs-4">
+    <div class="card__footer d-flex justify-content-between align-content-center border-top pt-3">
+      <p class="card__price text-muted fs-5 my-auto" >
         EGP {{ workshop.price }}
       </p>
-      <div class="wcf-right align-self-end m-2">
+      <div class="wcf-right">
         <a
           href="#myModal"
           class="delete-btn"

@@ -59,7 +59,7 @@ export class SellerworkshopsComponent {
     const durationInDays = Math.floor(
       durationInMilliseconds / (1000 * 60 * 60 * 24)
     );
-    return `From ${this.formatDate(start)} to ${this.formatDate(end)} (${durationInDays} days.)`;
+    return `From ${this.formatDate(start)} to ${this.formatDate(end)} (${durationInDays} days)`;
   }
 
   formatDate(date: Date) {

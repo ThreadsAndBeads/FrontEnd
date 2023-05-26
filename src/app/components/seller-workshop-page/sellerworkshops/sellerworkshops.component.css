@@ -1,15 +1,3 @@
-/* .workshop-card-color-1 {
-  background-color: #a20a0a;
-}
-
-.workshop-card-color-2 {
-  background-color: #8daa91;
-}
-
-.workshop-card-color-3 {
-  background-color: #888da7;
-} */
-
 .card__img {
   display: block;
   width: 100%;
@@ -90,11 +78,6 @@ a.edit-btn:focus {
   display: inline-block;
   margin: 0 5px;
 }
-
-
-
-
-
 
 .modal-confirm {
   color: #636363;
