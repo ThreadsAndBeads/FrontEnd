@@ -1,22 +1,36 @@
 <div *ngIf="orders.length === 0">
-  <div class="col-12 col-md-6 mx-auto d-flex flex-column justify-content-center mt-3">
-    <img src="../../../assets/Images/emptycart.jpg" class="empty-cart-img mx-auto col-5 mt-5" alt="Empty Cart">
-    <p class="fs-5 fw-bold mb-0 pt-0 mt-3 text-center">{{"customerOrders.noOrders" | translate}}</p>
-    <p class="text-center ">{{"customerOrders.noOrdersContent" | translate}}</p>
-    <button class="shop" routerLink="/products">{{ "emptyCart.startShopping" | translate }}</button>
+  <div
+    class="col-12 col-md-6 mx-auto d-flex flex-column justify-content-center mt-3"
+  >
+    <img
+      src="../../../assets/Images/emptycart.jpg"
+      class="empty-cart-img mx-auto col-5 mt-5"
+      alt="Empty Cart"
+    />
+    <p class="fs-5 fw-bold mb-0 pt-0 mt-3 text-center">
+      {{ "customerOrders.noOrders" | translate }}
+    </p>
+    <p class="text-center">
+      {{ "customerOrders.noOrdersContent" | translate }}
+    </p>
+    <button class="shop" routerLink="/products">
+      {{ "emptyCart.startShopping" | translate }}
+    </button>
   </div>
 </div>
 <div class="container h-auto">
-  <h1 class="text-center mb-3" *ngIf="orders.length > 0">{{"customerOrders.yourOrders" | translate}}</h1>
+  <h1 class="text-center mb-3" *ngIf="orders.length > 0">
+    {{ "customerOrders.yourOrders" | translate }}
+  </h1>
 
   <div id="table-container" *ngIf="orders.length > 0">
     <table class="col-4 col-sm-4 col-md-8 col-lg-10 w-100">
       <thead>
         <tr>
-          <th>{{"customerOrders.orderID" | translate}}</th>
-          <th>{{"customerOrders.totalPrice" | translate}}</th>
-          <th>{{"customerOrders.orderStatus" | translate}}</th>
-          <th>{{"customerOrders.orderDate" | translate}}</th>
+          <th>{{ "customerOrders.orderID" | translate }}</th>
+          <th>{{ "customerOrders.totalPrice" | translate }}</th>
+          <th>{{ "customerOrders.orderStatus" | translate }}</th>
+          <th>{{ "customerOrders.orderDate" | translate }}</th>
           <th></th>
           <th></th>
         </tr>
@@ -26,7 +40,7 @@
           <td>{{ orderItem._id }}</td>
           <td>{{ orderItem.totalPrice }} EGP</td>
           <td>{{ orderItem.orderStatus }}</td>
-          <td>{{ orderItem.orderDate | date:'dd, MMMM yyyy' }}</td>
+          <td>{{ orderItem.orderDate | date : "dd, MMMM yyyy" }}</td>
           <td>
             <a
               class="Remove text-light"
@@ -34,17 +48,17 @@
               data-bs-target="#exampleModal"
               (click)="selectedOrder = orderItem"
               (click)="setActiveStatus(selectedOrder?.orderStatus)"
-              >{{"customerOrders.Details" | translate}}</a
+              >{{ "customerOrders.Details" | translate }}</a
             >
-                      <a
-            href="#myModal"
-            class="Cancel text-light"
-            data-bs-toggle="modal"
-            data-bs-target="#myModal"
-            (click)="selectedOrder = orderItem"
-
-            >{{"customerOrders.Cancel" | translate}}</a
-          >
+            <a
+              href="#myModal"
+              class="Cancel text-light"
+              data-bs-toggle="modal"
+              data-bs-target="#myModal"
+              (click)="selectedOrder = orderItem"
+              >{{ "customerOrders.Cancel" | translate }}</a
+            >
+          </td>
         </tr>
       </tbody>
     </table>
@@ -58,37 +72,43 @@
   aria-hidden="true"
   #exampleModal
 >
-  <div class="modal-dialog d-flex justify-content-center" style="border: none !important;">
+  <div
+    class="modal-dialog d-flex justify-content-center"
+    style="border: none !important"
+  >
     <div class="modal-content w-100">
       <div class="card-container text-center">
-
         <div class="d-sm-flex justify-content-center">
           <div class="card w-100">
             <div class="card-header bg-white">
               <div class="row justify-content-between mt-2">
                 <div class="col">
                   <p class="text-muted">
-                    {{"customerOrders.orderID" | translate}}
-                    <span class="font-weight-bold text-dark">{{ selectedOrder?._id }}</span>
+                    {{ "customerOrders.orderID" | translate }}
+                    <span class="font-weight-bold text-dark">{{
+                      selectedOrder?._id
+                    }}</span>
                   </p>
                   <p class="text-muted">
-                    {{"customerOrders.placeOn" | translate}}
-                    <span class="font-weight-bold text-dark"
-                      >{{ selectedOrder?.orderDate | date:'dd, MMMM yyyy' }}</span
-                    >
+                    {{ "customerOrders.placeOn" | translate }}
+                    <span class="font-weight-bold text-dark">{{
+                      selectedOrder?.orderDate | date : "dd, MMMM yyyy"
+                    }}</span>
                   </p>
                 </div>
                 <button
-                type="button"
-                class="btn-close mt-0 px-2"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-
+                  type="button"
+                  class="btn-close mt-0 px-2"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
               </div>
             </div>
             <div class="card-body">
-              <div class="media flex-column flex-sm-row" *ngFor="let product of selectedOrder?.products">
+              <div
+                class="media flex-column flex-sm-row"
+                *ngFor="let product of selectedOrder?.products"
+              >
                 <div class="media-body">
                   <h5 class="bold">{{ product.productData?.data.name }}</h5>
                   <p class="text-muted">Qt: {{ product.quantity }}</p>
@@ -98,27 +118,33 @@
                   </h4>
                 </div>
                 <img
-                class="align-self-center img-fluid"
-                src="{{ product?.product?.image }}"
-                width="150"
-                height="150"
-              />
+                  class="align-self-center img-fluid"
+                  src="{{ product?.product?.image }}"
+                  width="150"
+                  height="150"
+                />
               </div>
             </div>
             <div class="row px-3">
               <div class="col">
                 <ul id="progressbar">
-                  <li class="step0" id="step1">{{"customerOrders.PENDING" | translate}}</li>
-                  <li class="step0 text-center" id="step2">{{"customerOrders.SHIPPED" | translate}}</li>
-                  <li class="step0 text-muted text-right" id="step3">{{"customerOrders.DELIVERED" | translate}}</li>
+                  <li class="step0" id="step1">
+                    {{ "customerOrders.PENDING" | translate }}
+                  </li>
+                  <li class="step0 text-center" id="step2">
+                    {{ "customerOrders.SHIPPED" | translate }}
+                  </li>
+                  <li class="step0 text-muted text-right" id="step3">
+                    {{ "customerOrders.DELIVERED" | translate }}
+                  </li>
                 </ul>
               </div>
-
-
             </div>
             <div class="card-footer bg-white px-sm-3 pt-sm-4 px-0">
               <div class="row text-center">
-                <div class="col my-auto border-line" data-bs-dismiss="modal"><h5>{{"customerOrders.close" | translate}}</h5></div>
+                <div class="col my-auto border-line" data-bs-dismiss="modal">
+                  <h5>{{ "customerOrders.close" | translate }}</h5>
+                </div>
               </div>
             </div>
           </div>
@@ -134,25 +160,49 @@
         <div class="icon-box">
           <i class="material-icons">X</i>
         </div>
-        <h4 class="modal-title">{{"customerOrders.AreYouSure" | translate}}</h4>
+        <h4 class="modal-title">
+          {{ "customerOrders.AreYouSure" | translate }}
+        </h4>
       </div>
       <div class="modal-body">
-        <p *ngIf="selectedOrder?.orderStatus === 'shipped' || selectedOrder?.orderStatus === 'delivered'">
-          {{"customerOrders.OrderAlreadyShipped" | translate}}
+        <p
+          *ngIf="
+            selectedOrder?.orderStatus === 'shipped' ||
+            selectedOrder?.orderStatus === 'delivered' ||
+            selectedOrder?.orderStatus === 'cancelled'
+          "
+        >
+          {{ "customerOrders.OrderAlreadyShipped" | translate }}
         </p>
-        <p *ngIf="selectedOrder?.orderStatus !== 'shipped' && selectedOrder?.orderStatus !== 'delivered'">
-          {{"customerOrders.OrderCanBeCancelled" | translate}}
+        <p
+          *ngIf="
+            selectedOrder?.orderStatus !== 'shipped' &&
+            selectedOrder?.orderStatus !== 'delivered' &&
+            selectedOrder?.orderStatus !== 'cancelled'
+          "
+        >
+          {{ "customerOrders.OrderCanBeCancelled" | translate }}
         </p>
       </div>
       <div class="modal-footer d-flex justify-content-between">
-
-      <button type="button" class="btn btn-info" data-bs-dismiss="modal">{{"customerOrders.cancel" | translate}}</button>
+        <button type="button" class="btn btn-info" data-bs-dismiss="modal">
+          {{ "customerOrders.cancel" | translate }}
+        </button>
         <button
-        *ngIf="selectedOrder?.orderStatus !== 'shipped' && selectedOrder?.orderStatus !== 'delivered'"
-        type="button" class="btn btn-danger" (click)="cancelOrder(selectedOrder._id)" [disabled]="disableDeleteButton" data-bs-dismiss="modal">{{"customerOrders.Delete" | translate}}</button>
-
+          *ngIf="
+            selectedOrder?.orderStatus !== 'shipped' &&
+            selectedOrder?.orderStatus !== 'delivered' &&
+            selectedOrder?.orderStatus !== 'cancelled'
+          "
+          type="button"
+          class="btn btn-danger"
+          (click)="cancelOrder(selectedOrder._id)"
+          [disabled]="disableDeleteButton"
+          data-bs-dismiss="modal"
+        >
+          {{ "customerOrders.Delete" | translate }}
+        </button>
       </div>
-
     </div>
   </div>
 </div>

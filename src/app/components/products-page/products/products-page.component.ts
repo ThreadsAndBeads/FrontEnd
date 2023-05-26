@@ -17,7 +17,7 @@ export class ProductsPageComponent implements OnInit {
   };
 
   page = 1;
-  limit = 12;
+  limit = 8;
   NumberOfPages!: number;
   sortBySelectedValue = 'default';
 
