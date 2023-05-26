@@ -51,7 +51,6 @@ export class ProductsPageComponent implements OnInit {
   }
 
   getProducts(query?: string) {
-
     console.log('getProducts() called with query: ', query);
     this.productService.products = [];
     this.productService.getAllProducts(this.page, this.limit, query).subscribe(
@@ -91,9 +90,8 @@ export class ProductsPageComponent implements OnInit {
       this.filterBy[filterName] = null;
     }
     let query = this.setFilterQuery();
-    console.log(query);
     this.filterBy = { ...this.filterBy };
-    // this.getProducts(query);
+    this.getProducts(query);
   }
 
   clearFilter() {
@@ -103,7 +101,7 @@ export class ProductsPageComponent implements OnInit {
 
     };
     this.filterBy = { ...this.filterBy };
-    // this.getProducts();
+    this.getProducts();
   }
 
   setFilterQuery() {

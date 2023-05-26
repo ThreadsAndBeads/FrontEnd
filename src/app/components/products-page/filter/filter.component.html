@@ -15,8 +15,8 @@
       <div class="progress"></div>
     </div>
     <div class="range-input">
-      <input type="range" step='5' [min]="minPrice" [max]="maxPrice" [(ngModel)]="minInputPrice" (ngModelChange)="updateMaxInputPrice()">
-      <input type="range" step='5' [min]="minPrice" [max]="maxPrice" [(ngModel)]="maxInputPrice" (ngModelChange)="updateMinInputPrice()">
+      <input type="range" step='5' [min]="minPrice" [max]="maxPrice" [(ngModel)]="minInputPrice" (ngModelChange)="updateMaxInputPrice()" (mouseleave)="priceFilter()">
+      <input type="range" step='5' [min]="minPrice" [max]="maxPrice" [(ngModel)]="maxInputPrice" (ngModelChange)="updateMinInputPrice()" (mouseleave)="priceFilter()">
     </div>
 
     <div class="price-wrap m-3 text-center">

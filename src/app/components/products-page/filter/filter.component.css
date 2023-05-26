@@ -15,8 +15,8 @@
 }
 
 .filter-checkbox-value:checked + .filter-checkbox-text:before {
-  background: #52ab98;
-  border-color: #52ab98;
+  background: #A20A0A;
+  border-color: #A20A0A;
 }
 
 .filter-checkbox-text {
@@ -60,6 +60,7 @@
   position: relative;
   background: #ddd;
   border-radius: 5px;
+  width: 100%;
 }
 
 .slider .progress{
@@ -68,7 +69,7 @@
   right: 0%;
   position: absolute;
   border-radius: 5px;
-  background: #17A2B8;
+  background: #A20A0A;
 }
 
 .range-input{
