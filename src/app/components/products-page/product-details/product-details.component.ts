@@ -21,7 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   slideshowTimer: any;
   currentImageIndex = 0;
   isUserLoggedIn: boolean = false;
-  userId = this.tokenService.getUser()._id;
+  userId = this.tokenService.getUser()?._id;
 
   constructor(
     private router: Router,
@@ -55,7 +55,7 @@ export class ProductDetailsComponent implements OnInit {
         }
       },
       error: (error) => {
-        console.log(error);
+        // console.log(error);
       },
     });
   }
@@ -133,7 +133,7 @@ export class ProductDetailsComponent implements OnInit {
           this.favouriteService.favoritesUpdatedSubject.next();
         },
         error: (error) => {
-          console.error('Error adding to favourite:', error);
+          // console.error('Error adding to favourite:', error);
         },
       });
   }
@@ -144,7 +144,7 @@ export class ProductDetailsComponent implements OnInit {
         this.favouriteService.favoritesUpdatedSubject.next();
       },
       error: (error) => {
-        console.error('Error removing from favourite:', error);
+        // console.error('Error removing from favourite:', error);
       },
     });
   }
@@ -155,7 +155,7 @@ export class ProductDetailsComponent implements OnInit {
         this.isFavourite = response;
       },
       error: (error) => {
-        console.error('Error:', error);
+        // console.error('Error:', error);
       },
     });
   }
@@ -175,7 +175,7 @@ export class ProductDetailsComponent implements OnInit {
           this.cartService.cartUpdatedSubject.next();
         },
         error: (error) => {
-          console.error('Error adding to cart:', error);
+          // console.error('Error adding to cart:', error);
         },
       });
     } else {

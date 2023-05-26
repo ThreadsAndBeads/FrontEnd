@@ -17,6 +17,7 @@ export class SidebarComponent implements OnInit {
     private authService: AuthService) {
   }
   ngOnInit(): void {
+    
     this.currentUser = this.tokenService.getUser();
     this.isCustomer = !this.tokenService.isSeller();
   }
@@ -33,10 +34,10 @@ export class SidebarComponent implements OnInit {
   onLogoutClick() {
     this.authService.logOut().subscribe({
       next: (response) => {
-        console.log(response);
+        // console.log(response);
       },
       error: (error) => {
-        console.log(error);
+        // console.log(error);
       },
       });
     }

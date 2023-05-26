@@ -30,10 +30,10 @@ export class WorkshopCardComponent implements OnInit {
         } else {
           
         }
-        console.log(this.sellerImage);
+        // console.log(this.sellerImage);
       },
       error: (error) => {
-        console.log(error);
+        // console.log(error);
       },
     });
   }

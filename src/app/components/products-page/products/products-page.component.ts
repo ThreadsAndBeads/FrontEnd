@@ -59,7 +59,7 @@ export class ProductsPageComponent implements OnInit {
         this.productService.products.push(...products);
       },
       ({ status, message }: HttpErrorResponse) => {
-        console.log(`Error ${status}: ${message}`);
+        // console.log(`Error ${status}: ${message}`);
       }
     );
   }
