@@ -42,19 +42,19 @@ export class SellerProductsComponent implements OnInit {
   get pages(): number[] {
     return Array.from({ length: this.NumberOfPages }, (_, i) => i + 1);
   }
-  // previous() {
-  //   if (this.page > 1) {
-  //     this.page--;
-  //     this.getProducts();
-  //   }
-  // }
+  previous() {
+    if (this.page > 1) {
+      this.page--;
+      this.getProducts();
+    }
+  }
 
-  // next() {
-  //   if (this.page < this.NumberOfPages) {
-  //     this.page++;
-  //     this.getProducts();
-  //   }
-  // }
+  next() {
+    if (this.page < this.NumberOfPages) {
+      this.page++;
+      this.getProducts();
+    }
+  }
 
   // navToPage(page: number){
   //   this.page = page;
