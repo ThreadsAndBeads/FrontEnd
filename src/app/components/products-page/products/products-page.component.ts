@@ -1,7 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product/product.service';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-products-page',
@@ -18,7 +17,7 @@ export class ProductsPageComponent implements OnInit {
   };
 
   page = 1;
-  limit = 3;
+  limit = 12;
   NumberOfPages!: number;
   sortBySelectedValue = 'default';
 
@@ -55,6 +54,7 @@ export class ProductsPageComponent implements OnInit {
     this.productService.products = [];
     this.productService.getAllProducts(this.page, this.limit, query).subscribe(
       (response: any) => {
+        console.log(response);
         this.cdr.detectChanges();
         const { products } = response.data;
         this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
@@ -98,7 +98,6 @@ export class ProductsPageComponent implements OnInit {
     this.filterBy = {
       categories: null,
       price: null,
-
     };
     this.filterBy = { ...this.filterBy };
     this.getProducts();

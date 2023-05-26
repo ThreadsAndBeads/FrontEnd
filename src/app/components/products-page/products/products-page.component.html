@@ -18,8 +18,7 @@
       <span (click)="clearFilter()" class="FilterClearAll my-auto" *ngIf="filterBy.categories || filterBy.price">{{"productPageFilter:clear" | translate}}</span>
     </div>
     <div class="col-12 d-flex justify-content-between">
-      <p>Showing 10 of 100</p>
-      <!-- <span>Showing {{productNumbers>limit ? limit : productNumbers}} of {{productNumbers}}</span> -->
+      <span>Showing {{productService.products.length}} products</span>
       <div class="" style="width: 210px;">
         <select class="form-select" aria-label="Default select example" [(ngModel)]="sortBySelectedValue" (ngModelChange)="onSelectionChange()">
           <option value="default" selected>{{"ProductPageSort.default" | translate}}</option>
