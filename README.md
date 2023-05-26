@@ -31,11 +31,19 @@ The frontend of Threads & Beads is built using the following technologies:
 - Enjoy a seamless shopping experience with easy navigation.
 - Secure transactions and the option to save favorites.
 - Participate in a variety of workshops with various pricing options.
-- Experience the convenience of Arabic translation option to enhance accessibility and cater to a wider customer base.
 
 Join Threads & Beads today, where artisans and enthusiasts unite to celebrate the artistry of handmade creations.
   
-  
+ ### Additional Information:
+- Responsive Design: The frontend is designed to be responsive, providing an optimal viewing experience across different devices and screen sizes.
+
+- Internationalization (i18n): The frontend supports multi-language functionality, including Arabic translation for enhanced accessibility.
+
+- User Feedback: We value your feedback! If you encounter any issues or have suggestions for improvement, please feel free to open an issue on the repository.
+
+- Contributions: We welcome contributions from the open-source community. If you would like to contribute to the project, please refer to our contribution       guidelines.
+
+ 
  ## Getting Started
 
 Follow these instructions to run the frontend on your local machine:
@@ -68,3 +76,4 @@ Open your web browser and navigate to `http://localhost:4200` to access the Thre
 
 - [Ahmed Orabi](https://github.com/orabi55555)
 
+We appreciate your interest in Threads & Beads and hope you enjoy exploring our frontend repository!
