@@ -1,104 +1,105 @@
-* {
-  font-size: 1.04em;
-  outline: none;
-  border: none;
-  box-sizing: border-box;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-::selection {
-  background-color: #95a5a6;
-}
-
-img {
-  height: auto;
-  width: 100%;
-  user-select: none;
-}
-
-.mline {
-  border: 2px solid #ecf0f1;
-  width: 14%;
-  margin: 0 auto;
-}
-
-#wrapper {
-  color: #212129;
-  background-color: #fff;
-  box-shadow: 0 0 7px 3px #535355;
-  max-width: 250px;
-  max-height: 360px;
-  margin: 20px auto;
+.card {
   position: relative;
-  z-index: 0;
+  background: #f9f1eb;
+  width: 190px;
+  height: 265px;
+  cursor: pointer;
+  transition: all .3 ease;
+  overflow: visible;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, .3);
+}
+
+.product {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 150px;
+  height: 150px;
+  background-color: #faf3e8;
+  z-index: 1;
+}
+
+.product p {
+  font-size: 17px;
   text-align: center;
+  color: #181818;
+  line-height: 150px;
 }
 
-.header {
-  background: url(https://image.ibb.co/diMmRG/chloe_moretz.jpg);
-  box-shadow: inset 0 0 60px 20px rgba(0,0,0,0.5);
-  min-height: 130px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 10px;
+.shine {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 190px;
+  height: 265px;
+  overflow: hidden;
 }
 
-.name h1 {
-  color: #ecf0f1;
-  font-size: 1.1em;
+.shine-effect {
+  position: absolute;
+  top: -15%;
+  left: 150%;
+  width: 25px;
+  height: 400px;
+  background-color: #ffffff2a;
+  box-shadow: 0 0 15px 2px #ffffff42;
+  transform: rotate(25deg);
+  transition: all 1s cubic-bezier(0.78, 0.02, 0.5, 0.77);
+  z-index: 5;
 }
 
-.info {
-  color: #212129;
-  font-size: 0.8em;
-  margin: 15px 0;
+.pattern-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 125px;
+  height: auto;
+  z-index: 2;
 }
 
-.contacts .bi {font-size: 20px;}
-.contacts .bi:hover {opacity:0.75;transition:225ms;}
-.bi-facebook {color: #1F3A93;transition:350ms;}
-.bi-google {color: #F22613;transition:350ms;}
-.bi-twitter {color: #22A7F0;transition:350ms;}
-.bi-instagram {
-  background: #d6249f;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.pattern-2 {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 200px;
+  height: auto;
+  z-index: 2;
 }
 
-.button {
-  margin: 20px 0;
+.tree {
+  position: absolute;
+  bottom: 1%;
+  right: -2%;
+  width: 100px;
+  height: auto;
+  transform-origin: 100% 0;
+  transform: rotate(-15deg);
+  z-index: 3;
 }
 
-.products {
-  color: #212129;
-  border: 2px #212129 solid;
-  border-radius: 30px;
-  padding: 6px 20px;
-  background: #fff;
-  transition: 0.5s;
-  text-decoration: none;
+.card:hover {
+  transform: scale(1.02);
 }
 
-.products:hover {
-  color: #fff;
-  border-radius: 30px;
-  padding: 8px 25px;
-  background: #212129;
-  transition: 0.5s;
+.card:hover .shine-effect {
+  left: -100%;
 }
 
-.stats {
-  font-size: 0.75em;
-  padding: 10px 0;
-  background-color: #ECF0F1;
+.card:active {
+  transform: scale(1.02) translate(0, 5%);
 }
 
-.stats span{
-  font-size: 1em;
+.fil-pattern-1 {
+  fill: #f3d78a00
+}
+
+.fil-pattern-2 {
+  fill: #996d4700;
+  fill-rule: nonzero
+}
+
+.fil0 {
+  fill: #996d47
 }

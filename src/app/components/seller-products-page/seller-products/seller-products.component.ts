@@ -10,7 +10,7 @@ import { TokenStorageService } from 'src/app/services/token/token-storage.servic
 })
 export class SellerProductsComponent implements OnInit {
   page = 1;
-  limit = 3;
+  limit = 10;
   NumberOfPages!: number;
   currentUser: any;
   currentUserId: any;
@@ -56,8 +56,8 @@ export class SellerProductsComponent implements OnInit {
     }
   }
 
-  navToPage(page: number){
-    this.page = page;
-    this.getProducts();
-  };
+  // navToPage(page: number){
+  //   this.page = page;
+  //   this.getProducts();
+  // };
 }

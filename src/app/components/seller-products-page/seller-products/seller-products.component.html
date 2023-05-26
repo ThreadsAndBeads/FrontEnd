@@ -8,27 +8,24 @@
       >
       </app-seller-product-card>
     </div>
-    <nav aria-label="Page navigation example ">
-      <ul class="pagination d-flex justify-content-center">
+    <nav aria-label="Page navigation example" class="align-self-center mx-auto">
+      <ul class="pagination">
         <li class="page-item">
           <button (click)="previous()" class="page-link" aria-label="Previous">
-            <span aria-hidden="true"
-              ><i class="bi bi-caret-left-fill"></i
-            ></span>
+            <span aria-hidden="true">&laquo;</span>
           </button>
         </li>
-        <li
+        <!-- <li
           class="page-item"
           *ngFor="let page of pages"
           (click)="navToPage(page)"
         >
           <button class="page-link">{{ page }}</button>
-        </li>
+        </li> -->
+
         <li class="page-item">
           <button (click)="next()" class="page-link" aria-label="Next">
-            <span aria-hidden="true"
-              ><i class="bi bi-caret-right-fill"></i
-            ></span>
+            <span aria-hidden="true">&raquo;</span>
           </button>
         </li>
       </ul>

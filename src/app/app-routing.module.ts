@@ -59,7 +59,6 @@ const routes: Routes = [
       { path: 'editProduct/:productId', component: EditProductComponent },
       { path: 'editWorkshop/:workshopId', component: EditWorkshopComponent },
       { path: 'orders', component: SellerOrdersComponent },
-      {path: 'profile',component: UserProfileComponent}
     ],
   },
   {
@@ -71,7 +70,8 @@ const routes: Routes = [
       { path: 'orders', component: ClientOrdersComponent },
       { path: 'favorites', component: FavouriteComponent },
       {path: 'editProfile',component: EditProfileComponent},
-      {path: 'productDetails/:id' , component: ProductDetailsComponent}
+      {path: 'productDetails/:id' , component: ProductDetailsComponent},
+      {path: 'profile',component: UserProfileComponent}
     ],
   },
   { path: '**', component: ErrorComponent },

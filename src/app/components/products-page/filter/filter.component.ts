@@ -20,6 +20,7 @@ export class FilterComponent implements OnChanges {
 
   constructor(protected productService: ProductService) {
     this.getCategories();
+    this.getPriceRange();
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -39,25 +40,41 @@ export class FilterComponent implements OnChanges {
     });
   }
 
+  getPriceRange() {
+    this.productService.priceRange().subscribe({
+      next: (response: any) => {
+        if(response){
+          this.minPrice = response.minPrice;
+          this.maxPrice = response.maxPrice;
+          this.minInputPrice = this.minPrice;
+          this.maxInputPrice = this.maxPrice;
+        }
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
+
   updateMaxInputPrice() {
     this.maxInputPrice = Math.max(this.minInputPrice, this.maxInputPrice);
-    // this.filterBy = cloneDeep(this.filterBy);
     this.filterBy['price'] = {
       min: this.minInputPrice,
       max: this.maxInputPrice,
     };
     this.calculatProgressBar();
-    this.filterByEvent.emit(this.filterBy);
   }
 
   updateMinInputPrice() {
     this.minInputPrice = Math.min(this.maxInputPrice, this.minInputPrice);
-    // this.filterBy = cloneDeep(this.filterBy);
     this.filterBy['price'] = {
       min: this.minInputPrice,
       max: this.maxInputPrice,
     };
     this.calculatProgressBar();
+  }
+
+  priceFilter(){
     this.filterByEvent.emit(this.filterBy);
   }
 

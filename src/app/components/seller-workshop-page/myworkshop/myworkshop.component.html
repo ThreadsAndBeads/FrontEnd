@@ -1,7 +1,7 @@
-<div class="my-workshops w-100 d-flex flex-column" style="margin-top: 120px">
-  <div *ngIf="workshops.length > 0; else NoWorkshop">
+<div class="my-workshops w-100 container" style="margin-top: 120px">
+  <div *ngIf="workshops.length > 0; else NoWorkshop" class="row g-2">
     <div
-      class="w-25 mx-3 row d-flex flex-wrap"
+      class="col-12 col-md-6 col-lg-4 mb-4 row d-flex flex-wrap"
       *ngFor="let workshop of workshops; let i = index"
     >
       <app-sellerworkshops
@@ -17,13 +17,13 @@
             <span aria-hidden="true">&laquo;</span>
           </button>
         </li>
-        <li
+        <!-- <li
           class="page-item"
           *ngFor="let page of pages"
           (click)="navToPage(page)"
         >
           <button class="page-link">{{ page }}</button>
-        </li>
+        </li> -->
 
         <li class="page-item">
           <button (click)="next()" class="page-link" aria-label="Next">

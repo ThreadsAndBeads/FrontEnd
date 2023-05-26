@@ -20,8 +20,9 @@ export class NotificationComponent implements OnInit {
     this.socket = io(this.apiUrl, { transports: ['websocket'] });
   }
   ngOnInit() {
-    let userId = this.tokenService.getUser()._id;
+    let userId = this.tokenService.getUser();
     if(userId && this.tokenService.isSeller()){
+      userId = userId._id
       const room = `seller_${userId}`;
       this.socket.emit("join", room);
       this.socket.on("notification", (data: any) => {

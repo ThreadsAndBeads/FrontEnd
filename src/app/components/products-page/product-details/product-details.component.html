@@ -41,8 +41,8 @@
         <p>category: {{ product.category }}</p>
         <p>{{ product.description }}</p>
         <p>
-          <span>{{ product.price }}</span
-          >$
+          <span>{{ product.actualPrice }}</span
+          > EGP
         </p>
         <ng-container *ngIf="product.inStock > 0; else outOfStock">
           <p class="product-available">

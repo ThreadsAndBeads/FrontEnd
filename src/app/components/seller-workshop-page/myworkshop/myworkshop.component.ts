@@ -66,10 +66,10 @@ export class MyworkshopComponent implements OnInit {
     }
   }
 
-  navToPage(page: number){
-    this.page = page;
-    this.getWorkshops();
-  };
+  // navToPage(page: number){
+  //   this.page = page;
+  //   this.getWorkshops();
+  // };
   showModal() {
     const modal = new bootstrap.Modal(this.myModal.nativeElement);
     modal.show();
