@@ -39,6 +39,9 @@ Follow these instructions to run the frontend on your local machine:
 
 
 - Run the following command to install the necessary dependencies:
+  ```
+  npm i
+  ```
   
 - Once the dependencies are installed, start the frontend development server by running the following command:
   
