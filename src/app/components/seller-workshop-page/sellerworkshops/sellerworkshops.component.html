@@ -1,4 +1,42 @@
-<div
+<div class="workshop-card border" [ngClass]="'workshop-card-color-' + (index % 3)">
+  <img
+    class="card__img"
+    [src]="workshop.image"
+    alt="Snowy Mountains"
+  />
+  <div class="card__content">
+    <h1 class="card__header">{{ workshop.title }}</h1>
+    <p class="card__description text-muted">
+      {{ workshop.description }}
+    </p>
+    <p class="card__text text-muted">
+      {{ calculateDuration() }} <br>
+      Half Day Training.
+    </p>
+    <div class="card__footer d-flex justify-content-between align-content-center border-top pt-3">
+      <p class="card__price text-muted fs-5 my-auto" >
+        EGP {{ workshop.price }}
+      </p>
+      <div class="wcf-right">
+        <a
+          href="#myModal"
+          class="delete-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#myModal"
+          (click)="workshopIdToDelete = workshop._id"
+        >
+          <i class="bi bi-trash"></i
+        ></a>
+        <a class="edit-btn" [routerLink]="['/seller/editWorkshop', workshop._id]">
+          <i class="bi bi-pen"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div
   class="workshop-card col-lg-4 col-md-6 col-sm-12"
   [ngClass]="'workshop-card-color-' + (index % 3)"
 >
@@ -21,7 +59,7 @@
       ></a>
     </div>
   </div>
-</div>
+</div> -->
 <div id="myModal" class="modal fade">
   <div class="modal-dialog modal-confirm">
     <div class="modal-content">
