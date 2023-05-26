@@ -50,11 +50,9 @@ export class ProductsPageComponent implements OnInit {
   }
 
   getProducts(query?: string) {
-    console.log('getProducts() called with query: ', query);
     this.productService.products = [];
     this.productService.getAllProducts(this.page, this.limit, query).subscribe(
       (response: any) => {
-        console.log(response);
         this.cdr.detectChanges();
         const { products } = response.data;
         this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);

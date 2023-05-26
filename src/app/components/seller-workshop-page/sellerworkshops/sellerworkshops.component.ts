@@ -9,40 +9,64 @@ import { WorkshopService } from 'src/app/services/workshop/workshop.service';
 @Component({
   selector: 'app-sellerworkshops',
   templateUrl: './sellerworkshops.component.html',
-  styleUrls: ['./sellerworkshops.component.css']
+  styleUrls: ['./sellerworkshops.component.css'],
 })
 export class SellerworkshopsComponent {
-@Input () workshop: any
+  @Input() workshop: any;
   @Input() index: any;
   workshopIdToDelete: any;
 
-@ViewChild('myModal') myModal!: ElementRef;
-constructor( private workshopService : WorkshopService , private router : Router ) {
-}
+  @ViewChild('myModal') myModal!: ElementRef;
+  constructor(
+    private workshopService: WorkshopService,
+    private router: Router
+  ) {}
 
-  deleteWorkshop(workshopId:string) {
+  deleteWorkshop(workshopId: string) {
     console.log(workshopId);
 
-    this.workshopService.deleteWorkshop(workshopId).subscribe
-      ({
-        next: (data) => {
-          location.reload();
-          this.router.navigate(['seller/myWorkshops']);
-
-    },error: (err)=>{}});
+    this.workshopService.deleteWorkshop(workshopId).subscribe({
+      next: (data) => {
+        location.reload();
+        this.router.navigate(['seller/myWorkshops']);
+      },
+      error: (err) => {},
+    });
   }
+
   showModal() {
     const modal = new bootstrap.Modal(this.myModal.nativeElement);
     modal.show();
   }
+
   openEditWorkshopModal() {
     let navigationExtras: NavigationExtras = {
       queryParams: {
-        special: JSON.stringify(this.workshop)
-      }
+        special: JSON.stringify(this.workshop),
+      },
     };
 
-    this.router.navigate([`seller/editWorkshop/${this.workshop._id}`,navigationExtras]);
+    this.router.navigate([
+      `seller/editWorkshop/${this.workshop._id}`,
+      navigationExtras,
+    ]);
   }
 
+  calculateDuration() {
+    const start = new Date(this.workshop.startDate);
+    const end = new Date(this.workshop.endDate);
+    const durationInMilliseconds = end.getTime() - start.getTime();
+    const durationInDays = Math.floor(
+      durationInMilliseconds / (1000 * 60 * 60 * 24)
+    );
+    return `From ${this.formatDate(start)} to ${this.formatDate(end)} (${durationInDays} days.)`;
+  }
+
+  formatDate(date: Date) {
+    const day = date.getDate();
+    const month = new Intl.DateTimeFormat('en', { month: 'short' }).format(
+      date
+    );
+    return `${day} ${month}`;
+  }
 }

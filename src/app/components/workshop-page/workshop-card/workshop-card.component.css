@@ -166,7 +166,7 @@
 
 .badge {
   position: absolute;
-  width: 60px;
+  width: fit-content;
   right: 0;
   top: 20px;
   text-transform: uppercase;

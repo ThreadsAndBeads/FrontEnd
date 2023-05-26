@@ -1,51 +1,4 @@
-/* Cards */
-
-.workshop-card {
-  width: 92%;
-  max-width: 340px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  background: #eb5160;
-  color: #fff;
-  cursor: pointer;
-  min-height: 350px;
-  margin-bottom: 60px;
-  height: 350px;
-}
-
-.border-card {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 6px;
-  border: 1px solid #fff;
-  opacity: 0.5;
-  left: -6px;
-  top: -6px;
-}
-
-.workshop-card h1 {
-  position: relative;
-  padding: 150px 0px 10px 10px;
-  width: 90%;
-  font-family: "Delicious Handrawn", cursive;
-}
-
-.workshop-card > img {
-  width: 90%;
-  position: absolute;
-  top: -6%;
-  left: -6%;
-  height: 50%;
-  object-fit: cover;
-}
-
-.workshop-card-color-0 {
-  background-color: #996d47bb;
-}
-
-.workshop-card-color-1 {
+/* .workshop-card-color-1 {
   background-color: #a20a0a;
 }
 
@@ -55,45 +8,52 @@
 
 .workshop-card-color-3 {
   background-color: #888da7;
-}
+} */
 
-.x-1 {
-  transform: rotate(45deg);
-}
-
-.x-2 {
-  transform: rotate(-45deg);
-}
-
-.card-description {
-  display: inline-block;
-  font-weight: 300;
-  line-height: 22px;
-  margin: 10px 0;
-  padding: 10px;
+.card__img {
   display: block;
-  width: 70%; /* Change this value to the width you want */
-  white-space: normal;
-  word-wrap: break-word;
-  flex: 1;
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+.card__content {
+  padding: 1.5rem 1rem;
+}
+
+.card__header {
+  font-family: "Delicious Handrawn", cursive;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #0d0d0d;
+  margin-bottom: 0.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* color: #aaa; */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
-@media screen and (max-width: 600px) {
-  .workshop-card-column {
-    width: 90%;
-  }
-
-  .column-1 {
-    padding-top: 0px;
-  }
-
-  .open-content img {
-    margin-top: 40px;
-  }
+.card__description {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
+
+.card__text {
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
 a.delete-btn,
 a.edit-btn {
   display: inline-block;
@@ -130,6 +90,9 @@ a.edit-btn:focus {
   display: inline-block;
   margin: 0 5px;
 }
+
+
+
 
 
 
@@ -203,13 +166,15 @@ a.edit-btn:focus {
 .modal-confirm .btn-info {
   background: #c1c1c1;
 }
-.modal-confirm .btn-info:hover, .modal-confirm .btn-info:focus {
+.modal-confirm .btn-info:hover,
+.modal-confirm .btn-info:focus {
   background: #a8a8a8;
 }
 .modal-confirm .btn-danger {
   background: #f15e5e;
 }
-.modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
+.modal-confirm .btn-danger:hover,
+.modal-confirm .btn-danger:focus {
   background: #ee3535;
 }
 .trigger-btn {
