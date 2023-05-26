@@ -22,15 +22,13 @@ export class SellersComponent {
     this.sellerService.sellers = [];
     this.sellerService.getAllSellers(this.page, this.limit).subscribe(
       (response: any) => {
-        const { sellers } = response.data;
-        console.log(sellers);
-        
+        const { sellers } = response.data;        
         this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
 
         this.sellerService.sellers.push(...sellers);
       },
       ({ status, message }: HttpErrorResponse) => {
-        console.log(`Error ${status}: ${message}`);
+        // console.log(`Error ${status}: ${message}`);
       }
     );
   }

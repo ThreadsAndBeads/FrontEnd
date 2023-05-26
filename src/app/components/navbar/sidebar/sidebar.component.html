@@ -24,7 +24,7 @@
             >{{ "sidebar.profileBtn" | translate }}
           </a>
         </li>
-        <li *ngIf="currentUser.type == 'seller'" class="dropdown">
+        <li *ngIf="currentUser?.type == 'seller'" class="dropdown">
           <a
             class="text-decoration-none dropdown-toggle"
             type="button"
@@ -72,7 +72,7 @@
             {{ "sidebar.requestsBtn" | translate }}
           </a>
         </li>
-        <li *ngIf="currentUser.type == 'seller'" class="dropdown">
+        <li *ngIf="currentUser?.type == 'seller'" class="dropdown">
           <a
             class="text-decoration-none dropdown-toggle"
             type="button"

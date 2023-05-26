@@ -26,7 +26,7 @@ export class WorkshopPageComponent implements OnInit {
         this.NumberOfPages = Math.ceil(response.data.totalRecords / this.limit);
       },
       error: ({ status, message }: HttpErrorResponse) => {
-        console.log(`Error ${status}: ${message}`);
+        // console.log(`Error ${status}: ${message}`);
       }
   });
   }
