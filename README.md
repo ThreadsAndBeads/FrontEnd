@@ -23,6 +23,7 @@ The frontend of Threads & Beads is built using the following technologies:
 - Create an online store with customizable product listings.
 - Manage orders easily with a drag-and-drop interface.
 - Receive notifications for new orders and updates.
+- Become a top seller by fulfilling numerous orders and gaining recognition in the marketplace.
 
 ### For Customers:
 
