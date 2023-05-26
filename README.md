@@ -31,6 +31,7 @@ The frontend of Threads & Beads is built using the following technologies:
 - Enjoy a seamless shopping experience with easy navigation.
 - Secure transactions and the option to save favorites.
 - Participate in a variety of workshops with various pricing options.
+- Experience the convenience of Arabic translation option to enhance accessibility and cater to a wider customer base.
 
 Join Threads & Beads today, where artisans and enthusiasts unite to celebrate the artistry of handmade creations.
   
