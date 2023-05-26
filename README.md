@@ -29,6 +29,7 @@ The frontend of Threads & Beads is built using the following technologies:
 - Discover unique handmade products crafted with love.
 - Enjoy a seamless shopping experience with easy navigation.
 - Secure transactions and the option to save favorites.
+- Participate in a variety of workshops with various pricing options.
 
 Join Threads & Beads today, where artisans and enthusiasts unite to celebrate the artistry of handmade creations.
   
