@@ -24,7 +24,7 @@ section {
   overflow: hidden;
 }
 
-.overlay-container .overlay button{
+.overlay-container .overlay button {
   padding: 10px 50px;
   border: none;
   outline: none;
@@ -37,7 +37,7 @@ section {
 
 .container .overlay-container {
   position: absolute;
-  background-color: #3C486B;
+  background-color: #3c486b;
   left: 0;
   top: 0;
   width: 50%;
@@ -92,7 +92,37 @@ section {
 }
 .overlay-container .overlay button {
   background-color: white;
-  color: #3C486B;
+  color: #3c486b;
   margin-top: 20px;
 }
+@media screen and (max-width: 767px) {
+  .container .overlay-container {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    flex-direction: column;
+    align-items: flex-start;
 
+    /* gap: 10px; */
+    /* transform: translateY(-100%) !important; */
+  }
+  /* .container .overlay-container .overlay {
+    transform: translateY(-50%) !important;
+    height: 200%;
+  } */
+  .container {
+    flex-direction: column;
+    min-height: 800px;
+    min-width: 350px;
+  }
+  .container .overlay-container .overlay {
+    height: 200%;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 20px;
+  }
+  .overlay-container .overlay .overlay-left,
+  .overlay-container .overlay .overlay-right {
+    text-align: center;
+  }
+}

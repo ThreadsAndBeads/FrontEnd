@@ -23,15 +23,35 @@ export class RegistrationComponent implements OnInit {
     const overlay = document.querySelector('.overlay') as HTMLDivElement;
 
     signIn.addEventListener('click', () => {
-      overlay_container.style.transform = 'translateX(100%)';
-      overlay.style.transform = 'translateX(-50%)';
+      // overlay_container.style.transform = 'translateX(100%)';
+      // overlay.style.transform = 'translateX(-50%)';
+      const screenWidth = window.innerWidth;
+      if (screenWidth <= 767) {
+        // Change translateX to translateY on mobile screens
+        overlay_container.style.transform = 'translateY(150%)';
+        overlay.style.transform = 'translateY(-50%)';
+      } else {
+        // Use translateX on larger screens
+        overlay_container.style.transform = 'translateX(100%)';
+        overlay.style.transform = 'translateX(-50%)';
+      }
       signInForm.classList.add('active');
       signUpForm.classList.remove('active');
     });
 
     signUp.addEventListener('click', () => {
-      overlay_container.style.transform = 'translateX(0)';
-      overlay.style.transform = 'translateX(0)';
+      // overlay_container.style.transform = 'translateX(0)';
+      // overlay.style.transform = 'translateX(0)';
+      const screenWidth = window.innerWidth;
+      if (screenWidth <= 767) {
+        // Change translateX to translateY on mobile screens
+        overlay_container.style.transform = 'translateY(0)';
+        overlay.style.transform = 'translateY(0)';
+      } else {
+        // Use translateX on larger screens
+        overlay_container.style.transform = 'translateX(0)';
+        overlay.style.transform = 'translateX(0)';
+      }
       signUpForm.classList.add('active');
       signInForm.classList.remove('active');
     });
