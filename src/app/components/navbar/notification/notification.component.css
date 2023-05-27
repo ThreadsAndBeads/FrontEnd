@@ -69,3 +69,9 @@
   border: 2px solid black;
   border-radius: 5px;
 }
+@media screen and (max-width: 767px) {
+  .notification-dropdown {
+    left: 0;
+    right: auto;
+  }
+}
