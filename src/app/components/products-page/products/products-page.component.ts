@@ -34,7 +34,11 @@ export class ProductsPageComponent implements OnInit {
         filter.style.transform = "translate(0)";
       }else{
         filter.style.transform = 'translate(-100%)';
+        filter.classList.remove('shown')
+
       }
+
+
     };
   }
 
