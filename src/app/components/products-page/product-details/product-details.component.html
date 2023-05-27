@@ -41,8 +41,7 @@
         <p>category: {{ product.category }}</p>
         <p>{{ product.description }}</p>
         <p>
-          <span>{{ product.actualPrice }}</span
-          > EGP
+          <span>{{ product.actualPrice }}</span> EGP
         </p>
         <ng-container *ngIf="product.inStock > 0; else outOfStock">
           <p class="product-available">
@@ -58,7 +57,7 @@
         </ng-template>
       </div>
       <div>
-        <div class="product-quantity">
+        <div class="product-quantity d-flex">
           <label for="product-quantity-input" class="product-quantity-label"
             >Quantity</label
           >
@@ -95,7 +94,7 @@
           <img [src]="image" alt="product image" class="productAllImages" />
         </span>
       </div>
-      <div class="product-price-btn d-flex justify-content-end">
+      <div class="product-price-btn d-flex justify-content-end mb-5">
         <button
           type="button"
           class="addtoCartBtn"
