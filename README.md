@@ -15,6 +15,9 @@ The frontend of Threads & Beads is built using the following technologies:
 - HTML/CSS: The standard web development languages used for creating the structure and styling of the frontend.
 - Bootstrap
 
+
+![Screenshot 2023-05-27 160348](https://github.com/ThreadsAndBeads/FrontEnd/assets/95037451/0e20be51-709b-42e3-b6e6-23eb7a0ca375)
+
 ## Features
 
 ### For Sellers:
