@@ -9,7 +9,7 @@ Welcome to the frontend repository of Threads & Beads, your premier destination 
 
 
 # Demo 
-  [Demo Video](https://www.youtube.com/channel/UCPx-ZzctwPv_Uuy9t59MGJg)
+  [Demo Video]([https://www.youtube.com/channel/UCPx-ZzctwPv_Uuy9t59MGJg](https://www.youtube.com/watch?v=DDCJ9Gh1TpM))
 
 
   
