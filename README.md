@@ -3,7 +3,8 @@
 </div
 # Threads & Beads - Frontend
 
-Welcome to the frontend repository of Threads & Beads, your premier destination for handmade crafts and jewelry. This repository contains the Angular code for the Threads & Beads frontend.
+Welcome to the frontend repository of Threads & Beads, your premier destination for handmade crafts and jewelry. This repository contains the Angular code for the Threads & Beads frontend. <br> <br>
+Join us at Threads & Beads and immerse yourself in a world of creativity, Visit our [website](https://threadsandbeads-4863e.web.app/) and start exploring today
   
   ![Screenshot 2023-05-27 160348](https://github.com/ThreadsAndBeads/FrontEnd/assets/95037451/fe2748d6-dce9-43fd-a6fa-b318900ff411)
 
